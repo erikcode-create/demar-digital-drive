@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin } from "lucide-react";
-import demarLogo from "@/assets/demar-logo.png";
+import demarLogo from "@/assets/demar-logo-new.png";
 
 const Header = () => {
   return (
