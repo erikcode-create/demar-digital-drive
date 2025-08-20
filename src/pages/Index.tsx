@@ -3,13 +3,13 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
-import Sidebar from "@/components/Sidebar";
+import LandstarSidebar from "@/components/LandstarSidebar";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Sidebar />
-      <div className="ml-16">
+      <LandstarSidebar />
+      <div className="ml-80">
         <Header />
         <Hero />
         <Services />
