@@ -17,14 +17,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const LandstarSidebar = () => {
-  const [expandedSections, setExpandedSections] = useState<string[]>([]);
+  const [hoveredSection, setHoveredSection] = useState<string | null>(null);
 
-  const toggleSection = (section: string) => {
-    setExpandedSections(prev => 
-      prev.includes(section) 
-        ? prev.filter(s => s !== section)
-        : [...prev, section]
-    );
+  const handleMouseEnter = (section: string) => {
+    setHoveredSection(section);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredSection(null);
   };
 
   const menuSections = [
@@ -90,7 +90,8 @@ const LandstarSidebar = () => {
   return (
     <>
       {/* Main Sidebar */}
-      <div className="fixed left-0 top-0 h-full w-80 bg-primary/95 backdrop-blur-sm z-50 overflow-y-auto shadow-2xl">
+      <div className="fixed left-0 top-0 h-full w-20 bg-primary/95 backdrop-blur-sm z-50 overflow-y-auto shadow-2xl"
+           onMouseLeave={handleMouseLeave}>
         <div className="p-4">
           {/* Header */}
           <div className="mb-6 pb-4 border-b border-primary-foreground/20">
@@ -101,25 +102,26 @@ const LandstarSidebar = () => {
           {/* Menu Sections */}
           <div className="space-y-2">
             {menuSections.map((section) => (
-              <Card key={section.id} className="bg-primary-foreground/5 border-primary-foreground/10 relative">
-                <CardContent className="p-0">
-                  <Button
-                    variant="ghost"
-                    className={`w-full justify-between p-4 h-auto text-primary-foreground hover:bg-primary-foreground/10 ${
-                      expandedSections.includes(section.id) ? 'bg-primary-foreground/10' : ''
-                    }`}
-                    onClick={() => toggleSection(section.id)}
-                  >
-                    <div className="flex items-center gap-3">
+              <div
+                key={section.id}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(section.id)}
+              >
+                <Card className="bg-primary-foreground/5 border-primary-foreground/10">
+                  <CardContent className="p-0">
+                    <Button
+                      variant="ghost"
+                      className={`w-full justify-center p-3 h-auto text-primary-foreground hover:bg-primary-foreground/10 ${
+                        hoveredSection === section.id ? 'bg-primary-foreground/10' : ''
+                      }`}
+                    >
                       <div className="text-accent">
                         {section.icon}
                       </div>
-                      <span className="font-medium text-left">{section.title}</span>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-accent" />
-                  </Button>
-                </CardContent>
-              </Card>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
 
@@ -127,78 +129,65 @@ const LandstarSidebar = () => {
           <div className="mt-8 pt-6 border-t border-primary-foreground/20">
             <div className="space-y-3">
               <Button 
-                variant="cta" 
-                className="w-full justify-start animate-pulse-glow"
+                variant="ghost" 
+                className="w-full justify-center p-3 text-primary-foreground hover:bg-primary-foreground/10"
                 onClick={() => window.location.href = 'tel:7752304767'}
               >
-                <Phone className="h-4 w-4 mr-2" />
-                Call (775) 230-4767
+                <Phone className="h-4 w-4 text-accent" />
               </Button>
               
               <Button 
-                variant="outline" 
-                className="w-full justify-start bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/20"
+                variant="ghost" 
+                className="w-full justify-center p-3 text-primary-foreground hover:bg-primary-foreground/10"
               >
-                <FileText className="h-4 w-4 mr-2" />
-                Request Quote
+                <FileText className="h-4 w-4 text-accent" />
               </Button>
-            </div>
-
-            {/* Company Stats */}
-            <div className="mt-6 p-4 bg-primary-foreground/5 rounded-lg">
-              <div className="text-center space-y-2">
-                <div className="text-2xl font-bold text-accent">14+</div>
-                <div className="text-xs text-primary-foreground/70">Years Experience</div>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Mega Menu Panels */}
-      {expandedSections.map((sectionId) => {
-        const section = menuSections.find(s => s.id === sectionId);
-        if (!section) return null;
-        
-        return (
-          <div
-            key={sectionId}
-            className="fixed left-80 top-0 h-full w-96 bg-background border-l border-border z-40 shadow-xl animate-slide-in-right"
-          >
-            <div className="p-6">
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b">
-                <div className="text-primary">
-                  {section.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">{section.title}</h3>
-              </div>
-              
-              <div className="grid gap-4">
-                {section.items.map((item, index) => (
-                  <div
-                    key={index}
-                    className="p-4 rounded-lg border hover:shadow-md cursor-pointer transition-all group"
-                  >
-                    <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors mb-2">
-                      {item.title}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      {item.description}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        );
-      })}
-
-      {/* Overlay to close mega menu */}
-      {expandedSections.length > 0 && (
+      {/* Mega Menu Panel */}
+      {hoveredSection && (
         <div
-          className="fixed inset-0 bg-black/20 z-30"
-          onClick={() => setExpandedSections([])}
-        />
+          className="fixed left-20 top-0 h-full w-80 bg-background border-l border-border z-40 shadow-xl animate-slide-in-right"
+          onMouseEnter={() => setHoveredSection(hoveredSection)}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="p-6">
+            {(() => {
+              const section = menuSections.find(s => s.id === hoveredSection);
+              if (!section) return null;
+              
+              return (
+                <>
+                  <div className="flex items-center gap-3 mb-6 pb-4 border-b">
+                    <div className="text-primary">
+                      {section.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground">{section.title}</h3>
+                  </div>
+                  
+                  <div className="grid gap-4">
+                    {section.items.map((item, index) => (
+                      <div
+                        key={index}
+                        className="p-4 rounded-lg border hover:shadow-md cursor-pointer transition-all group hover:bg-muted/50"
+                      >
+                        <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors mb-2">
+                          {item.title}
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          {item.description}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              );
+            })()}
+          </div>
+        </div>
       )}
     </>
   );

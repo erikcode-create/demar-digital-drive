@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <LandstarSidebar />
-      <div className="ml-80">
+      <div className="ml-20">
         <Header />
         <Hero />
         <Services />
