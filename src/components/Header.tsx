@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin } from "lucide-react";
-import demarLogo from "@/assets/demar-logo-new.png";
+
 
 const Header = () => {
   return (
@@ -33,7 +33,7 @@ const Header = () => {
       <nav className="py-4 px-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <img src={demarLogo} alt="DeMar Transportation" className="h-12 w-12" />
+            <img src="/lovable-uploads/d409271f-b234-4ccb-a60d-5adacce24eb6.png" alt="DeMar Transportation logo" className="h-12 w-12" />
             <div>
               <h1 className="text-xl font-bold">DeMar Transportation</h1>
               <p className="text-sm text-primary-foreground/80">Professional Freight Transportation</p>
