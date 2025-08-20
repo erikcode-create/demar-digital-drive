@@ -90,13 +90,14 @@ const LandstarSidebar = () => {
   return (
     <>
       {/* Main Sidebar */}
-      <div className="fixed left-0 top-0 h-full w-20 bg-primary/95 backdrop-blur-sm z-50 overflow-y-auto shadow-2xl"
+      <div className="fixed left-0 top-0 h-full w-16 bg-primary/95 backdrop-blur-sm z-50 overflow-y-auto shadow-2xl"
            onMouseLeave={handleMouseLeave}>
-        <div className="p-4">
-          {/* Header */}
-          <div className="mb-6 pb-4 border-b border-primary-foreground/20">
-            <h2 className="text-lg font-bold text-primary-foreground mb-2">Navigation Menu</h2>
-            <p className="text-sm text-primary-foreground/70">Access all DeMar Transportation services</p>
+        <div className="p-2">
+          {/* Header - Hidden in compact mode */}
+          <div className="mb-4 pb-2 border-b border-primary-foreground/20">
+            <div className="text-center">
+              <Truck className="h-6 w-6 text-accent mx-auto" />
+            </div>
           </div>
 
           {/* Menu Sections */}
@@ -111,7 +112,7 @@ const LandstarSidebar = () => {
                   <CardContent className="p-0">
                     <Button
                       variant="ghost"
-                      className={`w-full justify-center p-3 h-auto text-primary-foreground hover:bg-primary-foreground/10 ${
+                      className={`w-full justify-center p-2 h-auto text-primary-foreground hover:bg-primary-foreground/10 ${
                         hoveredSection === section.id ? 'bg-primary-foreground/10' : ''
                       }`}
                     >
@@ -126,11 +127,11 @@ const LandstarSidebar = () => {
           </div>
 
           {/* Quick Actions at Bottom */}
-          <div className="mt-8 pt-6 border-t border-primary-foreground/20">
-            <div className="space-y-3">
+          <div className="mt-6 pt-4 border-t border-primary-foreground/20">
+            <div className="space-y-2">
               <Button 
                 variant="ghost" 
-                className="w-full justify-center p-3 text-primary-foreground hover:bg-primary-foreground/10"
+                className="w-full justify-center p-2 text-primary-foreground hover:bg-primary-foreground/10"
                 onClick={() => window.location.href = 'tel:7752304767'}
               >
                 <Phone className="h-4 w-4 text-accent" />
@@ -138,7 +139,7 @@ const LandstarSidebar = () => {
               
               <Button 
                 variant="ghost" 
-                className="w-full justify-center p-3 text-primary-foreground hover:bg-primary-foreground/10"
+                className="w-full justify-center p-2 text-primary-foreground hover:bg-primary-foreground/10"
               >
                 <FileText className="h-4 w-4 text-accent" />
               </Button>
@@ -150,7 +151,7 @@ const LandstarSidebar = () => {
       {/* Mega Menu Panel */}
       {hoveredSection && (
         <div
-          className="fixed left-20 top-0 h-full w-80 bg-background border-l border-border z-40 shadow-xl animate-slide-in-right"
+          className="fixed left-16 top-0 h-full w-72 bg-background border-l border-border z-40 shadow-xl animate-slide-in-right"
           onMouseEnter={() => setHoveredSection(hoveredSection)}
           onMouseLeave={handleMouseLeave}
         >
