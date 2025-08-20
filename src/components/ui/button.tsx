@@ -18,11 +18,16 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Transportation-specific variants
+        cta: "bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse-glow",
+        hero: "bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-lg shadow-[var(--shadow-hero)] hover:shadow-2xl transform hover:scale-105 transition-all duration-300",
+        nav: "text-primary-foreground hover:bg-primary-foreground/10 transition-colors duration-200",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-14 rounded-md px-10 text-lg",
         icon: "h-10 w-10",
       },
     },
