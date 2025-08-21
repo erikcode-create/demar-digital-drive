@@ -82,28 +82,23 @@ const handler = async (req: Request): Promise<Response> => {
       </div>
     `;
 
-    // Helper: prefer sending from business domain; gracefully fallback until domain is verified
-    const sendWithFallback = async (params: { to: string[]; subject: string; html: string; purpose: 'team' | 'customer' }) => {
-      // Attempt to send from info@DeMarTransportation.com
-      let response = await resend.emails.send({
-        from: 'DeMar Transportation <info@DeMarTransportation.com>',
-        to: params.to,
-        subject: params.subject,
-        html: params.html,
-      });
-
-      if (response.error && (response.error as any).statusCode === 403) {
-        console.log(`Not authorized to send from DeMarTransportation.com, falling back for ${params.purpose}`, response);
-        // Fallback: verified Resend sender with Reply-To so recipients can reply to your domain address
-        response = await resend.emails.send({
-          from: 'DeMar Transportation <onboarding@resend.dev>',
+    // Send using business domain with small retry to handle rate limits
+    const sendEmail = async (params: { to: string[]; subject: string; html: string; purpose: 'team' | 'customer' }) => {
+      const attempt = async () => {
+        return await resend.emails.send({
+          from: 'DeMar Transportation <info@DeMarTransportation.com>',
           to: params.to,
           subject: params.subject,
           html: params.html,
-          reply_to: 'info@DeMarTransportation.com',
-        } as any);
-      }
+        });
+      };
 
+      let response = await attempt();
+      if (response.error && (response.error as any).statusCode === 429) {
+        console.log(`Rate limited on ${params.purpose} email, retrying...`, response.error);
+        await new Promise((r) => setTimeout(r, 600));
+        response = await attempt();
+      }
       return response;
     };
 
@@ -111,13 +106,13 @@ const handler = async (req: Request): Promise<Response> => {
     const teamEmails = ['Colby@DeMarTransportation.com', 'info@DeMarTransportation.com', 'Erik@DeMarTransportation.com'];
 
     const [teamResponse, customerResponse] = await Promise.all([
-      sendWithFallback({
+      sendEmail({
         to: teamEmails,
         subject: `New Quote Request - ${quoteData.contactName} (${quoteData.serviceType})`,
         html: teamEmailHtml,
         purpose: 'team',
       }),
-      sendWithFallback({
+      sendEmail({
         to: [quoteData.email],
         subject: 'Quote Request Received - DeMar Transportation',
         html: customerEmailHtml,
