@@ -82,28 +82,14 @@ const handler = async (req: Request): Promise<Response> => {
       </div>
     `;
 
-    // Helper: send email from business domain, fallback to Resend default if domain not verified
-    const sendWithFallback = async (params: { to: string[]; subject: string; html: string; purpose: 'team' | 'customer' }) => {
-      // Try to send from info@DeMarTransportation.com
-      let response = await resend.emails.send({
-        from: 'DeMar Transportation <info@DeMarTransportation.com>',
+    // Use a verified sender to avoid domain authorization errors until domain is verified
+    const sendEmail = async (params: { to: string[]; subject: string; html: string; purpose: 'team' | 'customer' }) => {
+      const response = await resend.emails.send({
+        from: 'DeMar Transportation <onboarding@resend.dev>',
         to: params.to,
         subject: params.subject,
         html: params.html,
       });
-
-      if (response.error && (response.error as any).statusCode === 403) {
-        console.log(`Not authorized to send from DeMarTransportation.com, falling back for ${params.purpose}`, response);
-        // Fallback: use verified Resend sender and set reply-to to info@DeMarTransportation.com
-        response = await resend.emails.send({
-          from: 'DeMar Transportation <onboarding@resend.dev>',
-          to: params.to,
-          subject: params.subject,
-          html: params.html,
-          reply_to: 'info@DeMarTransportation.com',
-        } as any);
-      }
-
       return response;
     };
 
@@ -111,13 +97,13 @@ const handler = async (req: Request): Promise<Response> => {
     const teamEmails = ['Colby@DeMarTransportation.com', 'info@DeMarTransportation.com', 'Erik@DeMarTransportation.com'];
 
     const [teamResponse, customerResponse] = await Promise.all([
-      sendWithFallback({
+      sendEmail({
         to: teamEmails,
         subject: `New Quote Request - ${quoteData.contactName} (${quoteData.serviceType})`,
         html: teamEmailHtml,
         purpose: 'team',
       }),
-      sendWithFallback({
+      sendEmail({
         to: [quoteData.email],
         subject: 'Quote Request Received - DeMar Transportation',
         html: customerEmailHtml,
