@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import demarLogo from "@/assets/demar-logo.png";
 
 const Footer = () => {
   return (
@@ -10,7 +9,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src={demarLogo} alt="DeMar Transportation" className="h-12 w-12" />
+              <img src="/lovable-uploads/d409271f-b234-4ccb-a60d-5adacce24eb6.png" alt="DeMar Transportation" className="h-12 w-12" />
               <div>
                 <h3 className="text-xl font-bold">DeMar Transportation</h3>
                 <p className="text-primary-foreground/80 text-sm">Professional Freight Transportation</p>
