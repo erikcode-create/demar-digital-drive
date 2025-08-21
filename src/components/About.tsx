@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Quote, CheckCircle, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const features = [
@@ -39,7 +40,7 @@ const About = () => {
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               We focus on a clear, concise, and professional communication style. 
               Our team is friendly, approachable, and easy to speak to. We take pride 
-              in our clear, American-accented communication, ensuring that every 
+              in our clear, professional communication, ensuring that every 
               conversation is smooth and hassle-free.
             </p>
 
@@ -61,8 +62,8 @@ const About = () => {
                 <Phone className="h-5 w-5 mr-2" />
                 Call (775) 230-4767
               </Button>
-              <Button variant="outline" size="xl">
-                Request Quote Online
+              <Button variant="outline" size="xl" asChild>
+                <Link to="/quote">Request Quote Online</Link>
               </Button>
             </div>
           </div>

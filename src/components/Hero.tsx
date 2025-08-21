@@ -17,14 +17,14 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center text-white animate-fade-in">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            DESIGNED TO RESPOND
+            DRIVEN BY PURPOSE
             <br />
-            <span className="text-accent">BUILT TO DELIVER</span>
+            <span className="text-accent">DELIVERING RESULTS</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 max-w-3xl mx-auto">
             A Safety First Transportation Solutions Provider. Professional freight transportation 
-            services delivered with American reliability and clear communication.
+            services delivered with reliability and clear communication.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -53,7 +53,7 @@ const Hero = () => {
             <div className="flex flex-col items-center p-6 bg-white/10 rounded-lg backdrop-blur-sm">
               <Users className="h-12 w-12 text-accent mb-4" />
               <h3 className="text-lg font-semibold mb-2">US Based Team</h3>
-              <p className="text-primary-foreground/80">All English speaking, American-based drivers</p>
+              <p className="text-primary-foreground/80">All English speaking, US-based drivers</p>
             </div>
           </div>
         </div>
