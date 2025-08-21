@@ -125,26 +125,6 @@ const LandstarSidebar = () => {
               </div>
             ))}
           </div>
-
-          {/* Quick Actions at Bottom */}
-          <div className="mt-6 pt-4 border-t border-primary-foreground/20">
-            <div className="space-y-2">
-              <Button 
-                variant="ghost" 
-                className="w-full justify-center p-2 text-primary-foreground hover:bg-primary-foreground/10"
-                onClick={() => window.location.href = 'tel:7752304767'}
-              >
-                <Phone className="h-4 w-4 text-accent" />
-              </Button>
-              
-              <Button 
-                variant="ghost" 
-                className="w-full justify-center p-2 text-primary-foreground hover:bg-primary-foreground/10"
-              >
-                <FileText className="h-4 w-4 text-accent" />
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
 
