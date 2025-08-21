@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LandstarSidebar from "@/components/LandstarSidebar";
@@ -26,11 +28,51 @@ const QuoteRequest = () => {
     commodityType: "",
     specialRequirements: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Quote request submitted:", formData);
+    setIsSubmitting(true);
+    
+    try {
+      const { data, error } = await supabase.functions.invoke('send-quote-request', {
+        body: formData
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Quote Request Submitted!",
+        description: "We've received your request and will get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        contactName: "",
+        company: "",
+        email: "",
+        phone: "",
+        serviceType: "",
+        pickupLocation: "",
+        deliveryLocation: "",
+        pickupDate: "",
+        weight: "",
+        dimensions: "",
+        commodityType: "",
+        specialRequirements: ""
+      });
+      
+    } catch (error: any) {
+      console.error("Error submitting quote request:", error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your request. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -214,8 +256,8 @@ const QuoteRequest = () => {
                     <Button type="button" variant="outline" asChild>
                       <Link to="/">Cancel</Link>
                     </Button>
-                    <Button type="submit" variant="cta" size="lg">
-                      Submit Quote Request
+                    <Button type="submit" variant="cta" size="lg" disabled={isSubmitting}>
+                      {isSubmitting ? "Submitting..." : "Submit Quote Request"}
                     </Button>
                   </div>
                 </form>
