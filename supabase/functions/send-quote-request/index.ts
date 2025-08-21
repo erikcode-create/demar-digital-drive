@@ -6,6 +6,7 @@ const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
 interface QuoteRequest {
@@ -81,32 +82,51 @@ const handler = async (req: Request): Promise<Response> => {
       </div>
     `;
 
-    // Send email to team members
+    // Helper: send email from business domain, fallback to Resend default if domain not verified
+    const sendWithFallback = async (params: { to: string[]; subject: string; html: string; purpose: 'team' | 'customer' }) => {
+      // Try to send from info@DeMarTransportation.com
+      let response = await resend.emails.send({
+        from: 'DeMar Transportation <info@DeMarTransportation.com>',
+        to: params.to,
+        subject: params.subject,
+        html: params.html,
+      });
+
+      if (response.error && (response.error as any).statusCode === 403) {
+        console.log(`Not authorized to send from DeMarTransportation.com, falling back for ${params.purpose}`, response);
+        // Fallback: use verified Resend sender and set reply-to to info@DeMarTransportation.com
+        response = await resend.emails.send({
+          from: 'DeMar Transportation <onboarding@resend.dev>',
+          to: params.to,
+          subject: params.subject,
+          html: params.html,
+          reply_to: 'info@DeMarTransportation.com',
+        } as any);
+      }
+
+      return response;
+    };
+
+    // Send emails concurrently
     const teamEmails = ['Colby@DeMarTransportation.com', 'info@DeMarTransportation.com', 'Erik@DeMarTransportation.com'];
-    
-    const teamEmailPromise = resend.emails.send({
-      from: 'DeMar Transportation <info@DeMarTransportation.com>',
-      to: teamEmails,
-      subject: `New Quote Request - ${quoteData.contactName} (${quoteData.serviceType})`,
-      html: teamEmailHtml,
-    });
 
-    // Send confirmation email to customer
-    const customerEmailPromise = resend.emails.send({
-      from: 'DeMar Transportation <info@DeMarTransportation.com>',
-      to: [quoteData.email],
-      subject: 'Quote Request Received - DeMar Transportation',
-      html: customerEmailHtml,
-    });
-
-    // Send both emails concurrently
     const [teamResponse, customerResponse] = await Promise.all([
-      teamEmailPromise,
-      customerEmailPromise
+      sendWithFallback({
+        to: teamEmails,
+        subject: `New Quote Request - ${quoteData.contactName} (${quoteData.serviceType})`,
+        html: teamEmailHtml,
+        purpose: 'team',
+      }),
+      sendWithFallback({
+        to: [quoteData.email],
+        subject: 'Quote Request Received - DeMar Transportation',
+        html: customerEmailHtml,
+        purpose: 'customer',
+      }),
     ]);
 
-    console.log("Team email sent:", teamResponse);
-    console.log("Customer email sent:", customerResponse);
+    console.log("Team email result:", teamResponse);
+    console.log("Customer email result:", customerResponse);
 
     if (teamResponse.error || customerResponse.error) {
       throw new Error(`Email sending failed: ${teamResponse.error?.message || customerResponse.error?.message}`);
