@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Shield, Clock, Users } from "lucide-react";
-import heroTruck from "@/assets/hero-truck-final.jpg";
+import heroTruck from "@/assets/hero-truck.jpg";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
