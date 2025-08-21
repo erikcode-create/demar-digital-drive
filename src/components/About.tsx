@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Quote, CheckCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import ApplyToDriveForm from "./ApplyToDriveForm";
 
 const About = () => {
   const features = [
@@ -70,52 +71,14 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right Column - Stats & Process */}
+          {/* Right Column - Apply to Drive Form */}
           <div className="animate-slide-in-right">
-            <Card className="mb-8 shadow-[var(--shadow-card)]">
+            <Card className="shadow-[var(--shadow-card)]">
               <CardContent className="p-8">
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-accent mb-2">14+</div>
-                  <p className="text-muted-foreground">Years of Experience</p>
-                </div>
+                <h3 className="text-2xl font-bold text-primary mb-6 text-center">Apply to Drive</h3>
+                <ApplyToDriveForm />
               </CardContent>
             </Card>
-
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-primary mb-6">We Make Life Easier</h3>
-              
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 bg-accent/5 rounded-lg">
-                  <div className="bg-accent text-accent-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg">
-                    1
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary mb-1">Call Colby</h4>
-                    <p className="text-muted-foreground">Get discounted rates for working directly with us</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 bg-accent/5 rounded-lg">
-                  <div className="bg-accent text-accent-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg">
-                    2
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary mb-1">Agree on Price</h4>
-                    <p className="text-muted-foreground">Transparent pricing with no hidden fees</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 bg-accent/5 rounded-lg">
-                  <div className="bg-accent text-accent-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold text-lg">
-                    3
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary mb-1">We Deliver</h4>
-                    <p className="text-muted-foreground">Professional service from pickup to delivery</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
