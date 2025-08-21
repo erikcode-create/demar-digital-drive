@@ -83,42 +83,52 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     // Send using business domain with small retry to handle rate limits
-    const sendEmail = async (params: { to: string[]; subject: string; html: string; purpose: 'team' | 'customer' }) => {
-      const attempt = async () => {
-        return await resend.emails.send({
-          from: 'DeMar Transportation <info@DeMarTransportation.com>',
-          to: params.to,
-          subject: params.subject,
-          html: params.html,
-        });
-      };
+const sendEmail = async (params: { to: string[]; subject: string; html: string; purpose: 'team' | 'customer' }) => {
+  const attempt = async () => {
+    return await resend.emails.send({
+      from: 'DeMar Transportation <info@demartransportation.com>',
+      to: params.to,
+      subject: params.subject,
+      html: params.html,
+      reply_to: 'info@demartransportation.com',
+    } as any);
+  };
 
-      let response = await attempt();
-      if (response.error && (response.error as any).statusCode === 429) {
-        console.log(`Rate limited on ${params.purpose} email, retrying...`, response.error);
-        await new Promise((r) => setTimeout(r, 600));
-        response = await attempt();
-      }
-      return response;
-    };
+  let response = await attempt();
+  let retries = 0;
+  while (
+    response.error &&
+    (((response.error as any).statusCode === 429) || ((response.error as any).name === 'rate_limit_exceeded')) &&
+    retries < 2
+  ) {
+    const delay = 700 * (retries + 1);
+    console.log(`Rate limited on ${params.purpose} email, retrying in ${delay}ms...`, response.error);
+    await new Promise((r) => setTimeout(r, delay));
+    response = await attempt();
+    retries++;
+  }
+  return response;
+};
 
     // Send emails concurrently
     const teamEmails = ['Colby@DeMarTransportation.com', 'info@DeMarTransportation.com', 'Erik@DeMarTransportation.com'];
 
-    const [teamResponse, customerResponse] = await Promise.all([
-      sendEmail({
-        to: teamEmails,
-        subject: `New Quote Request - ${quoteData.contactName} (${quoteData.serviceType})`,
-        html: teamEmailHtml,
-        purpose: 'team',
-      }),
-      sendEmail({
-        to: [quoteData.email],
-        subject: 'Quote Request Received - DeMar Transportation',
-        html: customerEmailHtml,
-        purpose: 'customer',
-      }),
-    ]);
+const teamResponse = await sendEmail({
+  to: teamEmails,
+  subject: `New Quote Request - ${quoteData.contactName} (${quoteData.serviceType})`,
+  html: teamEmailHtml,
+  purpose: 'team',
+});
+
+// Small delay to avoid hitting Resend's per-second limits
+await new Promise((r) => setTimeout(r, 750));
+
+const customerResponse = await sendEmail({
+  to: [quoteData.email],
+  subject: 'Quote Request Received - DeMar Transportation',
+  html: customerEmailHtml,
+  purpose: 'customer',
+});
 
     console.log("Team email result:", teamResponse);
     console.log("Customer email result:", customerResponse);
