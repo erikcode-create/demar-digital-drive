@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -44,7 +45,9 @@ const Header = () => {
             <a href="#services" className="hover:text-accent transition-colors font-medium">Services</a>
             <a href="#about" className="hover:text-accent transition-colors font-medium">About</a>
             <a href="#contact" className="hover:text-accent transition-colors font-medium">Contact</a>
-            <Button variant="cta" size="lg">Request Quote</Button>
+            <Button variant="cta" size="lg" asChild>
+              <Link to="/quote">Request Quote</Link>
+            </Button>
           </div>
         </div>
       </nav>
