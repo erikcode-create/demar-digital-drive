@@ -75,7 +75,7 @@ const handler = async (req: Request): Promise<Response> => {
         
         <p style="margin-top: 20px;">If you have any immediate questions, please contact us at:</p>
         <p>Email: info@DeMarTransportation.com<br>
-        Phone: Contact information from website</p>
+        Phone: ${quoteData.phone}</p>
         
         <p style="margin-top: 20px;">Thank you for choosing DeMar Transportation!</p>
         <p><em>Driven by Purpose. Delivering Results.</em></p>
