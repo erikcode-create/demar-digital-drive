@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Truck, Package, Snowflake, Building, Car, Wrench } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -71,8 +72,8 @@ const Services = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="hero" size="xl" className="animate-pulse-glow">
-            Get Quote for Your Shipment
+          <Button asChild variant="hero" size="xl" className="animate-pulse-glow">
+            <Link to="/quote">Get Quote for Your Shipment</Link>
           </Button>
         </div>
       </div>

@@ -58,9 +58,11 @@ const About = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" className="animate-pulse-glow">
-                <Phone className="h-5 w-5 mr-2" />
-                Call (775) 230-4767
+              <Button variant="hero" size="xl" className="animate-pulse-glow" asChild>
+                <a href="tel:+17752304767">
+                  <Phone className="h-5 w-5 mr-2" />
+                  Call (775) 230-4767
+                </a>
               </Button>
               <Button variant="outline" size="xl" asChild>
                 <Link to="/quote">Request Quote Online</Link>

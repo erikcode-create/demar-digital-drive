@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Shield, Clock, Users } from "lucide-react";
 import heroTruck from "@/assets/hero-truck.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -28,11 +29,21 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button variant="hero" size="xl" className="animate-scale-in">
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="animate-scale-in"
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Why DeMar Transportation?
             </Button>
-            <Button variant="outline" size="xl" className="bg-white/10 border-white text-white hover:bg-white hover:text-primary animate-scale-in">
-              Call (775) 230-4767
+            <Button 
+              asChild
+              variant="outline" 
+              size="xl" 
+              className="bg-white/10 border-white text-white hover:bg-white hover:text-primary animate-scale-in"
+            >
+              <a href="tel:+17752304767">Call (775) 230-4767</a>
             </Button>
           </div>
 
