@@ -65,12 +65,12 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © 2024 DeMar Transportation. All rights reserved.
+              © 2025 DeMar Transportation. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-primary-foreground/60">
               <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-accent transition-colors">DOT Information</a>
+              <a href="https://www.carriersource.io/carriers/demar-transportation-4392091" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">DOT Information</a>
             </div>
           </div>
         </div>
