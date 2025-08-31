@@ -19,7 +19,7 @@ import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
 import { User, LogIn } from 'lucide-react';
-
+import { supabase } from '@/integrations/supabase/client';
 interface LoginDialogProps {
   children?: React.ReactNode;
 }
@@ -63,6 +63,25 @@ export const LoginDialog = ({ children }: LoginDialogProps) => {
       setOpen(false);
       setEmail('');
       setPassword('');
+    }
+    setLoading(false);
+  };
+
+  const handleResend = async () => {
+    if (!email) {
+      toast.error('Please enter your email above first.');
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase.auth.resend({
+      type: 'signup',
+      email,
+      options: { emailRedirectTo: `${window.location.origin}/` },
+    });
+    if (error) {
+      toast.error(error.message);
+    } else {
+      toast.success('Verification email resent. Check your inbox/spam.');
     }
     setLoading(false);
   };
@@ -148,6 +167,9 @@ export const LoginDialog = ({ children }: LoginDialogProps) => {
               </div>
               <Button type="submit" className="w-full" disabled={loading}>
                 {loading ? 'Creating Account...' : 'Create Account'}
+              </Button>
+              <Button type="button" variant="outline" className="w-full" onClick={handleResend} disabled={loading}>
+                {loading ? 'Resending...' : 'Resend Verification Email'}
               </Button>
             </form>
           </TabsContent>
