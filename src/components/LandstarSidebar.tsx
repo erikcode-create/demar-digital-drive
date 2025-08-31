@@ -151,10 +151,15 @@ const LandstarSidebar = () => {
                   
                   <div className="grid gap-4">
                     {section.items.map((item, index) => (
-                      <div
-                        key={index}
-                        className="p-4 rounded-lg border hover:shadow-md cursor-pointer transition-all group hover:bg-muted/50"
-                      >
+                       <div
+                         key={index}
+                         className="p-4 rounded-lg border hover:shadow-md cursor-pointer transition-all group hover:bg-muted/50"
+                         onClick={() => {
+                           if (item.title === "Customer Portal") {
+                             window.location.href = "/portal";
+                           }
+                         }}
+                       >
                         <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors mb-2">
                           {item.title}
                         </div>
