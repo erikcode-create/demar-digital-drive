@@ -89,8 +89,8 @@ const LandstarSidebar = () => {
 
   return (
     <>
-      {/* Main Sidebar */}
-      <div className="fixed left-0 top-0 h-full w-16 bg-primary/95 backdrop-blur-sm z-50 overflow-y-auto shadow-2xl"
+      {/* Main Sidebar - Hidden on mobile */}
+      <div className="hidden md:block fixed left-0 top-0 h-full w-16 bg-primary/95 backdrop-blur-sm z-50 overflow-y-auto shadow-2xl"
            onMouseLeave={handleMouseLeave}>
         <div className="p-2">
           {/* Header - Hidden in compact mode */}
@@ -128,10 +128,10 @@ const LandstarSidebar = () => {
         </div>
       </div>
 
-      {/* Mega Menu Panel */}
+      {/* Mega Menu Panel - Hidden on mobile */}
       {hoveredSection && (
         <div
-          className="fixed left-16 top-0 h-full w-72 bg-background border-l border-border z-40 shadow-xl animate-slide-in-right"
+          className="hidden md:block fixed left-16 top-0 h-full w-72 bg-background border-l border-border z-40 shadow-xl animate-slide-in-right"
           onMouseEnter={() => setHoveredSection(hoveredSection)}
           onMouseLeave={handleMouseLeave}
         >

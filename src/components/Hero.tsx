@@ -17,13 +17,13 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white animate-fade-in">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             DRIVEN BY PURPOSE
             <br />
             <span className="text-accent">DELIVERING RESULTS</span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 text-primary-foreground/90 max-w-3xl mx-auto px-4">
             A Safety First Transportation Solutions Provider. Professional freight transportation 
             services delivered with reliability and clear communication.
           </p>
