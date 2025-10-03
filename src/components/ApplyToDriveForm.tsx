@@ -28,6 +28,7 @@ const ApplyToDriveForm = () => {
     availableStartDate: "",
     willingToTravel: "",
     winterDrivingExperience: "",
+    chainsExperience: "",
   });
 
   const states = [
@@ -127,6 +128,7 @@ const ApplyToDriveForm = () => {
         availableStartDate: "",
         willingToTravel: "",
         winterDrivingExperience: "",
+        chainsExperience: "",
       });
     } catch (error: any) {
       console.error('Error submitting application:', error);
@@ -379,19 +381,35 @@ const ApplyToDriveForm = () => {
           </Select>
         </div>
 
-        <div>
-          <Label htmlFor="winterDrivingExperience">Winter Driving & Chains Experience *</Label>
-          <Select value={formData.winterDrivingExperience} onValueChange={(value) => handleInputChange("winterDrivingExperience", value)}>
-            <SelectTrigger className="mt-1">
-              <SelectValue placeholder="Select experience level" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="extensive">Extensive - Regularly drive in winter conditions and proficient with chains</SelectItem>
-              <SelectItem value="moderate">Moderate - Some winter driving, comfortable with chains</SelectItem>
-              <SelectItem value="limited">Limited - Minimal winter driving experience</SelectItem>
-              <SelectItem value="none">None - No winter driving or chain experience</SelectItem>
-            </SelectContent>
-          </Select>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="winterDrivingExperience">Winter Weather Driving Experience *</Label>
+            <Select value={formData.winterDrivingExperience} onValueChange={(value) => handleInputChange("winterDrivingExperience", value)}>
+              <SelectTrigger className="mt-1">
+                <SelectValue placeholder="Select experience level" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="extensive">Extensive - Regular operation in snow, ice, and adverse winter conditions</SelectItem>
+                <SelectItem value="moderate">Moderate - Occasional winter weather driving experience</SelectItem>
+                <SelectItem value="limited">Limited - Minimal exposure to winter driving conditions</SelectItem>
+                <SelectItem value="none">None - No winter weather driving experience</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div>
+            <Label htmlFor="chainsExperience">Tire Chains Installation Experience *</Label>
+            <Select value={formData.chainsExperience} onValueChange={(value) => handleInputChange("chainsExperience", value)}>
+              <SelectTrigger className="mt-1">
+                <SelectValue placeholder="Select experience level" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="proficient">Proficient - Can install and remove chains independently</SelectItem>
+                <SelectItem value="trained">Trained - Have been trained but need additional practice</SelectItem>
+                <SelectItem value="limited">Limited - Basic familiarity only</SelectItem>
+                <SelectItem value="none">None - No tire chains experience</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
