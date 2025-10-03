@@ -27,6 +27,7 @@ const ApplyToDriveForm = () => {
     preferredRouteType: "",
     availableStartDate: "",
     willingToTravel: "",
+    winterDrivingExperience: "",
   });
 
   const states = [
@@ -125,6 +126,7 @@ const ApplyToDriveForm = () => {
         preferredRouteType: "",
         availableStartDate: "",
         willingToTravel: "",
+        winterDrivingExperience: "",
       });
     } catch (error: any) {
       console.error('Error submitting application:', error);
@@ -373,6 +375,21 @@ const ApplyToDriveForm = () => {
                   {route}
                 </SelectItem>
               ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div>
+          <Label htmlFor="winterDrivingExperience">Winter Driving & Chains Experience *</Label>
+          <Select value={formData.winterDrivingExperience} onValueChange={(value) => handleInputChange("winterDrivingExperience", value)}>
+            <SelectTrigger className="mt-1">
+              <SelectValue placeholder="Select experience level" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="extensive">Extensive - Regularly drive in winter conditions and proficient with chains</SelectItem>
+              <SelectItem value="moderate">Moderate - Some winter driving, comfortable with chains</SelectItem>
+              <SelectItem value="limited">Limited - Minimal winter driving experience</SelectItem>
+              <SelectItem value="none">None - No winter driving or chain experience</SelectItem>
             </SelectContent>
           </Select>
         </div>
