@@ -35,7 +35,7 @@ const Hero = () => {
               className="animate-scale-in"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Why DeMar Transportation?
+              Drivers, Apply Here
             </Button>
             <Button 
               asChild
@@ -71,7 +71,7 @@ const Hero = () => {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center text-accent">
+          <div className="flex flex-col items-center text-accent text-center">
             <span className="text-sm mb-2">SCROLL DOWN TO LEARN MORE</span>
             <ChevronDown className="h-6 w-6" />
           </div>
