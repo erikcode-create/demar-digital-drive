@@ -16,6 +16,7 @@ const ApplyToDriveForm = () => {
     phone: "",
     zipCode: "",
     state: "",
+    driverType: "",
     yearsExperience: "",
     cdlNumber: "",
     cdlClass: "",
@@ -116,6 +117,7 @@ const ApplyToDriveForm = () => {
         phone: "",
         zipCode: "",
         state: "",
+        driverType: "",
         yearsExperience: "",
         cdlNumber: "",
         cdlClass: "",
@@ -220,6 +222,19 @@ const ApplyToDriveForm = () => {
             </SelectContent>
           </Select>
         </div>
+      </div>
+
+      <div>
+        <Label htmlFor="driverType">Driver Type *</Label>
+        <Select value={formData.driverType} onValueChange={(value) => handleInputChange("driverType", value)}>
+          <SelectTrigger className="mt-1">
+            <SelectValue placeholder="Select driver type" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="company">Company Driver</SelectItem>
+            <SelectItem value="owner-operator">Owner Operator</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
       <div>
