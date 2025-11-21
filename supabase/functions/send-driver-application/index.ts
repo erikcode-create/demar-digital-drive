@@ -16,7 +16,20 @@ interface DriverApplication {
   phone: string;
   zipCode: string;
   state: string;
+  driverType: string;
   yearsExperience: string;
+  cdlNumber: string;
+  cdlClass: string;
+  cdlState: string;
+  endorsements: string[];
+  accidentsLastThreeYears: string;
+  violationsLastThreeYears: string;
+  freightExperience: string[];
+  preferredRouteType: string;
+  availableStartDate: string;
+  willingToTravel: string;
+  winterDrivingExperience: string;
+  chainsExperience: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -32,14 +45,37 @@ const handler = async (req: Request): Promise<Response> => {
     const teamEmailHtml = `
       <h2>New Driver Application from ${applicationData.firstName} ${applicationData.lastName}</h2>
       <div style="font-family: Arial, sans-serif; max-width: 600px;">
-        <h3>Applicant Information</h3>
+        <h3>Contact Information</h3>
         <p><strong>Name:</strong> ${applicationData.firstName} ${applicationData.lastName}</p>
         <p><strong>Email:</strong> ${applicationData.email}</p>
         <p><strong>Phone:</strong> ${applicationData.phone}</p>
         <p><strong>Location:</strong> ${applicationData.zipCode}, ${applicationData.state}</p>
+        
+        <h3>Driver Type & Experience</h3>
+        <p><strong>Driver Type:</strong> ${applicationData.driverType}</p>
         <p><strong>Years of Experience:</strong> ${applicationData.yearsExperience}</p>
         
-        <p style="margin-top: 20px;">Please follow up with this candidate as soon as possible.</p>
+        <h3>CDL Information</h3>
+        <p><strong>CDL Number:</strong> ${applicationData.cdlNumber}</p>
+        <p><strong>CDL Class:</strong> ${applicationData.cdlClass}</p>
+        <p><strong>CDL State:</strong> ${applicationData.cdlState}</p>
+        <p><strong>Endorsements:</strong> ${applicationData.endorsements.join(', ') || 'None'}</p>
+        
+        <h3>Driving Record</h3>
+        <p><strong>Accidents (Last 3 Years):</strong> ${applicationData.accidentsLastThreeYears}</p>
+        <p><strong>Violations (Last 3 Years):</strong> ${applicationData.violationsLastThreeYears}</p>
+        
+        <h3>Experience & Preferences</h3>
+        <p><strong>Freight Experience:</strong> ${applicationData.freightExperience.join(', ') || 'None specified'}</p>
+        <p><strong>Preferred Route Type:</strong> ${applicationData.preferredRouteType}</p>
+        <p><strong>Willing to Travel:</strong> ${applicationData.willingToTravel}</p>
+        <p><strong>Winter Driving Experience:</strong> ${applicationData.winterDrivingExperience}</p>
+        <p><strong>Tire Chains Experience:</strong> ${applicationData.chainsExperience}</p>
+        <p><strong>Available Start Date:</strong> ${applicationData.availableStartDate}</p>
+        
+        <p style="margin-top: 20px; padding: 10px; background-color: #f0f0f0; border-left: 4px solid #003366;">
+          <strong>Action Required:</strong> Please follow up with this candidate as soon as possible.
+        </p>
       </div>
     `;
 
@@ -98,7 +134,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const teamResponse = await sendEmail({
       to: teamEmails,
-      subject: `New Driver Application - ${applicationData.firstName} ${applicationData.lastName} (${applicationData.yearsExperience})`,
+      subject: `New Driver Application - ${applicationData.firstName} ${applicationData.lastName} (${applicationData.driverType}, ${applicationData.yearsExperience})`,
       html: teamEmailHtml,
       purpose: 'team',
     });
