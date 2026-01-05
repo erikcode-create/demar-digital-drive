@@ -19,13 +19,11 @@ const ApplyToDriveForm = () => {
     driverType: "",
     yearsExperience: "",
     cdlNumber: "",
-    cdlClass: "",
     cdlState: "",
     endorsements: [] as string[],
     accidentsLastThreeYears: "",
     violationsLastThreeYears: "",
     freightExperience: [] as string[],
-    preferredRouteType: "",
     availableStartDate: "",
     willingToTravel: "",
     winterDrivingExperience: "",
@@ -50,8 +48,6 @@ const ApplyToDriveForm = () => {
     "More than 20 years"
   ];
 
-  const cdlClasses = ["Class A", "Class B", "Class C"];
-  
   const endorsementOptions = [
     "H - Hazardous Materials",
     "N - Tank Vehicle",
@@ -69,13 +65,6 @@ const ApplyToDriveForm = () => {
     "Hazmat",
     "Oversized Loads",
     "Auto Transport"
-  ];
-
-  const routeTypes = [
-    "Local (Home Daily)",
-    "Regional (Home Weekly)",
-    "OTR (Over-the-Road)",
-    "Dedicated Route"
   ];
 
   const handleInputChange = (name: string, value: string | string[]) => {
@@ -120,13 +109,11 @@ const ApplyToDriveForm = () => {
         driverType: "",
         yearsExperience: "",
         cdlNumber: "",
-        cdlClass: "",
         cdlState: "",
         endorsements: [],
         accidentsLastThreeYears: "",
         violationsLastThreeYears: "",
         freightExperience: [],
-        preferredRouteType: "",
         availableStartDate: "",
         willingToTravel: "",
         winterDrivingExperience: "",
@@ -285,21 +272,6 @@ const ApplyToDriveForm = () => {
           </div>
         </div>
 
-        <div>
-          <Label htmlFor="cdlClass">CDL Class *</Label>
-          <Select value={formData.cdlClass} onValueChange={(value) => handleInputChange("cdlClass", value)}>
-            <SelectTrigger className="mt-1">
-              <SelectValue placeholder="Select CDL class" />
-            </SelectTrigger>
-            <SelectContent>
-              {cdlClasses.map((cdlClass) => (
-                <SelectItem key={cdlClass} value={cdlClass}>
-                  {cdlClass}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
 
         <div>
           <Label>Endorsements</Label>
@@ -380,21 +352,6 @@ const ApplyToDriveForm = () => {
           </div>
         </div>
 
-        <div>
-          <Label htmlFor="preferredRouteType">Preferred Route Type *</Label>
-          <Select value={formData.preferredRouteType} onValueChange={(value) => handleInputChange("preferredRouteType", value)}>
-            <SelectTrigger className="mt-1">
-              <SelectValue placeholder="Select route type" />
-            </SelectTrigger>
-            <SelectContent>
-              {routeTypes.map((route) => (
-                <SelectItem key={route} value={route}>
-                  {route}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>

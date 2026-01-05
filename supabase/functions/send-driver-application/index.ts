@@ -19,13 +19,12 @@ interface DriverApplication {
   driverType: string;
   yearsExperience: string;
   cdlNumber: string;
-  cdlClass: string;
   cdlState: string;
   endorsements: string[];
   accidentsLastThreeYears: string;
   violationsLastThreeYears: string;
   freightExperience: string[];
-  preferredRouteType: string;
+  availableStartDate: string;
   availableStartDate: string;
   willingToTravel: string;
   winterDrivingExperience: string;
@@ -57,7 +56,6 @@ const handler = async (req: Request): Promise<Response> => {
         
         <h3>CDL Information</h3>
         <p><strong>CDL Number:</strong> ${applicationData.cdlNumber}</p>
-        <p><strong>CDL Class:</strong> ${applicationData.cdlClass}</p>
         <p><strong>CDL State:</strong> ${applicationData.cdlState}</p>
         <p><strong>Endorsements:</strong> ${applicationData.endorsements.join(', ') || 'None'}</p>
         
@@ -67,7 +65,6 @@ const handler = async (req: Request): Promise<Response> => {
         
         <h3>Experience & Preferences</h3>
         <p><strong>Freight Experience:</strong> ${applicationData.freightExperience.join(', ') || 'None specified'}</p>
-        <p><strong>Preferred Route Type:</strong> ${applicationData.preferredRouteType}</p>
         <p><strong>Willing to Travel:</strong> ${applicationData.willingToTravel}</p>
         <p><strong>Winter Driving Experience:</strong> ${applicationData.winterDrivingExperience}</p>
         <p><strong>Tire Chains Experience:</strong> ${applicationData.chainsExperience}</p>
@@ -130,7 +127,7 @@ const handler = async (req: Request): Promise<Response> => {
     };
 
     // Send emails sequentially to avoid rate limits
-    const teamEmails = ['erik@demartransportation.com', 'colby@demartransportation.com', 'info@demartransportation.com'];
+    const teamEmails = ['erik@demartransportation.com', 'colby@demartransportation.com'];
 
     const teamResponse = await sendEmail({
       to: teamEmails,
