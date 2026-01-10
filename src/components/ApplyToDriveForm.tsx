@@ -84,6 +84,28 @@ const ApplyToDriveForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate required select fields that don't have native HTML validation
+    if (!formData.cdlState) {
+      toast({
+        title: "Missing Required Field",
+        description: "Please select your CDL State.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    if (!formData.state || !formData.driverType || !formData.yearsExperience || 
+        !formData.accidentsLastThreeYears || !formData.violationsLastThreeYears ||
+        !formData.winterDrivingExperience || !formData.chainsExperience || !formData.willingToTravel) {
+      toast({
+        title: "Missing Required Fields",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
 
     try {
