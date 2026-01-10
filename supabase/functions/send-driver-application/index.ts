@@ -40,6 +40,23 @@ const handler = async (req: Request): Promise<Response> => {
     const applicationData: DriverApplication = await req.json();
     console.log("Processing driver application:", applicationData);
 
+    // Post application data to external endpoint
+    try {
+      const externalResponse = await fetch('https://prlrorevvtfscbjaxqci.supabase.co/functions/v1/submit-application', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(applicationData),
+      });
+      console.log("External endpoint response status:", externalResponse.status);
+      const externalResult = await externalResponse.text();
+      console.log("External endpoint response:", externalResult);
+    } catch (externalError) {
+      console.error("Error posting to external endpoint:", externalError);
+      // Continue with email sending even if external post fails
+    }
+
     // Email to team members
     const teamEmailHtml = `
       <h2>New Driver Application from ${applicationData.firstName} ${applicationData.lastName}</h2>
