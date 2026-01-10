@@ -65,7 +65,7 @@ const handler = async (req: Request): Promise<Response> => {
         
         <h3>Experience & Preferences</h3>
         <p><strong>Freight Experience:</strong> ${applicationData.freightExperience.join(', ') || 'None specified'}</p>
-        <p><strong>Willing to Travel:</strong> ${applicationData.willingToTravel}</p>
+        <p><strong>Willing to Travel Nationwide:</strong> ${applicationData.willingToTravel}</p>
         <p><strong>Winter Driving Experience:</strong> ${applicationData.winterDrivingExperience}</p>
         <p><strong>Tire Chains Experience:</strong> ${applicationData.chainsExperience}</p>
         <p><strong>Available Start Date:</strong> ${applicationData.availableStartDate}</p>
