@@ -1,13 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { LoginDialog } from "@/components/auth/LoginDialog";
-import { useAuth } from "@/contexts/AuthContext";
+import { LogIn } from "lucide-react";
 
 
 const Header = () => {
-  const { user } = useAuth();
-
   return (
     <header className="bg-primary text-primary-foreground shadow-[var(--shadow-hero)]">
       {/* Top bar with contact info */}
@@ -29,16 +26,13 @@ const Header = () => {
             </div>
           </div>
           <div className="flex gap-2 md:gap-4">
-            {user ? (
-              <Button variant="nav" size="sm" asChild>
-                <Link to="/portal">
-                  <span className="hidden sm:inline">My Portal</span>
-                  <span className="sm:hidden">Portal</span>
-                </Link>
-              </Button>
-            ) : (
-              <LoginDialog />
-            )}
+            <Button variant="nav" size="sm" asChild>
+              <a href="https://portal.demartransportation.com">
+                <LogIn className="h-4 w-4 mr-2" />
+                <span className="hidden sm:inline">Login</span>
+                <span className="sm:hidden">Login</span>
+              </a>
+            </Button>
             <Button variant="nav" size="sm" className="hidden sm:inline-flex">Track Shipment</Button>
           </div>
         </div>
