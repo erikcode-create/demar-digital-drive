@@ -425,7 +425,7 @@ const plainTextAnswers: Record<string, string> = {
   "What are your hours of operation?":
     "Our office is open Monday through Friday from 7:00 AM to 6:00 PM PST. However, our dispatch team is available 24 hours a day, 7 days a week to handle urgent freight needs and provide shipment updates.",
   "Is DeMar Transportation a broker or a carrier?":
-    "DeMar Transportation operates as a freight carrier with our own fleet and drivers. We work with Landstar as an authorized agent, giving us access to one of the largest carrier networks in North America.",
+    "DeMar Transportation operates as a third-party logistics provider (3PL) with our own fleet and drivers, plus access to a vast nationwide carrier network spanning North America.",
   "What is the difference between dry van and reefer shipping?":
     "A dry van is a standard enclosed trailer used for non-temperature-sensitive freight. A reefer (refrigerated trailer) has a built-in cooling and heating unit that maintains precise temperatures, making it essential for perishable goods like food, pharmaceuticals, and anything requiring climate control during transit.",
   "What size trailers do you have?":
