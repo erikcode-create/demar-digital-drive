@@ -77,9 +77,9 @@ export async function run() {
   for (const { name, label, shouldBeAbsent } of WARN_HEADERS) {
     const value = headers[name];
     if (shouldBeAbsent && value) {
-      checks.push({ name: label, status: "warn", detail: `Exposed: ${value}` });
+      checks.push({ name: label, status: "warn", detail: `Exposed: ${value}`, confidence: "VERIFIED", reason: null });
     } else if (shouldBeAbsent && !value) {
-      checks.push({ name: label, status: "pass", detail: "Not exposed" });
+      checks.push({ name: label, status: "pass", detail: "Not exposed", confidence: "VERIFIED", reason: null });
     }
   }
 
