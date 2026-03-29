@@ -131,12 +131,14 @@ export async function run() {
           name: "Outdated Packages",
           status: majorUpdates.length > 0 ? "warn" : "pass",
           detail: `${outdatedCount} outdated packages: ${names}${outdatedCount > 5 ? "..." : ""}`,
+          confidence: "VERIFIED",
+          reason: null,
         });
       } else {
-        checks.push({ name: "Outdated Packages", status: "pass", detail: "All packages up to date" });
+        checks.push({ name: "Outdated Packages", status: "pass", detail: "All packages up to date", confidence: "VERIFIED", reason: null });
       }
     } catch {
-      checks.push({ name: "Outdated Packages", status: "warn", detail: "Could not check outdated packages" });
+      checks.push({ name: "Outdated Packages", status: "warn", detail: "Could not check outdated packages", confidence: "VERIFIED", reason: null });
     }
   }
 
