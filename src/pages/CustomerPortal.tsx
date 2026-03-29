@@ -24,6 +24,14 @@ const CustomerPortal = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Customer Portal | DeMar Transportation";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Access your DeMar Transportation customer portal to track shipments, view documents, and manage your freight account.');
+    }
+  }, []);
+
+  useEffect(() => {
     if (!loading && !user) {
       navigate('/');
       toast.error('Please sign in to access the customer portal');
