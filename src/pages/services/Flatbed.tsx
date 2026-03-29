@@ -97,7 +97,7 @@ const Flatbed = () => {
                   Flatbed freight represents one of the most specialized segments of the trucking industry. Unlike enclosed trailers, flatbed loads require careful planning around securement methods, tarping requirements, permit regulations, and route surveys. The driver's skill in properly securing cargo is just as important as the equipment itself, which is why DeMar Transportation works exclusively with experienced flatbed carriers who understand the stakes involved.
                 </p>
                 <p>
-                  Through our Landstar agency partnership, we access one of the largest flatbed carrier networks in North America. Landstar is widely recognized as an industry leader in open-deck transportation, with thousands of specialized flatbed owner-operators who haul steel, building materials, heavy equipment, and oversized freight every day.
+                  Through our extensive carrier network, we access one of the largest flatbed carrier pools in North America. DeMar Transportation works with thousands of specialized flatbed owner-operators who haul steel, building materials, heavy equipment, and oversized freight every day.
                 </p>
               </div>
             </div>
