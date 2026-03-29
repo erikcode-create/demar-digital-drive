@@ -79,6 +79,28 @@ function buildSummaryLine(results) {
   return parts.join(" · ");
 }
 
+// Channel-aware posting: "health" (default) or "content"
+export async function postToChannel(channel, payload) {
+  const urls = {
+    health: process.env.DISCORD_WEBHOOK_URL,
+    content: process.env.DISCORD_CONTENT_WEBHOOK_URL,
+  };
+  const webhookUrl = urls[channel];
+  if (!webhookUrl) {
+    console.error(`No webhook URL for channel "${channel}". Set DISCORD_${channel.toUpperCase()}_WEBHOOK_URL or DISCORD_WEBHOOK_URL.`);
+    return;
+  }
+  const res = await fetch(webhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Discord webhook failed for ${channel} (${res.status}): ${text}`);
+  }
+}
+
 export async function postResults(results, webhookUrl) {
   const summary = buildSummaryLine(results);
   const embeds = results.map(buildEmbed);
