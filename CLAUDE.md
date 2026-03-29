@@ -102,6 +102,48 @@ Separate system from scanners. Checks site availability every 15 minutes, tracks
 - **Discord alerts:** State-change only (site down / site recovered), plus daily summary at 8am PDT
 - **Key commands:** `cd monitoring && node uptime.mjs check` / `cd monitoring && node uptime.mjs summary`
 
+### Marketing Automation
+
+Autonomous marketing system in `monitoring/marketing/`. Uses Claude API for content generation and posts to dedicated Discord channels.
+
+#### Key Commands
+
+```bash
+cd monitoring && npm run marketing:brand-kit    # Build/refresh brand kit
+cd monitoring && npm run marketing:cro          # Run CRO audit
+cd monitoring && npm run marketing:funnels      # Run funnel generator
+cd monitoring && npm run marketing:social       # Run social media generator
+```
+
+#### Brand Kit
+
+- `monitoring/marketing/brand-kit.json` — machine-readable brand identity
+- `monitoring/marketing/brand-kit.html` — visual reference
+- Refresh with `npm run marketing:brand-kit`
+- All marketing scripts consume brand-kit.json for consistency
+
+#### Marketing Discord Channels
+
+| Channel | Env Var | Purpose |
+|---|---|---|
+| Marketing & CRO | `DISCORD_CRO_WEBHOOK_URL` | Daily CRO audit, conversion recommendations, auto-fix PRs |
+| Funnels & Landing Pages | `DISCORD_FUNNELS_WEBHOOK_URL` | Landing page freshness, new page generation |
+| Social Media | `DISCORD_SOCIAL_WEBHOOK_URL` | Daily LinkedIn post, image prompt, companion pages |
+
+#### Marketing GitHub Actions Workflows
+
+| Workflow | File | Schedule |
+|---|---|---|
+| CRO Audit | `.github/workflows/marketing-cro.yml` | Daily 10am PDT |
+| Funnels | `.github/workflows/marketing-funnels.yml` | Daily 11am PDT |
+| Social Media | `.github/workflows/marketing-social.yml` | Daily 12pm PDT |
+
+#### Safety Tiers
+
+- **Auto-commit:** Meta tag tweaks, CTA text improvements
+- **Auto-PR:** New landing pages, companion pages, significant copy changes (prefix: `[marketing-auto]`)
+- **Never auto-fix:** Pricing, legal content, business model claims, contact info
+
 ## Important Constraints
 
 - **GitHub Pages cannot set custom HTTP response headers.** CSP is set via `<meta>` tag only. Security scanners will always show missing headers like HSTS, X-Frame-Options, etc. -- this is expected.
