@@ -12,10 +12,15 @@ lib/
 scans/
   security.mjs         # HTTP headers, SSL cert, HTTPS redirect, exposed files
   dependencies.mjs     # npm audit, outdated packages (runs against project root)
-  seo.mjs              # Title, meta, OG tags, canonical, structured data, robots.txt, sitemap, broken links
+  seo.mjs              # Title, meta, OG tags, canonical, structured data, robots.txt, sitemap
   performance.mjs      # PageSpeed Insights API (mobile + desktop Core Web Vitals)
   images.mjs           # Format analysis (WebP/AVIF), alt text, lazy loading, copyright year
   accessibility.mjs    # Heading hierarchy, button labels, link accessibility, alt text, lang attr, skip nav
+  schema.mjs           # JSON-LD validation: type correctness, required props, value formats, conflicts
+  social-preview.mjs   # OG/Twitter image reachability, placeholder detection, URL consistency
+  links.mjs            # Full site crawl (3 levels, max 100 URLs), internal/external link validation, mixed content
+  freshness.mjs        # Copyright year, placeholder text, stale meta, contact info, 404 page
+  dns.mjs              # SSL certificate expiry, WHOIS domain expiry, DNS resolution, CNAME, www redirect
 ```
 
 ## Type Definitions
