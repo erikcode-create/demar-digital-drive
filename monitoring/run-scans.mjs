@@ -1,8 +1,11 @@
 import "dotenv/config";
 import { postResults } from "./lib/discord.mjs";
 
-const LIGHTWEIGHT_SCANS = ["security", "dependencies"];
-const FULL_SCANS = ["security", "dependencies", "seo", "performance", "images", "accessibility"];
+const LIGHTWEIGHT_SCANS = ["security", "dependencies", "freshness", "dns"];
+const FULL_SCANS = [
+  "security", "dependencies", "seo", "performance", "images", "accessibility",
+  "schema", "social-preview", "links", "freshness", "dns",
+];
 
 const SCAN_MODULES = {
   security: "./scans/security.mjs",
@@ -11,6 +14,11 @@ const SCAN_MODULES = {
   performance: "./scans/performance.mjs",
   images: "./scans/images.mjs",
   accessibility: "./scans/accessibility.mjs",
+  schema: "./scans/schema.mjs",
+  "social-preview": "./scans/social-preview.mjs",
+  links: "./scans/links.mjs",
+  freshness: "./scans/freshness.mjs",
+  dns: "./scans/dns.mjs",
 };
 
 function parseArgs() {
