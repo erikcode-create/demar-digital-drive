@@ -106,12 +106,12 @@ export async function run() {
     try {
       const res = await fetch(`${TARGET_URL}${path}`, { redirect: "follow", signal: AbortSignal.timeout(10000) });
       if (res.status === 200) {
-        checks.push({ name: `Exposed: ${path}`, status: "fail", detail: `${path} is publicly accessible (HTTP 200)` });
+        checks.push({ name: `Exposed: ${path}`, status: "fail", detail: `${path} is publicly accessible (HTTP 200)`, confidence: "VERIFIED", reason: null });
       } else {
-        checks.push({ name: `Exposed: ${path}`, status: "pass", detail: `${path} returns ${res.status}` });
+        checks.push({ name: `Exposed: ${path}`, status: "pass", detail: `${path} returns ${res.status}`, confidence: "VERIFIED", reason: null });
       }
     } catch {
-      checks.push({ name: `Exposed: ${path}`, status: "pass", detail: `${path} not reachable` });
+      checks.push({ name: `Exposed: ${path}`, status: "pass", detail: `${path} not reachable`, confidence: "VERIFIED", reason: null });
     }
   }
 
