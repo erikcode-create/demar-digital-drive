@@ -16,7 +16,9 @@
     "scan:social": "node run-scans.mjs --scan social-preview",
     "scan:links": "node run-scans.mjs --scan links",
     "scan:fresh": "node run-scans.mjs --scan freshness",
-    "scan:dns": "node run-scans.mjs --scan dns"
+    "scan:dns": "node run-scans.mjs --scan dns",
+    "uptime": "node uptime.mjs check",
+    "uptime:summary": "node uptime.mjs summary"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
