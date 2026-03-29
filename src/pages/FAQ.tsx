@@ -44,7 +44,7 @@ const faqCategories: FAQCategory[] = [
               flatbed
             </Link>
             , and{" "}
-            <Link to="/services/hot-shot" className="text-primary hover:underline">
+            <Link to="/services/sprinter-van" className="text-primary hover:underline">
               hot shot delivery
             </Link>{" "}
             services. We handle everything from full truckload shipments to
@@ -151,7 +151,7 @@ const faqCategories: FAQCategory[] = [
             We offer standard 53-foot dry van and reefer trailers for full
             truckload shipments, as well as flatbed trailers for oversized or
             open-deck loads. For smaller, time-sensitive shipments, our{" "}
-            <Link to="/services/hot-shot" className="text-primary hover:underline">
+            <Link to="/services/sprinter-van" className="text-primary hover:underline">
               hot shot service
             </Link>{" "}
             uses smaller equipment that can be dispatched faster and deliver
@@ -184,7 +184,7 @@ const faqCategories: FAQCategory[] = [
         answer: (
           <p>
             Absolutely. Our{" "}
-            <Link to="/services/hot-shot" className="text-primary hover:underline">
+            <Link to="/services/sprinter-van" className="text-primary hover:underline">
               hot shot delivery service
             </Link>{" "}
             is specifically built for time-critical freight. We can dispatch
@@ -204,7 +204,7 @@ const faqCategories: FAQCategory[] = [
         question: "What is a hot shot delivery?",
         answer: (
           <p>
-            <Link to="/services/hot-shot" className="text-primary hover:underline">
+            <Link to="/services/sprinter-van" className="text-primary hover:underline">
               Hot shot delivery
             </Link>{" "}
             is an expedited freight service that uses smaller, dedicated
@@ -328,7 +328,7 @@ const faqCategories: FAQCategory[] = [
         answer: (
           <p>
             We specialize in full truckload (FTL) shipments, but our{" "}
-            <Link to="/services/hot-shot" className="text-primary hover:underline">
+            <Link to="/services/sprinter-van" className="text-primary hover:underline">
               hot shot service
             </Link>{" "}
             is a great option for smaller, partial loads that still need
