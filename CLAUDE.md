@@ -77,8 +77,18 @@ Every scanner exports `run()` returning:
 |---|---|---|
 | Deploy | `.github/workflows/deploy.yml` | Push to main |
 | Website Monitor | `.github/workflows/website-monitor.yml` | Mon-Sat 7am PDT lightweight, Sun 7am PDT full |
+| Website Uptime | `.github/workflows/website-uptime.yml` | Every 15 min (check), daily 8am PDT (summary) |
 
-`website-monitor.yml` also supports `workflow_dispatch` with scan type selector.
+`website-monitor.yml` and `website-uptime.yml` both support `workflow_dispatch`.
+
+### Uptime Monitor
+
+Separate system from scanners. Checks site availability every 15 minutes, tracks state via GitHub Actions cache.
+
+- **Script:** `monitoring/uptime.mjs` (`check` or `summary` command)
+- **State:** `monitoring/uptime-state.json` (gitignored, persisted via Actions cache)
+- **Discord alerts:** State-change only (site down / site recovered), plus daily summary at 8am PDT
+- **Key commands:** `cd monitoring && node uptime.mjs check` / `cd monitoring && node uptime.mjs summary`
 
 ## Important Constraints
 
