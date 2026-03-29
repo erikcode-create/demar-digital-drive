@@ -24,8 +24,14 @@ const SENSITIVE_PATHS = [
 
 function checkSSL(hostname) {
   return new Promise((resolve) => {
-    const req = https.request({ hostname, port: 443, method: "HEAD" }, (res) => {
+    const timeout = setTimeout(() => {
+      resolve({ name: "SSL Certificate", status: "warn", detail: "SSL check timed out (10s)" });
+    }, 10000);
+
+    const req = https.request({ hostname, port: 443, method: "HEAD", timeout: 10000 }, (res) => {
       const cert = res.socket.getPeerCertificate();
+      res.resume(); // consume response to free socket
+      clearTimeout(timeout);
       if (!cert || !cert.valid_to) {
         resolve({ name: "SSL Certificate", status: "fail", detail: "Could not read certificate" });
         return;
@@ -39,9 +45,14 @@ function checkSSL(hostname) {
       } else {
         resolve({ name: "SSL Certificate", status: "pass", detail: `Valid for ${daysLeft} days (expires ${cert.valid_to})` });
       }
-      req.end();
+    });
+    req.on("timeout", () => {
+      req.destroy();
+      clearTimeout(timeout);
+      resolve({ name: "SSL Certificate", status: "warn", detail: "SSL check timed out" });
     });
     req.on("error", () => {
+      clearTimeout(timeout);
       resolve({ name: "SSL Certificate", status: "fail", detail: "SSL connection failed" });
     });
     req.end();
