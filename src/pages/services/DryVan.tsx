@@ -248,7 +248,7 @@ const DryVan = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose DeMar Transportation for Dry Van Shipping</h2>
               <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
                 <p>
-                  As a Landstar agency based in Reno, Nevada, DeMar Transportation combines the personalized service of a dedicated freight broker with the capacity and resources of one of the largest transportation networks in North America. Landstar's owner-operator model means every carrier in the network has a personal stake in delivering your freight safely and on schedule.
+                  Based in Reno, Nevada, DeMar Transportation combines the personalized service of a dedicated freight provider with the capacity and resources of an extensive carrier network spanning North America. Our vetted owner-operators have a personal stake in delivering your freight safely and on schedule.
                 </p>
                 <p>
                   We provide real-time shipment tracking, proactive communication on load status, and a single point of contact for every shipment from pickup through delivery. Our team handles all the logistics coordination so you can focus on running your business rather than managing freight.
