@@ -26,10 +26,28 @@ export async function run() {
       checks.push({ name: "Copyright Year", status: "warn", detail: `© ${year} (current year is ${currentYear})`, confidence: "VERIFIED", reason: null });
     }
   } else {
-    if (html.includes("getFullYear")) {
-      checks.push({ name: "Copyright Year", status: "pass", detail: "Dynamic year via getFullYear()", confidence: "INFERRED", reason: "JavaScript generates copyright year at runtime; cannot verify rendered value" });
+    // Check raw HTML first, then check JS bundles for dynamic copyright
+    let foundInBundle = html.includes("getFullYear");
+    if (!foundInBundle) {
+      const scripts = $('script[src]').toArray().map((el) => $(el).attr("src")).filter(Boolean);
+      for (const src of scripts) {
+        try {
+          const scriptUrl = new URL(src, TARGET_URL).href;
+          const res = await fetch(scriptUrl, { signal: AbortSignal.timeout(10000) });
+          if (res.ok) {
+            const js = await res.text();
+            if (js.includes("getFullYear")) {
+              foundInBundle = true;
+              break;
+            }
+          }
+        } catch { /* skip unreachable scripts */ }
+      }
+    }
+    if (foundInBundle) {
+      checks.push({ name: "Copyright Year", status: "pass", detail: "Dynamic year via getFullYear()", confidence: "INFERRED", reason: "Found getFullYear() in JS bundle; copyright year generated at runtime" });
     } else {
-      checks.push({ name: "Copyright Year", status: "warn", detail: "No copyright year found", confidence: "INFERRED", reason: "Copyright text may be rendered by JavaScript at runtime" });
+      checks.push({ name: "Copyright Year", status: "warn", detail: "No copyright year found in HTML or JS bundles", confidence: "UNABLE_TO_VERIFY", reason: "SPA may render copyright via framework not detectable by static analysis" });
     }
   }
 
