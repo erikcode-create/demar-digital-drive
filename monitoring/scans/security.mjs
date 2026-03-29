@@ -25,7 +25,7 @@ const SENSITIVE_PATHS = [
 function checkSSL(hostname) {
   return new Promise((resolve) => {
     const timeout = setTimeout(() => {
-      resolve({ name: "SSL Certificate", status: "warn", detail: "SSL check timed out (10s)" });
+      resolve({ name: "SSL Certificate", status: "warn", detail: "SSL check timed out (10s)", confidence: "VERIFIED", reason: null });
     }, 10000);
 
     const req = https.request({ hostname, port: 443, method: "HEAD", timeout: 10000 }, (res) => {
@@ -33,27 +33,27 @@ function checkSSL(hostname) {
       res.resume(); // consume response to free socket
       clearTimeout(timeout);
       if (!cert || !cert.valid_to) {
-        resolve({ name: "SSL Certificate", status: "fail", detail: "Could not read certificate" });
+        resolve({ name: "SSL Certificate", status: "fail", detail: "Could not read certificate", confidence: "VERIFIED", reason: null });
         return;
       }
       const expiryDate = new Date(cert.valid_to);
       const daysLeft = Math.floor((expiryDate - Date.now()) / (1000 * 60 * 60 * 24));
       if (daysLeft < 7) {
-        resolve({ name: "SSL Certificate", status: "fail", detail: `Expires in ${daysLeft} days (${cert.valid_to})` });
+        resolve({ name: "SSL Certificate", status: "fail", detail: `Expires in ${daysLeft} days (${cert.valid_to})`, confidence: "VERIFIED", reason: null });
       } else if (daysLeft < 30) {
-        resolve({ name: "SSL Certificate", status: "warn", detail: `Expires in ${daysLeft} days (${cert.valid_to})` });
+        resolve({ name: "SSL Certificate", status: "warn", detail: `Expires in ${daysLeft} days (${cert.valid_to})`, confidence: "VERIFIED", reason: null });
       } else {
-        resolve({ name: "SSL Certificate", status: "pass", detail: `Valid for ${daysLeft} days (expires ${cert.valid_to})` });
+        resolve({ name: "SSL Certificate", status: "pass", detail: `Valid for ${daysLeft} days (expires ${cert.valid_to})`, confidence: "VERIFIED", reason: null });
       }
     });
     req.on("timeout", () => {
       req.destroy();
       clearTimeout(timeout);
-      resolve({ name: "SSL Certificate", status: "warn", detail: "SSL check timed out" });
+      resolve({ name: "SSL Certificate", status: "warn", detail: "SSL check timed out", confidence: "VERIFIED", reason: null });
     });
     req.on("error", () => {
       clearTimeout(timeout);
-      resolve({ name: "SSL Certificate", status: "fail", detail: "SSL connection failed" });
+      resolve({ name: "SSL Certificate", status: "fail", detail: "SSL connection failed", confidence: "VERIFIED", reason: null });
     });
     req.end();
   });
