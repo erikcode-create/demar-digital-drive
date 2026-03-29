@@ -72,12 +72,14 @@ export async function run() {
           name: "npm audit",
           status: critical > 0 || high > 0 ? "fail" : "warn",
           detail: `${total} vulnerabilities: ${critical} critical, ${high} high, ${moderate} moderate, ${low} low`,
+          confidence: "VERIFIED",
+          reason: null,
         });
       } else {
-        checks.push({ name: "npm audit", status: "pass", detail: "No known vulnerabilities" });
+        checks.push({ name: "npm audit", status: "pass", detail: "No known vulnerabilities", confidence: "VERIFIED", reason: null });
       }
     } catch {
-      checks.push({ name: "npm audit", status: "warn", detail: "Could not parse npm audit output" });
+      checks.push({ name: "npm audit", status: "warn", detail: "Could not parse npm audit output", confidence: "VERIFIED", reason: null });
     }
   }
 
