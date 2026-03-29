@@ -1,4 +1,14 @@
+import { useEffect } from "react";
+
 const Privacy = () => {
+  useEffect(() => {
+    document.title = "Privacy Policy | DeMar Transportation";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'DeMar Transportation privacy policy. Learn how we collect, use, and protect your information when using our services and driver app.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-3xl mx-auto px-6 py-16">
