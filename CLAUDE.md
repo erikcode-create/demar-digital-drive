@@ -89,5 +89,5 @@ Every scanner exports `run()` returning:
 
 ## Scan Tiers
 
-- **Lightweight (daily Mon-Sat):** security, dependencies -- fast, no external API calls
-- **Full (weekly Sunday):** all 6 scanners including PageSpeed Insights API (performance) and page fetches
+- **Lightweight (daily Mon-Sat):** security, dependencies, freshness, dns -- fast, no external API calls
+- **Full (weekly Sunday):** all 11 scanners including PageSpeed Insights API (performance), link crawling, and WHOIS lookups
