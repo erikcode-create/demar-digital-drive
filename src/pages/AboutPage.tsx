@@ -70,13 +70,13 @@ const AboutPage = () => {
                   excellence.
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
-                  As a direct carrier, we own and operate our own fleet. That
-                  means when you book with DeMar Transportation, there is no
-                  middleman, no broker markup, and no third-party confusion.
-                  You work directly with the company that moves your freight.
-                  This direct relationship translates into better pricing,
-                  clearer communication, and greater accountability on every
-                  load.
+                  As an asset-based carrier with full-service logistics
+                  capabilities, DeMar Transportation handles your freight with
+                  a single point of contact from pickup to delivery. Whether
+                  we move your load on our own equipment or through our vetted
+                  carrier network, you get the same level of accountability,
+                  transparent pricing, and clear communication on every
+                  shipment.
                 </p>
                 <p className="text-lg leading-relaxed">
                   Our team understands that freight is the backbone of American
