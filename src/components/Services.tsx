@@ -57,23 +57,24 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
-            <Card 
-              key={service.title} 
-              className="hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:scale-105 animate-scale-in bg-card"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <CardHeader className="text-center">
-                <div className="flex justify-center mb-4 text-accent">
-                  {service.icon}
-                </div>
-                <CardTitle className="text-xl font-bold text-primary">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-center text-muted-foreground">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Link key={service.title} to={`/services/${service.slug}`}>
+              <Card
+                className="hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:scale-105 animate-scale-in bg-card h-full"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <CardHeader className="text-center">
+                  <div className="flex justify-center mb-4 text-accent">
+                    {service.icon}
+                  </div>
+                  <CardTitle className="text-xl font-bold text-primary">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-center text-muted-foreground">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
 
