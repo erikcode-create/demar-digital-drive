@@ -129,6 +129,8 @@ export async function run() {
         name: `${strategy} PageSpeed`,
         status: "warn",
         detail: `Could not fetch: ${err.message}`,
+        confidence: "VERIFIED",
+        reason: null,
       });
     }
   }
