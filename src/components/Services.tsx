@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Truck, Package, Snowflake, Building, Car, Wrench } from "lucide-react";
+import { Truck, Package, Snowflake, Building, Car, Wrench, Container, Layers, Network, Warehouse } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Services = () => {
