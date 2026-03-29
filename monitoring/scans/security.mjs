@@ -88,12 +88,12 @@ export async function run() {
     const httpRes = await fetch(`http://demartransportation.com`, { redirect: "manual", signal: AbortSignal.timeout(10000) });
     const location = httpRes.headers.get("location") || "";
     if (location.startsWith("https://")) {
-      checks.push({ name: "HTTP→HTTPS Redirect", status: "pass", detail: `Redirects to ${location}` });
+      checks.push({ name: "HTTP→HTTPS Redirect", status: "pass", detail: `Redirects to ${location}`, confidence: "VERIFIED", reason: null });
     } else {
-      checks.push({ name: "HTTP→HTTPS Redirect", status: "fail", detail: "No HTTPS redirect found" });
+      checks.push({ name: "HTTP→HTTPS Redirect", status: "fail", detail: "No HTTPS redirect found", confidence: "VERIFIED", reason: null });
     }
   } catch {
-    checks.push({ name: "HTTP→HTTPS Redirect", status: "warn", detail: "Could not test HTTP redirect" });
+    checks.push({ name: "HTTP→HTTPS Redirect", status: "warn", detail: "Could not test HTTP redirect", confidence: "VERIFIED", reason: null });
   }
 
   // SSL certificate
