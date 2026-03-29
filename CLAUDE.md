@@ -87,6 +87,9 @@ Three channels, three webhooks:
 | Website Monitor | `.github/workflows/website-monitor.yml` | Mon-Sat 7am PDT lightweight, Sun 7am PDT full |
 | SEO Audit | `.github/workflows/seo-audit.yml` | Daily 9am PDT |
 | Website Uptime | `.github/workflows/website-uptime.yml` | Every 15 min (check), daily 8am PDT (summary) |
+| CRO Audit | `.github/workflows/marketing-cro.yml` | Daily 10am PDT |
+| Funnels | `.github/workflows/marketing-funnels.yml` | Daily 11am PDT |
+| Social Media | `.github/workflows/marketing-social.yml` | Daily 12pm PDT |
 
 `website-monitor.yml` and `website-uptime.yml` both support `workflow_dispatch`.
 
