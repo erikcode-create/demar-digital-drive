@@ -110,7 +110,7 @@ async function handleTier1(fix, webhookUrl) {
 
   await postDiscord(webhookUrl, [{
     title: "\u{1F527} Auto-Fix Applied",
-    description: `**Category:** ${fix.category}\n**Issue:** ${fix.check.name} — ${fix.check.detail}\n**Fix:** ${fix.commitMsg}\n**Tier:** 1 (auto-committed to main)`,
+    description: `**Category:** ${fix.category}\n**Issue:** ${fix.check.name} — ${fix.check.detail}\n**Fix:** ${fix.commitMsg}\n**Model:** ${fix.model}\n**Tier:** 1 (auto-committed to main)`,
     color: 3066993,
     timestamp: new Date().toISOString(),
   }]);
