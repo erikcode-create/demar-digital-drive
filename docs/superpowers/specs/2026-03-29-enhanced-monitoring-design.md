@@ -343,7 +343,7 @@ The `auto-fix.mjs` orchestrator:
 
 ### Lightweight Scans (Daily, Mon-Sat 7am PDT)
 
-1. Security (headers, SSL, exposed files)
+1. Security (headers, HTTPS redirect, exposed files)
 2. Dependencies (npm audit, outdated)
 3. Content Freshness (copyright year check only)
 4. DNS & Domain Health (SSL expiry only)
