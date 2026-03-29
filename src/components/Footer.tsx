@@ -35,6 +35,10 @@ const Footer = () => {
               <li><Link to="/services/box-truck" className="hover:text-accent transition-colors">Box Truck</Link></li>
               <li><Link to="/services/sprinter-van" className="hover:text-accent transition-colors">Sprinter Van</Link></li>
               <li><Link to="/services/hazmat" className="hover:text-accent transition-colors">Hazmat/Fuel</Link></li>
+              <li><Link to="/services/ftl" className="hover:text-accent transition-colors">Full Truckload (FTL)</Link></li>
+              <li><Link to="/services/ltl" className="hover:text-accent transition-colors">LTL Shipping</Link></li>
+              <li><Link to="/services/3pl" className="hover:text-accent transition-colors">3PL Services</Link></li>
+              <li><Link to="/services/warehousing" className="hover:text-accent transition-colors">Warehousing</Link></li>
             </ul>
           </div>
 
