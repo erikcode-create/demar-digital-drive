@@ -68,9 +68,9 @@ export async function run() {
   for (const { name, label } of REQUIRED_HEADERS) {
     const value = headers[name];
     if (value) {
-      checks.push({ name: label, status: "pass", detail: value });
+      checks.push({ name: label, status: "pass", detail: value, confidence: "VERIFIED", reason: null });
     } else {
-      checks.push({ name: label, status: "fail", detail: `Missing ${label} header` });
+      checks.push({ name: label, status: "fail", detail: `Missing ${label} header`, confidence: "VERIFIED", reason: null });
     }
   }
 
