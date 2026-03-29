@@ -42,35 +42,37 @@ export async function run() {
   });
 
   if (totalImages === 0) {
-    checks.push({ name: "Images Found", status: "warn", detail: "No images detected on page" });
+    checks.push({ name: "Images Found", status: "warn", detail: "No images detected on page", confidence: "INFERRED", reason: "Only checks images in initial HTML; dynamically loaded images are not detected" });
   } else {
     // Modern formats
     const modernPct = Math.round((modernFormat / totalImages) * 100);
     if (modernPct >= 80) {
-      checks.push({ name: "Modern Image Formats", status: "pass", detail: `${modernPct}% using WebP/AVIF (${modernFormat}/${totalImages})` });
+      checks.push({ name: "Modern Image Formats", status: "pass", detail: `${modernPct}% using WebP/AVIF (${modernFormat}/${totalImages})`, confidence: "INFERRED", reason: "Only checks images in initial HTML, not dynamically loaded images" });
     } else if (modernPct >= 40) {
-      checks.push({ name: "Modern Image Formats", status: "warn", detail: `${modernPct}% using WebP/AVIF (${modernFormat}/${totalImages})` });
+      checks.push({ name: "Modern Image Formats", status: "warn", detail: `${modernPct}% using WebP/AVIF (${modernFormat}/${totalImages})`, confidence: "INFERRED", reason: "Only checks images in initial HTML, not dynamically loaded images" });
     } else {
-      checks.push({ name: "Modern Image Formats", status: "fail", detail: `Only ${modernPct}% using WebP/AVIF (${modernFormat}/${totalImages})` });
+      checks.push({ name: "Modern Image Formats", status: "fail", detail: `Only ${modernPct}% using WebP/AVIF (${modernFormat}/${totalImages})`, confidence: "INFERRED", reason: "Only checks images in initial HTML, not dynamically loaded images" });
     }
 
     // Alt text
     if (missingAlt === 0) {
-      checks.push({ name: "Image Alt Text", status: "pass", detail: `All ${totalImages} images have alt attributes` });
+      checks.push({ name: "Image Alt Text", status: "pass", detail: `All ${totalImages} images have alt attributes`, confidence: "INFERRED", reason: "Only checks images in initial HTML, not dynamically loaded images" });
     } else {
       checks.push({
         name: "Image Alt Text",
         status: missingAlt > totalImages * 0.3 ? "fail" : "warn",
         detail: `${missingAlt}/${totalImages} images missing alt attribute`,
+        confidence: "INFERRED",
+        reason: "Only checks images in initial HTML, not dynamically loaded images",
       });
     }
 
     // Lazy loading
     const lazyPct = Math.round((lazyLoaded / totalImages) * 100);
     if (lazyPct >= 60) {
-      checks.push({ name: "Lazy Loading", status: "pass", detail: `${lazyPct}% of images use loading="lazy" (${lazyLoaded}/${totalImages})` });
+      checks.push({ name: "Lazy Loading", status: "pass", detail: `${lazyPct}% of images use loading="lazy" (${lazyLoaded}/${totalImages})`, confidence: "INFERRED", reason: "Only checks images in initial HTML, not dynamically loaded images" });
     } else {
-      checks.push({ name: "Lazy Loading", status: "warn", detail: `Only ${lazyPct}% use loading="lazy" (${lazyLoaded}/${totalImages})` });
+      checks.push({ name: "Lazy Loading", status: "warn", detail: `Only ${lazyPct}% use loading="lazy" (${lazyLoaded}/${totalImages})`, confidence: "INFERRED", reason: "Only checks images in initial HTML, not dynamically loaded images" });
     }
   }
 
@@ -81,12 +83,12 @@ export async function run() {
     const year = parseInt(copyrightMatch[1]);
     const currentYear = new Date().getFullYear();
     if (year === currentYear) {
-      checks.push({ name: "Copyright Year", status: "pass", detail: `© ${year}` });
+      checks.push({ name: "Copyright Year", status: "pass", detail: `© ${year}`, confidence: "VERIFIED", reason: null });
     } else {
-      checks.push({ name: "Copyright Year", status: "warn", detail: `© ${year} (current year is ${currentYear})` });
+      checks.push({ name: "Copyright Year", status: "warn", detail: `© ${year} (current year is ${currentYear})`, confidence: "VERIFIED", reason: null });
     }
   } else {
-    checks.push({ name: "Copyright Year", status: "warn", detail: "No copyright year found" });
+    checks.push({ name: "Copyright Year", status: "warn", detail: "No copyright year found", confidence: "INFERRED", reason: "Copyright text may be rendered by JavaScript at runtime" });
   }
 
   return {
