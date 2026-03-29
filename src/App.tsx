@@ -27,6 +27,22 @@ const ThirdPartyLogistics = lazy(() => import("./pages/services/ThirdPartyLogist
 const Warehousing = lazy(() => import("./pages/services/Warehousing"));
 const LTL = lazy(() => import("./pages/services/LTL"));
 const FTL = lazy(() => import("./pages/services/FTL"));
+const Resources = lazy(() => import("./pages/Resources"));
+const FreightShippingCost = lazy(() => import("./pages/resources/FreightShippingCost"));
+const HowToGetFreightQuote = lazy(() => import("./pages/resources/HowToGetFreightQuote"));
+const HowToChooseFreightCarrier = lazy(() => import("./pages/resources/HowToChooseFreightCarrier"));
+const DryVanVsReefer = lazy(() => import("./pages/resources/DryVanVsReefer"));
+const FtlVsLtl = lazy(() => import("./pages/resources/FtlVsLtl"));
+const HotShotVsFullTruckload = lazy(() => import("./pages/resources/HotShotVsFullTruckload"));
+const TypesOfFreightTrailers = lazy(() => import("./pages/resources/TypesOfFreightTrailers"));
+const HowToShipFreight = lazy(() => import("./pages/resources/HowToShipFreight"));
+const HowToShipRefrigeratedGoods = lazy(() => import("./pages/resources/HowToShipRefrigeratedGoods"));
+const HowToShipHazardousMaterials = lazy(() => import("./pages/resources/HowToShipHazardousMaterials"));
+const OversizedLoadShipping = lazy(() => import("./pages/resources/OversizedLoadShipping"));
+const FreightClassesExplained = lazy(() => import("./pages/resources/FreightClassesExplained"));
+const BrokerVsCarrierVs3pl = lazy(() => import("./pages/resources/BrokerVsCarrierVs3pl"));
+const FreightShippingGlossary = lazy(() => import("./pages/resources/FreightShippingGlossary"));
+const SeasonalFreightShipping = lazy(() => import("./pages/resources/SeasonalFreightShipping"));
 
 const queryClient = new QueryClient();
 
