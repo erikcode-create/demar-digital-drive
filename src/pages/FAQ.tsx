@@ -109,11 +109,11 @@ const faqCategories: FAQCategory[] = [
         question: "Is DeMar Transportation a broker or a carrier?",
         answer: (
           <p>
-            DeMar Transportation operates as a freight carrier with our own
-            fleet and drivers. We work with Landstar as an authorized agent,
-            giving us access to one of the largest carrier networks in North
-            America. This means you get the reliability of a dedicated carrier
-            with the capacity and flexibility of a nationwide network.
+            DeMar Transportation operates as a third-party logistics provider (3PL)
+            with our own fleet and drivers, plus access to a vast nationwide carrier
+            network. This means you get the reliability of a dedicated freight partner
+            with the capacity and flexibility of thousands of vetted carriers across
+            North America.
           </p>
         ),
       },
