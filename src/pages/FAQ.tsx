@@ -449,6 +449,10 @@ const FAQ = () => {
   useEffect(() => {
     document.title =
       "FAQ | DeMar Transportation - Freight Shipping Questions Answered";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Find answers to common questions about DeMar Transportation\'s freight services, shipping rates, equipment types, tracking, and career opportunities.');
+    }
   }, []);
 
   const faqSchema = {
