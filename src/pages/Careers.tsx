@@ -203,7 +203,7 @@ const Careers = () => {
                       </Link>{" "}
                       and{" "}
                       <Link
-                        to="/services/refrigerated"
+                        to="/services/reefer"
                         className="text-primary hover:underline"
                       >
                         reefer
