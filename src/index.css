@@ -2,49 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* DeMar Transportation Design System — "The Kinetic Architect"
+   Intentional asymmetry, tonal layering, editorial typography.
+   All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 240 20% 99%;
+    --foreground: 228 80% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 228 80% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 228 80% 5%;
 
-    /* DeMar Transportation Brand Colors - Professional Blue & Yellow */
-    --primary: 220 85% 15%;
+    /* Primary: Deep Navy — structural, authoritative */
+    --primary: 225 97% 4%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 220 85% 25%;
+    --primary-container: 220 85% 15%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 220 85% 15%;
+    /* Secondary: Light surface tones — tonal layering */
+    --secondary: 240 20% 96%;
+    --secondary-foreground: 225 97% 4%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 15% 46%;
+    --muted: 240 10% 96%;
+    --muted-foreground: 228 10% 40%;
 
-    /* Yellow Accent for CTAs */
+    /* Accent: Golden Yellow — precision instrument, CTAs only */
     --accent: 45 97% 54%;
-    --accent-foreground: 220 85% 15%;
+    --accent-foreground: 225 97% 4%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 220 85% 15%;
+    /* No-Line Rule: borders are ghost-level or absent */
+    --border: 240 10% 92%;
+    --input: 240 10% 92%;
+    --ring: 225 97% 4%;
 
-    /* Custom Design Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(220 85% 15%), hsl(220 85% 25%));
+    /* Tonal Surface Stack */
+    --surface: 240 20% 99%;
+    --surface-low: 240 15% 97%;
+    --surface-container: 240 12% 94%;
+    --surface-high: 240 10% 92%;
+    --surface-highest: 240 8% 90%;
+
+    /* Kinetic Architect Design Tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(225 97% 4%), hsl(220 85% 15%));
     --accent-gradient: linear-gradient(45deg, hsl(45 97% 54%), hsl(45 97% 64%));
-    --shadow-hero: 0 25px 50px -12px hsl(220 85% 15% / 0.25);
-    --shadow-card: 0 4px 20px -4px hsl(220 85% 15% / 0.1);
-    
+    --nav-gradient: linear-gradient(180deg, hsl(225 97% 4%), hsl(220 85% 15%));
+    --shadow-hero: 0 25px 50px -12px hsl(225 97% 4% / 0.25);
+    --shadow-card: 0 4px 20px -4px hsl(225 97% 4% / 0.06);
+    --shadow-float: 0 8px 32px -4px hsl(225 97% 4% / 0.08);
+
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
