@@ -404,7 +404,7 @@ const AboutPage = () => {
                 Ready to Ship with DeMar?
               </h2>
               <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-                Get carrier-direct rates with no broker markup. Contact us
+                Get competitive rates with transparent pricing. Contact us
                 today for a free quote or call us directly to discuss your
                 freight needs.
               </p>
