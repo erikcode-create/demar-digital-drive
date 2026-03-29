@@ -219,7 +219,7 @@ Runs every 15 minutes, independent of the scan workflow.
 ```yaml
 schedule:
   - cron: '*/15 * * * *'   # Every 15 minutes (uptime checks)
-  - cron: '0 14 * * *'     # Daily at 7am PDT (daily summary)
+  - cron: '0 15 * * *'     # Daily at 8am PDT (daily summary, offset from scan workflow)
 ```
 
 ### Per-Run Checks
