@@ -107,6 +107,11 @@ const Header = () => {
                 <Link to="/services/box-truck" className="hover:text-accent transition-colors text-sm py-1" onClick={() => setMobileMenuOpen(false)}>Box Truck</Link>
                 <Link to="/services/sprinter-van" className="hover:text-accent transition-colors text-sm py-1" onClick={() => setMobileMenuOpen(false)}>Sprinter Van</Link>
                 <Link to="/services/hazmat" className="hover:text-accent transition-colors text-sm py-1" onClick={() => setMobileMenuOpen(false)}>Hazmat/Fuel</Link>
+                <div className="border-t border-primary-foreground/20 my-1"></div>
+                <Link to="/services/ftl" className="hover:text-accent transition-colors text-sm py-1" onClick={() => setMobileMenuOpen(false)}>Full Truckload (FTL)</Link>
+                <Link to="/services/ltl" className="hover:text-accent transition-colors text-sm py-1" onClick={() => setMobileMenuOpen(false)}>Less Than Truckload (LTL)</Link>
+                <Link to="/services/3pl" className="hover:text-accent transition-colors text-sm py-1" onClick={() => setMobileMenuOpen(false)}>3PL Services</Link>
+                <Link to="/services/warehousing" className="hover:text-accent transition-colors text-sm py-1" onClick={() => setMobileMenuOpen(false)}>Warehousing</Link>
               </div>
               <Link to="/careers" className="hover:text-accent transition-colors font-medium py-1" onClick={() => setMobileMenuOpen(false)}>Careers</Link>
               <Link to="/contact" className="hover:text-accent transition-colors font-medium py-1" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
