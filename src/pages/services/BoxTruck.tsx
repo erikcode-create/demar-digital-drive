@@ -178,7 +178,7 @@ const BoxTruck = () => {
               <h2 className="text-3xl font-bold text-primary mb-6">Why Choose DeMar Transportation for Box Truck Shipping</h2>
               <div className="prose max-w-none text-muted-foreground space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Based in Reno, Nevada, DeMar Transportation has built a reputation for reliable, customer-focused freight services across the western United States. As a Landstar agency, we have access to one of the largest carrier networks in North America, ensuring capacity availability even during peak shipping seasons. Our box truck fleet and owner-operator network provide the flexibility to handle everything from single-pallet deliveries to multi-stop distribution runs.
+                  Based in Reno, Nevada, DeMar Transportation has built a reputation for reliable, customer-focused freight services across the western United States. DeMar Transportation has access to a nationwide carrier network, ensuring capacity availability even during peak shipping seasons. Our box truck fleet and owner-operator network provide the flexibility to handle everything from single-pallet deliveries to multi-stop distribution runs.
                 </p>
                 <p className="text-lg leading-relaxed">
                   Every shipment is assigned a dedicated logistics coordinator who manages your load from pickup to delivery. We provide real-time tracking updates, proactive communication about any delays or schedule changes, and proof of delivery documentation. Our team understands that your freight is your business, and we treat every load with the urgency and care it deserves.
