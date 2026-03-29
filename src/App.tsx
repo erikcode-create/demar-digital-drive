@@ -23,6 +23,8 @@ const Flatbed = lazy(() => import("./pages/services/Flatbed"));
 const BoxTruck = lazy(() => import("./pages/services/BoxTruck"));
 const SprinterVan = lazy(() => import("./pages/services/SprinterVan"));
 const Hazmat = lazy(() => import("./pages/services/Hazmat"));
+const ThirdPartyLogistics = lazy(() => import("./pages/services/ThirdPartyLogistics"));
+const Warehousing = lazy(() => import("./pages/services/Warehousing"));
 
 const queryClient = new QueryClient();
 
