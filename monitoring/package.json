@@ -20,7 +20,11 @@
     "uptime": "node uptime.mjs check",
     "uptime:summary": "node uptime.mjs summary",
     "auto-fix": "node auto-fix.mjs",
-    "seo-audit": "node seo-audit.mjs"
+    "seo-audit": "node seo-audit.mjs",
+    "marketing:brand-kit": "node marketing/brand-kit-builder.mjs",
+    "marketing:cro": "node marketing/cro-audit.mjs",
+    "marketing:funnels": "node marketing/funnel-generator.mjs",
+    "marketing:social": "node marketing/social-generator.mjs"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
