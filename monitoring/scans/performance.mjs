@@ -99,9 +99,11 @@ export async function run() {
             name: "Render-Blocking Resources",
             status: "warn",
             detail: `${m.renderBlocking} render-blocking resources`,
+            confidence: "VERIFIED",
+            reason: null,
           });
         } else {
-          checks.push({ name: "Render-Blocking Resources", status: "pass", detail: "None detected" });
+          checks.push({ name: "Render-Blocking Resources", status: "pass", detail: "None detected", confidence: "VERIFIED", reason: null });
         }
 
         if (m.thirdParty > 3) {
