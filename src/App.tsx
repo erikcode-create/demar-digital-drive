@@ -10,6 +10,9 @@ import QuoteRequest from "./pages/QuoteRequest";
 import CustomerPortal from "./pages/CustomerPortal";
 import Privacy from "./pages/Privacy";
 import Support from "./pages/Support";
+import BoxTruck from "./pages/services/BoxTruck";
+import SprinterVan from "./pages/services/SprinterVan";
+import Hazmat from "./pages/services/Hazmat";
 
 const queryClient = new QueryClient();
 
