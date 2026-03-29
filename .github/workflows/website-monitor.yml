@@ -40,6 +40,28 @@ jobs:
           fi
 
       - name: Run scans
+        id: scan
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: cd monitoring && node run-scans.mjs --type ${{ steps.scan-type.outputs.type }}
+
+      - name: Restore auto-fix lock
+        uses: actions/cache/restore@v4
+        with:
+          path: monitoring/auto-fix-lock.json
+          key: auto-fix-lock
+
+      - name: Auto-fix detected issues
+        if: steps.scan.outputs.has_fixable_issues == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GH_TOKEN: ${{ github.token }}
+        run: cd monitoring && node auto-fix.mjs
+
+      - name: Save auto-fix lock
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: monitoring/auto-fix-lock.json
+          key: auto-fix-lock-${{ github.run_id }}
