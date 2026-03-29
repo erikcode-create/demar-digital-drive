@@ -153,9 +153,9 @@ const AboutPage = () => {
                           Competitive Pricing
                         </h3>
                         <p className="text-muted-foreground">
-                          Because we are a direct carrier with no broker fees
-                          or intermediary markups, we pass real savings on to
-                          our customers. You get carrier-direct rates without
+                          With our own fleet and established carrier network, we
+                          keep rates competitive by eliminating unnecessary
+                          overhead. You get transparent pricing without
                           sacrificing service quality, tracking visibility, or
                           reliability.
                         </p>
