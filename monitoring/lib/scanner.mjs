@@ -30,13 +30,19 @@ export async function fetchJson(url) {
 }
 
 export function computeStatus(checks) {
-  if (checks.some((c) => c.status === "fail")) return "fail";
-  if (checks.some((c) => c.status === "warn")) return "warn";
+  const scorable = checks.filter((c) => c.confidence !== "UNABLE_TO_VERIFY");
+  if (scorable.some((c) => c.status === "fail")) return "fail";
+  if (scorable.some((c) => c.status === "warn")) return "warn";
   return "pass";
 }
 
 export function computeScore(checks) {
-  if (checks.length === 0) return 100;
-  const passCount = checks.filter((c) => c.status === "pass").length;
-  return Math.round((passCount / checks.length) * 100);
+  const scorable = checks.filter((c) => c.confidence !== "UNABLE_TO_VERIFY");
+  if (scorable.length === 0) return 100;
+  const passCount = scorable.filter((c) => c.status === "pass").length;
+  return Math.round((passCount / scorable.length) * 100);
+}
+
+export function computeVerifiedCount(checks) {
+  return checks.filter((c) => c.confidence !== "UNABLE_TO_VERIFY").length;
 }
