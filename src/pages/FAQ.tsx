@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { HelpCircle, Phone } from "lucide-react";
+import { HelpCircle, Phone, ArrowRight } from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -31,19 +31,19 @@ const faqCategories: FAQCategory[] = [
           <p>
             DeMar Transportation provides a full range of freight services
             including{" "}
-            <Link to="/services/dry-van" className="text-primary hover:underline">
+            <Link to="/services/dry-van" className="text-[hsl(var(--accent))] hover:underline">
               dry van
             </Link>
             ,{" "}
-            <Link to="/services/reefer" className="text-primary hover:underline">
+            <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">
               refrigerated (reefer)
             </Link>
             ,{" "}
-            <Link to="/services/flatbed" className="text-primary hover:underline">
+            <Link to="/services/flatbed" className="text-[hsl(var(--accent))] hover:underline">
               flatbed
             </Link>
             , and{" "}
-            <Link to="/services/sprinter-van" className="text-primary hover:underline">
+            <Link to="/services/sprinter-van" className="text-[hsl(var(--accent))] hover:underline">
               hot shot delivery
             </Link>{" "}
             services. We handle everything from full truckload shipments to
@@ -59,7 +59,7 @@ const faqCategories: FAQCategory[] = [
             United States, with strong coverage along the I-80 corridor and
             throughout Nevada, California, Oregon, Washington, Utah, and Arizona.
             For specific route availability,{" "}
-            <Link to="/contact" className="text-primary hover:underline">
+            <Link to="/contact" className="text-[hsl(var(--accent))] hover:underline">
               contact our dispatch team
             </Link>
             .
@@ -71,14 +71,14 @@ const faqCategories: FAQCategory[] = [
         answer: (
           <p>
             You can request a free, no-obligation freight quote by visiting our{" "}
-            <Link to="/quote" className="text-primary hover:underline">
+            <Link to="/quote" className="text-[hsl(var(--accent))] hover:underline">
               quote request page
             </Link>{" "}
             and filling out the shipment details form. Alternatively, call us
             directly at{" "}
             <a
               href="tel:+17752304767"
-              className="text-primary hover:underline"
+              className="text-[hsl(var(--accent))] hover:underline"
             >
               (775) 230-4767
             </a>{" "}
@@ -97,7 +97,7 @@ const faqCategories: FAQCategory[] = [
             Call us anytime at{" "}
             <a
               href="tel:+17752304767"
-              className="text-primary hover:underline"
+              className="text-[hsl(var(--accent))] hover:underline"
             >
               (775) 230-4767
             </a>
@@ -128,12 +128,12 @@ const faqCategories: FAQCategory[] = [
         answer: (
           <p>
             A{" "}
-            <Link to="/services/dry-van" className="text-primary hover:underline">
+            <Link to="/services/dry-van" className="text-[hsl(var(--accent))] hover:underline">
               dry van
             </Link>{" "}
             is a standard enclosed trailer used for non-temperature-sensitive
             freight like packaged goods, electronics, and general merchandise. A{" "}
-            <Link to="/services/reefer" className="text-primary hover:underline">
+            <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">
               reefer (refrigerated trailer)
             </Link>{" "}
             has a built-in cooling and heating unit that maintains precise
@@ -150,7 +150,7 @@ const faqCategories: FAQCategory[] = [
             We offer standard 53-foot dry van and reefer trailers for full
             truckload shipments, as well as flatbed trailers for oversized or
             open-deck loads. For smaller, time-sensitive shipments, our{" "}
-            <Link to="/services/sprinter-van" className="text-primary hover:underline">
+            <Link to="/services/sprinter-van" className="text-[hsl(var(--accent))] hover:underline">
               hot shot service
             </Link>{" "}
             uses smaller equipment that can be dispatched faster and deliver
@@ -163,7 +163,7 @@ const faqCategories: FAQCategory[] = [
         answer: (
           <p>
             Yes, our{" "}
-            <Link to="/services/flatbed" className="text-primary hover:underline">
+            <Link to="/services/flatbed" className="text-[hsl(var(--accent))] hover:underline">
               flatbed service
             </Link>{" "}
             is designed for oversized, heavy, and irregularly shaped cargo
@@ -171,7 +171,7 @@ const faqCategories: FAQCategory[] = [
             equipment. For loads requiring special permits, our logistics team
             will coordinate all necessary permits and route planning. Contact
             us for a{" "}
-            <Link to="/quote" className="text-primary hover:underline">
+            <Link to="/quote" className="text-[hsl(var(--accent))] hover:underline">
               custom quote
             </Link>
             .
@@ -183,7 +183,7 @@ const faqCategories: FAQCategory[] = [
         answer: (
           <p>
             Absolutely. Our{" "}
-            <Link to="/services/sprinter-van" className="text-primary hover:underline">
+            <Link to="/services/sprinter-van" className="text-[hsl(var(--accent))] hover:underline">
               hot shot delivery service
             </Link>{" "}
             is specifically built for time-critical freight. We can dispatch
@@ -191,7 +191,7 @@ const faqCategories: FAQCategory[] = [
             shipment can't wait. Call our 24/7 dispatch at{" "}
             <a
               href="tel:+17752304767"
-              className="text-primary hover:underline"
+              className="text-[hsl(var(--accent))] hover:underline"
             >
               (775) 230-4767
             </a>{" "}
@@ -203,7 +203,7 @@ const faqCategories: FAQCategory[] = [
         question: "What is a hot shot delivery?",
         answer: (
           <p>
-            <Link to="/services/sprinter-van" className="text-primary hover:underline">
+            <Link to="/services/sprinter-van" className="text-[hsl(var(--accent))] hover:underline">
               Hot shot delivery
             </Link>{" "}
             is an expedited freight service that uses smaller, dedicated
@@ -222,14 +222,14 @@ const faqCategories: FAQCategory[] = [
             dispatch team at{" "}
             <a
               href="tel:+17752304767"
-              className="text-primary hover:underline"
+              className="text-[hsl(var(--accent))] hover:underline"
             >
               (775) 230-4767
             </a>{" "}
             or emailing{" "}
             <a
               href="mailto:info@DeMarTransportation.com"
-              className="text-primary hover:underline"
+              className="text-[hsl(var(--accent))] hover:underline"
             >
               info@DeMarTransportation.com
             </a>
@@ -249,7 +249,7 @@ const faqCategories: FAQCategory[] = [
           <p>
             Hazardous materials transport requires specialized certifications and
             equipment. Please{" "}
-            <Link to="/contact" className="text-primary hover:underline">
+            <Link to="/contact" className="text-[hsl(var(--accent))] hover:underline">
               contact us directly
             </Link>{" "}
             to discuss your specific hazmat shipping needs, and we'll let you
@@ -264,7 +264,7 @@ const faqCategories: FAQCategory[] = [
         answer: (
           <p>
             Our{" "}
-            <Link to="/services/reefer" className="text-primary hover:underline">
+            <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">
               refrigerated trailers
             </Link>{" "}
             can maintain temperatures ranging from -20 degrees F to 70 degrees F, making
@@ -283,7 +283,7 @@ const faqCategories: FAQCategory[] = [
             freight. Residential deliveries may be possible depending on the
             shipment size, equipment requirements, and access at the delivery
             location. Please{" "}
-            <Link to="/contact" className="text-primary hover:underline">
+            <Link to="/contact" className="text-[hsl(var(--accent))] hover:underline">
               contact us
             </Link>{" "}
             to discuss your specific needs and we'll work to find a solution.
@@ -303,7 +303,7 @@ const faqCategories: FAQCategory[] = [
             shipment weight and dimensions, equipment type required, pickup and
             delivery locations, and current market conditions. We provide
             transparent, competitive pricing with no hidden fees.{" "}
-            <Link to="/quote" className="text-primary hover:underline">
+            <Link to="/quote" className="text-[hsl(var(--accent))] hover:underline">
               Request a quote
             </Link>{" "}
             to get an accurate rate for your specific shipment.
@@ -327,13 +327,13 @@ const faqCategories: FAQCategory[] = [
         answer: (
           <p>
             We specialize in full truckload (FTL) shipments, but our{" "}
-            <Link to="/services/sprinter-van" className="text-primary hover:underline">
+            <Link to="/services/sprinter-van" className="text-[hsl(var(--accent))] hover:underline">
               hot shot service
             </Link>{" "}
             is a great option for smaller, partial loads that still need
             dedicated equipment and fast delivery. There is no strict minimum --
             reach out for a{" "}
-            <Link to="/quote" className="text-primary hover:underline">
+            <Link to="/quote" className="text-[hsl(var(--accent))] hover:underline">
               quote
             </Link>{" "}
             and we'll find the most cost-effective solution for your shipment.
@@ -348,7 +348,7 @@ const faqCategories: FAQCategory[] = [
             company checks, and approved credit terms for established accounts.
             Payment terms and methods are discussed during the quoting process.
             For questions about billing,{" "}
-            <Link to="/contact" className="text-primary hover:underline">
+            <Link to="/contact" className="text-[hsl(var(--accent))] hover:underline">
               contact our accounting team
             </Link>
             .
@@ -365,7 +365,7 @@ const faqCategories: FAQCategory[] = [
         answer: (
           <p>
             Visit our{" "}
-            <Link to="/careers" className="text-primary hover:underline">
+            <Link to="/careers" className="text-[hsl(var(--accent))] hover:underline">
               careers page
             </Link>{" "}
             to learn about current openings and submit your application. We're
@@ -373,7 +373,7 @@ const faqCategories: FAQCategory[] = [
             also call us at{" "}
             <a
               href="tel:+17752304767"
-              className="text-primary hover:underline"
+              className="text-[hsl(var(--accent))] hover:underline"
             >
               (775) 230-4767
             </a>{" "}
@@ -390,7 +390,7 @@ const faqCategories: FAQCategory[] = [
             have a clean driving record, and pass DOT physical and drug
             screening requirements. Experience with the specific equipment type
             (dry van, reefer, or flatbed) is preferred. Visit our{" "}
-            <Link to="/careers" className="text-primary hover:underline">
+            <Link to="/careers" className="text-[hsl(var(--accent))] hover:underline">
               careers page
             </Link>{" "}
             for full details on qualifications and benefits.
@@ -400,19 +400,6 @@ const faqCategories: FAQCategory[] = [
     ],
   },
 ];
-
-// Build FAQ schema from the categories
-const faqSchemaItems = faqCategories.flatMap((category) =>
-  category.items.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      // Strip JSX to plain text for schema
-      text: "",
-    },
-  }))
-);
 
 // Plain text answers for JSON-LD schema
 const plainTextAnswers: Record<string, string> = {
@@ -490,16 +477,25 @@ const FAQ = () => {
       <div>
         <Header />
         <main id="main-content">
-          {/* Hero Section */}
-          <section className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground py-20">
-            <div className="container mx-auto px-4 text-center">
-              <div className="flex justify-center mb-4">
-                <HelpCircle className="h-12 w-12 opacity-90" />
+          {/* Hero */}
+          <section className="pt-32 pb-20 px-4 bg-[hsl(225_97%_4%)] relative overflow-hidden">
+            <div className="absolute inset-0 opacity-[0.03]" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
+              backgroundSize: '40px 40px',
+            }} />
+            <div className="container mx-auto max-w-5xl relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 backdrop-blur-sm">
+                <HelpCircle className="h-4 w-4 text-[hsl(var(--accent))]" />
+                <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/60">
+                  Common Questions
+                </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Frequently Asked Questions
+              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
+                Frequently Asked
+                <br />
+                <span className="text-white/40">Questions</span>
               </h1>
-              <p className="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">
+              <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
                 Find answers to common questions about our freight services,
                 pricing, and how DeMar Transportation can help with your
                 shipping needs.
@@ -507,69 +503,87 @@ const FAQ = () => {
             </div>
           </section>
 
-          {/* FAQ Content */}
-          <section className="py-16 bg-background">
-            <div className="container mx-auto px-4 max-w-3xl">
-              {faqCategories.map((category, categoryIndex) => (
-                <div key={category.title} className={categoryIndex > 0 ? "mt-12" : ""}>
-                  <h2 className="text-2xl font-bold mb-6 pb-2 border-b">
-                    {category.title}
-                  </h2>
+          {/* FAQ Content — alternating sections per category */}
+          {faqCategories.map((category, categoryIndex) => (
+            <section
+              key={category.title}
+              className={`py-20 px-4 ${
+                categoryIndex % 2 === 0
+                  ? "bg-[hsl(var(--surface))]"
+                  : "bg-[hsl(var(--surface-low))]"
+              }`}
+            >
+              <div className="container mx-auto max-w-3xl">
+                <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                  {category.title}
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-8">
+                  {category.title}
+                </h2>
+                <div className="rounded-xl bg-white shadow-[var(--shadow-card)]">
                   <Accordion type="single" collapsible className="w-full">
                     {category.items.map((item, itemIndex) => (
                       <AccordionItem
                         key={itemIndex}
                         value={`${category.title}-${itemIndex}`}
+                        className="border-b border-[hsl(var(--surface-low))] last:border-b-0 px-6"
                       >
-                        <AccordionTrigger className="text-left text-base">
+                        <AccordionTrigger className="text-left text-base font-medium text-[hsl(var(--primary))] hover:no-underline py-5">
                           {item.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground leading-relaxed">
+                        <AccordionContent className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed pb-5">
                           {item.answer}
                         </AccordionContent>
                       </AccordionItem>
                     ))}
                   </Accordion>
                 </div>
-              ))}
-            </div>
-          </section>
+              </div>
+            </section>
+          ))}
 
-          {/* CTA Section */}
-          <section className="py-16 bg-muted/50">
-            <div className="container mx-auto px-4 text-center">
-              <h2 className="text-3xl font-bold mb-4">
+          {/* CTA */}
+          <section className="py-16 bg-[hsl(var(--accent))]">
+            <div className="container mx-auto max-w-5xl text-center px-4">
+              <h2 className="text-2xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-3">
                 Still Have Questions?
               </h2>
-              <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+              <p className="text-base text-[hsl(var(--primary))]/70 mb-8 max-w-md mx-auto">
                 Our team is ready to help. Reach out for personalized answers
                 about your freight and shipping needs.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact">
-                  <Button size="lg" className="text-lg px-8">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-[hsl(var(--primary))] text-white hover:bg-[hsl(var(--primary))]/90 font-semibold"
+                  asChild
+                >
+                  <Link to="/contact" className="group">
                     Contact Us
-                  </Button>
-                </Link>
-                <Link to="/quote">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-8"
-                  >
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[hsl(var(--primary))] text-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))]/10"
+                  asChild
+                >
+                  <Link to="/quote">
                     Get a Free Quote
-                  </Button>
-                </Link>
-                <a href="tel:+17752304767">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-8"
-                  >
-                    <Phone className="mr-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[hsl(var(--primary))] text-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))]/10"
+                  asChild
+                >
+                  <a href="tel:+17752304767">
+                    <Phone className="mr-2 h-4 w-4" />
                     (775) 230-4767
-                  </Button>
-                </a>
+                  </a>
+                </Button>
               </div>
             </div>
           </section>
