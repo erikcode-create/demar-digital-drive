@@ -7,6 +7,14 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
+    document.title = "Page Not Found | DeMar Transportation";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "The page you're looking for doesn't exist. Return to DeMar Transportation's homepage or request a freight quote.");
+    }
+  }, []);
+
+  useEffect(() => {
     console.error(
       "404 Error: User attempted to access non-existent route:",
       location.pathname
