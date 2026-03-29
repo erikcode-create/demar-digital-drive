@@ -13,6 +13,9 @@ import Support from "./pages/Support";
 import BoxTruck from "./pages/services/BoxTruck";
 import SprinterVan from "./pages/services/SprinterVan";
 import Hazmat from "./pages/services/Hazmat";
+import DryVan from "./pages/services/DryVan";
+import Reefer from "./pages/services/Reefer";
+import Flatbed from "./pages/services/Flatbed";
 
 const queryClient = new QueryClient();
 
