@@ -55,6 +55,35 @@ const BoxTruck = () => {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://demartransportation.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Services",
+                    "item": "https://demartransportation.com/"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Box Truck Shipping",
+                    "item": "https://demartransportation.com/services/box-truck"
+                  }
+                ]
+              }),
+            }}
+          />
 
           {/* Hero */}
           <section className="pt-32 pb-20 px-4 bg-[hsl(225_97%_4%)] relative overflow-hidden">
