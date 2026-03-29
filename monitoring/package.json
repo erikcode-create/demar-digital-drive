@@ -1,0 +1,20 @@
+{
+  "name": "demar-transportation-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "scan": "node run-scans.mjs --type full",
+    "scan:light": "node run-scans.mjs --type lightweight",
+    "scan:security": "node run-scans.mjs --scan security",
+    "scan:seo": "node run-scans.mjs --scan seo",
+    "scan:perf": "node run-scans.mjs --scan performance",
+    "scan:deps": "node run-scans.mjs --scan dependencies",
+    "scan:images": "node run-scans.mjs --scan images",
+    "scan:a11y": "node run-scans.mjs --scan accessibility"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7"
+  }
+}
