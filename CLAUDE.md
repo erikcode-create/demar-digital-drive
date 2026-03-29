@@ -97,6 +97,17 @@ Separate system from scanners. Checks site availability every 15 minutes, tracks
 - **Never commit `.env` files or secrets.**
 - **Auto-commit hooks** are configured in `.claude/settings.local.json` -- every Write/Edit triggers `git add + commit + push`.
 
+### Auto-Fix System
+
+After scans detect issues, `monitoring/auto-fix.mjs` classifies them and invokes Claude Code CLI to fix:
+
+- **Tier 1 (auto-commit):** npm audit fix, copyright year, meta description length
+- **Tier 2 (auto-PR):** schema props, OG/Twitter tags, broken links, placeholder text
+- **Never auto-fix:** security headers, business content, structural changes
+- **Safety:** build verification, max 1 run/day, `[auto-fix]` commit prefix, Discord notifications
+- **Rules:** `monitoring/lib/fix-rules.mjs`
+- **Requires:** `ANTHROPIC_API_KEY` GitHub secret
+
 ## Scan Tiers
 
 - **Lightweight (daily Mon-Sat):** security, dependencies, freshness, dns -- fast, no external API calls
