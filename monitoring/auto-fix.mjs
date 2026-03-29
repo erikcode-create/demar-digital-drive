@@ -124,7 +124,7 @@ async function handleTier2(fix, webhookUrl) {
   const branch = `${fix.branchPrefix}-${Date.now()}`;
   exec(`git checkout -b ${branch}`);
 
-  const result = await invokeClaude(fix.prompt);
+  const result = await invokeClaude(fix.prompt, fix.model);
 
   if (result.output.includes("SKIPPED:")) {
     log(`Claude skipped: ${result.output}`);
