@@ -9,7 +9,7 @@ const About = () => {
   const features = [
     "Direct carrier - no middleman markup",
     "All English speaking drivers",
-    "US-based operations",
+    "Reno, NV headquarters",
     "Competitive pricing",
     "Clear communication",
     "Professional service",
