@@ -49,7 +49,7 @@ async function checkWhois(domain) {
         resolve({ name: "Domain Expiry", status: "warn", detail: "WHOIS lookup timed out (15s)", confidence: "UNABLE_TO_VERIFY", reason: "WHOIS server did not respond within timeout" });
       }, 15000);
 
-      whois.default.lookup(domain, (err, data) => {
+      whois.lookup(domain, (err, data) => {
         clearTimeout(timeout);
         if (err || !data) {
           resolve({ name: "Domain Expiry", status: "warn", detail: `WHOIS lookup failed: ${err?.message || "no data"}`, confidence: "UNABLE_TO_VERIFY", reason: "WHOIS query failed; cannot determine domain expiry" });
