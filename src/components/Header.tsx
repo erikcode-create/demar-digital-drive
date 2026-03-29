@@ -64,6 +64,11 @@ const Header = () => {
                   <Link to="/services/box-truck" className="block px-4 py-2 hover:bg-primary-foreground/10 hover:text-accent transition-colors">Box Truck</Link>
                   <Link to="/services/sprinter-van" className="block px-4 py-2 hover:bg-primary-foreground/10 hover:text-accent transition-colors">Sprinter Van</Link>
                   <Link to="/services/hazmat" className="block px-4 py-2 hover:bg-primary-foreground/10 hover:text-accent transition-colors">Hazmat/Fuel</Link>
+                  <div className="border-t border-primary-foreground/20 my-1"></div>
+                  <Link to="/services/ftl" className="block px-4 py-2 hover:bg-primary-foreground/10 hover:text-accent transition-colors">Full Truckload (FTL)</Link>
+                  <Link to="/services/ltl" className="block px-4 py-2 hover:bg-primary-foreground/10 hover:text-accent transition-colors">Less Than Truckload (LTL)</Link>
+                  <Link to="/services/3pl" className="block px-4 py-2 hover:bg-primary-foreground/10 hover:text-accent transition-colors">3PL Services</Link>
+                  <Link to="/services/warehousing" className="block px-4 py-2 hover:bg-primary-foreground/10 hover:text-accent transition-colors">Warehousing</Link>
                 </div>
               </div>
             </div>
