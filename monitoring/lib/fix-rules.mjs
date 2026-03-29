@@ -78,6 +78,7 @@ export function classifyIssues(results) {
           fixable.push({
             tier: rule.tier,
             id: rule.id,
+            model: rule.model || "haiku",
             category: result.category,
             check,
             prompt,
