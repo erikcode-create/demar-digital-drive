@@ -81,6 +81,8 @@ export async function run() {
         name: `${label} TBT (proxy for INP)`,
         status: scoreToStatus(m.tbtScore),
         detail: m.tbt,
+        confidence: "VERIFIED",
+        reason: null,
       });
 
       checks.push({
