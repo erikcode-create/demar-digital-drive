@@ -11,10 +11,16 @@
     "scan:perf": "node run-scans.mjs --scan performance",
     "scan:deps": "node run-scans.mjs --scan dependencies",
     "scan:images": "node run-scans.mjs --scan images",
-    "scan:a11y": "node run-scans.mjs --scan accessibility"
+    "scan:a11y": "node run-scans.mjs --scan accessibility",
+    "scan:schema": "node run-scans.mjs --scan schema",
+    "scan:social": "node run-scans.mjs --scan social-preview",
+    "scan:links": "node run-scans.mjs --scan links",
+    "scan:fresh": "node run-scans.mjs --scan freshness",
+    "scan:dns": "node run-scans.mjs --scan dns"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "whois": "^2.16.1"
   }
 }
