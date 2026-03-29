@@ -9,7 +9,6 @@ import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import LandstarSidebar from "@/components/LandstarSidebar";
 import { ArrowLeft, Truck } from "lucide-react";
 import { Link } from "react-router-dom";
 
