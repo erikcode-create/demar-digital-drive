@@ -84,6 +84,7 @@ export async function postToChannel(channel, payload) {
   const urls = {
     health: process.env.DISCORD_WEBHOOK_URL,
     content: process.env.DISCORD_CONTENT_WEBHOOK_URL,
+    seo: process.env.DISCORD_SEO_WEBHOOK_URL,
   };
   const webhookUrl = urls[channel];
   if (!webhookUrl) {
