@@ -65,6 +65,8 @@ export async function run() {
         name: `${label} FCP`,
         status: scoreToStatus(m.fcpScore),
         detail: m.fcp,
+        confidence: "VERIFIED",
+        reason: null,
       });
 
       checks.push({
