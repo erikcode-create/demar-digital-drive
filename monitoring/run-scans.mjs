@@ -84,6 +84,18 @@ async function main() {
     }
   }
 
+  // Write results to file for auto-fix consumption
+  const resultsPath = fileURLToPath(new URL("./scan-results.json", import.meta.url));
+  fs.writeFileSync(resultsPath, JSON.stringify(results, null, 2));
+  console.log(`Results written to ${resultsPath}`);
+
+  // Set GitHub Actions output
+  const hasFailures = results.some(r => r.status === "fail" || r.status === "warn");
+  if (process.env.GITHUB_OUTPUT) {
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, `has_fixable_issues=${hasFailures}\n`);
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, `results_path=${resultsPath}\n`);
+  }
+
   await postResults(results, webhookUrl);
   console.log("Done.");
 }
