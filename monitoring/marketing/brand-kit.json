@@ -1,0 +1,108 @@
+{
+  "company": {
+    "name": "DeMar Transportation",
+    "legalName": "DeMar Consulting Group LLC dba DeMar Transportation",
+    "tagline": "Driven by Purpose. Delivering Results.",
+    "address": "10471 Double R Blvd, Reno, NV 89521",
+    "phone": "(775) 230-4767",
+    "email": "info@DeMarTransportation.com",
+    "website": "https://demartransportation.com",
+    "services": [
+      "Dry Van",
+      "Reefer",
+      "Flatbed",
+      "Box Truck",
+      "Sprinter Van",
+      "Hazmat",
+      "FTL",
+      "LTL",
+      "3PL Logistics",
+      "Warehousing & Distribution"
+    ],
+    "differentiators": [
+      "Asset-based carrier plus licensed broker — one partner, maximum capacity options",
+      "Safety-first culture with DOT compliance and excellent safety ratings",
+      "24/7 availability with US-based, English-speaking drivers and team",
+      "Transparent communication and competitive rates on every load",
+      "Nationwide coverage across dry van, reefer, flatbed, hazmat, and last-mile solutions"
+    ]
+  },
+  "colors": {
+    "primary": "#071B47",
+    "secondary": "#F5F5F7",
+    "accent": "#FBBC18",
+    "background": "#FFFFFF",
+    "text": "#0A0E1A",
+    "success": "#22c55e",
+    "warning": "#f59e0b",
+    "error": "#ef4444"
+  },
+  "typography": {
+    "headingFont": "Inter, system-ui, sans-serif",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    }
+  },
+  "voice": {
+    "tone": [
+      "Direct",
+      "Confident",
+      "Trustworthy",
+      "Professional",
+      "Straightforward"
+    ],
+    "doSay": [
+      "Asset-based carrier with broker authority — more options for every load",
+      "Safety-first on every mile, every shipment",
+      "Competitive rates backed by transparency",
+      "24/7 service with a US-based team you can reach",
+      "Dry van, reefer, flatbed, hazmat — we have the equipment",
+      "Nationwide coverage, local accountability",
+      "One call connects you to our fleet and our network"
+    ],
+    "dontSay": [
+      "direct carrier",
+      "no middleman",
+      "no broker markup",
+      "cheapest rates",
+      "we beat any price",
+      "Landstar",
+      "guaranteed lowest cost",
+      "cut out the broker"
+    ],
+    "personality": "DeMar Transportation is the partner that shows up — professional, plain-spoken, and relentless about safety and reliability. We don't oversell; we deliver. Whether you need a single flatbed or a full logistics solution, we bring the same no-nonsense commitment to every conversation."
+  },
+  "visual": {
+    "logoPath": "/demar-logo-official.png",
+    "ogImage": "https://demartransportation.com/demar-logo-official.png",
+    "imageStyle": "High-contrast photography of trucks on open highways and loading docks, emphasizing scale and motion. Dark navy overlays at 70-80% opacity over hero images to ensure text legibility. Clean, utilitarian aesthetic — no lifestyle fluff, real freight in real conditions.",
+    "iconStyle": "Lucide React outline icons in accent yellow (#FBBC18) against dark navy backgrounds for feature callouts; white icons on colored backgrounds for service cards. Consistent 24px or 48px sizing, never decorative."
+  },
+  "linkedin": {
+    "companyPage": "",
+    "postStyle": "Lead with a single bold insight or stat on line 1 (no hashtags above the fold). 3-5 short paragraphs max. End with a clear CTA — quote request, phone number, or question to drive comments. Use line breaks liberally; no walls of text. Occasional native document or carousel for service explainers.",
+    "hashtags": [
+      "#FreightTransportation",
+      "#Logistics",
+      "#Trucking",
+      "#SupplyChain",
+      "#FTL",
+      "#LTL",
+      "#3PL",
+      "#NevadaBusiness"
+    ],
+    "contentPillars": [
+      "Safety culture and DOT compliance insights",
+      "Freight market trends and capacity updates",
+      "Service explainers (what's the right equipment for your load?)",
+      "Team and driver spotlights — the people behind the trucks",
+      "Shipper tips — how to reduce costs and improve transit times",
+      "Company milestones, lane expansions, and new capabilities"
+    ]
+  }
+}
