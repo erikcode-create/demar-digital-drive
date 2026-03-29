@@ -54,6 +54,10 @@ const departments = [
 const Contact = () => {
   useEffect(() => {
     document.title = "Contact DeMar Transportation | Reno, NV Freight & Logistics";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Contact DeMar Transportation for freight shipping quotes and logistics support. Call (775) 230-4767, email info@DeMarTransportation.com, or visit our Reno, NV office.');
+    }
   }, []);
 
   return (
