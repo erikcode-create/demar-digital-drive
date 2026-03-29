@@ -1,110 +1,130 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Truck, Package, Snowflake, Building, Car, Wrench, Container, Layers, Network, Warehouse } from "lucide-react";
+import {
+  Truck,
+  Package,
+  Snowflake,
+  Building,
+  Car,
+  Wrench,
+  Container,
+  Layers,
+  Network,
+  Warehouse,
+  ArrowRight,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
-const Services = () => {
-  const services = [
-    {
-      icon: <Package className="h-8 w-8" />,
-      title: "Dry Van",
-      slug: "dry-van",
-      description: "Standard enclosed trailers for general freight and cargo protection from weather elements."
-    },
-    {
-      icon: <Snowflake className="h-8 w-8" />,
-      title: "Reefer",
-      slug: "reefer",
-      description: "Temperature-controlled transportation for perishable goods and sensitive materials."
-    },
-    {
-      icon: <Truck className="h-8 w-8" />,
-      title: "Flatbed",
-      slug: "flatbed",
-      description: "Open trailers for oversized loads, construction materials, and heavy equipment."
-    },
-    {
-      icon: <Building className="h-8 w-8" />,
-      title: "Box Truck",
-      slug: "box-truck",
-      description: "Smaller loads and local deliveries with flexible scheduling options."
-    },
-    {
-      icon: <Car className="h-8 w-8" />,
-      title: "Sprinter Van",
-      slug: "sprinter-van",
-      description: "Expedited delivery for time-sensitive smaller shipments and express cargo."
-    },
-    {
-      icon: <Wrench className="h-8 w-8" />,
-      title: "Hazmat/Fuel",
-      slug: "hazmat",
-      description: "Specialized handling of hazardous materials with certified drivers and equipment."
-    },
-    {
-      icon: <Container className="h-8 w-8" />,
-      title: "Full Truckload",
-      slug: "ftl",
-      description: "Dedicated trailers for shipments over 10,000 lbs with direct, no-stop delivery."
-    },
-    {
-      icon: <Layers className="h-8 w-8" />,
-      title: "LTL Shipping",
-      slug: "ltl",
-      description: "Cost-effective less-than-truckload shipping for smaller freight and partial loads."
-    },
-    {
-      icon: <Network className="h-8 w-8" />,
-      title: "3PL Services",
-      slug: "3pl",
-      description: "Full-service third-party logistics with freight management and supply chain solutions."
-    },
-    {
-      icon: <Warehouse className="h-8 w-8" />,
-      title: "Warehousing",
-      slug: "warehousing",
-      description: "Nationwide warehousing and distribution with inventory management and fulfillment."
-    }
-  ];
+const services = [
+  {
+    icon: Package,
+    title: "Dry Van",
+    slug: "dry-van",
+    description: "Standard enclosed trailers for general freight and cargo protection.",
+  },
+  {
+    icon: Snowflake,
+    title: "Reefer",
+    slug: "reefer",
+    description: "Temperature-controlled transport for perishable goods.",
+  },
+  {
+    icon: Truck,
+    title: "Flatbed",
+    slug: "flatbed",
+    description: "Open trailers for oversized loads and heavy equipment.",
+  },
+  {
+    icon: Building,
+    title: "Box Truck",
+    slug: "box-truck",
+    description: "Smaller loads and local deliveries with flexible scheduling.",
+  },
+  {
+    icon: Car,
+    title: "Sprinter Van",
+    slug: "sprinter-van",
+    description: "Expedited delivery for time-sensitive smaller shipments.",
+  },
+  {
+    icon: Wrench,
+    title: "Hazmat/Fuel",
+    slug: "hazmat",
+    description: "Certified handling of hazardous materials and fuel transport.",
+  },
+  {
+    icon: Container,
+    title: "Full Truckload",
+    slug: "ftl",
+    description: "Dedicated trailers for 10,000+ lb shipments, direct delivery.",
+  },
+  {
+    icon: Layers,
+    title: "LTL Shipping",
+    slug: "ltl",
+    description: "Cost-effective less-than-truckload for smaller freight.",
+  },
+  {
+    icon: Network,
+    title: "3PL Services",
+    slug: "3pl",
+    description: "Full-service logistics with freight and supply chain management.",
+  },
+  {
+    icon: Warehouse,
+    title: "Warehousing",
+    slug: "warehousing",
+    description: "Nationwide warehousing, distribution, and fulfillment.",
+  },
+];
 
+const Services = () => {
   return (
-    <section id="services" className="py-20 bg-secondary">
+    <section id="services" className="py-24 md:py-32 bg-[hsl(var(--surface))]">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            The Services We Provide
+        {/* Section header — editorial asymmetry */}
+        <div className="max-w-2xl mb-16">
+          <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+            Our Services
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-[hsl(var(--primary))] leading-tight tracking-tight mb-4">
+            Full-spectrum freight
+            <br />
+            <span className="text-[hsl(var(--muted-foreground))]">under one roof.</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We provide a comprehensive variety of transportation services to meet all your freight needs
+          <p className="text-base text-[hsl(var(--muted-foreground))] max-w-lg leading-relaxed">
+            From dry van to hazmat, FTL to warehousing — one partner for every
+            shipping need across the nation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => (
-            <Link key={service.title} to={`/services/${service.slug}`}>
-              <Card
-                className="hover:shadow-[var(--shadow-card)] transition-all duration-300 hover:scale-105 animate-scale-in bg-card h-full"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <CardHeader className="text-center">
-                  <div className="flex justify-center mb-4 text-accent">
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-xl font-bold text-primary">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-center text-muted-foreground">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+        {/* Service cards — grid with tonal layering (no borders) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 mb-16">
+          {services.map((service) => (
+            <Link key={service.slug} to={`/services/${service.slug}`} className="group">
+              <div className="h-full p-6 rounded-xl bg-[hsl(var(--surface-low))] hover:bg-white hover:shadow-[var(--shadow-float)] transition-all duration-300">
+                <service.icon className="h-7 w-7 text-[hsl(var(--accent))] mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-2 tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed mb-3">
+                  {service.description}
+                </p>
+                <span className="inline-flex items-center gap-1 text-xs font-medium text-[hsl(var(--accent-foreground))] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Learn more
+                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </div>
             </Link>
           ))}
         </div>
 
-        <div className="text-center">
-          <Button asChild variant="hero" size="xl" className="animate-pulse-glow">
-            <Link to="/quote">Get Quote for Your Shipment</Link>
+        {/* CTA */}
+        <div className="flex justify-center">
+          <Button asChild variant="hero" size="xl">
+            <Link to="/quote" className="group">
+              Get a Free Quote
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
         </div>
       </div>
