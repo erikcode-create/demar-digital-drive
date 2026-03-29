@@ -97,7 +97,7 @@ const Reefer = () => {
                   Temperature-controlled transportation is critical for any product that can spoil, degrade, or lose efficacy when exposed to temperatures outside its safe storage range. This includes fresh and frozen foods, dairy products, floral shipments, pharmaceuticals, certain chemicals, and biological materials. A break in the cold chain -- even a brief temperature excursion -- can render an entire truckload worthless and create food safety or regulatory compliance risks.
                 </p>
                 <p>
-                  At DeMar Transportation, we coordinate reefer shipments through Landstar's extensive network of qualified refrigerated carriers. Every reefer carrier in our network maintains properly serviced and calibrated refrigeration equipment, and we verify temperature settings and monitoring capabilities before dispatching any load. Our goal is simple: your temperature-sensitive freight arrives at its destination in the same condition it left the shipper's dock.
+                  At DeMar Transportation, we coordinate reefer shipments through our vetted carrier network of qualified refrigerated carriers. Every reefer carrier in our network maintains properly serviced and calibrated refrigeration equipment, and we verify temperature settings and monitoring capabilities before dispatching any load. Our goal is simple: your temperature-sensitive freight arrives at its destination in the same condition it left the shipper's dock.
                 </p>
               </div>
             </div>
