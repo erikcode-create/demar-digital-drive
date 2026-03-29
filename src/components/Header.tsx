@@ -275,6 +275,13 @@ const Header = () => {
             </div>
 
             <Link
+              to="/resources"
+              className="block px-4 py-3 text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Resources
+            </Link>
+            <Link
               to="/careers"
               className="block px-4 py-3 text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
               onClick={() => setMobileMenuOpen(false)}
