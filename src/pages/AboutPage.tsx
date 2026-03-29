@@ -45,8 +45,8 @@ const AboutPage = () => {
                 DeMar Transportation
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto">
-                Your direct carrier for reliable, safe, and competitively priced
-                freight shipping across the United States.
+                Your freight partner for reliable, safe, and competitively priced
+                shipping across the United States.
               </p>
             </div>
           </section>
