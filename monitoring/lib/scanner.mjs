@@ -5,7 +5,7 @@ const TARGET_URL = "https://demartransportation.com";
 export { TARGET_URL };
 
 export async function fetchHeaders(url = TARGET_URL) {
-  const res = await fetch(url, { redirect: "follow" });
+  const res = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(15000) });
   return {
     status: res.status,
     headers: Object.fromEntries(res.headers.entries()),
@@ -15,7 +15,7 @@ export async function fetchHeaders(url = TARGET_URL) {
 }
 
 export async function fetchPage(url = TARGET_URL) {
-  const res = await fetch(url, { redirect: "follow" });
+  const res = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(15000) });
   const html = await res.text();
   const $ = cheerio.load(html);
   return { $, html, status: res.status, url: res.url };
