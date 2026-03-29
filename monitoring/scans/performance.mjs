@@ -57,6 +57,8 @@ export async function run() {
         name: `${label} LCP`,
         status: scoreToStatus(m.lcpScore),
         detail: m.lcp,
+        confidence: "VERIFIED",
+        reason: null,
       });
 
       checks.push({
