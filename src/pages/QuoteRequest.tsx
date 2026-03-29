@@ -80,8 +80,7 @@ const QuoteRequest = () => {
 
   return (
     <div className="min-h-screen">
-      <LandstarSidebar />
-      <div className="ml-16">
+      <div>
         <Header />
         
         <main className="py-12 px-4">
