@@ -73,6 +73,8 @@ export async function run() {
         name: `${label} CLS`,
         status: scoreToStatus(m.clsScore),
         detail: m.cls,
+        confidence: "VERIFIED",
+        reason: null,
       });
 
       checks.push({
