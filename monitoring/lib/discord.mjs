@@ -85,10 +85,13 @@ export async function postToChannel(channel, payload) {
     health: process.env.DISCORD_WEBHOOK_URL,
     content: process.env.DISCORD_CONTENT_WEBHOOK_URL,
     seo: process.env.DISCORD_SEO_WEBHOOK_URL,
+    cro: process.env.DISCORD_CRO_WEBHOOK_URL,
+    funnels: process.env.DISCORD_FUNNELS_WEBHOOK_URL,
+    social: process.env.DISCORD_SOCIAL_WEBHOOK_URL,
   };
   const webhookUrl = urls[channel];
   if (!webhookUrl) {
-    console.error(`No webhook URL for channel "${channel}". Set DISCORD_${channel.toUpperCase()}_WEBHOOK_URL or DISCORD_WEBHOOK_URL.`);
+    console.error(`No webhook URL for channel "${channel}". Set the corresponding DISCORD_*_WEBHOOK_URL env var.`);
     return;
   }
   const res = await fetch(webhookUrl, {
