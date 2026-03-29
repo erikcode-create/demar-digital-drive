@@ -1,4 +1,6 @@
 import "dotenv/config";
+import fs from "node:fs";
+import { fileURLToPath } from "node:url";
 import { postResults } from "./lib/discord.mjs";
 
 const LIGHTWEIGHT_SCANS = ["security", "dependencies", "freshness", "dns"];
