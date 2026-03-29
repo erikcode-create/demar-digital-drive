@@ -94,7 +94,7 @@ const DryVan = () => {
                   Dry van shipping is the most widely used method of over-the-road freight transportation in the United States, accounting for roughly 70 percent of all truckload shipments. A dry van is a fully enclosed, non-temperature-controlled trailer designed to protect cargo from weather, road debris, and theft during transit. The term "dry" distinguishes these trailers from refrigerated ("reefer") units, indicating that no climate-control system is installed.
                 </p>
                 <p>
-                  At DeMar Transportation, dry van freight is the backbone of our operations. Whether you need a full truckload (FTL) moved coast to coast or a less-than-truckload (LTL) shipment consolidated with other freight, our dry van fleet is equipped to handle it. We coordinate with a nationwide carrier network through our Landstar agency partnership, giving shippers access to thousands of qualified dry van carriers on any given day.
+                  At DeMar Transportation, dry van freight is the backbone of our operations. Whether you need a full truckload (FTL) moved coast to coast or a less-than-truckload (LTL) shipment consolidated with other freight, our dry van fleet is equipped to handle it. We coordinate with an extensive nationwide carrier network, giving shippers access to thousands of qualified dry van carriers on any given day.
                 </p>
                 <p>
                   Dry van trailers are ideal for non-perishable goods that do not require temperature regulation, specialized loading equipment, or oversized handling. From palletized consumer products to boxed electronics, the dry van's versatility makes it the default choice for the majority of commercial shippers in North America.
