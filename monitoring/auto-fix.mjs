@@ -85,7 +85,7 @@ function buildSucceeds() {
 async function handleTier1(fix, webhookUrl) {
   log(`Tier 1 fix: ${fix.id} — ${fix.check.name}`);
 
-  const result = await invokeClaude(fix.prompt);
+  const result = await invokeClaude(fix.prompt, fix.model);
 
   if (result.output.includes("SKIPPED:")) {
     log(`Claude skipped: ${result.output}`);
