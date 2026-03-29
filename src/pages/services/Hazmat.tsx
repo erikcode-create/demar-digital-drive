@@ -251,7 +251,7 @@ const Hazmat = () => {
                     {[
                       "Fully certified hazmat drivers with current endorsements and clean safety records",
                       "Comprehensive DOT compliance management and documentation",
-                      "Access to the Landstar network of hazmat-qualified carriers nationwide",
+                      "Access to a nationwide network of hazmat-qualified carriers",
                       "Dedicated logistics coordinators experienced in hazmat shipping requirements",
                       "24/7 dispatch availability for urgent and emergency hazmat shipments",
                       "Fuel hauling expertise across the western United States",
