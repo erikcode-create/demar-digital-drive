@@ -10,22 +10,53 @@ const STATUS_EMOJI = {
   fail: "❌",
 };
 
+const UNVERIFIED_EMOJI = "⬜";
+
 export function buildEmbed(scanResult) {
   const { category, status, score, checks } = scanResult;
 
-  const failingChecks = checks.filter((c) => c.status !== "pass");
-  const passingCount = checks.filter((c) => c.status === "pass").length;
+  const scorable = checks.filter((c) => c.confidence !== "UNABLE_TO_VERIFY");
+  const unverifiable = checks.filter((c) => c.confidence === "UNABLE_TO_VERIFY");
+  const passingCount = scorable.filter((c) => c.status === "pass").length;
 
-  let description = `**Score: ${score}/100**\n`;
-  description += `${passingCount}/${checks.length} checks passed\n\n`;
+  let description = `**Score: ${score}/100** (${scorable.length} of ${checks.length} checks verified)\n`;
+  description += `${passingCount}/${scorable.length} verified checks passed\n\n`;
 
-  if (failingChecks.length > 0) {
-    for (const check of failingChecks) {
-      const emoji = STATUS_EMOJI[check.status];
-      description += `${emoji} **${check.name}**\n${check.detail}\n\n`;
+  // Show failing/warning verified checks
+  const failingChecks = scorable.filter((c) => c.status !== "pass");
+  for (const check of failingChecks) {
+    const emoji = STATUS_EMOJI[check.status];
+    description += `${emoji} **${check.name}**\n${check.detail}\n`;
+    if (check.confidence === "INFERRED" && check.reason) {
+      description += `*${check.reason}*\n`;
     }
-  } else {
-    description += "All checks passed.";
+    description += "\n";
+  }
+
+  // Show passing checks with INFERRED confidence
+  const inferredPassing = scorable.filter((c) => c.status === "pass" && c.confidence === "INFERRED");
+  for (const check of inferredPassing) {
+    description += `✅ **${check.name}**\n${check.detail}\n`;
+    if (check.reason) {
+      description += `*${check.reason}*\n`;
+    }
+    description += "\n";
+  }
+
+  // Show unverifiable checks
+  if (unverifiable.length > 0) {
+    for (const check of unverifiable) {
+      description += `${UNVERIFIED_EMOJI} **${check.name}** — UNABLE TO VERIFY\n`;
+      if (check.reason) {
+        description += `*${check.reason}*\n`;
+      }
+      description += "\n";
+    }
+  }
+
+  // Trim to Discord's 4096-char embed description limit
+  if (description.length > 4000) {
+    description = description.substring(0, 3997) + "...";
   }
 
   return {
