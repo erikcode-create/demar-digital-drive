@@ -80,6 +80,22 @@ const App = () => (
               <Route path="/portal" element={<CustomerPortal />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/support" element={<Support />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/resources/freight-shipping-cost" element={<FreightShippingCost />} />
+              <Route path="/resources/how-to-get-freight-quote" element={<HowToGetFreightQuote />} />
+              <Route path="/resources/how-to-choose-freight-carrier" element={<HowToChooseFreightCarrier />} />
+              <Route path="/resources/dry-van-vs-reefer" element={<DryVanVsReefer />} />
+              <Route path="/resources/ftl-vs-ltl" element={<FtlVsLtl />} />
+              <Route path="/resources/hot-shot-vs-full-truckload" element={<HotShotVsFullTruckload />} />
+              <Route path="/resources/types-of-freight-trailers" element={<TypesOfFreightTrailers />} />
+              <Route path="/resources/how-to-ship-freight" element={<HowToShipFreight />} />
+              <Route path="/resources/how-to-ship-refrigerated-goods" element={<HowToShipRefrigeratedGoods />} />
+              <Route path="/resources/how-to-ship-hazardous-materials" element={<HowToShipHazardousMaterials />} />
+              <Route path="/resources/oversized-load-shipping" element={<OversizedLoadShipping />} />
+              <Route path="/resources/freight-classes-explained" element={<FreightClassesExplained />} />
+              <Route path="/resources/broker-vs-carrier-vs-3pl" element={<BrokerVsCarrierVs3pl />} />
+              <Route path="/resources/freight-shipping-glossary" element={<FreightShippingGlossary />} />
+              <Route path="/resources/seasonal-freight-shipping" element={<SeasonalFreightShipping />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
