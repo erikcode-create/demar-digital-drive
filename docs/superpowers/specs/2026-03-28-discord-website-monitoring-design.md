@@ -138,8 +138,8 @@ Every scanner exports a `run()` function returning:
 ```yaml
 on:
   schedule:
-    - cron: '0 14 * * *'       # Daily at 7am PDT (lightweight)
-    - cron: '0 14 * * 0'       # Sunday at 7am PDT (full — runs instead of lightweight)
+    - cron: '0 14 * * 1-6'     # Mon-Sat at 7am PDT (lightweight)
+    - cron: '0 14 * * 0'       # Sunday at 7am PDT (full)
   workflow_dispatch:
     inputs:
       scan_type:
