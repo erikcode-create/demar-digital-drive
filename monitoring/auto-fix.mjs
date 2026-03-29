@@ -45,12 +45,21 @@ async function postDiscord(webhookUrl, embeds) {
   });
 }
 
-async function invokeClaude(prompt) {
+// Model tiers: haiku for mechanical fixes, sonnet for content-aware, opus for deep content generation
+const MODELS = {
+  haiku: "claude-haiku-4-5-20251001",
+  sonnet: "claude-sonnet-4-6",
+  opus: "claude-opus-4-6",
+};
+
+async function invokeClaude(prompt, model = "haiku") {
+  const modelId = MODELS[model] || MODELS.haiku;
   const fullPrompt = `${prompt}\n\nIMPORTANT: A wrong answer is 3x worse than a blank answer. If you are not confident the fix is correct, do not apply it. Just say "SKIPPED: <reason>" and make no changes.`;
 
+  log(`Using model: ${model} (${modelId})`);
   try {
     const result = execSync(
-      `npx -y @anthropic-ai/claude-code --print "${fullPrompt.replace(/"/g, '\\"')}"`,
+      `npx -y @anthropic-ai/claude-code --print --model ${modelId} "${fullPrompt.replace(/"/g, '\\"')}"`,
       { cwd: REPO_ROOT, encoding: "utf-8", timeout: 300000, env: { ...process.env, PATH: process.env.PATH } }
     );
     return { success: true, output: result };
