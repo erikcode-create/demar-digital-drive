@@ -27,3 +27,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Uptime monitor state (persisted via GitHub Actions cache)
+monitoring/uptime-state.json
