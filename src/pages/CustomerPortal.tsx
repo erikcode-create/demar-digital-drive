@@ -74,8 +74,7 @@ const CustomerPortal = () => {
 
   return (
     <div className="min-h-screen">
-      <LandstarSidebar />
-      <div className="ml-16">
+      <div>
         <Header />
         
         <main className="container mx-auto px-4 py-8">
