@@ -29,6 +29,14 @@ const QuoteRequest = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  useEffect(() => {
+    document.title = "Get a Freight Quote | Free Shipping Estimate | DeMar Transportation";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Request a free, no-obligation freight shipping quote from DeMar Transportation. Dry van, reefer, flatbed, and expedited services. Fast response within 1 business hour.');
+    }
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
