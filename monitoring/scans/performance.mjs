@@ -89,6 +89,8 @@ export async function run() {
         name: `${label} TTFB`,
         status: scoreToStatus(m.ttfbScore),
         detail: m.ttfb,
+        confidence: "VERIFIED",
+        reason: null,
       });
 
       if (strategy === "mobile") {
