@@ -86,6 +86,10 @@ const safetyItems = [
 const AboutPage = () => {
   useEffect(() => {
     document.title = "About DeMar Transportation | US Freight Carrier Based in Reno, NV";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Learn about DeMar Transportation, a US-based freight carrier headquartered in Reno, NV. MC & broker authority, own fleet, 24/7 dispatch, and nationwide coverage.');
+    }
   }, []);
 
   return (
