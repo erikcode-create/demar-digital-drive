@@ -66,7 +66,14 @@ Every scanner exports `run()` returning:
 
 ### Discord Integration
 
-- Webhook URL from `DISCORD_WEBHOOK_URL` env var (secret in GitHub Actions, `.env` locally)
+Two channels, two webhooks:
+
+| Channel | Env Var | Purpose |
+|---|---|---|
+| Website Health | `DISCORD_WEBHOOK_URL` | Scan results, uptime alerts, auto-fix notifications |
+| Content & Copywriting | `DISCORD_CONTENT_WEBHOOK_URL` | Content suggestions, copy changes, text updates |
+
+- Use `postToChannel("health", payload)` or `postToChannel("content", payload)` from `monitoring/lib/discord.mjs`
 - Color coding: green (pass/3066993), yellow (warn/16776960), red (fail/15158332)
 - One embed per scanner, max 10 per message (Discord limit)
 - Summary line: counts of passed/warnings/critical
