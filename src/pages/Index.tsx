@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -5,6 +6,14 @@ import About from "@/components/About";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "DeMar Transportation | Freight Shipping & Logistics Services | Reno, NV";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'DeMar Transportation provides reliable freight shipping services including dry van, reefer, flatbed, and hazmat transportation. US-based carrier with 24/7 dispatch. Call (775) 230-4767.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       <a
