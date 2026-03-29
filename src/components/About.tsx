@@ -7,7 +7,7 @@ import ApplyToDriveForm from "./ApplyToDriveForm";
 
 const About = () => {
   const features = [
-    "Direct carrier - no middleman markup",
+    "Competitive rates - no hidden fees",
     "All English speaking drivers",
     "Reno, NV headquarters",
     "Competitive pricing",
