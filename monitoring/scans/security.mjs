@@ -104,7 +104,7 @@ export async function run() {
   // Exposed sensitive files
   for (const path of SENSITIVE_PATHS) {
     try {
-      const res = await fetch(`${TARGET_URL}${path}`, { redirect: "follow" });
+      const res = await fetch(`${TARGET_URL}${path}`, { redirect: "follow", signal: AbortSignal.timeout(10000) });
       if (res.status === 200) {
         checks.push({ name: `Exposed: ${path}`, status: "fail", detail: `${path} is publicly accessible (HTTP 200)` });
       } else {
