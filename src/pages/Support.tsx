@@ -1,4 +1,14 @@
+import { useEffect } from "react";
+
 const Support = () => {
+  useEffect(() => {
+    document.title = "Support | DeMar Logistics App Help | DeMar Transportation";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Get help with the DeMar Logistics driver app. Contact our support team for assistance with load management, tracking, notifications, or account access.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-3xl mx-auto px-6 py-16">
