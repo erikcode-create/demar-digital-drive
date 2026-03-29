@@ -1,92 +1,157 @@
-import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const serviceLinks = [
+  { name: "Dry Van", path: "/services/dry-van" },
+  { name: "Reefer", path: "/services/reefer" },
+  { name: "Flatbed", path: "/services/flatbed" },
+  { name: "Box Truck", path: "/services/box-truck" },
+  { name: "Sprinter Van", path: "/services/sprinter-van" },
+  { name: "Hazmat/Fuel", path: "/services/hazmat" },
+  { name: "Full Truckload", path: "/services/ftl" },
+  { name: "LTL Shipping", path: "/services/ltl" },
+  { name: "3PL Services", path: "/services/3pl" },
+  { name: "Warehousing", path: "/services/warehousing" },
+];
+
+const quickLinks = [
+  { name: "About Us", path: "/about" },
+  { name: "Careers", path: "/careers" },
+  { name: "Contact", path: "/contact" },
+  { name: "FAQ", path: "/faq" },
+  { name: "Get a Quote", path: "/quote" },
+];
+
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Company Info */}
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <img src="/demar-logo-official.png" alt="DeMar Transportation" className="h-12 w-12" />
+    <footer className="bg-[hsl(225_97%_4%)] text-white">
+      <div className="container mx-auto px-4 py-16 md:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+          {/* Company */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-5">
+              <img
+                src="/demar-logo-official.png"
+                alt="DeMar Transportation"
+                className="h-10 w-10"
+              />
               <div>
-                <h3 className="text-xl font-bold">DeMar Transportation</h3>
-                <p className="text-primary-foreground/80 text-sm">Professional Freight Transportation</p>
+                <span className="text-base font-bold tracking-tight">
+                  DeMar
+                  <span className="text-[hsl(var(--accent))]"> Transportation</span>
+                </span>
               </div>
             </div>
-            <p className="text-primary-foreground/80 mb-6 max-w-md">
-              DeMar Transportation is a US-based freight carrier providing safe,
-              reliable, and competitive transportation solutions across America.
+            <p className="text-sm text-white/40 leading-relaxed mb-6 max-w-xs">
+              Asset-based freight carrier and licensed broker providing
+              nationwide transportation solutions.
             </p>
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/quote">Get Quote Now</Link>
-            </Button>
+            <p className="text-[10px] tracking-[0.15em] uppercase text-white/25">
+              Driven by Purpose. Delivering Results.
+            </p>
           </div>
 
-          {/* Services */}
+          {/* Services — two columns on larger screens */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Our Services</h4>
-            <ul className="space-y-2 text-primary-foreground/80">
-              <li><Link to="/services/dry-van" className="hover:text-accent transition-colors">Dry Van</Link></li>
-              <li><Link to="/services/reefer" className="hover:text-accent transition-colors">Reefer (Temperature Controlled)</Link></li>
-              <li><Link to="/services/flatbed" className="hover:text-accent transition-colors">Flatbed</Link></li>
-              <li><Link to="/services/box-truck" className="hover:text-accent transition-colors">Box Truck</Link></li>
-              <li><Link to="/services/sprinter-van" className="hover:text-accent transition-colors">Sprinter Van</Link></li>
-              <li><Link to="/services/hazmat" className="hover:text-accent transition-colors">Hazmat/Fuel</Link></li>
-              <li><Link to="/services/ftl" className="hover:text-accent transition-colors">Full Truckload (FTL)</Link></li>
-              <li><Link to="/services/ltl" className="hover:text-accent transition-colors">LTL Shipping</Link></li>
-              <li><Link to="/services/3pl" className="hover:text-accent transition-colors">3PL Services</Link></li>
-              <li><Link to="/services/warehousing" className="hover:text-accent transition-colors">Warehousing</Link></li>
+            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
+              Services
+            </p>
+            <ul className="space-y-2.5">
+              {serviceLinks.map((s) => (
+                <li key={s.path}>
+                  <Link
+                    to={s.path}
+                    className="text-sm text-white/40 hover:text-white transition-colors"
+                  >
+                    {s.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <div className="space-y-3 text-primary-foreground/80">
-              <a href="tel:+17752304767" className="flex items-center gap-2 hover:text-accent transition-colors">
-                <Phone className="h-4 w-4" />
-                <span>(775) 230-4767</span>
+            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
+              Company
+            </p>
+            <ul className="space-y-2.5">
+              {quickLinks.map((l) => (
+                <li key={l.path}>
+                  <Link
+                    to={l.path}
+                    className="text-sm text-white/40 hover:text-white transition-colors"
+                  >
+                    {l.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
+              Contact
+            </p>
+            <div className="space-y-3">
+              <a
+                href="tel:+17752304767"
+                className="flex items-center gap-3 text-sm text-white/40 hover:text-white transition-colors"
+              >
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                (775) 230-4767
               </a>
-              <a href="mailto:info@DeMarTransportation.com" className="flex items-center gap-2 hover:text-accent transition-colors">
-                <Mail className="h-4 w-4" />
-                <span>info@DeMarTransportation.com</span>
+              <a
+                href="mailto:info@DeMarTransportation.com"
+                className="flex items-center gap-3 text-sm text-white/40 hover:text-white transition-colors"
+              >
+                <Mail className="h-4 w-4 flex-shrink-0" />
+                info@DeMarTransportation.com
               </a>
-              <Link to="/contact" className="flex items-center gap-2 hover:text-accent transition-colors">
-                <MapPin className="h-4 w-4" />
-                <span>10471 Double R Blvd, Reno, NV 89521</span>
+              <Link
+                to="/contact"
+                className="flex items-center gap-3 text-sm text-white/40 hover:text-white transition-colors"
+              >
+                <MapPin className="h-4 w-4 flex-shrink-0" />
+                10471 Double R Blvd, Reno, NV
               </Link>
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                <span>24/7 Service Available</span>
+              <div className="flex items-center gap-3 text-sm text-white/40">
+                <Clock className="h-4 w-4 flex-shrink-0" />
+                24/7 Service Available
               </div>
             </div>
           </div>
         </div>
 
-        {/* Quick Links */}
-        <div className="border-t border-primary-foreground/20 pt-8 mb-8">
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-primary-foreground/80">
-            <Link to="/about" className="hover:text-accent transition-colors">About Us</Link>
-            <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-            <Link to="/careers" className="hover:text-accent transition-colors">Careers</Link>
-            <Link to="/faq" className="hover:text-accent transition-colors">FAQ</Link>
-            <Link to="/quote" className="hover:text-accent transition-colors">Get a Quote</Link>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-primary-foreground/20 pt-8">
+        {/* Bottom bar — tonal separation, no border */}
+        <div className="pt-8 bg-white/[0.02] -mx-4 px-4 rounded-t-xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-primary-foreground/60 text-sm">
-              © {new Date().getFullYear()} DeMar Transportation. All rights reserved.
+            <p className="text-xs text-white/25">
+              &copy; {new Date().getFullYear()} DeMar Transportation. All rights
+              reserved.
             </p>
-            <div className="flex gap-6 text-sm text-primary-foreground/60">
-              <Link to="/privacy" className="hover:text-accent transition-colors">Privacy Policy</Link>
-              <Link to="/support" className="hover:text-accent transition-colors">Terms of Service</Link>
-              <a href="https://www.carriersource.io/carriers/demar-transportation-4392091" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">DOT Information</a>
+            <div className="flex gap-6 text-xs text-white/25">
+              <Link
+                to="/privacy"
+                className="hover:text-white/50 transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                to="/support"
+                className="hover:text-white/50 transition-colors"
+              >
+                Terms
+              </Link>
+              <a
+                href="https://www.carriersource.io/carriers/demar-transportation-4392091"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white/50 transition-colors"
+              >
+                DOT Information
+              </a>
             </div>
           </div>
         </div>
