@@ -40,6 +40,30 @@ const Services = () => {
       title: "Hazmat/Fuel",
       slug: "hazmat",
       description: "Specialized handling of hazardous materials with certified drivers and equipment."
+    },
+    {
+      icon: <Container className="h-8 w-8" />,
+      title: "Full Truckload",
+      slug: "ftl",
+      description: "Dedicated trailers for shipments over 10,000 lbs with direct, no-stop delivery."
+    },
+    {
+      icon: <Layers className="h-8 w-8" />,
+      title: "LTL Shipping",
+      slug: "ltl",
+      description: "Cost-effective less-than-truckload shipping for smaller freight and partial loads."
+    },
+    {
+      icon: <Network className="h-8 w-8" />,
+      title: "3PL Services",
+      slug: "3pl",
+      description: "Full-service third-party logistics with freight management and supply chain solutions."
+    },
+    {
+      icon: <Warehouse className="h-8 w-8" />,
+      title: "Warehousing",
+      slug: "warehousing",
+      description: "Nationwide warehousing and distribution with inventory management and fulfillment."
     }
   ];
 
