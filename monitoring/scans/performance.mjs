@@ -49,6 +49,8 @@ export async function run() {
         name: `${label} Performance Score`,
         status: m.performanceScore >= 90 ? "pass" : m.performanceScore >= 50 ? "warn" : "fail",
         detail: `${m.performanceScore}/100`,
+        confidence: "VERIFIED",
+        reason: null,
       });
 
       checks.push({
