@@ -22,9 +22,9 @@ Automated website health scanner in `monitoring/`. Posts results to Discord via 
 ### Key Commands
 
 ```bash
-cd monitoring && node run-scans.mjs --type full          # all 6 scanners
-cd monitoring && node run-scans.mjs --type lightweight   # security + dependencies only
-cd monitoring && node run-scans.mjs --scan <name>        # single scanner (security|dependencies|seo|performance|images|accessibility)
+cd monitoring && node run-scans.mjs --type full          # all 11 scanners
+cd monitoring && node run-scans.mjs --type lightweight   # security + dependencies + freshness + dns
+cd monitoring && node run-scans.mjs --scan <name>        # single scanner (security|dependencies|seo|performance|images|accessibility|schema|social-preview|links|freshness|dns)
 ```
 
 ### Scanner Interface
