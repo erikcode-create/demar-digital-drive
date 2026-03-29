@@ -94,7 +94,7 @@ export async function run() {
     const outdatedCount = Object.keys(outdated).length;
 
     if (outdatedCount === 0) {
-      checks.push({ name: "Outdated Packages", status: "pass", detail: "All packages up to date" });
+      checks.push({ name: "Outdated Packages", status: "pass", detail: "All packages up to date", confidence: "VERIFIED", reason: null });
     } else {
       const majorUpdates = Object.entries(outdated).filter(
         ([, info]) => info.current?.split(".")[0] !== info.latest?.split(".")[0]
@@ -105,12 +105,16 @@ export async function run() {
           name: "Outdated Packages",
           status: "warn",
           detail: `${outdatedCount} outdated (${majorUpdates.length} major): ${names}${majorUpdates.length > 5 ? "..." : ""}`,
+          confidence: "VERIFIED",
+          reason: null,
         });
       } else {
         checks.push({
           name: "Outdated Packages",
           status: "pass",
           detail: `${outdatedCount} minor/patch updates available`,
+          confidence: "VERIFIED",
+          reason: null,
         });
       }
     }
