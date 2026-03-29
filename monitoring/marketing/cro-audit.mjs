@@ -214,24 +214,36 @@ async function main() {
     fixCount = await applyAutoFixes(recommendations);
   }
 
-  const result = { category: "CRO Audit", status, score, checks: allChecks };
-  const embed = buildEmbed(result);
+  // Build a compact summary instead of per-check embed (avoids Discord 6000 char limit)
+  const failChecks = allChecks.filter(c => c.status === "fail");
+  const warnChecks = allChecks.filter(c => c.status === "warn");
 
-  let recText = "";
+  let summaryDesc = `**Score: ${score}/100** (${allChecks.length} checks across ${PAGES.length} pages)\n\n`;
+  if (failChecks.length > 0) {
+    summaryDesc += "**Critical Issues:**\n" + failChecks.slice(0, 10).map(c => `❌ ${c.name}: ${c.detail}`).join("\n") + "\n\n";
+  }
+  if (warnChecks.length > 0) {
+    summaryDesc += "**Warnings:**\n" + warnChecks.slice(0, 10).map(c => `⚠️ ${c.name}: ${c.detail}`).join("\n");
+  }
+
+  const embeds = [{
+    title: `${status === "pass" ? "✅" : status === "warn" ? "⚠️" : "❌"} CRO Audit`,
+    description: summaryDesc.substring(0, 4000),
+    color: status === "pass" ? 3066993 : status === "warn" ? 16776960 : 15158332,
+    timestamp: new Date().toISOString(),
+  }];
+
   if (recommendations && recommendations.length > 0) {
-    recText = "\n\n**Top Recommendations:**\n" + recommendations.slice(0, 5).map(r =>
+    const recText = recommendations.slice(0, 5).map(r =>
       `${r.impact === "high" ? "🔴" : r.impact === "medium" ? "🟡" : "🟢"} **${r.page}:** ${r.fix}`
     ).join("\n");
-  }
-  if (fixCount > 0) {
-    recText += `\n\n🔧 **${fixCount} auto-fix(es) applied** — PR created for review.`;
-  }
-
-  const embeds = [embed];
-  if (recText) {
+    let desc = "**Top Recommendations:**\n" + recText;
+    if (fixCount > 0) {
+      desc += `\n\n🔧 **${fixCount} auto-fix(es) applied** — PR created for review.`;
+    }
     embeds.push({
       title: "📊 AI Recommendations",
-      description: recText.trim().substring(0, 4000),
+      description: desc.substring(0, 4000),
       color: 3447003,
       timestamp: new Date().toISOString(),
     });
