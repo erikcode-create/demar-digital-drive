@@ -14,12 +14,18 @@ on:
           - full
         default: full
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   scan:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ github.token }}
 
       - uses: actions/setup-node@v4
         with:
