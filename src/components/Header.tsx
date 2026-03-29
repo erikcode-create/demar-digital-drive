@@ -44,7 +44,7 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <img src="/lovable-uploads/d409271f-b234-4ccb-a60d-5adacce24eb6.png" alt="DeMar Transportation logo" className="h-8 w-8 md:h-12 md:w-12" />
             <div>
-              <h1 className="text-lg md:text-xl font-bold">DeMar Transportation</h1>
+              <span className="text-lg md:text-xl font-bold">DeMar Transportation</span>
               <p className="text-xs md:text-sm text-primary-foreground/80 hidden sm:block">Professional Freight Transportation</p>
             </div>
           </div>
