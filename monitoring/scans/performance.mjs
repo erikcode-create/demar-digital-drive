@@ -111,12 +111,16 @@ export async function run() {
             name: "Third-Party Scripts",
             status: "warn",
             detail: `${m.thirdParty} third-party scripts loaded`,
+            confidence: "VERIFIED",
+            reason: null,
           });
         } else {
           checks.push({
             name: "Third-Party Scripts",
             status: "pass",
             detail: `${m.thirdParty} third-party scripts`,
+            confidence: "VERIFIED",
+            reason: null,
           });
         }
       }
