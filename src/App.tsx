@@ -25,6 +25,8 @@ const SprinterVan = lazy(() => import("./pages/services/SprinterVan"));
 const Hazmat = lazy(() => import("./pages/services/Hazmat"));
 const ThirdPartyLogistics = lazy(() => import("./pages/services/ThirdPartyLogistics"));
 const Warehousing = lazy(() => import("./pages/services/Warehousing"));
+const LTL = lazy(() => import("./pages/services/LTL"));
+const FTL = lazy(() => import("./pages/services/FTL"));
 
 const queryClient = new QueryClient();
 
