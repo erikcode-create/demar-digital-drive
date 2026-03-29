@@ -15,7 +15,7 @@ React/Vite/TypeScript SPA deployed to GitHub Pages via `deploy.yml`. Uses shadcn
 Automated website health scanner in `monitoring/`. Posts results to Discord via webhook. Runs on GitHub Actions.
 
 - **Entry point:** `monitoring/run-scans.mjs`
-- **Scanners:** `monitoring/scans/*.mjs` (security, dependencies, seo, performance, images, accessibility)
+- **Scanners:** `monitoring/scans/*.mjs` (security, dependencies, seo, performance, images, accessibility, schema, social-preview, links, freshness, dns)
 - **Shared lib:** `monitoring/lib/scanner.mjs` (fetch helpers, score computation), `monitoring/lib/discord.mjs` (webhook posting)
 - **Detailed docs:** `monitoring/README.md`
 
