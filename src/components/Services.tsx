@@ -8,31 +8,37 @@ const Services = () => {
     {
       icon: <Package className="h-8 w-8" />,
       title: "Dry Van",
+      slug: "dry-van",
       description: "Standard enclosed trailers for general freight and cargo protection from weather elements."
     },
     {
       icon: <Snowflake className="h-8 w-8" />,
       title: "Reefer",
+      slug: "reefer",
       description: "Temperature-controlled transportation for perishable goods and sensitive materials."
     },
     {
       icon: <Truck className="h-8 w-8" />,
       title: "Flatbed",
+      slug: "flatbed",
       description: "Open trailers for oversized loads, construction materials, and heavy equipment."
     },
     {
       icon: <Building className="h-8 w-8" />,
       title: "Box Truck",
+      slug: "box-truck",
       description: "Smaller loads and local deliveries with flexible scheduling options."
     },
     {
       icon: <Car className="h-8 w-8" />,
       title: "Sprinter Van",
+      slug: "sprinter-van",
       description: "Expedited delivery for time-sensitive smaller shipments and express cargo."
     },
     {
       icon: <Wrench className="h-8 w-8" />,
       title: "Hazmat/Fuel",
+      slug: "hazmat",
       description: "Specialized handling of hazardous materials with certified drivers and equipment."
     }
   ];
