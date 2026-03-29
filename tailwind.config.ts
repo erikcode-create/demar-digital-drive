@@ -68,6 +68,14 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			/* Tonal surface stack */
+			surface: {
+				DEFAULT: 'hsl(var(--surface))',
+				low: 'hsl(var(--surface-low))',
+				container: 'hsl(var(--surface-container))',
+				high: 'hsl(var(--surface-high))',
+				highest: 'hsl(var(--surface-highest))',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: { height: '0' },
