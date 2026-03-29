@@ -241,7 +241,7 @@ const Hazmat = () => {
                       Federal law requires motor carriers transporting hazardous materials to maintain significantly higher levels of liability insurance than standard freight carriers. The minimum financial responsibility for hazmat carriers ranges from $1 million to $5 million depending on the class and quantity of materials being transported, as specified in 49 CFR Part 387.
                     </p>
                     <p className="text-lg leading-relaxed">
-                      DeMar Transportation and our Landstar carrier network maintain comprehensive insurance coverage that meets or exceeds all federal minimums. This includes auto liability, cargo insurance, pollution liability, and umbrella coverage. Certificates of insurance are available upon request for any shipment.
+                      DeMar Transportation and our carrier network maintain comprehensive insurance coverage that meets or exceeds all federal minimums. This includes auto liability, cargo insurance, pollution liability, and umbrella coverage. Certificates of insurance are available upon request for any shipment.
                     </p>
                   </div>
                 </div>
