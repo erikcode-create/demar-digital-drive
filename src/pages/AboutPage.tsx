@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import {
   Shield,
@@ -16,12 +14,78 @@ import {
   Clock,
   Award,
   Globe,
+  ArrowRight,
 } from "lucide-react";
+
+const values = [
+  {
+    icon: Shield,
+    title: "Safety First",
+    desc: "Safety is not negotiable. From rigorous pre-trip inspections to ongoing driver training and full DOT compliance, we maintain the highest safety standards. Every driver, every truck, every load.",
+  },
+  {
+    icon: Users,
+    title: "Clear Communication",
+    desc: "All of our drivers are English-speaking professionals who communicate clearly with shippers, receivers, and dispatch. Transparency drives trust.",
+  },
+  {
+    icon: Target,
+    title: "Competitive Pricing",
+    desc: "With our own fleet and established carrier network, we keep rates competitive by eliminating unnecessary overhead. Transparent pricing without sacrificing quality.",
+  },
+  {
+    icon: Clock,
+    title: "Reliability",
+    desc: "When we commit to a pickup time and delivery window, we honor it. Our dispatch team operates around the clock to monitor loads and keep your freight on schedule.",
+  },
+];
+
+const differentiators = [
+  {
+    icon: Truck,
+    title: "Asset-Based Carrier",
+    desc: "Our own fleet combined with a vetted carrier network means reliable capacity and competitive rates.",
+  },
+  {
+    icon: Users,
+    title: "English-Speaking Drivers",
+    desc: "Clear, professional communication at every pickup and delivery point across the country.",
+  },
+  {
+    icon: Clock,
+    title: "24/7 Availability",
+    desc: "Our dispatch team is available around the clock. Freight does not wait for business hours.",
+  },
+  {
+    icon: Award,
+    title: "DOT Compliant",
+    desc: "Full compliance with all Department of Transportation regulations, inspections, and safety requirements.",
+  },
+];
+
+const fleet = [
+  { name: "Dry Vans", desc: "Standard enclosed trailers for palletized freight, boxed goods, and general merchandise." },
+  { name: "Reefers", desc: "Temperature-controlled refrigerated trailers for perishable goods and pharmaceuticals." },
+  { name: "Flatbeds", desc: "Open-deck trailers for construction materials, machinery, steel, and oversized loads." },
+  { name: "Box Trucks", desc: "Medium-duty trucks for local and regional deliveries and smaller shipments." },
+  { name: "Sprinter Vans", desc: "Expedited delivery vehicles for time-critical, smaller shipments." },
+  { name: "Hazmat Equipment", desc: "Specially equipped vehicles with hazmat-endorsed drivers for regulated materials." },
+];
+
+const safetyItems = [
+  "Full DOT compliance on every vehicle and driver",
+  "Comprehensive driver training and ongoing education",
+  "Rigorous preventive equipment maintenance schedules",
+  "Mandatory pre-trip and post-trip vehicle inspections",
+  "Electronic logging devices (ELD) on all trucks",
+  "Drug and alcohol testing program compliance",
+  "Hours of service monitoring and enforcement",
+  "Accident prevention and defensive driving programs",
+];
 
 const AboutPage = () => {
   useEffect(() => {
-    document.title =
-      "About DeMar Transportation | US Freight Carrier Based in Reno, NV";
+    document.title = "About DeMar Transportation | US Freight Carrier Based in Reno, NV";
   }, []);
 
   return (
@@ -35,399 +99,254 @@ const AboutPage = () => {
       <div>
         <Header />
         <main id="main-content">
-          {/* Hero Section */}
-          <section className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground py-20 px-4">
-            <div className="container mx-auto max-w-5xl text-center">
-              <Badge className="mb-4 bg-white/20 text-white hover:bg-white/30 text-sm">
-                US-Based Freight Carrier
-              </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                DeMar Transportation
+          {/* Hero */}
+          <section className="pt-32 pb-20 px-4 bg-[hsl(225_97%_4%)] relative overflow-hidden">
+            <div className="absolute inset-0 opacity-[0.03]" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
+              backgroundSize: '40px 40px',
+            }} />
+            <div className="container mx-auto max-w-5xl relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 backdrop-blur-sm">
+                <Truck className="h-4 w-4 text-[hsl(var(--accent))]" />
+                <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/60">
+                  US-Based Freight Carrier
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
+                DeMar
+                <br />
+                <span className="text-white/40">Transportation</span>
               </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto">
-                Your freight partner for reliable, safe, and competitively priced
-                shipping across the United States.
+              <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
+                Your freight partner for reliable, safe, and competitively priced shipping across the United States.
               </p>
             </div>
           </section>
 
-          {/* Company Overview */}
-          <section className="py-16 px-4 bg-background">
+          {/* Who We Are */}
+          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
             <div className="container mx-auto max-w-5xl">
-              <h2 className="text-3xl font-bold mb-8 text-center">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
                 Who We Are
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-8">
+                Company Overview
               </h2>
-              <div className="prose prose-lg max-w-none text-muted-foreground">
-                <p className="text-lg leading-relaxed mb-6">
-                  DeMar Transportation is a United States-based freight carrier
-                  headquartered in Reno, Nevada. We provide comprehensive
-                  trucking and logistics services to shippers, manufacturers,
-                  distributors, and businesses of all sizes nationwide. From
-                  full truckload dry van shipments to temperature-controlled
-                  refrigerated freight, flatbed hauling, box truck deliveries,
-                  sprinter van expedited service, and hazmat-certified loads, we
-                  handle every type of freight with the same commitment to
-                  excellence.
+              <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
+                <p>
+                  DeMar Transportation is a United States-based freight carrier headquartered in Reno, Nevada. We provide comprehensive trucking and logistics services to shippers, manufacturers, distributors, and businesses of all sizes nationwide.
                 </p>
-                <p className="text-lg leading-relaxed mb-6">
-                  As an asset-based carrier with full-service logistics
-                  capabilities, DeMar Transportation handles your freight with
-                  a single point of contact from pickup to delivery. Whether
-                  we move your load on our own equipment or through our vetted
-                  carrier network, you get the same level of accountability,
-                  transparent pricing, and clear communication on every
-                  shipment.
+                <p>
+                  As an asset-based carrier with full-service logistics capabilities, DeMar Transportation handles your freight with a single point of contact from pickup to delivery. Whether we move your load on our own equipment or through our vetted carrier network, you get the same level of accountability, transparent pricing, and clear communication.
                 </p>
-                <p className="text-lg leading-relaxed">
-                  Our team understands that freight is the backbone of American
-                  commerce. Whether you need a single shipment moved across
-                  town or recurring lanes serviced coast to coast, DeMar
-                  Transportation delivers the capacity, reliability, and
-                  professionalism your supply chain demands.
+                <p>
+                  Our team understands that freight is the backbone of American commerce. Whether you need a single shipment moved across town or recurring lanes serviced coast to coast, DeMar Transportation delivers the capacity, reliability, and professionalism your supply chain demands.
                 </p>
               </div>
             </div>
           </section>
 
           {/* Mission and Values */}
-          <section className="py-16 px-4 bg-muted/50">
+          <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
             <div className="container mx-auto max-w-5xl">
-              <h2 className="text-3xl font-bold mb-4 text-center">
-                Our Mission and Values
-              </h2>
-              <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                Every decision we make is guided by four core principles that
-                define who we are and how we operate.
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                Our Foundation
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/10 p-3 rounded-lg">
-                        <Shield className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-2">
-                          Safety First
-                        </h3>
-                        <p className="text-muted-foreground">
-                          Safety is not negotiable. From rigorous pre-trip
-                          inspections to ongoing driver training and full DOT
-                          compliance, we maintain the highest safety standards
-                          in the industry. Every driver, every truck, every
-                          load is held to the same uncompromising standard.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/10 p-3 rounded-lg">
-                        <Users className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-2">
-                          Clear Communication
-                        </h3>
-                        <p className="text-muted-foreground">
-                          All of our drivers are English-speaking professionals
-                          who communicate clearly with shippers, receivers, and
-                          dispatch. You will never struggle to get a status
-                          update, coordinate a delivery window, or resolve a
-                          concern. Transparency drives trust.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/10 p-3 rounded-lg">
-                        <Target className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-2">
-                          Competitive Pricing
-                        </h3>
-                        <p className="text-muted-foreground">
-                          With our own fleet and established carrier network, we
-                          keep rates competitive by eliminating unnecessary
-                          overhead. You get transparent pricing without
-                          sacrificing service quality, tracking visibility, or
-                          reliability.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/10 p-3 rounded-lg">
-                        <Clock className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-2">
-                          Reliability
-                        </h3>
-                        <p className="text-muted-foreground">
-                          When we commit to a pickup time and delivery window,
-                          we honor it. Our dispatch team operates around the
-                          clock to monitor loads, proactively address delays,
-                          and keep your freight moving on schedule. Consistent
-                          on-time performance is what sets us apart.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </section>
-
-          {/* What Makes DeMar Different */}
-          <section className="py-16 px-4 bg-background">
-            <div className="container mx-auto max-w-5xl">
-              <h2 className="text-3xl font-bold mb-12 text-center">
-                What Makes DeMar Different
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-4">
+                Mission and Values
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {[
-                  {
-                    icon: Truck,
-                    title: "Asset-Based Carrier",
-                    desc: "Our own fleet combined with a vetted carrier network means reliable capacity and competitive rates.",
-                  },
-                  {
-                    icon: Users,
-                    title: "English-Speaking Drivers",
-                    desc: "Clear, professional communication at every pickup and delivery point across the country.",
-                  },
-                  {
-                    icon: Clock,
-                    title: "24/7 Availability",
-                    desc: "Our dispatch team is available around the clock. Freight does not wait for business hours, and neither do we.",
-                  },
-                  {
-                    icon: Award,
-                    title: "DOT Compliant",
-                    desc: "Full compliance with all Department of Transportation regulations, inspections, and safety requirements.",
-                  },
-                ].map((item) => (
-                  <Card key={item.title} className="text-center">
-                    <CardContent className="pt-6">
-                      <div className="bg-primary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <item.icon className="h-8 w-8 text-primary" />
+              <p className="text-base text-[hsl(var(--muted-foreground))] mb-12 max-w-2xl leading-relaxed">
+                Every decision we make is guided by four core principles that define who we are and how we operate.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {values.map((v) => (
+                  <div key={v.title} className="p-6 rounded-xl bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-float)] transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="p-2.5 rounded-lg bg-[hsl(var(--surface-low))]">
+                        <v.icon className="h-5 w-5 text-[hsl(var(--accent))]" />
                       </div>
-                      <h3 className="text-lg font-semibold mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {item.desc}
-                      </p>
-                    </CardContent>
-                  </Card>
+                      <div>
+                        <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-2">{v.title}</h3>
+                        <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">{v.desc}</p>
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
           </section>
 
-          {/* Service Area */}
-          <section className="py-16 px-4 bg-muted/50">
+          {/* What Makes DeMar Different — dark section */}
+          <section className="py-20 px-4 bg-[hsl(225_97%_4%)] relative overflow-hidden">
+            <div className="absolute inset-0 opacity-[0.02]" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
+              backgroundSize: '40px 40px',
+            }} />
+            <div className="container mx-auto max-w-5xl relative z-10">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                Our Edge
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-12">
+                What Makes DeMar Different
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {differentiators.map((d) => (
+                  <div key={d.title} className="p-6 rounded-xl bg-white/5 hover:bg-white/8 transition-all duration-300 group">
+                    <d.icon className="h-8 w-8 text-[hsl(var(--accent))] mb-4 group-hover:scale-110 transition-transform" />
+                    <h3 className="text-base font-semibold text-white mb-2">{d.title}</h3>
+                    <p className="text-sm text-white/50 leading-relaxed">{d.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Nationwide Coverage */}
+          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
             <div className="container mx-auto max-w-5xl">
-              <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="flex flex-col md:flex-row items-start gap-12">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <Globe className="h-8 w-8 text-primary" />
-                    <h2 className="text-3xl font-bold">Nationwide Coverage</h2>
+                    <Globe className="h-7 w-7 text-[hsl(var(--accent))]" />
+                    <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))]">
+                      Coverage
+                    </p>
                   </div>
-                  <p className="text-lg text-muted-foreground mb-4">
-                    DeMar Transportation serves all 48 contiguous states with
-                    reliable freight shipping solutions. Whether your shipment
-                    originates on the West Coast, moves through the Midwest, or
-                    delivers to the Eastern Seaboard, our network and fleet
-                    capacity ensure coverage wherever your freight needs to go.
-                  </p>
-                  <p className="text-lg text-muted-foreground mb-6">
-                    From our Reno, Nevada headquarters, we coordinate pickups
-                    and deliveries across major freight corridors, metropolitan
-                    distribution hubs, and rural delivery points. Our regional
-                    and over-the-road drivers maintain consistent service
-                    quality regardless of distance or destination.
-                  </p>
-                  <Link to="/#services">
-                    <Button variant="outline">
-                      View Our Services
+                  <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-6">
+                    Nationwide Coverage
+                  </h2>
+                  <div className="space-y-4 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-xl">
+                    <p>
+                      DeMar Transportation serves all 48 contiguous states with reliable freight shipping solutions. Whether your shipment originates on the West Coast, moves through the Midwest, or delivers to the Eastern Seaboard, our network ensures coverage wherever your freight needs to go.
+                    </p>
+                    <p>
+                      From our Reno, Nevada headquarters, we coordinate pickups and deliveries across major freight corridors, metropolitan distribution hubs, and rural delivery points.
+                    </p>
+                  </div>
+                  <div className="mt-6">
+                    <Button variant="outline" className="border-[hsl(var(--primary))] text-[hsl(var(--primary))]" asChild>
+                      <Link to="/#services">
+                        View Our Services
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
                     </Button>
-                  </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Fleet Information */}
-          <section className="py-16 px-4 bg-background">
+          {/* Fleet */}
+          <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
             <div className="container mx-auto max-w-5xl">
-              <h2 className="text-3xl font-bold mb-4 text-center">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                Equipment
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-4">
                 Our Fleet
               </h2>
-              <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                We maintain a diverse, well-equipped fleet to handle any freight
-                requirement, from standard palletized goods to
-                temperature-sensitive cargo and oversized equipment.
+              <p className="text-base text-[hsl(var(--muted-foreground))] mb-10 max-w-2xl leading-relaxed">
+                A diverse, well-equipped fleet to handle any freight requirement.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {[
-                  {
-                    name: "Dry Vans",
-                    desc: "Standard enclosed trailers for palletized freight, boxed goods, and general merchandise requiring weather protection.",
-                  },
-                  {
-                    name: "Reefers",
-                    desc: "Temperature-controlled refrigerated trailers for perishable goods, pharmaceuticals, and temperature-sensitive shipments.",
-                  },
-                  {
-                    name: "Flatbeds",
-                    desc: "Open-deck trailers for construction materials, machinery, steel, lumber, and oversized loads requiring crane or forklift loading.",
-                  },
-                  {
-                    name: "Box Trucks",
-                    desc: "Medium-duty straight trucks ideal for local and regional deliveries, last-mile distribution, and smaller commercial shipments.",
-                  },
-                  {
-                    name: "Sprinter Vans",
-                    desc: "Expedited delivery vehicles for time-critical, smaller shipments that need fast, dedicated service with minimal transit time.",
-                  },
-                  {
-                    name: "Hazmat-Certified Equipment",
-                    desc: "Specially equipped and permitted vehicles with hazmat-endorsed drivers for hazardous materials transport in full regulatory compliance.",
-                  },
-                ].map((vehicle) => (
-                  <Card key={vehicle.name}>
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                        <div>
-                          <h3 className="font-semibold mb-1">{vehicle.name}</h3>
-                          <p className="text-sm text-muted-foreground">
-                            {vehicle.desc}
-                          </p>
-                        </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {fleet.map((v) => (
+                  <div key={v.name} className="p-5 rounded-xl bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-float)] transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-4 w-4 text-[hsl(var(--accent))] mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-1">{v.name}</h3>
+                        <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed">{v.desc}</p>
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
           </section>
 
-          {/* Safety Commitment */}
-          <section className="py-16 px-4 bg-muted/50">
+          {/* Safety */}
+          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
             <div className="container mx-auto max-w-5xl">
-              <h2 className="text-3xl font-bold mb-8 text-center">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                Safety
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-8">
                 Our Commitment to Safety
               </h2>
-              <div className="max-w-3xl mx-auto">
-                <p className="text-lg text-muted-foreground mb-6">
-                  At DeMar Transportation, safety is embedded in every aspect
-                  of our operations. We understand that your freight represents
-                  your livelihood, and our drivers share the road with families
-                  and communities every day. That dual responsibility drives
-                  our unwavering commitment to safe practices.
+              <div className="max-w-3xl">
+                <p className="text-base text-[hsl(var(--muted-foreground))] mb-8 leading-relaxed">
+                  Safety is embedded in every aspect of our operations. Your freight represents your livelihood, and our drivers share the road with families every day. That dual responsibility drives our commitment.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                  {[
-                    "Full DOT compliance on every vehicle and driver",
-                    "Comprehensive driver training and ongoing education",
-                    "Rigorous preventive equipment maintenance schedules",
-                    "Mandatory pre-trip and post-trip vehicle inspections",
-                    "Electronic logging devices (ELD) on all trucks",
-                    "Drug and alcohol testing program compliance",
-                    "Hours of service monitoring and enforcement",
-                    "Accident prevention and defensive driving programs",
-                  ].map((item) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+                  {safetyItems.map((item) => (
                     <div key={item} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <p className="text-muted-foreground">{item}</p>
+                      <CheckCircle className="h-4 w-4 text-[hsl(var(--accent))] mt-0.5 flex-shrink-0" />
+                      <p className="text-sm text-[hsl(var(--muted-foreground))]">{item}</p>
                     </div>
                   ))}
                 </div>
-                <p className="text-lg text-muted-foreground">
-                  These are not aspirational goals. They are daily operational
-                  requirements enforced across our entire fleet. When you ship
-                  with DeMar, you ship with confidence that your cargo is in
-                  safe, professional hands.
+                <p className="text-base text-[hsl(var(--muted-foreground))] leading-relaxed">
+                  These are not aspirational goals — they are daily operational requirements enforced across our entire fleet.
                 </p>
               </div>
             </div>
           </section>
 
           {/* Headquarters */}
-          <section className="py-16 px-4 bg-background">
+          <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
             <div className="container mx-auto max-w-5xl">
-              <Card className="overflow-hidden">
-                <CardContent className="p-8 md:p-12">
-                  <div className="flex flex-col md:flex-row items-center gap-8">
-                    <div className="bg-primary/10 p-6 rounded-full">
-                      <MapPin className="h-12 w-12 text-primary" />
-                    </div>
-                    <div>
-                      <h2 className="text-3xl font-bold mb-2">
-                        Reno, Nevada Headquarters
-                      </h2>
-                      <p className="text-lg text-muted-foreground mb-4">
-                        Our headquarters is strategically located in Reno,
-                        Nevada, positioning us at the crossroads of major
-                        West Coast freight corridors. Reno's central location
-                        provides efficient access to California, the Pacific
-                        Northwest, the Mountain West, and all points east,
-                        making it an ideal base for nationwide freight
-                        operations.
-                      </p>
-                      <p className="text-muted-foreground font-medium">
-                        10471 Double R Blvd, Reno, NV 89521
-                      </p>
-                    </div>
+              <div className="p-8 md:p-12 rounded-xl bg-white shadow-[var(--shadow-float)]">
+                <div className="flex flex-col md:flex-row items-start gap-8">
+                  <div className="p-4 rounded-xl bg-[hsl(var(--surface-low))]">
+                    <MapPin className="h-10 w-10 text-[hsl(var(--accent))]" />
                   </div>
-                </CardContent>
-              </Card>
+                  <div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-[hsl(var(--primary))] tracking-tight mb-3">
+                      Reno, Nevada Headquarters
+                    </h2>
+                    <p className="text-base text-[hsl(var(--muted-foreground))] mb-4 leading-relaxed max-w-xl">
+                      Strategically located at the crossroads of major West Coast freight corridors. Reno provides efficient access to California, the Pacific Northwest, the Mountain West, and all points east.
+                    </p>
+                    <p className="text-sm font-medium text-[hsl(var(--primary))]">
+                      10471 Double R Blvd, Reno, NV 89521
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
-          {/* CTA Section */}
-          <section className="py-20 px-4 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
-            <div className="container mx-auto max-w-5xl text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          {/* CTA */}
+          <section className="py-16 bg-[hsl(var(--accent))]">
+            <div className="container mx-auto max-w-5xl text-center px-4">
+              <h2 className="text-2xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-3">
                 Ready to Ship with DeMar?
               </h2>
-              <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-                Get competitive rates with transparent pricing. Contact us
-                today for a free quote or call us directly to discuss your
-                freight needs.
+              <p className="text-base text-[hsl(var(--primary))]/70 mb-8 max-w-md mx-auto">
+                Competitive rates with transparent pricing. Contact us today.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/quote">
-                  <Button
-                    size="lg"
-                    variant="secondary"
-                    className="text-lg px-8"
-                  >
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-[hsl(var(--primary))] text-white hover:bg-[hsl(var(--primary))]/90 font-semibold"
+                  asChild
+                >
+                  <Link to="/quote" className="group">
                     Get a Free Quote
-                  </Button>
-                </Link>
-                <a href="tel:+17752304767">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-8 border-white text-white hover:bg-white/10"
-                  >
-                    <Phone className="mr-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[hsl(var(--primary))] text-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))]/10"
+                  asChild
+                >
+                  <a href="tel:+17752304767">
+                    <Phone className="mr-2 h-4 w-4" />
                     (775) 230-4767
-                  </Button>
-                </a>
+                  </a>
+                </Button>
               </div>
             </div>
           </section>
