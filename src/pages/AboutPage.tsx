@@ -260,7 +260,7 @@ const AboutPage = () => {
                     and over-the-road drivers maintain consistent service
                     quality regardless of distance or destination.
                   </p>
-                  <Link to="/services">
+                  <Link to="/#services">
                     <Button variant="outline">
                       View Our Services
                     </Button>
