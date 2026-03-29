@@ -85,6 +85,7 @@ Three channels, three webhooks:
 |---|---|---|
 | Deploy | `.github/workflows/deploy.yml` | Push to main |
 | Website Monitor | `.github/workflows/website-monitor.yml` | Mon-Sat 7am PDT lightweight, Sun 7am PDT full |
+| SEO Audit | `.github/workflows/seo-audit.yml` | Daily 9am PDT |
 | Website Uptime | `.github/workflows/website-uptime.yml` | Every 15 min (check), daily 8am PDT (summary) |
 
 `website-monitor.yml` and `website-uptime.yml` both support `workflow_dispatch`.
