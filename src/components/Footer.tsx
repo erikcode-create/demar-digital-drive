@@ -65,7 +65,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © 2025 DeMar Transportation. All rights reserved.
+              © {new Date().getFullYear()} DeMar Transportation. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-primary-foreground/60">
               <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
