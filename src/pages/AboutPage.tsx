@@ -198,8 +198,8 @@ const AboutPage = () => {
                 {[
                   {
                     icon: Truck,
-                    title: "Direct Carrier",
-                    desc: "No middleman, no broker markup. You work directly with the company hauling your freight.",
+                    title: "Asset-Based Carrier",
+                    desc: "Our own fleet combined with a vetted carrier network means reliable capacity and competitive rates.",
                   },
                   {
                     icon: Users,
