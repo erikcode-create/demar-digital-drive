@@ -85,7 +85,7 @@ export async function run() {
 
   // HTTPS redirect
   try {
-    const httpRes = await fetch(`http://demartransportation.com`, { redirect: "manual" });
+    const httpRes = await fetch(`http://demartransportation.com`, { redirect: "manual", signal: AbortSignal.timeout(10000) });
     const location = httpRes.headers.get("location") || "";
     if (location.startsWith("https://")) {
       checks.push({ name: "HTTP→HTTPS Redirect", status: "pass", detail: `Redirects to ${location}` });
