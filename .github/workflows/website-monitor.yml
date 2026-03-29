@@ -1,0 +1,44 @@
+name: Website Monitor
+
+on:
+  schedule:
+    - cron: '0 14 * * 1-6'  # Mon-Sat 7am PDT (lightweight)
+    - cron: '0 14 * * 0'    # Sunday 7am PDT (full)
+  workflow_dispatch:
+    inputs:
+      scan_type:
+        description: 'Scan type to run'
+        type: choice
+        options:
+          - lightweight
+          - full
+        default: full
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install monitoring dependencies
+        run: cd monitoring && npm ci
+
+      - name: Determine scan type
+        id: scan-type
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "type=${{ github.event.inputs.scan_type }}" >> $GITHUB_OUTPUT
+          elif [ "$(date -u +%u)" = "7" ]; then
+            echo "type=full" >> $GITHUB_OUTPUT
+          else
+            echo "type=lightweight" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run scans
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: cd monitoring && node run-scans.mjs --type ${{ steps.scan-type.outputs.type }}
