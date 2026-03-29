@@ -165,7 +165,7 @@ async function handleTier2(fix, webhookUrl) {
 
   await postDiscord(webhookUrl, [{
     title: "\u{1F4CB} Auto-Fix PR Created",
-    description: `**Category:** ${fix.category}\n**Issue:** ${fix.check.name} — ${fix.check.detail}\n**Fix:** ${fix.commitMsg}\n**Branch:** \`${branch}\`\n**Tier:** 2 (PR created for review)`,
+    description: `**Category:** ${fix.category}\n**Issue:** ${fix.check.name} — ${fix.check.detail}\n**Fix:** ${fix.commitMsg}\n**Model:** ${fix.model}\n**Branch:** \`${branch}\`\n**Tier:** 2 (PR created for review)`,
     color: 16776960,
     timestamp: new Date().toISOString(),
   }]);
