@@ -29,24 +29,32 @@ export async function run() {
         name: "npm audit",
         status: "fail",
         detail: `${total} vulnerabilities: ${critical} critical, ${high} high, ${moderate} moderate, ${low} low`,
+        confidence: "VERIFIED",
+        reason: null,
       });
     } else if (moderate > 0) {
       checks.push({
         name: "npm audit",
         status: "warn",
         detail: `${total} vulnerabilities: ${moderate} moderate, ${low} low`,
+        confidence: "VERIFIED",
+        reason: null,
       });
     } else if (low > 0) {
       checks.push({
         name: "npm audit",
         status: "warn",
         detail: `${low} low-severity vulnerabilities`,
+        confidence: "VERIFIED",
+        reason: null,
       });
     } else {
       checks.push({
         name: "npm audit",
         status: "pass",
         detail: "No known vulnerabilities",
+        confidence: "VERIFIED",
+        reason: null,
       });
     }
   } catch (err) {
