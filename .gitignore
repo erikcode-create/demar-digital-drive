@@ -30,3 +30,7 @@ dist-ssr
 
 # Uptime monitor state (persisted via GitHub Actions cache)
 monitoring/uptime-state.json
+
+# Scan results and auto-fix lock (ephemeral)
+monitoring/scan-results.json
+monitoring/auto-fix-lock.json
