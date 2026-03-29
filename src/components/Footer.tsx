@@ -68,8 +68,8 @@ const Footer = () => {
               © {new Date().getFullYear()} DeMar Transportation. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-primary-foreground/60">
-              <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
+              <a href="/privacy" className="hover:text-accent transition-colors">Privacy Policy</a>
+              <a href="/support" className="hover:text-accent transition-colors">Terms of Service</a>
               <a href="https://www.carriersource.io/carriers/demar-transportation-4392091" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">DOT Information</a>
             </div>
           </div>
