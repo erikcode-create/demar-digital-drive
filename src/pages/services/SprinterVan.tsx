@@ -20,8 +20,7 @@ const SprinterVan = () => {
       >
         Skip to main content
       </a>
-      <LandstarSidebar />
-      <div className="md:ml-16">
+      <div>
         <Header />
         <main id="main-content">
           {/* Hero Section */}
