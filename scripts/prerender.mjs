@@ -55,6 +55,12 @@ const routes = [
   '/resources/broker-vs-carrier-vs-3pl',
   '/resources/freight-shipping-glossary',
   '/resources/seasonal-freight-shipping',
+  '/blog',
+  '/blog/why-freight-quote-keeps-changing',
+  '/blog/small-business-freight-shipping',
+  '/blog/emergency-expedited-freight',
+  '/blog/freight-damage-prevention',
+  '/blog/ecommerce-freight-shipping',
 ];
 
 // Simple static file server
