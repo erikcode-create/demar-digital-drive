@@ -197,19 +197,37 @@ export default ComponentName;
 \`\`\`
 
 CRITICAL WRITING GUIDELINES:
-1. NO EM DASHES. Never use the character \u2014. Use commas, periods, semicolons, or restructure sentences instead.
-2. Write in flowing paragraphs, NOT bullet lists. Only use bullet lists sparingly for truly list-like data. Use tables ONLY for comparison data.
-3. Vary paragraph length. Some short punchy paragraphs (1-2 sentences), some longer ones (4-5 sentences). This creates natural reading rhythm.
-4. Write like a freight industry professional who hauls loads every day, not like a content marketing template. Use specific numbers, real lane examples, industry terminology.
-5. The content must be 1500+ words. This is a comprehensive article, not a summary.
-6. Include 4-6 internal links using the React Router Link component. Example: <Link to="/services/ftl">full truckload shipping</Link>
-7. GEO-OPTIMIZED: The first 200 words must directly answer the target query "${topic.targetKeyword}" so AI search engines can extract the answer.
-8. Include specific dollar amounts, percentages, and industry data points throughout.
-9. Reference DeMar Transportation naturally (not forced) - mention how DeMar handles this topic in 2-3 places.
-10. Use h2 for major sections and h3 for subsections within them.
-11. Do NOT use any markdown. This is JSX/TSX only.
-12. Do NOT wrap strings in curly braces unless they contain JSX expressions.
-13. Use {"'"} for apostrophes inside JSX text, or simply restructure to avoid them. Actually, just use regular apostrophes ' in JSX text content - React handles them fine.
+
+=== COPYWRITING PRINCIPLES ===
+1. CLARITY OVER CLEVERNESS. If you have to choose between clear and creative, choose clear. Get to the point. Do not bury the value in qualifications.
+2. BENEFITS OVER FEATURES. Do not just describe what something is. Describe what it means for the shipper. "48-foot dry van with air ride suspension" becomes "your freight arrives damage-free because air ride suspension absorbs road shock on every mile of the haul."
+3. SPECIFICITY OVER VAGUENESS. Never use "streamline," "optimize," "innovative," "leverage," or "solutions." Instead use specific numbers, lane examples, and dollar amounts. "Save money on shipping" becomes "shippers on the LA-to-Dallas lane typically save $400-600 per load by booking 72 hours ahead."
+4. CUSTOMER LANGUAGE. Write the way a logistics manager or supply chain director talks. Use terms like "deadhead miles," "detention charges," "lumper fees," "drop trailer," not marketing buzzwords.
+5. ACTIVE VOICE. "We deliver your freight in 48 hours" not "Your freight is delivered within 48 hours." Remove "almost," "very," "really," "quite," "basically."
+6. ONE IDEA PER SECTION. Each h2 section should advance one argument. Build a logical flow down the page that a reader can scan by headings alone.
+7. NO EXCLAMATION POINTS. Ever. Confident copy does not need them.
+8. USE RHETORICAL QUESTIONS sparingly to engage readers. "What happens when your reefer load sits at the dock for 6 hours?" draws readers into the problem before you give the answer.
+
+=== SEO & E-E-A-T REQUIREMENTS ===
+9. GEO-OPTIMIZED: The first 200 words must directly answer the target query "${topic.targetKeyword}" in a clear, quotable statement so AI search engines (ChatGPT, Perplexity, Google AI Overviews) can extract and cite the answer. Structure it as: direct answer first, then context and detail.
+10. TARGET KEYWORD in the title, first paragraph, and at least 2 h2 headings. Use semantic variations throughout (1-3% natural density). No keyword stuffing.
+11. E-E-A-T SIGNALS: Include at least one first-hand experience signal (e.g. "In our experience hauling produce on the I-10 corridor..." or "DeMar's drivers report that..."). Cite specific industry data with context (FMCSA regulations, USDA temperature requirements, NMFC freight classes). Include a clear author perspective that demonstrates expertise.
+12. AI CITATION READINESS: Include at least 2 clear, quotable factual statements with specific numbers that AI systems can extract. Example: "The average dry van rate from Chicago to Atlanta runs $2.15-2.45 per mile as of 2026, depending on seasonal demand."
+13. CONTENT DEPTH: 1500+ words minimum. Cover the topic comprehensively enough that a shipper would not need to visit another page. Include edge cases, common mistakes, and real-world scenarios.
+
+=== CONTENT STRUCTURE ===
+14. 4-6 internal links using React Router Link component. Example: <Link to="/services/ftl">full truckload shipping</Link>. Use descriptive anchor text, not "click here" or "learn more."
+15. Use h2 for major sections (5-7 per post) and h3 for subsections. A reader should understand the full article just by scanning the headings.
+16. Write in flowing paragraphs, NOT bullet lists. Only use bullets sparingly for truly list-like data (e.g. a list of required documents). Use tables ONLY for comparison data.
+17. Vary paragraph length. Some short punchy paragraphs (1-2 sentences), some longer ones (4-5 sentences). This creates natural reading rhythm.
+18. Reference DeMar Transportation naturally in 2-3 places. Not every section. Write from the perspective of an industry expert, not a sales brochure.
+
+=== STYLE RULES ===
+19. NO EM DASHES. Never use the character \u2014. Use commas, periods, semicolons, or restructure sentences instead.
+20. Do NOT use any markdown. This is JSX/TSX only.
+21. Do NOT wrap strings in curly braces unless they contain JSX expressions.
+22. Use regular apostrophes ' in JSX text content.
+23. NEVER fabricate statistics or testimonials. If citing numbers, use realistic industry ranges. Mark estimates as estimates.
 
 Return ONLY the complete .tsx file content. No markdown fences. No explanation before or after. Just the raw TypeScript/React code starting with "import" and ending with the export default statement.`;
 
