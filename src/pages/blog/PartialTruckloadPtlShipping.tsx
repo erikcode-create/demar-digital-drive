@@ -47,7 +47,30 @@ const PartialTruckloadPtlShipping = () => {
   const content = (
     <>
       <p>
-        Partial truckload shipping, commonly called PTL, is a freight mode designed for loads that fall between 6 and 17 pallets or weigh between 8,000 and 20,000 pounds. It sits in the middle ground between less-than-truckload and full truckload shipping: your freight is too large to price efficiently as LTL, but it does not justify booking an entire 53-foot trailer. When shippers move cargo in this range through traditional LTL carriers, they often overpay because LTL rates are calculated using NMFC freight class and weight breaks that penalize larger shipments. PTL eliminates that penalty by pricing based on trailer space used rather than freight classification, which translates directly to savings of 20 to 40 percent compared to LTL on qualifying loads. In practice, a shipper moving 10 pallets of automotive parts from Memphis to Columbus on a regular LTL carrier might pay $1,800 to $2,400. The same load tendered as PTL typically runs $1,100 to $1,500, with fewer handling touchpoints and a transit time that is one to two days faster. That combination of lower cost and faster delivery is why supply chain directors at manufacturing and retail companies increasingly route mid-sized loads through PTL rather than defaulting to LTL or paying for capacity they do not need with FTL.
+        Partial truckload shipping, commonly called PTL, is a freight mode
+        designed for loads that fall between 6 and 17 pallets or weigh between
+        8,000 and 20,000 pounds. It sits in the middle ground between
+        less-than-truckload and full truckload shipping. Your freight is too
+        large to price efficiently as LTL, but it does not justify booking an
+        entire 53-foot trailer.
+      </p>
+      <p>
+        When shippers move cargo in this range through traditional LTL carriers,
+        they often overpay because LTL rates are calculated using NMFC freight
+        class and weight breaks that penalize larger shipments. PTL eliminates
+        that penalty by pricing based on trailer space used rather than freight
+        classification, which translates directly to savings of 20 to 40 percent
+        compared to LTL on qualifying loads.
+      </p>
+      <p>
+        In practice, a shipper moving 10 pallets of automotive parts from
+        Memphis to Columbus on a regular LTL carrier might pay $1,800 to $2,400.
+        The same load tendered as PTL typically runs $1,100 to $1,500, with
+        fewer handling touchpoints and a transit time that is one to two days
+        faster. That combination of lower cost and faster delivery is why supply
+        chain directors at manufacturing and retail companies increasingly route
+        mid-sized loads through PTL rather than defaulting to LTL or paying for
+        capacity they do not need with FTL.
       </p>
 
       <h2>How Partial Truckload Shipping Works</h2>
