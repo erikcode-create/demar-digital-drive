@@ -24,7 +24,15 @@
     "marketing:brand-kit": "node marketing/brand-kit-builder.mjs",
     "marketing:cro": "node marketing/cro-audit.mjs",
     "marketing:funnels": "node marketing/funnel-generator.mjs",
-    "marketing:social": "node marketing/social-generator.mjs"
+    "marketing:social": "node marketing/social-generator.mjs",
+    "seo:internal-links": "node seo/internal-link-optimizer.mjs",
+    "seo:external-links": "node seo/external-link-enrichment.mjs",
+    "seo:broken-links": "node seo/broken-link-fixer.mjs",
+    "seo:freshness": "node seo/content-freshness.mjs",
+    "seo:meta-tags": "node seo/meta-tag-optimizer.mjs",
+    "seo:cannibalization": "node seo/keyword-cannibalization.mjs",
+    "seo:blog-topics": "node seo/blog-topic-generator.mjs",
+    "seo:page-scores": "node seo/page-performance-scorer.mjs"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
