@@ -198,7 +198,7 @@ const BlogPost = ({
           {/* Article Body */}
           <section className="py-16 bg-[hsl(var(--surface))]">
             <div className="container mx-auto px-4 max-w-3xl">
-              <article className="prose prose-lg max-w-none prose-headings:text-[hsl(var(--primary))] prose-headings:tracking-tight prose-p:text-[hsl(var(--muted-foreground))] prose-p:leading-relaxed prose-li:text-[hsl(var(--muted-foreground))] prose-strong:text-[hsl(var(--primary))] prose-a:text-[hsl(var(--accent))] prose-a:no-underline hover:prose-a:underline prose-table:text-sm prose-th:text-left prose-th:text-[hsl(var(--primary))] prose-th:font-semibold prose-th:pb-3 prose-th:border-b prose-th:border-[hsl(var(--surface-low))] prose-td:py-3 prose-td:border-b prose-td:border-[hsl(var(--surface-low))] prose-td:text-[hsl(var(--muted-foreground))]">
+              <article className="prose prose-lg max-w-none prose-headings:text-[hsl(var(--primary))] prose-headings:tracking-tight prose-h2:mt-12 prose-h2:mb-5 prose-h3:mt-8 prose-h3:mb-4 prose-p:text-[hsl(var(--muted-foreground))] prose-p:leading-relaxed prose-p:mb-6 prose-li:text-[hsl(var(--muted-foreground))] prose-strong:text-[hsl(var(--primary))] prose-a:text-[hsl(var(--accent))] prose-a:no-underline hover:prose-a:underline prose-table:text-sm prose-th:text-left prose-th:text-[hsl(var(--primary))] prose-th:font-semibold prose-th:pb-3 prose-th:border-b prose-th:border-[hsl(var(--surface-low))] prose-td:py-3 prose-td:border-b prose-td:border-[hsl(var(--surface-low))] prose-td:text-[hsl(var(--muted-foreground))]">
                 {content}
               </article>
             </div>
