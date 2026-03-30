@@ -61,6 +61,10 @@ const routes = [
   '/blog/emergency-expedited-freight',
   '/blog/freight-damage-prevention',
   '/blog/ecommerce-freight-shipping',
+  '/blog/real-time-freight-tracking',
+  '/blog/food-beverage-freight-shipping',
+  '/blog/reverse-logistics-return-freight',
+  '/blog/dedicated-fleet-vs-spot-market',
 ];
 
 // Simple static file server

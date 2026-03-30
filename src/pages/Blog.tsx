@@ -51,6 +51,42 @@ const blogPosts = [
     date: "2026-03-29",
     readTime: "9 min",
   },
+  {
+    slug: "real-time-freight-tracking",
+    title: "Real-Time Freight Tracking: Monitor Shipments from Pickup to Final Delivery",
+    description:
+      "Understand how real-time freight tracking works, what data you'll receive, and how to integrate shipment visibility into your supply chain operations.",
+    category: "Shipping Guides",
+    date: "2026-03-30",
+    readTime: "6 min",
+  },
+  {
+    slug: "food-beverage-freight-shipping",
+    title: "Food & Beverage Freight Shipping: Cold Chain Compliance & Temperature Control",
+    description:
+      "Explore food and beverage shipping requirements, cold chain compliance standards, and how to partner with a carrier that maintains FDA audit trails.",
+    category: "Compliance & Safety",
+    date: "2026-03-30",
+    readTime: "9 min",
+  },
+  {
+    slug: "reverse-logistics-return-freight",
+    title: "Reverse Logistics & Return Freight: Managing Product Returns Efficiently",
+    description:
+      "Discover how to streamline product returns, manage reverse logistics operations, and reduce costs when moving goods back through your supply chain.",
+    category: "Logistics Strategy",
+    date: "2026-03-30",
+    readTime: "8 min",
+  },
+  {
+    slug: "dedicated-fleet-vs-spot-market",
+    title: "Dedicated Fleet vs. Spot Market Freight: When to Lock in Rates vs. Stay Flexible",
+    description:
+      "Understand the trade-offs between dedicated freight contracts and spot market flexibility, and learn which strategy fits your shipping volume and rate expectations.",
+    category: "Pricing & Rates",
+    date: "2026-03-30",
+    readTime: "7 min",
+  },
 ];
 
 const Blog = () => {

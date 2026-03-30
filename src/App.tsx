@@ -50,6 +50,14 @@ const EmergencyExpeditedFreight = lazy(() => import("./pages/blog/EmergencyExped
 const FreightDamagePrevention = lazy(() => import("./pages/blog/FreightDamagePrevention"));
 const EcommerceFreightShipping = lazy(() => import("./pages/blog/EcommerceFreightShipping"));
 
+const RealTimeFreightTracking = lazy(() => import("./pages/blog/RealTimeFreightTracking"));
+
+const FoodBeverageFreightShipping = lazy(() => import("./pages/blog/FoodBeverageFreightShipping"));
+
+const ReverseLogisticsReturnFreight = lazy(() => import("./pages/blog/ReverseLogisticsReturnFreight"));
+
+const DedicatedFleetVsSpotMarket = lazy(() => import("./pages/blog/DedicatedFleetVsSpotMarket"));
+
 const queryClient = new QueryClient();
 
 const PageLoader = () => (
@@ -108,6 +116,10 @@ const App = () => (
               <Route path="/blog/emergency-expedited-freight" element={<EmergencyExpeditedFreight />} />
               <Route path="/blog/freight-damage-prevention" element={<FreightDamagePrevention />} />
               <Route path="/blog/ecommerce-freight-shipping" element={<EcommerceFreightShipping />} />
+              <Route path="/blog/real-time-freight-tracking" element={<RealTimeFreightTracking />} />
+              <Route path="/blog/food-beverage-freight-shipping" element={<FoodBeverageFreightShipping />} />
+              <Route path="/blog/reverse-logistics-return-freight" element={<ReverseLogisticsReturnFreight />} />
+              <Route path="/blog/dedicated-fleet-vs-spot-market" element={<DedicatedFleetVsSpotMarket />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
