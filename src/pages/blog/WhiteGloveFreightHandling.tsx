@@ -74,9 +74,36 @@ const WhiteGloveFreightHandling = () => {
       </p>
 
       <h2>What White-Glove Freight Handling Actually Covers</h2>
-      <p>The term "white glove" gets used loosely by carriers and brokers, so it pays to know what the service tier should include before you book. At minimum, a legitimate white-glove service includes careful two-person loading and unloading with proper lift equipment, inside delivery rather than curbside drop, and placement of the item in a specific room or area designated by the receiver. Beyond that baseline, services vary considerably.</p>
-      <p>Premium white-glove tiers add unpacking, debris removal, basic assembly, and photo documentation at every handoff point. Some providers include signature-required delivery confirmation at each leg of the route, which matters for insurance documentation and high-value electronics shipments where chain of custody is a contractual requirement. When you are shipping medical equipment that must be installed and operational before the carrier leaves the building, you need a provider whose technicians are trained for that specific equipment class, not just a standard mover with a furniture dolly.</p>
-      <p>Before you book, ask your carrier or <Link to="/services/3pl">third-party logistics provider</Link> for a written service description. "White glove" as a marketing term means nothing without a checklist that defines exactly what the crew will and will not do on delivery day.</p>
+      <p>
+        The term "white glove" gets used loosely by carriers and brokers, so it
+        pays to know what the service tier should include before you book. At
+        minimum, a legitimate white-glove service includes careful two-person
+        loading and unloading with proper lift equipment, inside delivery
+        rather than curbside drop, and placement of the item in a specific room
+        or area designated by the receiver. Beyond that baseline, services vary
+        considerably.
+      </p>
+      <p>
+        Premium white-glove tiers add unpacking, debris removal, basic
+        assembly, and photo documentation at every handoff point. Some
+        providers include signature-required delivery confirmation at each leg
+        of the route, which matters for insurance documentation and high-value
+        electronics shipments where chain of custody is a contractual
+        requirement.
+      </p>
+      <p>
+        When you are shipping medical equipment that must be installed and
+        operational before the carrier leaves the building, you need a provider
+        whose technicians are trained for that specific equipment class, not
+        just a standard mover with a furniture dolly.
+      </p>
+      <p>
+        Before you book, ask your carrier or{" "}
+        <Link to="/services/3pl">third-party logistics provider</Link> for a
+        written service description. "White glove" as a marketing term means
+        nothing without a checklist that defines exactly what the crew will and
+        will not do on delivery day.
+      </p>
 
       <h2>White-Glove Freight Pricing: What Drives the Cost Premium</h2>
       <p>White-glove freight handling typically costs 15-40% more than a standard FTL or LTL rate for the same lane and weight. On a $5,000 full truckload shipment from Chicago to Atlanta, that translates to roughly $750-$2,000 in additional service charges. Several cost drivers explain that premium.</p>
