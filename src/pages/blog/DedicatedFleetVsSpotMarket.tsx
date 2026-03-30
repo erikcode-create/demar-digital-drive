@@ -223,13 +223,13 @@ const DedicatedFleetVsSpotMarket = () => {
       </p>
 
       <h2>Making the Decision for Your Freight Program</h2>
-      <p>
-        The dedicated fleet versus spot market decision is not made once. It is revisited every time your volume changes, every time you open or close a distribution point, and every time the freight market cycle shifts from tight to loose or back again. Shippers who treat it as a static decision end up either over-committed to dedicated capacity they cannot fill or over-exposed to spot market volatility they cannot absorb.
+      <p className="mb-6">
+        The dedicated fleet versus spot market decision is not made once. It is revisited every time your volume changes, every time you open or close a distribution point, and every time the freight market cycle shifts from tight to loose or back again.
       </p>
-      <p>
+      <p className="mb-6">
         The framework is straightforward. Under 30 loads per month, spot market with strong carrier relationships is typically the right answer. Between 30 and 100 loads per month, a hybrid model with a dedicated core on your highest-frequency lanes and spot coverage for the rest gives you rate protection where it matters and flexibility where you need it. Above 100 loads per month, dedicated fleet with a small spot buffer for overflow and surge capacity is almost always the most cost-effective structure.
       </p>
-      <p>
+      <p className="mb-6">
         What makes this work in practice is a carrier relationship built on transparency. DeMar Transportation structures dedicated contracts with monthly volume review provisions, so if your business changes, the contract adjusts rather than creating financial pressure on either side. The goal is a freight program that fits your actual shipping profile, not a contract that looks good in the proposal and creates problems during execution.
       </p>
       <p>
