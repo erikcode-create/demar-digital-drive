@@ -194,6 +194,8 @@ const PartialTruckloadPtlShipping = () => {
       description="Discover how partial truckload shipping fills the gap between LTL and FTL, offering better rates for medium-sized loads without paying for a full truck."
       metaTitle="PTL Shipping Guide: Save on Freight Costs"
       metaDescription="Learn how partial truckload (PTL) shipping can save you 20-40% vs LTL. Understand PTL rates, capacity, and when to use it for your freight."
+      heroImage="/images/blog/freight-quote-hero.jpg"
+      heroImageAlt="Partial truckload freight being loaded onto a trailer at a warehouse dock"
       slug="partial-truckload-ptl-shipping"
       publishDate="2026-03-30"
       readTime="7 min"
