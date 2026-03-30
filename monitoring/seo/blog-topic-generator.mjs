@@ -234,14 +234,38 @@ Return ONLY the complete .tsx file content. No markdown fences. No explanation b
   console.log(`  Writing blog post: ${topic.title}...`);
   const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 300000 });
 
-  // Strip any markdown fences if Claude added them despite instructions
+  // Extract valid TSX code from Claude's response, handling:
+  // - Raw code (starts with import)
+  // - Markdown fenced code blocks (```tsx ... ```)
+  // - Explanation text before/after the code
   let code = output.trim();
-  if (code.startsWith("```")) {
-    code = code.replace(/^```\w*\n?/, "").replace(/\n?```$/, "");
+
+  // Try to extract from markdown fences first (most common failure mode)
+  const fenceMatch = code.match(/```(?:tsx?|jsx?|typescript|javascript)?\s*\n([\s\S]*?)```/);
+  if (fenceMatch) {
+    code = fenceMatch[1].trim();
+  } else if (!code.startsWith("import")) {
+    // No fences but doesn't start with import — find where code starts
+    const importIdx = code.indexOf("import BlogPost");
+    if (importIdx === -1) {
+      const anyImport = code.indexOf("import ");
+      if (anyImport !== -1) {
+        code = code.substring(anyImport);
+      }
+    } else {
+      code = code.substring(importIdx);
+    }
   }
 
-  // Basic validation
+  // Strip any trailing explanation after the export
+  const exportMatch = code.match(/export default \w+;/);
+  if (exportMatch) {
+    code = code.substring(0, exportMatch.index + exportMatch[0].length);
+  }
+
+  // Validate required structure
   if (!code.includes("import BlogPost") || !code.includes("export default")) {
+    console.error("  Raw output (first 500 chars):", output.substring(0, 500));
     throw new Error("Generated code missing required imports or export");
   }
 
