@@ -188,6 +188,8 @@ const FoodBeverageFreightShipping = () => {
       slug="food-beverage-freight-shipping"
       publishDate="2026-03-30"
       readTime="9 min"
+      heroImage="/images/blog/emergency-freight-hero.jpg"
+      heroImageAlt="Temperature-controlled freight truck for food and beverage cold chain shipping"
       content={content}
       faqs={faqs}
       relatedLinks={relatedLinks}
