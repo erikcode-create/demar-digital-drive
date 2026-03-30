@@ -46,18 +46,26 @@ const DedicatedFleetVsSpotMarket = () => {
 
   const content = (
     <>
-      <p>
-        Dedicated fleet versus spot market freight comes down to one fundamental trade-off: predictability versus flexibility. A dedicated fleet contract reserves a set number of trucks exclusively for your lanes at a fixed monthly rate, giving you guaranteed capacity regardless of what the broader market does. Spot market freight books available trucks at whatever rate carriers are charging that day, that week, or that hour. Dedicated contracts typically run 15-25% higher than the baseline spot rate, but that premium buys you something spot market cannot: the truck shows up when you need it, at the price you agreed to, even when every other shipper in your region is scrambling for capacity. Over a full calendar year, shippers with consistent volume of 8-12 loads per month or more typically come out 20-30% ahead on total freight spend by locking in a dedicated contract versus riding the spot market through its peaks and valleys. The right answer depends on how much freight you move, how predictable your lanes are, and how much rate volatility your budget can absorb.
+      <p className="mb-6">
+        Dedicated fleet versus spot market freight comes down to one fundamental trade-off: predictability versus flexibility. A dedicated fleet contract reserves a set number of trucks exclusively for your lanes at a fixed monthly rate, giving you guaranteed capacity regardless of what the broader market does. Spot market freight books available trucks at whatever rate carriers are charging that day, that week, or that hour.
+      </p>
+
+      <p className="mb-6">
+        Dedicated contracts typically run 15-25% higher than the baseline spot rate. But that premium buys you something the spot market cannot: the truck shows up when you need it, at the price you agreed to, even when every other shipper in your region is scrambling for capacity.
+      </p>
+
+      <p className="mb-8">
+        Over a full calendar year, shippers with consistent volume of 8-12 loads per month or more typically come out <strong>20-30% ahead</strong> on total freight spend by locking in a dedicated contract versus riding the spot market through its peaks and valleys. The right answer depends on how much freight you move, how predictable your lanes are, and how much rate volatility your budget can absorb.
       </p>
 
       <h2>How Dedicated Fleet Contracts Actually Work</h2>
-      <p>
-        A dedicated fleet agreement is essentially a capacity reservation. You contract with a carrier to have a specific number of trucks, sometimes drivers too, assigned exclusively to your account for a defined term, usually 12 to 36 months. In exchange, you commit to a minimum monthly volume or pay a utilization fee on any trucks that sit idle below that threshold.
+      <p className="mb-6">
+        A dedicated fleet agreement is essentially a capacity reservation. You contract with a carrier to have a specific number of trucks (sometimes drivers too) assigned exclusively to your account for a defined term, usually 12 to 36 months. In exchange, you commit to a minimum monthly volume or pay a utilization fee on any trucks that sit idle below that threshold.
       </p>
-      <p>
-        The rate structure differs significantly from spot market pricing. Instead of paying a per-mile rate that fluctuates with diesel prices and driver availability, dedicated contracts typically include an all-in linehaul rate per load, fixed fuel surcharge tables tied to the Department of Energy weekly diesel index, and agreed-upon accessorial charges for detention, layovers, and drop trailer arrangements. You know your freight budget before the fiscal year starts, which matters enormously for companies that have to set shipping cost projections in Q4 for the following year.
+      <p className="mb-6">
+        The rate structure differs significantly from spot market pricing. Instead of paying a per-mile rate that fluctuates with diesel prices and driver availability, dedicated contracts typically include an all-in linehaul rate per load, fixed fuel surcharge tables tied to the Department of Energy weekly diesel index, and agreed-upon accessorial charges for detention, layovers, and drop trailer arrangements. You know your freight budget before the fiscal year starts, which matters for companies that have to set shipping cost projections in Q4 for the following year.
       </p>
-      <p>
+      <p className="mb-8">
         The carrier, in turn, guarantees trucks will be available on your dock when you call for them. That guarantee has real dollar value. On the Dallas-to-Houston corridor during produce season, spot dry van rates can jump from $1.80 per mile to $2.60 per mile over a single weekend. A shipper with a dedicated contract at $2.10 per mile does not feel that spike at all.
       </p>
 
