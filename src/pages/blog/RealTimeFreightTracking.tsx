@@ -47,7 +47,28 @@ const RealTimeFreightTracking = () => {
   const content = (
     <>
       <p>
-        Real-time freight tracking gives shippers continuous visibility into their shipment's location, status, and estimated delivery time from the moment a driver picks up the load to the moment it's offloaded at the consignee. For logistics managers and supply chain directors, this isn't a luxury feature. It's the difference between coordinating your receiving dock efficiently and scrambling to staff an unexpected delivery at 4 PM on a Friday. Modern GPS-equipped carriers update location data every 15 to 30 minutes on dedicated truckload runs, while LTL shipments receive status events at each terminal scan. The result is a complete event log: pickup confirmed, departed origin, arrived at hub, out for delivery, delivered with POD. Shippers who operate without this level of visibility routinely absorb preventable costs, including detention charges, emergency re-routing fees, and inventory stockouts that occur because a delayed shipment wasn't flagged until the delivery window had already passed. Real-time freight tracking eliminates most of those surprises by putting you in a position to act before a delay becomes a crisis.
+        Real-time freight tracking gives shippers continuous visibility into
+        their shipment's location, status, and estimated delivery time from
+        the moment a driver picks up the load to the moment it's offloaded at
+        the consignee. For logistics managers and supply chain directors, this
+        isn't a nice-to-have. It's the difference between coordinating your
+        receiving dock efficiently and scrambling to staff an unexpected delivery
+        at 4 PM on a Friday.
+      </p>
+      <p>
+        Modern GPS-equipped carriers update location data every 15 to 30 minutes
+        on dedicated truckload runs, while LTL shipments receive status events
+        at each terminal scan. The result is a complete event log: pickup
+        confirmed, departed origin, arrived at hub, out for delivery, delivered
+        with POD.
+      </p>
+      <p>
+        Shippers who operate without this level of visibility routinely absorb
+        preventable costs, including detention charges, emergency re-routing
+        fees, and inventory stockouts that occur because a delayed shipment
+        wasn't flagged until the delivery window had already passed. Real-time
+        freight tracking eliminates most of those surprises by putting you in a
+        position to act before a delay becomes a crisis.
       </p>
 
       <h2>What Real-Time Freight Tracking Actually Measures</h2>
