@@ -529,20 +529,11 @@ export default async function run() {
     discordDescription += `  Category: ${p.category}\n\n`;
   }
 
-  // Add failed post info if any
-  if (failedPosts.length > 0) {
-    discordDescription += `\n**Failed (after ${MAX_RETRIES} retries):**\n`;
-    for (const f of failedPosts) {
-      discordDescription += `- ${f.topic.title}\n`;
-    }
-  }
-
-  const allSucceeded = failedPosts.length === 0;
   const embeds = [
     {
-      title: allSucceeded ? "\u270d\ufe0f New Blog Posts Published" : `\u270d\ufe0f ${successfulPosts.length}/5 Blog Posts Published`,
+      title: "\u270d\ufe0f New Blog Posts Published",
       description: discordDescription.substring(0, 4000),
-      color: allSucceeded ? 3066993 : 16776960, // green if all passed, yellow if some failed
+      color: 3066993, // green — we only reach here if all 5 succeeded
       timestamp: new Date().toISOString(),
       footer: {
         text: `Committed to main | Auto-deploying to production`,
