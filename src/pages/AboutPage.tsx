@@ -221,7 +221,7 @@ const AboutPage = () => {
                   </h2>
                   <div className="space-y-4 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-xl">
                     <p>
-                      DeMar Transportation serves all 48 contiguous states with reliable freight shipping solutions. Whether your shipment originates on the West Coast, moves through the Midwest, or delivers to the Eastern Seaboard, our network ensures coverage wherever your freight needs to go.
+                      DeMar Transportation serves all 48 contiguous states with reliable freight shipping services. Whether your shipment originates on the West Coast, moves through the Midwest, or delivers to the Eastern Seaboard, our network ensures coverage wherever your freight needs to go.
                     </p>
                     <p>
                       From our Reno, Nevada headquarters, we coordinate pickups and deliveries across major freight corridors, metropolitan distribution hubs, and rural delivery points.
