@@ -12,6 +12,8 @@ const SmallBusinessFreightShipping = () => {
       slug="small-business-freight-shipping"
       publishDate="2026-03-29"
       readTime="8 min"
+      heroImage="/images/blog/small-business-hero.jpg"
+      heroImageAlt="Small business warehouse with pallets ready for freight shipping"
       content={
         <>
           <p className="mb-6">
