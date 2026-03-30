@@ -358,7 +358,6 @@ function updateSitemapXml(posts) {
 export default async function run() {
   console.log("=== Blog Post Writer ===");
   const today = new Date().toISOString().split("T")[0];
-  const branchName = `seo-auto/blog-posts-${today}`;
 
   // Step 1: Crawl existing content
   console.log(`\nStep 1: Crawling ${PAGES.length} pages for existing content...`);
