@@ -46,14 +46,17 @@ const OversizedLoadShipping = () => {
         shipment that exceeds standard legal highway dimensions:{" "}
         <strong>wider than 8'6", taller than 13'6", or longer than 53'</strong> (48' in some
         states). Common oversized freight includes construction equipment, industrial machinery,
-        prefabricated structures, wind turbine components, and large vehicles. Oversized shipping
+        prefabricated structures, wind turbine components, and large vehicles.
+      </p>
+      <p>
+        Oversized shipping
         costs <strong>30-60% more</strong> than standard freight due to permit fees ($50-$800 per
         state), escort vehicles ($400-$1,200 per day), specialized trailer equipment, and restricted
         travel windows. The permitting process alone takes <strong>2 to 4 weeks</strong> in most
         states, making early planning essential. Below, we cover everything you need to know about
         permits, route planning, equipment selection, escort requirements, and cost factors for
         oversized shipments. For a customized oversized load quote,{" "}
-        <Link to="/quote">contact DeMar Transportation</Link> -- we handle permit acquisition,
+        <Link to="/quote">contact DeMar Transportation</Link>. We handle permit acquisition,
         route surveys, and escort coordination so you do not have to.
       </p>
 
