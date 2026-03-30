@@ -117,13 +117,17 @@ const FoodBeverageFreightShipping = () => {
       </p>
 
       <h2>How to Evaluate a Food-Grade Reefer Carrier Before You Book</h2>
-      <p>
+      <p className="mb-6">
         What questions should you ask a carrier before handing them a temperature-sensitive food load? The answer depends on your product, but there are baseline criteria that apply to every food freight shipment.
       </p>
-      <p>
-        First, ask for their FSMA compliance documentation. A carrier who cannot produce written evidence of their Food Transportation Safety procedures should not be hauling your food freight. Second, ask about their temperature logging system. Continuous electronic logging is the standard; manual spot-check logs leave gaps that create problems during audits. Third, ask whether their drivers are trained in food-grade handling and what their pre-trip sanitation inspection process looks like. Fourth, ask what their notification procedure is for temperature excursions in transit. A carrier who will call you immediately when a reefer unit malfunctions is fundamentally different from one who discovers the problem at delivery.
+      <p className="mb-6">
+        First, ask for their FSMA compliance documentation. A carrier who cannot produce written evidence of their Food Transportation Safety procedures should not be hauling your food freight. Second, ask about their temperature logging system. Continuous electronic logging is the standard, while manual spot-check logs leave gaps that create problems during audits.
       </p>
-      <p>
+
+      <p className="mb-6">
+        Third, ask whether their drivers are trained in food-grade handling and what their pre-trip sanitation inspection process looks like. Fourth, ask what their notification procedure is for temperature excursions in transit. A carrier who will call you immediately when a reefer unit malfunctions is fundamentally different from one who discovers the problem at delivery.
+      </p>
+      <p className="mb-8">
         Carrier safety scores matter too. An FMCSA safety rating of "Satisfactory" and a clean inspection history tell you the carrier maintains their equipment. Reefer breakdowns are the most common cause of temperature excursions in transit, and a carrier who defers maintenance to cut costs will eventually deliver a spoiled load. Check FMCSA's SAFER database before you commit to a new carrier relationship.
       </p>
 
