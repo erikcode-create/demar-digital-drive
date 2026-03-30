@@ -98,6 +98,25 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Resources */}
+          <div>
+            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
+              Resources
+            </p>
+            <ul className="space-y-2.5">
+              {resourceLinks.map((r) => (
+                <li key={r.path}>
+                  <Link
+                    to={r.path}
+                    className="text-sm text-white/40 hover:text-white transition-colors"
+                  >
+                    {r.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Contact */}
           <div>
             <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
