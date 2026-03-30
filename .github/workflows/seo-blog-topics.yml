@@ -1,4 +1,4 @@
-name: SEO Blog Topic Generator
+name: SEO Blog Post Writer
 
 on:
   schedule:
@@ -6,12 +6,13 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
 
 jobs:
-  suggest:
+  write-posts:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -19,11 +20,20 @@ jobs:
         with:
           node-version: 20
 
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Install project dependencies
+        run: npm ci
+
       - name: Install monitoring dependencies
         run: cd monitoring && npm ci
 
-      - name: Run blog topic generator
+      - name: Run blog post writer
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DISCORD_SEO_WEBHOOK_URL: ${{ secrets.DISCORD_SEO_WEBHOOK_URL }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: cd monitoring && node seo/blog-topic-generator.mjs
