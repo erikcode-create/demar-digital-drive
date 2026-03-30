@@ -150,7 +150,7 @@ const DryVan = () => {
             </div>
           </section>
 
-          {/* Trailer Specs — tonal cards, no borders */}
+          {/* Trailer Specs - tonal cards, no borders */}
           <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
             <div className="max-w-5xl mx-auto">
               <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
