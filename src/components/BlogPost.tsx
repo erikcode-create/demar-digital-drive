@@ -184,6 +184,18 @@ const BlogPost = ({
             </div>
           </section>
 
+          {/* Hero Image */}
+          {heroImage && (
+            <div className="w-full max-h-[480px] overflow-hidden">
+              <img
+                src={heroImage}
+                alt={heroImageAlt || title}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+          )}
+
           {/* Article Body */}
           <section className="py-16 bg-[hsl(var(--surface))]">
             <div className="container mx-auto px-4 max-w-3xl">
