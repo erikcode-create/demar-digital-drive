@@ -32,7 +32,15 @@
     "seo:meta-tags": "node seo/meta-tag-optimizer.mjs",
     "seo:cannibalization": "node seo/keyword-cannibalization.mjs",
     "seo:blog-topics": "node seo/blog-topic-generator.mjs",
-    "seo:page-scores": "node seo/page-performance-scorer.mjs"
+    "seo:page-scores": "node seo/page-performance-scorer.mjs",
+    "seo:site-audit": "node seo/dashboard/site-audit-dashboard.mjs",
+    "seo:rank-tracker": "node seo/dashboard/keyword-rank-tracker.mjs",
+    "seo:search-console": "node seo/dashboard/search-console-dashboard.mjs",
+    "seo:backlinks": "node seo/dashboard/backlink-monitor.mjs",
+    "seo:competitors": "node seo/dashboard/competitor-tracker.mjs",
+    "seo:cwv": "node seo/dashboard/core-web-vitals.mjs",
+    "seo:eeat": "node seo/dashboard/content-eeat-scorer.mjs",
+    "seo:weekly-summary": "node seo/dashboard/weekly-seo-summary.mjs"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
