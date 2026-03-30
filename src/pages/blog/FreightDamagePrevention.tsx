@@ -51,133 +51,125 @@ const FreightDamagePrevention = () => {
 
   const content = (
     <>
-      <p>
+      <p className="mb-6">
         Freight damage costs U.S. shippers over <strong>$1 billion annually</strong>, yet
         most businesses treat it as a cost of doing business rather than a preventable expense.
         The average freight damage claim takes <strong>30 to 120 days to resolve</strong> and
         recovers only <strong>60-70% of the product value</strong> when approved. Factor in
         the administrative time spent documenting, filing, and following up on claims, and the
-        true cost per incident easily exceeds the product value itself. Prevention is far
-        cheaper than claims. A $15 investment in proper packaging materials can prevent a
-        $1,500 claim. Understanding the root causes of freight damage, your rights under
+        true cost per incident easily exceeds the product value itself.
+      </p>
+
+      <p className="mb-8">
+        Prevention is far cheaper than claims. A $15 investment in proper packaging materials can
+        prevent a $1,500 claim. Understanding the root causes of freight damage, your rights under
         carrier liability law, and the steps to build a damage-resistant shipping process will
-        save your business thousands of dollars every year. This guide covers the full
-        spectrum: from prevention strategies and packaging best practices to filing claims and
-        choosing carriers with proven low damage rates.
+        save your business thousands of dollars every year. This guide covers the full spectrum,
+        from prevention strategies and packaging best practices to filing claims and choosing
+        carriers with proven low damage rates.
       </p>
 
       <h2>The Real Cost of Freight Damage</h2>
-      <p>
+      <p className="mb-6">
         Freight damage extends well beyond the replacement value of the product. When a
         shipment arrives damaged, your business absorbs costs across multiple categories that
         most shippers never fully calculate.
       </p>
-      <p>
-        <strong>Direct product loss</strong> is the most visible cost. The average freight
-        damage claim in the U.S. is valued between <strong>$1,200 and $1,800</strong>,
-        according to industry data from the Transportation Claims and Prevention Council. But
-        direct loss represents only 30-40% of the total financial impact.
+
+      <p className="mb-6">
+        Direct product loss is the most visible cost. The average freight damage claim in the
+        U.S. is valued between <strong>$1,200 and $1,800</strong>, according to industry data
+        from the Transportation Claims and Prevention Council. But direct loss represents only
+        30-40% of the total financial impact.
       </p>
-      <p>
-        <strong>Operational downtime</strong> compounds the damage. When a manufacturer
-        receives damaged raw materials, production lines may halt until replacement stock
-        arrives. For retailers, damaged inventory means empty shelves and lost sales during
-        peak selling windows. A single delayed shipment can cascade into <strong>$5,000 to
-        $25,000 in downstream losses</strong> depending on the product and timing.
+
+      <p className="mb-6">
+        Operational downtime compounds the damage. When a manufacturer receives damaged raw
+        materials, production lines may halt until replacement stock arrives. For retailers,
+        damaged inventory means empty shelves and lost sales during peak selling windows. A
+        single delayed shipment can cascade into <strong>$5,000 to $25,000 in downstream
+        losses</strong> depending on the product and timing. Customer churn is the hidden
+        multiplier here. Research shows that <strong>33% of consumers will not reorder</strong>{" "}
+        from a company after receiving a damaged shipment, even if the issue is resolved. For
+        B2B relationships, repeated damage incidents can jeopardize contracts worth hundreds of
+        thousands of dollars.
       </p>
-      <p>
-        <strong>Customer churn</strong> is the hidden multiplier. Research shows that{" "}
-        <strong>33% of consumers will not reorder</strong> from a company after receiving a
-        damaged shipment, even if the issue is resolved. For B2B relationships, repeated
-        damage incidents can jeopardize contracts worth hundreds of thousands of dollars.
-      </p>
-      <p>
-        <strong>Claim processing time</strong> drains internal resources. The average freight
-        claim requires <strong>4 to 8 hours of staff time</strong> for documentation,
-        correspondence, and follow-up. At a fully loaded labor cost of $35 per hour, that is
-        $140 to $280 per claim in administrative overhead alone, regardless of the outcome.
+
+      <p className="mb-8">
+        Then there is the claim processing time itself. The average freight claim requires{" "}
+        <strong>4 to 8 hours of staff time</strong> for documentation, correspondence, and
+        follow-up. At a fully loaded labor cost of $35 per hour, that is $140 to $280 per
+        claim in administrative overhead alone, regardless of the outcome.
       </p>
 
       <h2>Most Common Causes of Freight Damage</h2>
-      <p>
+      <p className="mb-6">
         Understanding why freight gets damaged is the first step toward preventing it. Four
         causes account for over 85% of all freight damage incidents.
       </p>
 
-      <h3>Improper Packaging</h3>
-      <p>
-        Inadequate packaging is the leading cause of freight damage, responsible for an
-        estimated <strong>40-50% of all claims</strong>. Common packaging failures include
-        undersized boxes, insufficient cushioning, weak pallets, and products that are not
-        unitized properly. A product that survives a single handling event may fail after the
-        5th or 10th loading and unloading cycle during transit.
+      <p className="mb-6">
+        Inadequate packaging is the leading cause, responsible for an estimated{" "}
+        <strong>40-50% of all claims</strong>. Common packaging failures include undersized
+        boxes, insufficient cushioning, weak pallets, and products that are not unitized
+        properly. A product that survives a single handling event may fail after the 5th or
+        10th loading and unloading cycle during transit.
       </p>
 
-      <h3>Load Shifting During Transit</h3>
-      <p>
-        Improperly secured loads shift during braking, acceleration, and cornering. A
-        45,000-pound load can generate lateral forces of <strong>15,000 pounds or more</strong>{" "}
-        during an emergency stop. Without adequate blocking, bracing, and tie-downs, pallets
-        slide, topple, and crush adjacent freight. Load shifting accounts for roughly{" "}
-        <strong>25% of freight damage claims</strong>.
+      <p className="mb-6">
+        Load shifting during transit accounts for roughly <strong>25% of freight damage
+        claims</strong>. Improperly secured loads shift during braking, acceleration, and
+        cornering. A 45,000-pound load can generate lateral forces of{" "}
+        <strong>15,000 pounds or more</strong> during an emergency stop. Without adequate
+        blocking, bracing, and tie-downs, pallets slide, topple, and crush adjacent freight.
       </p>
 
-      <h3>Temperature Excursions</h3>
-      <p>
-        Temperature-sensitive freight, including food, pharmaceuticals, and chemicals, requires
-        continuous temperature control. A reefer unit malfunction or a door left open during
-        loading can cause the trailer temperature to spike <strong>15-20 degrees</strong> in
-        under 30 minutes. Temperature excursions account for <strong>$500 million
-        annually</strong> in pharmaceutical freight losses alone. Learn more about protecting
-        cold-chain shipments in our{" "}
+      <p className="mb-6">
+        Temperature excursions are a major concern for anyone shipping food, pharmaceuticals,
+        or chemicals. A reefer unit malfunction or a door left open during loading can cause
+        the trailer temperature to spike <strong>15-20 degrees</strong> in under 30 minutes.
+        Temperature excursions account for <strong>$500 million annually</strong> in
+        pharmaceutical freight losses alone. Learn more about protecting cold-chain shipments
+        in our{" "}
         <Link to="/resources/how-to-ship-refrigerated-goods">
           guide to shipping refrigerated goods
         </Link>.
       </p>
 
-      <h3>Handling Errors</h3>
-      <p>
-        Forklift impacts, drops during loading, and rough handling at cross-dock facilities
-        cause approximately <strong>15-20% of freight damage</strong>. Pallets stacked beyond
-        their rated weight capacity collapse. Forklifts puncture cartons or break pallet
-        stringers. Each handling event in the supply chain is an opportunity for damage, and
-        LTL shipments may be handled <strong>6 to 12 times</strong> between origin and
-        destination.
+      <p className="mb-8">
+        Handling errors round out the list at approximately <strong>15-20% of freight
+        damage</strong>. Forklift impacts, drops during loading, and rough handling at
+        cross-dock facilities are the usual culprits. Pallets stacked beyond their rated weight
+        capacity collapse. Forklifts puncture cartons or break pallet stringers. Each handling
+        event in the supply chain is an opportunity for damage, and LTL shipments may be
+        handled <strong>6 to 12 times</strong> between origin and destination.
       </p>
 
       <h2>How to Package Freight to Prevent Damage</h2>
-      <p>
+      <p className="mb-6">
         Proper packaging is your first and most effective line of defense. These practices
         reduce damage rates by <strong>50-70%</strong> with minimal added cost per shipment.
       </p>
 
-      <h3>Palletizing</h3>
-      <p>
+      <p className="mb-6">
         Always ship on standard 48x40-inch GMA pallets rated for your load weight. Stack
         cartons in a column or interlocking brick pattern and keep the load within the pallet
         footprint. Overhang increases damage risk by <strong>300%</strong>. For fragile items,
         use a double-wall corrugated layer between each tier of boxes.
       </p>
 
-      <h3>Stretch Wrapping</h3>
-      <p>
+      <p className="mb-6">
         Apply at least <strong>3 to 5 revolutions of stretch wrap</strong> at the top and
         bottom of the pallet to anchor the load to the pallet deck. Use 80-gauge film as a
         minimum. For loads over 1,500 pounds, use banding in addition to stretch wrap. The
         wrap should be tight enough to prevent shifting but not so tight that it compresses or
-        deforms the product.
+        deforms the product. Add corner boards on all four vertical edges for any palletized
+        load. They cost <strong>$0.50 to $2.00 each</strong> and reduce edge crushing by up
+        to <strong>60%</strong>. Corner boards distribute strap pressure, prevent crush damage
+        on edges, and add vertical stacking strength.
       </p>
 
-      <h3>Corner Boards and Edge Protectors</h3>
-      <p>
-        Corner boards distribute strap pressure, prevent crush damage on edges, and add
-        vertical stacking strength. Use corner boards on all four vertical edges for any
-        palletized load. They cost <strong>$0.50 to $2.00 each</strong> and reduce edge
-        crushing by up to <strong>60%</strong>.
-      </p>
-
-      <h3>Labeling</h3>
-      <p>
+      <p className="mb-8">
         Clear handling labels reduce mishandling incidents by <strong>25-35%</strong>. At a
         minimum, use FRAGILE, THIS SIDE UP, and DO NOT STACK labels where appropriate. Include
         labels on at least two visible sides of every pallet. For{" "}
@@ -228,118 +220,104 @@ const FreightDamagePrevention = () => {
         </tbody>
       </table>
 
-      <h2>Understanding Carrier Liability</h2>
-      <p>
-        Carrier liability for freight damage in the United States is governed primarily by the{" "}
-        <strong>Carmack Amendment</strong> (49 U.S.C. 14706), which establishes that motor
-        carriers are liable for the actual loss or injury to freight they transport. However,
-        the extent of that liability depends on how you declare your shipment value.
-      </p>
+      <div className="mt-8 mb-8">
+        <h2>Understanding Carrier Liability</h2>
+        <p className="mb-6">
+          Carrier liability for freight damage in the United States is governed primarily by the{" "}
+          <strong>Carmack Amendment</strong> (49 U.S.C. 14706), which establishes that motor
+          carriers are liable for the actual loss or injury to freight they transport. However,
+          the extent of that liability depends on how you declare your shipment value.
+        </p>
 
-      <h3>Released Value vs. Full Value</h3>
-      <p>
-        The default carrier liability is <strong>$0.50 per pound</strong> unless the shipper
-        declares a higher value. This is known as released value pricing. If you ship a
-        2,000-pound pallet of electronics worth $50,000, the default carrier liability is only{" "}
-        <strong>$1,000</strong>, a fraction of your actual loss.
-      </p>
-      <p>
-        Full-value coverage requires you to declare the freight value on the bill of lading
-        before pickup and typically increases the freight rate by <strong>1-3%</strong> of the
-        declared value. For high-value shipments, this premium is almost always worth the
-        protection. A 2% surcharge on a $50,000 shipment adds $1,000 to the freight cost but
-        provides $50,000 in coverage versus $1,000 at the default rate.
-      </p>
+        <p className="mb-6">
+          The default carrier liability is <strong>$0.50 per pound</strong> unless the shipper
+          declares a higher value. This is known as released value pricing. If you ship a
+          2,000-pound pallet of electronics worth $50,000, the default carrier liability is only{" "}
+          <strong>$1,000</strong>. That is a fraction of your actual loss. Full-value coverage
+          requires you to declare the freight value on the bill of lading before pickup and
+          typically increases the freight rate by <strong>1-3%</strong> of the declared value.
+          For high-value shipments, this premium is almost always worth the protection. A 2%
+          surcharge on a $50,000 shipment adds $1,000 to the freight cost but provides $50,000
+          in coverage versus $1,000 at the default rate.
+        </p>
 
-      <h3>Carrier Defenses</h3>
-      <p>
-        Under the Carmack Amendment, carriers can avoid liability by proving the damage was
-        caused by an act of God, an act of the shipper (such as improper packaging), an act of
-        a public authority, or the inherent nature of the goods. This is why documenting your
-        packaging process with photographs is critical. If a carrier claims your packaging was
-        inadequate, your photos become your defense.
-      </p>
+        <p className="mb-6">
+          Under the Carmack Amendment, carriers can avoid liability by proving the damage was
+          caused by an act of God, an act of the shipper (such as improper packaging), an act of
+          a public authority, or the inherent nature of the goods. This is why documenting your
+          packaging process with photographs is critical. If a carrier claims your packaging was
+          inadequate, your photos become your defense.
+        </p>
+      </div>
 
       <h2>How to File a Freight Damage Claim</h2>
-      <p>
+      <p className="mb-6">
         Filing a freight damage claim correctly increases your recovery rate from under 40% to
-        over <strong>70%</strong>. Follow these steps to maximize your chances.
+        over <strong>70%</strong>. The process starts at the moment of delivery.
       </p>
 
-      <h3>Step 1: Document at Delivery</h3>
-      <p>
+      <p className="mb-6">
         Inspect all freight at the time of delivery. Note any visible damage on the delivery
         receipt before signing. Take photographs of the damaged freight, the packaging, the
         truck interior, and the pallet condition. If damage is severe, refuse the shipment and
-        note "refused due to damage" on the delivery receipt.
+        note "refused due to damage" on the delivery receipt. Then contact the carrier within{" "}
+        <strong>24 hours</strong> of delivery to report the damage. Request a damage inspection
+        if the loss exceeds $500. Written notification via email creates a timestamped record
+        that protects your claim timeline.
       </p>
 
-      <h3>Step 2: Notify the Carrier Immediately</h3>
-      <p>
-        Contact the carrier within <strong>24 hours</strong> of delivery to report the damage.
-        Request a damage inspection if the loss exceeds $500. Written notification via email
-        creates a timestamped record that protects your claim timeline.
-      </p>
-
-      <h3>Step 3: File the Formal Claim</h3>
-      <p>
+      <p className="mb-6">
         Submit a written claim to the carrier including the original bill of lading, delivery
-        receipt with damage notations, photographs, a commercial invoice proving product
-        value, and a specific dollar amount demanded. Under federal law, carriers must
-        acknowledge receipt within <strong>30 days</strong> and resolve the claim within{" "}
+        receipt with damage notations, photographs, a commercial invoice proving product value,
+        and a specific dollar amount demanded. Under federal law, carriers must acknowledge
+        receipt within <strong>30 days</strong> and resolve the claim within{" "}
         <strong>120 days</strong>.
       </p>
 
-      <h3>Concealed Damage</h3>
-      <p>
-        Concealed damage, freight that appears intact at delivery but is found damaged when
-        unpackaged, must be reported to the carrier within <strong>5 days</strong> of
-        delivery. Preserve all original packaging materials, as the carrier or an inspector
-        will need to examine them. Concealed damage claims recover at lower rates
-        (40-50% vs. 60-70%) because it is harder to prove the damage occurred during transit.
+      <p className="mb-8">
+        Concealed damage, where freight appears intact at delivery but is found damaged when
+        unpackaged, must be reported to the carrier within <strong>5 days</strong> of delivery.
+        Preserve all original packaging materials, as the carrier or an inspector will need to
+        examine them. Concealed damage claims recover at lower rates (40-50% vs. 60-70%)
+        because it is harder to prove the damage occurred during transit.
       </p>
 
       <h2>Choosing a Carrier with Low Damage Rates</h2>
-      <p>
+      <p className="mb-6">
         Not all carriers are equal when it comes to freight care. The difference between a
         top-performing carrier and an average one can mean a <strong>5x reduction</strong> in
-        damage incidents. Here is what to evaluate when selecting a carrier.
+        damage incidents.
       </p>
-      <p>
-        <strong>Ask for their damage claim ratio.</strong> The industry average is roughly{" "}
-        <strong>1 claim per 100 shipments</strong>. Top carriers maintain ratios below 0.5%.
-        Request data for the last 12 months, not just the most recent quarter.
+
+      <p className="mb-6">
+        Ask for their damage claim ratio. The industry average is roughly <strong>1 claim per
+        100 shipments</strong>. Top carriers maintain ratios below 0.5%. Request data for the
+        last 12 months, not just the most recent quarter. Inspect their equipment too. Trailers
+        with holes, broken floor boards, or non-functioning door seals are red flags. Air-ride
+        suspension reduces transit vibration by <strong>40-60%</strong> compared to spring
+        suspension, which matters significantly for fragile freight.
       </p>
-      <p>
-        <strong>Inspect their equipment.</strong> Trailers with holes, broken floor boards, or
-        non-functioning door seals are red flags. Air-ride suspension reduces transit vibration
-        by <strong>40-60%</strong> compared to spring suspension, which matters significantly
-        for fragile freight.
-      </p>
-      <p>
-        <strong>Evaluate driver training programs.</strong> Carriers that invest in load
-        securement training and handling procedures experience fewer damage claims. Ask
-        whether drivers are trained in FMCSA load securement standards and whether the
-        carrier conducts regular training refreshers.
-      </p>
-      <p>
-        <strong>Review their claims process.</strong> A carrier with a transparent, fast claims
-        process signals confidence in their service quality. Carriers that make claims
-        difficult to file often do so because they expect a high volume of them. For guidance
-        on evaluating carriers beyond damage rates, see our{" "}
+
+      <p className="mb-8">
+        Look at driver training programs. Carriers that invest in load securement training and
+        handling procedures experience fewer damage claims. Ask whether drivers are trained in
+        FMCSA load securement standards and whether the carrier conducts regular training
+        refreshers. And review their claims process. A carrier with a transparent, fast claims
+        process signals confidence in their service quality. Carriers that make claims difficult
+        to file often do so because they expect a high volume of them. For guidance on evaluating
+        carriers beyond damage rates, see our{" "}
         <Link to="/resources/how-to-ship-freight">complete freight shipping guide</Link>.
       </p>
 
       <h2>DeMar Transportation's Damage Prevention Approach</h2>
-      <p>
+      <p className="mb-6">
         At DeMar Transportation, freight damage prevention is built into every stage of the
         shipping process, from quote to delivery. Based in Reno, Nevada, we serve shippers
         nationwide with dry van, reefer, flatbed, hazmat, FTL, LTL, 3PL, and warehousing
         services, and we hold ourselves to damage standards that exceed industry benchmarks.
       </p>
 
-      <h3>Driver Training and Load Securement</h3>
-      <p>
+      <p className="mb-6">
         Every DeMar driver completes comprehensive load securement training aligned with{" "}
         <strong>FMCSA 49 CFR Part 393</strong> standards. Our drivers inspect load security at
         every stop and are trained to identify and correct shifting loads before they cause
@@ -347,8 +325,7 @@ const FreightDamagePrevention = () => {
         because load securement skills deteriorate without practice.
       </p>
 
-      <h3>Temperature Monitoring for Reefer Shipments</h3>
-      <p>
+      <p className="mb-6">
         Our <Link to="/services/reefer">refrigerated fleet</Link> features continuous
         temperature monitoring with real-time alerts. Trailers are pre-cooled to the target
         temperature before loading, and our dispatch team monitors temperature data throughout
@@ -357,8 +334,7 @@ const FreightDamagePrevention = () => {
         temperature-related claims across our reefer operations.
       </p>
 
-      <h3>Equipment Standards</h3>
-      <p>
+      <p className="mb-6">
         We maintain a rigorous equipment maintenance schedule. Every trailer in our fleet is
         inspected for structural integrity, floor condition, door seals, and interior
         cleanliness before each load. Our{" "}
@@ -367,8 +343,7 @@ const FreightDamagePrevention = () => {
         rated for the specific load requirements.
       </p>
 
-      <h3>Transparent Claims Process</h3>
-      <p>
+      <p className="mb-8">
         In the rare event that damage occurs, DeMar provides a straightforward claims process
         with a dedicated point of contact. We acknowledge claims within 48 hours and resolve
         most within 30 days, well ahead of the 120-day federal requirement. Our goal is to
