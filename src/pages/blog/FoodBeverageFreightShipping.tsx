@@ -59,13 +59,17 @@ const FoodBeverageFreightShipping = () => {
       </p>
 
       <h2>What FSMA Actually Requires from Food Shippers and Carriers</h2>
-      <p>
-        The FDA's Sanitary Transportation of Human and Animal Food rule, finalized under FSMA, shifted the compliance burden from the FDA to the shipper and carrier jointly. Before FSMA, food transportation was largely self-regulated. Now, if you ship food freight and your carrier fails to maintain temperature or sanitation, you share legal exposure for the resulting contamination. The rule is not theoretical. FDA enforcement actions under FSMA have resulted in facility shutdowns, product seizures, and import alerts for foreign shippers moving product into U.S. distribution.
+      <p className="mb-6">
+        The FDA's Sanitary Transportation of Human and Animal Food rule, finalized under FSMA, shifted the compliance burden from the FDA to the shipper and carrier jointly. Before FSMA, food transportation was largely self-regulated. Now, if you ship food freight and your carrier fails to maintain temperature or sanitation, you share legal exposure for the resulting contamination.
       </p>
-      <p>
-        The rule requires shippers to specify temperature requirements in writing before the load moves. Carriers must use equipment that can maintain those temperatures and must keep records proving they did. Receivers have an obligation to reject loads that arrive outside spec. Every party in the chain, shipper, carrier, and receiver, is accountable. If you are handing a reefer load to a carrier and you have not given them a written temperature specification, you are out of FSMA compliance before the trailer leaves the dock.
+
+      <p className="mb-6">
+        The rule is not theoretical. FDA enforcement actions under FSMA have resulted in facility shutdowns, product seizures, and import alerts for foreign shippers moving product into U.S. distribution.
       </p>
-      <p>
+      <p className="mb-6">
+        The rule requires shippers to specify temperature requirements in writing before the load moves. Carriers must use equipment that can maintain those temperatures and must keep records proving they did. Receivers have an obligation to reject loads that arrive outside spec. Every party in the chain (shipper, carrier, and receiver) is accountable. If you are handing a reefer load to a carrier and you have not given them a written temperature specification, you are out of FSMA compliance before the trailer leaves the dock.
+      </p>
+      <p className="mb-8">
         In our experience hauling food and beverage freight across the Midwest and Southeast, the shippers who face the fewest compliance headaches are the ones who treat temperature specs as a required document, not a verbal conversation. They send a written Food Transportation Safety Plan with every load, they confirm the carrier's pre-trip temperature logs before departure, and they require proof-of-temperature records at delivery. That paper trail is what protects them when an FDA auditor shows up.
       </p>
 
