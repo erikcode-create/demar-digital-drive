@@ -33,7 +33,10 @@ const HowToShipHazardousMaterials = () => {
   const content = (
     <>
       <p>
-        <strong>Shipping hazardous materials (hazmat) requires compliance with DOT regulations under 49 CFR Parts 100-185, which cover classification, packaging, labeling, placarding, and documentation for all 9 hazard classes.</strong> Every hazmat shipment must include proper shipping papers with the UN/NA identification number, proper shipping name, hazard class, packing group, and quantity. Drivers must hold a CDL with a Hazardous Materials (H) endorsement and TSA security clearance. Carriers must maintain minimum $1 million cargo liability insurance (higher for certain classes) and a Satisfactory FMCSA safety rating. Violations carry civil penalties up to $500,000 and criminal penalties including imprisonment. This guide covers the complete hazmat shipping process -- from classifying your material to selecting a qualified <Link to="/services/hazmat">hazmat carrier</Link>.
+        <strong>Shipping hazardous materials (hazmat) requires compliance with DOT regulations under 49 CFR Parts 100-185, which cover classification, packaging, labeling, placarding, and documentation for all 9 hazard classes.</strong> Every hazmat shipment must include proper shipping papers with the UN/NA identification number, proper shipping name, hazard class, packing group, and quantity. Drivers must hold a CDL with a Hazardous Materials (H) endorsement and TSA security clearance.
+      </p>
+      <p>
+        Carriers must maintain minimum $1 million cargo liability insurance (higher for certain classes) and a Satisfactory FMCSA safety rating. Violations carry civil penalties up to $500,000 and criminal penalties including imprisonment. This guide covers the complete hazmat shipping process, from classifying your material to selecting a qualified <Link to="/services/hazmat">hazmat carrier</Link>.
       </p>
 
       <h2>DOT Hazmat Classes: All 9 Categories</h2>
