@@ -38,8 +38,8 @@ const Support = () => {
               </li>
               <li>
                 Phone:{" "}
-                <a href="tel:+18663812617" className="text-blue-600 hover:underline">
-                  (866) 381-2617
+                <a href="tel:+17752304767" className="text-blue-600 hover:underline">
+                  (775) 230-4767
                 </a>
               </li>
             </ul>
