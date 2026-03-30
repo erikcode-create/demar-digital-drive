@@ -18,15 +18,18 @@ export async function invokeClaude(prompt, { model = "sonnet", timeout = 300000 
 
   console.log(`[claude-api] Using model: ${model} (${modelId})`);
 
-  // Write prompt to a temp file to avoid shell escaping issues
-  const tmpFile = path.join(tmpdir(), `claude-prompt-${Date.now()}.txt`);
+  // Write prompt to temp file, then pass via shell redirection to avoid escaping issues
+  const tmpFile = path.join(tmpdir(), `claude-prompt-${Date.now()}-${Math.random().toString(36).slice(2)}.txt`);
   writeFileSync(tmpFile, prompt);
 
   try {
-    const result = execSync(
-      `npx -y @anthropic-ai/claude-code --print --model ${modelId} "$(cat '${tmpFile}')"`,
-      { cwd: REPO_ROOT, encoding: "utf-8", timeout, env: { ...process.env, PATH: process.env.PATH }, maxBuffer: 10 * 1024 * 1024 }
-    );
+    const result = execFileSync("npx", [
+      "-y", "@anthropic-ai/claude-code", "--print", "--model", modelId, "-p", prompt,
+    ], {
+      cwd: REPO_ROOT, encoding: "utf-8", timeout,
+      env: { ...process.env, PATH: process.env.PATH },
+      maxBuffer: 10 * 1024 * 1024,
+    });
     return { success: true, output: result.trim() };
   } catch (err) {
     return { success: false, output: err.stdout || err.message };
