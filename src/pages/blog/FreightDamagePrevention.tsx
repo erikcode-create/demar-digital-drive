@@ -372,6 +372,8 @@ const FreightDamagePrevention = () => {
       slug="freight-damage-prevention"
       publishDate="2026-03-29"
       readTime="9 min"
+      heroImage="/images/blog/freight-damage-hero.jpg"
+      heroImageAlt="Damaged cargo packaging illustrating the cost of freight damage"
       content={content}
       faqs={faqs}
       relatedLinks={relatedLinks}
