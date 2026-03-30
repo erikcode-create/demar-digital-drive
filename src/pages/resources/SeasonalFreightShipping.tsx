@@ -48,7 +48,10 @@ const SeasonalFreightShipping = () => {
         <strong>holiday season (October-December)</strong>, when consumer demand drives the highest
         rates of the year. The cheapest months are typically{" "}
         <strong>January and February</strong>, when post-holiday demand drops and carrier capacity
-        is abundant. Spot rates during peak Q4 can surge{" "}
+        is abundant.
+      </p>
+      <p>
+        Spot rates during peak Q4 can surge{" "}
         <strong>30-50% above annual averages</strong>, while contract shippers face increased
         tender rejections as carriers chase higher-paying loads. Understanding these cycles lets you
         plan shipments strategically, lock in favorable contract rates, and avoid overpaying during
