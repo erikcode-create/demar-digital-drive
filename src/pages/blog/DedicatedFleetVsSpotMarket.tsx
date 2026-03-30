@@ -195,16 +195,16 @@ const DedicatedFleetVsSpotMarket = () => {
       </p>
 
       <h2>How to Evaluate Whether You Need a Dedicated Contract</h2>
-      <p>
-        The evaluation starts with pulling your freight data from the last 12 to 24 months. You need three numbers: total load count by month, lane distribution showing which origin-destination pairs repeat most frequently, and your total freight spend including all accessorials and surcharges. Those numbers tell you whether your freight profile fits dedicated, hybrid, or spot-only.
+      <p className="mb-6">
+        The evaluation starts with pulling your freight data from the last 12 to 24 months. You need three numbers: total load count by month, lane distribution showing which origin-destination pairs repeat most frequently, and your total freight spend including all accessorials and surcharges.
       </p>
-      <p>
+      <p className="mb-6">
         If your top three lanes account for 60% or more of your total load count, those lanes are strong candidates for dedicated coverage. Concentrated volume on consistent routes is exactly what dedicated fleet is designed to serve. If your freight is spread across 20 different lane pairs with no single lane exceeding 10% of volume, dedicated fleet probably cannot be structured efficiently for your network.
       </p>
-      <p>
+      <p className="mb-6">
         Month-to-month volume variance matters too. If your busiest month runs twice the volume of your slowest month, calculate whether a dedicated contract's minimum commitment covers your slow months without creating idle truck costs. A carrier like DeMar can structure flexible dedicated agreements with monthly volume adjustment provisions, which reduces the risk of over-committing on capacity during predictably slow periods.
       </p>
-      <p>
+      <p className="mb-8">
         Finally, look at your accessorial history. High detention charges, frequent layover fees, and repeated appointment scheduling problems are often signs that spot market carriers unfamiliar with your facilities are costing you more than the rate-per-mile comparison suggests. Dedicated drivers who know your docks, understand your scheduling system, and have established relationships with your receiving team reduce those friction costs significantly. For a detailed look at how these costs add up, the <Link to="/resources/freight-shipping-cost">2026 freight shipping cost guide</Link> covers full landed cost calculation including all accessorials.
       </p>
 
