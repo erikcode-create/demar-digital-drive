@@ -121,20 +121,20 @@ const FreightShippingInsuranceCoverage = () => {
       </p>
 
       <h2>How to File a Freight Damage Claim</h2>
-      <p>
+      <p className="mb-6">
         The documentation you gather in the first 30 minutes after discovering damaged freight determines whether your claim pays in full or gets denied. The process is straightforward, but the timing requirements are strict.
       </p>
-      <p>
-        Note exceptions on the delivery receipt at the time of delivery. If the driver will not wait for a full inspection, write "subject to inspection" and then document damage within 15 minutes of the driver's departure. Photographs with timestamps are essential. Photograph the exterior of the trailer or container before opening, the condition of packaging before moving product, and the damaged product itself from multiple angles. Do not discard damaged packaging; it is evidence.
+      <p className="mb-6">
+        Note exceptions on the delivery receipt at the time of delivery. If the driver will not wait for a full inspection, write "subject to inspection" and then document damage within 15 minutes of the driver's departure. Photographs with timestamps are essential. Do not discard damaged packaging. It is evidence.
       </p>
-      <p>
-        Notify the carrier in writing within the carrier's claim filing window. Under the Carmack Amendment, you have nine months to file a formal claim for loss or damage on interstate shipments, but most carrier tariffs require preliminary notification within 15 to 30 days. Missing the preliminary notification window gives the carrier grounds to deny the claim regardless of fault. Put the notification in writing, reference the pro number and bill of lading, and state the nature and estimated amount of the loss.
+      <p className="mb-6">
+        Notify the carrier in writing within the carrier's claim filing window. Under the Carmack Amendment, you have nine months to file a formal claim for loss or damage on interstate shipments, but most carrier tariffs require preliminary notification within 15 to 30 days. Missing the preliminary notification window gives the carrier grounds to deny the claim regardless of fault.
       </p>
-      <p>
+      <p className="mb-6">
         Submit a formal claim with the following documentation: the original bill of lading, the freight invoice showing declared value, the delivery receipt showing exceptions, photographs of the damage, a repair estimate or replacement cost invoice, and a completed claim form from the carrier. If you have cargo insurance, notify your insurer simultaneously. They may take over the claim management entirely, which simplifies the process considerably.
       </p>
-      <p>
-        Most straightforward claims resolve within 30 to 60 days when documentation is complete. Contested claims, those where the carrier disputes liability or questions the cause of damage, can take six months or more and may require an independent cargo surveyor's report. For high-value losses, engaging a cargo attorney or a specialized claims management firm is cost-effective given the recovery potential.
+      <p className="mb-8">
+        Most straightforward claims resolve within <strong>30 to 60 days</strong> when documentation is complete. Contested claims (where the carrier disputes liability or questions the cause of damage) can take six months or more and may require an independent cargo surveyor's report. For high-value losses, engaging a cargo attorney or a specialized claims management firm is cost-effective given the recovery potential.
       </p>
 
       <h2>Choosing the Right Coverage for Your Freight Operation</h2>
