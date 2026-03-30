@@ -304,10 +304,39 @@ const ReverseLogisticsReturnFreight = () => {
       </p>
 
       <h2>Building a Reverse Logistics Program That Scales</h2>
-      <p>The companies that handle reverse logistics well have one thing in common: they built their return program before they needed it at scale. Designing a return freight program when you are already drowning in unprocessed returns costs significantly more than designing it when you have the time to evaluate carriers, negotiate rates, and train staff on documentation standards.</p>
-      <p>Start with a return freight audit. Pull your return shipping invoices for the past 12 months and calculate your cost per return by lane and commodity type. Most companies find two or three lanes or categories that account for a disproportionate share of total return cost. Those are your highest-leverage improvement targets.</p>
-      <p>From there, build your carrier and 3PL relationships before you need surge capacity. A carrier that knows your freight profile, your documentation requirements, and your disposition preferences will move your returns faster and at lower cost than a carrier you are calling for the first time in January when your return center is backed up and you need pickups scheduled by tomorrow.</p>
-      <p>DeMar Transportation works with shippers to build dedicated return freight lanes with consistent rates, scheduled pickup windows, and integrated documentation. If your current return process involves reactive spot market bookings, inconsistent documentation, and freight sitting idle waiting for disposition decisions, there is measurable cost reduction available. The first step is knowing your actual cost per return, by lane and category, so you have a baseline to improve against.</p>
+      <p>
+        The companies that handle reverse logistics well have one thing in
+        common: they built their return program before they needed it at scale.
+        Designing a return freight program when you are already drowning in
+        unprocessed returns costs significantly more than designing it when you
+        have the time to evaluate carriers, negotiate rates, and train staff on
+        documentation standards.
+      </p>
+      <p>
+        Start with a return freight audit. Pull your return shipping invoices
+        for the past 12 months and calculate your cost per return by lane and
+        commodity type. Most companies find two or three lanes or categories
+        that account for a disproportionate share of total return cost. Those
+        are your highest-priority improvement targets.
+      </p>
+      <p>
+        From there, build your carrier and 3PL relationships before you need
+        surge capacity. A carrier that knows your freight profile, your
+        documentation requirements, and your disposition preferences will move
+        your returns faster and at lower cost than a carrier you are calling
+        for the first time in January when your return center is backed up and
+        you need pickups scheduled by tomorrow.
+      </p>
+      <p>
+        DeMar Transportation works with shippers to build dedicated return
+        freight lanes with consistent rates, scheduled pickup windows, and
+        integrated documentation. If your current return process involves
+        reactive spot market bookings, inconsistent documentation, and freight
+        sitting idle waiting for disposition decisions, there is measurable
+        cost reduction available. The first step is knowing your actual cost
+        per return, by lane and category, so you have a baseline to improve
+        against.
+      </p>
     </>
   );
 
