@@ -152,7 +152,7 @@ const Blog = () => {
                 </span>
               </div>
               <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-6">
-                Freight Shipping Insights
+                Insights
               </h1>
               <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
                 Practical guides and expert analysis from DeMar Transportation.
