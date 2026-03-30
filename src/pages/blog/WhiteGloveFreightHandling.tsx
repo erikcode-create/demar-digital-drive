@@ -106,10 +106,42 @@ const WhiteGloveFreightHandling = () => {
       </p>
 
       <h2>White-Glove Freight Pricing: What Drives the Cost Premium</h2>
-      <p>White-glove freight handling typically costs 15-40% more than a standard FTL or LTL rate for the same lane and weight. On a $5,000 full truckload shipment from Chicago to Atlanta, that translates to roughly $750-$2,000 in additional service charges. Several cost drivers explain that premium.</p>
-      <p>Trained two-person delivery teams cost more than a single driver who drops freight at the dock. Specialized equipment including air-ride trailers, lift gates, furniture pads, and climate-controlled units represents capital investment that carriers pass through in their rates. Extended delivery windows matter too. Standard freight delivery runs Monday through Friday during dock hours. White-glove deliveries often go to residential addresses, retail locations, or medical facilities that require appointment scheduling, which increases driver time and route complexity.</p>
-      <p>For temperature-sensitive white-glove freight, reefer surcharges add another layer. A refrigerated pharmaceutical shipment requiring white-glove handling and documented temperature logs throughout transit can run 30-50% above a standard reefer rate, depending on the lane and dwell time requirements. That cost is worth it when the alternative is a rejected load at the hospital dock or a six-figure damage claim from a pharmaceutical distributor.</p>
-      <p>The easiest way to reduce white-glove costs without sacrificing service quality is to book early. Most carriers require 5-10 business days' notice for white-glove service, and last-minute bookings carry spot-rate premiums that can push the total cost 25% above published rates.</p>
+      <p>
+        White-glove freight handling typically costs 15-40% more than a standard
+        FTL or LTL rate for the same lane and weight. On a $5,000 full
+        truckload shipment from Chicago to Atlanta, that translates to roughly
+        $750-$2,000 in additional service charges. Several cost drivers explain
+        that premium.
+      </p>
+      <p>
+        Trained two-person delivery teams cost more than a single driver who
+        drops freight at the dock. Specialized equipment (including air-ride
+        trailers, lift gates, furniture pads, and climate-controlled units)
+        represents capital investment that carriers pass through in their rates.
+      </p>
+      <p>
+        Extended delivery windows matter too. Standard freight delivery runs
+        Monday through Friday during dock hours. White-glove deliveries often go
+        to residential addresses, retail locations, or medical facilities that
+        require appointment scheduling, which increases driver time and route
+        complexity.
+      </p>
+      <p>
+        For temperature-sensitive white-glove freight, reefer surcharges add
+        another layer. A refrigerated pharmaceutical shipment requiring
+        white-glove handling and documented temperature logs throughout transit
+        can run 30-50% above a standard reefer rate, depending on the lane and
+        dwell time requirements. That cost is worth it when the alternative is a
+        rejected load at the hospital dock or a six-figure damage claim from a
+        pharmaceutical distributor.
+      </p>
+      <p>
+        The easiest way to reduce white-glove costs without sacrificing service
+        quality is to book early. Most carriers require 5-10 business days'
+        notice for white-glove service, and last-minute bookings carry
+        spot-rate premiums that can push the total cost 25% above published
+        rates.
+      </p>
 
       <h2>When Standard Freight Service Is Not Enough</h2>
       <p>Most freight moves fine on standard dry van or flatbed service. Palletized goods with industrial packaging, construction materials, and bulk commodities do not need white-glove handling. The question is where your shipment sits on the fragility and value spectrum.</p>
