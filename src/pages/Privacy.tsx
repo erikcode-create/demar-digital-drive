@@ -13,7 +13,8 @@ const Privacy = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-3xl mx-auto px-6 py-16">
+      <Header />
+      <div className="max-w-3xl mx-auto px-6 py-16 pt-32">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
         <p className="text-sm text-gray-500 mb-8">Last updated: March 28, 2026</p>
 
