@@ -141,7 +141,7 @@ const WarehousingPage = () => {
                   Efficient warehousing is the backbone of any well-run supply chain. Whether you need a place to stage inventory before it ships to retail locations, a cross-dock facility to consolidate and redistribute freight, or a fulfillment center to process individual customer orders, DeMar Transportation connects you with the right warehouse space in the right location.
                 </p>
                 <p>
-                  Through our network of strategic warehouse locations positioned near major transportation corridors and population centers, we provide flexible storage and distribution solutions without requiring you to sign long-term leases, hire warehouse staff, or invest in facility infrastructure. Our warehouse partners operate modern, secure facilities equipped with the technology and processes to handle your inventory with care and precision.
+                  Through our network of strategic warehouse locations positioned near major transportation corridors and population centers, we provide flexible storage and distribution services without requiring you to sign long-term leases, hire warehouse staff, or invest in facility infrastructure. Our warehouse partners operate modern, secure facilities equipped with the technology and processes to handle your inventory with care and precision.
                 </p>
                 <p>
                   What makes our approach different is the integration between warehousing and transportation. Because DeMar manages both your storage needs and your freight movements, there is no disconnect between what is sitting in a warehouse and what is scheduled to ship. One provider, one point of contact, complete coordination from receipt to delivery.
