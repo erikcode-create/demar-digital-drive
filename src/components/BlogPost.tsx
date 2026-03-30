@@ -76,6 +76,12 @@ const BlogPost = ({
     datePublished: publishDate,
     dateModified: publishDate,
     mainEntityOfPage: `https://demartransportation.com/blog/${slug}`,
+    ...(heroImage && {
+      image: {
+        "@type": "ImageObject",
+        url: `https://demartransportation.com${heroImage}`,
+      },
+    }),
   };
 
   const faqSchema = {
