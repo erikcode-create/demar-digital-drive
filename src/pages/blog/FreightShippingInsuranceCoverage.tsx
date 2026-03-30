@@ -155,16 +155,16 @@ const FreightShippingInsuranceCoverage = () => {
       </p>
 
       <h2>Special Considerations for Hazmat and High-Value Freight</h2>
-      <p>
+      <p className="mb-6">
         Standard cargo policies have exclusions and sub-limits that create meaningful gaps for two categories of freight: hazardous materials and high-value commodities. Both require deliberate coverage planning, not just a default cargo policy.
       </p>
-      <p>
-        Hazmat shipments face dual exposure: cargo loss and environmental liability. If a tanker carrying petroleum products is involved in an accident, the cleanup liability can dwarf the value of the cargo itself. Carriers moving hazmat under FMCSA regulations must carry $1 million to $5 million in liability depending on the hazmat classification, but that liability is for bodily injury and property damage, not cargo loss. A shipper moving $500,000 in specialty chemicals needs cargo coverage that explicitly includes hazmat commodities, because many standard policies exclude them. Confirm the policy language before the load moves, not after.
+      <p className="mb-6">
+        Hazmat shipments face dual exposure: cargo loss and environmental liability. If a tanker carrying petroleum products is involved in an accident, the cleanup liability can dwarf the value of the cargo itself. A shipper moving $500,000 in specialty chemicals needs cargo coverage that explicitly includes hazmat commodities, because many standard policies exclude them. Confirm the policy language before the load moves, not after.
       </p>
-      <p>
+      <p className="mb-6">
         High-value commodities require agreed-value policies rather than actual cash value policies. An actual cash value policy pays replacement cost minus depreciation, which can leave you significantly short on equipment, electronics, or specialty goods with limited resale market comparables. An agreed-value policy pays the stated insured amount without depreciation deduction. The premium is higher, but the recovery certainty is worth it for shipments above $100,000.
       </p>
-      <p>
+      <p className="mb-8">
         DeMar Transportation handles fuel and hazmat freight across the Southwest under full regulatory compliance, with carrier insurance certificates available to shippers on request. For questions about coverage verification for <Link to="/services/hazmat">hazmat and fuel transportation</Link>, or to discuss declared value options for a specific lane, <Link to="/contact">contact our team directly</Link>.
       </p>
 
