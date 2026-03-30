@@ -21,7 +21,7 @@ const ReverseLogisticsReturnFreight = () => {
     },
     {
       question: "Can DeMar manage my entire reverse logistics operation?",
-      answer: "Yes—our 3PL and warehousing services include return receiving, sorting, inspection, refurbishment, restocking, and reshipment coordination. We consolidate returns, manage documentation, and arrange final disposition (resale, recycling, or disposal)."
+      answer: "Yes. Our 3PL and warehousing services include return receiving, sorting, inspection, refurbishment, restocking, and reshipment coordination. We consolidate returns, manage documentation, and arrange final disposition (resale, recycling, or disposal)."
     }
   ];
 
