@@ -18,7 +18,7 @@ const differentiators = [
   {
     icon: HeadphonesIcon,
     title: "24/7 US-Based Team",
-    desc: "English-speaking dispatch that answers your call — day or night.",
+    desc: "English-speaking dispatch that answers your call, day or night.",
   },
   {
     icon: DollarSign,
