@@ -33,7 +33,10 @@ const HowToShipRefrigeratedGoods = () => {
   const content = (
     <>
       <p>
-        <strong>Shipping refrigerated goods requires maintaining precise temperatures throughout the entire cold chain -- from pre-cooling the trailer to monitoring temperatures during transit to verifying conditions at delivery.</strong> The critical temperature ranges are: frozen goods at -20°F to 0°F, fresh meat and dairy at 28-40°F, fresh produce at 32-55°F (varies by item), and pharmaceuticals at product-specific ranges (typically 35-46°F). Failures in the cold chain cause an estimated $35 billion in spoiled goods annually in the United States. The most common causes are inadequate pre-cooling, improper loading patterns that block airflow, and delayed pickups where product sits on a warm dock. This guide covers everything you need to know to ship refrigerated and frozen goods safely, from choosing the right <Link to="/services/reefer">reefer carrier</Link> to FSMA compliance.
+        <strong>Shipping refrigerated goods requires maintaining precise temperatures throughout the entire cold chain, from pre-cooling the trailer to monitoring temperatures during transit to verifying conditions at delivery.</strong> The critical temperature ranges are: frozen goods at -20°F to 0°F, fresh meat and dairy at 28-40°F, fresh produce at 32-55°F (varies by item), and pharmaceuticals at product-specific ranges (typically 35-46°F).
+      </p>
+      <p>
+        Failures in the cold chain cause an estimated $35 billion in spoiled goods annually in the United States. The most common causes are inadequate pre-cooling, improper loading patterns that block airflow, and delayed pickups where product sits on a warm dock. This guide covers everything you need to know to ship refrigerated and frozen goods safely, from choosing the right <Link to="/services/reefer">reefer carrier</Link> to FSMA compliance.
       </p>
 
       <h2>Temperature Requirements by Product Type</h2>
