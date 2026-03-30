@@ -144,7 +144,7 @@ const LTL = () => {
                   In an LTL shipment, the carrier picks up freight from multiple shippers, consolidates those shipments at a terminal, and then routes them through a hub-and-spoke network to their respective destinations. Your freight is palletized, labeled, and loaded alongside other shippers' cargo, with each shipment tracked independently through the carrier's system.
                 </p>
                 <p>
-                  At DeMar Transportation, we leverage our extensive carrier network and 3PL brokerage capabilities to secure competitive LTL rates from top national and regional carriers. Whether you are shipping a single pallet from Reno to Chicago or managing recurring LTL lanes across the country, our freight specialists match your shipment to the right carrier for the best combination of price, transit time, and service quality.
+                  At DeMar Transportation, we use our extensive carrier network and 3PL brokerage capabilities to secure competitive LTL rates from top national and regional carriers. Whether you are shipping a single pallet from Reno to Chicago or managing recurring LTL lanes across the country, our freight specialists match your shipment to the right carrier for the best combination of price, transit time, and service quality.
                 </p>
               </div>
             </div>
