@@ -91,6 +91,7 @@ const Privacy = () => {
           </section>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
