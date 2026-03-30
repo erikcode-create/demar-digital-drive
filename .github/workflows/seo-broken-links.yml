@@ -1,0 +1,26 @@
+name: SEO Broken Link Fixer
+
+on:
+  schedule:
+    - cron: '0 15 * * *'  # 8am PDT daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: monitoring/package-lock.json
+      - run: cd monitoring && npm ci
+      - run: cd monitoring && node seo/broken-link-fixer.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DISCORD_SEO_WEBHOOK_URL: ${{ secrets.DISCORD_SEO_WEBHOOK_URL }}
