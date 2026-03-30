@@ -250,9 +250,38 @@ const WhiteGloveFreightHandling = () => {
       </p>
 
       <h2>Documentation and Insurance for High-Value White-Glove Shipments</h2>
-      <p>Standard carrier liability under the Carmack Amendment runs $0.50 per pound for LTL and varies for FTL, which covers almost nothing for a high-value white-glove shipment. A 200-pound electronic display worth $15,000 gets $100 in Carmack coverage. That gap between carrier liability and actual cargo value is why shippers moving white-glove freight need either declared value coverage or a separate cargo insurance policy.</p>
-      <p>Declared value coverage means the carrier accepts higher liability in exchange for an additional charge, typically $1.00-$2.00 per $100 of declared value above the standard liability limit. For a $50,000 machine, that means declaring the value and paying the surcharge, which usually runs $400-$900 depending on the carrier and lane. It is worth it. Cargo insurance from a third-party insurer often runs cheaper than declared value for very high-value shipments and provides broader coverage including concealed damage claims that carriers routinely dispute.</p>
-      <p>Photo documentation at loading and delivery is not optional for white-glove freight. A complete set of timestamped photos showing the item's condition at origin, after loading, after unloading, and at final placement creates the evidence chain you need if a damage claim arises. Reputable white-glove carriers include this as a standard service component. If your carrier does not offer it, take the photos yourself and send them to the carrier before the truck leaves the dock.</p>
+      <p>
+        Standard carrier liability under the Carmack Amendment runs $0.50 per
+        pound for LTL and varies for FTL, which covers almost nothing for a
+        high-value white-glove shipment. A 200-pound electronic display worth
+        $15,000 gets $100 in Carmack coverage. That gap between carrier
+        liability and actual cargo value is why shippers moving white-glove
+        freight need either declared value coverage or a separate cargo
+        insurance policy.
+      </p>
+      <p>
+        Declared value coverage means the carrier accepts higher liability in
+        exchange for an additional charge, typically $1.00-$2.00 per $100 of
+        declared value above the standard liability limit. For a $50,000
+        machine, that means declaring the value and paying the surcharge, which
+        usually runs $400-$900 depending on the carrier and lane. It is worth
+        it.
+      </p>
+      <p>
+        Cargo insurance from a third-party insurer often runs cheaper than
+        declared value for very high-value shipments and provides broader
+        coverage including concealed damage claims that carriers routinely
+        dispute.
+      </p>
+      <p>
+        Photo documentation at loading and delivery is not optional for
+        white-glove freight. A complete set of timestamped photos showing the
+        item's condition at origin, after loading, after unloading, and at
+        final placement creates the evidence chain you need if a damage claim
+        arises. Reputable white-glove carriers include this as a standard
+        service component. If your carrier does not offer it, take the photos
+        yourself and send them to the carrier before the truck leaves the dock.
+      </p>
 
       <h2>Choosing a White-Glove Freight Carrier</h2>
       <p>Not every carrier that lists "white glove" in their service offerings actually has the training and equipment to execute it correctly. Evaluating a white-glove carrier requires looking past the marketing language and asking operational questions.</p>
