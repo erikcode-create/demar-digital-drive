@@ -31,6 +31,15 @@ const resourceLinks = [
   { name: "All Resources", path: "/resources" },
 ];
 
+const blogLinks = [
+  { name: "Why Freight Quotes Change", path: "/blog/why-freight-quote-keeps-changing" },
+  { name: "Small Business Freight", path: "/blog/small-business-freight-shipping" },
+  { name: "Emergency Freight Shipping", path: "/blog/emergency-expedited-freight" },
+  { name: "Freight Damage Prevention", path: "/blog/freight-damage-prevention" },
+  { name: "E-commerce Freight", path: "/blog/ecommerce-freight-shipping" },
+  { name: "All Blog Posts", path: "/blog" },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-[hsl(225_97%_4%)] text-white">
