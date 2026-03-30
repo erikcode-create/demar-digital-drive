@@ -92,7 +92,7 @@ const Services = () => {
             <span className="text-[hsl(var(--muted-foreground))]">under one roof.</span>
           </h2>
           <p className="text-base text-[hsl(var(--muted-foreground))] max-w-lg leading-relaxed">
-            From dry van to hazmat, FTL to warehousing — one partner for every
+            From dry van to hazmat, FTL to warehousing. One partner for every
             shipping need across the nation.
           </p>
         </div>
