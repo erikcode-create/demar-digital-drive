@@ -330,6 +330,8 @@ const EcommerceFreightShipping = () => {
       slug="ecommerce-freight-shipping"
       publishDate="2026-03-29"
       readTime="8 min"
+      heroImage="/images/blog/ecommerce-freight-hero.jpg"
+      heroImageAlt="E-commerce warehouse with logistics operations and palletized inventory"
       content={content}
       faqs={faqs}
       relatedLinks={relatedLinks}
