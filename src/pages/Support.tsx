@@ -13,7 +13,8 @@ const Support = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-3xl mx-auto px-6 py-16">
+      <Header />
+      <div className="max-w-3xl mx-auto px-6 py-16 pt-32">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Support</h1>
 
         <div className="space-y-6 text-gray-700 leading-relaxed">
