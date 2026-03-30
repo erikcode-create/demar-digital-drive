@@ -126,10 +126,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Blog */}
+          {/* Insights */}
           <div>
             <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
-              Blog
+              Insights
             </p>
             <ul className="space-y-2.5">
               {blogLinks.map((b) => (
