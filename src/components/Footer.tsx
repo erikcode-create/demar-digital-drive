@@ -126,6 +126,25 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Blog */}
+          <div>
+            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
+              Blog
+            </p>
+            <ul className="space-y-2.5">
+              {blogLinks.map((b) => (
+                <li key={b.path}>
+                  <Link
+                    to={b.path}
+                    className="text-sm text-white/40 hover:text-white transition-colors"
+                  >
+                    {b.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Contact */}
           <div>
             <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
