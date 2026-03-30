@@ -51,7 +51,10 @@ const DryVanVsReefer = () => {
         climate control, used for general merchandise that does not require specific temperature
         conditions. A reefer trailer has a built-in refrigeration unit that maintains temperatures
         from <strong>-20°F to 70°F</strong>, making it essential for perishable food, pharmaceuticals,
-        and other temperature-sensitive cargo. Dry vans account for roughly{" "}
+        and other temperature-sensitive cargo.
+      </p>
+      <p>
+        Dry vans account for roughly{" "}
         <strong>70% of all truckload shipments</strong> and are the most cost-effective option for
         non-perishable goods. Reefer trailers cost <strong>20-40% more</strong> than dry vans on
         the same lane due to fuel for the refrigeration unit, insulation costs, and specialized
