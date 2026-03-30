@@ -170,17 +170,17 @@ const DedicatedFleetVsSpotMarket = () => {
       </p>
 
       <h2>The Hybrid Strategy: 70% Dedicated, 30% Spot</h2>
-      <p>
-        Most sophisticated shippers with moderate to high volume do not choose between dedicated and spot market. They use both deliberately. The most common structure is a dedicated core covering your highest-volume, most predictable lanes combined with a managed spot strategy for overflow and irregular freight.
+      <p className="mb-6">
+        Most experienced shippers with moderate to high volume do not choose between dedicated and spot market. They use both deliberately. The most common structure is a dedicated core covering your highest-volume, most predictable lanes combined with a managed spot strategy for overflow and irregular freight.
       </p>
-      <p>
-        The 70/30 split, where roughly 70% of freight volume moves on dedicated contracts and 30% moves through spot or contract carriers on flexible terms, gives you the best of both models. Your core business has guaranteed capacity and stable rates. Your overflow freight benefits from market flexibility, and you maintain relationships with spot carriers who know your freight profile well enough to handle it efficiently.
+      <p className="mb-6">
+        The 70/30 split gives you the best of both models. Your core business has guaranteed capacity and stable rates. Your overflow freight benefits from market flexibility, and you maintain relationships with spot carriers who know your freight profile well enough to handle it efficiently.
       </p>
-      <p>
+      <p className="mb-6">
         This hybrid model also serves as a hedge. During soft markets, you can shift volume toward spot to capture savings on your overflow freight. During tight markets, your dedicated capacity absorbs the peak demand without rate exposure. The 30% of freight that moves spot will cost more in Q4, but the 70% on dedicated contracts is completely insulated from that pressure.
       </p>
-      <p>
-        Working with a <Link to="/services/3pl">third-party logistics provider</Link> can make hybrid management significantly more efficient. A 3PL with both dedicated fleet assets and a broad carrier network can manage the entire portfolio under one contract, shifting loads between dedicated and spot capacity based on real-time market conditions and your volume patterns, without requiring your team to manage two separate carrier relationships.
+      <p className="mb-8">
+        Working with a <Link to="/services/3pl">third-party logistics provider</Link> can make hybrid management significantly more efficient. A 3PL with both dedicated fleet assets and a broad carrier network can manage the entire portfolio under one contract, shifting loads between dedicated and spot capacity based on real-time market conditions and your volume patterns. Your team manages one relationship instead of two.
       </p>
 
       <h2>Dedicated Fleet vs Spot Market During Peak Freight Season</h2>
