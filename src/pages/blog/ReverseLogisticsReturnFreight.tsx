@@ -74,9 +74,37 @@ const ReverseLogisticsReturnFreight = () => {
       </p>
 
       <h2>Why Reverse Logistics Costs More Than Forward Shipping</h2>
-      <p>Forward freight moves in predictable volumes on defined lanes. You know the origin, the destination, the commodity, and roughly when it needs to arrive. Reverse freight arrives at random. A customer in Sacramento returns a pallet of commercial lighting fixtures the same week a retailer in Atlanta sends back unsold seasonal inventory and a manufacturer in Houston initiates a product recall on 800 units. Each of those shipments has a different condition, different documentation requirement, and different destination.</p>
-      <p>Carriers price that unpredictability into their rates. Return freight typically costs 5 to 10 percent more per mile than comparable forward freight because load planning is harder, pickup windows are less flexible, and drivers often have to wait at commercial locations while staff locate and stage the return. Detention charges, typically $50 to $75 per hour after the free time window, hit return pickups more frequently than outbound shipments. If you are not tracking detention on your return lanes, you are likely leaving a significant line item unexamined.</p>
-      <p>The other cost driver is empty miles. A carrier that drops a load in Dallas and picks up a return in Dallas operates efficiently. A carrier that drops a load in Dallas and has to deadhead 200 miles to pick up a return in Lubbock passes that cost to you. Consolidating your return pickups to reduce deadhead miles is one of the fastest ways to bring reverse logistics costs down without sacrificing speed.</p>
+      <p>
+        Forward freight moves in predictable volumes on defined lanes. You know
+        the origin, the destination, the commodity, and roughly when it needs to
+        arrive. Reverse freight arrives at random.
+      </p>
+      <p>
+        A customer in Sacramento returns a pallet of commercial lighting
+        fixtures the same week a retailer in Atlanta sends back unsold seasonal
+        inventory and a manufacturer in Houston initiates a product recall on
+        800 units. Each of those shipments has a different condition, different
+        documentation requirement, and different destination.
+      </p>
+      <p>
+        Carriers price that unpredictability into their rates. Return freight
+        typically costs 5 to 10 percent more per mile than comparable forward
+        freight because load planning is harder, pickup windows are less
+        flexible, and drivers often have to wait at commercial locations while
+        staff locate and stage the return. Detention charges (typically $50 to
+        $75 per hour after the free time window) hit return pickups more
+        frequently than outbound shipments. If you are not tracking detention
+        on your return lanes, you are likely leaving a significant line item
+        unexamined.
+      </p>
+      <p>
+        The other cost driver is empty miles. A carrier that drops a load in
+        Dallas and picks up a return in Dallas operates efficiently. A carrier
+        that drops a load in Dallas and has to deadhead 200 miles to pick up a
+        return in Lubbock passes that cost to you. Consolidating your return
+        pickups to reduce deadhead miles is one of the fastest ways to bring
+        reverse logistics costs down without sacrificing speed.
+      </p>
 
       <h2>How to Structure a Reverse Logistics Program That Actually Works</h2>
       <p>The companies with the lowest reverse logistics costs share one structural feature: they treat returns as a separate freight program with its own lanes, carriers, rates, and documentation standards, not as an exception to their normal shipping process.</p>
