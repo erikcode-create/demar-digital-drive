@@ -5,7 +5,7 @@ const ReverseLogisticsReturnFreight = () => {
   const faqs = [
     {
       question: "What is reverse logistics and how does it differ from standard shipping?",
-      answer: "Reverse logistics moves products backward through the supply chain—from customers back to warehouses, repair centers, or recycling facilities. It requires different routing and inspection, typically costing 5-10% of the original forward freight rate but is critical for e-commerce profitability."
+      answer: "Reverse logistics moves products backward through the supply chain, from customers back to warehouses, repair centers, or recycling facilities. It requires different routing and inspection, typically costing 5-10% of the original forward freight rate but is critical for e-commerce profitability."
     },
     {
       question: "What products require reverse logistics and returns management?",
