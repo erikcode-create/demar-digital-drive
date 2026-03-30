@@ -209,16 +209,16 @@ const DedicatedFleetVsSpotMarket = () => {
       </p>
 
       <h2>Structuring a Dedicated Contract That Protects Both Sides</h2>
-      <p>
-        A well-structured dedicated freight contract defines capacity commitment, rate structure, minimum volume guarantees, fuel surcharge methodology, and termination terms with enough specificity that neither party faces surprises. Vague contracts create disputes; specific contracts create partnerships.
+      <p className="mb-6">
+        A well-structured dedicated freight contract defines capacity commitment, rate structure, minimum volume guarantees, fuel surcharge methodology, and termination terms with enough specificity that neither party faces surprises. Vague contracts create disputes. Specific contracts create partnerships.
       </p>
-      <p>
-        The fuel surcharge table deserves particular attention. Most dedicated contracts tie fuel surcharges to the DOE weekly retail diesel price index, with surcharge percentages that increase in defined bands as diesel prices rise. Make sure you understand the base rate the surcharge applies to, whether it is the linehaul rate only or the all-in rate, because the compounding effect matters on high-volume accounts.
+      <p className="mb-6">
+        The fuel surcharge table deserves particular attention. Most dedicated contracts tie fuel surcharges to the DOE weekly retail diesel price index, with surcharge percentages that increase in defined bands as diesel prices rise. Make sure you understand the base rate the surcharge applies to (whether it is the linehaul rate only or the all-in rate) because the compounding effect matters on high-volume accounts.
       </p>
-      <p>
+      <p className="mb-6">
         Volume shortfall provisions protect the carrier from under-utilization. If you commit to 40 loads per month and only ship 28, the carrier still needs to cover fixed costs for trucks and drivers held in reserve. A well-negotiated contract defines the shortfall fee structure in advance, so you know exactly what the cost of flexibility is rather than facing a disputed invoice at quarter-end.
       </p>
-      <p>
+      <p className="mb-8">
         Rate escalation clauses deserve the same scrutiny as the initial rate. A two-year dedicated contract with a 3% annual rate escalation is fundamentally different from one with escalation tied to the Producer Price Index for trucking services, which can run higher in inflationary freight markets. Understand what drives the escalation formula before signing, and benchmark the escalation cap against historical rate trends for your lanes.
       </p>
 
