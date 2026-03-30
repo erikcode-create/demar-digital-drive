@@ -41,6 +41,8 @@ const BlogPost = ({
   slug,
   publishDate,
   readTime,
+  heroImage,
+  heroImageAlt,
   content,
   faqs,
   relatedLinks,
