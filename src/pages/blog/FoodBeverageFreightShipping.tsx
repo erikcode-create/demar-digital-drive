@@ -132,16 +132,16 @@ const FoodBeverageFreightShipping = () => {
       </p>
 
       <h2>Cold Chain Compliance During Transit: What Can Go Wrong</h2>
-      <p>
+      <p className="mb-6">
         What happens when your reefer load sits at the dock for 6 hours? Or when the carrier's reefer unit fails 300 miles from the delivery point? These are not edge cases. They happen routinely, and the shipper who has a protocol for them comes out better than the one who finds out at 11pm that their load is at risk.
       </p>
-      <p>
-        Door-open events are the most frequent source of cold chain breaks that never get documented. Every dock stop, every co-load delivery, every driver inspection opens the trailer and introduces ambient temperature. A carrier running a multi-stop route with your food freight shares that trailer exposure across stops. If food-grade compliance is a priority, dedicated single-stop loads reduce that risk entirely. For high-value or highly perishable loads, the cost of a dedicated run is a fraction of the cost of a recall.
+      <p className="mb-6">
+        Door-open events are the most frequent source of cold chain breaks that never get documented. Every dock stop, every co-load delivery, every driver inspection opens the trailer and introduces ambient temperature. If food-grade compliance is a priority, dedicated single-stop loads reduce that risk entirely. For high-value or highly perishable loads, the cost of a dedicated run is a fraction of the cost of a recall.
       </p>
-      <p>
-        Reefer unit failures are the second major risk. Modern reefer units are reliable, but they do fail, and when they do, you have a narrow window to respond. A carrier who monitors trailer temperature remotely can catch a unit failure within minutes and take action, whether that means dispatching a replacement trailer, contacting an emergency reefer service, or notifying the shipper so the product can be rerouted to a nearby facility. A carrier who discovers the failure at delivery has already lost the load.
+      <p className="mb-6">
+        Reefer unit failures are the second major risk. Modern reefer units are reliable, but they do fail, and when they do, you have a narrow window to respond. A carrier who monitors trailer temperature remotely can catch a unit failure within minutes and take action: dispatching a replacement trailer, contacting an emergency reefer service, or notifying the shipper so the product can be rerouted to a nearby facility. A carrier who discovers the failure at delivery has already lost the load.
       </p>
-      <p>
+      <p className="mb-8">
         Fuel starvation is a third, often overlooked risk. Reefer units run on diesel fuel in a separate tank from the tractor. Drivers on long hauls occasionally forget to check and refuel the reefer tank. Continuous temperature logging catches this within the first hour of unit shutdown. Manual logs do not.
       </p>
 
