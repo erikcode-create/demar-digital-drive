@@ -177,6 +177,45 @@ cd monitoring && npm run seo:page-scores       # Score all pages on SEO metrics
 
 All jobs use `model: "haiku"` for analysis and `model: "sonnet"` for content generation. Auto-PRs are created on `seo-auto/*` branches. Requires `ANTHROPIC_API_KEY` and `DISCORD_SEO_WEBHOOK_URL` secrets.
 
+### SEO Dashboard (Ahrefs-Like)
+
+Reporting-only dashboards in `monitoring/seo/dashboard/`. Tracks keyword rankings, site health, backlinks, Core Web Vitals, E-E-A-T scores, and competitor positions. Posts to Discord #seo-dashboard channel. Historical data stored in `monitoring/seo/data/` (gitignored, persisted via GitHub Actions cache).
+
+#### Dashboard Commands
+
+```bash
+cd monitoring && npm run seo:site-audit       # Crawl all pages, check SEO health
+cd monitoring && npm run seo:rank-tracker     # Track keyword rankings via Serper
+cd monitoring && npm run seo:search-console   # Google Search Console metrics
+cd monitoring && npm run seo:backlinks        # Backlink monitoring
+cd monitoring && npm run seo:competitors      # Competitor rank comparison
+cd monitoring && npm run seo:cwv              # Core Web Vitals via PageSpeed Insights
+cd monitoring && npm run seo:eeat             # E-E-A-T content scoring via Claude
+cd monitoring && npm run seo:weekly-summary   # Weekly SEO rollup report
+```
+
+#### Dashboard Shared Libraries
+
+- `monitoring/seo/lib/pages.mjs` — page list utility
+- `monitoring/seo/lib/history.mjs` — historical data read/write for trend tracking
+- `monitoring/seo/lib/serper.mjs` — Serper API client (rank checking, competitor discovery)
+- `monitoring/seo/lib/search-console.mjs` — Google Search Console API client (JWT auth)
+
+#### Dashboard GitHub Actions Workflows
+
+| Workflow | File | Schedule |
+|---|---|---|
+| Site Audit Dashboard | `seo-site-audit-dashboard.yml` | Daily 2pm PDT |
+| Keyword Rank Tracker | `seo-keyword-rank-tracker.yml` | Daily 3pm PDT |
+| Search Console Dashboard | `seo-search-console-dashboard.yml` | Daily 4pm PDT |
+| Backlink Monitor | `seo-backlink-monitor.yml` | Daily 5pm PDT |
+| Competitor Tracker | `seo-competitor-tracker.yml` | Weekly Mon 6pm PDT |
+| Core Web Vitals | `seo-core-web-vitals.yml` | Daily 7pm PDT |
+| E-E-A-T Scorer | `seo-eeat-scorer.yml` | Daily 8pm PDT |
+| Weekly SEO Summary | `seo-weekly-summary.yml` | Weekly Sun 9pm PDT |
+
+Requires `SERPER_API_KEY`, `GOOGLE_SERVICE_ACCOUNT_JSON`, `DISCORD_SEO_DASHBOARD_WEBHOOK_URL`, and `ANTHROPIC_API_KEY` secrets.
+
 ### Blog / Insights
 
 Blog posts live at `/blog` (displayed as "Insights" in the nav). Uses `BlogPost` template component with BlogPosting + FAQPage + BreadcrumbList JSON-LD schemas, hero images, and inline CTAs.
