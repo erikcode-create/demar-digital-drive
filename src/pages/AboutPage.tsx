@@ -290,7 +290,7 @@ const AboutPage = () => {
                   ))}
                 </div>
                 <p className="text-base text-[hsl(var(--muted-foreground))] leading-relaxed">
-                  These are not aspirational goals — they are daily operational requirements enforced across our entire fleet.
+                  These are not aspirational goals. They are daily operational requirements enforced across our entire fleet.
                 </p>
               </div>
             </div>
