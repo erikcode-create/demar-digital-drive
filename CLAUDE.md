@@ -188,7 +188,7 @@ Blog posts live at `/blog` (displayed as "Insights" in the nav). Uses `BlogPost`
 
 ## Important Constraints
 
-- **GitHub Pages cannot set custom HTTP response headers.** CSP is set via `<meta>` tag only. Security scanners will always show missing headers like HSTS, X-Frame-Options, etc. -- this is expected.
+- **Security headers are set via `public/.htaccess`** (HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, CSP). CSP is also duplicated in a `<meta>` tag in `index.html` as a fallback.
 - **SPA + cheerio limitation:** Scanners fetch raw HTML. React-rendered content is invisible to cheerio. SEO/accessibility scanners only see SSR or `<head>` content, not runtime DOM.
 - **Never commit `.env` files or secrets.**
 - **Auto-commit hooks** are configured in `.claude/settings.local.json` -- every Write/Edit triggers `git add + commit + push`.
