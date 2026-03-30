@@ -50,11 +50,14 @@ const FtlVsLtl = () => {
         travels directly from origin to destination with no stops. <strong>LTL
         (Less-Than-Truckload)</strong> means your shipment shares trailer space with freight from
         other shippers and passes through hub terminals along the way. FTL is the better choice
-        for shipments over <strong>6 pallets or 10,000 lbs</strong> -- it is faster (1-3 days vs
+        for shipments over <strong>6 pallets or 10,000 lbs</strong>. It is faster (1-3 days vs
         3-7 days), has lower damage risk (1-2% vs 3-5% claim rate), and becomes more
-        cost-effective at higher volumes. LTL is ideal for <strong>1-5 pallets under 10,000
-        lbs</strong>, where you only pay for the space you use. The cost crossover point --
-        where FTL becomes cheaper than LTL -- typically falls around{" "}
+        cost-effective at higher volumes.
+      </p>
+      <p>
+        LTL is ideal for <strong>1-5 pallets under 10,000
+        lbs</strong>, where you only pay for the space you use. The cost crossover point,
+        where FTL becomes cheaper than LTL, typically falls around{" "}
         <strong>6-8 pallets or 10,000-12,000 lbs</strong>, though this varies by lane and
         freight class. If your shipment falls in this range,{" "}
         <Link to="/quote">get quotes for both FTL and LTL from DeMar Transportation</Link> to
