@@ -102,6 +102,12 @@ const App = () => (
               <Route path="/resources/broker-vs-carrier-vs-3pl" element={<BrokerVsCarrierVs3pl />} />
               <Route path="/resources/freight-shipping-glossary" element={<FreightShippingGlossary />} />
               <Route path="/resources/seasonal-freight-shipping" element={<SeasonalFreightShipping />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/why-freight-quote-keeps-changing" element={<WhyFreightQuoteKeepsChanging />} />
+              <Route path="/blog/small-business-freight-shipping" element={<SmallBusinessFreightShipping />} />
+              <Route path="/blog/emergency-expedited-freight" element={<EmergencyExpeditedFreight />} />
+              <Route path="/blog/freight-damage-prevention" element={<FreightDamagePrevention />} />
+              <Route path="/blog/ecommerce-freight-shipping" element={<EcommerceFreightShipping />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
