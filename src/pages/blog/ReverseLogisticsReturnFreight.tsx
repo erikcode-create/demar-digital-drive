@@ -237,9 +237,35 @@ const ReverseLogisticsReturnFreight = () => {
       </p>
 
       <h2>Reverse Logistics in E-Commerce: What the Numbers Actually Show</h2>
-      <p>E-commerce return rates average 20 to 30 percent across categories, but the range within categories is wide. Electronics run 15 to 20 percent. Apparel runs 25 to 40 percent. Furniture and large items run 5 to 10 percent, but each individual return is expensive to handle because of size and weight.</p>
-      <p>The fully loaded cost of an e-commerce return, including customer service, return shipping, receiving labor, and inventory write-down on goods that cannot be resold at full price, averages 25 to 50 percent of the original item sale price. That means a $100 item with a 30 percent return rate and a fully loaded return cost of $35 per return generates $7 to $10.50 in return costs for every $100 in gross sales before any product cost, marketing, or overhead is accounted for.</p>
-      <p>Reducing that cost requires attacking it at multiple points. Return shipping rate negotiation can cut transportation cost by 15 to 25 percent. Regional consolidation reduces per-unit freight cost by 30 to 40 percent. Faster processing reduces the inventory write-down by getting goods back into sellable inventory before they age past their resale window. No single lever moves the needle enough on its own. All three together can reduce total return cost by 35 to 50 percent for high-volume shippers.</p>
+      <p>
+        E-commerce return rates average 20 to 30 percent across categories, but
+        the range within categories is wide. Electronics run 15 to 20 percent.
+        Apparel runs 25 to 40 percent. Furniture and large items run 5 to 10
+        percent, but each individual return is expensive to handle because of
+        size and weight.
+      </p>
+      <p>
+        The fully loaded cost of an e-commerce return (including customer
+        service, return shipping, receiving labor, and inventory write-down on
+        goods that cannot be resold at full price) averages 25 to 50 percent of
+        the original item sale price. That means a $100 item with a 30 percent
+        return rate and a fully loaded return cost of $35 per return generates
+        $7 to $10.50 in return costs for every $100 in gross sales before any
+        product cost, marketing, or overhead is accounted for.
+      </p>
+      <p>
+        Reducing that cost requires attacking it at multiple points. Return
+        shipping rate negotiation can cut transportation cost by 15 to 25
+        percent. Regional consolidation reduces per-unit freight cost by 30 to
+        40 percent. Faster processing reduces the inventory write-down by
+        getting goods back into sellable inventory before they age past their
+        resale window.
+      </p>
+      <p>
+        No single lever moves the needle enough on its own. All three together
+        can reduce total return cost by 35 to 50 percent for high-volume
+        shippers.
+      </p>
 
       <h2>Planning Your Return Freight Lanes for Peak Seasons</h2>
       <p>January is the single highest-volume month for consumer product returns in most retail categories, driven by holiday gift returns. If your forward freight capacity planning accounts for November and December peak outbound volume, your reverse logistics capacity planning needs to account for January and February peak return volume with equal rigor.</p>
