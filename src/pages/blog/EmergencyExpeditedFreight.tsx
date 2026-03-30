@@ -328,6 +328,8 @@ const EmergencyExpeditedFreight = () => {
       slug="emergency-expedited-freight"
       publishDate="2026-03-29"
       readTime="8 min"
+      heroImage="/images/blog/emergency-freight-hero.jpg"
+      heroImageAlt="Expedited delivery truck speeding on the road for urgent freight shipment"
       content={content}
       faqs={faqs}
       relatedLinks={relatedLinks}
