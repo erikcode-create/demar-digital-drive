@@ -46,8 +46,16 @@ const FreightShippingInsuranceCoverage = () => {
 
   const content = (
     <>
-      <p>
-        Freight shipping insurance protects the declared value of your cargo against loss, theft, and damage during transport. For most commercial shipments, you need at minimum a cargo insurance policy covering transit risk, plus confirmation that your carrier maintains the FMCSA-required $750,000 minimum liability for general freight or $5 million for hazardous materials. What shippers consistently underestimate is the gap between carrier liability and their actual cargo value. A carrier's liability coverage protects the carrier's exposure under the Carmack Amendment, which limits recoverable damages based on freight class and declared value, not replacement cost. If you ship $80,000 in industrial components and the carrier's liability cap for that freight class is $25 per pound, your recovery on a 500-pound pallet tops out at $12,500. Cargo insurance closes that gap. The premium runs 0.5 to 1.5 percent of declared value for standard dry freight, which means protecting a $50,000 shipment costs roughly $250 to $750. Given that cargo claims in the trucking industry exceeded $900 million annually in recent years according to industry estimates, that premium is among the most defensible line items in a logistics budget.
+      <p className="mb-6">
+        Freight shipping insurance protects the declared value of your cargo against loss, theft, and damage during transport. For most commercial shipments, you need at minimum a cargo insurance policy covering transit risk, plus confirmation that your carrier maintains the FMCSA-required $750,000 minimum liability for general freight or $5 million for hazardous materials.
+      </p>
+
+      <p className="mb-6">
+        What shippers consistently underestimate is the gap between carrier liability and their actual cargo value. A carrier's liability coverage protects the carrier's exposure under the Carmack Amendment, which limits recoverable damages based on freight class and declared value, not replacement cost. If you ship $80,000 in industrial components and the carrier's liability cap for that freight class is $25 per pound, your recovery on a 500-pound pallet tops out at <strong>$12,500</strong>.
+      </p>
+
+      <p className="mb-8">
+        Cargo insurance closes that gap. The premium runs 0.5 to 1.5 percent of declared value for standard dry freight, which means protecting a $50,000 shipment costs roughly $250 to $750. Given that cargo claims in the trucking industry exceeded <strong>$900 million annually</strong> in recent years according to industry estimates, that premium is among the most defensible line items in a logistics budget.
       </p>
 
       <h2>The Three Core Types of Freight Insurance Coverage</h2>
