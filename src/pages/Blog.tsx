@@ -56,7 +56,7 @@ const blogPosts = [
 const Blog = () => {
   useEffect(() => {
     document.title =
-      "Freight Shipping Blog | DeMar Transportation";
+      "Freight Shipping Insights | DeMar Transportation";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
       meta.setAttribute(
@@ -148,7 +148,7 @@ const Blog = () => {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 backdrop-blur-sm">
                 <Newspaper className="h-4 w-4 text-[hsl(var(--accent))]" />
                 <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/60">
-                  Freight Shipping Blog
+                  Freight Shipping Insights
                 </span>
               </div>
               <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-6">
