@@ -46,8 +46,16 @@ const FoodBeverageFreightShipping = () => {
 
   const content = (
     <>
-      <p>
-        Food freight shipping is the regulated transport of perishable and non-perishable food and beverage products under temperature-controlled conditions that meet FDA, USDA, and FSMA (Food Safety Modernization Act) standards. For a supply chain director or logistics manager, that definition has real stakes: a single temperature excursion on a 40,000-pound load of dairy products can trigger a product recall, a six-figure insurance claim, and an FDA audit that consumes weeks of your compliance team's time. Food freight shipping is not just logistics; it is a regulated chain of custody from dock to dock, where every degree matters and every log entry is a legal document. The carrier you choose either protects that chain or breaks it. Frozen goods must hold at -18°C (0°F) or colder. Fresh produce and refrigerated items stay in the 0-4°C (32-39°F) band. Dry ambient products need consistent 15-25°C (59-77°F) conditions. Missing any of these windows, even briefly, creates liability exposure that no shipper wants to explain to an FDA inspector. This guide covers what food and beverage shippers need to know about temperature requirements, FSMA compliance, cold chain documentation, and how to evaluate a carrier before your next reefer load moves.
+      <p className="mb-6">
+        Food freight shipping is the regulated transport of perishable and non-perishable food and beverage products under temperature-controlled conditions that meet FDA, USDA, and FSMA (Food Safety Modernization Act) standards. For a supply chain director or logistics manager, that definition has real stakes: a single temperature excursion on a 40,000-pound load of dairy products can trigger a product recall, a six-figure insurance claim, and an FDA audit that consumes weeks of your compliance team's time.
+      </p>
+
+      <p className="mb-6">
+        Food freight shipping is not just logistics. It is a regulated chain of custody from dock to dock, where every degree matters and every log entry is a legal document. The carrier you choose either protects that chain or breaks it.
+      </p>
+
+      <p className="mb-8">
+        Frozen goods must hold at <strong>-18C (0F) or colder</strong>. Fresh produce and refrigerated items stay in the <strong>0-4C (32-39F)</strong> band. Dry ambient products need consistent <strong>15-25C (59-77F)</strong> conditions. Missing any of these windows, even briefly, creates liability exposure that no shipper wants to explain to an FDA inspector. This guide covers what food and beverage shippers need to know about temperature requirements, FSMA compliance, cold chain documentation, and how to evaluate a carrier before your next reefer load moves.
       </p>
 
       <h2>What FSMA Actually Requires from Food Shippers and Carriers</h2>
