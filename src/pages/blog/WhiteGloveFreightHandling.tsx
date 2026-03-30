@@ -184,9 +184,37 @@ const WhiteGloveFreightHandling = () => {
       </p>
 
       <h2>White-Glove Reefer Services for Temperature-Sensitive Shipments</h2>
-      <p>Temperature-controlled white-glove freight combines two specialized service tiers into a single, carefully managed shipment. The reefer unit maintains required temperature ranges throughout transit, while the white-glove handling protocols protect product integrity at loading and delivery. For pharmaceutical distribution, that means continuous temperature monitoring with alarm notifications, trained handlers who understand cold chain interruption risks, and delivery personnel who do not prop open the trailer doors for 20 minutes while they sort paperwork.</p>
-      <p>USDA and FDA temperature requirements vary by product class. Fresh produce typically requires 34-38 degrees Fahrenheit during transit. Frozen pharmaceuticals may require minus 20 degrees Celsius with a deviation tolerance of plus or minus 2 degrees. When you combine those precise temperature requirements with a white-glove delivery destination like a hospital pharmacy or a research laboratory, the service tier requires a carrier with both the equipment and the procedural training to execute correctly.</p>
-      <p>Ask your carrier for their temperature deviation protocol before you book. A quality white-glove reefer provider will have a written procedure for what happens when the trailer temperature drifts outside specification, including immediate notification, remediation steps, and documentation for the shipper's quality assurance records. If they do not have that protocol in writing, find a different carrier.</p>
+      <p>
+        Temperature-controlled white-glove freight combines two specialized
+        service tiers into a single, carefully managed shipment. The reefer unit
+        maintains required temperature ranges throughout transit, while the
+        white-glove handling protocols protect product integrity at loading and
+        delivery.
+      </p>
+      <p>
+        For pharmaceutical distribution, that means continuous temperature
+        monitoring with alarm notifications, trained handlers who understand
+        cold chain interruption risks, and delivery personnel who do not prop
+        open the trailer doors for 20 minutes while they sort paperwork.
+      </p>
+      <p>
+        USDA and FDA temperature requirements vary by product class. Fresh
+        produce typically requires 34-38 degrees Fahrenheit during transit.
+        Frozen pharmaceuticals may require minus 20 degrees Celsius with a
+        deviation tolerance of plus or minus 2 degrees. When you combine those
+        precise temperature requirements with a white-glove delivery
+        destination like a hospital pharmacy or a research laboratory, the
+        service tier requires a carrier with both the equipment and the
+        procedural training to execute correctly.
+      </p>
+      <p>
+        Ask your carrier for their temperature deviation protocol before you
+        book. A quality white-glove reefer provider will have a written
+        procedure for what happens when the trailer temperature drifts outside
+        specification, including immediate notification, remediation steps, and
+        documentation for the shipper's quality assurance records. If they do
+        not have that protocol in writing, find a different carrier.
+      </p>
 
       <h2>How to Specify White-Glove Requirements Without Overpaying</h2>
       <p>The most common mistake shippers make with white-glove freight is either under-specifying or over-specifying the service. Under-specification means the carrier arrives without the right equipment or crew size. Over-specification means you pay for services you do not need, like debris removal for a shipment that arrives fully assembled in protective crating.</p>
