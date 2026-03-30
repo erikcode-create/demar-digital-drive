@@ -138,19 +138,19 @@ const FreightShippingInsuranceCoverage = () => {
       </p>
 
       <h2>Choosing the Right Coverage for Your Freight Operation</h2>
-      <p>
-        The right insurance structure depends on your freight volume, commodity mix, average shipment value, and tolerance for claims management complexity. Here is how to think through the decision.
+      <p className="mb-6">
+        The right insurance structure depends on your freight volume, commodity mix, average shipment value, and tolerance for claims management complexity.
       </p>
-      <p>
-        If you ship infrequently, say fewer than 20 loads per month, a per-shipment cargo policy purchased through your broker or insurer at the time of booking is often the most economical approach. You pay only when you ship, and you can adjust the declared value load by load. The per-shipment premium is higher on a percentage basis than an annual policy, but the simplicity is worth it at low volumes.
+      <p className="mb-6">
+        If you ship infrequently (fewer than 20 loads per month), a per-shipment cargo policy purchased through your broker or insurer at the time of booking is often the most economical approach. You pay only when you ship, and you can adjust the declared value load by load.
       </p>
-      <p>
-        If you ship regularly, an annual open cargo policy covering all shipments up to a per-load limit is more cost-effective and provides blanket protection without requiring you to remember to add coverage on each booking. Open cargo policies typically run on a reporting basis; you report monthly shipment totals and pay the corresponding premium. For shippers with $1 million or more in annual freight value, an open cargo policy almost always pencils out.
+      <p className="mb-6">
+        If you ship regularly, an annual open cargo policy covering all shipments up to a per-load limit is more cost-effective and provides blanket protection without requiring you to remember to add coverage on each booking. For shippers with $1 million or more in annual freight value, an open cargo policy almost always pencils out.
       </p>
-      <p>
+      <p className="mb-6">
         For high-value or sensitive commodities, consider a specialized inland marine policy with coverage tailored to your commodity. Electronics, pharmaceuticals, fine art, and specialized industrial equipment often require all-risk coverage with minimal exclusions, higher per-occurrence limits, and agreed-value provisions that pay the full insured amount without depreciation deductions.
       </p>
-      <p>
+      <p className="mb-8">
         In our experience working with shippers across the Southwest and Mountain West, the most common coverage gap we see is shippers who assume their carrier's insurance is sufficient without verifying the per-load limit or understanding the released-value provisions in the carrier's tariff. Taking 20 minutes to review your carrier's certificate of insurance and confirm your declared value procedures on the bill of lading prevents the majority of claim disputes before they start. For a full review of freight terminology including released value, declared value, and Carmack provisions, the <Link to="/resources/freight-shipping-glossary">freight shipping glossary</Link> is a practical reference.
       </p>
 
