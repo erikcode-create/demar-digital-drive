@@ -399,8 +399,7 @@ export default async function run() {
   }
 
   if (successfulPosts.length === 0) {
-    console.error("All posts failed. Cleaning up branch.");
-    cleanupBranch(branchName);
+    console.error("All posts failed.");
     return { posts: 0 };
   }
 
