@@ -183,9 +183,30 @@ const ReverseLogisticsReturnFreight = () => {
       </p>
 
       <h2>Reverse Logistics for Product Recalls</h2>
-      <p>A product recall compresses the timeline that normal returns allow. Where standard return freight can move on a weekly consolidation schedule, a recall often requires a coordinated pickup across dozens of retail locations or customer sites within a 30 to 90 day window. The freight volume is predictable but the execution window is tight.</p>
-      <p>What separates a well-managed recall from a costly one is pre-negotiated capacity. Companies that have a relationship with a <Link to="/services/3pl">third-party logistics provider</Link> can activate dedicated lanes and return processing capacity quickly. Companies that have to source carriers from the spot market during a recall typically pay 20 to 35 percent more per load and deal with longer lead times precisely when speed matters most.</p>
-      <p>Recall freight also requires chain-of-custody documentation. You need to prove that recalled units were collected, transported to an approved facility, and either destroyed or remediated. That documentation requirement makes an untracked, informal return process legally risky. Work with a carrier that issues RMA-linked bills of lading and can provide signed delivery confirmation for every pickup.</p>
+      <p>
+        A product recall compresses the timeline that normal returns allow.
+        Where standard return freight can move on a weekly consolidation
+        schedule, a recall often requires a coordinated pickup across dozens of
+        retail locations or customer sites within a 30 to 90 day window. The
+        freight volume is predictable but the execution window is tight.
+      </p>
+      <p>
+        What separates a well-managed recall from a costly one is
+        pre-negotiated capacity. Companies that have a relationship with a{" "}
+        <Link to="/services/3pl">third-party logistics provider</Link> can
+        activate dedicated lanes and return processing capacity quickly.
+        Companies that have to source carriers from the spot market during a
+        recall typically pay 20 to 35 percent more per load and deal with
+        longer lead times precisely when speed matters most.
+      </p>
+      <p>
+        Recall freight also requires chain-of-custody documentation. You need
+        to prove that recalled units were collected, transported to an approved
+        facility, and either destroyed or remediated. That documentation
+        requirement makes an untracked, informal return process legally risky.
+        Work with a carrier that issues RMA-linked bills of lading and can
+        provide signed delivery confirmation for every pickup.
+      </p>
 
       <h2>Using Warehousing and 3PL Services to Handle Return Processing</h2>
       <p>Moving returned freight is only half the equation. Once it arrives at your return center, someone has to receive it, inspect it, assign it a disposition code, and route it to the right next step: resale as-is, refurbishment, re-kitting, recycling, or disposal. For companies without dedicated reverse logistics staff, that work creates a bottleneck that leaves returned freight sitting in trailers or stacked in a corner of the warehouse while it waits for attention.</p>
