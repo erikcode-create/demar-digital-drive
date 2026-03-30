@@ -268,10 +268,40 @@ const ReverseLogisticsReturnFreight = () => {
       </p>
 
       <h2>Planning Your Return Freight Lanes for Peak Seasons</h2>
-      <p>January is the single highest-volume month for consumer product returns in most retail categories, driven by holiday gift returns. If your forward freight capacity planning accounts for November and December peak outbound volume, your reverse logistics capacity planning needs to account for January and February peak return volume with equal rigor.</p>
-      <p>Carriers tighten capacity in January for the same reason shippers increase return volume: the post-holiday surge affects everyone simultaneously. If you have not pre-committed return capacity before peak season, you will find yourself competing on the spot market against every other retailer facing the same problem. Rates during January return surges can run 20 to 30 percent above negotiated contract rates for shippers without volume commitments.</p>
-      <p>Work with your carrier or 3PL to lock in return capacity commitments in October and November, before the holiday shipping peak. Some carriers will negotiate a return capacity guarantee as part of a broader peak season freight agreement. For guidance on managing the full seasonal freight cycle, the <Link to="/resources/seasonal-freight-shipping">seasonal freight shipping guide</Link> covers rate trends and capacity planning across all peak periods.</p>
-      <p>If you are newer to freight management and still building your carrier relationships, the <Link to="/resources/how-to-ship-freight">beginner's guide to freight shipping</Link> covers the foundational concepts you need before designing a reverse logistics program, including freight classification, carrier selection, and documentation basics.</p>
+      <p>
+        January is the single highest-volume month for consumer product returns
+        in most retail categories, driven by holiday gift returns. If your
+        forward freight capacity planning accounts for November and December
+        peak outbound volume, your reverse logistics capacity planning needs to
+        account for January and February peak return volume with equal rigor.
+      </p>
+      <p>
+        Carriers tighten capacity in January for the same reason shippers
+        increase return volume: the post-holiday surge affects everyone
+        simultaneously. If you have not pre-committed return capacity before
+        peak season, you will find yourself competing on the spot market against
+        every other retailer facing the same problem. Rates during January
+        return surges can run 20 to 30 percent above negotiated contract rates
+        for shippers without volume commitments.
+      </p>
+      <p>
+        Work with your carrier or 3PL to lock in return capacity commitments in
+        October and November, before the holiday shipping peak. Some carriers
+        will negotiate a return capacity guarantee as part of a broader peak
+        season freight agreement. For guidance on managing the full seasonal
+        freight cycle, the{" "}
+        <Link to="/resources/seasonal-freight-shipping">seasonal freight
+        shipping guide</Link> covers rate trends and capacity planning across
+        all peak periods.
+      </p>
+      <p>
+        If you are newer to freight management and still building your carrier
+        relationships, the{" "}
+        <Link to="/resources/how-to-ship-freight">beginner's guide to freight
+        shipping</Link> covers the foundational concepts you need before
+        designing a reverse logistics program, including freight
+        classification, carrier selection, and documentation basics.
+      </p>
 
       <h2>Building a Reverse Logistics Program That Scales</h2>
       <p>The companies that handle reverse logistics well have one thing in common: they built their return program before they needed it at scale. Designing a return freight program when you are already drowning in unprocessed returns costs significantly more than designing it when you have the time to evaluate carriers, negotiate rates, and train staff on documentation standards.</p>
