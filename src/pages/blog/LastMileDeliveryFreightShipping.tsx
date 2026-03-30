@@ -376,6 +376,8 @@ const LastMileDeliveryFreightShipping = () => {
       description="Discover last-mile delivery options for freight shipments, from local box truck delivery to final-mile logistics for ecommerce and B2B shipping."
       metaTitle="Last-Mile Freight Delivery: Complete Guide"
       metaDescription="Optimize last-mile freight delivery with box trucks, local carriers, and 3PL partners. Learn costs, timeframes, and when to use each option."
+      heroImage="/images/blog/ecommerce-freight-hero.jpg"
+      heroImageAlt="Box truck making a last-mile delivery to a commercial building"
       slug="last-mile-delivery-freight-shipping"
       publishDate="2026-03-30"
       readTime="6 min"
