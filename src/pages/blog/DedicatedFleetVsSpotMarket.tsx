@@ -156,16 +156,16 @@ const DedicatedFleetVsSpotMarket = () => {
       </p>
 
       <h2>When Spot Market Freight Makes More Sense</h2>
-      <p>
-        Spot market freight is not a fallback strategy. For the right shipper profile, it is the correct tool. If you are moving fewer than 30 loads per month, or if your lanes shift frequently based on customer orders or project work, committing to a dedicated contract creates more risk than it eliminates.
+      <p className="mb-6">
+        Spot market freight is not a fallback strategy. For the right shipper profile, it is the correct approach. If you are moving fewer than 30 loads per month, or if your lanes shift frequently based on customer orders or project work, committing to a dedicated contract creates more risk than it eliminates.
       </p>
-      <p>
-        Companies with highly variable demand should not lock themselves into minimum volume commitments they might not hit. A dedicated contract that requires 10 loads per month on a lane where you are actually shipping 6 to 14 loads depending on the quarter means you are either paying for idle trucks or scrambling to fill volume commitments during slow periods. Neither outcome improves your transportation economics.
+      <p className="mb-6">
+        Companies with highly variable demand should not lock themselves into minimum volume commitments they might not hit. A dedicated contract that requires 10 loads per month on a lane where you are actually shipping 6 to 14 loads depending on the quarter means you are either paying for idle trucks or scrambling to fill volume commitments during slow periods.
       </p>
-      <p>
+      <p className="mb-6">
         Spot market also wins when you need equipment variety. If your loads shift between dry van, flatbed, and refrigerated freight based on what customers order, the flexibility to book the right equipment type for each load matters more than rate stability on any single equipment type. Dedicated contracts work best when your freight profile is consistent enough to specify equipment and routes in advance.
       </p>
-      <p>
+      <p className="mb-8">
         There are also strategic moments when spot market rates are genuinely attractive. In Q1 of 2024 and 2025, the freight market ran soft for extended periods, with spot rates on major lanes running 15-20% below contract rates as capacity outpaced demand. Shippers with minimal contract commitments captured real savings during those windows. The trade-off was exposure to the eventual market tightening, which came in fall 2024 as it reliably does each year.
       </p>
 
