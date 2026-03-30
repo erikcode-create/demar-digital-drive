@@ -102,13 +102,17 @@ const FoodBeverageFreightShipping = () => {
       </p>
 
       <h2>What a Food Transportation Safety Plan Needs to Include</h2>
-      <p>
-        FSMA requires shippers to have a written Food Transportation Safety Plan for regulated food shipments. This is not a lengthy ISO-style document. It is a practical record that demonstrates you have identified the risks in your shipping operations and put controls in place to address them. At minimum, it needs to cover temperature specifications for each product type you ship, the cleaning and sanitation requirements you impose on carriers, how you verify carrier compliance before releasing a load, and your procedures for handling temperature excursions.
+      <p className="mb-6">
+        FSMA requires shippers to have a written Food Transportation Safety Plan for regulated food shipments. This is not a lengthy ISO-style document. It is a practical record that demonstrates you have identified the risks in your shipping operations and put controls in place to address them.
       </p>
-      <p>
-        The plan also needs to address cross-contamination risks. If your carrier uses the same trailer to haul food and non-food loads, you need documentation that the trailer was cleaned and inspected between loads. Allergen cross-contamination is a particular concern; a trailer that previously hauled tree nuts or peanuts and was not properly cleaned creates allergen liability for the next food shipper, even if that shipper's product contains no allergens of its own.
+
+      <p className="mb-6">
+        At minimum, it needs to cover temperature specifications for each product type you ship, the cleaning and sanitation requirements you impose on carriers, how you verify carrier compliance before releasing a load, and your procedures for handling temperature excursions.
       </p>
-      <p>
+      <p className="mb-6">
+        The plan also needs to address cross-contamination risks. If your carrier uses the same trailer to haul food and non-food loads, you need documentation that the trailer was cleaned and inspected between loads. Allergen cross-contamination is a particular concern. A trailer that previously hauled tree nuts or peanuts and was not properly cleaned creates allergen liability for the next food shipper, even if that shipper's product contains no allergens of its own.
+      </p>
+      <p className="mb-8">
         Documentation requirements include temperature monitoring logs showing the full transit temperature history, bills of lading that specify temperature requirements, and certificates of sanitation or trailer wash records if required by your Food Safety Plan. DeMar's reefer operations include temperature logging that produces a continuous digital record for every shipment, which satisfies the FDA audit trail requirement without additional paperwork burden on the shipper.
       </p>
 
