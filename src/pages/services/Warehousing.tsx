@@ -337,7 +337,7 @@ const WarehousingPage = () => {
               </h2>
               <div className="space-y-5 text-base text-white/60 leading-relaxed max-w-3xl">
                 <p>
-                  The biggest advantage of using DeMar Transportation for warehousing is the seamless integration between storage and transportation. Most companies work with a warehouse provider and a separate freight company, which creates communication gaps, scheduling conflicts, and finger-pointing when things go wrong. With DeMar, one team coordinates your entire logistics operation from warehouse receipt through final delivery.
+                  The biggest advantage of using DeMar Transportation for warehousing is the tight integration between storage and transportation. Most companies work with a warehouse provider and a separate freight company, which creates communication gaps, scheduling conflicts, and finger-pointing when things go wrong. With DeMar, one team coordinates your entire logistics operation from warehouse receipt through final delivery.
                 </p>
                 <p>
                   As both an asset-based carrier and a licensed freight broker, we control more of the supply chain than a standalone warehouse company ever could. When your inventory is ready to ship, we do not need to wait for a third-party carrier to become available. We dispatch from our own fleet or immediately source a vetted carrier from our network. The result is faster turnaround, fewer delays, and lower total logistics costs.
