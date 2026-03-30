@@ -59,17 +59,17 @@ const FreightShippingInsuranceCoverage = () => {
       </p>
 
       <h2>The Three Core Types of Freight Insurance Coverage</h2>
-      <p>
+      <p className="mb-6">
         Understanding freight shipping insurance starts with recognizing that no single policy covers everything. Three distinct coverage types serve different functions, and most shippers with regular freight volume need all three working together.
       </p>
-      <p>
-        Cargo insurance covers your goods while they are in transit, including loading and unloading. This is the policy that pays out when a pallet falls off a lift gate, a trailer is broken into at a rest stop, or a refrigeration unit fails on a reefer load. A well-structured cargo policy follows your freight door to door and does not require you to prove the carrier was negligent. You document the damage, you file the claim, and the insurer pays to the declared value.
+      <p className="mb-6">
+        Cargo insurance covers your goods while they are in transit, including loading and unloading. This is the policy that pays out when a pallet falls off a lift gate, a trailer is broken into at a rest stop, or a refrigeration unit fails on a reefer load. A well-structured cargo policy follows your freight door to door and does not require you to prove the carrier was negligent.
       </p>
-      <p>
+      <p className="mb-6">
         General liability insurance covers bodily injury and property damage that occurs in connection with your shipping operations. If a delivery driver causes an accident at your dock, or a forklift operator damages a customer's facility during unloading, general liability responds. Carriers are required to carry this by federal regulation, but shippers and brokers with ongoing freight operations should carry their own policy to cover scenarios where liability is contested.
       </p>
-      <p>
-        Valuation coverage is not technically insurance but functions similarly. Under the Carmack Amendment, carriers can limit their liability to a rate per pound or to a declared value specified on the bill of lading. When you release a shipment at released value, you are accepting the carrier's default liability cap. When you declare full value, the carrier charges a higher rate but assumes liability up to that declared amount. The distinction matters enormously when you are moving high-value electronics, pharmaceuticals, or specialty industrial equipment.
+      <p className="mb-8">
+        Valuation coverage is not technically insurance but functions similarly. Under the Carmack Amendment, carriers can limit their liability to a rate per pound or to a declared value specified on the bill of lading. When you release a shipment at released value, you are accepting the carrier's default liability cap. When you declare full value, the carrier charges a higher rate but assumes liability up to that declared amount. The distinction matters when you are moving high-value electronics, pharmaceuticals, or specialty industrial equipment.
       </p>
 
       <h2>What Freight Insurance Does Not Cover</h2>
