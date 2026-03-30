@@ -396,25 +396,46 @@ export default async function run() {
     return { posts: 0 };
   }
 
-  // Step 4-5: Write each blog post
+  // Step 4-5: Write each blog post (with retries)
+  const MAX_RETRIES = 2;
   console.log("\nStep 4-5: Writing blog posts...");
   const successfulPosts = [];
+  const failedPosts = [];
+
   for (const topic of topics) {
-    try {
-      const code = await writeBlogPost(topic);
-      const componentName = slugToComponentName(topic.slug);
-      const filePath = path.join(REPO_ROOT, `src/pages/blog/${componentName}.tsx`);
-      writeFileSync(filePath, code);
-      console.log(`  Wrote: src/pages/blog/${componentName}.tsx`);
-      successfulPosts.push(topic);
-    } catch (err) {
-      console.error(`  FAILED to write post "${topic.title}": ${err.message}`);
+    let succeeded = false;
+    for (let attempt = 1; attempt <= MAX_RETRIES + 1; attempt++) {
+      try {
+        if (attempt > 1) {
+          console.log(`  Retry ${attempt - 1}/${MAX_RETRIES} for "${topic.title}"...`);
+        }
+        const code = await writeBlogPost(topic);
+        const componentName = slugToComponentName(topic.slug);
+        const filePath = path.join(REPO_ROOT, `src/pages/blog/${componentName}.tsx`);
+        writeFileSync(filePath, code);
+        console.log(`  Wrote: src/pages/blog/${componentName}.tsx`);
+        successfulPosts.push(topic);
+        succeeded = true;
+        break;
+      } catch (err) {
+        console.error(`  Attempt ${attempt} FAILED for "${topic.title}": ${err.message}`);
+        if (attempt === MAX_RETRIES + 1) {
+          failedPosts.push({ topic, error: err.message });
+        }
+      }
     }
   }
 
   if (successfulPosts.length === 0) {
-    console.error("All posts failed.");
+    console.error("All posts failed after retries.");
     return { posts: 0 };
+  }
+
+  if (failedPosts.length > 0) {
+    console.log(`\n  ${failedPosts.length} post(s) failed after ${MAX_RETRIES} retries:`);
+    for (const f of failedPosts) {
+      console.log(`    - ${f.topic.title}: ${f.error}`);
+    }
   }
 
   // Step 6: Update App.tsx
