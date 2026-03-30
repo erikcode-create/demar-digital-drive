@@ -100,7 +100,7 @@ const BlogPost = ({
       {
         "@type": "ListItem",
         position: 2,
-        name: "Blog",
+        name: "Insights",
         item: "https://demartransportation.com/blog",
       },
       {
