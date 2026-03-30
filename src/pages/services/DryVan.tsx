@@ -230,7 +230,7 @@ const DryVan = () => {
                 {[
                   { title: "Weather Protection", desc: "Fully enclosed trailers shield your freight from rain, snow, wind, and UV exposure throughout the entire journey." },
                   { title: "Cargo Security", desc: "Sealed trailers with locking mechanisms reduce the risk of theft, tampering, and pilferage during transit." },
-                  { title: "Versatility", desc: "Dry vans accommodate the widest range of commodity types of any trailer class — from lightweight, high-volume to dense, heavy pallets." },
+                  { title: "Versatility", desc: "Dry vans accommodate the widest range of commodity types of any trailer class, from lightweight, high-volume to dense, heavy pallets." },
                   { title: "Cost-Effective", desc: "The most abundant equipment type on the road means more competitive rates, shorter lead times, and flexible scheduling." },
                 ].map((benefit) => (
                   <div key={benefit.title} className="flex items-start gap-4">
