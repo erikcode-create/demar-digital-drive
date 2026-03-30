@@ -33,7 +33,10 @@ const TypesOfFreightTrailers = () => {
   const content = (
     <>
       <p>
-        <strong>There are six main types of freight trailers used in commercial shipping: dry vans, reefers (refrigerated), flatbeds, step decks/lowboys, box trucks, and sprinter vans.</strong> Each trailer type is designed for specific cargo, weight limits, and delivery requirements. Dry vans handle roughly 75% of all freight in North America -- they are enclosed 53-foot trailers carrying up to 45,000 lbs of palletized goods. Reefers are temperature-controlled versions of dry vans for perishable items. Flatbeds haul oversized or irregularly shaped cargo that cannot fit inside an enclosed trailer. Step decks and lowboys carry tall or heavy machinery. Box trucks and sprinter vans serve smaller, local, and expedited shipments. Choosing the right trailer type affects your shipping cost, transit time, and cargo safety. Here is a complete guide to every trailer type, with dimensions, capacity, and best uses.
+        <strong>There are six main types of freight trailers used in commercial shipping: dry vans, reefers (refrigerated), flatbeds, step decks/lowboys, box trucks, and sprinter vans.</strong> Each trailer type is designed for specific cargo, weight limits, and delivery requirements. Dry vans handle roughly 75% of all freight in North America. They are enclosed 53-foot trailers carrying up to 45,000 lbs of palletized goods. Reefers are temperature-controlled versions of dry vans for perishable items.
+      </p>
+      <p>
+        Flatbeds haul oversized or irregularly shaped cargo that cannot fit inside an enclosed trailer. Step decks and lowboys carry tall or heavy machinery. Box trucks and sprinter vans serve smaller, local, and expedited shipments. Choosing the right trailer type affects your shipping cost, transit time, and cargo safety. Here is a complete guide to every trailer type, with dimensions, capacity, and best uses.
       </p>
 
       <h2>Trailer Type Overview</h2>
