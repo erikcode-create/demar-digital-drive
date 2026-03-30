@@ -321,10 +321,45 @@ const WhiteGloveFreightHandling = () => {
       </p>
 
       <h2>White-Glove Freight for Commercial Construction and Facility Projects</h2>
-      <p>Commercial construction and facility buildout projects represent a growing segment of white-glove freight demand. Data centers need server racks and UPS systems placed precisely in raised-floor environments. Healthcare facilities take delivery of imaging equipment that must pass through specific door clearances and be positioned in shielded rooms before commissioning. Hospitality projects receive custom furniture and fixture packages that require room-by-room placement on tight installation schedules.</p>
-      <p>These project freight scenarios share a common challenge: the receiving location is often a construction site with limited dock access, restricted elevator availability, and a general contractor schedule that does not tolerate carrier delays. White-glove freight for project delivery requires carriers who communicate proactively, arrive during the scheduled window, and have crews that can work alongside construction teams without creating site liability issues.</p>
-      <p>Coordinate directly with the general contractor or facilities manager before booking the delivery. Know the building's freight elevator dimensions, the loading dock hours, and whether a rigging crew needs to be on-site for heavy pieces. Passing that information to your carrier in advance eliminates the single most common source of white-glove delivery failures: a crew that arrives at the site without the information they need to complete the job.</p>
-      <p>For project-scale white-glove freight moving through multiple legs, a <Link to="/resources/types-of-freight-trailers">trailer selection</Link> review is worth doing early. Flatbed with tarping, step-deck, or specialized enclosed trailers each handle different project freight profiles differently, and matching the equipment to the cargo type before the project start date avoids expedited equipment changes that add cost and delay.</p>
+      <p>
+        Commercial construction and facility buildout projects represent a
+        growing segment of white-glove freight demand. Data centers need server
+        racks and UPS systems placed precisely in raised-floor environments.
+        Healthcare facilities take delivery of imaging equipment that must pass
+        through specific door clearances and be positioned in shielded rooms
+        before commissioning.
+      </p>
+      <p>
+        Hospitality projects receive custom furniture and fixture packages that
+        require room-by-room placement on tight installation schedules.
+      </p>
+      <p>
+        These project freight scenarios share a common challenge: the receiving
+        location is often a construction site with limited dock access,
+        restricted elevator availability, and a general contractor schedule
+        that does not tolerate carrier delays. White-glove freight for project
+        delivery requires carriers who communicate proactively, arrive during
+        the scheduled window, and have crews that can work alongside
+        construction teams without creating site liability issues.
+      </p>
+      <p>
+        Coordinate directly with the general contractor or facilities manager
+        before booking the delivery. Know the building's freight elevator
+        dimensions, the loading dock hours, and whether a rigging crew needs to
+        be on-site for heavy pieces. Passing that information to your carrier
+        in advance eliminates the single most common source of white-glove
+        delivery failures: a crew that arrives at the site without the
+        information they need to complete the job.
+      </p>
+      <p>
+        For project-scale white-glove freight moving through multiple legs, a{" "}
+        <Link to="/resources/types-of-freight-trailers">trailer
+        selection</Link> review is worth doing early. Flatbed with tarping,
+        step-deck, or specialized enclosed trailers each handle different
+        project freight profiles differently, and matching the equipment to the
+        cargo type before the project start date avoids expedited equipment
+        changes that add cost and delay.
+      </p>
     </>
   );
 
