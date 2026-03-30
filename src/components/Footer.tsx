@@ -37,7 +37,7 @@ const blogLinks = [
   { name: "Emergency Freight Shipping", path: "/blog/emergency-expedited-freight" },
   { name: "Freight Damage Prevention", path: "/blog/freight-damage-prevention" },
   { name: "E-commerce Freight", path: "/blog/ecommerce-freight-shipping" },
-  { name: "All Blog Posts", path: "/blog" },
+  { name: "All Insights", path: "/blog" },
 ];
 
 const Footer = () => {
