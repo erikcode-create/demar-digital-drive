@@ -138,16 +138,20 @@ const DedicatedFleetVsSpotMarket = () => {
       </table>
 
       <h2>When Dedicated Fleet Is the Right Choice</h2>
-      <p>
-        The case for dedicated fleet becomes compelling when your shipping patterns meet three criteria: high volume, route consistency, and low tolerance for capacity risk. If you are moving 15 or more loads per week on predictable lanes, a dedicated contract is almost always the better financial decision when you account for the full cost of spot sourcing including staff time, load fallouts, and peak-season rate spikes.
+      <p className="mb-6">
+        The case for dedicated fleet becomes compelling when your shipping patterns meet three criteria: high volume, route consistency, and low tolerance for capacity risk. If you are moving 15 or more loads per week on predictable lanes, a dedicated contract is almost always the better financial decision when you account for the full cost of spot sourcing (staff time, load fallouts, and peak-season rate spikes).
       </p>
-      <p>
-        Retailers and manufacturers with steady production schedules are the clearest candidates. A consumer goods company shipping 20 loads per week from a Midwest distribution center to regional fulfillment hubs has a highly predictable freight profile. Locking in those lanes with a dedicated carrier means the transportation budget is settled, the drivers know the facility, and the carrier's dispatchers understand your receiving window requirements. That familiarity reduces detention charges because drivers arrive on time and dock staff know the routine.
+      <p className="mb-6">
+        Retailers and manufacturers with steady production schedules are the clearest candidates. A consumer goods company shipping 20 loads per week from a Midwest distribution center to regional fulfillment hubs has a highly predictable freight profile. Locking in those lanes with a dedicated carrier means the transportation budget is settled, the drivers know the facility, and the carrier's dispatchers understand your receiving window requirements.
       </p>
-      <p>
-        Dedicated fleet also makes sense when service consistency matters beyond just price. If you are shipping to a customer who charges back penalties for late arrivals or missed delivery windows, the cost of a single late load under spot market conditions can exceed months of dedicated rate premium. A carrier with drivers assigned specifically to your account will prioritize your freight in a way that an anonymous spot market carrier booking their first load to your facility simply cannot.
+
+      <p className="mb-6">
+        That familiarity reduces detention charges because drivers arrive on time and dock staff know the routine.
       </p>
-      <p>
+      <p className="mb-6">
+        Dedicated fleet also makes sense when service consistency matters beyond just price. If you are shipping to a customer who charges back penalties for late arrivals or missed delivery windows, the cost of a single late load under spot market conditions can exceed months of dedicated rate premium. A carrier with drivers assigned specifically to your account will prioritize your freight in a way that a spot market carrier booking their first load to your facility simply cannot.
+      </p>
+      <p className="mb-8">
         For <Link to="/services/ftl">full truckload shipping</Link> on high-frequency lanes, the dedicated model also eliminates the deadhead miles problem that inflates spot rates. Spot carriers price in the cost of repositioning empty after your delivery. A dedicated carrier with a driver assigned to your round-trip lane has no repositioning cost to recover, which is part of why well-structured dedicated contracts beat spot market rates over time even when the per-load sticker price looks higher.
       </p>
 
