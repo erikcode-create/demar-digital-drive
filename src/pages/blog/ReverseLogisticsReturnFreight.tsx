@@ -107,10 +107,45 @@ const ReverseLogisticsReturnFreight = () => {
       </p>
 
       <h2>How to Structure a Reverse Logistics Program That Actually Works</h2>
-      <p>The companies with the lowest reverse logistics costs share one structural feature: they treat returns as a separate freight program with its own lanes, carriers, rates, and documentation standards, not as an exception to their normal shipping process.</p>
-      <p>Start by mapping where your returns originate. If 60 percent of your returns come from retail locations in the Midwest, you need a consolidation point in that region, not a direct lane from each store to your main distribution center. Returns that consolidate at a regional hub before traveling the long-distance lane typically cost 30 to 40 percent less per unit than returns shipped individually direct. A single truckload consolidating 40 pallets from a Chicago-area hub to your Dallas DC costs a fraction of 40 individual LTL shipments. The math is straightforward, but few companies actually implement the regional hub model because it requires upfront coordination they have not prioritized.</p>
-      <p>Next, define condition standards in writing before the return ships. The single most expensive inefficiency in reverse logistics is freight that arrives at a return center without any inspection documentation, forcing the receiving team to re-inspect and re-photograph everything before any disposition decision can be made. When a driver picks up a pallet of electronics returns, the shipper or store should provide a condition report and photos at origin. That adds two to five minutes per pickup. It saves 20 to 40 minutes per pallet at the receiving end.</p>
-      <p>Finally, negotiate return freight rates separately from your outbound rates. Most carriers will offer flat per-pallet or per-shipment rates for scheduled return lanes in exchange for volume commitment. Those flat rates protect you from surge pricing during peak return periods, typically January through February for retail and September through October for back-to-school categories.</p>
+      <p>
+        The companies with the lowest reverse logistics costs share one
+        structural feature: they treat returns as a separate freight program
+        with its own lanes, carriers, rates, and documentation standards. It
+        is not an exception to their normal shipping process.
+      </p>
+      <p>
+        Start by mapping where your returns originate. If 60 percent of your
+        returns come from retail locations in the Midwest, you need a
+        consolidation point in that region, not a direct lane from each store to
+        your main distribution center. Returns that consolidate at a regional
+        hub before traveling the long-distance lane typically cost 30 to 40
+        percent less per unit than returns shipped individually direct.
+      </p>
+      <p>
+        A single truckload consolidating 40 pallets from a Chicago-area hub to
+        your Dallas DC costs a fraction of 40 individual LTL shipments. The
+        math is straightforward, but few companies actually implement the
+        regional hub model because it requires upfront coordination they have
+        not prioritized.
+      </p>
+      <p>
+        Next, define condition standards in writing before the return ships. The
+        single most expensive inefficiency in reverse logistics is freight that
+        arrives at a return center without any inspection documentation, forcing
+        the receiving team to re-inspect and re-photograph everything before any
+        disposition decision can be made. When a driver picks up a pallet of
+        electronics returns, the shipper or store should provide a condition
+        report and photos at origin. That adds two to five minutes per pickup.
+        It saves 20 to 40 minutes per pallet at the receiving end.
+      </p>
+      <p>
+        Finally, negotiate return freight rates separately from your outbound
+        rates. Most carriers will offer flat per-pallet or per-shipment rates
+        for scheduled return lanes in exchange for volume commitment. Those flat
+        rates protect you from surge pricing during peak return periods,
+        typically January through February for retail and September through
+        October for back-to-school categories.
+      </p>
 
       <h2>Return Merchandise Authorization and Documentation Requirements</h2>
       <p>Every reverse logistics shipment should travel with a return merchandise authorization number, known as an RMA, that links the physical freight to a record in your inventory management system. Without an RMA, you have no way to match a physical return to a specific sale, warranty claim, or recall event. That creates accounting problems, delays refunds or credits, and makes it nearly impossible to analyze return root causes.</p>
