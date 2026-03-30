@@ -53,7 +53,10 @@ const FreightShippingCost = () => {
         <strong>$2,000 and $3,500</strong>, while a comparable LTL shipment of 2 pallets on the
         same lane runs <strong>$300 to $800</strong>. Hot shot shipments fall in the{" "}
         <strong>$1.25 to $2.50 per mile</strong> range, and refrigerated (reefer) loads command a{" "}
-        <strong>20-40% premium</strong> over dry van rates. The final price you pay depends on
+        <strong>20-40% premium</strong> over dry van rates.
+      </p>
+      <p>
+        The final price you pay depends on
         several factors including distance, weight, equipment type, fuel surcharges, seasonal
         demand, and accessorial services. Below, we break down costs by shipment type, explain
         what drives pricing, and share actionable tips to reduce your freight spend. For an
