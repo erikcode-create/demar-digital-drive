@@ -13,13 +13,12 @@ const MODELS = {
 
 export async function invokeClaude(prompt, { model = "sonnet", timeout = 300000 } = {}) {
   const modelId = MODELS[model] || MODELS.sonnet;
-  const safePrompt = prompt.replace(/"/g, '\\"');
 
   console.log(`[claude-api] Using model: ${model} (${modelId})`);
   try {
     const result = execSync(
-      `npx -y @anthropic-ai/claude-code --print --model ${modelId} "${safePrompt}"`,
-      { cwd: REPO_ROOT, encoding: "utf-8", timeout, env: { ...process.env, PATH: process.env.PATH } }
+      `npx -y @anthropic-ai/claude-code --print --model ${modelId} -`,
+      { cwd: REPO_ROOT, encoding: "utf-8", timeout, input: prompt, env: { ...process.env, PATH: process.env.PATH } }
     );
     return { success: true, output: result.trim() };
   } catch (err) {
