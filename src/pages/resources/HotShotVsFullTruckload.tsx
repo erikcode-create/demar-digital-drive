@@ -33,7 +33,10 @@ const HotShotVsFullTruckload = () => {
   const content = (
     <>
       <p>
-        <strong>Hot shot delivery is faster but costs more per mile, while full truckload (FTL) is more economical for large shipments.</strong> Hot shot uses medium-duty trucks to haul urgent, smaller loads (up to 16,500 lbs) with pickup times as fast as 2-4 hours. FTL uses standard 53-foot trailers carrying up to 45,000 lbs with typical 24-48 hour pickup windows. The right choice depends on three factors: how much freight you're shipping, how quickly it needs to arrive, and your budget. For loads under 10,000 lbs that need to move today, hot shot wins. For shipments over 10,000 lbs with standard timelines, FTL delivers better per-pound economics. Below is a detailed comparison to help you decide which service fits your shipment.
+        <strong>Hot shot delivery is faster but costs more per mile, while full truckload (FTL) is more economical for large shipments.</strong> Hot shot uses medium-duty trucks to haul urgent, smaller loads (up to 16,500 lbs) with pickup times as fast as 2-4 hours. FTL uses standard 53-foot trailers carrying up to 45,000 lbs with typical 24-48 hour pickup windows.
+      </p>
+      <p>
+        The right choice depends on three factors: how much freight you're shipping, how quickly it needs to arrive, and your budget. For loads under 10,000 lbs that need to move today, hot shot wins. For shipments over 10,000 lbs with standard timelines, FTL delivers better per-pound economics. Below is a detailed comparison to help you decide which service fits your shipment.
       </p>
 
       <h2>Hot Shot vs Full Truckload: Side-by-Side Comparison</h2>
