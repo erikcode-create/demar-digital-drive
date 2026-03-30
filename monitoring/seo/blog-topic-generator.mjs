@@ -3,7 +3,7 @@ import * as cheerio from "cheerio";
 import { postToChannel } from "../lib/discord.mjs";
 import { generateWithClaude } from "../marketing/lib/claude-api.mjs";
 import { commitAndPush, buildSucceeds } from "../marketing/lib/git-ops.mjs";
-import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync, unlinkSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
