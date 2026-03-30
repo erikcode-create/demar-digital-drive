@@ -144,6 +144,48 @@ cd monitoring && npm run marketing:social       # Run social media generator
 - **Auto-PR:** New landing pages, companion pages, significant copy changes (prefix: `[marketing-auto]`)
 - **Never auto-fix:** Pricing, legal content, business model claims, contact info
 
+### SEO Automation
+
+Claude-powered SEO optimization system in `monitoring/seo/`. Each job crawls the live site, analyzes with Claude API, posts results to Discord #seo channel, and auto-creates PRs for fixes.
+
+#### Key Commands
+
+```bash
+cd monitoring && npm run seo:internal-links    # Optimize internal linking
+cd monitoring && npm run seo:external-links    # Add authoritative external citations
+cd monitoring && npm run seo:broken-links      # Find and fix broken links
+cd monitoring && npm run seo:freshness         # Flag and update stale content
+cd monitoring && npm run seo:meta-tags         # Optimize title tags and meta descriptions
+cd monitoring && npm run seo:cannibalization   # Fix keyword cannibalization
+cd monitoring && npm run seo:blog-topics       # Generate and write 5 new blog posts
+cd monitoring && npm run seo:page-scores       # Score all pages on SEO metrics
+```
+
+#### SEO GitHub Actions Workflows
+
+| Workflow | File | Schedule |
+|---|---|---|
+| Internal Link Optimizer | `seo-internal-links.yml` | Daily 6am PDT |
+| External Link Enrichment | `seo-external-links.yml` | Daily 7am PDT |
+| Broken Link Fixer | `seo-broken-links.yml` | Daily 8am PDT |
+| Content Freshness | `seo-content-freshness.yml` | Daily 9am PDT |
+| Meta Tag Optimizer | `seo-meta-tags.yml` | Daily 10am PDT |
+| Keyword Cannibalization | `seo-cannibalization.yml` | Daily 11am PDT |
+| Blog Post Writer | `seo-blog-topics.yml` | Daily 12pm PDT |
+| Page Performance Scorer | `seo-page-scores.yml` | Daily 1pm PDT |
+
+All jobs use `model: "haiku"` for analysis and `model: "sonnet"` for content generation. Auto-PRs are created on `seo-auto/*` branches. Requires `ANTHROPIC_API_KEY` and `DISCORD_SEO_WEBHOOK_URL` secrets.
+
+### Blog / Insights
+
+Blog posts live at `/blog` (displayed as "Insights" in the nav). Uses `BlogPost` template component with BlogPosting + FAQPage + BreadcrumbList JSON-LD schemas, hero images, and inline CTAs.
+
+- **Template:** `src/components/BlogPost.tsx`
+- **Posts:** `src/pages/blog/*.tsx`
+- **Images:** `public/images/blog/` (sourced from Pixabay)
+- **Index:** `src/pages/Blog.tsx`
+- **Daily auto-generation:** `monitoring/seo/blog-topic-generator.mjs` writes 5 new posts/day
+
 ## Important Constraints
 
 - **GitHub Pages cannot set custom HTTP response headers.** CSP is set via `<meta>` tag only. Security scanners will always show missing headers like HSTS, X-Frame-Options, etc. -- this is expected.
