@@ -48,11 +48,14 @@ const HowToGetFreightQuote = () => {
         To get a freight shipping quote, you need <strong>5 key pieces of information</strong>:
         origin and destination addresses, total weight, commodity type, required equipment, and
         your preferred ship date. You can request quotes directly from carriers, through freight
-        brokers, or via online platforms. The fastest way is to submit a quote request form --{" "}
+        brokers, or via online platforms. The fastest way is to submit a quote request form.{" "}
         <Link to="/quote">DeMar Transportation responds within 1 business hour</Link> with
-        transparent, all-in pricing. For the most accurate quote, provide exact zip codes (not
+        transparent, all-in pricing.
+      </p>
+      <p>
+        For the most accurate quote, provide exact zip codes (not
         just cities), precise weight and pallet count, and any special requirements like
-        temperature control or liftgate service. Avoid vague descriptions -- the more specific
+        temperature control or liftgate service. The more specific
         your shipment details, the tighter your quote will be and the fewer surprises you will
         encounter at billing. Here is the complete step-by-step process to get, compare, and
         book the best freight quote for your shipment.
