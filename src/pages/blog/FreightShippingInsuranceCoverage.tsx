@@ -90,19 +90,19 @@ const FreightShippingInsuranceCoverage = () => {
       </p>
 
       <h2>How Cargo Insurance Pricing Works</h2>
-      <p>
+      <p className="mb-6">
         Freight insurance is priced on declared value, commodity type, transit route, and claims history. The 0.5 to 1.5 percent range for standard dry freight is a useful baseline, but actual rates diverge significantly based on what you are shipping and where.
       </p>
-      <p>
-        Commodity risk is the primary pricing driver. Electronics, pharmaceuticals, and high-value consumer goods attract higher rates because they are frequently targeted by cargo theft rings. The CargoNet organization reports that cargo theft incidents concentrate heavily on electronics, food and beverage, and home goods, with average load values exceeding $200,000 per incident. If your commodity appears on that list, expect rates at or above 1.5 percent.
+      <p className="mb-6">
+        Commodity risk is the primary pricing driver. Electronics, pharmaceuticals, and high-value consumer goods attract higher rates because they are frequently targeted by cargo theft rings. The CargoNet organization reports that cargo theft incidents concentrate heavily on electronics, food and beverage, and home goods, with average load values exceeding <strong>$200,000 per incident</strong>. If your commodity appears on that list, expect rates at or above 1.5 percent.
       </p>
-      <p>
-        Route risk factors into pricing for lanes with known theft corridors, such as Southern California, South Florida, and the I-95 corridor in the Northeast. Shipments moving through high-risk zones, especially overnight or with drop trailer arrangements, command higher premiums. A direct, sealed-trailer move from Dallas to Denver prices differently than a multi-stop LTL move that touches four terminals over six days.
+      <p className="mb-6">
+        Route risk factors into pricing for lanes with known theft corridors (Southern California, South Florida, and the I-95 corridor in the Northeast). Shipments moving through high-risk zones, especially overnight or with drop trailer arrangements, command higher premiums.
       </p>
-      <p>
+      <p className="mb-6">
         Your claims history matters for ongoing policy pricing. Shippers with frequent claims, even legitimate ones, pay more at renewal. This is one practical reason to invest in packaging quality, carrier vetting, and load documentation rather than treating insurance as a substitute for operational discipline.
       </p>
-      <p>
+      <p className="mb-8">
         For <Link to="/services/hazmat">hazmat and fuel transportation</Link>, premiums run substantially higher. Hazardous materials shipments require specialized endorsements, and carriers moving hazmat must carry $1 million to $5 million in liability depending on the commodity. If you move hazmat, budget 2 to 5 percent of declared value for comprehensive coverage, and confirm that your carrier's hazmat endorsement is current before every load.
       </p>
 
