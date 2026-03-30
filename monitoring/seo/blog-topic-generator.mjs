@@ -378,10 +378,6 @@ export default async function run() {
     return { posts: 0 };
   }
 
-  // Create branch for PR
-  console.log(`\nCreating branch: ${branchName}`);
-  createPRBranch(branchName);
-
   // Step 4-5: Write each blog post
   console.log("\nStep 4-5: Writing blog posts...");
   const successfulPosts = [];
