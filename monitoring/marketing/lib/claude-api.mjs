@@ -1,8 +1,6 @@
 import { execSync, execFileSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { writeFileSync, unlinkSync } from "node:fs";
-import { tmpdir } from "node:os";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "../../..");
