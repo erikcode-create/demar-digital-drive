@@ -197,6 +197,8 @@ const FreightShippingInsuranceCoverage = () => {
       slug="freight-shipping-insurance-coverage"
       publishDate="2026-03-30"
       readTime="8 min"
+      heroImage="/images/blog/small-business-hero.jpg"
+      heroImageAlt="Freight shipping documentation and insurance paperwork for cargo protection"
       content={content}
       faqs={faqs}
       relatedLinks={relatedLinks}
