@@ -25,6 +25,8 @@ export interface BlogPostProps {
   slug: string;
   publishDate: string;
   readTime: string;
+  heroImage?: string;
+  heroImageAlt?: string;
   content: React.ReactNode;
   faqs: FAQItem[];
   relatedLinks?: { label: string; to: string }[];
