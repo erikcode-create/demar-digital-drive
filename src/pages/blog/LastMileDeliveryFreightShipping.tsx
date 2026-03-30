@@ -55,21 +55,25 @@ const LastMileDeliveryFreightShipping = () => {
       <p>
         Last-mile delivery freight is the final segment of the shipping journey,
         moving goods from a regional distribution hub or staging warehouse to the
-        end destination, whether that's a retail storefront, a construction site,
+        end destination. That could be a retail storefront, a construction site,
         or a residential address. It accounts for 30 to 50 percent of total
         freight cost despite covering only a small fraction of the total mileage.
+      </p>
+      <p>
         That cost concentration exists because final-mile logistics require
         individualized routing, appointment scheduling, and hands-on delivery
         execution that long-haul truckload moves simply don't. For shippers
         trying to reduce landed costs, last-mile delivery is the most important
-        variable to get right. The options available to you, including regional
-        box trucks, dedicated local carriers, and third-party logistics providers,
-        each come with tradeoffs in cost, speed, and service level that depend
-        heavily on your freight profile, delivery density, and customer
-        expectations. Understanding how each option works, when it makes
-        economic sense, and what it costs in practice is the difference between a
-        supply chain that performs and one that quietly erodes your margins every
-        quarter.
+        variable to get right.
+      </p>
+      <p>
+        The options available to you (regional box trucks, dedicated local
+        carriers, and third-party logistics providers) each come with tradeoffs
+        in cost, speed, and service level that depend heavily on your freight
+        profile, delivery density, and customer expectations. Understanding how
+        each option works, when it makes economic sense, and what it costs in
+        practice is the difference between a supply chain that performs and one
+        that quietly erodes your margins every quarter.
       </p>
 
       <h2>Why Last-Mile Freight Costs So Much</h2>
