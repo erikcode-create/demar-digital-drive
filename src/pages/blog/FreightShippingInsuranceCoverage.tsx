@@ -169,20 +169,20 @@ const FreightShippingInsuranceCoverage = () => {
       </p>
 
       <h2>Common Mistakes That Void Freight Insurance Claims</h2>
-      <p>
+      <p className="mb-6">
         Claims get denied for procedural reasons as often as they get denied for coverage reasons. The mistakes that void claims are predictable and preventable.
       </p>
-      <p>
-        Signing a clean delivery receipt on damaged freight is the single most common error. Once you sign without exceptions, you have legally accepted the freight as received in good condition. Carriers and insurers alike treat the delivery receipt as the definitive record of freight condition at delivery. No exceptions on the receipt means no documented evidence that damage occurred in transit rather than after delivery.
+      <p className="mb-6">
+        Signing a clean delivery receipt on damaged freight is the single most common error. Once you sign without exceptions, you have legally accepted the freight as received in good condition. No exceptions on the receipt means no documented evidence that damage occurred in transit rather than after delivery.
       </p>
-      <p>
+      <p className="mb-6">
         Disposing of damaged packaging before the claim is resolved is another frequent mistake. Packaging is physical evidence of how the freight was handled. If the insurer or carrier wants to inspect the damage, they need to see the original packaging. Store everything until the claim is closed.
       </p>
-      <p>
+      <p className="mb-6">
         Missing the notification deadline is fatal to many claims. Nine months sounds generous, but preliminary notification requirements of 15 to 30 days catch shippers who discover damage late, or who assume the carrier already knows about the loss. When in doubt, send written notification the same day damage is discovered.
       </p>
       <p>
-        Underinsuring by declaring a value below actual replacement cost saves a few dollars in premium and costs thousands in recovery. If you declare $20,000 on a $60,000 shipment and the load is totaled, you recover $20,000. Declare the actual replacement value. The premium difference is marginal; the recovery difference is not. Understanding how <Link to="/resources/freight-shipping-glossary">declared value and released value</Link> interact in your carrier's tariff is essential before you put a number on the bill of lading.
+        Underinsuring by declaring a value below actual replacement cost saves a few dollars in premium and costs thousands in recovery. If you declare $20,000 on a $60,000 shipment and the load is totaled, you recover $20,000. Declare the actual replacement value. The premium difference is marginal, but the recovery difference is not. Understanding how <Link to="/resources/freight-shipping-glossary">declared value and released value</Link> interact in your carrier's tariff is essential before you put a number on the bill of lading.
       </p>
     </>
   );
