@@ -284,10 +284,41 @@ const WhiteGloveFreightHandling = () => {
       </p>
 
       <h2>Choosing a White-Glove Freight Carrier</h2>
-      <p>Not every carrier that lists "white glove" in their service offerings actually has the training and equipment to execute it correctly. Evaluating a white-glove carrier requires looking past the marketing language and asking operational questions.</p>
-      <p>What equipment do their delivery crews use? Air-ride trailers absorb road vibration better than standard suspension and matter for fragile cargo. Lift gates should be rated for the weight of your shipment with a safety margin. Do their crews carry floor protection materials for residential or finished-floor deliveries? What is their process for navigating narrow doorways or staircases?</p>
-      <p>References matter more for white-glove freight than for standard shipping because the service complexity is higher. Ask for references from shippers in your industry, specifically companies that moved similar cargo. A carrier who excels at white-glove furniture delivery may not have the technical expertise for cleanroom equipment installation.</p>
-      <p>Check their FMCSA safety rating and insurance certificates before you book. A carrier with a conditional or unsatisfactory FMCSA rating introduces compliance risk that offsets any rate savings. DeMar Transportation maintains a satisfactory safety rating and carries cargo insurance that meets or exceeds shipper requirements for high-value freight on the lanes we serve. <Link to="/services/warehousing">Warehousing and distribution integration</Link> is also available for shippers who need white-glove freight to arrive at a staging facility before final delivery, which simplifies scheduling for large commercial or construction project deliveries.</p>
+      <p>
+        Not every carrier that lists "white glove" in their service offerings
+        actually has the training and equipment to execute it correctly.
+        Evaluating a white-glove carrier requires looking past the marketing
+        language and asking operational questions.
+      </p>
+      <p>
+        What equipment do their delivery crews use? Air-ride trailers absorb
+        road vibration better than standard suspension and matter for fragile
+        cargo. Lift gates should be rated for the weight of your shipment with
+        a safety margin. Do their crews carry floor protection materials for
+        residential or finished-floor deliveries? What is their process for
+        navigating narrow doorways or staircases?
+      </p>
+      <p>
+        References matter more for white-glove freight than for standard
+        shipping because the service complexity is higher. Ask for references
+        from shippers in your industry, specifically companies that moved
+        similar cargo. A carrier who excels at white-glove furniture delivery
+        may not have the technical expertise for cleanroom equipment
+        installation.
+      </p>
+      <p>
+        Check their FMCSA safety rating and insurance certificates before you
+        book. A carrier with a conditional or unsatisfactory FMCSA rating
+        introduces compliance risk that offsets any rate savings. DeMar
+        Transportation maintains a satisfactory safety rating and carries cargo
+        insurance that meets or exceeds shipper requirements for high-value
+        freight on the lanes we serve.{" "}
+        <Link to="/services/warehousing">Warehousing and distribution
+        integration</Link> is also available for shippers who need white-glove
+        freight to arrive at a staging facility before final delivery, which
+        simplifies scheduling for large commercial or construction project
+        deliveries.
+      </p>
 
       <h2>White-Glove Freight for Commercial Construction and Facility Projects</h2>
       <p>Commercial construction and facility buildout projects represent a growing segment of white-glove freight demand. Data centers need server racks and UPS systems placed precisely in raised-floor environments. Healthcare facilities take delivery of imaging equipment that must pass through specific door clearances and be positioned in shielded rooms before commissioning. Hospitality projects receive custom furniture and fixture packages that require room-by-room placement on tight installation schedules.</p>
