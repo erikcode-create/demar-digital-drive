@@ -17,7 +17,7 @@ const RealTimeFreightTracking = () => {
     },
     {
       question: "Can I integrate freight tracking data into my own systems?",
-      answer: "Yes—most carriers including DeMar provide API access and EDI integration to pull tracking data directly into your TMS or ERP. This enables automated alerts and supply chain visibility without manual checks."
+      answer: "Yes. Most carriers including DeMar provide API access and EDI integration to pull tracking data directly into your TMS or ERP. This enables automated alerts and supply chain visibility without manual checks."
     },
     {
       question: "Is there a cost to use real-time freight tracking?",
