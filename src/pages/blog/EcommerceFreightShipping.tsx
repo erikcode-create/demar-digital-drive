@@ -286,7 +286,7 @@ const EcommerceFreightShipping = () => {
 
       <h2>How DeMar Transportation Supports E-Commerce Shippers</h2>
       <p className="mb-6">
-        DeMar Transportation provides end-to-end freight solutions built for online sellers
+        DeMar Transportation provides freight shipping services built for online sellers
         scaling their businesses. Based in Reno, NV, with access to major West Coast
         distribution corridors, we handle the logistics that e-commerce businesses rely on
         for efficient, cost-effective operations.
