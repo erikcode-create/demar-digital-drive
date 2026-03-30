@@ -313,7 +313,7 @@ const WarehousingPage = () => {
                 Flexibility
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-8">
-                Flexible, Scalable Warehouse Solutions
+                Flexible, Scalable Warehouse Options
               </h2>
               <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
                 <p>
