@@ -160,20 +160,20 @@ const FoodBeverageFreightShipping = () => {
       </p>
 
       <h2>Building a Food and Beverage Carrier Relationship That Holds Up to Audits</h2>
-      <p>
+      <p className="mb-6">
         The best food freight partnerships are built on shared documentation standards, not just price. A carrier who provides complete temperature logs, sanitation records, and driver inspection reports for every load is building your compliance file at the same time they are moving your product. That documentation is what you hand to an FDA auditor, an insurance adjuster after a claim, or a retail customer who demands supply chain transparency.
       </p>
-      <p>
+      <p className="mb-6">
         DeMar's food-grade <Link to="/services/reefer">refrigerated shipping operations</Link> include dual-zone climate control for mixed-temperature loads, continuous electronic temperature logging with shipper-accessible records, real-time GPS tracking, and drivers trained in FSMA food transportation requirements. Every shipment produces a complete proof-of-temperature record that satisfies FDA audit trail requirements.
       </p>
-      <p>
-        For shippers new to temperature-controlled freight, the <Link to="/resources/how-to-ship-refrigerated-goods">cold chain shipping guide</Link> covers equipment selection, documentation requirements, and how to set temperature specs that your carrier can actually execute. Understanding the basics before your first reefer load saves time and prevents the compliance gaps that tend to surface during audits.
+      <p className="mb-6">
+        For shippers new to temperature-controlled freight, the <Link to="/resources/how-to-ship-refrigerated-goods">cold chain shipping guide</Link> covers equipment selection, documentation requirements, and how to set temperature specs that your carrier can actually execute.
       </p>
-      <p>
+      <p className="mb-6">
         If you are evaluating whether your current food freight program would hold up to an FDA audit, the documentation checklist is a good starting point: written temperature specifications on file for each product type, carrier FSMA compliance records, temperature logs for the past 12 months, and a written Food Transportation Safety Plan signed by a responsible party at your company. If any of those are missing, the audit conversation is harder than it needs to be.
       </p>
       <p>
-        Food and beverage logistics is a sector where the carrier relationship directly affects your regulatory standing. The right partner does not just move freight; they document the chain of custody that protects your business when the FDA asks questions. For shippers who want a broader view of freight options before committing to a temperature-controlled program, the <Link to="/resources/how-to-ship-freight">freight shipping guide</Link> covers equipment types, rate structures, and how to match your cargo to the right service.
+        Food and beverage logistics is a sector where the carrier relationship directly affects your regulatory standing. The right partner does not just move freight. They document the chain of custody that protects your business when the FDA asks questions. For shippers who want a broader view of freight options before committing to a temperature-controlled program, the <Link to="/resources/how-to-ship-freight">freight shipping guide</Link> covers equipment types, rate structures, and how to match your cargo to the right service.
       </p>
     </>
   );
