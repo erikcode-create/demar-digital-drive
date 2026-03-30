@@ -101,6 +101,8 @@ const WhiteGloveFreightHandling = () => {
       description="Explore white-glove freight services for temperature-sensitive, fragile, and high-value shipments requiring specialized handling and logistics expertise."
       metaTitle="White-Glove Freight: Specialty Handling Services"
       metaDescription="Premium white-glove freight handling for sensitive, high-value, and fragile shipments. Learn services, pricing, and when you need it."
+      heroImage="/images/blog/emergency-freight-hero.jpg"
+      heroImageAlt="Specialized freight handlers carefully loading high-value equipment"
       slug="white-glove-freight-handling"
       publishDate="2026-03-30"
       readTime="6 min"
