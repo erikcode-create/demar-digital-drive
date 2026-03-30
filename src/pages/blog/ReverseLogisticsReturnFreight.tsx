@@ -209,9 +209,32 @@ const ReverseLogisticsReturnFreight = () => {
       </p>
 
       <h2>Using Warehousing and 3PL Services to Handle Return Processing</h2>
-      <p>Moving returned freight is only half the equation. Once it arrives at your return center, someone has to receive it, inspect it, assign it a disposition code, and route it to the right next step: resale as-is, refurbishment, re-kitting, recycling, or disposal. For companies without dedicated reverse logistics staff, that work creates a bottleneck that leaves returned freight sitting in trailers or stacked in a corner of the warehouse while it waits for attention.</p>
-      <p>A <Link to="/services/3pl">3PL provider</Link> with dedicated return processing capability eliminates that bottleneck. DeMar's <Link to="/services/warehousing">warehousing and distribution services</Link> include return receiving, condition sorting, inspection documentation, and final disposition coordination. Clients who shift return processing to a 3PL typically see processing time drop from five to seven days to one to two days, simply because the 3PL has dedicated staff and standardized workflows where the client had ad hoc processes.</p>
-      <p>The economics work best when you are handling more than 50 return shipments per month. Below that threshold, a dedicated 3PL arrangement may not offset the setup cost. Above it, the per-unit processing cost through a 3PL usually runs 25 to 40 percent lower than in-house processing, when you factor in labor, space, and management overhead.</p>
+      <p>
+        Moving returned freight is only half the equation. Once it arrives at
+        your return center, someone has to receive it, inspect it, assign it a
+        disposition code, and route it to the right next step: resale as-is,
+        refurbishment, re-kitting, recycling, or disposal. For companies
+        without dedicated reverse logistics staff, that work creates a
+        bottleneck that leaves returned freight sitting in trailers or stacked
+        in a corner of the warehouse while it waits for attention.
+      </p>
+      <p>
+        A <Link to="/services/3pl">3PL provider</Link> with dedicated return
+        processing capability eliminates that bottleneck. DeMar's{" "}
+        <Link to="/services/warehousing">warehousing and distribution
+        services</Link> include return receiving, condition sorting, inspection
+        documentation, and final disposition coordination. Clients who shift
+        return processing to a 3PL typically see processing time drop from five
+        to seven days to one to two days, simply because the 3PL has dedicated
+        staff and standardized workflows where the client had ad hoc processes.
+      </p>
+      <p>
+        The economics work best when you are handling more than 50 return
+        shipments per month. Below that threshold, a dedicated 3PL arrangement
+        may not offset the setup cost. Above it, the per-unit processing cost
+        through a 3PL usually runs 25 to 40 percent lower than in-house
+        processing, when you factor in labor, space, and management overhead.
+      </p>
 
       <h2>Reverse Logistics in E-Commerce: What the Numbers Actually Show</h2>
       <p>E-commerce return rates average 20 to 30 percent across categories, but the range within categories is wide. Electronics run 15 to 20 percent. Apparel runs 25 to 40 percent. Furniture and large items run 5 to 10 percent, but each individual return is expensive to handle because of size and weight.</p>
