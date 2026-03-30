@@ -242,7 +242,7 @@ async function run() {
     day: "numeric",
   });
 
-  await postToChannel("seo", {
+  await postToChannel("seo-dashboard", {
     content: `**Site Audit Dashboard -- ${dateStr}**`,
     embeds: [embed],
   });
