@@ -148,9 +148,39 @@ const ReverseLogisticsReturnFreight = () => {
       </p>
 
       <h2>Return Merchandise Authorization and Documentation Requirements</h2>
-      <p>Every reverse logistics shipment should travel with a return merchandise authorization number, known as an RMA, that links the physical freight to a record in your inventory management system. Without an RMA, you have no way to match a physical return to a specific sale, warranty claim, or recall event. That creates accounting problems, delays refunds or credits, and makes it nearly impossible to analyze return root causes.</p>
-      <p>The minimum documentation for a standard return freight shipment includes the RMA number, a bill of lading with accurate piece count and weight, a condition report noting any visible damage at origin, and photos of the freight before it is loaded. For warranty or defect returns, add lot numbers, serial numbers, and purchase date. For product recalls, add regulatory codes and any government-required tracking fields. Failing to capture lot and serial numbers on recall freight can void your ability to file warranty recovery claims against a supplier or manufacturer, which is a costly oversight when the recall involves high-value goods.</p>
-      <p>In our experience coordinating return freight for manufacturing clients, the most common documentation failure is the condition report. Shippers assume the carrier will note damage at pickup, but a standard bill of lading does not capture the kind of detailed condition information you need to support a customer refund or a supplier chargeback. Build the condition report into your pickup process as a required step, not an optional one.</p>
+      <p>
+        Every reverse logistics shipment should travel with a return
+        merchandise authorization number (known as an RMA) that links the
+        physical freight to a record in your inventory management system.
+        Without an RMA, you have no way to match a physical return to a
+        specific sale, warranty claim, or recall event. That creates accounting
+        problems, delays refunds or credits, and makes it nearly impossible to
+        analyze return root causes.
+      </p>
+      <p>
+        The minimum documentation for a standard return freight shipment
+        includes the RMA number, a bill of lading with accurate piece count and
+        weight, a condition report noting any visible damage at origin, and
+        photos of the freight before it is loaded. For warranty or defect
+        returns, add lot numbers, serial numbers, and purchase date. For product
+        recalls, add regulatory codes and any government-required tracking
+        fields.
+      </p>
+      <p>
+        Failing to capture lot and serial numbers on recall freight can void
+        your ability to file warranty recovery claims against a supplier or
+        manufacturer. That is a costly oversight when the recall involves
+        high-value goods.
+      </p>
+      <p>
+        In our experience coordinating return freight for manufacturing clients,
+        the most common documentation failure is the condition report. Shippers
+        assume the carrier will note damage at pickup, but a standard bill of
+        lading does not capture the kind of detailed condition information you
+        need to support a customer refund or a supplier chargeback. Build the
+        condition report into your pickup process as a required step, not an
+        optional one.
+      </p>
 
       <h2>Reverse Logistics for Product Recalls</h2>
       <p>A product recall compresses the timeline that normal returns allow. Where standard return freight can move on a weekly consolidation schedule, a recall often requires a coordinated pickup across dozens of retail locations or customer sites within a 30 to 90 day window. The freight volume is predictable but the execution window is tight.</p>
