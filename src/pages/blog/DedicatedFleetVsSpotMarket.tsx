@@ -70,14 +70,14 @@ const DedicatedFleetVsSpotMarket = () => {
       </p>
 
       <h2>How Spot Market Freight Pricing Works</h2>
-      <p>
+      <p className="mb-6">
         The spot market is exactly what it sounds like: you post a load, carriers bid on it, and the market sets the price in real time. Load boards like DAT and Truckstop aggregate available capacity across hundreds of thousands of carriers, creating a live auction environment where rates shift hourly based on regional supply and demand.
       </p>
-      <p>
-        Spot rates reflect the cost of available trucks at a given moment. When capacity is loose, shippers win. Rates drop and you can book quality carriers at 10-15% below contract rates. When capacity tightens, the math flips fast. During the September-to-November peak freight season, spot market dry van rates historically spike 40-60% above their summer baseline. A shipper who budgeted $2.00 per mile in June is suddenly looking at $2.80 to $3.20 per mile to move the same load in October.
+      <p className="mb-6">
+        Spot rates reflect the cost of available trucks at a given moment. When capacity is loose, shippers win. Rates drop and you can book quality carriers at 10-15% below contract rates. When capacity tightens, the math flips fast. During the September-to-November peak freight season, spot market dry van rates historically spike <strong>40-60%</strong> above their summer baseline. A shipper who budgeted $2.00 per mile in June is suddenly looking at $2.80 to $3.20 per mile to move the same load in October.
       </p>
-      <p>
-        What shippers often undercount in spot market math is the operational cost of sourcing. Booking spot loads takes time: posting the load, fielding carrier calls, vetting unfamiliar carriers, coordinating pickup times with a driver who has never been to your facility. In our experience working with mid-size shippers across the Southwest, the internal labor cost of spot sourcing adds $30-75 per load in staff time once you factor in dispatcher hours and the occasional load that falls through at the last minute and has to be re-booked at a premium.
+      <p className="mb-8">
+        What shippers often undercount in spot market math is the operational cost of sourcing. Booking spot loads takes time: posting the load, fielding carrier calls, vetting unfamiliar carriers, coordinating pickup times with a driver who has never been to your facility. In our experience working with mid-size shippers across the Southwest, the internal labor cost of spot sourcing adds <strong>$30-75 per load</strong> in staff time once you factor in dispatcher hours and the occasional load that falls through at the last minute and has to be re-booked at a premium.
       </p>
 
       <h2>Dedicated Fleet vs Spot Market: A Direct Cost Comparison</h2>
