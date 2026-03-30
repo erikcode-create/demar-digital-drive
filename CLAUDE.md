@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-React/Vite/TypeScript SPA deployed to GitHub Pages via `deploy.yml`. Uses shadcn/ui + Tailwind CSS.
+React/Vite/TypeScript SPA deployed to GreenGeeks (Apache/cPanel) via FTP in `deploy.yml`. Uses shadcn/ui + Tailwind CSS.
 
 - **Live site:** https://demartransportation.com
 - **Repo:** erikcode-create/demar-digital-drive
