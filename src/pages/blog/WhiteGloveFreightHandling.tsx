@@ -46,7 +46,32 @@ const WhiteGloveFreightHandling = () => {
 
   const content = (
     <>
-      <p>White-glove freight handling is a premium shipping service that goes beyond standard carrier delivery. It covers specialized loading, in-transit protection, careful unloading, inside delivery, and in many cases setup or installation at the final destination. When you ship a $40,000 MRI machine, a gallery-quality painting, or a pallet of temperature-sensitive biologics, standard LTL or FTL service does not cut it. The freight class system was not designed around fine art or cleanroom electronics. White-glove handling fills that gap with trained crews, purpose-built equipment, and documented chain-of-custody procedures that protect both the shipment and the shipper's liability exposure. In our experience coordinating high-value loads across the Midwest and Southeast corridors, the most common reason shippers end up paying for damage claims is not carrier negligence during transit. It is inadequate loading at origin or rushed unloading at destination, exactly the two touchpoints that white-glove service controls most tightly. If your cargo has a replacement cost above $10,000, requires installation, or sits outside standard NMFC freight classes because of its fragility, white-glove handling is not a luxury. It is a cost-effective risk management tool.</p>
+      <p>
+        White-glove freight handling is a premium shipping service that goes
+        beyond standard carrier delivery. It covers specialized loading,
+        in-transit protection, careful unloading, inside delivery, and in many
+        cases setup or installation at the final destination. When you ship a
+        $40,000 MRI machine, a gallery-quality painting, or a pallet of
+        temperature-sensitive biologics, standard LTL or FTL service does not
+        cut it.
+      </p>
+      <p>
+        The freight class system was not designed around fine art or cleanroom
+        electronics. White-glove handling fills that gap with trained crews,
+        purpose-built equipment, and documented chain-of-custody procedures that
+        protect both the shipment and the shipper's liability exposure.
+      </p>
+      <p>
+        In our experience coordinating high-value loads across the Midwest and
+        Southeast corridors, the most common reason shippers end up paying for
+        damage claims is not carrier negligence during transit. It is inadequate
+        loading at origin or rushed unloading at destination, exactly the two
+        touchpoints that white-glove service controls most tightly. If your
+        cargo has a replacement cost above $10,000, requires installation, or
+        sits outside standard NMFC freight classes because of its fragility,
+        white-glove handling is not a luxury. It is a cost-effective way to
+        manage risk.
+      </p>
 
       <h2>What White-Glove Freight Handling Actually Covers</h2>
       <p>The term "white glove" gets used loosely by carriers and brokers, so it pays to know what the service tier should include before you book. At minimum, a legitimate white-glove service includes careful two-person loading and unloading with proper lift equipment, inside delivery rather than curbside drop, and placement of the item in a specific room or area designated by the receiver. Beyond that baseline, services vary considerably.</p>
