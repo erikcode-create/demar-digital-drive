@@ -34,3 +34,6 @@ monitoring/uptime-state.json
 # Scan results and auto-fix lock (ephemeral)
 monitoring/scan-results.json
 monitoring/auto-fix-lock.json
+
+# SEO dashboard historical data (persisted via GitHub Actions cache)
+monitoring/seo/data/
