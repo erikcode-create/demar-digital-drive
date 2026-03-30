@@ -48,11 +48,14 @@ const FreightClassesExplained = () => {
         <strong>Lower classes (50-85) cost less to ship</strong> because they represent dense,
         easy-to-handle freight.{" "}
         <strong>Higher classes (300-500) cost significantly more</strong> because they represent
-        light, bulky, fragile, or hazardous goods. Four factors determine your freight class:{" "}
+        light, bulky, fragile, or hazardous goods.
+      </p>
+      <p>
+        Four factors determine your freight class:{" "}
         <strong>density</strong> (lbs per cubic foot), <strong>stowability</strong> (how easily it
         fits with other freight), <strong>handling</strong> (special equipment or care needed), and{" "}
         <strong>liability</strong> (value and fragility). Understanding your freight class is
-        essential because it directly determines your LTL shipping rate -- a misclassification can
+        essential because it directly determines your LTL shipping rate. A misclassification can
         cost you hundreds of dollars per shipment in reclass fees and rate adjustments. Below, we
         explain all 18 classes, how to determine yours, and how to avoid costly misclassification.
         For an accurate LTL rate,{" "}
