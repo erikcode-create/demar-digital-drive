@@ -184,14 +184,14 @@ const DedicatedFleetVsSpotMarket = () => {
       </p>
 
       <h2>Dedicated Fleet vs Spot Market During Peak Freight Season</h2>
-      <p>
-        Peak freight season, running from roughly Labor Day through Thanksgiving, is where the dedicated versus spot decision has its sharpest financial consequences. Spot dry van rates on major lanes historically increase 40-60% between August and October as retail replenishment freight floods the market ahead of the holiday selling season.
+      <p className="mb-6">
+        Peak freight season (roughly Labor Day through Thanksgiving) is where the dedicated versus spot decision has its sharpest financial consequences. Spot dry van rates on major lanes historically increase 40-60% between August and October as retail replenishment freight floods the market ahead of the holiday selling season.
       </p>
-      <p>
-        A shipper moving 50 loads per month at an average spot rate of $2,200 per load in August faces a potential cost increase of $880 to $1,320 per load by late October if they have no dedicated capacity. On 50 loads, that is $44,000 to $66,000 in additional freight spend in a single month, for freight that is identical to what moved in August. A dedicated contract at $2,400 per load for the same freight actually costs $880 to $1,320 per load less than the spot market during peak, which means the contract that looked expensive in August is paying for itself by October.
+      <p className="mb-6">
+        A shipper moving 50 loads per month at an average spot rate of $2,200 per load in August faces a potential cost increase of <strong>$880 to $1,320 per load</strong> by late October if they have no dedicated capacity. On 50 loads, that is $44,000 to $66,000 in additional freight spend in a single month for freight that is identical to what moved in August. A dedicated contract at $2,400 per load for the same freight actually costs less than the spot market during peak, which means the contract that looked expensive in August is paying for itself by October.
       </p>
-      <p>
-        Understanding <Link to="/resources/seasonal-freight-shipping">seasonal freight shipping patterns</Link> and rate cycles is essential for making this decision intelligently. Shippers who lock in dedicated contracts during Q1 and Q2, when carriers are hungry for volume commitments and negotiating leverage favors shippers, consistently get better terms than shippers who approach carriers in Q3 when demand is already accelerating.
+      <p className="mb-8">
+        Understanding <Link to="/resources/seasonal-freight-shipping">seasonal freight shipping patterns</Link> and rate cycles is essential for making this decision intelligently. Shippers who lock in dedicated contracts during Q1 and Q2, when carriers are hungry for volume commitments and negotiating power favors shippers, consistently get better terms than shippers who approach carriers in Q3 when demand is already accelerating.
       </p>
 
       <h2>How to Evaluate Whether You Need a Dedicated Contract</h2>
