@@ -249,6 +249,36 @@ const SprinterVan = () => {
             </div>
           </section>
 
+          {/* Related Resources */}
+          <section className="py-16 bg-[hsl(var(--surface-low))]">
+            <div className="container mx-auto px-4 max-w-5xl">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                Learn More
+              </p>
+              <h2 className="text-3xl font-bold text-[hsl(var(--primary))] tracking-tight mb-8">
+                Related Resources
+              </h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  { title: "Hot Shot vs Full Truckload", description: "Compare speed vs cost for your shipment", to: "/resources/hot-shot-vs-full-truckload" },
+                  { title: "How Much Does Freight Shipping Cost?", description: "2026 pricing guide with per-mile rates", to: "/resources/freight-shipping-cost" },
+                  { title: "How to Get a Freight Quote", description: "Step-by-step guide to requesting quotes", to: "/resources/how-to-get-freight-quote" },
+                ].map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="group p-5 rounded-xl bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-float)] transition-all duration-300"
+                  >
+                    <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-1 group-hover:text-[hsl(var(--accent))] transition-colors">
+                      {link.title}
+                    </h3>
+                    <p className="text-xs text-[hsl(var(--muted-foreground))]">{link.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* CTA */}
           <section className="py-16 bg-[hsl(var(--accent))]">
             <div className="max-w-4xl mx-auto text-center px-4">
