@@ -52,8 +52,11 @@ const HowToChooseFreightCarrier = () => {
         active FMCSA authority and licensing, adequate insurance coverage, a clean safety record,
         the right equipment for your cargo, and responsive communication. The wrong carrier can
         result in damaged goods, missed delivery windows, hidden charges, and significant
-        financial loss. In 2026, there are over 500,000 active motor carriers in the United
-        States -- but not all are created equal. Roughly <strong>15-20% of new carriers</strong>{" "}
+        financial loss.
+      </p>
+      <p>
+        In 2026, there are over 500,000 active motor carriers in the United
+        States, but not all are created equal. Roughly <strong>15-20% of new carriers</strong>{" "}
         fail within their first year, and cargo theft claims exceed{" "}
         <strong>$500 million annually</strong>. Vetting your carrier is not optional; it is
         essential. This guide provides a complete checklist to evaluate any freight carrier,
