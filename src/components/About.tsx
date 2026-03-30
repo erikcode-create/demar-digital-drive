@@ -28,7 +28,7 @@ const differentiators = [
 ];
 
 const features = [
-  "Competitive rates — no hidden fees",
+  "Competitive rates, no hidden fees",
   "English-speaking drivers & dispatch",
   "Nationwide coverage, 50 states",
   "MC + Broker dual authority",
