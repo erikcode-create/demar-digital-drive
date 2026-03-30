@@ -58,6 +58,14 @@ const ReverseLogisticsReturnFreight = lazy(() => import("./pages/blog/ReverseLog
 
 const DedicatedFleetVsSpotMarket = lazy(() => import("./pages/blog/DedicatedFleetVsSpotMarket"));
 
+const PartialTruckloadPtlShipping = lazy(() => import("./pages/blog/PartialTruckloadPtlShipping"));
+
+const FreightShippingInsuranceCoverage = lazy(() => import("./pages/blog/FreightShippingInsuranceCoverage"));
+
+const WhiteGloveFreightHandling = lazy(() => import("./pages/blog/WhiteGloveFreightHandling"));
+
+const LastMileDeliveryFreightShipping = lazy(() => import("./pages/blog/LastMileDeliveryFreightShipping"));
+
 const queryClient = new QueryClient();
 
 const PageLoader = () => (
@@ -120,6 +128,10 @@ const App = () => (
               <Route path="/blog/food-beverage-freight-shipping" element={<FoodBeverageFreightShipping />} />
               <Route path="/blog/reverse-logistics-return-freight" element={<ReverseLogisticsReturnFreight />} />
               <Route path="/blog/dedicated-fleet-vs-spot-market" element={<DedicatedFleetVsSpotMarket />} />
+              <Route path="/blog/partial-truckload-ptl-shipping" element={<PartialTruckloadPtlShipping />} />
+              <Route path="/blog/freight-shipping-insurance-coverage" element={<FreightShippingInsuranceCoverage />} />
+              <Route path="/blog/white-glove-freight-handling" element={<WhiteGloveFreightHandling />} />
+              <Route path="/blog/last-mile-delivery-freight-shipping" element={<LastMileDeliveryFreightShipping />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

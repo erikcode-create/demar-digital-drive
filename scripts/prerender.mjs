@@ -65,6 +65,10 @@ const routes = [
   '/blog/food-beverage-freight-shipping',
   '/blog/reverse-logistics-return-freight',
   '/blog/dedicated-fleet-vs-spot-market',
+  '/blog/partial-truckload-ptl-shipping',
+  '/blog/freight-shipping-insurance-coverage',
+  '/blog/white-glove-freight-handling',
+  '/blog/last-mile-delivery-freight-shipping',
 ];
 
 // Simple static file server

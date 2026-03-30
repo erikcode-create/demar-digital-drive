@@ -87,6 +87,42 @@ const blogPosts = [
     date: "2026-03-30",
     readTime: "7 min",
   },
+  {
+    slug: "partial-truckload-ptl-shipping",
+    title: "Partial Truckload (PTL) Shipping: Cost Optimization Between LTL & FTL",
+    description:
+      "Discover how partial truckload shipping fills the gap between LTL and FTL, offering better rates for medium-sized loads without paying for a full truck.",
+    category: "Shipping Guides",
+    date: "2026-03-30",
+    readTime: "7 min",
+  },
+  {
+    slug: "freight-shipping-insurance-coverage",
+    title: "Freight Shipping Insurance: Coverage Types, Claims & How to Choose",
+    description:
+      "Understand freight insurance requirements, coverage options, and how to file claims when damage occurs during shipping and logistics operations.",
+    category: "Compliance & Safety",
+    date: "2026-03-30",
+    readTime: "8 min",
+  },
+  {
+    slug: "white-glove-freight-handling",
+    title: "White-Glove Freight Handling: Specialty Shipping for High-Value Goods",
+    description:
+      "Explore white-glove freight services for temperature-sensitive, fragile, and high-value shipments requiring specialized handling and logistics expertise.",
+    category: "Shipping Guides",
+    date: "2026-03-30",
+    readTime: "6 min",
+  },
+  {
+    slug: "last-mile-delivery-freight-shipping",
+    title: "Last-Mile Delivery for Freight: Options, Costs & Best Practices",
+    description:
+      "Discover last-mile delivery options for freight shipments, from local box truck delivery to final-mile logistics for ecommerce and B2B shipping.",
+    category: "Logistics Strategy",
+    date: "2026-03-30",
+    readTime: "6 min",
+  },
 ];
 
 const Blog = () => {
