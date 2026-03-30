@@ -130,13 +130,6 @@ async function prerender() {
       // Get the rendered HTML
       let html = await page.content();
 
-      // Remove any scripts that modify history (the SPA redirect handler)
-      // Keep the module script for hydration
-      html = html.replace(
-        /<script>\s*\(function\(l\)\s*\{[\s\S]*?\}\(window\.location\)\);\s*<\/script>/,
-        ''
-      );
-
       // Create directory structure
       const outputDir = join(distDir, route);
       mkdirSync(outputDir, { recursive: true });
