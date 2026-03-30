@@ -22,6 +22,15 @@ const quickLinks = [
   { name: "Get a Quote", path: "/quote" },
 ];
 
+const resourceLinks = [
+  { name: "Freight Shipping Cost Guide", path: "/resources/freight-shipping-cost" },
+  { name: "How to Ship Freight", path: "/resources/how-to-ship-freight" },
+  { name: "FTL vs LTL Guide", path: "/resources/ftl-vs-ltl" },
+  { name: "Types of Trailers", path: "/resources/types-of-freight-trailers" },
+  { name: "Freight Glossary", path: "/resources/freight-shipping-glossary" },
+  { name: "All Resources", path: "/resources" },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-[hsl(225_97%_4%)] text-white">
