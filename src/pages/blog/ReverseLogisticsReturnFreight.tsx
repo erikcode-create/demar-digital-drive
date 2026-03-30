@@ -46,7 +46,32 @@ const ReverseLogisticsReturnFreight = () => {
 
   const content = (
     <>
-      <p>Reverse logistics is the process of moving goods backward through the supply chain, from the end customer or retail location back to a warehouse, distribution center, repair facility, or recycling operation. Unlike standard forward freight, reverse logistics requires separate routing decisions, condition inspection at pickup, and disposition planning before a single pallet ever ships. For e-commerce retailers, the return rate runs between 20 and 30 percent of all orders shipped. For apparel, that figure climbs above 40 percent. At those volumes, a disorganized reverse logistics operation does not just create headaches; it actively erodes margin on every sale. The cost to process a single return, including transportation, labor, inspection, and restocking, averages $10 to $20 for small parcel and $150 to $400 for freight-class goods. Companies that treat reverse logistics as an afterthought typically spend 15 to 20 percent more per return than those with a structured program. Getting this right means building a system where returned freight moves on scheduled lanes, gets inspected against a defined standard, and reaches its next destination, whether that is resale, refurbishment, or responsible disposal, without sitting in a trailer for three weeks waiting for someone to figure out what to do with it.</p>
+      <p>
+        Reverse logistics is the process of moving goods backward through the
+        supply chain, from the end customer or retail location back to a
+        warehouse, distribution center, repair facility, or recycling operation.
+        Unlike standard forward freight, reverse logistics requires separate
+        routing decisions, condition inspection at pickup, and disposition
+        planning before a single pallet ever ships.
+      </p>
+      <p>
+        For e-commerce retailers, the return rate runs between 20 and 30 percent
+        of all orders shipped. For apparel, that figure climbs above 40 percent.
+        At those volumes, a disorganized reverse logistics operation does not
+        just create headaches. It actively erodes margin on every sale.
+      </p>
+      <p>
+        The cost to process a single return (including transportation, labor,
+        inspection, and restocking) averages $10 to $20 for small parcel and
+        $150 to $400 for freight-class goods. Companies that treat reverse
+        logistics as an afterthought typically spend 15 to 20 percent more per
+        return than those with a structured program. Getting this right means
+        building a system where returned freight moves on scheduled lanes, gets
+        inspected against a defined standard, and reaches its next destination
+        (resale, refurbishment, or responsible disposal) without sitting in a
+        trailer for three weeks waiting for someone to figure out what to do
+        with it.
+      </p>
 
       <h2>Why Reverse Logistics Costs More Than Forward Shipping</h2>
       <p>Forward freight moves in predictable volumes on defined lanes. You know the origin, the destination, the commodity, and roughly when it needs to arrive. Reverse freight arrives at random. A customer in Sacramento returns a pallet of commercial lighting fixtures the same week a retailer in Atlanta sends back unsold seasonal inventory and a manufacturer in Houston initiates a product recall on 800 units. Each of those shipments has a different condition, different documentation requirement, and different destination.</p>
