@@ -44,13 +44,16 @@ const BrokerVsCarrierVs3pl = () => {
         The difference between a freight broker, carrier, and 3PL comes down to{" "}
         <strong>who owns the trucks, who manages the logistics, and how broad the services are</strong>.
         A <strong>carrier</strong> owns trucks and physically moves your freight. A{" "}
-        <strong>freight broker</strong> does not own trucks -- instead, they connect shippers with
+        <strong>freight broker</strong> does not own trucks. Instead, they connect shippers with
         carriers and negotiate rates on your behalf. A <strong>3PL (third-party logistics provider)</strong>{" "}
         offers comprehensive supply chain services including transportation, warehousing, inventory
-        management, and technology solutions. Carriers charge the lowest per-mile rates but offer
+        management, and technology platforms.
+      </p>
+      <p>
+        Carriers charge the lowest per-mile rates but offer
         limited geographic coverage. Brokers provide wider coverage and competitive pricing but add
         a 10-20% margin. 3PLs charge more but manage your entire logistics operation. Many
-        companies, including DeMar Transportation, combine these roles -- we operate our own fleet
+        companies, including DeMar Transportation, combine these roles. We operate our own fleet
         (carrier), hold broker authority to access partner carriers, and provide full{" "}
         <Link to="/services/3pl">3PL services</Link> including warehousing through our partner
         network. Below, we break down the differences, compare pros and cons, and help you decide
