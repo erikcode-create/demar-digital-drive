@@ -217,9 +217,37 @@ const WhiteGloveFreightHandling = () => {
       </p>
 
       <h2>How to Specify White-Glove Requirements Without Overpaying</h2>
-      <p>The most common mistake shippers make with white-glove freight is either under-specifying or over-specifying the service. Under-specification means the carrier arrives without the right equipment or crew size. Over-specification means you pay for services you do not need, like debris removal for a shipment that arrives fully assembled in protective crating.</p>
-      <p>Build a clear service spec sheet for every white-glove shipment. Include the item description and dimensions, the total weight and center of gravity if it is machinery, the destination type (residential, commercial, medical, data center), the required delivery appointment window, what the delivery crew will need to do on-site, and any regulatory documentation requirements. Send that spec to at least three carriers before you book. The variation in quotes you get back will tell you whether any of them actually understand what you are asking for.</p>
-      <p>Working with a <Link to="/services/3pl">3PL provider</Link> simplifies this process because an experienced 3PL maintains relationships with multiple specialized carriers and can match your shipment requirements to the right provider without you having to vet each carrier independently. For shippers moving white-glove freight regularly, a 3PL relationship often results in 10-15% lower rates compared to booking direct, because the 3PL's volume generates preferred pricing across the carrier network.</p>
+      <p>
+        The most common mistake shippers make with white-glove freight is
+        either under-specifying or over-specifying the service.
+        Under-specification means the carrier arrives without the right
+        equipment or crew size. Over-specification means you pay for services
+        you do not need, like debris removal for a shipment that arrives fully
+        assembled in protective crating.
+      </p>
+      <p>
+        Build a clear service spec sheet for every white-glove shipment. Include
+        the item description and dimensions, the total weight and center of
+        gravity if it is machinery, the destination type (residential,
+        commercial, medical, data center), the required delivery appointment
+        window, what the delivery crew will need to do on-site, and any
+        regulatory documentation requirements. Send that spec to at least three
+        carriers before you book.
+      </p>
+      <p>
+        The variation in quotes you get back will tell you whether any of them
+        actually understand what you are asking for.
+      </p>
+      <p>
+        Working with a <Link to="/services/3pl">3PL provider</Link> simplifies
+        this process because an experienced 3PL maintains relationships with
+        multiple specialized carriers and can match your shipment requirements
+        to the right provider without you having to vet each carrier
+        independently. For shippers moving white-glove freight regularly, a 3PL
+        relationship often results in 10-15% lower rates compared to booking
+        direct, because the 3PL's volume generates preferred pricing across the
+        carrier network.
+      </p>
 
       <h2>Documentation and Insurance for High-Value White-Glove Shipments</h2>
       <p>Standard carrier liability under the Carmack Amendment runs $0.50 per pound for LTL and varies for FTL, which covers almost nothing for a high-value white-glove shipment. A 200-pound electronic display worth $15,000 gets $100 in Carmack coverage. That gap between carrier liability and actual cargo value is why shippers moving white-glove freight need either declared value coverage or a separate cargo insurance policy.</p>
