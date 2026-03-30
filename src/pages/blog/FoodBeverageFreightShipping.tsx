@@ -146,17 +146,17 @@ const FoodBeverageFreightShipping = () => {
       </p>
 
       <h2>Food-Grade Reefer Costs: What You Are Actually Paying For</h2>
-      <p>
+      <p className="mb-6">
         Food-grade reefer shipping costs 10-25% more than standard refrigerated transport, and that premium is not arbitrary. It reflects real costs: more frequent trailer washing and sanitation, temperature logging equipment and monitoring, driver training in food-grade handling protocols, compliance documentation preparation, and the liability exposure the carrier accepts when they sign a bill of lading for a temperature-sensitive food shipment.
       </p>
-      <p>
-        As of 2026, food-grade reefer rates on high-volume lanes like Chicago to Atlanta or Dallas to Los Angeles typically run $3.25-3.75 per mile for dedicated temperature-controlled loads, compared to $2.80-3.20 per mile for standard refrigerated freight on the same lanes. Those estimates vary with fuel prices, seasonal produce demand, and market capacity. The premium is larger during peak produce season in summer and around major holidays when reefer capacity tightens.
+      <p className="mb-6">
+        As of 2026, food-grade reefer rates on high-volume lanes like Chicago to Atlanta or Dallas to Los Angeles typically run <strong>$3.25-3.75 per mile</strong> for dedicated temperature-controlled loads, compared to $2.80-3.20 per mile for standard refrigerated freight on the same lanes. Those estimates vary with fuel prices, seasonal produce demand, and market capacity.
       </p>
-      <p>
-        The cost of non-compliance puts that premium in perspective. A USDA-inspected meat recall costs an average of $10 million in direct expenses according to industry estimates, not counting brand damage or lost retail relationships. FDA enforcement actions under FSMA can include civil monetary penalties of up to $500,000 per violation. The 10-25% premium for food-grade reefer service is liability protection, not just logistics cost.
+      <p className="mb-6">
+        The cost of non-compliance puts that premium in perspective. A USDA-inspected meat recall costs an average of <strong>$10 million</strong> in direct expenses according to industry estimates, not counting brand damage or lost retail relationships. FDA enforcement actions under FSMA can include civil monetary penalties of up to $500,000 per violation. The 10-25% premium for food-grade reefer service is liability protection, not just a logistics cost.
       </p>
-      <p>
-        For shippers moving significant volume, a <Link to="/services/3pl">third-party logistics partner</Link> who specializes in food and beverage supply chains can negotiate dedicated reefer capacity at predictable rates, which smooths out the seasonal price swings that affect spot market shippers. Contracted capacity also gives you priority access during peak demand periods when food-grade reefer availability tightens.
+      <p className="mb-8">
+        For shippers moving significant volume, a <Link to="/services/3pl">third-party logistics partner</Link> who specializes in food and beverage supply chains can negotiate dedicated reefer capacity at predictable rates. This smooths out the seasonal price swings that affect spot market shippers. Contracted capacity also gives you priority access during peak demand periods when food-grade reefer availability tightens.
       </p>
 
       <h2>Building a Food and Beverage Carrier Relationship That Holds Up to Audits</h2>
