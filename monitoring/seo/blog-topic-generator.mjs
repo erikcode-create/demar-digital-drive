@@ -450,16 +450,38 @@ export default async function run() {
     }
   }
 
-  if (successfulPosts.length === 0) {
-    console.error("All posts failed after retries.");
-    return { posts: 0 };
-  }
-
   if (failedPosts.length > 0) {
-    console.log(`\n  ${failedPosts.length} post(s) failed after ${MAX_RETRIES} retries:`);
+    console.error(`\n  ${failedPosts.length} post(s) failed after ${MAX_RETRIES} retries:`);
     for (const f of failedPosts) {
-      console.log(`    - ${f.topic.title}: ${f.error}`);
+      console.error(`    - ${f.topic.title}: ${f.error}`);
     }
+
+    // Clean up any files written by successful posts — don't push partial work
+    for (const topic of successfulPosts) {
+      const componentName = slugToComponentName(topic.slug);
+      const filePath = path.join(REPO_ROOT, `src/pages/blog/${componentName}.tsx`);
+      try { unlinkSync(filePath); } catch {}
+    }
+
+    // Notify Discord about the failure
+    try {
+      let failDescription = "";
+      for (const f of failedPosts) {
+        failDescription += `- **${f.topic.title}**: ${f.error}\n`;
+      }
+      await postToChannel("seo", {
+        content: `**Blog Post Writer -- ${new Date().toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}**\nFailed to write all 5 posts. No posts published.`,
+        embeds: [{
+          title: "\u274c Blog Post Writer Failed",
+          description: `${failedPosts.length} post(s) failed after ${MAX_RETRIES} retries. ${successfulPosts.length} succeeded but were not published (all or nothing).\n\n**Failed posts:**\n${failDescription}`.substring(0, 4000),
+          color: 15158332, // red
+          timestamp: new Date().toISOString(),
+        }],
+      });
+    } catch {}
+
+    console.error("\nAborting — not pushing partial results.");
+    return { posts: 0, failed: failedPosts.length };
   }
 
   // Step 6: Update App.tsx
