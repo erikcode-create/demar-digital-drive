@@ -81,7 +81,7 @@ const DedicatedFleetVsSpotMarket = () => {
       </p>
 
       <h2>Dedicated Fleet vs Spot Market: A Direct Cost Comparison</h2>
-      <p>
+      <p className="mb-6">
         The numbers below represent realistic ranges based on current market conditions as of early 2026 for a shipper running a high-volume lane in the Midwest. They are not guarantees, but they illustrate the structure of the trade-off clearly.
       </p>
 
