@@ -107,16 +107,16 @@ const FreightShippingInsuranceCoverage = () => {
       </p>
 
       <h2>Carrier Liability vs. Cargo Insurance: Understanding the Difference</h2>
-      <p>
+      <p className="mb-6">
         This is the distinction most shippers misunderstand until they file a claim and receive a settlement for a fraction of their loss.
       </p>
-      <p>
-        Carrier liability is the carrier's legal obligation under the Carmack Amendment. It is not a separate insurance product you purchase; it is a statutory framework that governs what the carrier owes you when your freight is lost or damaged through their negligence. The catch is that Carmack permits carriers to limit their liability through tariff provisions and released value rates. A carrier can, and often does, limit liability to $0.10 per pound for released-value freight. On a 10,000-pound LTL shipment, that is a $1,000 cap regardless of the actual cargo value.
+      <p className="mb-6">
+        Carrier liability is the carrier's legal obligation under the Carmack Amendment. It is not a separate insurance product you purchase. It is a statutory framework that governs what the carrier owes you when your freight is lost or damaged through their negligence. The catch is that Carmack permits carriers to limit their liability through tariff provisions and released value rates. A carrier can (and often does) limit liability to $0.10 per pound for released-value freight. On a 10,000-pound LTL shipment, that is a <strong>$1,000 cap</strong> regardless of the actual cargo value.
       </p>
-      <p>
-        Cargo insurance is a separate policy you purchase from an insurer, covering your interest in the cargo up to the declared value. You do not need to prove the carrier was negligent. You do not need to navigate the carrier's claims process or wait for them to accept liability. You file with your insurer, your insurer pays, and then the insurer pursues subrogation against the carrier if applicable. This is a materially faster and more predictable recovery path.
+      <p className="mb-6">
+        Cargo insurance is a separate policy you purchase from an insurer, covering your interest in the cargo up to the declared value. You do not need to prove the carrier was negligent. You do not need to navigate the carrier's claims process or wait for them to accept liability. You file with your insurer, your insurer pays, and then the insurer pursues subrogation against the carrier if applicable. This is a faster and more predictable recovery path.
       </p>
-      <p>
+      <p className="mb-8">
         When vetting carriers, ask specifically for their cargo liability coverage amount and whether it includes a per-occurrence or per-load cap. A carrier with $100,000 in cargo coverage who runs multiple loads simultaneously may exhaust their policy on a single incident. Reviewing the certificate of insurance rather than accepting verbal assurances is standard practice for any logistics manager who has been through a large claim. See our <Link to="/resources/how-to-choose-freight-carrier">freight carrier selection checklist</Link> for a complete list of insurance verification steps.
       </p>
 
