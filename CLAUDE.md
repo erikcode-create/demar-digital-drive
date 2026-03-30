@@ -66,15 +66,16 @@ Every scanner exports `run()` returning:
 
 ### Discord Integration
 
-Three channels, three webhooks:
+Four channels, four webhooks:
 
 | Channel | Env Var | Purpose |
 |---|---|---|
 | Website Health | `DISCORD_WEBHOOK_URL` | Scan results, uptime alerts, auto-fix notifications |
 | Content & Copywriting | `DISCORD_CONTENT_WEBHOOK_URL` | Content suggestions, copy changes, text updates |
 | SEO | `DISCORD_SEO_WEBHOOK_URL` | Daily SEO audit results (seo, schema, social-preview, links, freshness) |
+| SEO Dashboard | `DISCORD_SEO_DASHBOARD_WEBHOOK_URL` | Ahrefs-like dashboards: rank tracking, site audit, backlinks, CWV, E-E-A-T, competitors |
 
-- Use `postToChannel("health"|"content"|"seo", payload)` from `monitoring/lib/discord.mjs`
+- Use `postToChannel("health"|"content"|"seo"|"seo-dashboard", payload)` from `monitoring/lib/discord.mjs`
 - Color coding: green (pass/3066993), yellow (warn/16776960), red (fail/15158332)
 - One embed per scanner, max 10 per message (Discord limit)
 - Summary line: counts of passed/warnings/critical
