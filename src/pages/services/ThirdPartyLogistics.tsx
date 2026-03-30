@@ -10,7 +10,7 @@ const ThirdPartyLogistics = () => {
     document.title = "Third-Party Logistics (3PL) Services | Freight Management | DeMar Transportation";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "DeMar Transportation provides full-service 3PL solutions including freight management, carrier sourcing, warehousing coordination, and supply chain visibility. One call handles everything. Get a free quote today.");
+      meta.setAttribute("content", "DeMar Transportation provides full-service 3PL services including freight management, carrier sourcing, warehousing coordination, and supply chain visibility. One call handles everything. Get a free quote today.");
     }
   }, []);
 
