@@ -6,7 +6,7 @@
  * 2. Visits each route with Playwright
  * 3. Saves the fully-rendered HTML to dist/<route>/index.html
  *
- * This gives each route a real HTML file so GitHub Pages serves
+ * This gives each route a real HTML file so the server can serve
  * it with a 200 status code and search engines see the full content.
  */
 
