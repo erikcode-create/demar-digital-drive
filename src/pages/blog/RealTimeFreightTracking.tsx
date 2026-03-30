@@ -159,6 +159,8 @@ const RealTimeFreightTracking = () => {
       description="Understand how real-time freight tracking works, what data you'll receive, and how to integrate shipment visibility into your supply chain operations."
       metaTitle="Real-Time Freight Tracking & Shipment Visibility"
       metaDescription="Get real-time tracking for freight shipments with GPS updates, ETAs, and proof of delivery. Learn how to monitor your freight from pickup to delivery."
+      heroImage="/images/blog/small-business-hero.jpg"
+      heroImageAlt="Freight tracking dashboard showing shipment locations on a map"
       slug="real-time-freight-tracking"
       publishDate="2026-03-30"
       readTime="6 min"
