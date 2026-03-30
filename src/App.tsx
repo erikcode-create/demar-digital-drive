@@ -43,6 +43,12 @@ const FreightClassesExplained = lazy(() => import("./pages/resources/FreightClas
 const BrokerVsCarrierVs3pl = lazy(() => import("./pages/resources/BrokerVsCarrierVs3pl"));
 const FreightShippingGlossary = lazy(() => import("./pages/resources/FreightShippingGlossary"));
 const SeasonalFreightShipping = lazy(() => import("./pages/resources/SeasonalFreightShipping"));
+const Blog = lazy(() => import("./pages/Blog"));
+const WhyFreightQuoteKeepsChanging = lazy(() => import("./pages/blog/WhyFreightQuoteKeepsChanging"));
+const SmallBusinessFreightShipping = lazy(() => import("./pages/blog/SmallBusinessFreightShipping"));
+const EmergencyExpeditedFreight = lazy(() => import("./pages/blog/EmergencyExpeditedFreight"));
+const FreightDamagePrevention = lazy(() => import("./pages/blog/FreightDamagePrevention"));
+const EcommerceFreightShipping = lazy(() => import("./pages/blog/EcommerceFreightShipping"));
 
 const queryClient = new QueryClient();
 
