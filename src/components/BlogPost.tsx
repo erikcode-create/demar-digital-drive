@@ -148,53 +148,52 @@ const BlogPost = ({
             }}
           />
 
-          {/* Hero */}
-          <section className="pt-32 pb-20 px-4 bg-[hsl(225_97%_4%)] relative overflow-hidden">
-            <div
-              className="absolute inset-0 opacity-[0.03]"
-              style={{
-                backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
-                backgroundSize: "40px 40px",
-              }}
-            />
-            <div className="container mx-auto max-w-3xl relative z-10">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 backdrop-blur-sm">
-                <Newspaper className="h-4 w-4 text-[hsl(var(--accent))]" />
-                <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/60">
-                  {subtitle}
-                </span>
-              </div>
-              <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-6">
-                {title}
-              </h1>
-              <p className="text-lg text-white/60 max-w-2xl leading-relaxed mb-4">
-                {description}
-              </p>
-              <div className="flex items-center gap-4 text-sm text-white/40">
-                <span className="flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5" />
-                  {new Date(publishDate).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </span>
-                <span>{readTime} read</span>
-              </div>
-            </div>
-          </section>
-
-          {/* Hero Image */}
-          {heroImage && (
-            <div className="w-full max-h-[480px] overflow-hidden">
+          {/* Hero with image background */}
+          <section className="relative min-h-[520px] md:min-h-[600px] flex items-end overflow-hidden">
+            {/* Background image */}
+            {heroImage ? (
               <img
                 src={heroImage}
                 alt={heroImageAlt || title}
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
                 loading="eager"
               />
+            ) : (
+              <div className="absolute inset-0 bg-[hsl(225_97%_4%)]" />
+            )}
+            {/* Gradient overlay — heavier at bottom for text legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
+
+            {/* Content pinned to bottom */}
+            <div className="relative z-10 w-full pt-40 pb-12 md:pb-16 px-4">
+              <div className="container mx-auto max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 rounded-full bg-white/10 backdrop-blur-md border border-white/10">
+                  <Newspaper className="h-4 w-4 text-[hsl(var(--accent))]" />
+                  <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/80">
+                    {subtitle}
+                  </span>
+                </div>
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-5 drop-shadow-lg">
+                  {title}
+                </h1>
+                <p className="text-base md:text-lg text-white/75 max-w-2xl leading-relaxed mb-5 drop-shadow-sm">
+                  {description}
+                </p>
+                <div className="flex items-center gap-4 text-sm text-white/60">
+                  <span className="flex items-center gap-1.5">
+                    <Calendar className="h-3.5 w-3.5" />
+                    {new Date(publishDate).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
+                  <span className="w-1 h-1 rounded-full bg-white/40" />
+                  <span>{readTime} read</span>
+                </div>
+              </div>
             </div>
-          )}
+          </section>
 
           {/* Article Body */}
           <section className="py-16 bg-[hsl(var(--surface))]">
