@@ -18,7 +18,7 @@ const features = [
   {
     icon: Clock,
     title: "24/7 Service",
-    desc: "Round-the-clock transportation solutions",
+    desc: "Round-the-clock transportation services",
   },
   {
     icon: Users,
