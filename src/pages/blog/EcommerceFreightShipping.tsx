@@ -51,84 +51,69 @@ const EcommerceFreightShipping = () => {
 
   const content = (
     <>
-      <p>
+      <p className="mb-6">
         E-commerce businesses use freight shipping to move bulk inventory from manufacturers
         to warehouses and fulfillment centers. When order volumes exceed 150 lbs or 10+ cases,
         freight shipping saves 40-60% compared to parcel carriers like UPS, FedEx, or USPS.
-        This is the reality for any online seller scaling past a few hundred orders per month:
-        parcel shipping costs eat into margins, transit times grow unpredictable, and managing
+      </p>
+
+      <p className="mb-6">
+        This is the reality for any online seller scaling past a few hundred orders per month.
+        Parcel shipping costs eat into margins, transit times grow unpredictable, and managing
         dozens of individual packages becomes operationally unsustainable. Freight shipping
         consolidates your inventory into palletized loads that move through carrier networks
         built for volume. Whether you sell on Amazon, Shopify, Walmart Marketplace, or your
         own storefront, understanding when and how to use freight shipping is the difference
-        between a profitable operation and one that bleeds money on logistics. This guide
-        covers everything e-commerce sellers need to know about freight shipping, from choosing
-        between LTL and FTL to avoiding costly classification mistakes.
+        between a profitable operation and one that bleeds money on logistics.
       </p>
 
       <h2>When E-Commerce Businesses Need Freight Shipping</h2>
-      <p>
+      <p className="mb-6">
         Not every online seller needs freight shipping on day one. But growth creates logistics
-        demands that parcel carriers simply cannot meet efficiently. Here are the four scenarios
-        where freight shipping becomes essential for e-commerce operations.
+        demands that parcel carriers simply cannot meet efficiently.
       </p>
-      <h3>Inbound Inventory Replenishment</h3>
-      <p>
-        The most common use case is moving bulk inventory from a manufacturer or supplier to
-        your warehouse or fulfillment center. If you are ordering 500+ units of a product at
-        a time, those goods will arrive on pallets. Shipping palletized freight via LTL or FTL
-        costs a fraction of what you would pay to have the manufacturer break the order into
-        individual parcel shipments. A pallet of consumer goods weighing 800 lbs might cost
-        $180-350 to ship LTL across two zones, compared to $600-1,200 for the equivalent
-        volume shipped as individual parcels.
+
+      <p className="mb-6">
+        The most common use case is inbound inventory replenishment. Moving bulk inventory from
+        a manufacturer or supplier to your warehouse or fulfillment center. If you are ordering
+        500+ units of a product at a time, those goods will arrive on pallets. Shipping
+        palletized freight via LTL or FTL costs a fraction of what you would pay to have the
+        manufacturer break the order into individual parcel shipments. A pallet of consumer
+        goods weighing 800 lbs might cost $180-350 to ship LTL across two zones, compared to
+        $600-1,200 for the equivalent volume shipped as individual parcels.
       </p>
-      <h3>B2B Wholesale Orders</h3>
-      <p>
-        If you sell wholesale to retailers or other businesses, those orders typically ship on
-        pallets. A single wholesale order of 20 cases weighing 600 lbs is a textbook LTL
-        shipment. Many e-commerce businesses operate hybrid models: direct-to-consumer orders
-        ship via parcel, while B2B wholesale orders ship via{" "}
-        <Link to="/services/ltl">LTL freight</Link>.
+
+      <p className="mb-6">
+        B2B wholesale orders are another natural fit. If you sell wholesale to retailers or
+        other businesses, those orders typically ship on pallets. A single wholesale order of
+        20 cases weighing 600 lbs is a textbook LTL shipment. Many e-commerce businesses
+        operate hybrid models where direct-to-consumer orders ship via parcel, while B2B
+        wholesale orders ship via <Link to="/services/ltl">LTL freight</Link>.
       </p>
-      <h3>Amazon FBA Prep and Inbound Shipments</h3>
-      <p>
+
+      <p className="mb-8">
         Amazon FBA sellers must ship inventory to Amazon fulfillment centers, and those
         shipments almost always move as freight. Amazon's inbound shipping requirements favor
         palletized loads with specific labeling and appointment windows. Sending 30 individual
         boxes via UPS to an Amazon warehouse is slower, more expensive, and more likely to
-        result in receiving errors than sending a single well-prepared pallet via LTL.
-      </p>
-      <h3>Warehouse-to-Warehouse Transfers</h3>
-      <p>
-        Sellers using multiple fulfillment locations need to rebalance inventory based on
+        result in receiving errors than sending a single well-prepared pallet via LTL. And
+        sellers using multiple fulfillment locations need to rebalance inventory based on
         regional demand. Transferring 10 pallets from a West Coast warehouse to an East Coast
-        facility is a <Link to="/services/ftl">full truckload</Link> job. These transfers
-        keep stock levels optimized and reduce last-mile shipping costs to end customers.
+        facility is a <Link to="/services/ftl">full truckload</Link> job that keeps stock
+        levels optimized and reduces last-mile shipping costs to end customers.
       </p>
 
       <h2>Parcel vs. Freight: The Breakeven Point for Online Sellers</h2>
-      <p>
+      <p className="mb-6">
         The decision between parcel and freight shipping comes down to weight, volume, and
-        frequency. Here is a practical framework for determining when to make the switch.
-      </p>
-      <p>
-        <strong>Weight threshold:</strong> Shipments over 150 lbs almost always cost less via
-        LTL than parcel. Between 70-150 lbs, the math depends on freight class, distance, and
-        whether you need residential delivery or liftgate service.
-      </p>
-      <p>
-        <strong>Volume threshold:</strong> If you are shipping 10 or more cases per shipment,
-        consolidating onto a pallet and shipping LTL reduces handling, damage risk, and total
-        cost. Individual case shipping makes sense only for small quantities or time-sensitive
-        orders.
-      </p>
-      <p>
-        <strong>Frequency:</strong> Sellers shipping weekly replenishment orders of 500+ lbs
-        can negotiate volume-based LTL rates that drop costs by an additional 15-25% below
-        standard tariffs.
+        frequency. Shipments over 150 lbs almost always cost less via LTL than parcel. Between
+        70-150 lbs, the math depends on freight class, distance, and whether you need
+        residential delivery or liftgate service. If you are shipping 10 or more cases per
+        shipment, consolidating onto a pallet and shipping LTL reduces handling, damage risk,
+        and total cost. Sellers shipping weekly replenishment orders of 500+ lbs can negotiate
+        volume-based LTL rates that drop costs by an additional 15-25% below standard tariffs.
       </p>
 
-      <h3>Parcel vs. LTL vs. FTL: Cost Comparison for E-Commerce</h3>
       <table>
         <thead>
           <tr>
@@ -163,34 +148,35 @@ const EcommerceFreightShipping = () => {
           </tr>
         </tbody>
       </table>
-      <p>
+
+      <p className="mb-8 mt-6">
         The cost savings at scale are significant. An e-commerce seller shipping 2,000 lbs of
         inventory per month saves roughly $1,200-2,400 by switching from parcel to LTL. Over
-        a year, that adds up to $14,400-28,800 in reduced shipping costs, money that goes
+        a year, that adds up to $14,400-28,800 in reduced shipping costs. That money goes
         straight to the bottom line.
       </p>
 
-      <h2>LTL for E-Commerce: How It Works with Fulfillment Workflows</h2>
-      <p>
+      <h2>LTL for E-Commerce: How It Works</h2>
+      <p className="mb-6">
         <Link to="/services/ltl">Less-than-truckload shipping</Link> is the workhorse of
-        e-commerce freight. Here is how LTL fits into a typical fulfillment workflow.
-      </p>
-      <p>
-        Your supplier palletizes finished goods at their facility. You book an LTL shipment
-        with a carrier like DeMar, providing origin, destination, weight, dimensions, and{" "}
+        e-commerce freight. Your supplier palletizes finished goods at their facility. You book
+        an LTL shipment with a carrier like DeMar, providing origin, destination, weight,
+        dimensions, and{" "}
         <Link to="/resources/freight-classes-explained">freight class</Link>. The carrier
         picks up the pallet, consolidates it with other shipments on the same route, and
         delivers to your warehouse or fulfillment center. Your receiving team inspects the
         freight, checks it against the bill of lading (BOL), and puts it away into inventory.
       </p>
-      <p>
+
+      <p className="mb-6">
         The key to making LTL work for e-commerce is preparation. Accurate freight class
         determination prevents reclassification fees. Proper palletizing with stretch wrap and
         corner boards prevents damage. Clear labeling with PO numbers and SKU counts speeds
         up receiving. And scheduling delivery appointments ensures your warehouse team is
         ready when the truck arrives.
       </p>
-      <p>
+
+      <p className="mb-8">
         For sellers shipping to multiple fulfillment centers, LTL offers the flexibility to
         send partial loads to different destinations without paying for a full truck to each
         location. This is especially valuable for sellers distributing inventory across
@@ -198,42 +184,39 @@ const EcommerceFreightShipping = () => {
       </p>
 
       <h2>FTL for High-Volume Sellers</h2>
-      <p>
+      <p className="mb-6">
         <Link to="/services/ftl">Full truckload shipping</Link> becomes the right choice when
         your shipment fills more than half a trailer, typically 10+ pallets or 10,000+ lbs.
         At that volume, FTL is almost always cheaper per pound than LTL because you are paying
         for the truck rather than the space.
       </p>
-      <p>
-        High-volume e-commerce sellers use FTL in several scenarios. Seasonal stock-ups before
-        Q4 holiday season often require full containers of product moving from ports or
-        manufacturers to warehouses. Large inventory transfers between fulfillment centers move
-        more efficiently as dedicated loads. And brands launching new products may need to
-        position thousands of units across multiple locations simultaneously.
-      </p>
-      <p>
-        FTL also offers speed and security advantages. Your freight moves directly from point A
-        to point B without stopping at LTL terminals for cross-docking. This eliminates
-        handling touchpoints, reducing both transit time and damage risk. For fragile or
-        high-value e-commerce products, those benefits alone can justify the FTL cost.
+
+      <p className="mb-8">
+        High-volume e-commerce sellers use FTL for seasonal stock-ups before Q4 holiday season,
+        when full containers of product move from ports or manufacturers to warehouses. Large
+        inventory transfers between fulfillment centers move more efficiently as dedicated loads.
+        Brands launching new products may need to position thousands of units across multiple
+        locations simultaneously. FTL also offers speed and security advantages. Your freight
+        moves directly from point A to point B without stopping at LTL terminals for
+        cross-docking. This eliminates handling touchpoints, reducing both transit time and
+        damage risk. For fragile or high-value e-commerce products, those benefits alone can
+        justify the FTL cost.
       </p>
 
       <h2>Warehousing and 3PL Integration</h2>
-      <p>
+      <p className="mb-6">
         For many e-commerce businesses, freight shipping is only one piece of the logistics
         puzzle. <Link to="/services/warehousing">Warehousing</Link> and{" "}
         <Link to="/services/3pl">3PL services</Link> complete the picture by handling what
-        happens after your freight arrives.
+        happens after your freight arrives. A 3PL provider receives your inbound freight, stores
+        it in a warehouse, and fulfills outbound orders through pick-and-pack operations. This
+        model eliminates the need for e-commerce sellers to lease warehouse space, purchase
+        racking and equipment, hire warehouse staff, or manage shipping operations in-house.
+        For sellers processing 100-10,000 orders per month, outsourcing to a 3PL typically
+        reduces total fulfillment costs by 20-35% compared to self-fulfillment.
       </p>
-      <p>
-        A 3PL provider receives your inbound freight, stores it in a warehouse, and fulfills
-        outbound orders through pick-and-pack operations. This model eliminates the need for
-        e-commerce sellers to lease warehouse space, purchase racking and equipment, hire
-        warehouse staff, or manage shipping operations in-house. For sellers processing
-        100-10,000 orders per month, outsourcing to a 3PL typically reduces total fulfillment
-        costs by 20-35% compared to self-fulfillment.
-      </p>
-      <p>
+
+      <p className="mb-8">
         The integration between freight shipping and 3PL is critical. When your inbound freight
         arrives at the 3PL warehouse, receiving accuracy determines everything downstream. A
         good 3PL partner coordinates with the freight carrier on delivery scheduling, inspects
@@ -243,106 +226,92 @@ const EcommerceFreightShipping = () => {
       </p>
 
       <h2>Managing Freight for Amazon FBA and Marketplace Sellers</h2>
-      <p>
+      <p className="mb-6">
         Amazon FBA and other marketplace fulfillment programs add complexity to e-commerce
         freight shipping. Amazon's inbound requirements are detailed and strictly enforced,
         and failing to meet them results in rejected shipments, delayed receiving, or extra fees.
       </p>
-      <p>
-        <strong>Delivery windows:</strong> Amazon assigns specific delivery dates for inbound
-        shipments. Arriving outside your window can result in the shipment being turned away.
-        Your freight carrier must be able to deliver within a 1-2 day window and handle any
-        appointment scheduling through Amazon's systems.
+
+      <p className="mb-6">
+        Amazon assigns specific delivery dates for inbound shipments. Arriving outside your
+        window can result in the shipment being turned away. Your freight carrier must be able
+        to deliver within a 1-2 day window and handle any appointment scheduling through
+        Amazon's systems. Amazon also requires GMA-grade pallets (40x48 inches), maximum 72
+        inches tall including the pallet, and no more than 1,500 lbs per pallet. Each pallet
+        needs four FBA labels visible from all sides, and mixed-SKU pallets have additional
+        labeling requirements.
       </p>
-      <p>
-        <strong>Pallet requirements:</strong> Amazon requires GMA-grade pallets (40x48 inches),
-        maximum 72 inches tall including the pallet, and no more than 1,500 lbs per pallet.
-        Each pallet needs four FBA labels visible from all sides. Mixed-SKU pallets have
-        additional labeling requirements.
-      </p>
-      <p>
-        <strong>BOL accuracy:</strong> The bill of lading must match the Amazon shipment ID
-        exactly. Mismatches delay receiving by days or weeks, leaving your inventory in limbo
-        and your listings out of stock. A carrier experienced with FBA shipments catches these
-        issues before the truck leaves the dock.
-      </p>
-      <p>
-        Walmart Fulfillment Services (WFS) and other marketplace programs have similar but
-        distinct requirements. The key takeaway for e-commerce sellers is that marketplace
-        freight shipping demands precision and experience from your carrier partner.
+
+      <p className="mb-8">
+        The bill of lading must match the Amazon shipment ID exactly. Mismatches delay
+        receiving by days or weeks, leaving your inventory in limbo and your listings out of
+        stock. A carrier experienced with FBA shipments catches these issues before the truck
+        leaves the dock. Walmart Fulfillment Services (WFS) and other marketplace programs
+        have similar but distinct requirements. The takeaway for e-commerce sellers is that
+        marketplace freight shipping demands precision and experience from your carrier partner.
       </p>
 
       <h2>Common E-Commerce Freight Mistakes</h2>
-      <p>
-        Even experienced online sellers lose money on freight due to avoidable errors. Here are
-        the most common mistakes and how to prevent them.
+      <p className="mb-6">
+        Even experienced online sellers lose money on freight due to avoidable errors.
       </p>
-      <p>
-        <strong>Wrong freight class:</strong> Freight class is determined by density, handling
-        characteristics, stowability, and liability. Guessing your{" "}
-        <Link to="/resources/freight-classes-explained">freight class</Link> instead of
+
+      <p className="mb-6">
+        Wrong freight class is probably the most expensive mistake we see. Freight class is
+        determined by density, handling characteristics, stowability, and liability. Guessing
+        your <Link to="/resources/freight-classes-explained">freight class</Link> instead of
         calculating it properly leads to reclassification inspections and fees ranging from
         $200-500 per shipment. Always measure and weigh your pallets, then use the NMFTA
         classification system or ask your carrier for help.
       </p>
-      <p>
-        <strong>No liftgate request:</strong> If your delivery location does not have a loading
-        dock, you need liftgate service. Forgetting to request it means the driver cannot
-        unload, the delivery fails, and you pay for a redelivery attempt plus the liftgate fee.
-        That turns a $15-50 liftgate charge into a $150-300 redelivery cost.
+
+      <p className="mb-6">
+        Forgetting to request a liftgate when your delivery location does not have a loading
+        dock is another common one. The driver cannot unload, the delivery fails, and you pay
+        for a redelivery attempt plus the liftgate fee. That turns a $15-50 liftgate charge
+        into a $150-300 redelivery cost. LTL carriers also charge $75-150 extra for residential
+        deliveries because their trucks and routes are designed for commercial addresses.
+        Home-based e-commerce sellers receiving inventory at a residential address need to
+        factor this into their shipping costs, or better yet, use a commercial warehouse or
+        3PL facility.
       </p>
-      <p>
-        <strong>Residential delivery surprises:</strong> LTL carriers charge $75-150 extra for
-        residential deliveries because their trucks and routes are designed for commercial
-        addresses. Home-based e-commerce sellers receiving inventory at a residential address
-        need to factor this into their shipping costs, or better yet, use a commercial
-        warehouse or 3PL facility.
-      </p>
-      <p>
-        <strong>Poor pallet preparation:</strong> Freight that shifts, topples, or breaks during
-        transit leads to damage claims, delays, and inventory loss. Proper stretch wrapping,
-        corner boards, and load securement take 15 minutes per pallet and prevent thousands of
-        dollars in damaged goods.
-      </p>
-      <p>
-        <strong>Skipping delivery appointments:</strong> Warehouses and fulfillment centers
-        require advance scheduling. Showing up without an appointment means sitting in a queue
-        for hours or being turned away entirely. Detention charges of $50-75 per hour add up
-        quickly.
+
+      <p className="mb-8">
+        Poor pallet preparation leads to damage claims, delays, and inventory loss. Proper
+        stretch wrapping, corner boards, and load securement take 15 minutes per pallet and
+        prevent thousands of dollars in damaged goods. And skipping delivery appointments at
+        warehouses and fulfillment centers means sitting in a queue for hours or being turned
+        away entirely. Detention charges of $50-75 per hour add up quickly.
       </p>
 
       <h2>How DeMar Transportation Supports E-Commerce Shippers</h2>
-      <p>
+      <p className="mb-6">
         DeMar Transportation provides end-to-end freight solutions built for online sellers
         scaling their businesses. Based in Reno, NV, with access to major West Coast
-        distribution corridors, DeMar offers the services that e-commerce businesses rely on
-        for efficient, cost-effective logistics.
+        distribution corridors, we handle the logistics that e-commerce businesses rely on
+        for efficient, cost-effective operations.
       </p>
-      <p>
-        <strong>Integrated warehousing and 3PL:</strong> DeMar's{" "}
-        <Link to="/services/warehousing">warehouse facilities</Link> receive your inbound
+
+      <p className="mb-6">
+        Our <Link to="/services/warehousing">warehouse facilities</Link> receive your inbound
         freight, store your inventory, and fulfill outbound orders. One provider handles the
         entire chain from manufacturer to customer doorstep, eliminating coordination headaches
-        between separate freight, warehouse, and fulfillment vendors.
-      </p>
-      <p>
-        <strong>LTL and FTL options:</strong> Whether you are shipping 2 pallets of product to
-        restock your warehouse or moving 24 pallets of seasonal inventory, DeMar provides both{" "}
+        between separate freight, warehouse, and fulfillment vendors. Whether you are shipping
+        2 pallets of product to restock your warehouse or moving 24 pallets of seasonal
+        inventory, DeMar provides both{" "}
         <Link to="/services/ltl">LTL</Link> and <Link to="/services/ftl">FTL</Link> capacity
         with competitive rates and reliable transit times.
       </p>
-      <p>
-        <strong>Flexible scheduling:</strong> E-commerce runs on tight timelines. DeMar
-        coordinates delivery appointments with Amazon FBA, Walmart WFS, and private warehouses
-        to ensure your freight arrives within the required window. No missed appointments, no
-        detention charges, no out-of-stock surprises.
+
+      <p className="mb-6">
+        E-commerce runs on tight timelines. DeMar coordinates delivery appointments with Amazon
+        FBA, Walmart WFS, and private warehouses to ensure your freight arrives within the
+        required window. No missed appointments, no detention charges, no out-of-stock surprises.
+        We handle bill of lading preparation, freight class determination, and all documentation
+        required for marketplace inbound shipments. Accurate paperwork means no reclassification
+        fees, no receiving delays, and no rejected shipments.
       </p>
-      <p>
-        <strong>BOL preparation and freight class assistance:</strong> DeMar handles bill of
-        lading preparation, freight class determination, and all documentation required for
-        marketplace inbound shipments. Accurate paperwork means no reclassification fees, no
-        receiving delays, and no rejected shipments.
-      </p>
+
       <p>
         Ready to streamline your e-commerce freight shipping?{" "}
         <Link to="/quote">Request a free quote</Link> from DeMar Transportation and get a
