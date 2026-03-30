@@ -74,23 +74,31 @@ const FoodBeverageFreightShipping = () => {
       </p>
 
       <h2>Food Freight Shipping Temperature Requirements by Product Type</h2>
-      <p>
-        Temperature requirements in food freight are not one-size-fits-all. They vary by product category, and some products have USDA or FDA regulations that supersede general industry practice. Getting this wrong does not just spoil the product; it creates FSMA violations that can follow your company through future audits.
+      <p className="mb-6">
+        Temperature requirements in food freight are not one-size-fits-all. They vary by product category, and some products have USDA or FDA regulations that supersede general industry practice. Getting this wrong does not just spoil the product. It creates FSMA violations that can follow your company through future audits.
       </p>
 
       <h3>Frozen Foods</h3>
-      <p>
-        Frozen food freight must be maintained at -18°C (0°F) or colder for the entire transit. That includes ice cream, frozen vegetables, frozen meat, and any product labeled "keep frozen." The challenge is not holding temperature while the trailer is moving; a well-maintained reefer unit handles that without issue. The risk is at loading docks and during lumper operations, when trailer doors are open and ambient heat floods the cargo area. A loading operation that runs 45 minutes in a warm distribution center can raise trailer temps by 4-6°C. Carriers who understand frozen freight plan for pre-cooling the trailer before loading and minimize door-open time during stops.
+      <p className="mb-6">
+        Frozen food freight must be maintained at -18C (0F) or colder for the entire transit. That includes ice cream, frozen vegetables, frozen meat, and any product labeled "keep frozen." The challenge is not holding temperature while the trailer is moving. A well-maintained reefer unit handles that without issue.
+      </p>
+
+      <p className="mb-6">
+        The risk is at loading docks and during lumper operations, when trailer doors are open and ambient heat floods the cargo area. A loading operation that runs 45 minutes in a warm distribution center can raise trailer temps by 4-6C. Carriers who understand frozen freight plan for pre-cooling the trailer before loading and minimize door-open time during stops.
       </p>
 
       <h3>Refrigerated and Fresh Products</h3>
-      <p>
-        Fresh produce, dairy, meat, poultry, and ready-to-eat foods require the 0-4°C (32-39°F) band. Within that range, specific products have tighter windows. Raw poultry and seafood are often spec'd at 0-2°C because the margin between safe and spoiled is narrow. Fresh-cut produce may require modified atmosphere packaging combined with temperature control to prevent browning and microbial growth. USDA regulations for meat and poultry shipments add a documentation layer; USDA-inspected products require certificates of inspection that must travel with the load.
+      <p className="mb-6">
+        Fresh produce, dairy, meat, poultry, and ready-to-eat foods require the 0-4C (32-39F) band. Within that range, specific products have tighter windows. Raw poultry and seafood are often spec'd at 0-2C because the margin between safe and spoiled is narrow.
+      </p>
+
+      <p className="mb-6">
+        Fresh-cut produce may require modified atmosphere packaging combined with temperature control to prevent browning and microbial growth. USDA regulations for meat and poultry shipments add a documentation layer: USDA-inspected products require certificates of inspection that must travel with the load.
       </p>
 
       <h3>Ambient and Dry Grocery</h3>
-      <p>
-        Not all food freight requires refrigeration, but ambient temperature control still matters. Chocolate, baked goods, wine, and shelf-stable sauces all have temperature sensitivity that affects product quality and shelf life. The 15-25°C (59-77°F) range covers most ambient food freight, but during summer runs through Phoenix or Houston, an unrefrigerated trailer can reach 50°C+ inside. Shippers moving chocolate, wine, or high-fat products in summer months should consider controlled-temperature dry vans rather than assuming standard dry van service is adequate.
+      <p className="mb-8">
+        Not all food freight requires refrigeration, but ambient temperature control still matters. Chocolate, baked goods, wine, and shelf-stable sauces all have temperature sensitivity that affects product quality and shelf life. The 15-25C (59-77F) range covers most ambient food freight, but during summer runs through Phoenix or Houston, an unrefrigerated trailer can reach 50C+ inside. Shippers moving chocolate, wine, or high-fat products in summer months should consider controlled-temperature dry vans rather than assuming standard dry van service is adequate.
       </p>
 
       <h2>What a Food Transportation Safety Plan Needs to Include</h2>
