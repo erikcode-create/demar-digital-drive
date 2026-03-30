@@ -88,6 +88,7 @@ export async function postToChannel(channel, payload) {
     cro: process.env.DISCORD_CRO_WEBHOOK_URL,
     funnels: process.env.DISCORD_FUNNELS_WEBHOOK_URL,
     social: process.env.DISCORD_SOCIAL_WEBHOOK_URL,
+    "seo-dashboard": process.env.DISCORD_SEO_DASHBOARD_WEBHOOK_URL,
   };
   const webhookUrl = urls[channel];
   if (!webhookUrl) {
