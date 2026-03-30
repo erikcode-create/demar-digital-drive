@@ -100,6 +100,8 @@ const ReverseLogisticsReturnFreight = () => {
       description="Discover how to streamline product returns, manage reverse logistics operations, and reduce costs when moving goods back through your supply chain."
       metaTitle="Reverse Logistics & Return Freight Management"
       metaDescription="Optimize return freight and reverse logistics with cost reduction strategies. Learn how to manage product returns, recalls, and inventory reshuffling."
+      heroImage="/images/blog/freight-damage-hero.jpg"
+      heroImageAlt="Warehouse workers processing returned freight at a distribution center"
       slug="reverse-logistics-return-freight"
       publishDate="2026-03-30"
       readTime="8 min"
