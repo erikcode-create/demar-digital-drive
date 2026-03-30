@@ -407,6 +407,8 @@ const WhyFreightQuoteKeepsChanging = () => {
       slug="why-freight-quote-keeps-changing"
       publishDate="2026-03-29"
       readTime="8 min"
+      heroImage="/images/blog/freight-quote-hero.jpg"
+      heroImageAlt="Freight trucks on highway representing changing freight market rates"
       content={content}
       faqs={faqs}
       relatedLinks={relatedLinks}
