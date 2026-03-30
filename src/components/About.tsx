@@ -30,7 +30,7 @@ const differentiators = [
 const features = [
   "Competitive rates, no hidden fees",
   "English-speaking drivers & dispatch",
-  "Nationwide coverage, 50 states",
+  "Nationwide coverage, 48 contiguous states",
   "MC + Broker dual authority",
   "Real-time communication",
   "DOT compliant operations",
