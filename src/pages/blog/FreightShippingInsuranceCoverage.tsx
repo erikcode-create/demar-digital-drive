@@ -73,20 +73,20 @@ const FreightShippingInsuranceCoverage = () => {
       </p>
 
       <h2>What Freight Insurance Does Not Cover</h2>
-      <p>
+      <p className="mb-6">
         The exclusions in a cargo policy are where shippers get burned. Carriers and insurers alike will deny claims that fall into predictable categories, and knowing them in advance lets you address the risk before the load moves.
       </p>
-      <p>
-        Improper packaging is the most common basis for claim denial. If your product arrives crushed because it was not adequately blocked and braced, or because the cartons were not rated for stacking weight, the carrier will argue the damage originated with the packer, not in transit. The NMFC packaging requirements for each freight class exist precisely because this argument is well-established in cargo law. Pack to spec, document your packaging method, and photograph loads before they leave your dock.
+      <p className="mb-6">
+        Improper packaging is the most common basis for claim denial. If your product arrives crushed because it was not adequately blocked and braced, or because the cartons were not rated for stacking weight, the carrier will argue the damage originated with the packer, not in transit. Pack to spec, document your packaging method, and photograph loads before they leave your dock.
       </p>
-      <p>
-        Pre-existing damage is another frequent denial trigger. If you do not inspect freight at delivery and note exceptions on the delivery receipt, you have effectively accepted the shipment in good condition. Carriers and insurers treat a clean delivery receipt as evidence that damage occurred after delivery, not during transit. Train your receiving team to open and inspect before signing, and to write specific exceptions rather than generic notes like "possible damage."
+      <p className="mb-6">
+        Pre-existing damage is another frequent denial trigger. If you do not inspect freight at delivery and note exceptions on the delivery receipt, you have effectively accepted the shipment in good condition. Train your receiving team to open and inspect before signing, and to write specific exceptions rather than generic notes like "possible damage."
       </p>
-      <p>
-        Most standard cargo policies exclude delay damages entirely. If a refrigerated load of produce sits at a broken-down terminal and arrives four days late, the cargo insurance pays for physical damage to the product but not for the lost market value of perishables that arrived on time but spoiled from delay. Contingent cargo policies and specialty perishable coverage can fill this gap, but they cost more and require separate underwriting.
+      <p className="mb-6">
+        Most standard cargo policies exclude delay damages entirely. If a refrigerated load of produce sits at a broken-down terminal and arrives four days late, the cargo insurance pays for physical damage to the product but not for the lost market value of perishables that spoiled from delay. Contingent cargo policies and specialty perishable coverage can fill this gap, but they cost more and require separate underwriting.
       </p>
-      <p>
-        Acts of God, including floods, earthquakes, and lightning strikes, are excluded from many base cargo policies. If you are moving freight through tornado corridors in the spring or through areas prone to flooding, confirm your policy specifically covers natural disaster losses or buy a rider that does.
+      <p className="mb-8">
+        Acts of God (floods, earthquakes, and lightning strikes) are excluded from many base cargo policies. If you are moving freight through tornado corridors in the spring or through areas prone to flooding, confirm your policy specifically covers natural disaster losses or buy a rider that does.
       </p>
 
       <h2>How Cargo Insurance Pricing Works</h2>
