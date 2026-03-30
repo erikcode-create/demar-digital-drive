@@ -144,10 +144,44 @@ const WhiteGloveFreightHandling = () => {
       </p>
 
       <h2>When Standard Freight Service Is Not Enough</h2>
-      <p>Most freight moves fine on standard dry van or flatbed service. Palletized goods with industrial packaging, construction materials, and bulk commodities do not need white-glove handling. The question is where your shipment sits on the fragility and value spectrum.</p>
-      <p>Fine art and gallery pieces are the clearest case. Museum-quality works require climate-controlled transport, custom crating, and handlers who know how to move a framed canvas without touching the surface. A standard LTL carrier will not provide that. High-end consumer electronics, especially large-format displays and audio equipment destined for luxury residential or hospitality installations, face similar handling requirements because the packaging is designed for retail, not freight terminals.</p>
-      <p>Industrial machinery deserves special attention. A precision CNC machine or a semiconductor inspection unit can cost $200,000 or more, and a single forklift tine in the wrong position during loading can destroy a calibrated component that takes 12 weeks to replace. DeMar's team has seen production lines go down for months because a carrier used standard freight procedures on equipment that required rigging specialists. The white-glove service cost on that shipment would have been $3,000. The production downtime cost was far higher.</p>
-      <p>Pharmaceuticals and biologics introduce regulatory requirements on top of handling requirements. FDA-regulated temperature-sensitive products must maintain documented chain of custody with temperature logs at every handoff. That documentation is not optional for a licensed pharmaceutical distributor; it is a compliance requirement. <Link to="/resources/how-to-ship-refrigerated-goods">Cold chain shipping</Link> for these products requires carriers with FSMA and GDP compliance experience, not just a reefer trailer and good intentions.</p>
+      <p>
+        Most freight moves fine on standard dry van or flatbed service.
+        Palletized goods with industrial packaging, construction materials, and
+        bulk commodities do not need white-glove handling. The question is where
+        your shipment sits on the fragility and value spectrum.
+      </p>
+      <p>
+        Fine art and gallery pieces are the clearest case. Museum-quality works
+        require climate-controlled transport, custom crating, and handlers who
+        know how to move a framed canvas without touching the surface. A
+        standard LTL carrier will not provide that.
+      </p>
+      <p>
+        High-end consumer electronics, especially large-format displays and
+        audio equipment destined for luxury residential or hospitality
+        installations, face similar handling requirements because the packaging
+        is designed for retail, not freight terminals.
+      </p>
+      <p>
+        Industrial machinery deserves special attention. A precision CNC machine
+        or a semiconductor inspection unit can cost $200,000 or more, and a
+        single forklift tine in the wrong position during loading can destroy a
+        calibrated component that takes 12 weeks to replace. DeMar's team has
+        seen production lines go down for months because a carrier used standard
+        freight procedures on equipment that required rigging specialists. The
+        white-glove service cost on that shipment would have been $3,000. The
+        production downtime cost was far higher.
+      </p>
+      <p>
+        Pharmaceuticals and biologics introduce regulatory requirements on top
+        of handling requirements. FDA-regulated temperature-sensitive products
+        must maintain documented chain of custody with temperature logs at every
+        handoff. That documentation is not optional for a licensed
+        pharmaceutical distributor; it is a compliance requirement.{" "}
+        <Link to="/resources/how-to-ship-refrigerated-goods">Cold chain
+        shipping</Link> for these products requires carriers with FSMA and GDP
+        compliance experience, not just a reefer trailer and good intentions.
+      </p>
 
       <h2>White-Glove Reefer Services for Temperature-Sensitive Shipments</h2>
       <p>Temperature-controlled white-glove freight combines two specialized service tiers into a single, carefully managed shipment. The reefer unit maintains required temperature ranges throughout transit, while the white-glove handling protocols protect product integrity at loading and delivery. For pharmaceutical distribution, that means continuous temperature monitoring with alarm notifications, trained handlers who understand cold chain interruption risks, and delivery personnel who do not prop open the trailer doors for 20 minutes while they sort paperwork.</p>
