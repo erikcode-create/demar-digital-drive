@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const stats = [
   { value: "10+", label: "Equipment Types" },
   { value: "24/7", label: "Availability" },
-  { value: "50", label: "States Covered" },
+  { value: "48", label: "States Covered" },
 ];
 
 const features = [
