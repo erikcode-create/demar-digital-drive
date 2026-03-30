@@ -523,10 +523,8 @@ export default async function run() {
   let discordDescription = "";
   for (let i = 0; i < successfulPosts.length; i++) {
     const p = successfulPosts[i];
-    discordDescription += `**${i + 1}. ${p.title}**\n`;
-    discordDescription += `  Slug: \`/blog/${p.slug}\`\n`;
-    discordDescription += `  Keyword: \`${p.targetKeyword}\`\n`;
-    discordDescription += `  Category: ${p.category}\n\n`;
+    discordDescription += `**${i + 1}. [${p.title}](https://demartransportation.com/blog/${p.slug})**\n`;
+    discordDescription += `  Keyword: \`${p.targetKeyword}\` | ${p.category}\n\n`;
   }
 
   const embeds = [
