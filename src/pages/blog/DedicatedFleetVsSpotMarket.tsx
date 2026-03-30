@@ -248,6 +248,8 @@ const DedicatedFleetVsSpotMarket = () => {
       slug="dedicated-fleet-vs-spot-market"
       publishDate="2026-03-30"
       readTime="7 min"
+      heroImage="/images/blog/freight-quote-hero.jpg"
+      heroImageAlt="Freight trucks at a distribution center representing dedicated fleet and spot market shipping options"
       content={content}
       faqs={faqs}
       relatedLinks={relatedLinks}
