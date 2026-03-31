@@ -37,3 +37,6 @@ monitoring/auto-fix-lock.json
 
 # SEO dashboard historical data (persisted via GitHub Actions cache)
 monitoring/seo/data/
+
+# Multi-agent SEO system state
+monitoring/agents/state/
