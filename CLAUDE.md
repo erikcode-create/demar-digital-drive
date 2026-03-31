@@ -152,7 +152,7 @@ Blog posts live at `/blog` (displayed as "Insights" in the nav). Uses `BlogPost`
 - **Posts:** `src/pages/blog/*.tsx`
 - **Images:** `public/images/blog/` (sourced from Pixabay)
 - **Index:** `src/pages/Blog.tsx`
-- **Daily auto-generation:** `monitoring/seo/blog-topic-generator.mjs` writes 5 new posts/day
+- **Generation:** Content writer agent (`monitoring/agents/action/content-writer.mjs`) creates posts driven by strategy agent's action queue
 
 ## Important Constraints
 
