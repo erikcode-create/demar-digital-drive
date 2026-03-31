@@ -40,7 +40,17 @@
     "seo:competitors": "node seo/dashboard/competitor-tracker.mjs",
     "seo:cwv": "node seo/dashboard/core-web-vitals.mjs",
     "seo:eeat": "node seo/dashboard/content-eeat-scorer.mjs",
-    "seo:weekly-summary": "node seo/dashboard/weekly-seo-summary.mjs"
+    "seo:weekly-summary": "node seo/dashboard/weekly-seo-summary.mjs",
+    "agents": "node agents/orchestrator.mjs",
+    "agents:full": "node agents/orchestrator.mjs --full-cycle",
+    "agents:intelligence": "node agents/orchestrator.mjs --phase intelligence",
+    "agents:analysis": "node agents/orchestrator.mjs --phase analysis",
+    "agents:strategy": "node agents/orchestrator.mjs --phase strategy",
+    "agents:action": "node agents/orchestrator.mjs --phase action",
+    "agents:rank-recovery": "node agents/orchestrator.mjs --loop rank-recovery",
+    "agents:content-gaps": "node agents/orchestrator.mjs --loop content-gaps",
+    "agents:eeat": "node agents/orchestrator.mjs --loop eeat-improvement",
+    "agents:dry-run": "node agents/orchestrator.mjs --full-cycle --dry-run"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
