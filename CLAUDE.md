@@ -82,139 +82,67 @@ Four channels, four webhooks:
 
 ### GitHub Actions Workflows
 
-| Workflow | File | Schedule |
+| Workflow | File | Trigger |
 |---|---|---|
-| Deploy (GreenGeeks FTP) | `.github/workflows/deploy.yml` | Push to main |
-| Website Monitor | `.github/workflows/website-monitor.yml` | Mon-Sat 7am PDT lightweight, Sun 7am PDT full |
-| SEO Audit | `.github/workflows/seo-audit.yml` | Daily 9am PDT |
-| Website Uptime | `.github/workflows/website-uptime.yml` | Every 15 min (check), daily 8am PDT (summary) |
-| CRO Audit | `.github/workflows/marketing-cro.yml` | Daily 10am PDT |
-| Funnels | `.github/workflows/marketing-funnels.yml` | Daily 11am PDT |
-| Social Media | `.github/workflows/marketing-social.yml` | Daily 12pm PDT |
+| Deploy (GreenGeeks SSH) | `.github/workflows/deploy.yml` | Push to main, manual dispatch |
 
-`website-monitor.yml` and `website-uptime.yml` both support `workflow_dispatch`.
+All other workflows (monitoring, SEO, marketing) have been removed. Their functionality is replaced by the multi-agent SEO system below.
 
-### Uptime Monitor
+### Multi-Agent SEO System
 
-Separate system from scanners. Checks site availability every 15 minutes, tracks state via GitHub Actions cache.
+Coordinated multi-agent system in `monitoring/agents/`. Agents share intelligence via JSON state files so rank drops trigger content improvements, content gaps get filled, and E-E-A-T scores feed back to the writer. Reads source TSX files directly instead of crawling the live site.
 
-- **Script:** `monitoring/uptime.mjs` (`check` or `summary` command)
-- **State:** `monitoring/uptime-state.json` (gitignored, persisted via Actions cache)
-- **Discord alerts:** State-change only (site down / site recovered), plus daily summary at 8am PDT
-- **Key commands:** `cd monitoring && node uptime.mjs check` / `cd monitoring && node uptime.mjs summary`
+#### Architecture
 
-### Marketing Automation
+5 phases run in sequence: Intelligence (data collection) → Analysis (evaluation) → Strategy (prioritization) → Action (execution) → Reporting (Discord).
 
-Autonomous marketing system in `monitoring/marketing/`. Uses Claude API for content generation and posts to dedicated Discord channels.
-
-#### Key Commands
+#### Agent Commands
 
 ```bash
-cd monitoring && npm run marketing:brand-kit    # Build/refresh brand kit
-cd monitoring && npm run marketing:cro          # Run CRO audit
-cd monitoring && npm run marketing:funnels      # Run funnel generator
-cd monitoring && npm run marketing:social       # Run social media generator
+cd monitoring && npm run agents:full            # Full cycle: all 5 phases
+cd monitoring && npm run agents:intelligence    # Phase 1: rank tracking, search console, competitors, backlinks, CWV
+cd monitoring && npm run agents:analysis        # Phase 2: site audit, E-E-A-T, page scores, content gaps
+cd monitoring && npm run agents:strategy        # Phase 3: analyze all data, produce action queue
+cd monitoring && npm run agents:action          # Phase 4: execute top actions from queue
+cd monitoring && npm run agents:dry-run         # Full cycle without executing actions
+cd monitoring && npm run agents:rank-recovery   # Closed loop: detect rank drops → fix → monitor
+cd monitoring && npm run agents:content-gaps    # Closed loop: find gaps → write content → track
+cd monitoring && npm run agents:eeat            # Closed loop: score E-E-A-T → improve weak pages
 ```
 
-#### Brand Kit
+Single agent: `cd monitoring && node agents/orchestrator.mjs --agent <name>`
 
-- `monitoring/marketing/brand-kit.json` — machine-readable brand identity
-- `monitoring/marketing/brand-kit.html` — visual reference
-- Refresh with `npm run marketing:brand-kit`
-- All marketing scripts consume brand-kit.json for consistency
+Available agents: rank-tracker, search-console, competitor-tracker, backlink-monitor, cwv-monitor, site-auditor, eeat-scorer, page-scorer, content-gap-analyzer, strategy, content-writer, meta-tag-optimizer, internal-link-optimizer, technical-fixer
 
-#### Marketing Discord Channels
+#### Shared Libraries
 
-| Channel | Env Var | Purpose |
+- `monitoring/agents/lib/state.mjs` — shared state read/write (file-based message bus)
+- `monitoring/agents/lib/source-reader.mjs` — parse TSX source files directly (no HTTP crawling)
+- `monitoring/seo/lib/pages.mjs` — canonical page list
+- `monitoring/seo/lib/serper.mjs` — Serper API client
+- `monitoring/seo/lib/search-console.mjs` — Google Search Console API client
+- `monitoring/marketing/lib/claude-api.mjs` — Claude API wrapper
+- `monitoring/marketing/lib/git-ops.mjs` — git commit/push/PR operations
+- `monitoring/lib/discord.mjs` — Discord webhook posting
+
+#### State Directory
+
+Agent state stored in `monitoring/agents/state/` (gitignored). Categories: intelligence/, analysis/, strategy/, meta/.
+
+#### Discord Channel Routing
+
+| Agent Category | Channel | Env Var |
 |---|---|---|
-| Marketing & CRO | `DISCORD_CRO_WEBHOOK_URL` | Daily CRO audit, conversion recommendations, auto-fix PRs |
-| Funnels & Landing Pages | `DISCORD_FUNNELS_WEBHOOK_URL` | Landing page freshness, new page generation |
-| Social Media | `DISCORD_SOCIAL_WEBHOOK_URL` | Daily LinkedIn post, image prompt, companion pages |
+| Intelligence/Analysis/Strategy | seo-dashboard | `DISCORD_SEO_DASHBOARD_WEBHOOK_URL` |
+| Content Writer | seo | `DISCORD_SEO_WEBHOOK_URL` |
+| Meta/Link/Tech Fixers | seo | `DISCORD_SEO_WEBHOOK_URL` |
+| Build Failures | health | `DISCORD_WEBHOOK_URL` |
 
-#### Marketing GitHub Actions Workflows
+Requires `SERPER_API_KEY`, `GOOGLE_SERVICE_ACCOUNT_JSON`, `DISCORD_SEO_DASHBOARD_WEBHOOK_URL`, `DISCORD_SEO_WEBHOOK_URL`, and `ANTHROPIC_API_KEY` secrets.
 
-| Workflow | File | Schedule |
-|---|---|---|
-| CRO Audit | `.github/workflows/marketing-cro.yml` | Daily 10am PDT |
-| Funnels | `.github/workflows/marketing-funnels.yml` | Daily 11am PDT |
-| Social Media | `.github/workflows/marketing-social.yml` | Daily 12pm PDT |
+#### Legacy Scripts
 
-#### Safety Tiers
-
-- **Auto-commit:** Meta tag tweaks, CTA text improvements
-- **Auto-PR:** New landing pages, companion pages, significant copy changes (prefix: `[marketing-auto]`)
-- **Never auto-fix:** Pricing, legal content, business model claims, contact info
-
-### SEO Automation
-
-Claude-powered SEO optimization system in `monitoring/seo/`. Each job crawls the live site, analyzes with Claude API, posts results to Discord #seo channel, and auto-creates PRs for fixes.
-
-#### Key Commands
-
-```bash
-cd monitoring && npm run seo:internal-links    # Optimize internal linking
-cd monitoring && npm run seo:external-links    # Add authoritative external citations
-cd monitoring && npm run seo:broken-links      # Find and fix broken links
-cd monitoring && npm run seo:freshness         # Flag and update stale content
-cd monitoring && npm run seo:meta-tags         # Optimize title tags and meta descriptions
-cd monitoring && npm run seo:cannibalization   # Fix keyword cannibalization
-cd monitoring && npm run seo:blog-topics       # Generate and write 5 new blog posts
-cd monitoring && npm run seo:page-scores       # Score all pages on SEO metrics
-```
-
-#### SEO GitHub Actions Workflows
-
-| Workflow | File | Schedule |
-|---|---|---|
-| Internal Link Optimizer | `seo-internal-links.yml` | Daily 6am PDT |
-| External Link Enrichment | `seo-external-links.yml` | Daily 7am PDT |
-| Broken Link Fixer | `seo-broken-links.yml` | Daily 8am PDT |
-| Content Freshness | `seo-content-freshness.yml` | Daily 9am PDT |
-| Meta Tag Optimizer | `seo-meta-tags.yml` | Daily 10am PDT |
-| Keyword Cannibalization | `seo-cannibalization.yml` | Daily 11am PDT |
-| Blog Post Writer | `seo-blog-topics.yml` | Daily 12pm PDT |
-| Page Performance Scorer | `seo-page-scores.yml` | Daily 1pm PDT |
-
-All jobs use `model: "haiku"` for analysis and `model: "sonnet"` for content generation. Auto-PRs are created on `seo-auto/*` branches. Requires `ANTHROPIC_API_KEY` and `DISCORD_SEO_WEBHOOK_URL` secrets.
-
-### SEO Dashboard (Ahrefs-Like)
-
-Reporting-only dashboards in `monitoring/seo/dashboard/`. Tracks keyword rankings, site health, backlinks, Core Web Vitals, E-E-A-T scores, and competitor positions. Posts to Discord #seo-dashboard channel. Historical data stored in `monitoring/seo/data/` (gitignored, persisted via GitHub Actions cache).
-
-#### Dashboard Commands
-
-```bash
-cd monitoring && npm run seo:site-audit       # Crawl all pages, check SEO health
-cd monitoring && npm run seo:rank-tracker     # Track keyword rankings via Serper
-cd monitoring && npm run seo:search-console   # Google Search Console metrics
-cd monitoring && npm run seo:backlinks        # Backlink monitoring
-cd monitoring && npm run seo:competitors      # Competitor rank comparison
-cd monitoring && npm run seo:cwv              # Core Web Vitals via PageSpeed Insights
-cd monitoring && npm run seo:eeat             # E-E-A-T content scoring via Claude
-cd monitoring && npm run seo:weekly-summary   # Weekly SEO rollup report
-```
-
-#### Dashboard Shared Libraries
-
-- `monitoring/seo/lib/pages.mjs` — page list utility
-- `monitoring/seo/lib/history.mjs` — historical data read/write for trend tracking
-- `monitoring/seo/lib/serper.mjs` — Serper API client (rank checking, competitor discovery)
-- `monitoring/seo/lib/search-console.mjs` — Google Search Console API client (JWT auth)
-
-#### Dashboard GitHub Actions Workflows
-
-| Workflow | File | Schedule |
-|---|---|---|
-| Site Audit Dashboard | `seo-site-audit-dashboard.yml` | Daily 2pm PDT |
-| Keyword Rank Tracker | `seo-keyword-rank-tracker.yml` | Daily 3pm PDT |
-| Search Console Dashboard | `seo-search-console-dashboard.yml` | Daily 4pm PDT |
-| Backlink Monitor | `seo-backlink-monitor.yml` | Daily 5pm PDT |
-| Competitor Tracker | `seo-competitor-tracker.yml` | Weekly Mon 6pm PDT |
-| Core Web Vitals | `seo-core-web-vitals.yml` | Daily 7pm PDT |
-| E-E-A-T Scorer | `seo-eeat-scorer.yml` | Daily 8pm PDT |
-| Weekly SEO Summary | `seo-weekly-summary.yml` | Weekly Sun 9pm PDT |
-
-Requires `SERPER_API_KEY`, `GOOGLE_SERVICE_ACCOUNT_JSON`, `DISCORD_SEO_DASHBOARD_WEBHOOK_URL`, and `ANTHROPIC_API_KEY` secrets.
+Old standalone scripts remain in `monitoring/seo/` and `monitoring/marketing/` for reference. They are no longer triggered by GitHub Actions.
 
 ### Blog / Insights
 
