@@ -53,9 +53,14 @@
     "agents:dry-run": "node agents/orchestrator.mjs --full-cycle --dry-run",
     "nightly": "node nightly.mjs",
     "agents:review": "node agents/review-orchestrator.mjs",
-    "agents:review:dry-run": "node agents/review-orchestrator.mjs --dry-run"
+    "agents:review:dry-run": "node agents/review-orchestrator.mjs --dry-run",
+    "dashboard:snapshot": "node dashboard/snapshot.mjs",
+    "dashboard:generate": "node dashboard/generate.mjs",
+    "dashboard:deploy": "node dashboard/deploy.mjs",
+    "dashboard:build": "node dashboard/snapshot.mjs && node dashboard/generate.mjs"
   },
   "dependencies": {
+    "basic-ftp": "^5.2.0",
     "cheerio": "^1.0.0",
     "dotenv": "^16.4.7",
     "whois": "^2.16.1"
