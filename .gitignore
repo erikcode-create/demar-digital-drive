@@ -40,3 +40,6 @@ monitoring/seo/data/
 
 # Multi-agent SEO system state
 monitoring/agents/state/
+
+# Multi-agent pending review staging area
+monitoring/agents/pending/
