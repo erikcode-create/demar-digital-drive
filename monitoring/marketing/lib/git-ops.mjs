@@ -1,4 +1,5 @@
 import { execSync } from "node:child_process";
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -27,9 +28,32 @@ export function buildSucceeds() {
 }
 
 export function commitAndPush(message) {
+  // Ensure staging branch exists
+  try {
+    exec("git rev-parse --verify staging");
+  } catch {
+    exec("git branch staging");
+  }
+
+  // Stash changes, apply on staging
+  exec("git stash");
+  exec("git checkout staging");
+  exec("git merge main --no-edit");
+  exec("git stash pop");
   exec("git add -A");
   exec(`git commit -m "${message}"`);
-  exec("git push");
+  exec("git push origin staging");
+  exec("git checkout main");
+}
+
+export function writeStagingManifest(agentName, changes) {
+  const manifest = {
+    agent: agentName,
+    timestamp: new Date().toISOString(),
+    changes: changes, // [{file, url, type}]
+  };
+  const manifestPath = path.join(REPO_ROOT, "staging-manifest.json");
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
 }
 
 export function createPRBranch(branchName) {
