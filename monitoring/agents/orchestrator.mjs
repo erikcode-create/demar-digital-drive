@@ -186,6 +186,20 @@ async function runPhase(phaseName, context) {
   }
 
   if (phaseName === "action") {
+    // Check for smoke test failure flag
+    const smokeFailure = context.state.read("meta", "smoke-failure");
+    if (smokeFailure) {
+      console.log("⚠️  Smoke test failure flag is set — skipping action phase");
+      context.discord.post("health", {
+        embeds: [{
+          title: "⚠️ Agent Actions Blocked",
+          description: `Post-deploy smoke tests failed at ${smokeFailure.timestamp}. Actions are blocked until the flag is cleared.\n\nTo clear: \`rm monitoring/agents/state/meta/smoke-failure.json\``,
+          color: 16776960,
+        }],
+      });
+      return;
+    }
+
     // Action agents run sequentially (each may modify code + build)
     const actionQueue = context.state.read("strategy", "action-queue");
     if (!actionQueue || !actionQueue.actions || actionQueue.actions.length === 0) {
