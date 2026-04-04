@@ -8,6 +8,7 @@
 
 import { generateWithClaude } from "../../marketing/lib/claude-api.mjs";
 import { commitAndPush, buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { validate, validateFileContent } from "../lib/validators/index.mjs";
 import { readFileSync, writeFileSync, readdirSync, existsSync, unlinkSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -464,6 +465,42 @@ export async function run(context) {
         const result = await updateExistingContent(action, context);
         if (!result.success) return { success: false, summary: result.summary, data: null };
 
+        // Validate generated content before build
+        const updatedSource = readFileSync(path.join(REPO_ROOT, result.filePath), "utf-8");
+        const originalSize = (result.originalSize || 0);
+        const validation = validate("content-writer", updatedSource, {
+          targetKeyword: action?.targetKeyword || "",
+          originalSize,
+        });
+        if (!validation.passed) {
+          console.log(`  ❌ Validation failed: ${validation.errors.join(", ")}`);
+          try {
+            const { execSync } = await import("node:child_process");
+            execSync(`git checkout -- ${result.filePath}`, { cwd: REPO_ROOT });
+          } catch {}
+          try {
+            await context.discord.post("seo", {
+              embeds: [{
+                title: `❌ ${name}: Output Rejected`,
+                description: validation.errors.map(e => `• ${e}`).join("\n").slice(0, 4000),
+                color: 15158332,
+              }],
+            });
+          } catch {}
+          return { success: false, reason: validation.errors.join("; "), data: null };
+        }
+
+        // Validate file content diff
+        const diffCheck = validateFileContent(updatedSource, { maxAddedLines: 200 });
+        if (!diffCheck.passed) {
+          console.log(`  ❌ Diff check failed: ${diffCheck.errors.join(", ")}`);
+          try {
+            const { execSync } = await import("node:child_process");
+            execSync(`git checkout -- ${result.filePath}`, { cwd: REPO_ROOT });
+          } catch {}
+          return { success: false, summary: `Diff check failed: ${diffCheck.errors.join("; ")}`, data: null };
+        }
+
         console.log("  Verifying build...");
         if (!buildSucceeds()) {
           console.error("  Build failed after content update. Reverting.");
@@ -539,6 +576,40 @@ export async function run(context) {
         const filePath = path.join(REPO_ROOT, `src/pages/blog/${componentName}.tsx`);
         writeFileSync(filePath, code);
         console.log(`  Wrote: src/pages/blog/${componentName}.tsx`);
+
+        // Validate generated content before writing supporting files
+        const newPostValidation = validate("content-writer", code, {
+          targetKeyword: action?.targetKeyword || topic.targetKeyword || "",
+          originalSize: 0,
+        });
+        if (!newPostValidation.passed) {
+          console.log(`  ❌ Validation failed: ${newPostValidation.errors.join(", ")}`);
+          try { unlinkSync(filePath); } catch {}
+          try {
+            await context.discord.post("seo", {
+              embeds: [{
+                title: `❌ ${name}: Output Rejected`,
+                description: newPostValidation.errors.map(e => `• ${e}`).join("\n").slice(0, 4000),
+                color: 15158332,
+              }],
+            });
+          } catch {}
+          if (attempt === MAX_RETRIES + 1) {
+            return { success: false, reason: newPostValidation.errors.join("; "), data: null };
+          }
+          continue;
+        }
+
+        // Validate file content diff
+        const newPostDiffCheck = validateFileContent(code, { maxAddedLines: 500 });
+        if (!newPostDiffCheck.passed) {
+          console.log(`  ❌ Diff check failed: ${newPostDiffCheck.errors.join(", ")}`);
+          try { unlinkSync(filePath); } catch {}
+          if (attempt === MAX_RETRIES + 1) {
+            return { success: false, summary: `Diff check failed: ${newPostDiffCheck.errors.join("; ")}`, data: null };
+          }
+          continue;
+        }
 
         // Update supporting files
         updateAppTsx(topic);

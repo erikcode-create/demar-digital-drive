@@ -7,6 +7,7 @@
 
 import { generateWithClaude } from "../../marketing/lib/claude-api.mjs";
 import { commitAndPush, buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { validate, validateFileContent } from "../lib/validators/index.mjs";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -261,11 +262,40 @@ Return the COMPLETE updated TypeScript file (no markdown fences, no explanation 
   }
 
   // -----------------------------------------------------------------------
-  // 4. Write the file and verify build
+  // 4. Validate output before writing
+  // -----------------------------------------------------------------------
+  const validation = validate("schema-generator", code, {
+    targetKeyword: action?.keyword || "",
+    originalSize: sourceCode.length,
+  });
+  if (!validation.passed) {
+    console.log(`  ❌ Validation failed: ${validation.errors.join(", ")}`);
+    try {
+      await context.discord.post("seo", {
+        embeds: [{
+          title: `❌ ${name}: Output Rejected`,
+          description: validation.errors.map(e => `• ${e}`).join("\n").slice(0, 4000),
+          color: 15158332,
+        }],
+      });
+    } catch {}
+    return { success: false, reason: validation.errors.join("; "), data: null };
+  }
+
+  // -----------------------------------------------------------------------
+  // 5. Write the file and verify build
   // -----------------------------------------------------------------------
   const originalCode = sourceCode;
   writeFileSync(fullPath, code);
   console.log(`  Wrote updated file: ${srcFile}`);
+
+  // Validate file content after write
+  const diffCheck = validateFileContent(readFileSync(fullPath, "utf-8"), { maxAddedLines: 200 });
+  if (!diffCheck.passed) {
+    console.log(`  ❌ Diff check failed: ${diffCheck.errors.join(", ")}`);
+    writeFileSync(fullPath, originalCode);
+    return { success: false, summary: `Diff check failed: ${diffCheck.errors.join("; ")}`, data: null };
+  }
 
   console.log("  Verifying build...");
   if (!buildSucceeds()) {

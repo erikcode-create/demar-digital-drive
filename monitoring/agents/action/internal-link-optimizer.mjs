@@ -8,6 +8,7 @@
 
 import { generateWithClaude } from "../../marketing/lib/claude-api.mjs";
 import { commitAndPush, buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { validate, validateFileContent } from "../lib/validators/index.mjs";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -250,7 +251,26 @@ Return ONLY the complete updated file. No markdown fences. No explanation.`;
         continue;
       }
 
+      // Validate generated output before writing
+      const validation = validate("internal-link-optimizer", code, {
+        targetKeyword: action?.keyword || "",
+        originalSize: originalCode.length,
+      });
+      if (!validation.passed) {
+        console.log(`  ❌ Validation failed for ${srcFile}: ${validation.errors.join(", ")}`);
+        continue;
+      }
+
       writeFileSync(fullPath, code);
+
+      // Validate file content after write
+      const diffCheck = validateFileContent(readFileSync(fullPath, "utf-8"), { maxAddedLines: 200 });
+      if (!diffCheck.passed) {
+        console.log(`  ❌ Diff check failed for ${srcFile}: ${diffCheck.errors.join(", ")}`);
+        writeFileSync(fullPath, originalCode);
+        continue;
+      }
+
       appliedCount++;
       appliedSuggestions.push(suggestion);
     } catch (err) {
