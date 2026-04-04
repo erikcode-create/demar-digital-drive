@@ -32,9 +32,14 @@ function statusIcon(rating) {
   return "\u274c";
 }
 
-async function fetchCWV(url) {
+async function fetchCWV(url, retries = 2) {
   const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&category=performance&strategy=mobile`;
   const res = await fetch(apiUrl);
+  if (res.status === 429 && retries > 0) {
+    console.log(`Rate limited on ${url}, waiting 30s before retry...`);
+    await sleep(30000);
+    return fetchCWV(url, retries - 1);
+  }
   if (!res.ok) {
     console.error(`PSI error for ${url}: ${res.status}`);
     return null;
@@ -106,7 +111,7 @@ export async function run(context) {
     const result = await fetchCWV(url);
     if (result) results.push(result);
     if (pages.indexOf(url) < pages.length - 1) {
-      await sleep(2000); // Rate limit -- be gentle on GreenGeeks
+      await sleep(5000); // Rate limit -- 5s between PSI requests to avoid 429s
     }
   }
 

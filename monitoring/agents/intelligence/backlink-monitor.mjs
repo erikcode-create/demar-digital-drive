@@ -1,8 +1,8 @@
-import { getBacklinks, authenticate } from "../../seo/lib/search-console.mjs";
+import { getExternalLinks, getTopPages, authenticate } from "../../seo/lib/search-console.mjs";
 
 export const name = "backlink-monitor";
 export const category = "intelligence";
-export const description = "Monitor backlink profile via Google Search Console Links API";
+export const description = "Monitor site visibility via Google Search Console page performance data";
 
 const GREEN = 3066993;
 const YELLOW = 16776960;
@@ -13,8 +13,8 @@ export async function run(context) {
     if (!context.config.dryRun) {
       await context.discord.post("seo-dashboard", {
         embeds: [{
-          title: "\ud83d\udd17 Backlink Monitor",
-          description: "Search Console not configured -- add `GOOGLE_SERVICE_ACCOUNT_JSON` secret.",
+          title: "🔗 Link & Page Monitor",
+          description: "Search Console not configured — add `GOOGLE_SERVICE_ACCOUNT_JSON` secret.",
           color: YELLOW,
           timestamp: new Date().toISOString(),
         }],
@@ -25,73 +25,71 @@ export async function run(context) {
 
   await authenticate();
 
-  const backlinks = await getBacklinks();
-  const total = backlinks.totalLinks || 0;
-  const domains = backlinks.topDomains || [];
-  const pages = backlinks.topPages || [];
+  // Get top pages by clicks/impressions (this is the closest to "link value" from Search Console)
+  const pagesResult = await getTopPages(28);
+  const rows = pagesResult.rows || [];
+
+  // Extract page-level metrics
+  const pages = rows.map(row => ({
+    page: row.keys[0],
+    clicks: row.clicks,
+    impressions: row.impressions,
+    ctr: row.ctr,
+    position: row.position,
+  })).sort((a, b) => b.clicks - a.clicks);
+
+  const totalClicks = pages.reduce((sum, p) => sum + p.clicks, 0);
+  const totalImpressions = pages.reduce((sum, p) => sum + p.impressions, 0);
+  const avgPosition = pages.length > 0
+    ? (pages.reduce((sum, p) => sum + p.position, 0) / pages.length).toFixed(1)
+    : "N/A";
 
   const previous = context.state.read("intelligence", "backlinks");
 
-  const data = { total, domains, pages, timestamp: new Date().toISOString() };
+  const data = {
+    totalClicks,
+    totalImpressions,
+    avgPosition: parseFloat(avgPosition) || 0,
+    pageCount: pages.length,
+    topPages: pages.slice(0, 20),
+    timestamp: new Date().toISOString(),
+  };
   context.state.write("intelligence", "backlinks", data);
 
-  // Compute new/lost
-  let newLost = "";
+  // Compute changes
+  let changes = "";
   if (previous) {
-    const diff = total - (previous.total || 0);
-    if (diff > 0) {
-      newLost = `\n**+${diff} new links** since last check`;
-    } else if (diff < 0) {
-      newLost = `\n**${diff} links lost** since last check`;
-    } else {
-      newLost = "\nNo change since last check";
-    }
-
-    // Identify new/lost domains
-    const prevDomainSet = new Set((previous.domains || []).map(d => d.domain));
-    const currDomainSet = new Set(domains.map(d => d.domain));
-    const newDomains = domains.filter(d => !prevDomainSet.has(d.domain));
-    const lostDomains = (previous.domains || []).filter(d => !currDomainSet.has(d.domain));
-
-    if (newDomains.length > 0) {
-      newLost += `\n**New domains:** ${newDomains.map(d => d.domain).join(", ")}`;
-    }
-    if (lostDomains.length > 0) {
-      newLost += `\n**Lost domains:** ${lostDomains.map(d => d.domain).join(", ")}`;
-    }
+    const clickDiff = totalClicks - (previous.totalClicks || 0);
+    const impDiff = totalImpressions - (previous.totalImpressions || 0);
+    const clickSign = clickDiff > 0 ? "+" : "";
+    const impSign = impDiff > 0 ? "+" : "";
+    changes = `\n**Clicks:** ${clickSign}${clickDiff} | **Impressions:** ${impSign}${impDiff}`;
   }
 
-  // Top 10 referring domains table
-  let domainTable = "Domain                         Links\n";
-  domainTable += "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500  \u2500\u2500\u2500\u2500\u2500\n";
-  const top10 = domains.slice(0, 10);
-  for (const d of top10) {
-    const dName = d.domain.length > 29 ? d.domain.slice(0, 28) + "\u2026" : d.domain.padEnd(29);
-    const count = String(d.count).padStart(5);
-    domainTable += `${dName}  ${count}\n`;
+  // Top 10 pages table
+  let pageTable = "Page                          Clicks  Pos\n";
+  pageTable += "─────────────────────────────  ──────  ────\n";
+  const top10 = pages.slice(0, 10);
+  for (const p of top10) {
+    const path = new URL(p.page).pathname;
+    const pName = path.length > 29 ? path.slice(0, 28) + "…" : path.padEnd(29);
+    const clicks = String(p.clicks).padStart(6);
+    const pos = p.position.toFixed(1).padStart(4);
+    pageTable += `${pName}  ${clicks}  ${pos}\n`;
   }
 
-  const prevTotal = previous?.total || 0;
-  const delta = total - prevTotal;
-  const sign = delta > 0 ? "+" : "";
-  const totalLine = `**Total backlinks:** ${total}${previous ? ` (${sign}${delta})` : ""}`;
-
-  const color = total > prevTotal ? GREEN : total < prevTotal ? RED : GREEN;
+  const summary = `${totalClicks} clicks, ${totalImpressions} impressions, avg pos ${avgPosition} (${pages.length} pages)`;
 
   if (!context.config.dryRun) {
     await context.discord.post("seo-dashboard", {
       embeds: [{
-        title: "\ud83d\udd17 Backlink Monitor",
-        description: `${totalLine}\n\`\`\`\n${domainTable}\`\`\`${newLost}`,
-        color,
+        title: "🔗 Link & Page Monitor",
+        description: `**Clicks:** ${totalClicks} | **Impressions:** ${totalImpressions} | **Avg Position:** ${avgPosition}\n\`\`\`\n${pageTable}\`\`\`${changes}`,
+        color: GREEN,
         timestamp: new Date().toISOString(),
       }],
     });
   }
 
-  return {
-    success: true,
-    summary: `${total} total backlinks, ${domains.length} referring domains${previous ? ` (${sign}${delta})` : ""}`,
-    data,
-  };
+  return { success: true, summary, data };
 }

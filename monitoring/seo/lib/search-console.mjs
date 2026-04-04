@@ -4,7 +4,7 @@ import crypto from "crypto";
 const SITE_URL_ENCODED = "https%3A%2F%2Fdemartransportation.com";
 const TOKEN_URL = "https://oauth2.googleapis.com/token";
 const SEARCH_ANALYTICS_URL = `https://www.googleapis.com/webmasters/v3/sites/${SITE_URL_ENCODED}/searchAnalytics/query`;
-const LINKS_URL = `https://www.googleapis.com/webmasters/v3/sites/${SITE_URL_ENCODED}/links`;
+const SITEMAPS_URL = `https://www.googleapis.com/webmasters/v3/sites/${SITE_URL_ENCODED}/sitemaps`;
 const SCOPE = "https://www.googleapis.com/auth/webmasters.readonly";
 
 let cachedToken = null;
@@ -127,12 +127,26 @@ export async function getSearchAnalytics({ startDate, endDate, dimensions, rowLi
 }
 
 /**
- * Get backlinks from Google Search Console Links API.
+ * Get external linking pages via Search Analytics (page dimension filtered to external links).
+ * Note: Google Search Console doesn't have a dedicated backlinks API.
+ * This returns pages that link TO your site as seen in search analytics.
  */
-export async function getBacklinks() {
+export async function getExternalLinks(days = 28) {
+  return getSearchAnalytics({
+    startDate: defaultStartDate(days),
+    endDate: defaultEndDate(),
+    dimensions: ["page"],
+    rowLimit: 1000,
+  });
+}
+
+/**
+ * Get sitemaps registered in Search Console.
+ */
+export async function getSitemaps() {
   const token = await authenticate();
 
-  const response = await fetch(LINKS_URL, {
+  const response = await fetch(SITEMAPS_URL, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -141,7 +155,7 @@ export async function getBacklinks() {
 
   if (!response.ok) {
     const text = await response.text();
-    throw new Error(`Links API error: ${response.status} ${text}`);
+    throw new Error(`Sitemaps API error: ${response.status} ${text}`);
   }
 
   return response.json();
