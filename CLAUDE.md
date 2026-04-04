@@ -94,12 +94,12 @@ Coordinated multi-agent system in `monitoring/agents/`. Agents share intelligenc
 
 #### Architecture
 
-5 phases run in sequence: Intelligence (data collection) → Analysis (evaluation) → Strategy (prioritization) → Action (execution) → Reporting (Discord).
+6 phases run in sequence: Intelligence (data collection) → Analysis (evaluation) → Strategy (prioritization) → Action (execution) → Review (approve/reject/revise) → Reporting (Discord).
 
 #### Agent Commands
 
 ```bash
-cd monitoring && npm run agents:full            # Full cycle: all 5 phases
+cd monitoring && npm run agents:full            # Full cycle: all 6 phases
 cd monitoring && npm run agents:intelligence    # Phase 1: rank tracking, search console, competitors, backlinks, CWV
 cd monitoring && npm run agents:analysis        # Phase 2: site audit, E-E-A-T, page scores, content gaps
 cd monitoring && npm run agents:strategy        # Phase 3: analyze all data, produce action queue
@@ -108,6 +108,8 @@ cd monitoring && npm run agents:dry-run         # Full cycle without executing a
 cd monitoring && npm run agents:rank-recovery   # Closed loop: detect rank drops → fix → monitor
 cd monitoring && npm run agents:content-gaps    # Closed loop: find gaps → write content → track
 cd monitoring && npm run agents:eeat            # Closed loop: score E-E-A-T → improve weak pages
+cd monitoring && npm run agents:review           # Review phase: evaluate pending changes, approve/reject/revise
+cd monitoring && npm run agents:review:dry-run    # Review phase without committing or posting to Discord
 ```
 
 Single agent: `cd monitoring && node agents/orchestrator.mjs --agent <name>`
@@ -139,6 +141,25 @@ Agent state stored in `monitoring/agents/state/` (gitignored). Categories: intel
 | Build Failures | health | `DISCORD_WEBHOOK_URL` |
 
 Requires `SERPER_API_KEY`, `GOOGLE_SERVICE_ACCOUNT_JSON`, `DISCORD_SEO_DASHBOARD_WEBHOOK_URL`, `DISCORD_SEO_WEBHOOK_URL`, and `ANTHROPIC_API_KEY` secrets.
+
+#### Review Pipeline
+
+Two-orchestrator architecture: the generation orchestrator writes candidates to `pending/`, the review orchestrator evaluates and commits approved ones.
+
+**Flow:** Research → Generate (Sonnet) → Pending → Review (Opus/Sonnet) → Revise (up to 3 rounds) → Commit or Reject
+
+**Model tiers:**
+- Content changes (blog posts, homepage): Opus reviewer
+- Technical changes (meta tags, schema, links): Sonnet reviewer
+- Writer escalation: Sonnet → Sonnet → Opus (on double failure)
+
+**Key modules:**
+- `monitoring/agents/review-orchestrator.mjs` — standalone review entry point
+- `monitoring/agents/lib/pending.mjs` — pending directory CRUD
+- `monitoring/agents/research/research-agent.mjs` — pre-generation web research
+- `monitoring/agents/review/reviewer-agent.mjs` — AI-powered change review with tiered models
+- `monitoring/agents/review/revision-loop.mjs` — revision with progressive model escalation
+- `monitoring/agents/review/competitor-fetcher.mjs` — live site + competitor page fetching
 
 #### Legacy Scripts
 
