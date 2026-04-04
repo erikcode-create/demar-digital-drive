@@ -8,8 +8,10 @@
  *   3. npm install --production in monitoring/
  *   4. Run agent phases: intelligence → analysis → strategy → action --limit 5
  *   5. git pull again (action agents may have pushed commits)
- *   6. Discord "complete" summary with per-phase status + duration
- *   7. On crash → Discord error notification
+ *   6. Review phase (review-orchestrator reviews pending changes from action phase)
+ *   7. git pull again (reviewer may have committed approved changes)
+ *   8. Discord "complete" summary with per-phase status + duration
+ *   9. On crash → Discord error notification
  */
 
 import "dotenv/config";
@@ -64,6 +66,18 @@ function gitPull() {
 
 // ─── Phase runner ──────────────────────────────────────────────────────────
 
+async function runReview() {
+  const start = Date.now();
+  const cmd = "node agents/review-orchestrator.mjs";
+  try {
+    run(cmd, { timeout: 15 * 60_000 }); // 15-minute timeout
+    return { phase: "review", status: "pass", duration: elapsed(start) };
+  } catch (err) {
+    console.error(`[nightly] Review phase failed:`, err.message);
+    return { phase: "review", status: "fail", duration: elapsed(start), error: err.message };
+  }
+}
+
 async function runPhase(phase, extraArgs = "") {
   const start = Date.now();
   const cmd = `node agents/orchestrator.mjs --phase ${phase}${extraArgs ? " " + extraArgs : ""}`;
@@ -83,7 +97,7 @@ async function notifyStarting() {
     await postToChannel("health", {
       embeds: [{
         title: "🌙 Nightly Agent Run — Starting",
-        description: `**DeMar Transportation** nightly SEO cycle is starting.\n\nPhases: intelligence → analysis → strategy → action\nStarted at: ${now()}`,
+        description: `**DeMar Transportation** nightly SEO cycle is starting.\n\nPhases: intelligence → analysis → strategy → action → review\nStarted at: ${now()}`,
         color: 3447003, // blue
         timestamp: new Date().toISOString(),
       }],
@@ -166,7 +180,15 @@ async function main() {
     console.log("[nightly] Step 4: git pull post-action");
     gitPull();
 
-    // 6. Complete notification
+    // 6. Review phase (reviews pending changes from action phase)
+    console.log("[nightly] Step 5: running review orchestrator");
+    phaseResults.push(await runReview());
+
+    // 7. git pull after review (reviewer may commit approved changes)
+    console.log("[nightly] Step 6: git pull post-review");
+    gitPull();
+
+    // 8. Complete notification
     const totalDuration = elapsed(globalStart);
     console.log(`[nightly] === Nightly run complete in ${totalDuration} ===`);
     await notifyComplete(phaseResults, totalDuration);
