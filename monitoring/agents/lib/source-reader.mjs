@@ -59,7 +59,7 @@ function resolveSourceFile(urlPath) {
 /**
  * Strip JSX tags and extract visible text content from TSX source.
  */
-function extractText(source) {
+export function extractText(source) {
   let text = source;
 
   // Handle BlogPost content={<>...</>} inline prop pattern
@@ -111,7 +111,7 @@ function extractText(source) {
 /**
  * Extract headings from TSX source (h1, h2, h3 text content).
  */
-function extractHeadings(source) {
+export function extractHeadings(source) {
   const headings = { h1: [], h2: [], h3: [] };
 
   for (const level of ["h1", "h2", "h3"]) {
@@ -137,7 +137,7 @@ function extractHeadings(source) {
 /**
  * Extract internal React Router links from TSX source.
  */
-function extractInternalLinks(source) {
+export function extractInternalLinks(source) {
   const links = [];
   // Match <Link to="/path"> patterns
   const regex = /<Link[^>]*to="([^"]+)"[^>]*>([\s\S]*?)<\/Link>/gi;
@@ -166,7 +166,7 @@ function extractInternalLinks(source) {
 /**
  * Extract meta title from useEffect or Helmet patterns.
  */
-function extractMetaTitle(source) {
+export function extractMetaTitle(source) {
   // Pattern: document.title = "..."
   const titleMatch = source.match(/document\.title\s*=\s*["'`]([^"'`]+)["'`]/);
   if (titleMatch) return titleMatch[1];
@@ -189,10 +189,10 @@ function extractMetaTitle(source) {
 /**
  * Extract meta description from source.
  */
-function extractMetaDescription(source) {
-  // Pattern: meta.setAttribute("content", "...")
-  const setAttrMatch = source.match(/setAttribute\(\s*["']content["']\s*,\s*["'`]([^"'`]+)["'`]\)/);
-  if (setAttrMatch) return setAttrMatch[1];
+export function extractMetaDescription(source) {
+  // Pattern: meta.setAttribute("content", "...") — value may span multiple lines
+  const setAttrMatch = source.match(/setAttribute\(\s*["']content["']\s*,\s*["'`]([\s\S]+?)["'`]\s*\)/);
+  if (setAttrMatch) return setAttrMatch[1].replace(/\s+/g, " ").trim();
 
   // Pattern: metaDescription="..." JSX prop (BlogPost component)
   const metaJsxMatch = source.match(/metaDescription="([^"]+)"/);
@@ -216,12 +216,18 @@ function extractMetaDescription(source) {
 /**
  * Extract image references from source.
  */
-function extractImages(source) {
+export function extractImages(source) {
   const images = [];
-  const regex = /<img[^>]*src=["']([^"']+)["'][^>]*(?:alt=["']([^"']*)["'])?/gi;
+  // Match the entire <img ...> or <img ... /> tag, then extract src and alt separately
+  const tagRegex = /<img\b([^>]*?)(?:\/>|>)/gi;
   let match;
-  while ((match = regex.exec(source)) !== null) {
-    images.push({ src: match[1], alt: match[2] || "" });
+  while ((match = tagRegex.exec(source)) !== null) {
+    const attrs = match[1];
+    const srcMatch = attrs.match(/src=["']([^"']+)["']/);
+    const altMatch = attrs.match(/alt=["']([^"']*)["']/);
+    if (srcMatch) {
+      images.push({ src: srcMatch[1], alt: altMatch ? altMatch[1] : "" });
+    }
   }
 
   // Also check JSX src={...} patterns
