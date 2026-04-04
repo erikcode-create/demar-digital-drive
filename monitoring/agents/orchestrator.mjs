@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import * as state from "./lib/state.mjs";
 import * as sourceReader from "./lib/source-reader.mjs";
 import { postToChannel } from "../lib/discord.mjs";
-import { writeStagingManifest } from "../marketing/lib/git-ops.mjs";
+import { runResearch } from "./research/research-agent.mjs";
 
 const __dirname = import.meta.dirname || new URL(".", import.meta.url).pathname;
 
@@ -217,16 +217,30 @@ async function runPhase(phaseName, context) {
       // Route to the right action agent based on action type
       const agentName = routeAction(action.type);
       if (agentName) {
-        const actionContext = { ...context, config: { ...context.config, currentAction: action } };
+        // Run research before generation
+        let researchContext = {};
+        try {
+          console.log(`  Researching context for action ${action.id}...`);
+          researchContext = await runResearch({
+            actionType: action.type,
+            targetKeyword: action.targetKeyword || "",
+            targetPage: action.targetPage || null,
+          });
+        } catch (err) {
+          console.warn(`  Research failed (non-blocking): ${err.message}`);
+        }
+
+        const actionContext = {
+          ...context,
+          config: {
+            ...context.config,
+            currentAction: action,
+            researchContext,
+          },
+        };
         const agentResult = await runAgent(agentName, actionContext);
         results[`${agentName}:${action.id}`] = agentResult;
-        if (agentResult.success) {
-          writeStagingManifest(agentName, [{
-            file: action?.targetPage || "",
-            url: action?.targetPage || "",
-            type: action?.type || "unknown",
-          }]);
-        }
+        // Note: writeStagingManifest removed — review orchestrator handles it after approval
       }
     }
     return results;
