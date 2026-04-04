@@ -200,6 +200,16 @@ Action types:
 - "fix-schema": add JSON-LD structured data to a page that is missing schema markup (BlogPosting for /blog/, Service for /services/, Article for /resources/, FAQPage for /faq, WebSite/LocalBusiness for homepage)
 - "fix-homepage": fix homepage-specific issues including missing H1, insufficient internal links to service pages, low content depth, or missing schema; targetPage should be "/"
 
+CRITICAL — targetPage URL format rules:
+- ALL paths must be lowercase kebab-case. Never use capital letters or underscores in targetPage.
+- Service pages: /services/dry-van, /services/reefer, /services/flatbed, /services/box-truck, /services/sprinter-van, /services/hazmat, /services/ftl, /services/ltl, /services/3pl, /services/warehousing
+- Core pages: /, /about, /contact, /quote, /careers, /faq, /privacy, /support
+- Blog pages: /blog/<kebab-case-slug> (e.g. /blog/freight-shipping-tips)
+- Resource pages: /resources/<kebab-case-slug>
+- New pages (write-content): use null for targetPage
+- WRONG examples (never do this): /services/Dry-Van, /Services/dry-van, /services/DryVan
+- CORRECT examples: /services/dry-van, /services/box-truck, /services/sprinter-van
+
 Return ONLY a JSON object (no markdown fences, no explanation) with this structure:
 {
   "actions": [

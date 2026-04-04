@@ -24,6 +24,26 @@ export const description =
 // Helpers
 // ---------------------------------------------------------------------------
 
+/**
+ * Normalize a URL path to lowercase kebab-case.
+ * Converts /services/Dry-Van or /Services/DryVan → /services/dry-van.
+ */
+function normalizeTargetPage(urlPath) {
+  if (!urlPath) return urlPath;
+  return urlPath
+    // Split on "/" to process each segment independently
+    .split("/")
+    .map((segment) => {
+      if (!segment) return segment; // preserve leading/trailing slashes
+      // PascalCase or camelCase → kebab-case (e.g. DryVan → dry-van)
+      return segment
+        .replace(/([a-z])([A-Z])/g, "$1-$2")
+        .replace(/([a-zA-Z])(\d)/g, "$1-$2")
+        .toLowerCase();
+    })
+    .join("/");
+}
+
 function pathToSourceFile(urlPath) {
   if (urlPath === "/") return "src/pages/Index.tsx";
   if (urlPath.startsWith("/blog/")) {
@@ -114,12 +134,19 @@ export async function run(context) {
   }
 
   console.log(`=== Schema Generator Agent ===`);
-  console.log(`Action: ${action.id} | Page: ${action.targetPage}`);
+
+  // Normalize targetPage to lowercase kebab-case as a safety net against
+  // strategy agent returning paths like /services/Dry-Van or /Services/DryVan.
+  const targetPage = normalizeTargetPage(action.targetPage);
+  if (targetPage !== action.targetPage) {
+    console.log(`  Normalized targetPage: ${action.targetPage} → ${targetPage}`);
+  }
+  console.log(`Action: ${action.id} | Page: ${targetPage}`);
 
   // -----------------------------------------------------------------------
   // 1. Read the current page source
   // -----------------------------------------------------------------------
-  const srcFile = pathToSourceFile(action.targetPage);
+  const srcFile = pathToSourceFile(targetPage);
   const fullPath = path.join(REPO_ROOT, srcFile);
 
   if (!existsSync(fullPath)) {
@@ -136,12 +163,12 @@ export async function run(context) {
     markActionCompleted(context, action.id);
     return {
       success: true,
-      summary: `Schema already present on ${action.targetPage}. No changes needed.`,
-      data: { page: action.targetPage, skipped: true },
+      summary: `Schema already present on ${targetPage}. No changes needed.`,
+      data: { page: targetPage, skipped: true },
     };
   }
 
-  const schemaType = inferSchemaType(action.targetPage);
+  const schemaType = inferSchemaType(targetPage);
   console.log(`  Inferred schema type: ${schemaType}`);
 
   // -----------------------------------------------------------------------
@@ -149,7 +176,7 @@ export async function run(context) {
   // -----------------------------------------------------------------------
   const prompt = `You are an expert React/TypeScript developer adding JSON-LD structured data to a React component.
 
-Page URL: ${action.targetPage} (full URL: ${SITE_URL}${action.targetPage})
+Page URL: ${targetPage} (full URL: ${SITE_URL}${targetPage})
 Schema type to add: ${schemaType}
 Reason: ${action.reason || "Page is missing structured data for SEO"}
 Additional context: ${action.details || "Add the most appropriate schema for this page type"}
@@ -172,7 +199,7 @@ DeMar Transportation details:
 Requirements:
 1. Add the useEffect INSIDE the component function, before the return statement
 2. The useEffect should create a script tag, set its type to "application/ld+json", set its innerHTML to JSON.stringify(schemaObject), append it to document.head, and return a cleanup function that removes it
-3. Use a unique id on the script tag (e.g., "schema-${schemaType.toLowerCase()}-${action.targetPage.replace(/\//g, "-").replace(/^-/, "")}") to avoid duplicates
+3. Use a unique id on the script tag (e.g., "schema-${schemaType.toLowerCase()}-${targetPage.replace(/\//g, "-").replace(/^-/, "")}") to avoid duplicates
 4. Generate realistic, accurate schema data matching the page content
 5. For Service schema: include name, description, provider (DeMar Transportation), areaServed (US), serviceType
 6. For BlogPosting schema: include headline, description, author, publisher, datePublished (use a plausible date from the content or today), url
@@ -232,7 +259,7 @@ Return the COMPLETE updated TypeScript file (no markdown fences, no explanation 
   // -----------------------------------------------------------------------
   // 5. Commit and push
   // -----------------------------------------------------------------------
-  const commitMsg = `[seo-auto] Add ${schemaType} JSON-LD schema: ${action.targetPage}`;
+  const commitMsg = `[seo-auto] Add ${schemaType} JSON-LD schema: ${targetPage}`;
   commitAndPush(commitMsg);
   console.log("  Committed and pushed.");
 
@@ -247,7 +274,7 @@ Return the COMPLETE updated TypeScript file (no markdown fences, no explanation 
       embeds: [{
         title: "JSON-LD Schema Added",
         description: [
-          `**Page:** ${action.targetPage}`,
+          `**Page:** ${targetPage}`,
           `**Schema Type:** ${schemaType}`,
           `**File:** \`${srcFile}\``,
           "",
@@ -261,9 +288,9 @@ Return the COMPLETE updated TypeScript file (no markdown fences, no explanation 
 
   return {
     success: true,
-    summary: `Added ${schemaType} JSON-LD schema to ${action.targetPage}`,
+    summary: `Added ${schemaType} JSON-LD schema to ${targetPage}`,
     data: {
-      page: action.targetPage,
+      page: targetPage,
       schemaType,
       file: srcFile,
     },

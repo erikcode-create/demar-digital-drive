@@ -206,7 +206,56 @@ Requirements:
 - Do NOT change document.title, meta tags, or any existing schema
 - Keep changes minimal and surgical — only fix the identified issues
 
-Return the COMPLETE updated TypeScript file (no markdown fences, no explanation — just the raw file content starting with imports).`;
+CRITICAL OUTPUT FORMAT:
+- Return the COMPLETE updated TypeScript file
+- No markdown fences, no explanation, no commentary
+- Start directly with the import statements
+- The LAST LINE of the file MUST be: export default Index;
+  (or whatever the component name is — the named function/const at the top level)
+- Do NOT omit the export default statement under any circumstances`;
+
+  // Helper: clean raw LLM output into valid TS source
+  function cleanGeneratedCode(raw) {
+    let c = raw.trim();
+    // Strip markdown fences if present
+    const fenceMatch = c.match(/```(?:tsx?|jsx?|typescript|javascript)?\s*\n([\s\S]*?)```/);
+    if (fenceMatch) {
+      c = fenceMatch[1].trim();
+    } else if (!c.startsWith("import")) {
+      const anyImport = c.indexOf("import ");
+      if (anyImport !== -1) c = c.substring(anyImport);
+    }
+    // Trim anything after the last export default statement
+    const exportMatch = c.match(/export default \w+;/);
+    if (exportMatch) {
+      c = c.substring(0, exportMatch.index + exportMatch[0].length);
+    }
+    return c;
+  }
+
+  // Helper: attempt to salvage code that is missing export default
+  function salvageExportDefault(c) {
+    // Already fine
+    if (c.includes("export default")) return c;
+
+    // Try to find "export function Name" or "export const Name" (named export component)
+    const namedExport = c.match(/export\s+(?:function|const)\s+(\w+)/);
+    if (namedExport) {
+      const componentName = namedExport[1];
+      console.warn(`  [fallback] Appending "export default ${componentName};" — was missing from generated code`);
+      return c + `\n\nexport default ${componentName};\n`;
+    }
+
+    // Try to find a plain "function Name(" or "const Name = " at the top level
+    const funcDecl = c.match(/^(?:function|const)\s+(\w+)/m);
+    if (funcDecl) {
+      const componentName = funcDecl[1];
+      console.warn(`  [fallback] Appending "export default ${componentName};" — was missing from generated code`);
+      return c + `\n\nexport default ${componentName};\n`;
+    }
+
+    return c; // Could not salvage
+  }
 
   console.log("  Generating improved homepage with Claude (sonnet)...");
   let updatedCode;
@@ -216,24 +265,39 @@ Return the COMPLETE updated TypeScript file (no markdown fences, no explanation 
     return { success: false, summary: `Failed to generate homepage improvements: ${err.message}`, data: null };
   }
 
-  // Clean up the response
-  let code = updatedCode.trim();
-  const fenceMatch = code.match(/```(?:tsx?|jsx?|typescript|javascript)?\s*\n([\s\S]*?)```/);
-  if (fenceMatch) {
-    code = fenceMatch[1].trim();
-  } else if (!code.startsWith("import")) {
-    const anyImport = code.indexOf("import ");
-    if (anyImport !== -1) code = code.substring(anyImport);
-  }
+  let code = cleanGeneratedCode(updatedCode);
+  code = salvageExportDefault(code);
 
-  // Ensure the code ends at the export default
-  const exportMatch = code.match(/export default \w+;/);
-  if (exportMatch) {
-    code = code.substring(0, exportMatch.index + exportMatch[0].length);
-  }
-
+  // If still missing export default, retry once with a more explicit prompt
   if (!code.includes("export default")) {
-    return { success: false, summary: "Generated code missing export default", data: null };
+    console.warn("  [retry] Generated code still missing export default. Retrying with stricter prompt...");
+
+    const retryPrompt = `${prompt}
+
+IMPORTANT REMINDER: Your previous response was missing the required "export default" statement.
+The very last line of your response MUST be exactly:
+  export default Index;
+(Replace "Index" with the actual component name if different.)
+Do not include any markdown, fences, or commentary — only raw TypeScript.`;
+
+    let retryOutput;
+    try {
+      retryOutput = await generateWithClaude(retryPrompt, { model: "sonnet", timeout: 120000 });
+    } catch (err) {
+      return { success: false, summary: `Retry generation failed: ${err.message}`, data: null };
+    }
+
+    code = cleanGeneratedCode(retryOutput);
+    code = salvageExportDefault(code);
+
+    if (!code.includes("export default")) {
+      return {
+        success: false,
+        summary: "Generated code missing export default after retry and salvage attempt",
+        data: null,
+      };
+    }
+    console.log("  Retry succeeded — export default found.");
   }
 
   // -----------------------------------------------------------------------
