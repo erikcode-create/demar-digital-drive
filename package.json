@@ -12,7 +12,12 @@
     "preview": "vite preview",
     "test": "vitest run --config tests/vitest.config.ts",
     "test:watch": "vitest --config tests/vitest.config.ts",
-    "test:unit": "vitest run --config tests/vitest.config.ts"
+    "test:unit": "vitest run --config tests/vitest.config.ts",
+    "test:e2e": "playwright test --config tests/playwright.config.ts",
+    "test:e2e:visual": "playwright test tests/e2e/visual/ --config tests/playwright.config.ts",
+    "test:smoke": "SMOKE_BASE_URL=https://demartransportation.com playwright test tests/smoke/ --config tests/playwright.config.ts",
+    "test:update-snapshots": "playwright test tests/e2e/visual/ --config tests/playwright.config.ts --update-snapshots",
+    "test:all": "npm run test:unit && npm run test:e2e"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
