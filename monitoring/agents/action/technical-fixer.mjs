@@ -7,7 +7,8 @@
  */
 
 import { generateWithClaude } from "../../marketing/lib/claude-api.mjs";
-import { commitAndPush, buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { writePending } from "../lib/pending.mjs";
 import { validate, validateFileContent } from "../lib/validators/index.mjs";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
@@ -130,7 +131,7 @@ Also check for any images used via CSS background-image and suggest adding aria-
 
 Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
-  return generateWithClaude(prompt, { model: "haiku", timeout: 120000 });
+  return generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
 }
 
 async function fixBrokenLinks(sourceCode, fullPath, action) {
@@ -152,7 +153,7 @@ For broken internal links, update to the correct path. For broken external links
 
 Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
-  return generateWithClaude(prompt, { model: "haiku", timeout: 120000 });
+  return generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
 }
 
 async function fixSchema(sourceCode, fullPath, action) {
@@ -179,7 +180,7 @@ Add the schema as a <script type="application/ld+json"> tag in a useEffect or vi
 
 Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
-  return generateWithClaude(prompt, { model: "haiku", timeout: 120000 });
+  return generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
 }
 
 async function fixGeneral(sourceCode, fullPath, action) {
@@ -203,7 +204,7 @@ Fix the described issue while following these rules:
 
 Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
-  return generateWithClaude(prompt, { model: "haiku", timeout: 120000 });
+  return generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
 }
 
 // ---------------------------------------------------------------------------
@@ -384,12 +385,29 @@ export async function run(context) {
   }
 
   // -----------------------------------------------------------------------
-  // 5. Commit and push
+  // 5. Write to pending and revert
   // -----------------------------------------------------------------------
   const issueLabel = issueTypes.join(", ");
-  const commitMsg = `[seo-auto] Fix technical: ${issueLabel} on ${action.targetPage}`;
-  commitAndPush(commitMsg);
-  console.log("  Committed and pushed.");
+  const finalCode = readFileSync(fullPath, "utf-8");
+
+  writePending({
+    actionId: action.id,
+    type: action.type,
+    priority: action.priority || 1,
+    targetPage: action.targetPage || "/",
+    targetKeyword: action.targetKeyword || "",
+    targetFile: srcFile,
+    reason: action.reason || "",
+    agentModel: "sonnet",
+    reviewTier: "sonnet",
+    originalCode: originalCode,
+    modifiedCode: finalCode,
+    researchContext: context.config.researchContext || {},
+  });
+  console.log("  Staged to pending directory.");
+
+  // Restore original file so working tree is clean for next action
+  writeFileSync(fullPath, originalCode);
 
   markActionCompleted(context, action.id);
 
@@ -400,7 +418,7 @@ export async function run(context) {
     await context.discord.post("seo", {
       content: `**Technical Fixer Agent**`,
       embeds: [{
-        title: "Technical Issue Fixed",
+        title: "Technical Fix Staged for Review",
         description: [
           `**Page:** ${action.targetPage}`,
           `**Issue type:** ${issueLabel}`,

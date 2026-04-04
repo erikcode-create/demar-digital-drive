@@ -6,7 +6,8 @@
  */
 
 import { generateWithClaude } from "../../marketing/lib/claude-api.mjs";
-import { commitAndPush, buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { writePending } from "../lib/pending.mjs";
 import { validate, validateFileContent } from "../lib/validators/index.mjs";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
@@ -345,11 +346,26 @@ Do not include any markdown, fences, or commentary — only raw TypeScript.`;
   }
 
   // -----------------------------------------------------------------------
-  // 6. Commit and push
+  // 6. Write to pending and revert
   // -----------------------------------------------------------------------
-  const commitMsg = `[seo-auto] Optimize homepage: H1, internal links, schema`;
-  commitAndPush(commitMsg);
-  console.log("  Committed and pushed.");
+  writePending({
+    actionId: action.id,
+    type: action.type,
+    priority: action.priority || 1,
+    targetPage: "/",
+    targetKeyword: action.targetKeyword || "",
+    targetFile: HOMEPAGE_SOURCE,
+    reason: action.reason || `Fix homepage issues: ${issues.join("; ")}`,
+    agentModel: "sonnet",
+    reviewTier: "opus",
+    originalCode: originalCode,
+    modifiedCode: code,
+    researchContext: context.config.researchContext || {},
+  });
+  console.log("  Staged to pending directory.");
+
+  // Restore original file so working tree is clean for next action
+  writeFileSync(fullPath, originalCode);
 
   markActionCompleted(context, action.id);
 
@@ -360,7 +376,7 @@ Do not include any markdown, fences, or commentary — only raw TypeScript.`;
     await context.discord.post("seo", {
       content: `**Homepage Optimizer Agent**`,
       embeds: [{
-        title: "Homepage Optimized",
+        title: "Homepage Changes Staged for Review",
         description: [
           `**Page:** / (Homepage)`,
           `**Issues Fixed (${issues.length}):**`,
@@ -376,7 +392,7 @@ Do not include any markdown, fences, or commentary — only raw TypeScript.`;
 
   return {
     success: true,
-    summary: `Optimized homepage: fixed ${issues.length} issue(s) (${issues.join("; ")})`,
+    summary: `Staged homepage optimization for review: ${issues.length} issue(s) addressed (${issues.join("; ")})`,
     data: {
       page: "/",
       issuesFixed: issues,

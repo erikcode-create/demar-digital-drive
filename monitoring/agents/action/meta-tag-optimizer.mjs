@@ -7,7 +7,8 @@
  */
 
 import { generateWithClaude } from "../../marketing/lib/claude-api.mjs";
-import { commitAndPush, buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { writePending } from "../lib/pending.mjs";
 import { validate, validateFileContent } from "../lib/validators/index.mjs";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
@@ -170,10 +171,10 @@ Return ONLY a JSON object (no markdown fences):
   "reasoning": "Brief explanation of why these are better"
 }`;
 
-  console.log("  Generating optimized meta tags with Claude (haiku)...");
+  console.log("  Generating optimized meta tags with Claude (sonnet)...");
   let newMeta;
   try {
-    const output = await generateWithClaude(prompt, { model: "haiku", timeout: 60000 });
+    const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 60000 });
     const match = output.match(/\{[\s\S]*\}/);
     if (!match) throw new Error("Could not parse meta tag response");
     newMeta = JSON.parse(match[0]);
@@ -206,7 +207,7 @@ Return the complete updated file.`;
   console.log("  Applying meta tag changes...");
   let updatedCode;
   try {
-    updatedCode = await generateWithClaude(editPrompt, { model: "haiku", timeout: 120000 });
+    updatedCode = await generateWithClaude(editPrompt, { model: "sonnet", timeout: 120000 });
   } catch (err) {
     return { success: false, summary: `Failed to apply meta tag edits: ${err.message}`, data: null };
   }
@@ -275,11 +276,26 @@ Return the complete updated file.`;
   }
 
   // -----------------------------------------------------------------------
-  // 5. Commit and push
+  // 5. Write to pending and revert
   // -----------------------------------------------------------------------
-  const commitMsg = `[seo-auto] Optimize meta tags: ${action.targetPage}`;
-  commitAndPush(commitMsg);
-  console.log("  Committed and pushed.");
+  writePending({
+    actionId: action.id,
+    type: action.type,
+    priority: action.priority || 1,
+    targetPage: action.targetPage || "/",
+    targetKeyword: action.targetKeyword || "",
+    targetFile: srcFile,
+    reason: action.reason || "",
+    agentModel: "sonnet",
+    reviewTier: "sonnet",
+    originalCode: originalCode,
+    modifiedCode: code,
+    researchContext: context.config.researchContext || {},
+  });
+  console.log("  Staged to pending directory.");
+
+  // Restore original file so working tree is clean for next action
+  writeFileSync(fullPath, originalCode);
 
   markActionCompleted(context, action.id);
 
@@ -290,7 +306,7 @@ Return the complete updated file.`;
     await context.discord.post("seo", {
       content: `**Meta Tag Optimizer Agent**`,
       embeds: [{
-        title: "Meta Tags Optimized",
+        title: "Meta Tags Staged for Review",
         description: [
           `**Page:** ${action.targetPage}`,
           `**Keyword:** ${action.targetKeyword || "N/A"}`,

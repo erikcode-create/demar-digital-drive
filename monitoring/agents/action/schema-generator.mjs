@@ -6,7 +6,8 @@
  */
 
 import { generateWithClaude } from "../../marketing/lib/claude-api.mjs";
-import { commitAndPush, buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { writePending } from "../lib/pending.mjs";
 import { validate, validateFileContent } from "../lib/validators/index.mjs";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
@@ -229,10 +230,10 @@ Requirements:
 
 Return the COMPLETE updated TypeScript file (no markdown fences, no explanation — just the raw file content starting with imports).`;
 
-  console.log("  Generating schema with Claude (haiku)...");
+  console.log("  Generating schema with Claude (sonnet)...");
   let updatedCode;
   try {
-    updatedCode = await generateWithClaude(prompt, { model: "haiku", timeout: 120000 });
+    updatedCode = await generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
   } catch (err) {
     return { success: false, summary: `Failed to generate schema: ${err.message}`, data: null };
   }
@@ -305,11 +306,26 @@ Return the COMPLETE updated TypeScript file (no markdown fences, no explanation 
   }
 
   // -----------------------------------------------------------------------
-  // 5. Commit and push
+  // 5. Write to pending and revert
   // -----------------------------------------------------------------------
-  const commitMsg = `[seo-auto] Add ${schemaType} JSON-LD schema: ${targetPage}`;
-  commitAndPush(commitMsg);
-  console.log("  Committed and pushed.");
+  writePending({
+    actionId: action.id,
+    type: action.type,
+    priority: action.priority || 1,
+    targetPage: targetPage || "/",
+    targetKeyword: action.targetKeyword || "",
+    targetFile: srcFile,
+    reason: action.reason || "",
+    agentModel: "sonnet",
+    reviewTier: "sonnet",
+    originalCode: originalCode,
+    modifiedCode: code,
+    researchContext: context.config.researchContext || {},
+  });
+  console.log("  Staged to pending directory.");
+
+  // Restore original file so working tree is clean for next action
+  writeFileSync(fullPath, originalCode);
 
   markActionCompleted(context, action.id);
 
@@ -320,7 +336,7 @@ Return the COMPLETE updated TypeScript file (no markdown fences, no explanation 
     await context.discord.post("seo", {
       content: `**Schema Generator Agent**`,
       embeds: [{
-        title: "JSON-LD Schema Added",
+        title: "JSON-LD Schema Staged for Review",
         description: [
           `**Page:** ${targetPage}`,
           `**Schema Type:** ${schemaType}`,

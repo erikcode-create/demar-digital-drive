@@ -7,7 +7,8 @@
  */
 
 import { generateWithClaude } from "../../marketing/lib/claude-api.mjs";
-import { commitAndPush, buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { writePending } from "../lib/pending.mjs";
 import { validate, validateFileContent } from "../lib/validators/index.mjs";
 import { readFileSync, writeFileSync, readdirSync, existsSync, unlinkSync } from "node:fs";
 import path from "node:path";
@@ -78,8 +79,8 @@ Create a blog post plan for this topic. Return ONLY a JSON object (no markdown f
 
 Provide 5 FAQs and 4 related links pointing to real pages on demartransportation.com.`;
 
-  console.log("  Generating topic metadata with Claude (haiku)...");
-  const output = await generateWithClaude(prompt, { model: "haiku", timeout: 120000 });
+  console.log("  Generating topic metadata with Claude (sonnet)...");
+  const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
   const match = output.match(/\{[\s\S]*\}/);
   if (!match) {
     throw new Error("Could not parse topic metadata from Claude response");
@@ -87,7 +88,7 @@ Provide 5 FAQs and 4 related links pointing to real pages on demartransportation
   return JSON.parse(match[0]);
 }
 
-async function writeBlogPost(topic) {
+async function writeBlogPost(topic, researchContext = "") {
   const today = new Date().toISOString().split("T")[0];
   const faqsJson = JSON.stringify(topic.faqs, null, 2);
   const relatedLinksJson = JSON.stringify(topic.relatedLinks, null, 2);
@@ -183,8 +184,16 @@ CRITICAL WRITING GUIDELINES:
 
 Return ONLY the complete .tsx file content. No markdown fences. No explanation. Raw TypeScript/React code starting with "import" and ending with the export default statement.`;
 
+  // Inject research context before the CRITICAL WRITING GUIDELINES section
+  const finalPrompt = researchContext
+    ? prompt.replace(
+        "CRITICAL WRITING GUIDELINES:",
+        `RESEARCH CONTEXT (use this to inform your writing):\n${researchContext}\n\nCRITICAL WRITING GUIDELINES:`
+      )
+    : prompt;
+
   console.log(`  Writing blog post: ${topic.title}...`);
-  const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 300000 });
+  const output = await generateWithClaude(finalPrompt, { model: "sonnet", timeout: 300000 });
 
   let code = output.trim();
 
@@ -376,10 +385,11 @@ Return ONLY the complete updated .tsx file. No markdown fences. No explanation.`
     throw new Error(`Source file not found: ${srcFile}`);
   }
 
+  const originalSource = readFileSync(fullPath, "utf-8");
   writeFileSync(fullPath, code);
   console.log(`  Wrote updated file: ${srcFile}`);
 
-  return { success: true, filePath: srcFile };
+  return { success: true, filePath: srcFile, originalCode: originalSource, generatedCode: code };
 }
 
 function pathToSourceFile(urlPath) {
@@ -515,9 +525,28 @@ export async function run(context) {
           continue;
         }
 
-        const commitMsg = `[seo-auto] Update content: ${action.targetPage} (${action.targetKeyword || "content improvement"})`;
-        commitAndPush(commitMsg);
-        console.log("  Committed and pushed.");
+        // Write candidate to pending directory instead of committing
+        writePending({
+          actionId: action.id,
+          type: action.type,
+          priority: action.priority || 1,
+          targetPage: action.targetPage || "/",
+          targetKeyword: action.targetKeyword || "",
+          targetFile: result.filePath,
+          reason: action.reason || "",
+          agentModel: "sonnet",
+          reviewTier: "sonnet",
+          originalCode: result.originalCode,
+          modifiedCode: result.generatedCode,
+          researchContext: context.config.researchContext || {},
+        });
+        console.log("  Staged to pending directory.");
+
+        // Revert the file so the working tree is clean for the next action
+        try {
+          const { execSync } = await import("node:child_process");
+          execSync(`git checkout -- ${result.filePath}`, { cwd: REPO_ROOT });
+        } catch {}
 
         markActionCompleted(context, action.id);
 
@@ -525,9 +554,9 @@ export async function run(context) {
           await context.discord.post("seo", {
             content: `**Content Writer Agent**`,
             embeds: [{
-              title: "Content Updated",
-              description: `**Page:** ${action.targetPage}\n**Keyword:** ${action.targetKeyword || "N/A"}\n**Reason:** ${action.reason}\n\n[View page](${SITE_URL}${action.targetPage})`,
-              color: 3066993,
+              title: "Content Candidate Staged for Review",
+              description: `**Page:** ${action.targetPage}\n**Keyword:** ${action.targetKeyword || "N/A"}\n**Reason:** ${action.reason}\n\nAwiting review before publishing.`,
+              color: 16776960,
               timestamp: new Date().toISOString(),
             }],
           });
@@ -535,7 +564,7 @@ export async function run(context) {
 
         return {
           success: true,
-          summary: `Updated content on ${action.targetPage}`,
+          summary: `Staged content update for ${action.targetPage} (pending review)`,
           data: { page: action.targetPage, type: "update-content" },
         };
       } catch (err) {
@@ -569,8 +598,19 @@ export async function run(context) {
           console.log(`  Slug conflict, using: ${topic.slug}`);
         }
 
+        // Format research context if available
+        let formattedResearch = "";
+        if (context.config.researchContext) {
+          try {
+            const { formatResearchContext } = await import("../research/research-agent.mjs");
+            formattedResearch = formatResearchContext(context.config.researchContext);
+          } catch {
+            // Not critical — proceed without research context
+          }
+        }
+
         // Write the full post
-        code = await writeBlogPost(topic);
+        code = await writeBlogPost(topic, formattedResearch);
 
         const componentName = slugToComponentName(topic.slug);
         const filePath = path.join(REPO_ROOT, `src/pages/blog/${componentName}.tsx`);
@@ -635,11 +675,49 @@ export async function run(context) {
           continue;
         }
 
-        // Commit and push
-        const today = new Date().toISOString().split("T")[0];
-        const commitMsg = `[seo-auto] New blog post: ${topic.title} (${today})`;
-        commitAndPush(commitMsg);
-        console.log("  Committed and pushed to main.");
+        // Capture auxiliary file content before reverting
+        const auxFiles = {};
+        const auxPaths = [
+          "src/App.tsx",
+          "src/pages/Blog.tsx",
+          "scripts/prerender.mjs",
+          "public/sitemap.xml",
+        ];
+        for (const auxPath of auxPaths) {
+          try {
+            auxFiles[auxPath] = readFileSync(path.join(REPO_ROOT, auxPath), "utf-8");
+          } catch {
+            // Not all aux files may exist
+          }
+        }
+
+        // Write candidate to pending directory instead of committing
+        const blogSrcFile = `src/pages/blog/${componentName}.tsx`;
+        writePending({
+          actionId: action.id,
+          type: action.type,
+          priority: action.priority || 1,
+          targetPage: `/blog/${topic.slug}`,
+          targetKeyword: topic.targetKeyword || action.targetKeyword || "",
+          targetFile: blogSrcFile,
+          reason: action.reason || "",
+          agentModel: "sonnet",
+          reviewTier: "opus",
+          originalCode: "",
+          modifiedCode: code,
+          researchContext: context.config.researchContext || {},
+          auxiliaryFiles: auxFiles,
+        });
+        console.log("  Staged to pending directory.");
+
+        // Revert all file changes so working tree is clean for next action
+        try { unlinkSync(filePath); } catch {}
+        try {
+          const { execSync } = await import("node:child_process");
+          execSync("git checkout -- src/App.tsx src/pages/Blog.tsx scripts/prerender.mjs public/sitemap.xml", {
+            cwd: REPO_ROOT,
+          });
+        } catch {}
 
         markActionCompleted(context, action.id);
 
@@ -648,18 +726,18 @@ export async function run(context) {
           await context.discord.post("seo", {
             content: `**Content Writer Agent**`,
             embeds: [{
-              title: "New Blog Post Published",
-              description: `**[${topic.title}](${SITE_URL}/blog/${topic.slug})**\nKeyword: \`${topic.targetKeyword}\` | ${topic.category}\n\n**Reason:** ${action.reason}`,
-              color: 3066993,
+              title: "New Blog Post Staged for Review",
+              description: `**${topic.title}**\nKeyword: \`${topic.targetKeyword}\` | ${topic.category}\n\n**Reason:** ${action.reason}\n\nAwaiting review before publishing.`,
+              color: 16776960,
               timestamp: new Date().toISOString(),
-              footer: { text: "Committed to main | Auto-deploying" },
+              footer: { text: "Staged to pending | Awaiting review" },
             }],
           });
         } catch {}
 
         return {
           success: true,
-          summary: `Published new blog post: ${topic.title}`,
+          summary: `Staged new blog post for review: ${topic.title}`,
           data: { slug: topic.slug, title: topic.title, type: "write-content" },
         };
       } catch (err) {

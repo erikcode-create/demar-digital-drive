@@ -7,7 +7,8 @@
  */
 
 import { generateWithClaude } from "../../marketing/lib/claude-api.mjs";
-import { commitAndPush, buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { buildSucceeds } from "../../marketing/lib/git-ops.mjs";
+import { writePending } from "../lib/pending.mjs";
 import { validate, validateFileContent } from "../lib/validators/index.mjs";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
@@ -181,7 +182,7 @@ Return ONLY a JSON array (no markdown fences) of the top 5 most impactful link a
   console.log("  Getting link suggestions from Claude (haiku)...");
   let suggestions;
   try {
-    const output = await generateWithClaude(prompt, { model: "haiku", timeout: 120000 });
+    const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
     const match = output.match(/\[[\s\S]*\]/);
     suggestions = match ? JSON.parse(match[0]) : [];
   } catch (err) {
@@ -200,6 +201,8 @@ Return ONLY a JSON array (no markdown fences) of the top 5 most impactful link a
   // -----------------------------------------------------------------------
   let appliedCount = 0;
   const appliedSuggestions = [];
+  // Track original+modified code per file for pending staging
+  const appliedFileChanges = [];
   const limit = context.config.limit || 5;
 
   for (const suggestion of suggestions.slice(0, limit)) {
@@ -230,7 +233,7 @@ Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
     try {
       console.log(`  Adding link: ${suggestion.sourcePath} -> ${suggestion.targetPath}...`);
-      const output = await generateWithClaude(fixPrompt, { model: "haiku", timeout: 120000 });
+      const output = await generateWithClaude(fixPrompt, { model: "sonnet", timeout: 120000 });
 
       let code = output.trim();
       const fenceMatch = code.match(/```(?:tsx?|jsx?|typescript|javascript)?\s*\n([\s\S]*?)```/);
@@ -273,6 +276,7 @@ Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
       appliedCount++;
       appliedSuggestions.push(suggestion);
+      appliedFileChanges.push({ srcFile, fullPath, originalCode, modifiedCode: code, suggestion });
     } catch (err) {
       console.error(`  Failed to apply link to ${srcFile}: ${err.message}`);
     }
@@ -297,18 +301,40 @@ Return ONLY the complete updated file. No markdown fences. No explanation.`;
   }
 
   // -----------------------------------------------------------------------
-  // 5. Commit and push
+  // 5. Write each change to pending and revert files
   // -----------------------------------------------------------------------
-  const commitMsg = `[seo-auto] Add ${appliedCount} internal link(s)${action.targetPage ? ` for ${action.targetPage}` : ""}`;
-  commitAndPush(commitMsg);
-  console.log("  Committed and pushed.");
+  for (let i = 0; i < appliedFileChanges.length; i++) {
+    const change = appliedFileChanges[i];
+    const pendingId = `${action.id}-link-${i + 1}`;
+    writePending({
+      actionId: pendingId,
+      type: action.type,
+      priority: action.priority || 1,
+      targetPage: change.suggestion.sourcePath,
+      targetKeyword: action.targetKeyword || "",
+      targetFile: change.srcFile,
+      reason: `Add internal link: ${change.suggestion.sourcePath} -> ${change.suggestion.targetPath} ("${change.suggestion.anchorText}")`,
+      agentModel: "sonnet",
+      reviewTier: "sonnet",
+      originalCode: change.originalCode,
+      modifiedCode: change.modifiedCode,
+      researchContext: context.config.researchContext || {},
+    });
+    console.log(`  Staged link change ${i + 1}/${appliedFileChanges.length} to pending.`);
+  }
+
+  // Revert all modified files so working tree is clean for next action
+  try {
+    const { execSync } = await import("node:child_process");
+    execSync("git checkout -- .", { cwd: REPO_ROOT });
+  } catch {}
 
   markActionCompleted(context, action.id);
 
   // -----------------------------------------------------------------------
   // 6. Post to Discord
   // -----------------------------------------------------------------------
-  let desc = `**${appliedCount} internal link(s) added.**\n\n`;
+  let desc = `**${appliedCount} internal link(s) staged for review.**\n\n`;
   for (const s of appliedSuggestions) {
     desc += `- ${s.sourcePath} -> ${s.targetPath}: "${s.anchorText}"\n`;
   }
@@ -317,9 +343,9 @@ Return ONLY the complete updated file. No markdown fences. No explanation.`;
     await context.discord.post("seo", {
       content: `**Internal Link Optimizer Agent**`,
       embeds: [{
-        title: "Internal Links Optimized",
+        title: "Internal Links Staged for Review",
         description: desc.substring(0, 4000),
-        color: 3066993,
+        color: 16776960,
         timestamp: new Date().toISOString(),
       }],
     });
@@ -327,7 +353,7 @@ Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
   return {
     success: true,
-    summary: `Added ${appliedCount} internal link(s)`,
+    summary: `Staged ${appliedCount} internal link change(s) for review`,
     data: { suggestions: suggestions.length, applied: appliedCount, links: appliedSuggestions },
   };
 }
