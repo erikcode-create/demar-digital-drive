@@ -10,8 +10,9 @@
  *   5. git pull again (action agents may have pushed commits)
  *   6. Review phase (review-orchestrator reviews pending changes from action phase)
  *   7. git pull again (reviewer may have committed approved changes)
- *   8. Discord "complete" summary with per-phase status + duration
- *   9. On crash → Discord error notification
+ *   8. Dashboard phase (snapshot, generate, deploy, Discord notify)
+ *   9. Discord "complete" summary with per-phase status + duration
+ *  10. On crash → Discord error notification
  */
 
 import "dotenv/config";
@@ -78,6 +79,56 @@ async function runReview() {
   }
 }
 
+async function runDashboard(phaseResults) {
+  const start = Date.now();
+  try {
+    // 1. Save daily snapshot
+    run("node dashboard/snapshot.mjs", { timeout: 60_000 });
+
+    // 2. Generate dashboard HTML
+    run("node dashboard/generate.mjs", { timeout: 60_000 });
+
+    // 3. Deploy via FTP (skip if no FTP credentials)
+    if (process.env.FTP_SERVER) {
+      run("node dashboard/deploy.mjs", { timeout: 60_000 });
+    } else {
+      console.log("[nightly] Skipping dashboard deploy — no FTP_SERVER configured");
+    }
+
+    // 4. Post to Discord
+    const dashboardToken = process.env.SEO_DASHBOARD_TOKEN || "";
+    const dashboardUrl = `https://demartransportation.com/seo-dashboard/${dashboardToken ? `?key=${dashboardToken}` : ""}`;
+
+    try {
+      const { notifyDashboardUpdate } = await import("./dashboard/notify.mjs");
+      const { loadHistory } = await import("./dashboard/snapshot.mjs");
+      const history = loadHistory();
+      const latest = history[history.length - 1] || {};
+      const prev = history[history.length - 2] || {};
+      const score = latest.siteAudit?.score ?? 0;
+      const prevScore = prev.siteAudit?.score ?? score;
+
+      await notifyDashboardUpdate({
+        score,
+        delta: score - prevScore,
+        dashboardUrl,
+        agentsPassed: phaseResults.filter((r) => r.status === "pass").length,
+        agentsTotal: phaseResults.length,
+        approved: latest.reviewResults?.approved || 0,
+        rejected: latest.reviewResults?.rejected || 0,
+        issues: (latest.siteAudit?.pages || []).reduce((s, p) => s + (p.issues?.length || 0), 0),
+      });
+    } catch (notifyErr) {
+      console.error("[nightly] Dashboard notification failed:", notifyErr.message);
+    }
+
+    return { phase: "dashboard", status: "pass", duration: elapsed(start) };
+  } catch (err) {
+    console.error("[nightly] Dashboard phase failed:", err.message);
+    return { phase: "dashboard", status: "fail", duration: elapsed(start), error: err.message };
+  }
+}
+
 async function runPhase(phase, extraArgs = "") {
   const start = Date.now();
   const cmd = `node agents/orchestrator.mjs --phase ${phase}${extraArgs ? " " + extraArgs : ""}`;
@@ -97,7 +148,7 @@ async function notifyStarting() {
     await postToChannel("health", {
       embeds: [{
         title: "🌙 Nightly Agent Run — Starting",
-        description: `**DeMar Transportation** nightly SEO cycle is starting.\n\nPhases: intelligence → analysis → strategy → action → review\nStarted at: ${now()}`,
+        description: `**DeMar Transportation** nightly SEO cycle is starting.\n\nPhases: intelligence → analysis → strategy → action → review → dashboard\nStarted at: ${now()}`,
         color: 3447003, // blue
         timestamp: new Date().toISOString(),
       }],
@@ -188,7 +239,11 @@ async function main() {
     console.log("[nightly] Step 6: git pull post-review");
     gitPull();
 
-    // 8. Complete notification
+    // 8. Dashboard phase (snapshot, generate, deploy, notify)
+    console.log("[nightly] Step 7: generating and deploying dashboard");
+    phaseResults.push(await runDashboard(phaseResults));
+
+    // 9. Complete notification
     const totalDuration = elapsed(globalStart);
     console.log(`[nightly] === Nightly run complete in ${totalDuration} ===`);
     await notifyComplete(phaseResults, totalDuration);
