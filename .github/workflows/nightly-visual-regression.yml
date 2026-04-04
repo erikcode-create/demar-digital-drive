@@ -1,0 +1,42 @@
+name: Nightly Visual Regression
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  visual-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+
+      - name: Run visual regression against live site
+        id: visual
+        run: |
+          SMOKE_BASE_URL=https://demartransportation.com \
+          npx playwright test tests/e2e/visual/ \
+            --config tests/playwright.config.ts \
+            --reporter=html
+        continue-on-error: true
+
+      - name: Upload diff artifacts
+        if: steps.visual.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-diffs
+          path: test-results/
+          retention-days: 7
+
+      - name: Alert Discord on visual drift
+        if: steps.visual.outcome == 'failure'
+        run: |
+          curl -H "Content-Type: application/json" \
+            -d "{\"content\":\"👁️ **Visual Drift Detected** — nightly screenshot comparison found differences.\n\nThis may be caused by external factors (CDN, fonts, third-party embeds) or recent code changes.\n\n📸 Download diff images: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\nIf intentional, update baselines: \`npm run test:update-snapshots\`\"}" \
+            ${{ secrets.DISCORD_WEBHOOK_URL }}
