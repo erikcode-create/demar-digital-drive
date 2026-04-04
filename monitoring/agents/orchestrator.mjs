@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import * as state from "./lib/state.mjs";
 import * as sourceReader from "./lib/source-reader.mjs";
 import { postToChannel } from "../lib/discord.mjs";
+import { writeStagingManifest } from "../marketing/lib/git-ops.mjs";
 
 const __dirname = import.meta.dirname || new URL(".", import.meta.url).pathname;
 
@@ -217,7 +218,15 @@ async function runPhase(phaseName, context) {
       const agentName = routeAction(action.type);
       if (agentName) {
         const actionContext = { ...context, config: { ...context.config, currentAction: action } };
-        results[`${agentName}:${action.id}`] = await runAgent(agentName, actionContext);
+        const agentResult = await runAgent(agentName, actionContext);
+        results[`${agentName}:${action.id}`] = agentResult;
+        if (agentResult.success) {
+          writeStagingManifest(agentName, [{
+            file: action?.targetPage || "",
+            url: action?.targetPage || "",
+            type: action?.type || "unknown",
+          }]);
+        }
       }
     }
     return results;
