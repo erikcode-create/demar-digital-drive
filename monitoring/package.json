@@ -59,5 +59,8 @@
     "cheerio": "^1.0.0",
     "dotenv": "^16.4.7",
     "whois": "^2.16.1"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.2"
   }
 }

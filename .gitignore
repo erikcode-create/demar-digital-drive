@@ -43,3 +43,9 @@ monitoring/agents/state/
 
 # Multi-agent pending review staging area
 monitoring/agents/pending/
+
+# Dashboard build output
+monitoring/dashboard/dist/
+
+# Daily state snapshots
+monitoring/agents/state/history/
