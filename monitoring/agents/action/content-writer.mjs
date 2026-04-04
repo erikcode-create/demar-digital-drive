@@ -321,7 +321,7 @@ TARGET KEYWORD: ${action.targetKeyword || "maintain existing keyword focus"}
 
 Current page source:
 \`\`\`tsx
-${typeof pageContent === "string" ? pageContent : JSON.stringify(pageContent)}
+${pageContent.rawSource || (typeof pageContent === "string" ? pageContent : JSON.stringify(pageContent))}
 \`\`\`
 
 Make the minimum changes needed to address the instructions. Preserve the existing component structure, imports, and exports. Focus on:
@@ -357,7 +357,14 @@ Return ONLY the complete updated .tsx file. No markdown fences. No explanation.`
   }
 
   if (!code.includes("export default")) {
-    throw new Error("Updated code missing export default statement");
+    // Try to salvage: find the component name and append export default
+    const funcMatch = code.match(/(?:export\s+)?(?:function|const)\s+(\w+)/);
+    if (funcMatch) {
+      code += `\n\nexport default ${funcMatch[1]};\n`;
+      console.log(`  [fallback] Appended export default ${funcMatch[1]};`);
+    } else {
+      throw new Error("Updated code missing export default statement");
+    }
   }
 
   // Map URL path to source file
@@ -378,19 +385,27 @@ function pathToSourceFile(urlPath) {
   if (urlPath === "/") return "src/pages/Index.tsx";
   if (urlPath.startsWith("/blog/")) {
     const slug = urlPath.replace("/blog/", "");
-    const componentName = slugToComponentName(slug);
-    return `src/pages/blog/${componentName}.tsx`;
+    return `src/pages/blog/${slugToComponentName(slug)}.tsx`;
   }
-  const segments = urlPath.split("/").filter(Boolean);
-  const fileName = segments
-    .map((s) =>
-      s
-        .split("-")
-        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-        .join("")
-    )
-    .join("/");
-  return `src/pages/${fileName}.tsx`;
+  if (urlPath.startsWith("/resources/")) {
+    const slug = urlPath.replace("/resources/", "");
+    return `src/pages/resources/${slugToComponentName(slug)}.tsx`;
+  }
+  if (urlPath.startsWith("/services/")) {
+    const slug = urlPath.replace("/services/", "");
+    return `src/pages/services/${slugToComponentName(slug)}.tsx`;
+  }
+  const coreMap = {
+    "/about": "src/pages/AboutPage.tsx",
+    "/contact": "src/pages/Contact.tsx",
+    "/quote": "src/pages/Quote.tsx",
+    "/careers": "src/pages/Careers.tsx",
+    "/faq": "src/pages/FAQ.tsx",
+    "/privacy": "src/pages/Privacy.tsx",
+    "/support": "src/pages/Support.tsx",
+    "/blog": "src/pages/Blog.tsx",
+  };
+  return coreMap[urlPath] || null;
 }
 
 // ---------------------------------------------------------------------------

@@ -14,7 +14,7 @@ const PRIORITY_PATHS = [
   "/services/ftl", "/services/ltl",
 ];
 
-const PAGES_PER_RUN = 5;
+const PAGES_PER_RUN = 3;
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));

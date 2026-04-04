@@ -54,16 +54,34 @@ function pathToSourceFile(urlPath) {
       .join("");
     return `src/pages/blog/${componentName}.tsx`;
   }
-  const segments = urlPath.split("/").filter(Boolean);
-  const fileName = segments
-    .map((s) =>
-      s
-        .split("-")
-        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-        .join("")
-    )
-    .join("/");
-  return `src/pages/${fileName}.tsx`;
+  if (urlPath.startsWith("/resources/")) {
+    const slug = urlPath.replace("/resources/", "");
+    const componentName = slug
+      .split("-")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join("");
+    return `src/pages/resources/${componentName}.tsx`;
+  }
+  if (urlPath.startsWith("/services/")) {
+    const slug = urlPath.replace("/services/", "");
+    const componentName = slug
+      .split("-")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join("");
+    return `src/pages/services/${componentName}.tsx`;
+  }
+  // Core pages: /about → src/pages/AboutPage.tsx, /contact → src/pages/Contact.tsx, etc.
+  const coreMap = {
+    "/about": "src/pages/AboutPage.tsx",
+    "/contact": "src/pages/Contact.tsx",
+    "/quote": "src/pages/Quote.tsx",
+    "/careers": "src/pages/Careers.tsx",
+    "/faq": "src/pages/FAQ.tsx",
+    "/privacy": "src/pages/Privacy.tsx",
+    "/support": "src/pages/Support.tsx",
+    "/blog": "src/pages/Blog.tsx",
+  };
+  return coreMap[urlPath] || null;
 }
 
 function markActionCompleted(context, actionId) {
