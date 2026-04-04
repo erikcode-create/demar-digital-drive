@@ -69,7 +69,7 @@ const QuoteRequest = () => {
         specialRequirements: ""
       });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Error submitting quote request:", error);
       toast({
         title: "Submission Failed",
@@ -184,7 +184,7 @@ const QuoteRequest = () => {
                     <div className="space-y-2">
                       <Label htmlFor="serviceType" className="text-sm font-medium text-[hsl(var(--primary))]">Service Type *</Label>
                       <Select value={formData.serviceType} onValueChange={(value) => handleInputChange("serviceType", value)}>
-                        <SelectTrigger>
+                        <SelectTrigger aria-label="Service Type">
                           <SelectValue placeholder="Select service type" />
                         </SelectTrigger>
                         <SelectContent>

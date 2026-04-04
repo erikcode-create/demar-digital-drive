@@ -141,7 +141,7 @@ const ApplyToDriveForm = () => {
         winterDrivingExperience: "",
         chainsExperience: "",
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error submitting application:', error);
       toast({
         title: "Error",
@@ -219,7 +219,7 @@ const ApplyToDriveForm = () => {
         <div>
           <Label htmlFor="state">State *</Label>
           <Select value={formData.state} onValueChange={(value) => handleInputChange("state", value)}>
-            <SelectTrigger className="mt-1">
+            <SelectTrigger className="mt-1" aria-label="State">
               <SelectValue placeholder="Select state" />
             </SelectTrigger>
             <SelectContent>
@@ -236,7 +236,7 @@ const ApplyToDriveForm = () => {
       <div>
         <Label htmlFor="driverType">Driver Type *</Label>
         <Select value={formData.driverType} onValueChange={(value) => handleInputChange("driverType", value)}>
-          <SelectTrigger className="mt-1">
+          <SelectTrigger className="mt-1" aria-label="Driver Type">
             <SelectValue placeholder="Select driver type" />
           </SelectTrigger>
           <SelectContent>
@@ -249,7 +249,7 @@ const ApplyToDriveForm = () => {
       <div>
         <Label htmlFor="yearsExperience">Years of Experience *</Label>
         <Select value={formData.yearsExperience} onValueChange={(value) => handleInputChange("yearsExperience", value)}>
-          <SelectTrigger className="mt-1">
+          <SelectTrigger className="mt-1" aria-label="Years of Experience">
             <SelectValue placeholder="Select experience level" />
           </SelectTrigger>
           <SelectContent>
@@ -280,7 +280,7 @@ const ApplyToDriveForm = () => {
           <div>
             <Label htmlFor="cdlState">CDL State *</Label>
             <Select value={formData.cdlState} onValueChange={(value) => handleInputChange("cdlState", value)}>
-              <SelectTrigger className="mt-1">
+              <SelectTrigger className="mt-1" aria-label="CDL State">
                 <SelectValue placeholder="Select state" />
               </SelectTrigger>
               <SelectContent>
@@ -323,7 +323,7 @@ const ApplyToDriveForm = () => {
           <div>
             <Label htmlFor="accidentsLastThreeYears">Accidents in Last 3 Years *</Label>
             <Select value={formData.accidentsLastThreeYears} onValueChange={(value) => handleInputChange("accidentsLastThreeYears", value)}>
-              <SelectTrigger className="mt-1">
+              <SelectTrigger className="mt-1" aria-label="Accidents in Last 3 Years">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
@@ -337,7 +337,7 @@ const ApplyToDriveForm = () => {
           <div>
             <Label htmlFor="violationsLastThreeYears">Violations in Last 3 Years *</Label>
             <Select value={formData.violationsLastThreeYears} onValueChange={(value) => handleInputChange("violationsLastThreeYears", value)}>
-              <SelectTrigger className="mt-1">
+              <SelectTrigger className="mt-1" aria-label="Violations in Last 3 Years">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
@@ -379,7 +379,7 @@ const ApplyToDriveForm = () => {
           <div>
             <Label htmlFor="winterDrivingExperience">Winter Weather Driving Experience *</Label>
             <Select value={formData.winterDrivingExperience} onValueChange={(value) => handleInputChange("winterDrivingExperience", value)}>
-              <SelectTrigger className="mt-1">
+              <SelectTrigger className="mt-1" aria-label="Winter Weather Driving Experience">
                 <SelectValue placeholder="Select experience level" />
               </SelectTrigger>
               <SelectContent>
@@ -393,7 +393,7 @@ const ApplyToDriveForm = () => {
           <div>
             <Label htmlFor="chainsExperience">Tire Chains Installation Experience *</Label>
             <Select value={formData.chainsExperience} onValueChange={(value) => handleInputChange("chainsExperience", value)}>
-              <SelectTrigger className="mt-1">
+              <SelectTrigger className="mt-1" aria-label="Tire Chains Installation Experience">
                 <SelectValue placeholder="Select experience level" />
               </SelectTrigger>
               <SelectContent>
@@ -410,7 +410,7 @@ const ApplyToDriveForm = () => {
           <div>
             <Label htmlFor="willingToTravel">Willing to Travel Nationwide? *</Label>
             <Select value={formData.willingToTravel} onValueChange={(value) => handleInputChange("willingToTravel", value)}>
-              <SelectTrigger className="mt-1">
+              <SelectTrigger className="mt-1" aria-label="Willing to Travel Nationwide">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
