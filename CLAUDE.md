@@ -110,6 +110,10 @@ cd monitoring && npm run agents:content-gaps    # Closed loop: find gaps → wri
 cd monitoring && npm run agents:eeat            # Closed loop: score E-E-A-T → improve weak pages
 cd monitoring && npm run agents:review           # Review phase: evaluate pending changes, approve/reject/revise
 cd monitoring && npm run agents:review:dry-run    # Review phase without committing or posting to Discord
+cd monitoring && npm run dashboard:build      # Generate snapshot + dashboard HTML
+cd monitoring && npm run dashboard:deploy     # FTP upload dashboard to GreenGeeks
+cd monitoring && npm run dashboard:snapshot   # Save daily state snapshot only
+cd monitoring && npm run dashboard:generate   # Generate HTML from existing snapshots
 ```
 
 Single agent: `cd monitoring && node agents/orchestrator.mjs --agent <name>`
@@ -160,6 +164,24 @@ Two-orchestrator architecture: the generation orchestrator writes candidates to 
 - `monitoring/agents/review/reviewer-agent.mjs` — AI-powered change review with tiered models
 - `monitoring/agents/review/revision-loop.mjs` — revision with progressive model escalation
 - `monitoring/agents/review/competitor-fetcher.mjs` — live site + competitor page fetching
+
+#### SEO Dashboard
+
+Self-contained HTML dashboard generated nightly, deployed to `demartransportation.com/seo-dashboard/`.
+
+**Tabs:** Site Health (scores, issues) | Rankings (keywords, Search Console) | Agent Activity (run history, errors) | Changes (review pipeline, pending items)
+
+**Data flow:** Agent state → Daily snapshot (`state/history/YYYY-MM-DD.json`) → HTML generator → FTP deploy → Discord notification with link
+
+**Key modules:**
+- `monitoring/dashboard/snapshot.mjs` — Daily state consolidation (90-day retention)
+- `monitoring/dashboard/generate.mjs` — HTML generator with Chart.js and token gate
+- `monitoring/dashboard/deploy.mjs` — FTP upload to GreenGeeks
+- `monitoring/dashboard/notify.mjs` — Discord notification with dashboard link
+- `monitoring/dashboard/components.mjs` — HTML component generators (score rings, KPI cards, tables)
+- `monitoring/dashboard/tabs.mjs` — Tab content assemblers
+
+**Access:** Token-based via URL query param. Requires `SEO_DASHBOARD_TOKEN` secret.
 
 #### Legacy Scripts
 
