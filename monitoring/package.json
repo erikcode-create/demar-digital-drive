@@ -51,7 +51,9 @@
     "agents:content-gaps": "node agents/orchestrator.mjs --loop content-gaps",
     "agents:eeat": "node agents/orchestrator.mjs --loop eeat-improvement",
     "agents:dry-run": "node agents/orchestrator.mjs --full-cycle --dry-run",
-    "nightly": "node nightly.mjs"
+    "nightly": "node nightly.mjs",
+    "agents:review": "node agents/review-orchestrator.mjs",
+    "agents:review:dry-run": "node agents/review-orchestrator.mjs --dry-run"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
