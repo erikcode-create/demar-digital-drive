@@ -32,6 +32,8 @@ const AGENTS = {
   "meta-tag-optimizer":  { category: "action", path: "./action/meta-tag-optimizer.mjs" },
   "internal-link-optimizer": { category: "action", path: "./action/internal-link-optimizer.mjs" },
   "technical-fixer":     { category: "action", path: "./action/technical-fixer.mjs" },
+  "schema-generator":    { category: "action", path: "./action/schema-generator.mjs" },
+  "homepage-optimizer":  { category: "action", path: "./action/homepage-optimizer.mjs" },
 };
 
 // Phase execution order
@@ -223,6 +225,8 @@ function routeAction(actionType) {
     "fix-meta": "meta-tag-optimizer",
     "fix-links": "internal-link-optimizer",
     "fix-technical": "technical-fixer",
+    "fix-schema": "schema-generator",
+    "fix-homepage": "homepage-optimizer",
   };
   return routes[actionType] || null;
 }

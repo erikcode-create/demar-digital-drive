@@ -196,7 +196,9 @@ Action types:
 - "update-content": improve an existing page (E-E-A-T, depth, freshness)
 - "fix-meta": optimize title tag and/or meta description for CTR
 - "fix-links": add or fix internal links
-- "fix-technical": fix a technical SEO issue (alt text, schema, broken links)
+- "fix-technical": fix a technical SEO issue (alt text, broken links, accessibility)
+- "fix-schema": add JSON-LD structured data to a page that is missing schema markup (BlogPosting for /blog/, Service for /services/, Article for /resources/, FAQPage for /faq, WebSite/LocalBusiness for homepage)
+- "fix-homepage": fix homepage-specific issues including missing H1, insufficient internal links to service pages, low content depth, or missing schema; targetPage should be "/"
 
 Return ONLY a JSON object (no markdown fences, no explanation) with this structure:
 {
