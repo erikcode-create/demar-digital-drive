@@ -1,6 +1,80 @@
 import "dotenv/config";
+import { readdirSync } from "fs";
+import { join, dirname, basename } from "path";
+import { fileURLToPath } from "url";
 
 export const SITE_URL = "https://demartransportation.com";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = join(__dirname, "../../..");
+
+/**
+ * Convert a PascalCase filename (without extension) to a kebab-case slug.
+ * e.g. SmallBusinessFreightShipping -> small-business-freight-shipping
+ */
+function toKebabCase(name) {
+  return name
+    .replace(/([a-z])([A-Z])/g, "$1-$2")   // camelCase boundary: lower->upper
+    .replace(/([a-zA-Z])(\d)/g, "$1-$2")    // letter->digit boundary (e.g. Vs3pl -> vs-3pl)
+    .toLowerCase();
+}
+
+/**
+ * Convert a kebab-case slug to a Title Case readable name.
+ * e.g. small-business-freight-shipping -> Small Business Freight Shipping
+ */
+function toReadableName(slug) {
+  return slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+/**
+ * Auto-discover blog post pages from src/pages/blog/*.tsx
+ */
+function discoverBlogPosts() {
+  const blogDir = join(REPO_ROOT, "src/pages/blog");
+  try {
+    return readdirSync(blogDir)
+      .filter((file) => file.endsWith(".tsx"))
+      .map((file) => {
+        const slug = toKebabCase(basename(file, ".tsx"));
+        return {
+          path: `/blog/${slug}`,
+          name: toReadableName(slug),
+          type: "blog",
+        };
+      })
+      .sort((a, b) => a.path.localeCompare(b.path));
+  } catch (err) {
+    console.warn(`[pages.mjs] Could not read blog dir: ${err.message}`);
+    return [];
+  }
+}
+
+/**
+ * Auto-discover resource pages from src/pages/resources/*.tsx
+ */
+function discoverResourcePages() {
+  const resourcesDir = join(REPO_ROOT, "src/pages/resources");
+  try {
+    return readdirSync(resourcesDir)
+      .filter((file) => file.endsWith(".tsx"))
+      .map((file) => {
+        const slug = toKebabCase(basename(file, ".tsx"));
+        return {
+          path: `/resources/${slug}`,
+          name: toReadableName(slug),
+          type: "resource",
+        };
+      })
+      .sort((a, b) => a.path.localeCompare(b.path));
+  } catch (err) {
+    console.warn(`[pages.mjs] Could not read resources dir: ${err.message}`);
+    return [];
+  }
+}
 
 const PAGES = [
   // Core
@@ -13,7 +87,7 @@ const PAGES = [
   { path: "/privacy", name: "Privacy Policy", type: "core" },
   { path: "/support", name: "Support", type: "core" },
 
-  // Services
+  // Services (keep hardcoded - stable, special slug mappings like 3pl->ThirdPartyLogistics)
   { path: "/services/dry-van", name: "Dry Van", type: "service" },
   { path: "/services/reefer", name: "Reefer", type: "service" },
   { path: "/services/flatbed", name: "Flatbed", type: "service" },
@@ -25,31 +99,13 @@ const PAGES = [
   { path: "/services/3pl", name: "3PL", type: "service" },
   { path: "/services/warehousing", name: "Warehousing", type: "service" },
 
-  // Resources
+  // Resources index + auto-discovered resource pages
   { path: "/resources", name: "Resources", type: "resource" },
-  { path: "/resources/freight-shipping-cost", name: "Freight Shipping Cost", type: "resource" },
-  { path: "/resources/how-to-get-freight-quote", name: "How to Get a Freight Quote", type: "resource" },
-  { path: "/resources/how-to-choose-freight-carrier", name: "How to Choose a Freight Carrier", type: "resource" },
-  { path: "/resources/dry-van-vs-reefer", name: "Dry Van vs Reefer", type: "resource" },
-  { path: "/resources/ftl-vs-ltl", name: "FTL vs LTL", type: "resource" },
-  { path: "/resources/hot-shot-vs-full-truckload", name: "Hot Shot vs Full Truckload", type: "resource" },
-  { path: "/resources/types-of-freight-trailers", name: "Types of Freight Trailers", type: "resource" },
-  { path: "/resources/how-to-ship-freight", name: "How to Ship Freight", type: "resource" },
-  { path: "/resources/how-to-ship-refrigerated-goods", name: "How to Ship Refrigerated Goods", type: "resource" },
-  { path: "/resources/how-to-ship-hazardous-materials", name: "How to Ship Hazardous Materials", type: "resource" },
-  { path: "/resources/oversized-load-shipping", name: "Oversized Load Shipping", type: "resource" },
-  { path: "/resources/freight-classes-explained", name: "Freight Classes Explained", type: "resource" },
-  { path: "/resources/broker-vs-carrier-vs-3pl", name: "Broker vs Carrier vs 3PL", type: "resource" },
-  { path: "/resources/freight-shipping-glossary", name: "Freight Shipping Glossary", type: "resource" },
-  { path: "/resources/seasonal-freight-shipping", name: "Seasonal Freight Shipping", type: "resource" },
+  ...discoverResourcePages(),
 
-  // Blog
+  // Blog index + auto-discovered blog posts
   { path: "/blog", name: "Blog", type: "blog" },
-  { path: "/blog/why-freight-quote-keeps-changing", name: "Why Your Freight Quote Keeps Changing", type: "blog" },
-  { path: "/blog/small-business-freight-shipping", name: "Small Business Freight Shipping", type: "blog" },
-  { path: "/blog/emergency-expedited-freight", name: "Emergency Expedited Freight", type: "blog" },
-  { path: "/blog/freight-damage-prevention", name: "Freight Damage Prevention", type: "blog" },
-  { path: "/blog/ecommerce-freight-shipping", name: "Ecommerce Freight Shipping", type: "blog" },
+  ...discoverBlogPosts(),
 ];
 
 /**
