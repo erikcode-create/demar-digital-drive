@@ -12,7 +12,7 @@ const REPO_ROOT = join(__dirname, "../../..");
  * Convert a PascalCase filename (without extension) to a kebab-case slug.
  * e.g. SmallBusinessFreightShipping -> small-business-freight-shipping
  */
-function toKebabCase(name) {
+export function toKebabCase(name) {
   return name
     .replace(/([a-z])([A-Z])/g, "$1-$2")   // camelCase boundary: lower->upper
     .replace(/([a-zA-Z])(\d)/g, "$1-$2")    // letter->digit boundary (e.g. Vs3pl -> vs-3pl)
