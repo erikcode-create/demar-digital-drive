@@ -60,8 +60,24 @@ function resolveSourceFile(urlPath) {
  * Strip JSX tags and extract visible text content from TSX source.
  */
 function extractText(source) {
+  let text = source;
+
+  // Handle BlogPost content={<>...</>} inline prop pattern
+  const contentPropMatch = text.match(/content=\{(\s*<>[\s\S]*?<\/>)\s*\}/);
+  if (contentPropMatch) {
+    // Use the inner fragment content as the primary text source
+    text = contentPropMatch[1];
+  } else {
+    // Handle BlogPost const content = (<>...</>) variable pattern
+    // Some files define content as a variable then pass it as content={content}
+    const contentVarMatch = text.match(/const\s+content\s*=\s*\(\s*(<>[\s\S]*?<\/>)\s*\)/);
+    if (contentVarMatch) {
+      text = contentVarMatch[1];
+    }
+  }
+
   // Remove imports and type definitions
-  let text = source.replace(/^import\s+.*$/gm, "");
+  text = text.replace(/^import\s+.*$/gm, "");
   text = text.replace(/^export\s+(interface|type)\s+[\s\S]*?^}/gm, "");
 
   // Remove JSX comments
@@ -108,6 +124,13 @@ function extractHeadings(source) {
     }
   }
 
+  // BlogPost component renders the title prop as H1 — use it as fallback if no h1 found
+  if (headings.h1.length === 0) {
+    // Match title="..." (JSX prop, not metaTitle)
+    const titlePropMatch = source.match(/(?<![a-zA-Z])title="([^"]+)"/);
+    if (titlePropMatch) headings.h1.push(titlePropMatch[1]);
+  }
+
   return headings;
 }
 
@@ -148,7 +171,11 @@ function extractMetaTitle(source) {
   const titleMatch = source.match(/document\.title\s*=\s*["'`]([^"'`]+)["'`]/);
   if (titleMatch) return titleMatch[1];
 
-  // Pattern: metaTitle prop
+  // Pattern: metaTitle="..." JSX prop (BlogPost component)
+  const metaJsxMatch = source.match(/metaTitle="([^"]+)"/);
+  if (metaJsxMatch) return metaJsxMatch[1];
+
+  // Pattern: metaTitle: "..." (object/colon syntax)
   const metaMatch = source.match(/metaTitle:\s*["'`]([^"'`]+)["'`]/);
   if (metaMatch) return metaMatch[1];
 
@@ -167,11 +194,19 @@ function extractMetaDescription(source) {
   const setAttrMatch = source.match(/setAttribute\(\s*["']content["']\s*,\s*["'`]([^"'`]+)["'`]\)/);
   if (setAttrMatch) return setAttrMatch[1];
 
-  // Pattern: metaDescription prop
+  // Pattern: metaDescription="..." JSX prop (BlogPost component)
+  const metaJsxMatch = source.match(/metaDescription="([^"]+)"/);
+  if (metaJsxMatch) return metaJsxMatch[1];
+
+  // Pattern: metaDescription: "..." (object/colon syntax)
   const metaMatch = source.match(/metaDescription:\s*["'`]([^"'`]+)["'`]/);
   if (metaMatch) return metaMatch[1];
 
-  // Pattern: description= prop
+  // Pattern: description="..." JSX prop (BlogPost component uses description for subtitle/summary)
+  const descJsxMatch = source.match(/description="([^"]+)"/);
+  if (descJsxMatch) return descJsxMatch[1];
+
+  // Pattern: description= prop (colon syntax)
   const propMatch = source.match(/description=["'`]([^"'`]+)["'`]/);
   if (propMatch) return propMatch[1];
 
