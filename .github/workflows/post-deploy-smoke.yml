@@ -1,0 +1,69 @@
+name: Post-Deploy Smoke Tests
+
+on:
+  workflow_run:
+    workflows: ["Deploy to GreenGeeks"]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+
+      - name: Wait for deploy to propagate
+        run: sleep 30
+
+      - name: Run smoke tests
+        id: smoke
+        run: npm run test:smoke
+        continue-on-error: true
+
+      - name: Auto-revert on failure
+        if: steps.smoke.outcome == 'failure'
+        run: |
+          MERGE_COMMIT=$(git log main -1 --format="%H")
+
+          LAST_REVERT=$(git log main --since="24 hours ago" --grep="\[auto-revert\]" --format="%H" | head -1)
+          if [ -n "$LAST_REVERT" ]; then
+            echo "Already auto-reverted in last 24h — alerting only"
+            curl -H "Content-Type: application/json" \
+              -d "{\"content\":\"🔴 **Smoke tests failed AGAIN** — manual intervention required. Second failure in 24h, auto-revert skipped.\n\nRun: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}" \
+              ${{ secrets.DISCORD_WEBHOOK_URL }}
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git revert --no-edit $MERGE_COMMIT
+          git push origin main
+
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} \
+            "echo '{\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"commit\":\"$MERGE_COMMIT\",\"run\":\"${{ github.run_id }}\"}' > /opt/demar-website/monitoring/agents/state/meta/smoke-failure.json"
+
+          curl -H "Content-Type: application/json" \
+            -d "{\"content\":\"🔴 **Post-Deploy Smoke Tests FAILED** — auto-reverted commit \`${MERGE_COMMIT:0:7}\`\n\n⚠️ Agent actions are now blocked until the smoke-failure flag is cleared.\n\n🔗 Check: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\n📋 To clear after fixing: \`rm /opt/demar-website/monitoring/agents/state/meta/smoke-failure.json\`\"}" \
+            ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Notify success
+        if: steps.smoke.outcome == 'success'
+        run: |
+          curl -H "Content-Type: application/json" \
+            -d '{"content":"✅ **Post-Deploy Smoke Tests Passed** — site is healthy."}' \
+            ${{ secrets.DISCORD_WEBHOOK_URL }}
