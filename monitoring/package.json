@@ -50,7 +50,8 @@
     "agents:rank-recovery": "node agents/orchestrator.mjs --loop rank-recovery",
     "agents:content-gaps": "node agents/orchestrator.mjs --loop content-gaps",
     "agents:eeat": "node agents/orchestrator.mjs --loop eeat-improvement",
-    "agents:dry-run": "node agents/orchestrator.mjs --full-cycle --dry-run"
+    "agents:dry-run": "node agents/orchestrator.mjs --full-cycle --dry-run",
+    "nightly": "node nightly.mjs"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
