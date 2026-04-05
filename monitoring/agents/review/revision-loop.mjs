@@ -240,6 +240,9 @@ export async function runRevisionLoop({
     cleanedCode = cleanedCode.replace(/\u2014/g, ",");
     cleanedCode = cleanedCode.replace(/\u2013/g, "-");
 
+    // Strip stray markdown bold/italic markers that break JSX
+    cleanedCode = cleanedCode.replace(/(?<![*])\*\*(?![*])/g, "");
+
     // (g) Structural validation
     const validation = validate(agentType, cleanedCode, {
       ...validationMeta,
