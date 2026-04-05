@@ -40,6 +40,45 @@ const DryVan = () => {
     "description": "Professional dry van shipping services for full truckload and LTL freight. 53-foot enclosed trailers with 45,000 lb capacity."
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the maximum weight for a dry van shipment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard 53-foot dry van trailer has a maximum payload capacity of approximately 45,000 pounds. The exact weight limit depends on the tractor configuration and axle weights. Most full truckload dry van shipments range between 30,000 and 44,000 pounds. DeMar Transportation confirms weight limits at the time of booking to ensure compliance with federal gross vehicle weight limits of 80,000 pounds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many pallets fit in a dry van trailer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 53-foot dry van trailer fits 22 to 26 standard pallets (48 by 40 inches) when loaded single-stacked in a straight configuration. Double-stacking is possible with lighter freight, bringing total pallet count up to 52. DeMar Transportation coordinates pallet configuration during booking to maximize trailer utilization and reduce per-unit shipping costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between dry van FTL and LTL shipping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Full truckload (FTL) means your freight occupies the entire trailer, typically 15,000 pounds or more. Less-than-truckload (LTL) consolidates shipments from multiple shippers into one trailer. FTL offers faster transit times with no intermediate handling, while LTL costs less for smaller shipments. DeMar Transportation handles both FTL and LTL dry van freight across all 48 contiguous states."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does dry van shipping take from Reno, NV?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Transit times from Reno, NV depend on destination. Regional deliveries within Nevada, California, Oregon, and Utah typically arrive within 1 to 2 days. Cross-country shipments to the East Coast take 4 to 6 days for standard dry van service. DeMar Transportation provides estimated delivery dates at booking and offers real-time tracking throughout transit."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen">
       <a
@@ -72,7 +111,7 @@ const DryVan = () => {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Services",
-                    "item": "https://demartransportation.com/"
+                    "item": "https://demartransportation.com/#services"
                   },
                   {
                     "@type": "ListItem",
@@ -83,6 +122,10 @@ const DryVan = () => {
                 ]
               }),
             }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
           />
 
           {/* Hero */}
@@ -150,8 +193,44 @@ const DryVan = () => {
             </div>
           </section>
 
-          {/* Trailer Specs - tonal cards, no borders */}
+          {/* DeMar Capabilities */}
           <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
+            <div className="max-w-5xl mx-auto">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                Our Capabilities
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-8">
+                DeMar's Dry Van Shipping Services
+              </h2>
+              <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl mb-10">
+                <p>
+                  DeMar Transportation coordinates dry van shipments across all 48 contiguous states through a vetted network of owner-operators and carrier partners. Our home base in Reno, Nevada places us at the intersection of I-80 and US-395, giving us direct access to major freight corridors connecting the West Coast, Pacific Northwest, and Intermountain West.
+                </p>
+                <p>
+                  We handle shipments ranging from single-pallet LTL loads under 5,000 pounds to full truckload moves up to 45,000 pounds. Our dispatch team books hundreds of dry van loads monthly, with consistent lane coverage on high-demand routes throughout the Western US and beyond. All carriers in our network pass DOT compliance screening before their first load.
+                </p>
+              </div>
+
+              <h3 className="text-xl font-bold text-[hsl(var(--primary))] tracking-tight mb-6">
+                Service Area Coverage
+              </h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  { region: "Western US", detail: "California, Oregon, Washington, Nevada, Arizona, Utah, Colorado. Typically 1 to 2-day transit from Reno for most destinations." },
+                  { region: "Central US", detail: "Texas, Illinois, Missouri, Minnesota, Kansas, Nebraska, Oklahoma. Typically 2 to 3-day transit with reliable capacity on I-80 and I-70 corridors." },
+                  { region: "Eastern US", detail: "New York, Pennsylvania, Georgia, Florida, Ohio, North Carolina. Typically 4 to 6-day transit with coast-to-coast full truckload service." },
+                ].map((area) => (
+                  <div key={area.region} className="p-5 rounded-xl bg-white shadow-[var(--shadow-card)]">
+                    <h4 className="text-sm font-semibold text-[hsl(var(--primary))] mb-2">{area.region}</h4>
+                    <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed">{area.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Trailer Specs - tonal cards, no borders */}
+          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
             <div className="max-w-5xl mx-auto">
               <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
                 Specifications
@@ -179,13 +258,13 @@ const DryVan = () => {
                 ))}
               </div>
               <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
-                Standard dry van trailers feature rear swing doors or roll-up doors. Most accommodate 22 to 26 standard pallets (48" x 40") loaded single-stacked.
+                Standard dry van trailers feature rear swing doors or roll-up doors. Most accommodate 22 to 26 standard pallets (48" x 40") loaded single-stacked. Double-stacking lighter freight can bring total capacity up to 52 pallets per trailer.
               </p>
             </div>
           </section>
 
           {/* Common Cargo Types */}
-          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
+          <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
             <div className="max-w-5xl mx-auto">
               <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
                 What We Ship
@@ -194,7 +273,7 @@ const DryVan = () => {
                 Common Dry Van Cargo Types
               </h2>
               <p className="text-base text-[hsl(var(--muted-foreground))] mb-10 max-w-2xl leading-relaxed">
-                Nearly any non-perishable, non-hazardous commodity that fits within the trailer dimensions can be shipped by dry van.
+                Nearly any non-perishable, non-hazardous commodity that fits within the trailer dimensions can be shipped by dry van. The following categories represent our most frequently booked freight types.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {[
@@ -204,8 +283,11 @@ const DryVan = () => {
                   { title: "Retail Inventory", desc: "Clothing, footwear, furniture, home goods, and seasonal merchandise." },
                   { title: "Paper Products", desc: "Printing paper, packaging materials, tissue products, cardboard, and corrugated containers." },
                   { title: "Textiles & Fabrics", desc: "Rolls of fabric, yarn, finished garments, carpeting, and industrial textiles." },
+                  { title: "Building Materials", desc: "Drywall, insulation, flooring, doors, windows, and other construction supplies that fit standard pallets." },
+                  { title: "Auto Parts", desc: "Aftermarket parts, OEM components, tires, and accessories shipped to dealerships and distribution centers." },
+                  { title: "Industrial Equipment", desc: "Machinery parts, tools, fasteners, and packaged industrial supplies under 45,000 pounds." },
                 ].map((cargo) => (
-                  <div key={cargo.title} className="p-5 rounded-xl bg-[hsl(var(--surface-low))] hover:bg-white hover:shadow-[var(--shadow-card)] transition-all duration-300">
+                  <div key={cargo.title} className="p-5 rounded-xl bg-[hsl(var(--surface))] hover:bg-white hover:shadow-[var(--shadow-card)] transition-all duration-300">
                     <div className="flex items-center gap-2 mb-2">
                       <Package className="h-4 w-4 text-[hsl(var(--accent))]" />
                       <h3 className="text-sm font-semibold text-[hsl(var(--primary))]">{cargo.title}</h3>
@@ -218,7 +300,7 @@ const DryVan = () => {
           </section>
 
           {/* Benefits */}
-          <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
+          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
             <div className="max-w-5xl mx-auto">
               <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
                 Advantages
@@ -232,6 +314,8 @@ const DryVan = () => {
                   { title: "Cargo Security", desc: "Sealed trailers with locking mechanisms reduce the risk of theft, tampering, and pilferage during transit." },
                   { title: "Versatility", desc: "Dry vans accommodate the widest range of commodity types of any trailer class, from lightweight, high-volume to dense, heavy pallets." },
                   { title: "Cost-Effective", desc: "The most abundant equipment type on the road means more competitive rates, shorter lead times, and flexible scheduling." },
+                  { title: "Loading Flexibility", desc: "Rear swing doors and roll-up doors allow standard dock loading. Floor-loaded, palletized, and slip-sheeted freight all work in a dry van." },
+                  { title: "Carrier Availability", desc: "As the most common trailer type in North America, dry vans offer more available trucks and faster booking, even during peak shipping season." },
                 ].map((benefit) => (
                   <div key={benefit.title} className="flex items-start gap-4">
                     <CheckCircle className="h-5 w-5 text-[hsl(var(--accent))] mt-0.5 flex-shrink-0" />
@@ -246,7 +330,7 @@ const DryVan = () => {
           </section>
 
           {/* Industries */}
-          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
+          <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
             <div className="max-w-5xl mx-auto">
               <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
                 Industries
@@ -261,7 +345,7 @@ const DryVan = () => {
                   { name: "Food & Beverage", detail: "Non-perishable food products, beverages, and packaged goods require clean, dry trailers. Our carriers maintain washout records and comply with food-grade standards." },
                   { name: "E-Commerce & Fulfillment", detail: "High-frequency shipments to fulfillment centers and last-mile hubs. We support the fast-paced replenishment cycles that e-commerce operations demand." },
                 ].map((industry) => (
-                  <div key={industry.name} className="p-6 rounded-xl bg-[hsl(var(--surface-low))] hover:bg-white hover:shadow-[var(--shadow-card)] transition-all duration-300">
+                  <div key={industry.name} className="p-6 rounded-xl bg-[hsl(var(--surface))] hover:bg-white hover:shadow-[var(--shadow-card)] transition-all duration-300">
                     <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-2">{industry.name}</h3>
                     <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">{industry.detail}</p>
                   </div>
@@ -289,6 +373,43 @@ const DryVan = () => {
                 <p>
                   Whether you are shipping a single full truckload or managing a recurring lane program with hundreds of loads per month, DeMar Transportation has the capacity, carrier relationships, and operational expertise to keep your supply chain moving. We also offer <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">refrigerated shipping</Link> and <Link to="/services/flatbed" className="text-[hsl(var(--accent))] hover:underline">flatbed transportation</Link> for specialized equipment needs.
                 </p>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
+            <div className="max-w-5xl mx-auto">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                Common Questions
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-10">
+                Dry Van Shipping FAQ
+              </h2>
+              <div className="space-y-6 max-w-3xl">
+                {[
+                  {
+                    q: "What is the maximum weight for a dry van shipment?",
+                    a: "A standard 53-foot dry van trailer has a maximum payload capacity of approximately 45,000 pounds. The exact weight limit depends on the tractor configuration and axle weights. Most full truckload dry van shipments range between 30,000 and 44,000 pounds. DeMar Transportation confirms weight limits at the time of booking to ensure compliance with federal gross vehicle weight limits of 80,000 pounds."
+                  },
+                  {
+                    q: "How many pallets fit in a dry van trailer?",
+                    a: "A 53-foot dry van trailer fits 22 to 26 standard pallets (48 by 40 inches) when loaded single-stacked in a straight configuration. Double-stacking is possible with lighter freight, bringing total pallet count up to 52. We coordinate pallet configuration during booking to maximize trailer utilization and reduce per-unit shipping costs."
+                  },
+                  {
+                    q: "What is the difference between dry van FTL and LTL shipping?",
+                    a: "Full truckload (FTL) means your freight occupies the entire trailer, typically 15,000 pounds or more. Less-than-truckload (LTL) consolidates shipments from multiple shippers into one trailer. FTL offers faster transit times with no intermediate handling, while LTL costs less for smaller shipments. DeMar Transportation handles both FTL and LTL dry van freight across all 48 contiguous states."
+                  },
+                  {
+                    q: "How long does dry van shipping take from Reno, NV?",
+                    a: "Transit times from Reno depend on destination. Regional deliveries within Nevada, California, Oregon, and Utah typically arrive within 1 to 2 days. Cross-country shipments to the East Coast take 4 to 6 days for standard dry van service. We provide estimated delivery dates at booking and offer real-time tracking throughout transit."
+                  },
+                ].map((faq) => (
+                  <div key={faq.q} className="p-6 rounded-xl bg-[hsl(var(--surface-low))]">
+                    <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-3">{faq.q}</h3>
+                    <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">{faq.a}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>

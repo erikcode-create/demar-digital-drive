@@ -121,20 +121,21 @@ export function validateContent(code, metadata = {}) {
   const contentBlock = extractContentBlock(code);
   const rawText = contentBlock ? stripTags(contentBlock) : "";
 
-  // --- 3. Word count >= 1500 ---
+  // --- 3. Word count >= 1500 (blog posts only; other pages have varied length) ---
+  const minWords = isBlogPost ? 1500 : 300;
   if (contentBlock !== null) {
     const wordCount = countWords(rawText);
-    if (wordCount < 1500) {
+    if (wordCount < minWords) {
       errors.push(
-        `Word count too low: ${wordCount} words (minimum 1500). Extract the content block and check word count.`
+        `Word count too low: ${wordCount} words (minimum ${minWords}). Extract the content block and check word count.`
       );
     }
   } else {
     // If we can't find the content block, do a full-file word count as fallback
     const wordCount = countWords(stripTags(code));
-    if (wordCount < 1500) {
+    if (wordCount < minWords) {
       errors.push(
-        `Word count too low: ${wordCount} words (minimum 1500). Could not locate "const content" block.`
+        `Word count too low: ${wordCount} words (minimum ${minWords}). Could not locate "const content" block.`
       );
     }
   }
