@@ -221,6 +221,10 @@ Return ONLY the complete .tsx file content. No markdown fences. No explanation. 
     code = code.substring(0, exportMatch.index + exportMatch[0].length);
   }
 
+  // Auto-strip em dashes and en dashes (brand guideline — Claude keeps generating them)
+  code = code.replace(/\u2014/g, ",");
+  code = code.replace(/\u2013/g, "-");
+
   if (!code.includes("import BlogPost") || !code.includes("export default")) {
     console.error("  Raw output (first 500 chars):", output.substring(0, 500));
     throw new Error("Generated code missing required imports or export");
@@ -369,6 +373,10 @@ IMPORTANT: You are running in non-interactive --print mode. You cannot write fil
   if (exportMatch) {
     code = code.substring(0, exportMatch.index + exportMatch[0].length);
   }
+
+  // Auto-strip em dashes and en dashes (brand guideline)
+  code = code.replace(/\u2014/g, ",");
+  code = code.replace(/\u2013/g, "-");
 
   if (!code.includes("export default")) {
     // Try to salvage: find the component name and append export default
