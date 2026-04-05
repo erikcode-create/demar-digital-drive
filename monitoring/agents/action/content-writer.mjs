@@ -28,10 +28,13 @@ export const description =
 // ---------------------------------------------------------------------------
 
 function slugToComponentName(slug) {
-  return slug
+  let name = slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join("");
+  // JS identifiers can't start with a digit
+  if (/^\d/.test(name)) name = "Post" + name;
+  return name;
 }
 
 function getExistingBlogSlugs() {
