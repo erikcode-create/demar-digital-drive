@@ -18,6 +18,9 @@ export async function invokeClaude(prompt, { model = "sonnet", timeout = 600000 
 
   // Pass prompt via stdin to avoid argument parsing issues with --disallowedTools.
   // Disable file-writing tools so --print mode returns code to stdout only.
+  // Strip ANTHROPIC_API_KEY so the CLI uses Claude Max subscription (stored in ~/.claude/)
+  // instead of burning API credits.
+  const { ANTHROPIC_API_KEY: _, ...cleanEnv } = process.env;
   try {
     const result = execFileSync("npx", [
       "-y", "@anthropic-ai/claude-code",
@@ -27,7 +30,7 @@ export async function invokeClaude(prompt, { model = "sonnet", timeout = 600000 
     ], {
       cwd: REPO_ROOT, encoding: "utf-8", timeout,
       input: prompt,
-      env: { ...process.env, PATH: process.env.PATH },
+      env: { ...cleanEnv, PATH: process.env.PATH },
       maxBuffer: 10 * 1024 * 1024,
     });
     return { success: true, output: result.trim() };
