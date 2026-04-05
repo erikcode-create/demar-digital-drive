@@ -11,7 +11,7 @@ const MODELS = {
   opus: "claude-opus-4-6",
 };
 
-export async function invokeClaude(prompt, { model = "sonnet", timeout = 300000 } = {}) {
+export async function invokeClaude(prompt, { model = "sonnet", timeout = 600000 } = {}) {
   const modelId = MODELS[model] || MODELS.sonnet;
 
   console.log(`[claude-api] Using model: ${model} (${modelId})`);
@@ -36,7 +36,7 @@ export async function invokeClaude(prompt, { model = "sonnet", timeout = 300000 
   }
 }
 
-export async function generateWithClaude(prompt, { model = "sonnet", timeout = 300000 } = {}) {
+export async function generateWithClaude(prompt, { model = "sonnet", timeout = 600000 } = {}) {
   const result = await invokeClaude(prompt, { model, timeout });
   if (!result.success) {
     throw new Error(`Claude generation failed: ${result.output}`);

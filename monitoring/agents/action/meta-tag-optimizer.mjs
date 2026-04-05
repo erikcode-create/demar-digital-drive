@@ -174,7 +174,7 @@ Return ONLY a JSON object (no markdown fences):
   console.log("  Generating optimized meta tags with Claude (sonnet)...");
   let newMeta;
   try {
-    const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 60000 });
+    const output = await generateWithClaude(prompt, { model: "opus", timeout: 60000 });
     const match = output.match(/\{[\s\S]*\}/);
     if (!match) throw new Error("Could not parse meta tag response");
     newMeta = JSON.parse(match[0]);
@@ -207,7 +207,7 @@ Return the complete updated file.`;
   console.log("  Applying meta tag changes...");
   let updatedCode;
   try {
-    updatedCode = await generateWithClaude(editPrompt, { model: "sonnet", timeout: 120000 });
+    updatedCode = await generateWithClaude(editPrompt, { model: "opus", timeout: 120000 });
   } catch (err) {
     return { success: false, summary: `Failed to apply meta tag edits: ${err.message}`, data: null };
   }

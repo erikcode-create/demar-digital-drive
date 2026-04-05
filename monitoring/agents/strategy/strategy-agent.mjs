@@ -230,10 +230,10 @@ If there is not enough data to justify any actions, return {"actions": []}.`;
   // -----------------------------------------------------------------------
   // 3. Ask Claude
   // -----------------------------------------------------------------------
-  console.log("Generating action queue with Claude (sonnet)...");
+  console.log("Generating action queue with Claude (opus)...");
   let actionQueue;
   try {
-    const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 180000 });
+    const output = await generateWithClaude(prompt, { model: "opus", timeout: 300000 });
     const match = output.match(/\{[\s\S]*\}/);
     if (!match) {
       console.error("Could not parse Claude response as JSON object");

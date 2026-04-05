@@ -23,8 +23,7 @@ import { validate } from "../lib/validators/index.mjs";
  * @param {string} [baseModel="sonnet"] - model to use for rounds 1-2
  * @returns {string} model name ("opus" | baseModel)
  */
-export function getWriterModel(roundNumber, baseModel = "sonnet") {
-  if (roundNumber >= 3) return "opus";
+export function getWriterModel(roundNumber, baseModel = "opus") {
   return baseModel;
 }
 
@@ -219,7 +218,7 @@ export async function runRevisionLoop({
 
     const rawOutput = await generateWithClaude(revisionPrompt, {
       model: writerModel,
-      timeout: writerModel === "opus" ? 300000 : 180000,
+      timeout: 600000,
     });
 
     // (f) Clean up code — strip fences, extract between import/export

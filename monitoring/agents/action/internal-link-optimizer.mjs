@@ -182,7 +182,7 @@ Return ONLY a JSON array (no markdown fences) of the top 5 most impactful link a
   console.log("  Getting link suggestions from Claude (haiku)...");
   let suggestions;
   try {
-    const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
+    const output = await generateWithClaude(prompt, { model: "opus", timeout: 120000 });
     const match = output.match(/\[[\s\S]*\]/);
     suggestions = match ? JSON.parse(match[0]) : [];
   } catch (err) {
@@ -233,7 +233,7 @@ Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
     try {
       console.log(`  Adding link: ${suggestion.sourcePath} -> ${suggestion.targetPath}...`);
-      const output = await generateWithClaude(fixPrompt, { model: "sonnet", timeout: 120000 });
+      const output = await generateWithClaude(fixPrompt, { model: "opus", timeout: 120000 });
 
       let code = output.trim();
       const fenceMatch = code.match(/```(?:tsx?|jsx?|typescript|javascript)?\s*\n([\s\S]*?)```/);

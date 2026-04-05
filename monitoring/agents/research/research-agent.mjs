@@ -166,7 +166,7 @@ Return a JSON object with exactly these fields:
 Return ONLY valid JSON. No markdown fences, no explanation.`;
 
   try {
-    const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 60_000 });
+    const output = await generateWithClaude(prompt, { model: "opus", timeout: 120_000 });
 
     // Strip markdown fences if present
     const cleaned = output.replace(/^```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "").trim();

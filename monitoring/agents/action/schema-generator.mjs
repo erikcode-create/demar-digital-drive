@@ -233,7 +233,7 @@ Return the COMPLETE updated TypeScript file (no markdown fences, no explanation 
   console.log("  Generating schema with Claude (sonnet)...");
   let updatedCode;
   try {
-    updatedCode = await generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
+    updatedCode = await generateWithClaude(prompt, { model: "opus", timeout: 120000 });
   } catch (err) {
     return { success: false, summary: `Failed to generate schema: ${err.message}`, data: null };
   }

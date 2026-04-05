@@ -262,7 +262,7 @@ CRITICAL OUTPUT FORMAT:
   console.log("  Generating improved homepage with Claude (sonnet)...");
   let updatedCode;
   try {
-    updatedCode = await generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
+    updatedCode = await generateWithClaude(prompt, { model: "opus", timeout: 120000 });
   } catch (err) {
     return { success: false, summary: `Failed to generate homepage improvements: ${err.message}`, data: null };
   }
@@ -284,7 +284,7 @@ Do not include any markdown, fences, or commentary — only raw TypeScript.`;
 
     let retryOutput;
     try {
-      retryOutput = await generateWithClaude(retryPrompt, { model: "sonnet", timeout: 120000 });
+      retryOutput = await generateWithClaude(retryPrompt, { model: "opus", timeout: 120000 });
     } catch (err) {
       return { success: false, summary: `Retry generation failed: ${err.message}`, data: null };
     }

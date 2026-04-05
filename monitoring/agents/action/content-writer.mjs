@@ -84,8 +84,8 @@ Provide 5 FAQs and 4 related links pointing to real pages on demartransportation
 
 IMPORTANT: You are running in non-interactive --print mode. Output ONLY the JSON object. No markdown fences. No explanation.`;
 
-  console.log("  Generating topic metadata with Claude (sonnet)...");
-  const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
+  console.log("  Generating topic metadata with Claude (opus)...");
+  const output = await generateWithClaude(prompt, { model: "opus", timeout: 180000 });
   const match = output.match(/\{[\s\S]*\}/);
   if (!match) {
     throw new Error("Could not parse topic metadata from Claude response");
@@ -200,7 +200,7 @@ Return ONLY the complete .tsx file content. No markdown fences. No explanation. 
     : prompt;
 
   console.log(`  Writing blog post: ${topic.title}...`);
-  const output = await generateWithClaude(finalPrompt, { model: "sonnet", timeout: 300000 });
+  const output = await generateWithClaude(finalPrompt, { model: "opus", timeout: 600000 });
 
   let code = output.trim();
 
@@ -360,8 +360,8 @@ STYLE RULES:
 
 IMPORTANT: You are running in non-interactive --print mode. You cannot write files or use tools. Output the raw .tsx code directly to stdout. No markdown fences. No explanation. No preamble. Start with "import" on the very first line.`;
 
-  console.log("  Generating content update with Claude (sonnet)...");
-  const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 300000 });
+  console.log("  Generating content update with Claude (opus)...");
+  const output = await generateWithClaude(prompt, { model: "opus", timeout: 600000 });
 
   let code = output.trim();
   const fenceMatch = code.match(/```(?:tsx?|jsx?|typescript|javascript)?\s*\n([\s\S]*?)```/);
