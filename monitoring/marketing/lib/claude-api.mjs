@@ -16,17 +16,13 @@ export async function invokeClaude(prompt, { model = "sonnet", timeout = 300000 
 
   console.log(`[claude-api] Using model: ${model} (${modelId})`);
 
-  // Pass prompt via stdin to avoid argument parsing issues with --disallowedTools.
-  // Disable file-writing tools so --print mode returns code to stdout only.
+  // Use execFileSync to bypass shell — avoids escaping issues with special
+  // characters in prompts (backticks, $, quotes, etc.)
   try {
     const result = execFileSync("npx", [
-      "-y", "@anthropic-ai/claude-code",
-      "--print",
-      "--model", modelId,
-      "--disallowedTools", "Write,Edit,Bash,NotebookEdit",
+      "-y", "@anthropic-ai/claude-code", "--print", "--output-format", "text", "--model", modelId, prompt,
     ], {
       cwd: REPO_ROOT, encoding: "utf-8", timeout,
-      input: prompt,
       env: { ...process.env, PATH: process.env.PATH },
       maxBuffer: 10 * 1024 * 1024,
     });
