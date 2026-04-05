@@ -514,7 +514,7 @@ export async function run(context) {
               }],
             });
           } catch {}
-          return { success: false, reason: validation.errors.join("; "), data: null };
+          return { success: false, summary: `Validation failed: ${validation.errors.join("; ")}`, data: null };
         }
 
         // Validate file content diff
@@ -551,7 +551,7 @@ export async function run(context) {
           targetKeyword: action.targetKeyword || "",
           targetFile: result.filePath,
           reason: action.reason || "",
-          agentModel: "sonnet",
+          agentModel: "opus",
           reviewTier: "sonnet",
           originalCode: result.originalCode,
           modifiedCode: result.generatedCode,
@@ -638,6 +638,8 @@ export async function run(context) {
         const newPostValidation = validate("content-writer", code, {
           targetKeyword: action?.targetKeyword || topic.targetKeyword || "",
           originalSize: 0,
+          filePath: `src/pages/blog/${componentName}.tsx`,
+          actionType: action?.type,
         });
         if (!newPostValidation.passed) {
           console.log(`  ❌ Validation failed: ${newPostValidation.errors.join(", ")}`);
@@ -652,7 +654,7 @@ export async function run(context) {
             });
           } catch {}
           if (attempt === MAX_RETRIES + 1) {
-            return { success: false, reason: newPostValidation.errors.join("; "), data: null };
+            return { success: false, summary: `Validation failed: ${newPostValidation.errors.join("; ")}`, data: null };
           }
           continue;
         }
@@ -718,7 +720,7 @@ export async function run(context) {
           targetKeyword: topic.targetKeyword || action.targetKeyword || "",
           targetFile: blogSrcFile,
           reason: action.reason || "",
-          agentModel: "sonnet",
+          agentModel: "opus",
           reviewTier: "opus",
           originalCode: "",
           modifiedCode: code,
