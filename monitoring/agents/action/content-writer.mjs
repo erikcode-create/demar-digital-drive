@@ -77,7 +77,9 @@ Create a blog post plan for this topic. Return ONLY a JSON object (no markdown f
   "readTime": "8 min"
 }
 
-Provide 5 FAQs and 4 related links pointing to real pages on demartransportation.com.`;
+Provide 5 FAQs and 4 related links pointing to real pages on demartransportation.com.
+
+IMPORTANT: You are running in non-interactive --print mode. Output ONLY the JSON object. No markdown fences. No explanation.`;
 
   console.log("  Generating topic metadata with Claude (sonnet)...");
   const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 120000 });
@@ -182,7 +184,9 @@ CRITICAL WRITING GUIDELINES:
 22. Use regular apostrophes ' in JSX text content.
 23. NEVER fabricate statistics or testimonials.
 
-Return ONLY the complete .tsx file content. No markdown fences. No explanation. Raw TypeScript/React code starting with "import" and ending with the export default statement.`;
+IMPORTANT: You are running in non-interactive --print mode. You cannot write files or use tools. You MUST output the raw .tsx code directly to stdout. Do NOT ask for permission, do NOT describe what you would write, do NOT use any tool calls. Just output the code.
+
+Return ONLY the complete .tsx file content. No markdown fences. No explanation. No preamble. Raw TypeScript/React code starting with "import" on the very first line and ending with the export default statement.`;
 
   // Inject research context before the CRITICAL WRITING GUIDELINES section
   const finalPrompt = researchContext
@@ -347,7 +351,7 @@ STYLE RULES:
 - No marketing buzzwords (streamline, optimize, innovative, leverage, solutions)
 - Specific numbers and examples over vague claims
 
-Return ONLY the complete updated .tsx file. No markdown fences. No explanation.`;
+IMPORTANT: You are running in non-interactive --print mode. You cannot write files or use tools. Output the raw .tsx code directly to stdout. No markdown fences. No explanation. No preamble. Start with "import" on the very first line.`;
 
   console.log("  Generating content update with Claude (sonnet)...");
   const output = await generateWithClaude(prompt, { model: "sonnet", timeout: 300000 });

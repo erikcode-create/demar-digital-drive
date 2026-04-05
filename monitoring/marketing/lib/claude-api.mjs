@@ -20,7 +20,7 @@ export async function invokeClaude(prompt, { model = "sonnet", timeout = 300000 
   // characters in prompts (backticks, $, quotes, etc.)
   try {
     const result = execFileSync("npx", [
-      "-y", "@anthropic-ai/claude-code", "--print", "--model", modelId, prompt,
+      "-y", "@anthropic-ai/claude-code", "--print", "--output-format", "text", "--model", modelId, prompt,
     ], {
       cwd: REPO_ROOT, encoding: "utf-8", timeout,
       env: { ...process.env, PATH: process.env.PATH },
