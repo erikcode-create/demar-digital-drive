@@ -77,7 +77,7 @@ async function runReview() {
   const start = Date.now();
   const cmd = "node agents/review-orchestrator.mjs";
   try {
-    run(cmd, { timeout: 15 * 60_000 }); // 15-minute timeout
+    run(cmd, { timeout: 25 * 60_000 }); // 25-minute timeout (Opus review + revision loop)
     return { phase: "review", status: "pass", duration: elapsed(start) };
   } catch (err) {
     console.error(`[nightly] Review phase failed:`, err.message);
