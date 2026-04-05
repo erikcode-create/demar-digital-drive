@@ -14,7 +14,7 @@ const PRIORITY_PATHS = [
   "/services/ftl", "/services/ltl",
 ];
 
-const PAGES_PER_RUN = 3;
+const PAGES_PER_RUN = process.env.GOOGLE_PSI_API_KEY ? 10 : 3;
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -33,7 +33,9 @@ function statusIcon(rating) {
 }
 
 async function fetchCWV(url, retries = 2) {
-  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&category=performance&strategy=mobile`;
+  const apiKey = process.env.GOOGLE_PSI_API_KEY;
+  const keyParam = apiKey ? `&key=${apiKey}` : "";
+  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&category=performance&strategy=mobile${keyParam}`;
   const res = await fetch(apiUrl);
   if (res.status === 429 && retries > 0) {
     console.log(`Rate limited on ${url}, waiting 30s before retry...`);
@@ -111,7 +113,7 @@ export async function run(context) {
     const result = await fetchCWV(url);
     if (result) results.push(result);
     if (pages.indexOf(url) < pages.length - 1) {
-      await sleep(5000); // Rate limit -- 5s between PSI requests to avoid 429s
+      await sleep(process.env.GOOGLE_PSI_API_KEY ? 1000 : 5000); // 1s with API key, 5s without
     }
   }
 

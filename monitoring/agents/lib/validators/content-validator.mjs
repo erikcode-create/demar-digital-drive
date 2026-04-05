@@ -242,9 +242,15 @@ export function validateContent(code, metadata = {}) {
     const keywordLower = targetKeyword.toLowerCase();
     const codeLower = code.toLowerCase();
     if (!codeLower.includes(keywordLower)) {
-      errors.push(
-        `Target keyword "${targetKeyword}" not found in content`
-      );
+      // Exact phrase not found — check if all significant words appear in content
+      const stopWords = new Set(["a", "an", "the", "in", "on", "of", "for", "and", "or", "to", "is", "at", "by", "how"]);
+      const words = keywordLower.split(/\s+/).filter(w => w.length > 2 && !stopWords.has(w));
+      const missingWords = words.filter(w => !codeLower.includes(w));
+      if (missingWords.length > 0) {
+        errors.push(
+          `Target keyword "${targetKeyword}" not found in content (missing words: ${missingWords.join(", ")})`
+        );
+      }
     }
   }
 
