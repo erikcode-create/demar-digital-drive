@@ -3,9 +3,7 @@ import { TARGET_URL, computeStatus, computeScore } from "../lib/scanner.mjs";
 const PSI_API = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed";
 
 async function fetchPSI(strategy) {
-  const apiKey = process.env.GOOGLE_PSI_API_KEY;
-  const keyParam = apiKey ? `&key=${apiKey}` : "";
-  const url = `${PSI_API}?url=${encodeURIComponent(TARGET_URL)}&strategy=${strategy}&category=performance&category=accessibility${keyParam}`;
+  const url = `${PSI_API}?url=${encodeURIComponent(TARGET_URL)}&strategy=${strategy}&category=performance&category=accessibility`;
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`PageSpeed API returned ${res.status}`);

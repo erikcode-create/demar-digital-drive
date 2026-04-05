@@ -23,7 +23,7 @@ export async function invokeClaude(prompt, { model = "sonnet", timeout = 300000 
       "-y", "@anthropic-ai/claude-code", "--print", "--model", modelId, prompt,
     ], {
       cwd: REPO_ROOT, encoding: "utf-8", timeout,
-      env: (() => { const e = { ...process.env }; delete e.ANTHROPIC_API_KEY; return e; })(),
+      env: { ...process.env, PATH: process.env.PATH },
       maxBuffer: 10 * 1024 * 1024,
     });
     return { success: true, output: result.trim() };
