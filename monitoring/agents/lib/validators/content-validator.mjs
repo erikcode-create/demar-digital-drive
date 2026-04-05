@@ -106,8 +106,9 @@ export function validateContent(code, metadata = {}) {
   const errors = [];
   const facts = getBusinessFacts();
 
-  // --- 1. import BlogPost ---
-  if (!/import\s+BlogPost\b/.test(code)) {
+  // --- 1. import BlogPost (blog posts only) ---
+  const isBlogPost = metadata.filePath?.includes("/blog/") || metadata.actionType === "write-content";
+  if (isBlogPost && !/import\s+BlogPost\b/.test(code)) {
     errors.push('Missing "import BlogPost" statement');
   }
 

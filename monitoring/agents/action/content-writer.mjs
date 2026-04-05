@@ -496,6 +496,8 @@ export async function run(context) {
         const validation = validate("content-writer", updatedSource, {
           targetKeyword: action?.targetKeyword || "",
           originalSize,
+          filePath: result.filePath,
+          actionType: action?.type,
         });
         if (!validation.passed) {
           console.log(`  ❌ Validation failed: ${validation.errors.join(", ")}`);
