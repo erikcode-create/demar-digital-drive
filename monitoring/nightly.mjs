@@ -54,14 +54,20 @@ function gitPull() {
     run("git pull --rebase origin main", { cwd: REPO_ROOT, timeout: 60_000 });
     console.log("[nightly] git pull succeeded");
   } catch (err) {
-    console.error("[nightly] git pull --rebase failed, aborting rebase and resetting...", err.message);
+    console.error("[nightly] git pull --rebase failed, attempting merge fallback...", err.message);
     try {
       execSync("git rebase --abort", { cwd: REPO_ROOT, stdio: "inherit" });
     } catch (_) {
       // rebase may not be in progress — ignore
     }
-    execSync("git reset --hard origin/main", { cwd: REPO_ROOT, stdio: "inherit" });
-    console.log("[nightly] reset --hard to origin/main completed");
+    // Use merge instead of reset --hard to preserve local commits
+    try {
+      execSync("git pull --no-rebase origin main", { cwd: REPO_ROOT, stdio: "inherit", timeout: 60_000 });
+      console.log("[nightly] merge pull succeeded");
+    } catch (mergeErr) {
+      console.error("[nightly] merge pull also failed, skipping pull:", mergeErr.message);
+      // Do NOT reset --hard — that destroys committed work
+    }
   }
 }
 
@@ -225,7 +231,7 @@ async function main() {
     phaseResults.push(await runPhase("intelligence"));
     phaseResults.push(await runPhase("analysis"));
     phaseResults.push(await runPhase("strategy"));
-    phaseResults.push(await runPhase("action", "--limit 5"));
+    phaseResults.push(await runPhase("action", "--limit 2"));
 
     // 5. git pull after action (action agents may push commits)
     console.log("[nightly] Step 4: git pull post-action");

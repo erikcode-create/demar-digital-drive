@@ -1,7 +1,7 @@
 import "dotenv/config";
 import crypto from "crypto";
 
-const SITE_URL_ENCODED = "https%3A%2F%2Fdemartransportation.com";
+const SITE_URL_ENCODED = "sc-domain%3Ademartransportation.com";
 const TOKEN_URL = "https://oauth2.googleapis.com/token";
 const SEARCH_ANALYTICS_URL = `https://www.googleapis.com/webmasters/v3/sites/${SITE_URL_ENCODED}/searchAnalytics/query`;
 const SITEMAPS_URL = `https://www.googleapis.com/webmasters/v3/sites/${SITE_URL_ENCODED}/sitemaps`;
