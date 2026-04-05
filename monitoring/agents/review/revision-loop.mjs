@@ -237,10 +237,6 @@ export async function runRevisionLoop({
       cleanedCode = cleanedCode.slice(codeStart).trim();
     }
 
-    // Safety net: replace em dashes and en dashes (brand guideline)
-    cleanedCode = cleanedCode.replace(/\u2014/g, ",");
-    cleanedCode = cleanedCode.replace(/\u2013/g, "-");
-
     // (g) Structural validation
     const validation = validate(agentType, cleanedCode, {
       ...validationMeta,

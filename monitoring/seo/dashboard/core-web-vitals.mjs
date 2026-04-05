@@ -30,9 +30,7 @@ function statusIcon(rating) {
 }
 
 async function fetchCWV(url) {
-  const apiKey = process.env.GOOGLE_PSI_API_KEY;
-  const keyParam = apiKey ? `&key=${apiKey}` : "";
-  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&category=performance&strategy=mobile${keyParam}`;
+  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&category=performance&strategy=mobile`;
   const res = await fetch(apiUrl);
   if (!res.ok) {
     console.error(`PSI error for ${url}: ${res.status}`);
