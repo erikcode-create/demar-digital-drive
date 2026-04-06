@@ -228,21 +228,20 @@ const Blog = () => {
           />
 
           {/* Hero */}
-          <section className="pt-32 pb-20 px-4 bg-[hsl(var(--surface))]">
+          <section className="pt-32 pb-[var(--space-2xl)] px-4 bg-[hsl(var(--surface))]">
             <div className="container mx-auto max-w-4xl">
               <h1 className="font-serif text-display text-[hsl(var(--primary))] leading-tight tracking-tight mb-6">
                 Insights
               </h1>
               <p className="text-body text-muted-foreground max-w-2xl leading-relaxed">
-                Practical guides and expert analysis from DeMar Transportation.
-                Real carrier knowledge to help you ship smarter.
+                Freight shipping guides, industry analysis, and logistics expertise.
               </p>
             </div>
           </section>
 
           {/* Posts */}
-          <section className="py-16 bg-[hsl(var(--surface))]">
-            <div className="container mx-auto px-4 max-w-4xl space-y-[var(--space-lg)]">
+          <section className="pb-[var(--space-2xl)] bg-[hsl(var(--surface))]">
+            <div className="container mx-auto px-4 max-w-4xl space-y-[var(--space-xl)]">
 
               {/* Featured Post */}
               <Link to={`/blog/${featuredPost.slug}`} className="block group">
