@@ -132,6 +132,15 @@ const blogPosts = [
     date: "2026-04-05",
     readTime: "8 min",
   },
+  {
+    slug: "hazmat-freight-shipping-requirements",
+    title: "Hazmat Freight Shipping Requirements: A Complete Guide to Compliance",
+    description:
+      "Everything shippers need to know about USDOT hazmat freight requirements, from proper classification and placarding to driver certifications and documentation compliance.",
+    category: "Compliance & Safety",
+    date: "2026-04-06",
+    readTime: "8 min",
+  },
 ];
 
 const Blog = () => {
