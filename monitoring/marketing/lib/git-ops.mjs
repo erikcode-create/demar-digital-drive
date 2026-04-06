@@ -6,11 +6,15 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "../../..");
 
-function exec(cmd) {
+function exec(cmd, { ignoreError = false } = {}) {
   try {
     return execSync(cmd, { cwd: REPO_ROOT, encoding: "utf-8", timeout: 120000 });
   } catch (err) {
-    return err.stdout || err.message;
+    if (ignoreError) {
+      console.warn(`[git-ops] Command failed (ignored): ${cmd}\n  ${err.message}`);
+      return err.stdout || err.message;
+    }
+    throw new Error(`[git-ops] Command failed: ${cmd}\n  ${err.stderr || err.message}`);
   }
 }
 
@@ -27,23 +31,34 @@ export function buildSucceeds() {
   }
 }
 
-export function commitAndPush(message) {
-  // Ensure staging branch exists
-  try {
-    exec("git rev-parse --verify staging");
-  } catch {
-    exec("git branch staging");
+export function commitAndPush(message, files = []) {
+  // Verify we're on main
+  const branch = exec("git rev-parse --abbrev-ref HEAD").trim();
+  if (branch !== "main") {
+    throw new Error(`[git-ops] Expected to be on main, but on ${branch}`);
   }
 
-  // Stash changes, apply on staging
-  exec("git stash");
-  exec("git checkout staging");
-  exec("git merge main --no-edit");
-  exec("git stash pop");
-  exec("git add -A");
-  exec(`git commit -m "${message}"`);
-  exec("git push origin staging");
-  exec("git checkout main");
+  // Stage only the specific files that were changed
+  // (never use git add -A — it picks up unrelated untracked files)
+  if (files.length > 0) {
+    for (const file of files) {
+      exec(`git add "${file}"`);
+    }
+  } else {
+    // Fallback: stage only tracked files that have been modified
+    exec("git add -u");
+  }
+
+  // Check if there's anything to commit
+  const status = exec("git status --porcelain").trim();
+  if (!status) {
+    throw new Error("[git-ops] No changes to commit after applying change");
+  }
+
+  // Escape double quotes in commit message
+  const safeMsg = message.replace(/"/g, '\\"');
+  exec(`git commit -m "${safeMsg}"`);
+  exec("git push origin main");
 }
 
 export function writeStagingManifest(agentName, changes) {

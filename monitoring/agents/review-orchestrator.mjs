@@ -144,6 +144,7 @@ function applyChange(actionId) {
   // Build check
   if (!buildSucceeds()) {
     console.error(`[review-orchestrator] Build failed after applying ${actionId} — reverting`);
+    updateManifest(actionId, { buildPassed: false });
     try {
       execSync("git checkout -- .", { cwd: REPO_ROOT });
     } catch (revertErr) {
@@ -152,6 +153,7 @@ function applyChange(actionId) {
     return false;
   }
 
+  updateManifest(actionId, { buildPassed: true });
   return true;
 }
 
@@ -425,9 +427,18 @@ async function main() {
             commitMsg = `[seo-auto] ${manifest.type}: ${targetPage} (reviewed by ${manifest.reviewTier ?? "sonnet"})`;
           }
 
+          // Collect the specific files to stage (main file + any auxiliary files)
+          const filesToCommit = [];
+          if (manifest.targetFile) filesToCommit.push(manifest.targetFile);
+          if (manifest.auxiliaryFiles) {
+            for (const auxPath of Object.keys(manifest.auxiliaryFiles)) {
+              filesToCommit.push(auxPath);
+            }
+          }
+
           try {
-            commitAndPush(commitMsg);
-            console.log(`[review-orchestrator] Committed to staging: ${commitMsg}`);
+            commitAndPush(commitMsg, filesToCommit);
+            console.log(`[review-orchestrator] Committed to main: ${commitMsg}`);
 
             stagingChanges.push({
               file: manifest.targetFile ?? "unknown",
@@ -438,6 +449,8 @@ async function main() {
             writeStagingManifest("review-orchestrator", stagingChanges);
           } catch (err) {
             console.error(`[review-orchestrator] Commit failed for ${actionId}: ${err.message}`);
+            approved = false;
+            updateManifest(actionId, { status: "rejected", applyFailed: true, commitError: err.message });
             // Revert any uncommitted changes
             try {
               execSync("git checkout -- .", { cwd: REPO_ROOT });
