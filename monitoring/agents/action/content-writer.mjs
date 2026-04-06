@@ -522,7 +522,7 @@ export async function run(context) {
         }
 
         // Validate file content diff
-        const diffCheck = validateFileContent(updatedSource, { maxAddedLines: 600 });
+        const diffCheck = validateFileContent(updatedSource, { maxAddedLines: 800 });
         if (!diffCheck.passed) {
           console.log(`  ❌ Diff check failed: ${diffCheck.errors.join(", ")}`);
           try {

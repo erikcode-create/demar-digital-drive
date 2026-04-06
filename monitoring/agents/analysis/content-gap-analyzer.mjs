@@ -178,7 +178,7 @@ Respond ONLY with valid JSON in this format:
   let gaps;
 
   try {
-    const result = await invokeClaude(prompt, { model: "haiku", timeout: 120000 });
+    const result = await invokeClaude(prompt, { model: "haiku", timeout: 900000 });
     if (!result.success) {
       throw new Error(`Claude call failed: ${result.output}`);
     }

@@ -218,7 +218,7 @@ export async function runRevisionLoop({
 
     const rawOutput = await generateWithClaude(revisionPrompt, {
       model: writerModel,
-      timeout: 600000,
+      timeout: 900000, // 15 min — large pages need extra time
     });
 
     // (f) Clean up code — strip fences, extract between import/export
@@ -234,6 +234,13 @@ export async function runRevisionLoop({
     const codeStart = cleanedCode.search(/^(import |export )/m);
     if (codeStart > 0) {
       cleanedCode = cleanedCode.slice(codeStart).trim();
+    }
+
+    // Strip trailing revision notes after "export default ..." statement
+    const exportDefaultMatch = cleanedCode.match(/^export default \w+;/m);
+    if (exportDefaultMatch) {
+      const exportEnd = cleanedCode.indexOf(exportDefaultMatch[0]) + exportDefaultMatch[0].length;
+      cleanedCode = cleanedCode.slice(0, exportEnd).trim() + "\n";
     }
 
     // Safety net: replace em dashes and en dashes (brand guideline)

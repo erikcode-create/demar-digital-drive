@@ -37,6 +37,15 @@ import { formatResearchContext } from "./research/research-agent.mjs";
 import { postToChannel } from "../lib/discord.mjs";
 
 // ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+
+/** Returns true for errors that are transient (timeouts, rate limits) vs real rejections */
+function isTransientError(msg) {
+  return /ETIMEDOUT|ECONNRESET|ECONNREFUSED|rate.limit|hit your limit|resets \d/i.test(msg);
+}
+
+// ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
 
@@ -335,15 +344,20 @@ async function main() {
       });
     } catch (err) {
       console.error(`[review-orchestrator] Review failed for ${actionId}: ${err.message}`);
-      updateManifest(actionId, { status: "rejected", reviewError: err.message });
-      archivePending(actionId);
-      totalRejected++;
-      await postActionResult(
-        actionId,
-        "REJECT",
-        1,
-        `Review failed with error: ${err.message.substring(0, 200)}`
-      );
+      if (isTransientError(err.message)) {
+        console.log(`[review-orchestrator] Transient error — leaving ${actionId} pending for retry`);
+        updateManifest(actionId, { reviewError: err.message });
+      } else {
+        updateManifest(actionId, { status: "rejected", reviewError: err.message });
+        archivePending(actionId);
+        totalRejected++;
+        await postActionResult(
+          actionId,
+          "REJECT",
+          1,
+          `Review failed with error: ${err.message.substring(0, 200)}`
+        );
+      }
       continue;
     }
 
@@ -399,6 +413,11 @@ async function main() {
       } catch (err) {
         console.error(`[review-orchestrator] Revision loop failed for ${actionId}: ${err.message}`);
         approved = false;
+        if (isTransientError(err.message)) {
+          console.log(`[review-orchestrator] Transient error — leaving ${actionId} pending for retry`);
+          updateManifest(actionId, { reviewError: err.message });
+          continue; // skip archive, will retry next run
+        }
         updateManifest(actionId, { status: "rejected", reviewError: err.message });
       }
 

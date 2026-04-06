@@ -197,10 +197,10 @@ export function validateContent(code, metadata = {}) {
   const phoneMatches = code.match(phoneRegex);
   if (phoneMatches) {
     const correctPhone = facts.phone; // "(775) 230-4767"
+    // Normalize to digits-only for comparison so "775-230-4767" matches "(775) 230-4767"
+    const correctDigits = correctPhone.replace(/\D/g, "");
     const wrongNumbers = phoneMatches.filter((n) => {
-      // Normalize spaces for comparison
-      const normalized = n.replace(/\s+/g, " ").trim();
-      return normalized !== correctPhone;
+      return n.replace(/\D/g, "") !== correctDigits;
     });
     if (wrongNumbers.length > 0) {
       errors.push(

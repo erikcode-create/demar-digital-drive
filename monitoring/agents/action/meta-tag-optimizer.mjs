@@ -207,7 +207,7 @@ Return the complete updated file.`;
   console.log("  Applying meta tag changes...");
   let updatedCode;
   try {
-    updatedCode = await generateWithClaude(editPrompt, { model: "opus", timeout: 120000 });
+    updatedCode = await generateWithClaude(editPrompt, { model: "opus", timeout: 900000 });
   } catch (err) {
     return { success: false, summary: `Failed to apply meta tag edits: ${err.message}`, data: null };
   }

@@ -131,7 +131,7 @@ Also check for any images used via CSS background-image and suggest adding aria-
 
 Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
-  return generateWithClaude(prompt, { model: "opus", timeout: 120000 });
+  return generateWithClaude(prompt, { model: "opus", timeout: 900000 });
 }
 
 async function fixBrokenLinks(sourceCode, fullPath, action) {
@@ -153,7 +153,7 @@ For broken internal links, update to the correct path. For broken external links
 
 Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
-  return generateWithClaude(prompt, { model: "opus", timeout: 120000 });
+  return generateWithClaude(prompt, { model: "opus", timeout: 900000 });
 }
 
 async function fixSchema(sourceCode, fullPath, action) {
@@ -180,7 +180,7 @@ Add the schema as a <script type="application/ld+json"> tag in a useEffect or vi
 
 Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
-  return generateWithClaude(prompt, { model: "opus", timeout: 120000 });
+  return generateWithClaude(prompt, { model: "opus", timeout: 900000 });
 }
 
 async function fixGeneral(sourceCode, fullPath, action) {
@@ -204,7 +204,7 @@ Fix the described issue while following these rules:
 
 Return ONLY the complete updated file. No markdown fences. No explanation.`;
 
-  return generateWithClaude(prompt, { model: "opus", timeout: 120000 });
+  return generateWithClaude(prompt, { model: "opus", timeout: 900000 });
 }
 
 // ---------------------------------------------------------------------------

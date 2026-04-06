@@ -11,7 +11,7 @@ const MODELS = {
   opus: "claude-opus-4-6",
 };
 
-export async function invokeClaude(prompt, { model = "sonnet", timeout = 600000 } = {}) {
+export async function invokeClaude(prompt, { model = "sonnet", timeout = 900000 } = {}) {
   const modelId = MODELS[model] || MODELS.sonnet;
 
   console.log(`[claude-api] Using model: ${model} (${modelId})`);
@@ -22,8 +22,7 @@ export async function invokeClaude(prompt, { model = "sonnet", timeout = 600000 
   // instead of burning API credits.
   const { ANTHROPIC_API_KEY: _, ...cleanEnv } = process.env;
   try {
-    const result = execFileSync("npx", [
-      "-y", "@anthropic-ai/claude-code",
+    const result = execFileSync("claude", [
       "--print",
       "--model", modelId,
       "--disallowedTools", "Write,Edit,Bash,NotebookEdit",
@@ -39,7 +38,7 @@ export async function invokeClaude(prompt, { model = "sonnet", timeout = 600000 
   }
 }
 
-export async function generateWithClaude(prompt, { model = "sonnet", timeout = 600000 } = {}) {
+export async function generateWithClaude(prompt, { model = "sonnet", timeout = 900000 } = {}) {
   const result = await invokeClaude(prompt, { model, timeout });
   if (!result.success) {
     throw new Error(`Claude generation failed: ${result.output}`);
