@@ -142,11 +142,11 @@ const blogPosts = [
     readTime: "8 min",
   },
   {
-    slug: "freight-shipping-reno-nevada",
-    title: "Freight Shipping in Reno, Nevada: Major Lanes, Transit Times & Local Carrier Advantages",
+    slug: "supply-chain-management-small-business",
+    title: "Supply Chain Management for Small Business: A Freight Shipping Guide",
     description:
-      "A complete guide to freight shipping from Reno, Nevada covering major lanes to California, Utah, Arizona, and Oregon, seasonal considerations for Sierra Nevada passes, and why a local carrier delivers better results.",
-    category: "Shipping Guides",
+      "How small businesses can overcome supply chain challenges through strategic freight partnerships, 3PL services, and smarter inventory management.",
+    category: "Logistics Strategy",
     date: "2026-04-06",
     readTime: "8 min",
   },
