@@ -146,16 +146,62 @@ const faqCategories: FAQCategory[] = [
       {
         question: "What size trailers do you have?",
         answer: (
-          <p>
-            We offer standard 53-foot dry van and reefer trailers for full
-            truckload shipments, as well as flatbed trailers for oversized or
-            open-deck loads. For smaller, time-sensitive shipments, our{" "}
-            <Link to="/services/sprinter-van" className="text-[hsl(var(--accent))] hover:underline">
-              hot shot service
-            </Link>{" "}
-            uses smaller equipment that can be dispatched faster and deliver
-            more efficiently.
-          </p>
+          <div>
+            <p className="mb-3">
+              Our standard 53-foot{" "}
+              <Link to="/services/dry-van" className="text-[hsl(var(--accent))] hover:underline">
+                dry van
+              </Link>{" "}
+              and{" "}
+              <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">
+                reefer
+              </Link>{" "}
+              trailers offer approximately 3,400 cubic feet of cargo space and can
+              accommodate up to 26 standard pallets with a maximum payload of around
+              45,000 lbs. Standard dimensions are 8.5 feet wide and 53 feet long,
+              with a practical clearance maximum of 13.5 feet.
+            </p>
+            <p>
+              For oversized or open-deck loads, we offer{" "}
+              <Link to="/services/flatbed" className="text-[hsl(var(--accent))] hover:underline">
+                flatbed trailers
+              </Link>
+              . For smaller, time-sensitive shipments, our{" "}
+              <Link to="/services/sprinter-van" className="text-[hsl(var(--accent))] hover:underline">
+                hot shot service
+              </Link>{" "}
+              uses smaller equipment that can be dispatched faster and deliver
+              more efficiently.
+            </p>
+          </div>
+        ),
+      },
+      {
+        question: "How long does freight shipping take?",
+        answer: (
+          <div>
+            <p className="mb-3">
+              Transit times depend on distance, route, and service type. As a general
+              guide for full truckload shipments from Reno, Nevada:
+            </p>
+            <ul className="list-disc pl-5 space-y-1 mb-3">
+              <li>Reno to San Francisco Bay Area: approximately 230 miles, 4 to 5 hours</li>
+              <li>Reno to Los Angeles: approximately 450 miles, 8 to 10 hours</li>
+              <li>Reno to Salt Lake City: approximately 520 miles, 7 to 9 hours</li>
+            </ul>
+            <p>
+              Our{" "}
+              <Link to="/services/sprinter-van" className="text-[hsl(var(--accent))] hover:underline">
+                hot shot delivery service
+              </Link>{" "}
+              provides significantly faster transit than standard LTL, with dedicated
+              direct-route delivery.{" "}
+              <Link to="/contact" className="text-[hsl(var(--accent))] hover:underline">
+                Contact us
+              </Link>{" "}
+              for a transit time estimate on your specific lane.
+            </p>
+          </div>
         ),
       },
       {
@@ -262,17 +308,27 @@ const faqCategories: FAQCategory[] = [
         question:
           "What temperature ranges do your reefer trailers maintain?",
         answer: (
-          <p>
-            Our{" "}
-            <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">
-              refrigerated trailers
-            </Link>{" "}
-            can maintain temperatures ranging from -20 degrees F to 70 degrees F, making
-            them suitable for frozen goods, fresh produce, dairy,
-            pharmaceuticals, and other temperature-sensitive products.
-            Temperature is continuously monitored throughout transit to ensure
-            your cargo stays within the required range.
-          </p>
+          <div>
+            <p className="mb-3">
+              Our{" "}
+              <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">
+                refrigerated trailers
+              </Link>{" "}
+              can maintain temperatures ranging from -20 degrees F to 70 degrees F.
+              Common temperature settings by commodity include:
+            </p>
+            <ul className="list-disc pl-5 space-y-1 mb-3">
+              <li>Frozen goods: -10 to 0 degrees F</li>
+              <li>Fresh produce: 34 to 38 degrees F</li>
+              <li>Pharmaceuticals: 36 to 46 degrees F</li>
+            </ul>
+            <p>
+              Temperature is continuously monitored throughout transit to ensure
+              your cargo stays within the required range. All temperature-controlled
+              shipments comply with FSMA (Food Safety Modernization Act) requirements
+              for sanitary transportation of food.
+            </p>
+          </div>
         ),
       },
       {
@@ -282,7 +338,8 @@ const faqCategories: FAQCategory[] = [
             Our services are primarily designed for commercial and industrial
             freight. Residential deliveries may be possible depending on the
             shipment size, equipment requirements, and access at the delivery
-            location. Please{" "}
+            location. Residential deliveries may incur an additional fee due
+            to access constraints and limited-access surcharges. Please{" "}
             <Link to="/contact" className="text-[hsl(var(--accent))] hover:underline">
               contact us
             </Link>{" "}
@@ -301,7 +358,9 @@ const faqCategories: FAQCategory[] = [
           <p>
             Freight rates are based on several factors including distance,
             shipment weight and dimensions, equipment type required, pickup and
-            delivery locations, and current market conditions. We provide
+            delivery locations, and current market conditions. Reefer shipments
+            typically cost more than comparable dry van loads due to fuel for the
+            refrigeration unit and specialized equipment requirements. We provide
             transparent, competitive pricing with no hidden fees.{" "}
             <Link to="/quote" className="text-[hsl(var(--accent))] hover:underline">
               Request a quote
@@ -313,13 +372,26 @@ const faqCategories: FAQCategory[] = [
       {
         question: "What factors affect shipping cost?",
         answer: (
-          <p>
-            The main factors that affect freight cost include: mileage between
-            origin and destination, type of trailer needed (dry van, reefer, or
-            flatbed), total weight and dimensions, any special handling
-            requirements, delivery urgency, and fuel surcharges. Seasonal demand
-            and lane availability also play a role in pricing.
-          </p>
+          <div>
+            <p className="mb-3">
+              The main factors that affect freight cost include:
+            </p>
+            <ul className="list-disc pl-5 space-y-1 mb-3">
+              <li>Mileage between origin and destination</li>
+              <li>Type of trailer needed (dry van, reefer, or flatbed)</li>
+              <li>Total weight and dimensions of the shipment</li>
+              <li>Any special handling or accessorial requirements</li>
+              <li>Delivery urgency and service level</li>
+              <li>Fuel surcharges and current market conditions</li>
+            </ul>
+            <p>
+              Seasonal demand and lane availability also play a role in pricing.{" "}
+              <Link to="/quote" className="text-[hsl(var(--accent))] hover:underline">
+                Contact us for current rates
+              </Link>{" "}
+              on your specific lane.
+            </p>
+          </div>
         ),
       },
       {
@@ -345,13 +417,111 @@ const faqCategories: FAQCategory[] = [
         answer: (
           <p>
             We accept standard industry payment methods including ACH transfers,
-            company checks, and approved credit terms for established accounts.
+            company checks, and credit terms available for established accounts.
             Payment terms and methods are discussed during the quoting process.
             For questions about billing,{" "}
             <Link to="/contact" className="text-[hsl(var(--accent))] hover:underline">
               contact our accounting team
             </Link>
             .
+          </p>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Packaging & Freight Preparation",
+    items: [
+      {
+        question: "How should I prepare my freight for shipping?",
+        answer: (
+          <div>
+            <p className="mb-3">
+              Proper freight preparation helps prevent damage and delays. Follow
+              these best practices:
+            </p>
+            <ul className="list-disc pl-5 space-y-1 mb-3">
+              <li>Use sturdy, industry-standard pallets (48 x 40 inches is the most common size)</li>
+              <li>Stack and shrink-wrap all palletized cargo securely</li>
+              <li>Label every package with origin, destination, and handling instructions</li>
+              <li>Ensure weight is distributed evenly across pallets</li>
+              <li>Protect fragile items with appropriate cushioning and corner protectors</li>
+              <li>Keep total pallet height (including the pallet) under 48 inches for standard stacking</li>
+            </ul>
+            <p>
+              If you need guidance on packaging for a specific commodity,{" "}
+              <Link to="/contact" className="text-[hsl(var(--accent))] hover:underline">
+                contact our logistics team
+              </Link>{" "}
+              and we'll help you plan.
+            </p>
+          </div>
+        ),
+      },
+      {
+        question: "What documents are needed for freight shipping?",
+        answer: (
+          <div>
+            <p className="mb-3">
+              Standard freight shipments require the following documentation:
+            </p>
+            <ul className="list-disc pl-5 space-y-1 mb-3">
+              <li>Bill of Lading (BOL) with accurate weight, piece count, and commodity description</li>
+              <li>Shipping labels on all packages</li>
+              <li>Packing list or commercial invoice</li>
+              <li>Any special handling instructions or temperature requirements</li>
+            </ul>
+            <p>
+              For regulated commodities, additional documentation may be required
+              under 49 CFR (Code of Federal Regulations) for hazardous materials,
+              or FSMA sanitary transportation records for food products. Our team
+              will advise you on any additional paperwork needed for your specific
+              shipment.
+            </p>
+          </div>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Claims & Insurance",
+    items: [
+      {
+        question: "What happens if my freight is damaged during transit?",
+        answer: (
+          <div>
+            <p className="mb-3">
+              If your freight is damaged, notify us as soon as possible and document
+              the damage with photographs before accepting delivery. Under the
+              Carmack Amendment, motor carriers are liable for loss or damage to
+              goods during interstate transportation. You have up to 9 months from
+              the delivery date to file a formal freight claim.
+            </p>
+            <p>
+              We work to resolve claims promptly and will guide you through the
+              entire process. All carriers in our network meet or exceed FMCSA
+              minimum insurance requirements for cargo coverage.{" "}
+              <Link to="/contact" className="text-[hsl(var(--accent))] hover:underline">
+                Contact us
+              </Link>{" "}
+              to report damage or start a claim.
+            </p>
+          </div>
+        ),
+      },
+      {
+        question: "Is my freight insured during shipping?",
+        answer: (
+          <p>
+            All carriers in our network meet or exceed FMCSA minimum insurance
+            requirements for cargo coverage. For high-value shipments, additional
+            cargo insurance can be arranged through third-party providers. We
+            recommend discussing insurance options during the quoting process so
+            your coverage matches the value of your goods.{" "}
+            <Link to="/quote" className="text-[hsl(var(--accent))] hover:underline">
+              Request a quote
+            </Link>{" "}
+            and we'll help you determine the right level of coverage.
           </p>
         ),
       },
@@ -412,11 +582,13 @@ const plainTextAnswers: Record<string, string> = {
   "What are your hours of operation?":
     "Our office is open Monday through Friday from 7:00 AM to 6:00 PM PST. However, our dispatch team is available 24 hours a day, 7 days a week to handle urgent freight needs and provide shipment updates.",
   "Is DeMar Transportation a broker or a carrier?":
-    "DeMar Transportation operates as a third-party logistics provider (3PL) with our own fleet and drivers, plus access to a vast nationwide carrier network spanning North America.",
+    "DeMar Transportation operates as a third-party logistics provider (3PL) with our own fleet and drivers, plus access to a vast nationwide carrier network. This means you get the reliability of a dedicated freight partner with the capacity and flexibility of thousands of vetted carriers across North America.",
   "What is the difference between dry van and reefer shipping?":
     "A dry van is a standard enclosed trailer used for non-temperature-sensitive freight. A reefer (refrigerated trailer) has a built-in cooling and heating unit that maintains precise temperatures, making it essential for perishable goods like food, pharmaceuticals, and anything requiring climate control during transit.",
   "What size trailers do you have?":
-    "We offer standard 53-foot dry van and reefer trailers for full truckload shipments, as well as flatbed trailers for oversized or open-deck loads. For smaller, time-sensitive shipments, our hot shot service uses smaller equipment.",
+    "Our standard 53-foot dry van and reefer trailers offer approximately 3,400 cubic feet of cargo space and can accommodate up to 26 standard pallets with a maximum payload of around 45,000 lbs. Standard dimensions are 8.5 feet wide and 53 feet long, with a practical clearance maximum of 13.5 feet. We also offer flatbed trailers for oversized or open-deck loads, and hot shot service with smaller equipment for time-sensitive shipments.",
+  "How long does freight shipping take?":
+    "Transit times depend on distance, route, and service type. As a general guide for full truckload shipments from Reno, Nevada: Reno to San Francisco Bay Area is approximately 230 miles (4 to 5 hours), Reno to Los Angeles is approximately 450 miles (8 to 10 hours), and Reno to Salt Lake City is approximately 520 miles (7 to 9 hours). Our hot shot delivery service provides significantly faster transit than standard LTL, with dedicated direct-route delivery.",
   "Can you handle oversized or overweight loads?":
     "Yes, our flatbed service is designed for oversized, heavy, and irregularly shaped cargo including construction materials, machinery, and industrial equipment. For loads requiring special permits, our logistics team will coordinate all necessary permits and route planning.",
   "Do you offer expedited shipping?":
@@ -428,17 +600,25 @@ const plainTextAnswers: Record<string, string> = {
   "Do you transport hazardous materials?":
     "Hazardous materials transport requires specialized certifications and equipment. Please contact us directly to discuss your specific hazmat shipping needs.",
   "What temperature ranges do your reefer trailers maintain?":
-    "Our refrigerated trailers can maintain temperatures ranging from -20°F to 70°F, making them suitable for frozen goods, fresh produce, dairy, pharmaceuticals, and other temperature-sensitive products.",
+    "Our refrigerated trailers can maintain temperatures ranging from -20 degrees F to 70 degrees F. Common temperature settings by commodity include: frozen goods at -10 to 0 degrees F, fresh produce at 34 to 38 degrees F, and pharmaceuticals at 36 to 46 degrees F. Temperature is continuously monitored throughout transit. All temperature-controlled shipments comply with FSMA requirements for sanitary transportation of food.",
   "Can you handle residential deliveries?":
-    "Our services are primarily designed for commercial and industrial freight. Residential deliveries may be possible depending on the shipment size, equipment requirements, and access at the delivery location.",
+    "Our services are primarily designed for commercial and industrial freight. Residential deliveries may be possible depending on the shipment size, equipment requirements, and access at the delivery location. Residential deliveries may incur an additional fee due to access constraints and limited-access surcharges.",
   "How is freight shipping priced?":
-    "Freight rates are based on several factors including distance, shipment weight and dimensions, equipment type required, pickup and delivery locations, and current market conditions. We provide transparent, competitive pricing with no hidden fees.",
+    "Freight rates are based on several factors including distance, shipment weight and dimensions, equipment type required, pickup and delivery locations, and current market conditions. Reefer shipments typically cost more than comparable dry van loads due to fuel for the refrigeration unit and specialized equipment requirements. We provide transparent, competitive pricing with no hidden fees. Request a quote to get an accurate rate for your specific shipment.",
   "What factors affect shipping cost?":
-    "The main factors include mileage between origin and destination, type of trailer needed, total weight and dimensions, special handling requirements, delivery urgency, and fuel surcharges. Seasonal demand and lane availability also play a role.",
+    "The main factors include mileage between origin and destination, type of trailer needed (dry van, reefer, or flatbed), total weight and dimensions, special handling or accessorial requirements, delivery urgency and service level, and fuel surcharges and current market conditions. Seasonal demand and lane availability also play a role. Contact us for current rates on your specific lane.",
   "Do you require a minimum shipment size?":
     "We specialize in full truckload (FTL) shipments, but our hot shot service is a great option for smaller, partial loads that still need dedicated equipment and fast delivery. There is no strict minimum.",
   "What payment methods do you accept?":
-    "We accept standard industry payment methods including ACH transfers, company checks, and approved credit terms for established accounts. Payment terms and methods are discussed during the quoting process.",
+    "We accept standard industry payment methods including ACH transfers, company checks, and credit terms available for established accounts. Payment terms and methods are discussed during the quoting process.",
+  "How should I prepare my freight for shipping?":
+    "Proper freight preparation helps prevent damage and delays. Best practices include: use sturdy, industry-standard pallets (48 x 40 inches is the most common size), stack and shrink-wrap all palletized cargo securely, label every package with origin, destination, and handling instructions, ensure weight is distributed evenly across pallets, protect fragile items with appropriate cushioning and corner protectors, and keep total pallet height (including the pallet) under 48 inches for standard stacking.",
+  "What documents are needed for freight shipping?":
+    "Standard freight shipments require a Bill of Lading (BOL) with accurate weight, piece count, and commodity description, shipping labels on all packages, a packing list or commercial invoice, and any special handling instructions or temperature requirements. For regulated commodities, additional documentation may be required under 49 CFR for hazardous materials, or FSMA sanitary transportation records for food products.",
+  "What happens if my freight is damaged during transit?":
+    "If your freight is damaged, notify us as soon as possible and document the damage with photographs before accepting delivery. Under the Carmack Amendment, motor carriers are liable for loss or damage to goods during interstate transportation. You have up to 9 months from the delivery date to file a formal freight claim. We work to resolve claims promptly and will guide you through the entire process. All carriers in our network meet or exceed FMCSA minimum insurance requirements for cargo coverage.",
+  "Is my freight insured during shipping?":
+    "All carriers in our network meet or exceed FMCSA minimum insurance requirements for cargo coverage. For high-value shipments, additional cargo insurance can be arranged through third-party providers. We recommend discussing insurance options during the quoting process so your coverage matches the value of your goods.",
   "How do I apply to drive for DeMar?":
     "Visit our careers page to learn about current openings and submit your application. We're always looking for experienced, safety-conscious drivers. You can also call us at (775) 230-4767 to speak with our recruiting team directly.",
   "What are the requirements to drive for DeMar Transportation?":
@@ -448,10 +628,10 @@ const plainTextAnswers: Record<string, string> = {
 const FAQ = () => {
   useEffect(() => {
     document.title =
-      "FAQ | DeMar Transportation - Freight Shipping Questions Answered";
+      "Freight Shipping FAQ | DeMar Transportation - Common Questions Answered";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Find answers to common questions about DeMar Transportation\'s freight services, shipping rates, equipment types, tracking, and career opportunities.');
+      metaDescription.setAttribute('content', 'Find answers to common freight shipping questions including transit times, pricing factors, trailer sizes, packaging guidelines, claims and insurance, equipment types, and career opportunities at DeMar Transportation.');
     }
   }, []);
 
@@ -491,7 +671,7 @@ const FAQ = () => {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 backdrop-blur-sm">
                 <HelpCircle className="h-4 w-4 text-[hsl(var(--accent))]" />
                 <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/60">
-                  Common Questions
+                  Freight Shipping FAQ
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
@@ -500,14 +680,15 @@ const FAQ = () => {
                 <span className="text-white/40">Questions</span>
               </h1>
               <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
-                Find answers to common questions about our freight services,
-                pricing, and how DeMar Transportation can help with your
+                Find answers to common questions about transit times, pricing
+                factors, equipment types, freight packaging, claims and
+                insurance, and how DeMar Transportation can help with your
                 shipping needs.
               </p>
             </div>
           </section>
 
-          {/* FAQ Content — alternating sections per category */}
+          {/* FAQ Content , alternating sections per category */}
           {faqCategories.map((category, categoryIndex) => (
             <section
               key={category.title}
