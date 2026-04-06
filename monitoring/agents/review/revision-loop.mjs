@@ -23,8 +23,8 @@ import { validate } from "../lib/validators/index.mjs";
  * @param {string} [baseModel="sonnet"] - model to use for rounds 1-2
  * @returns {string} model name ("opus" | baseModel)
  */
-export function getWriterModel(roundNumber, baseModel = "opus") {
-  return baseModel;
+export function getWriterModel(roundNumber, baseModel = "sonnet") {
+  return roundNumber >= 3 ? "opus" : baseModel;
 }
 
 // ---------------------------------------------------------------------------
@@ -193,14 +193,14 @@ export async function runRevisionLoop({
       return { approved: true, finalVerdict: verdict, rounds };
     }
 
-    // (d) REJECT on final round — give up
-    if (verdict.verdict === "REJECT" && round === MAX_ROUNDS) {
-      console.log(`[revision-loop] REJECTED on round ${round} — escalation failed`);
+    // (d) Final round non-approval — give up (don't waste tokens generating a revision that won't be reviewed)
+    if (round === MAX_ROUNDS) {
+      console.log(`[revision-loop] ${verdict.verdict} on final round ${round} — giving up`);
       updateManifest(actionId, { status: "rejected" });
       return { approved: false, finalVerdict: verdict, rounds };
     }
 
-    // If REJECT on round < MAX_ROUNDS, still try to revise (treat as REVISE)
+    // If REJECT/REVISE on round < MAX_ROUNDS, try to revise
     // (e) Generate revision
     const writerModel = getWriterModel(round + 1); // next round's model
     console.log(

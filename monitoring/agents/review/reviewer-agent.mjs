@@ -42,7 +42,7 @@ function loadBusinessFacts() {
 // Tier selection
 // ---------------------------------------------------------------------------
 
-const OPUS_TYPES = new Set(["write-content", "update-content", "fix-homepage"]);
+const OPUS_TYPES = new Set(["write-content"]);
 
 /**
  * Returns "opus" for content-heavy changes and "sonnet" for technical fixes.
