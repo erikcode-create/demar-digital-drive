@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeMar SEO Dashboard — Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #0f1117;
+    --bg-card: #1a1d27;
+    --bg-hover: #252836;
+    --border: rgba(255, 255, 255, 0.08);
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0b0;
+    --text-muted: #5a6178;
+    --color-pass: #10b981;
+    --color-good: #06b6d4;
+    --color-warn: #f59e0b;
+    --color-fail: #ef4444;
+    --color-info: #3b82f6;
+    --color-accent: #7c6fff;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-base);
+    color: var(--text-primary);
+    padding: 24px;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .header h1 span { color: var(--color-accent); }
+  .header-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: right;
+  }
+  .header-meta .timestamp { color: var(--text-secondary); }
+
+  /* KPI Row */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: auto repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  /* Score Ring */
+  .score-ring-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .score-ring {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  .score-ring svg { transform: rotate(-90deg); }
+  .score-ring-bg { fill: none; stroke: var(--bg-hover); stroke-width: 8; }
+  .score-ring-fill { fill: none; stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
+  .score-ring-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .score-ring-text .number { font-size: 28px; font-weight: 700; display: block; }
+  .score-ring-text .grade { font-size: 11px; font-weight: 600; color: var(--text-secondary); }
+  .score-ring-label { font-size: 12px; font-weight: 500; color: var(--text-secondary); margin-top: 8px; }
+  .score-ring-delta { font-size: 12px; margin-top: 4px; }
+
+  /* KPI Card */
+  .kpi-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+  }
+  .kpi-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .kpi-value {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .kpi-detail {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .kpi-delta {
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+  .kpi-delta.positive { color: var(--color-pass); }
+  .kpi-delta.negative { color: var(--color-fail); }
+  .kpi-delta.neutral { color: var(--text-muted); }
+  .kpi-sparkline {
+    margin-top: auto;
+    padding-top: 12px;
+    height: 32px;
+  }
+  .kpi-sparkline svg { width: 100%; height: 100%; }
+
+  /* Tabs */
+  .tab-bar {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .tab {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .tab:hover { color: var(--text-secondary); }
+  .tab.active {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+    font-weight: 600;
+  }
+  .tab .badge {
+    display: inline-block;
+    background: var(--color-fail);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 10px;
+    margin-left: 6px;
+  }
+
+  /* Category Scores Grid */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .category-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .category-ring {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+  .category-ring svg { transform: rotate(-90deg); }
+  .cat-ring-bg { fill: none; stroke: var(--bg-hover); stroke-width: 5; }
+  .cat-ring-fill { fill: none; stroke-width: 5; stroke-linecap: round; }
+  .category-ring .cat-score {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .category-info h4 { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+  .category-info .cat-detail { font-size: 11px; color: var(--text-secondary); }
+  .category-info .cat-delta { font-size: 11px; font-weight: 500; margin-top: 2px; }
+
+  /* Recent Activity */
+  .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+  }
+  .activity-list {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .activity-item:last-child { border-bottom: none; }
+  .activity-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .activity-icon.approved { background: rgba(16,185,129,0.15); color: var(--color-pass); }
+  .activity-icon.rejected { background: rgba(239,68,68,0.15); color: var(--color-fail); }
+  .activity-icon.revised { background: rgba(245,158,11,0.15); color: var(--color-warn); }
+  .activity-icon.agent { background: rgba(59,130,246,0.15); color: var(--color-info); }
+  .activity-text { flex: 1; color: var(--text-secondary); }
+  .activity-text strong { color: var(--text-primary); font-weight: 600; }
+  .activity-time { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+
+  /* Split layout for below-tabs */
+  .content-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* Label text */
+  .mockup-label {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 900px) {
+    .kpi-row { grid-template-columns: 1fr 1fr; }
+    .content-split { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .kpi-row { grid-template-columns: 1fr; }
+    body { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div>
+    <h1><span>DeMar</span> SEO Dashboard</h1>
+  </div>
+  <div class="header-meta">
+    <div class="timestamp">Last updated: Apr 4, 2026 — 3:42 AM</div>
+    <div>Nightly run #47 — all phases passed</div>
+  </div>
+</div>
+
+<!-- KPI Row -->
+<div class="kpi-row">
+  <!-- Overall Score Ring -->
+  <div class="score-ring-card">
+    <div class="score-ring">
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <circle class="score-ring-bg" cx="50" cy="50" r="42"/>
+        <circle class="score-ring-fill" cx="50" cy="50" r="42"
+                stroke="#06b6d4"
+                stroke-dasharray="263.9"
+                stroke-dashoffset="68.6"/>
+      </svg>
+      <div class="score-ring-text">
+        <span class="number" style="color:#06b6d4">74</span>
+        <span class="grade">GOOD</span>
+      </div>
+    </div>
+    <div class="score-ring-label">Overall Score</div>
+    <div class="score-ring-delta" style="color:var(--color-pass)">▲ +3 this week</div>
+  </div>
+
+  <!-- KPI: Agent Health -->
+  <div class="kpi-card">
+    <div class="kpi-label">Agent Health</div>
+    <div class="kpi-value" style="color:var(--color-pass)">5/5</div>
+    <div class="kpi-detail">All phases passed</div>
+    <div class="kpi-delta positive">▲ 12 consecutive passes</div>
+    <div class="kpi-sparkline">
+      <svg viewBox="0 0 100 24" preserveAspectRatio="none">
+        <polyline fill="none" stroke="#10b981" stroke-width="1.5"
+          points="0,20 8,18 16,4 24,6 32,4 40,4 48,8 56,4 64,4 72,4 80,4 88,4 96,4 100,4"/>
+        <polyline fill="rgba(16,185,129,0.1)" stroke="none"
+          points="0,24 0,20 8,18 16,4 24,6 32,4 40,4 48,8 56,4 64,4 72,4 80,4 88,4 96,4 100,4 100,24"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- KPI: Rankings -->
+  <div class="kpi-card">
+    <div class="kpi-label">Rankings</div>
+    <div class="kpi-value" style="color:var(--color-pass)">+5</div>
+    <div class="kpi-detail">Keywords improved this week</div>
+    <div class="kpi-delta negative">▼ 2 declined</div>
+    <div class="kpi-sparkline">
+      <svg viewBox="0 0 100 24" preserveAspectRatio="none">
+        <polyline fill="none" stroke="#3b82f6" stroke-width="1.5"
+          points="0,18 10,16 20,14 30,16 40,12 50,10 60,12 70,8 80,8 90,6 100,4"/>
+        <polyline fill="rgba(59,130,246,0.1)" stroke="none"
+          points="0,24 0,18 10,16 20,14 30,16 40,12 50,10 60,12 70,8 80,8 90,6 100,4 100,24"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- KPI: Changes -->
+  <div class="kpi-card">
+    <div class="kpi-label">Review Pipeline</div>
+    <div class="kpi-value" style="color:var(--color-info)">8</div>
+    <div class="kpi-detail">Changes this week</div>
+    <div class="kpi-delta positive">6 approved · 1 revised · 1 rejected</div>
+  </div>
+
+  <!-- KPI: Issues -->
+  <div class="kpi-card">
+    <div class="kpi-label">Open Issues</div>
+    <div class="kpi-value" style="color:var(--color-warn)">23</div>
+    <div class="kpi-detail">4 critical · 11 warning · 8 info</div>
+    <div class="kpi-delta positive">▲ Down from 31 last week</div>
+  </div>
+</div>
+
+<!-- Tab Bar -->
+<div class="tab-bar">
+  <div class="tab active">Site Health</div>
+  <div class="tab">Rankings</div>
+  <div class="tab">Agent Activity</div>
+  <div class="tab">Changes <span class="badge">3</span></div>
+</div>
+
+<!-- Tab Content: Site Health (active) -->
+<div>
+  <span class="mockup-label">Category Scores</span>
+  <div class="category-grid">
+    <!-- On-Page -->
+    <div class="category-card">
+      <div class="category-ring">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+          <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="#10b981"
+                  stroke-dasharray="125.7" stroke-dashoffset="22.6"/>
+        </svg>
+        <span class="cat-score" style="color:#10b981">82</span>
+      </div>
+      <div class="category-info">
+        <h4>On-Page SEO</h4>
+        <div class="cat-detail">Titles, metas, H1s, canonicals</div>
+        <div class="cat-delta" style="color:var(--color-pass)">▲ +5</div>
+      </div>
+    </div>
+    <!-- Technical -->
+    <div class="category-card">
+      <div class="category-ring">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+          <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="#f59e0b"
+                  stroke-dasharray="125.7" stroke-dashoffset="49.0"/>
+        </svg>
+        <span class="cat-score" style="color:#f59e0b">61</span>
+      </div>
+      <div class="category-info">
+        <h4>Technical</h4>
+        <div class="cat-detail">Security, robots, redirects</div>
+        <div class="cat-delta" style="color:var(--color-pass)">▲ +2</div>
+      </div>
+    </div>
+    <!-- E-E-A-T -->
+    <div class="category-card">
+      <div class="category-ring">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+          <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="#10b981"
+                  stroke-dasharray="125.7" stroke-dashoffset="27.7"/>
+        </svg>
+        <span class="cat-score" style="color:#10b981">78</span>
+      </div>
+      <div class="category-info">
+        <h4>E-E-A-T</h4>
+        <div class="cat-detail">Trust, expertise, authority</div>
+        <div class="cat-delta neutral" style="color:var(--text-muted)">— No change</div>
+      </div>
+    </div>
+    <!-- CWV -->
+    <div class="category-card">
+      <div class="category-ring">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+          <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="#ef4444"
+                  stroke-dasharray="125.7" stroke-dashoffset="69.1"/>
+        </svg>
+        <span class="cat-score" style="color:#ef4444">45</span>
+      </div>
+      <div class="category-info">
+        <h4>Core Web Vitals</h4>
+        <div class="cat-detail">LCP, INP, CLS</div>
+        <div class="cat-delta" style="color:var(--color-fail)">▼ -3</div>
+      </div>
+    </div>
+    <!-- Schema -->
+    <div class="category-card">
+      <div class="category-ring">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+          <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="#06b6d4"
+                  stroke-dasharray="125.7" stroke-dashoffset="37.7"/>
+        </svg>
+        <span class="cat-score" style="color:#06b6d4">70</span>
+      </div>
+      <div class="category-info">
+        <h4>Schema</h4>
+        <div class="cat-detail">JSON-LD structured data</div>
+        <div class="cat-delta" style="color:var(--color-pass)">▲ +8</div>
+      </div>
+    </div>
+    <!-- Links -->
+    <div class="category-card">
+      <div class="category-ring">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+          <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="#10b981"
+                  stroke-dasharray="125.7" stroke-dashoffset="15.1"/>
+        </svg>
+        <span class="cat-score" style="color:#10b981">88</span>
+      </div>
+      <div class="category-info">
+        <h4>Internal Links</h4>
+        <div class="cat-detail">Structure, orphans, depth</div>
+        <div class="cat-delta" style="color:var(--color-pass)">▲ +4</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Split: Recent Activity + Top Issues -->
+  <div class="content-split">
+    <div>
+      <span class="mockup-label">Recent Changes</span>
+      <div class="activity-list">
+        <div class="activity-item">
+          <div class="activity-icon approved">✓</div>
+          <div class="activity-text"><strong>Meta tags optimized</strong> — /services/dry-van-shipping</div>
+          <div class="activity-time">3h ago</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon approved">✓</div>
+          <div class="activity-text"><strong>Blog post published</strong> — "LTL vs FTL: Complete Guide"</div>
+          <div class="activity-time">3h ago</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon revised">↻</div>
+          <div class="activity-text"><strong>Schema updated</strong> — /services/hazmat (revised 1x)</div>
+          <div class="activity-time">3h ago</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon rejected">✗</div>
+          <div class="activity-text"><strong>Homepage copy change</strong> — rejected (low confidence)</div>
+          <div class="activity-time">3h ago</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon agent">●</div>
+          <div class="activity-text"><strong>Nightly run #47</strong> — 5/5 phases passed in 4m 12s</div>
+          <div class="activity-time">3h ago</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="mockup-label">Top Issues</span>
+      <div class="activity-list">
+        <div class="activity-item">
+          <div class="activity-icon rejected" style="font-size:10px; font-weight:700;">!</div>
+          <div class="activity-text"><strong>Missing meta description</strong> — /services/warehousing</div>
+          <div class="activity-time" style="color:var(--color-fail)">Critical</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon rejected" style="font-size:10px; font-weight:700;">!</div>
+          <div class="activity-text"><strong>LCP > 4s</strong> — /blog/small-business-freight</div>
+          <div class="activity-time" style="color:var(--color-fail)">Critical</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon revised" style="font-size:10px; font-weight:700;">!</div>
+          <div class="activity-text"><strong>Title too long (71 chars)</strong> — /services/flatbed</div>
+          <div class="activity-time" style="color:var(--color-warn)">Warning</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon revised" style="font-size:10px; font-weight:700;">!</div>
+          <div class="activity-text"><strong>No Schema markup</strong> — /about</div>
+          <div class="activity-time" style="color:var(--color-warn)">Warning</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon agent" style="font-size:10px; font-weight:700;">i</div>
+          <div class="activity-text"><strong>Low word count (180)</strong> — /services/sprinter-van</div>
+          <div class="activity-time" style="color:var(--text-muted)">Info</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

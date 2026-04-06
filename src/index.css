@@ -1,3 +1,6 @@
+@import "@fontsource/dm-serif-text/400.css";
+@import "@fontsource-variable/inter";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,7 +12,7 @@
 
 @layer base {
   :root {
-    --background: 240 20% 99%;
+    --background: 240 10% 98.5%;
     --foreground: 228 80% 5%;
 
     --card: 0 0% 100%;
@@ -32,14 +35,14 @@
     --muted-foreground: 228 10% 40%;
 
     /* Accent: Golden Yellow — precision instrument, CTAs only */
-    --accent: 45 97% 54%;
+    --accent: 45 80% 52%;
     --accent-foreground: 225 97% 4%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     /* No-Line Rule: borders are ghost-level or absent */
-    --border: 240 10% 92%;
+    --border: 240 6% 91%;
     --input: 240 10% 92%;
     --ring: 225 97% 4%;
 
@@ -52,7 +55,7 @@
 
     /* Kinetic Architect Design Tokens */
     --hero-gradient: linear-gradient(135deg, hsl(225 97% 4%), hsl(220 85% 15%));
-    --accent-gradient: linear-gradient(45deg, hsl(45 97% 54%), hsl(45 97% 64%));
+    --accent-gradient: linear-gradient(45deg, hsl(45 80% 52%), hsl(45 80% 62%));
     --nav-gradient: linear-gradient(180deg, hsl(225 97% 4%), hsl(220 85% 15%));
     --shadow-hero: 0 25px 50px -12px hsl(225 97% 4% / 0.25);
     --shadow-card: 0 4px 20px -4px hsl(225 97% 4% / 0.06);
@@ -62,7 +65,22 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --radius: 0.5rem;
+    /* Typography Scale */
+    --text-display: clamp(2.5rem, 5vw, 4rem);
+    --text-heading: clamp(1.5rem, 3vw, 2.25rem);
+    --text-subheading: 1.25rem;
+    --text-body: 1rem;
+    --text-caption: 0.875rem;
+
+    /* Spacing Scale (4px base grid) */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+    --space-2xl: 6rem;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,7 +119,7 @@
     --muted: 220 85% 12%;
     --muted-foreground: 220 15% 65%;
 
-    --accent: 45 97% 54%;
+    --accent: 45 80% 52%;
     --accent-foreground: 220 85% 15%;
 
     --destructive: 0 62.8% 50%;
@@ -109,7 +127,7 @@
 
     --border: 220 85% 12%;
     --input: 220 85% 12%;
-    --ring: 45 97% 54%;
+    --ring: 45 80% 52%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -127,6 +145,6 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }

@@ -19,19 +19,37 @@ const services = [
     icon: Package,
     title: "Dry Van",
     slug: "dry-van",
-    description: "Standard enclosed trailers for general freight and cargo protection across all 48 states.",
+    description: "Standard enclosed trailers for general freight and cargo protection.",
   },
   {
     icon: Snowflake,
     title: "Reefer",
     slug: "reefer",
-    description: "Temperature-controlled transport for perishable goods with real-time monitoring.",
+    description: "Temperature-controlled transport for perishable goods.",
   },
   {
     icon: Truck,
     title: "Flatbed",
     slug: "flatbed",
     description: "Open trailers for oversized loads and heavy equipment.",
+  },
+  {
+    icon: Building,
+    title: "Box Truck",
+    slug: "box-truck",
+    description: "Smaller loads and local deliveries with flexible scheduling.",
+  },
+  {
+    icon: Car,
+    title: "Sprinter Van",
+    slug: "sprinter-van",
+    description: "Expedited delivery for time-sensitive smaller shipments.",
+  },
+  {
+    icon: Wrench,
+    title: "Hazmat/Fuel",
+    slug: "hazmat",
+    description: "Certified handling of hazardous materials and fuel transport.",
   },
   {
     icon: Container,
@@ -46,114 +64,55 @@ const services = [
     description: "Cost-effective less-than-truckload for smaller freight.",
   },
   {
-    icon: Building,
-    title: "Box Truck",
-    slug: "box-truck",
-    description: "Smaller loads and local deliveries.",
-  },
-  {
-    icon: Car,
-    title: "Sprinter Van",
-    slug: "sprinter-van",
-    description: "Expedited small shipments.",
-  },
-  {
-    icon: Wrench,
-    title: "Hazmat/Fuel",
-    slug: "hazmat",
-    description: "Certified hazardous materials.",
-  },
-  {
     icon: Network,
     title: "3PL Services",
     slug: "3pl",
-    description: "Full logistics management.",
+    description: "Full-service logistics with freight and supply chain management.",
   },
   {
     icon: Warehouse,
     title: "Warehousing",
     slug: "warehousing",
-    description: "Storage and fulfillment.",
+    description: "Nationwide warehousing, distribution, and fulfillment.",
   },
 ];
 
-// Tier splits: indices 0-1 large, 2-4 medium, 5-9 compact
-const large = services.slice(0, 2);
-const medium = services.slice(2, 5);
-const compact = services.slice(5);
-
 const Services = () => {
   return (
-    <section id="services" className="py-space-2xl bg-[hsl(var(--surface))]">
+    <section id="services" className="py-24 md:py-32 bg-[hsl(var(--surface))]">
       <div className="container mx-auto px-4">
-        {/* Section header */}
-        <div className="max-w-2xl mb-space-xl">
-          <h2 className="font-serif text-heading text-primary mb-space-sm text-balance">
-            Full-Spectrum Freight, One Partner
+        {/* Section header — editorial asymmetry */}
+        <div className="max-w-2xl mb-16">
+          <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+            Our Services
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-[hsl(var(--primary))] leading-tight tracking-tight mb-4">
+            Full-spectrum freight
+            <br />
+            <span className="text-[hsl(var(--muted-foreground))]">under one roof.</span>
           </h2>
-          <p className="font-sans text-body text-muted-foreground max-w-lg">
-            From dry van to hazmat, FTL to warehousing. Every shipping solution
-            under one roof.
+          <p className="text-base text-[hsl(var(--muted-foreground))] max-w-lg leading-relaxed">
+            From dry van to hazmat, FTL to warehousing. One partner for every
+            shipping need across the nation.
           </p>
         </div>
 
-        {/* Large cards — top tier */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md mb-space-md">
-          {large.map((service) => (
+        {/* Service cards — grid with tonal layering (no borders) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 mb-16">
+          {services.map((service) => (
             <Link key={service.slug} to={`/services/${service.slug}`} className="group">
-              <div className="h-full p-space-lg rounded-[var(--radius)] bg-[hsl(var(--surface-low))] hover:shadow-[var(--shadow-float)] transition-shadow duration-300">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-space-md">
-                  <service.icon aria-hidden="true" className="h-6 w-6 text-accent" />
-                </div>
-                <h3 className="font-serif text-subheading text-primary mb-space-sm">
+              <div className="h-full p-6 rounded-xl bg-[hsl(var(--surface-low))] hover:bg-white hover:shadow-[var(--shadow-float)] transition-all duration-300">
+                <service.icon className="h-7 w-7 text-[hsl(var(--accent))] mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-2 tracking-tight">
                   {service.title}
                 </h3>
-                <p className="text-body text-muted-foreground leading-relaxed mb-space-md">
+                <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed mb-3">
                   {service.description}
                 </p>
-                <span className="inline-flex items-center gap-1 text-caption font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="inline-flex items-center gap-1 text-xs font-medium text-[hsl(var(--accent-foreground))] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   Learn more
-                  <ArrowRight aria-hidden="true" className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                 </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* Medium cards — second tier */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md mb-space-md">
-          {medium.map((service) => (
-            <Link key={service.slug} to={`/services/${service.slug}`} className="group">
-              <div className="h-full p-space-lg rounded-[var(--radius)] bg-[hsl(var(--surface-low))] hover:shadow-[var(--shadow-float)] transition-shadow duration-300">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 mb-space-sm">
-                  <service.icon aria-hidden="true" className="h-5 w-5 text-accent" />
-                </div>
-                <h3 className="font-serif text-subheading text-primary mb-1">
-                  {service.title}
-                </h3>
-                <p className="text-caption text-muted-foreground leading-relaxed mb-space-sm">
-                  {service.description}
-                </p>
-                <span className="inline-flex items-center gap-1 text-caption font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Learn more
-                  <ArrowRight aria-hidden="true" className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* Compact cards — third tier */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-sm mb-space-xl">
-          {compact.map((service) => (
-            <Link key={service.slug} to={`/services/${service.slug}`} className="group">
-              <div className="h-full p-space-md rounded-[var(--radius)] bg-[hsl(var(--surface-low))] hover:shadow-[var(--shadow-float)] transition-shadow duration-300 text-center">
-                <div className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 mb-space-xs">
-                  <service.icon aria-hidden="true" className="h-4 w-4 text-accent" />
-                </div>
-                <h3 className="text-sm font-bold text-primary">
-                  {service.title}
-                </h3>
               </div>
             </Link>
           ))}
@@ -164,7 +123,7 @@ const Services = () => {
           <Button asChild variant="hero" size="xl">
             <Link to="/quote" className="group">
               Get a Free Quote
-              <ArrowRight aria-hidden="true" className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>

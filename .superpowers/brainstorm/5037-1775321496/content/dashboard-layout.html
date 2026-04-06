@@ -1,0 +1,105 @@
+<h2>Dashboard Layout</h2>
+<p class="subtitle">Overall page structure — what you see when you open the dashboard</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Single Page, Scrolling Sections</h3>
+      <p>Everything on one long page with a sticky nav bar at top. Click nav items to jump to sections. Simple, familiar, like the repo's report.</p>
+      <div style="margin-top:12px; background:#1a1a2e; border-radius:8px; padding:16px; font-family:monospace; font-size:12px; color:#8888aa;">
+        <div style="background:#2a2a4e; padding:8px 16px; border-radius:4px; margin-bottom:12px; display:flex; gap:16px; color:#aaaacc;">
+          <span style="color:#7c6fff;">■ Overview</span>
+          <span>Rankings</span>
+          <span>Agent Activity</span>
+          <span>Changes</span>
+          <span>Issues</span>
+        </div>
+        <div style="display:flex; gap:16px; margin-bottom:12px;">
+          <div style="flex:1; background:#2a2a4e; border-radius:8px; padding:16px; text-align:center;">
+            <div style="width:60px; height:60px; border-radius:50%; border:4px solid #4ade80; margin:0 auto 8px; display:flex; align-items:center; justify-content:center; font-size:20px; color:#4ade80;">74</div>
+            <div style="color:#aaaacc; font-size:10px;">Overall Score</div>
+          </div>
+          <div style="flex:1; background:#2a2a4e; border-radius:8px; padding:12px; text-align:center;">
+            <div style="font-size:20px; color:#4ade80;">✓ 5/5</div>
+            <div style="color:#aaaacc; font-size:10px;">Agents Passed</div>
+          </div>
+          <div style="flex:1; background:#2a2a4e; border-radius:8px; padding:12px; text-align:center;">
+            <div style="font-size:20px; color:#facc15;">3</div>
+            <div style="color:#aaaacc; font-size:10px;">Changes Pending</div>
+          </div>
+          <div style="flex:1; background:#2a2a4e; border-radius:8px; padding:12px; text-align:center;">
+            <div style="font-size:20px; color:#60a5fa;">+2</div>
+            <div style="color:#aaaacc; font-size:10px;">Rank Improvements</div>
+          </div>
+        </div>
+        <div style="background:#2a2a4e; border-radius:8px; padding:12px; margin-bottom:12px; height:60px; display:flex; align-items:center; justify-content:center; color:#555;">
+          ▁▂▃▄▅▆▇█▇▆▅▆▇█ Score trend (90 days)
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px;">
+          <div style="background:#2a2a4e; border-radius:6px; padding:10px; text-align:center;">
+            <div style="font-size:14px; color:#4ade80;">82</div>
+            <div style="font-size:9px; color:#888;">On-Page</div>
+          </div>
+          <div style="background:#2a2a4e; border-radius:6px; padding:10px; text-align:center;">
+            <div style="font-size:14px; color:#facc15;">61</div>
+            <div style="font-size:9px; color:#888;">Technical</div>
+          </div>
+          <div style="background:#2a2a4e; border-radius:6px; padding:10px; text-align:center;">
+            <div style="font-size:14px; color:#4ade80;">78</div>
+            <div style="font-size:9px; color:#888;">E-E-A-T</div>
+          </div>
+          <div style="background:#2a2a4e; border-radius:6px; padding:10px; text-align:center;">
+            <div style="font-size:14px; color:#f87171;">45</div>
+            <div style="font-size:9px; color:#888;">CWV</div>
+          </div>
+        </div>
+        <div style="color:#555; text-align:center; margin-top:12px; font-size:10px;">↓ scroll for Rankings, Agent Activity, Changes, Issues ↓</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Tabbed Sections</h3>
+      <p>Same overview at top, but Rankings / Agent Activity / Changes / Issues are tabs you click between instead of scrolling. Keeps each section focused.</p>
+      <div style="margin-top:12px; background:#1a1a2e; border-radius:8px; padding:16px; font-family:monospace; font-size:12px; color:#8888aa;">
+        <div style="display:flex; gap:16px; margin-bottom:12px;">
+          <div style="flex:1; background:#2a2a4e; border-radius:8px; padding:12px; text-align:center;">
+            <div style="width:50px; height:50px; border-radius:50%; border:4px solid #4ade80; margin:0 auto 6px; display:flex; align-items:center; justify-content:center; font-size:18px; color:#4ade80;">74</div>
+            <div style="color:#aaaacc; font-size:10px;">Overall</div>
+          </div>
+          <div style="flex:1; background:#2a2a4e; border-radius:8px; padding:12px; text-align:center;">
+            <div style="font-size:18px; color:#4ade80;">✓ 5/5</div>
+            <div style="color:#aaaacc; font-size:10px;">Agents</div>
+          </div>
+          <div style="flex:1; background:#2a2a4e; border-radius:8px; padding:12px; text-align:center;">
+            <div style="font-size:18px; color:#facc15;">3</div>
+            <div style="color:#aaaacc; font-size:10px;">Pending</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:0; margin-bottom:0;">
+          <div style="flex:1; background:#3a3a5e; padding:10px 16px; border-radius:8px 8px 0 0; text-align:center; color:#7c6fff; font-weight:bold; border-bottom:2px solid #7c6fff;">Rankings</div>
+          <div style="flex:1; background:#2a2a4e; padding:10px 16px; border-radius:8px 8px 0 0; text-align:center; color:#888;">Agents</div>
+          <div style="flex:1; background:#2a2a4e; padding:10px 16px; border-radius:8px 8px 0 0; text-align:center; color:#888;">Changes</div>
+          <div style="flex:1; background:#2a2a4e; padding:10px 16px; border-radius:8px 8px 0 0; text-align:center; color:#888;">Issues</div>
+        </div>
+        <div style="background:#2a2a4e; border-radius:0 0 8px 8px; padding:12px;">
+          <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #3a3a5e; color:#aaa; font-size:10px;">
+            <span>freight shipping reno</span>
+            <span style="color:#4ade80;">▲ 3 → #4</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #3a3a5e; color:#aaa; font-size:10px;">
+            <span>ltl freight nevada</span>
+            <span style="color:#f87171;">▼ 2 → #12</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding:6px 0; color:#aaa; font-size:10px;">
+            <span>dry van shipping</span>
+            <span style="color:#facc15;">— #7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

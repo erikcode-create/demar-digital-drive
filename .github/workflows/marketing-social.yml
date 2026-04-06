@@ -1,0 +1,41 @@
+name: Marketing Social Media
+
+on:
+  schedule:
+    - cron: '0 19 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  social-media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Install project dependencies
+        run: npm ci
+
+      - name: Install monitoring dependencies
+        run: cd monitoring && npm ci
+
+      - name: Run social media generator
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DISCORD_SOCIAL_WEBHOOK_URL: ${{ secrets.DISCORD_SOCIAL_WEBHOOK_URL }}
+          GH_TOKEN: ${{ github.token }}
+        run: cd monitoring && node marketing/social-generator.mjs

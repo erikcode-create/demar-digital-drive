@@ -1,0 +1,41 @@
+name: SEO Page Performance Scorer
+
+on:
+  schedule:
+    - cron: '0 20 * * *'  # 1pm PDT daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Install project dependencies
+        run: npm ci
+
+      - name: Install monitoring dependencies
+        run: cd monitoring && npm ci
+
+      - name: Run page performance scorer
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DISCORD_SEO_WEBHOOK_URL: ${{ secrets.DISCORD_SEO_WEBHOOK_URL }}
+          GH_TOKEN: ${{ github.token }}
+        run: cd monitoring && node seo/page-performance-scorer.mjs

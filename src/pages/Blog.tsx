@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Newspaper, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const blogPosts = [
@@ -125,23 +125,6 @@ const blogPosts = [
   },
 ];
 
-const categoryPillStyle = (category: string) => {
-  switch (category) {
-    case "Pricing & Rates":
-      return "bg-[hsl(var(--accent)/0.1)] text-[hsl(var(--accent))]";
-    case "Shipping Guides":
-      return "bg-[hsl(var(--primary)/0.1)] text-[hsl(var(--primary))]";
-    case "Industry Knowledge":
-      return "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))]";
-    case "Business Strategy":
-      return "bg-[hsl(var(--primary)/0.1)] text-[hsl(var(--primary))]";
-    case "Technology":
-      return "bg-[hsl(var(--accent)/0.1)] text-[hsl(var(--accent))]";
-    default:
-      return "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))]";
-  }
-};
-
 const Blog = () => {
   useEffect(() => {
     document.title =
@@ -202,9 +185,6 @@ const Blog = () => {
     ],
   };
 
-  const featuredPost = blogPosts[0];
-  const gridPosts = blogPosts.slice(1);
-
   return (
     <div className="min-h-screen">
       <a
@@ -228,87 +208,67 @@ const Blog = () => {
           />
 
           {/* Hero */}
-          <section className="pt-32 pb-[var(--space-2xl)] px-4 bg-[hsl(var(--surface))]">
-            <div className="container mx-auto max-w-4xl">
-              <h1 className="font-serif text-display text-[hsl(var(--primary))] leading-tight tracking-tight mb-6" style={{ textWrap: 'balance' }}>
+          <section className="pt-32 pb-20 px-4 bg-[hsl(225_97%_4%)] relative overflow-hidden">
+            <div
+              className="absolute inset-0 opacity-[0.03]"
+              style={{
+                backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
+                backgroundSize: "40px 40px",
+              }}
+            />
+            <div className="container mx-auto max-w-4xl relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 backdrop-blur-sm">
+                <Newspaper className="h-4 w-4 text-[hsl(var(--accent))]" />
+                <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/60">
+                  Freight Shipping Insights
+                </span>
+              </div>
+              <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-6">
                 Insights
               </h1>
-              <p className="text-body text-muted-foreground max-w-2xl leading-relaxed">
-                Freight shipping guides, industry analysis, and logistics expertise.
+              <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
+                Practical guides and expert analysis from DeMar Transportation.
+                Real carrier knowledge to help you ship smarter.
               </p>
             </div>
           </section>
 
-          {/* Posts */}
-          <section className="pb-[var(--space-2xl)] bg-[hsl(var(--surface))]">
-            <div className="container mx-auto px-4 max-w-4xl space-y-[var(--space-xl)]">
-
-              {/* Featured Post */}
-              <Link to={`/blog/${featuredPost.slug}`} className="block group">
-                <article className="p-[var(--space-lg)] bg-[hsl(var(--surface-low))] rounded-[var(--radius)] hover:shadow-[var(--shadow-float)] transition-shadow">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className={`text-[10px] font-semibold tracking-[0.2em] uppercase px-2 py-0.5 rounded-full ${categoryPillStyle(featuredPost.category)}`}>
-                      {featuredPost.category}
-                    </span>
-                    <span className="text-caption text-muted-foreground flex items-center gap-1">
-                      <Calendar aria-hidden="true" className="h-3 w-3" />
-                      {new Date(featuredPost.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </span>
-                    <span className="text-caption text-muted-foreground">
-                      {featuredPost.readTime} read
-                    </span>
-                  </div>
-                  <h2 className="font-serif text-heading text-[hsl(var(--primary))] tracking-tight mb-3 group-hover:text-[hsl(var(--accent))] transition-colors">
-                    {featuredPost.title}
-                  </h2>
-                  <p className="text-body text-[hsl(var(--muted-foreground))] leading-relaxed mb-4">
-                    {featuredPost.description}
-                  </p>
-                  <span className="inline-flex items-center text-sm font-medium text-[hsl(var(--accent))] group-hover:gap-2 transition-[gap]">
-                    Read Article
-                    <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </article>
-              </Link>
-
-              {/* Post Grid */}
-              <div className="grid md:grid-cols-2 gap-[var(--space-md)]">
-                {gridPosts.map((post) => (
+          {/* Blog Posts Grid */}
+          <section className="py-16 bg-[hsl(var(--surface))]">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <div className="space-y-6">
+                {blogPosts.map((post) => (
                   <Link
                     key={post.slug}
                     to={`/blog/${post.slug}`}
                     className="block group"
                   >
-                    <article className="p-[var(--space-md)] bg-[hsl(var(--surface-low))] rounded-[var(--radius)] hover:shadow-[var(--shadow-float)] transition-shadow h-full">
+                    <article className="p-6 md:p-8 rounded-xl bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-float)] transition-all">
                       <div className="flex items-center gap-3 mb-3">
-                        <span className={`text-[10px] font-semibold tracking-[0.2em] uppercase px-2 py-0.5 rounded-full ${categoryPillStyle(post.category)}`}>
+                        <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))]">
                           {post.category}
                         </span>
-                        <span className="text-caption text-muted-foreground flex items-center gap-1">
-                          <Calendar aria-hidden="true" className="h-3 w-3" />
+                        <span className="text-xs text-[hsl(var(--muted-foreground))] flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
                           {new Date(post.date).toLocaleDateString("en-US", {
                             year: "numeric",
                             month: "short",
                             day: "numeric",
                           })}
                         </span>
-                        <span className="text-caption text-muted-foreground">
+                        <span className="text-xs text-[hsl(var(--muted-foreground))]">
                           {post.readTime} read
                         </span>
                       </div>
-                      <h2 className="font-serif text-subheading text-[hsl(var(--primary))] tracking-tight mb-3 group-hover:text-[hsl(var(--accent))] transition-colors">
+                      <h2 className="text-xl md:text-2xl font-bold text-[hsl(var(--primary))] tracking-tight mb-3 group-hover:text-[hsl(var(--accent))] transition-colors">
                         {post.title}
                       </h2>
-                      <p className="text-caption text-muted-foreground leading-relaxed mb-4">
+                      <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed mb-4">
                         {post.description}
                       </p>
-                      <span className="inline-flex items-center text-sm font-medium text-[hsl(var(--accent))] group-hover:gap-2 transition-[gap]">
+                      <span className="inline-flex items-center text-sm font-medium text-[hsl(var(--accent))] group-hover:gap-2 transition-all">
                         Read Article
-                        <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </span>
                     </article>
                   </Link>
@@ -318,9 +278,9 @@ const Blog = () => {
           </section>
 
           {/* CTA */}
-          <section className="py-[var(--space-2xl)] bg-[hsl(var(--accent))]">
+          <section className="py-16 bg-[hsl(var(--accent))]">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="font-serif text-heading text-[hsl(var(--primary))] tracking-tight mb-3" style={{ textWrap: 'balance' }}>
+              <h2 className="text-2xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-3">
                 Ready to Ship?
               </h2>
               <p className="text-base text-[hsl(var(--primary))]/70 mb-8 max-w-md mx-auto">
@@ -334,7 +294,7 @@ const Blog = () => {
               >
                 <Link to="/quote" className="group">
                   Get a Free Quote
-                  <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>

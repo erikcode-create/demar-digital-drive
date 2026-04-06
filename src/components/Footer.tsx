@@ -14,47 +14,64 @@ const serviceLinks = [
   { name: "Warehousing", path: "/services/warehousing" },
 ];
 
-const companyAndResources = [
+const quickLinks = [
   { name: "About Us", path: "/about" },
   { name: "Careers", path: "/careers" },
   { name: "Contact", path: "/contact" },
   { name: "FAQ", path: "/faq" },
   { name: "Get a Quote", path: "/quote" },
-  { name: "Freight Shipping Cost", path: "/resources/freight-shipping-cost" },
-  { name: "FTL vs LTL Guide", path: "/resources/ftl-vs-ltl" },
+];
+
+const resourceLinks = [
+  { name: "Freight Shipping Cost Guide", path: "/resources/freight-shipping-cost" },
   { name: "How to Ship Freight", path: "/resources/how-to-ship-freight" },
+  { name: "FTL vs LTL Guide", path: "/resources/ftl-vs-ltl" },
+  { name: "Types of Trailers", path: "/resources/types-of-freight-trailers" },
+  { name: "Freight Glossary", path: "/resources/freight-shipping-glossary" },
   { name: "All Resources", path: "/resources" },
+];
+
+const blogLinks = [
+  { name: "Why Freight Quotes Change", path: "/blog/why-freight-quote-keeps-changing" },
+  { name: "Small Business Freight", path: "/blog/small-business-freight-shipping" },
+  { name: "Emergency Freight Shipping", path: "/blog/emergency-expedited-freight" },
+  { name: "Freight Damage Prevention", path: "/blog/freight-damage-prevention" },
+  { name: "E-commerce Freight", path: "/blog/ecommerce-freight-shipping" },
+  { name: "All Insights", path: "/blog" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-space-xl">
-        {/* Logo + description above columns */}
-        <div className="flex items-center gap-3 mb-space-xl">
-          <img
-            src="/demar-logo-official.png"
-            alt="DeMar Transportation"
-            className="h-10 w-10"
-            width={40}
-            height={40}
-          />
-          <div>
-            <span className="text-body font-bold tracking-tight">
-              DeMar
-              <span className="text-accent"> Transportation</span>
-            </span>
-            <p className="text-caption text-primary-foreground/40">
-              Asset-based carrier &amp; licensed broker. Nationwide freight solutions.
+    <footer className="bg-[hsl(225_97%_4%)] text-white">
+      <div className="container mx-auto px-4 py-16 md:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-16">
+          {/* Company */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-5">
+              <img
+                src="/demar-logo-official.png"
+                alt="DeMar Transportation"
+                className="h-10 w-10"
+              />
+              <div>
+                <span className="text-base font-bold tracking-tight">
+                  DeMar
+                  <span className="text-[hsl(var(--accent))]"> Transportation</span>
+                </span>
+              </div>
+            </div>
+            <p className="text-sm text-white/40 leading-relaxed mb-6 max-w-xs">
+              Asset-based freight carrier and licensed broker providing
+              nationwide transportation solutions.
+            </p>
+            <p className="text-[10px] tracking-[0.15em] uppercase text-white/25">
+              Driven by Purpose. Delivering Results.
             </p>
           </div>
-        </div>
 
-        {/* 3-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-space-xl mb-space-xl">
-          {/* Column 1 — Services */}
+          {/* Services — two columns on larger screens */}
           <div>
-            <p className="text-caption font-semibold tracking-[0.15em] uppercase text-accent mb-space-md">
+            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
               Services
             </p>
             <ul className="space-y-2.5">
@@ -62,7 +79,7 @@ const Footer = () => {
                 <li key={s.path}>
                   <Link
                     to={s.path}
-                    className="text-caption text-primary-foreground/40 hover:text-primary-foreground transition-colors"
+                    className="text-sm text-white/40 hover:text-white transition-colors"
                   >
                     {s.name}
                   </Link>
@@ -71,17 +88,17 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 2 — Company & Resources */}
+          {/* Quick Links */}
           <div>
-            <p className="text-caption font-semibold tracking-[0.15em] uppercase text-accent mb-space-md">
-              Company &amp; Resources
+            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
+              Company
             </p>
             <ul className="space-y-2.5">
-              {companyAndResources.map((l) => (
+              {quickLinks.map((l) => (
                 <li key={l.path}>
                   <Link
                     to={l.path}
-                    className="text-caption text-primary-foreground/40 hover:text-primary-foreground transition-colors"
+                    className="text-sm text-white/40 hover:text-white transition-colors"
                   >
                     {l.name}
                   </Link>
@@ -90,58 +107,96 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3 — Contact */}
+          {/* Resources */}
           <div>
-            <p className="text-caption font-semibold tracking-[0.15em] uppercase text-accent mb-space-md">
+            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
+              Resources
+            </p>
+            <ul className="space-y-2.5">
+              {resourceLinks.map((r) => (
+                <li key={r.path}>
+                  <Link
+                    to={r.path}
+                    className="text-sm text-white/40 hover:text-white transition-colors"
+                  >
+                    {r.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Insights */}
+          <div>
+            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
+              Insights
+            </p>
+            <ul className="space-y-2.5">
+              {blogLinks.map((b) => (
+                <li key={b.path}>
+                  <Link
+                    to={b.path}
+                    className="text-sm text-white/40 hover:text-white transition-colors"
+                  >
+                    {b.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[hsl(var(--accent))] mb-4">
               Contact
             </p>
-            <div className="space-y-space-md">
-              {/* Phone — prominent */}
+            <div className="space-y-3">
               <a
                 href="tel:+17752304767"
-                className="block font-serif text-subheading text-primary-foreground hover:text-accent transition-colors"
+                className="flex items-center gap-3 text-sm text-white/40 hover:text-white transition-colors"
               >
+                <Phone className="h-4 w-4 flex-shrink-0" />
                 (775) 230-4767
               </a>
               <a
                 href="mailto:info@DeMarTransportation.com"
-                className="flex items-center gap-3 text-caption text-primary-foreground/40 hover:text-primary-foreground transition-colors"
+                className="flex items-center gap-3 text-sm text-white/40 hover:text-white transition-colors"
               >
-                <Mail aria-hidden="true" className="h-4 w-4 flex-shrink-0" />
+                <Mail className="h-4 w-4 flex-shrink-0" />
                 info@DeMarTransportation.com
               </a>
               <Link
                 to="/contact"
-                className="flex items-center gap-3 text-caption text-primary-foreground/40 hover:text-primary-foreground transition-colors"
+                className="flex items-center gap-3 text-sm text-white/40 hover:text-white transition-colors"
               >
-                <MapPin aria-hidden="true" className="h-4 w-4 flex-shrink-0" />
+                <MapPin className="h-4 w-4 flex-shrink-0" />
                 10471 Double R Blvd, Reno, NV
               </Link>
-              <div className="flex items-center gap-3 text-caption text-primary-foreground/40">
-                <Clock aria-hidden="true" className="h-4 w-4 flex-shrink-0" />
+              <div className="flex items-center gap-3 text-sm text-white/40">
+                <Clock className="h-4 w-4 flex-shrink-0" />
                 24/7 Service Available
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-space-md border-t border-primary-foreground/10">
+        {/* Bottom bar — tonal separation, no border */}
+        <div className="pt-8 bg-white/[0.02] -mx-4 px-4 rounded-t-xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-caption text-primary-foreground/25">
+            <p className="text-xs text-white/25">
               &copy; {new Date().getFullYear()} DeMar Transportation. All rights
               reserved.
             </p>
-            <div className="flex gap-6 text-caption text-primary-foreground/25">
+            <div className="flex gap-6 text-xs text-white/25">
               <Link
                 to="/privacy"
-                className="hover:text-primary-foreground/50 transition-colors"
+                className="hover:text-white/50 transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 to="/support"
-                className="hover:text-primary-foreground/50 transition-colors"
+                className="hover:text-white/50 transition-colors"
               >
                 Terms
               </Link>
@@ -149,7 +204,7 @@ const Footer = () => {
                 href="https://www.carriersource.io/carriers/demar-transportation-4392091"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary-foreground/50 transition-colors"
+                className="hover:text-white/50 transition-colors"
               >
                 DOT Information
               </a>

@@ -1,0 +1,81 @@
+name: Website Monitor
+
+on:
+  schedule:
+    - cron: '0 14 * * 1-6'  # Mon-Sat 7am PDT (lightweight)
+    - cron: '0 14 * * 0'    # Sunday 7am PDT (full)
+  workflow_dispatch:
+    inputs:
+      scan_type:
+        description: 'Scan type to run'
+        type: choice
+        options:
+          - lightweight
+          - full
+        default: full
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Configure git for auto-fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Install project dependencies
+        run: npm ci
+
+      - name: Install monitoring dependencies
+        run: cd monitoring && npm ci
+
+      - name: Determine scan type
+        id: scan-type
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "type=${{ github.event.inputs.scan_type }}" >> $GITHUB_OUTPUT
+          elif [ "$(date -u +%u)" = "7" ]; then
+            echo "type=full" >> $GITHUB_OUTPUT
+          else
+            echo "type=lightweight" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run scans
+        id: scan
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: cd monitoring && node run-scans.mjs --type ${{ steps.scan-type.outputs.type }}
+
+      - name: Restore auto-fix lock
+        uses: actions/cache/restore@v4
+        with:
+          path: monitoring/auto-fix-lock.json
+          key: auto-fix-lock
+
+      - name: Auto-fix detected issues
+        if: steps.scan.outputs.has_fixable_issues == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GH_TOKEN: ${{ github.token }}
+        run: cd monitoring && node auto-fix.mjs
+
+      - name: Save auto-fix lock
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: monitoring/auto-fix-lock.json
+          key: auto-fix-lock-${{ github.run_id }}

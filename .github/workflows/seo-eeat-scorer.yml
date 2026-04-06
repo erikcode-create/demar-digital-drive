@@ -1,0 +1,34 @@
+name: SEO E-E-A-T Scorer
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: monitoring
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: monitoring/package-lock.json
+      - run: npm ci
+      - uses: actions/cache@v4
+        with:
+          path: monitoring/seo/data
+          key: seo-data-${{ github.run_id }}
+          restore-keys: |
+            seo-data-
+      - name: Run E-E-A-T scorer
+        env:
+          DISCORD_SEO_DASHBOARD_WEBHOOK_URL: ${{ secrets.DISCORD_SEO_DASHBOARD_WEBHOOK_URL }}
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node seo/dashboard/content-eeat-scorer.mjs

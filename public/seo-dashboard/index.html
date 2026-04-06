@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeMar SEO Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg-base: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #252836;
+  --border: rgba(255, 255, 255, 0.08);
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0b0;
+  --text-muted: #5a6178;
+  --color-pass: #10b981;
+  --color-good: #06b6d4;
+  --color-warn: #f59e0b;
+  --color-fail: #ef4444;
+  --color-info: #3b82f6;
+  --color-accent: #7c6fff;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  padding: 24px;
+  min-height: 100vh;
+}
+
+/* --- Access denied --- */
+#access-denied {
+  display: none;
+  text-align: center;
+  padding: 120px 24px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+/* --- Header --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.header h1 { font-size: 22px; font-weight: 700; }
+.header h1 span { color: var(--color-accent); }
+.header-meta { font-size: 12px; color: var(--text-muted); text-align: right; }
+.header-meta .timestamp { color: var(--text-secondary); }
+
+/* --- KPI Row --- */
+.kpi-row {
+  display: grid;
+  grid-template-columns: auto repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* --- Score Ring --- */
+.score-ring-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px;
+  box-shadow: var(--shadow-card);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.score-ring { position: relative; width: 100px; height: 100px; }
+.score-ring svg { transform: rotate(-90deg); }
+.score-ring-bg { fill: none; stroke: var(--bg-hover); stroke-width: 8; }
+.score-ring-fill { fill: none; stroke-width: 8; stroke-linecap: round; }
+.score-ring-text {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%); text-align: center;
+}
+.score-ring-text .number { font-size: 28px; font-weight: 700; display: block; }
+.score-ring-text .grade { font-size: 11px; font-weight: 600; color: var(--text-secondary); }
+.score-ring-label { font-size: 12px; font-weight: 500; color: var(--text-secondary); margin-top: 8px; }
+.score-ring-delta { font-size: 12px; margin-top: 4px; }
+
+/* --- KPI Card --- */
+.kpi-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  box-shadow: var(--shadow-card);
+  display: flex; flex-direction: column;
+}
+.kpi-label {
+  font-size: 12px; font-weight: 500; color: var(--text-secondary);
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+}
+.kpi-value { font-size: 28px; font-weight: 700; line-height: 1.1; }
+.kpi-detail { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+.kpi-delta { font-size: 12px; margin-top: 8px; font-weight: 500; }
+.kpi-delta.positive { color: var(--color-pass); }
+.kpi-delta.negative { color: var(--color-fail); }
+.kpi-delta.neutral { color: var(--text-muted); }
+.kpi-sparkline { margin-top: auto; padding-top: 12px; height: 32px; }
+.kpi-sparkline svg { width: 100%; height: 100%; }
+
+/* --- Tab Bar --- */
+.tab-bar {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+.tab {
+  padding: 12px 20px; font-size: 14px; font-weight: 500;
+  color: var(--text-muted); cursor: pointer;
+  border-bottom: 2px solid transparent; transition: all 0.2s;
+  white-space: nowrap; user-select: none;
+}
+.tab:hover { color: var(--text-secondary); }
+.tab.active { color: var(--color-accent); border-bottom-color: var(--color-accent); font-weight: 600; }
+.tab .badge {
+  display: inline-block; background: var(--color-fail); color: white;
+  font-size: 10px; font-weight: 600; padding: 1px 6px;
+  border-radius: 10px; margin-left: 6px;
+}
+
+/* --- Tab Content --- */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* --- Category Grid --- */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px; margin-bottom: 24px;
+}
+.category-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 16px;
+  box-shadow: var(--shadow-card);
+  display: flex; align-items: center; gap: 14px;
+  cursor: pointer; transition: border-color 0.2s;
+}
+.category-card:hover { border-color: var(--color-accent); }
+.category-ring { position: relative; width: 48px; height: 48px; flex-shrink: 0; }
+.category-ring svg { transform: rotate(-90deg); }
+.cat-ring-bg { fill: none; stroke: var(--bg-hover); stroke-width: 5; }
+.cat-ring-fill { fill: none; stroke-width: 5; stroke-linecap: round; }
+.category-ring .cat-score {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%); font-size: 14px; font-weight: 700;
+}
+.category-info h4 { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+.category-info .cat-detail { font-size: 11px; color: var(--text-secondary); }
+.category-info .cat-delta { font-size: 11px; font-weight: 500; margin-top: 2px; }
+
+/* --- Content Split --- */
+.content-split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+/* --- Section Label --- */
+.section-label {
+  display: inline-block; background: var(--color-accent); color: white;
+  font-size: 10px; font-weight: 600; padding: 3px 8px;
+  border-radius: 4px; margin-bottom: 8px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+/* --- Activity List --- */
+.activity-list {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.activity-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px; border-bottom: 1px solid var(--border);
+  font-size: 13px; transition: background 0.15s;
+}
+.activity-item:last-child { border-bottom: none; }
+.activity-item:hover { background: var(--bg-hover); }
+.activity-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; flex-shrink: 0;
+}
+.activity-icon.approved { background: rgba(16,185,129,0.15); color: var(--color-pass); }
+.activity-icon.rejected { background: rgba(239,68,68,0.15); color: var(--color-fail); }
+.activity-icon.revised { background: rgba(245,158,11,0.15); color: var(--color-warn); }
+.activity-icon.agent { background: rgba(59,130,246,0.15); color: var(--color-info); }
+.activity-text { flex: 1; color: var(--text-secondary); }
+.activity-text strong { color: var(--text-primary); font-weight: 600; }
+.activity-time { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+
+/* --- Data Table --- */
+.data-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.data-table th {
+  text-align: left; padding: 12px 16px; font-size: 11px; font-weight: 600;
+  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border); cursor: pointer; user-select: none;
+}
+.data-table th:hover { color: var(--text-secondary); }
+.data-table td {
+  padding: 12px 16px; font-size: 13px; color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--bg-hover); }
+
+/* --- Chart Container --- */
+.chart-container {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+.chart-container canvas { max-height: 280px; }
+
+/* --- Phase Bar (Agent Activity) --- */
+.phase-bar { display: flex; gap: 4px; margin-bottom: 24px; }
+.phase-block {
+  flex: 1; padding: 12px 16px; border-radius: var(--radius-md);
+  text-align: center; font-size: 12px; font-weight: 600;
+}
+.phase-block.pass { background: rgba(16,185,129,0.15); color: var(--color-pass); }
+.phase-block.fail { background: rgba(239,68,68,0.15); color: var(--color-fail); }
+.phase-block .phase-name { display: block; margin-bottom: 4px; }
+.phase-block .phase-duration { font-weight: 400; font-size: 11px; color: var(--text-secondary); }
+
+/* --- Pending Card --- */
+.pending-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 16px;
+  box-shadow: var(--shadow-card);
+}
+.pending-card.stale { border-color: var(--color-warn); }
+
+/* --- Expandable --- */
+.expandable-trigger { cursor: pointer; }
+.expandable-content { display: none; padding-top: 12px; font-size: 12px; color: var(--text-muted); }
+.expandable-content.open { display: block; }
+
+/* --- Responsive --- */
+@media (max-width: 1200px) {
+  .kpi-row { grid-template-columns: auto 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .kpi-row { grid-template-columns: 1fr 1fr; }
+  .content-split { grid-template-columns: 1fr; }
+  .phase-bar { flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .kpi-row { grid-template-columns: 1fr; }
+  body { padding: 16px; }
+  .tab-bar { gap: 0; }
+  .tab { padding: 10px 14px; font-size: 13px; }
+}
+
+/* --- Animations (respect user preference) --- */
+@media (prefers-reduced-motion: no-preference) {
+  .score-ring-fill { transition: stroke-dashoffset 1s ease; }
+  .tab-content { animation: fadeIn 0.2s ease; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+}
+</style>
+</head>
+<body>
+<div id="access-denied">
+  <h2>Access Denied</h2>
+  <p>Invalid or missing access token.</p>
+</div>
+<div id="app">
+  
+<div class="header">
+  <div><h1><span>DeMar</span> SEO Dashboard</h1></div>
+  <div class="header-meta">
+    <div class="timestamp">Last updated: Apr 4, 2026, 9:42 PM</div>
+    <div>Data from 2 daily snapshots</div>
+  </div>
+</div>
+
+<div class="kpi-row">
+  <div class="score-ring-card">
+  <div class="score-ring" role="img" aria-label="Score: 71 out of 100">
+    <svg width="100" height="100" viewBox="0 0 100 100">
+      <circle class="score-ring-bg" cx="50" cy="50" r="42"/>
+      <circle class="score-ring-fill" cx="50" cy="50" r="42"
+              stroke="var(--color-good)" stroke-dasharray="263.9"
+              stroke-dashoffset="76.5"/>
+    </svg>
+    <div class="score-ring-text">
+      <span class="number" style="color:var(--color-good)">71</span>
+      <span class="grade">GOOD</span>
+    </div>
+  </div>
+  <div class="score-ring-label">Overall Score</div>
+  
+</div>
+  <div class="kpi-card">
+  <div class="kpi-label">Agent Health</div>
+  <div class="kpi-value" style="color:var(--color-warn)">8/10</div>
+  <div class="kpi-detail">2 failures</div>
+  <div class="kpi-delta negative">▼ Last 10 runs</div>
+  <div class="kpi-sparkline"><svg viewBox="0 0 100 24" preserveAspectRatio="none">
+  <polyline fill="none" stroke="#10b981" stroke-width="1.5" points="0.0,22.0 11.1,2.0 22.2,22.0 33.3,2.0 44.4,2.0 55.6,2.0 66.7,2.0 77.8,2.0 88.9,2.0 100.0,2.0"/>
+  <polyline fill="#10b98122" stroke="none" points="0,24 0.0,22.0 11.1,2.0 22.2,22.0 33.3,2.0 44.4,2.0 55.6,2.0 66.7,2.0 77.8,2.0 88.9,2.0 100.0,2.0 100,24"/>
+</svg></div>
+</div>
+  <div class="kpi-card">
+  <div class="kpi-label">Rankings</div>
+  <div class="kpi-value" style="color:var(--color-info)">0</div>
+  <div class="kpi-detail">Keywords tracked</div>
+  
+  <div class="kpi-sparkline"><svg viewBox="0 0 100 24" preserveAspectRatio="none">
+  <polyline fill="none" stroke="#3b82f6" stroke-width="1.5" points="0.0,22.0 100.0,22.0"/>
+  <polyline fill="#3b82f622" stroke="none" points="0,24 0.0,22.0 100.0,22.0 100,24"/>
+</svg></div>
+</div>
+  <div class="kpi-card">
+  <div class="kpi-label">Review Pipeline</div>
+  <div class="kpi-value" style="color:var(--color-info)">0</div>
+  <div class="kpi-detail">0 approved · 0 rejected</div>
+  
+  
+</div>
+  <div class="kpi-card">
+  <div class="kpi-label">Open Issues</div>
+  <div class="kpi-value" style="color:var(--color-warn)">116</div>
+  <div class="kpi-detail">Across all pages</div>
+  
+  
+</div>
+</div>
+
+<div class="tab-bar">
+  <div class="tab active" data-tab="health">Site Health</div>
+  <div class="tab" data-tab="rankings">Rankings</div>
+  <div class="tab" data-tab="agents">Agent Activity</div>
+  <div class="tab" data-tab="changes">Changes</div>
+</div>
+
+<div id="tab-health" class="tab-content active"><span class="section-label">Category Scores</span>
+<div class="category-grid"><div class="category-card">
+  <div class="category-ring" role="img" aria-label="On-Page SEO: 55 out of 100">
+    <svg width="48" height="48" viewBox="0 0 48 48">
+      <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+      <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="var(--color-warn)"
+              stroke-dasharray="125.7"
+              stroke-dashoffset="56.5"/>
+    </svg>
+    <span class="cat-score" style="color:var(--color-warn)">55</span>
+  </div>
+  <div class="category-info">
+    <h4>On-Page SEO</h4>
+    <div class="cat-detail">Titles, metas, H1s, canonicals</div>
+    <div class="cat-delta"><span style="color:var(--text-muted)">— No change</span></div>
+  </div>
+</div>
+<div class="category-card">
+  <div class="category-ring" role="img" aria-label="Technical: 75 out of 100">
+    <svg width="48" height="48" viewBox="0 0 48 48">
+      <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+      <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="var(--color-good)"
+              stroke-dasharray="125.7"
+              stroke-dashoffset="31.4"/>
+    </svg>
+    <span class="cat-score" style="color:var(--color-good)">75</span>
+  </div>
+  <div class="category-info">
+    <h4>Technical</h4>
+    <div class="cat-detail">Security, robots, redirects</div>
+    <div class="cat-delta"><span style="color:var(--text-muted)">— No change</span></div>
+  </div>
+</div>
+<div class="category-card">
+  <div class="category-ring" role="img" aria-label="E-E-A-T: 70 out of 100">
+    <svg width="48" height="48" viewBox="0 0 48 48">
+      <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+      <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="var(--color-good)"
+              stroke-dasharray="125.7"
+              stroke-dashoffset="37.7"/>
+    </svg>
+    <span class="cat-score" style="color:var(--color-good)">70</span>
+  </div>
+  <div class="category-info">
+    <h4>E-E-A-T</h4>
+    <div class="cat-detail">Trust, expertise, authority</div>
+    <div class="cat-delta"><span style="color:var(--text-muted)">— No change</span></div>
+  </div>
+</div>
+<div class="category-card">
+  <div class="category-ring" role="img" aria-label="Core Web Vitals: 64 out of 100">
+    <svg width="48" height="48" viewBox="0 0 48 48">
+      <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+      <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="var(--color-good)"
+              stroke-dasharray="125.7"
+              stroke-dashoffset="45.2"/>
+    </svg>
+    <span class="cat-score" style="color:var(--color-good)">64</span>
+  </div>
+  <div class="category-info">
+    <h4>Core Web Vitals</h4>
+    <div class="cat-detail">LCP, INP, CLS</div>
+    <div class="cat-delta"><span style="color:var(--text-muted)">— No change</span></div>
+  </div>
+</div>
+<div class="category-card">
+  <div class="category-ring" role="img" aria-label="Schema: 61 out of 100">
+    <svg width="48" height="48" viewBox="0 0 48 48">
+      <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+      <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="var(--color-good)"
+              stroke-dasharray="125.7"
+              stroke-dashoffset="49.0"/>
+    </svg>
+    <span class="cat-score" style="color:var(--color-good)">61</span>
+  </div>
+  <div class="category-info">
+    <h4>Schema</h4>
+    <div class="cat-detail">JSON-LD structured data</div>
+    <div class="cat-delta"><span style="color:var(--text-muted)">— No change</span></div>
+  </div>
+</div>
+<div class="category-card">
+  <div class="category-ring" role="img" aria-label="Internal Links: 63 out of 100">
+    <svg width="48" height="48" viewBox="0 0 48 48">
+      <circle class="cat-ring-bg" cx="24" cy="24" r="20"/>
+      <circle class="cat-ring-fill" cx="24" cy="24" r="20" stroke="var(--color-good)"
+              stroke-dasharray="125.7"
+              stroke-dashoffset="46.5"/>
+    </svg>
+    <span class="cat-score" style="color:var(--color-good)">63</span>
+  </div>
+  <div class="category-info">
+    <h4>Internal Links</h4>
+    <div class="cat-detail">Structure, orphans, depth</div>
+    <div class="cat-delta"><span style="color:var(--text-muted)">— No change</span></div>
+  </div>
+</div></div>
+
+<div class="content-split">
+  <div>
+    <span class="section-label">Score Trend (2 days)</span>
+    <div class="chart-container">
+      <canvas id="chart-score-trend" aria-label="Site health score trend over time"></canvas>
+    </div>
+  </div>
+  <div>
+    <span class="section-label">Top Issues</span>
+    <div class="activity-list"><div class="activity-item">
+  <div class="activity-icon agent" style="font-size:10px;font-weight:700">i</div>
+  <div class="activity-text"><strong>undefined</strong> — /</div>
+  <div class="activity-time" style="color:var(--text-muted)">Info</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent" style="font-size:10px;font-weight:700">i</div>
+  <div class="activity-text"><strong>undefined</strong> — /</div>
+  <div class="activity-time" style="color:var(--text-muted)">Info</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent" style="font-size:10px;font-weight:700">i</div>
+  <div class="activity-text"><strong>undefined</strong> — /</div>
+  <div class="activity-time" style="color:var(--text-muted)">Info</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent" style="font-size:10px;font-weight:700">i</div>
+  <div class="activity-text"><strong>undefined</strong> — /</div>
+  <div class="activity-time" style="color:var(--text-muted)">Info</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent" style="font-size:10px;font-weight:700">i</div>
+  <div class="activity-text"><strong>undefined</strong> — /</div>
+  <div class="activity-time" style="color:var(--text-muted)">Info</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent" style="font-size:10px;font-weight:700">i</div>
+  <div class="activity-text"><strong>undefined</strong> — /about</div>
+  <div class="activity-time" style="color:var(--text-muted)">Info</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent" style="font-size:10px;font-weight:700">i</div>
+  <div class="activity-text"><strong>undefined</strong> — /about</div>
+  <div class="activity-time" style="color:var(--text-muted)">Info</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent" style="font-size:10px;font-weight:700">i</div>
+  <div class="activity-text"><strong>undefined</strong> — /about</div>
+  <div class="activity-time" style="color:var(--text-muted)">Info</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent" style="font-size:10px;font-weight:700">i</div>
+  <div class="activity-text"><strong>undefined</strong> — /contact</div>
+  <div class="activity-time" style="color:var(--text-muted)">Info</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent" style="font-size:10px;font-weight:700">i</div>
+  <div class="activity-text"><strong>undefined</strong> — /careers</div>
+  <div class="activity-time" style="color:var(--text-muted)">Info</div>
+</div></div>
+  </div>
+</div></div>
+<div id="tab-rankings" class="tab-content"><span class="section-label">Keyword Rankings</span>
+<div style="overflow-x:auto;margin-bottom:24px">
+  <table class="data-table">
+    <thead><tr>
+      <th data-sort>Keyword</th><th data-sort>Position</th><th data-sort>Change</th>
+      <th data-sort>Best</th><th>URL</th><th>SERP Features</th>
+    </tr></thead>
+    <tbody><tr><td colspan="6" style="text-align:center;color:var(--text-muted)">No ranking data yet</td></tr></tbody>
+  </table>
+</div>
+
+<span class="section-label">Keyword Position Trends</span>
+<div class="chart-container" style="margin-bottom:24px">
+  <canvas id="chart-rank-trends" aria-label="Keyword position trends over 90 days"></canvas>
+</div>
+
+<div class="content-split">
+  <div>
+    <span class="section-label">Search Console — Top Queries</span>
+    <div style="overflow-x:auto">
+      <table class="data-table">
+        <thead><tr><th data-sort>Query</th><th data-sort>Clicks</th><th data-sort>Impressions</th><th>CTR</th><th data-sort>Position</th></tr></thead>
+        <tbody><tr><td colspan="5" style="text-align:center;color:var(--text-muted)">No Search Console data yet</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+  <div>
+    <span class="section-label">Competitor Comparison</span>
+    <div class="activity-list">
+      <div class="activity-item"><div class="activity-text" style="color:var(--text-muted)">Competitor data will appear after intelligence phase runs</div></div>
+    </div>
+  </div>
+</div></div>
+<div id="tab-agents" class="tab-content"><span class="section-label">Last Run Status</span>
+<div class="phase-bar">
+  <div class="phase-block pass">
+    <span class="phase-name">intelligence</span>
+    <span class="phase-duration">94.0s</span>
+  </div>
+  <div class="phase-block pass">
+    <span class="phase-name">analysis</span>
+    <span class="phase-duration">125.3s</span>
+  </div>
+  <div class="phase-block pass">
+    <span class="phase-name">strategy</span>
+    <span class="phase-duration">65.4s</span>
+  </div>
+  <div class="phase-block pass">
+    <span class="phase-name">action</span>
+    <span class="phase-duration">141.9s</span>
+  </div>
+</div>
+
+<span class="section-label">Run History (2 days)</span>
+<div class="chart-container" style="margin-bottom:24px">
+  <canvas id="chart-run-history" aria-label="Nightly run pass/fail history"></canvas>
+</div>
+
+<div class="content-split">
+  <div>
+    <span class="section-label">Recent Errors</span>
+    <div class="activity-list"><div class="activity-item">
+  <div class="activity-icon rejected">✗</div>
+  <div class="activity-text"><strong>cwv-monitor</strong> — No PageSpeed data returned</div>
+  <div class="activity-time">just now</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon rejected">✗</div>
+  <div class="activity-text"><strong>search-console</strong> — Error: Search Analytics API error: 403 {
+  "error": {
+    "code": 403,
+    "message": "User does not</div>
+  <div class="activity-time">just now</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon rejected">✗</div>
+  <div class="activity-text"><strong>backlink-monitor</strong> — Error: Search Analytics API error: 403 {
+  "error": {
+    "code": 403,
+    "message": "User does not</div>
+  <div class="activity-time">just now</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon rejected">✗</div>
+  <div class="activity-text"><strong>content-writer</strong> — Failed</div>
+  <div class="activity-time">6h ago</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon rejected">✗</div>
+  <div class="activity-text"><strong>content-writer</strong> — Failed</div>
+  <div class="activity-time">6h ago</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon rejected">✗</div>
+  <div class="activity-text"><strong>content-writer</strong> — Failed</div>
+  <div class="activity-time">6h ago</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon rejected">✗</div>
+  <div class="activity-text"><strong>content-writer</strong> — Failed to update content: Claude generation failed: spawnSync npx ETIMEDOUT</div>
+  <div class="activity-time">7h ago</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon rejected">✗</div>
+  <div class="activity-text"><strong>content-writer</strong> — Failed</div>
+  <div class="activity-time">8h ago</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon rejected">✗</div>
+  <div class="activity-text"><strong>content-writer</strong> — Failed to write content: Generated code missing required imports or export</div>
+  <div class="activity-time">8h ago</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon rejected">✗</div>
+  <div class="activity-text"><strong>schema-generator</strong> — Failed</div>
+  <div class="activity-time">8h ago</div>
+</div></div>
+  </div>
+  <div>
+    <span class="section-label">Agent Timing</span>
+    <div class="activity-list">
+      <div class="activity-item">
+  <div class="activity-icon agent">●</div>
+  <div class="activity-text"><strong>content-writer</strong> — Staged new blog post for review: Hazmat Transportation Requi</div>
+  <div class="activity-time">141.9s</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent">●</div>
+  <div class="activity-text"><strong>strategy</strong> — Generated 10 prioritized actions.</div>
+  <div class="activity-time">65.4s</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent">●</div>
+  <div class="activity-text"><strong>page-scorer</strong> — Avg 71/100 across 46 pages (sources: audit=true, eeat=5, ran</div>
+  <div class="activity-time">125.3s</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent">●</div>
+  <div class="activity-text"><strong>site-auditor</strong> — Score 71/100 across 46 pages (116 issues)</div>
+  <div class="activity-time">125.3s</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent">●</div>
+  <div class="activity-text"><strong>eeat-scorer</strong> — Scored 5 pages, batch avg 72/100, overall avg 72/100</div>
+  <div class="activity-time">125.3s</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent">●</div>
+  <div class="activity-text"><strong>content-gap-analyzer</strong> — No competitor keywords found in data</div>
+  <div class="activity-time">55.9s</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent">●</div>
+  <div class="activity-text"><strong>competitor-tracker</strong> — 5 competitors tracked, behind on 0 keyword/domain pairs</div>
+  <div class="activity-time">94.0s</div>
+</div>
+<div class="activity-item">
+  <div class="activity-icon agent">●</div>
+  <div class="activity-text"><strong>cwv-monitor</strong> — No PageSpeed data returned</div>
+  <div class="activity-time">193.2s</div>
+</div>
+    </div>
+  </div>
+</div></div>
+<div id="tab-changes" class="tab-content"><span class="section-label">Review Pipeline This Week</span>
+<div class="kpi-row" style="grid-template-columns:repeat(3,1fr);margin-bottom:24px">
+  <div class="kpi-card">
+  <div class="kpi-label">Approved</div>
+  <div class="kpi-value" style="color:var(--color-pass)">0</div>
+  <div class="kpi-detail">0% approval rate</div>
+  
+  
+</div>
+  <div class="kpi-card">
+  <div class="kpi-label">Rejected</div>
+  <div class="kpi-value" style="color:var(--color-fail)">0</div>
+  
+  
+  
+</div>
+  <div class="kpi-card">
+  <div class="kpi-label">Revised</div>
+  <div class="kpi-value" style="color:var(--color-warn)">0</div>
+  <div class="kpi-detail">Required additional rounds</div>
+  
+  
+</div>
+</div>
+
+<div class="content-split">
+  <div>
+    <span class="section-label">Pending Review</span>
+    <div style="color:var(--text-muted);font-size:13px;padding:16px">No items pending review</div>
+  </div>
+  <div>
+    <span class="section-label">Recent Changes</span>
+    <div class="activity-list"><div class="activity-item"><div class="activity-text" style="color:var(--text-muted)">No changes recorded yet</div></div></div>
+  </div>
+</div>
+
+<span class="section-label">Approval Rate Trend</span>
+<div class="chart-container">
+  <canvas id="chart-approval-trend" aria-label="Review approval rate trend"></canvas>
+</div></div>
+</div>
+<script>
+// --- Token Gate ---
+(function() {
+  const expectedHash = "a12c0f08329b27ebd9e815ededeb26eee7f67a79009eb94e7c41b2846afa8db3";
+  if (expectedHash === "{{" + "TOKEN_HASH}}") return; // Dev mode — no gate
+  const key = new URLSearchParams(location.search).get("key") || "";
+  crypto.subtle.digest("SHA-256", new TextEncoder().encode(key)).then(buf => {
+    const hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+    if (hash !== expectedHash) {
+      document.getElementById("app").style.display = "none";
+      document.getElementById("access-denied").style.display = "block";
+    }
+  });
+})();
+
+// --- Tab Switching ---
+document.querySelectorAll(".tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+    tab.classList.add("active");
+    const target = tab.dataset.tab;
+    const content = document.getElementById("tab-" + target);
+    if (content) content.classList.add("active");
+  });
+});
+
+// --- Expandable Items ---
+document.querySelectorAll(".expandable-trigger").forEach(trigger => {
+  trigger.addEventListener("click", () => {
+    const content = trigger.nextElementSibling;
+    if (content && content.classList.contains("expandable-content")) {
+      content.classList.toggle("open");
+    }
+  });
+});
+
+// --- Table Sorting ---
+document.querySelectorAll(".data-table th[data-sort]").forEach(th => {
+  th.addEventListener("click", () => {
+    const table = th.closest("table");
+    const tbody = table.querySelector("tbody");
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+    const col = th.cellIndex;
+    const asc = th.dataset.order !== "asc";
+    th.dataset.order = asc ? "asc" : "desc";
+    rows.sort((a, b) => {
+      const av = a.cells[col]?.textContent?.trim() || "";
+      const bv = b.cells[col]?.textContent?.trim() || "";
+      const an = parseFloat(av), bn = parseFloat(bv);
+      if (!isNaN(an) && !isNaN(bn)) return asc ? an - bn : bn - an;
+      return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+    });
+    rows.forEach(row => tbody.appendChild(row));
+  });
+});
+
+// --- Chart.js Defaults ---
+if (typeof Chart !== "undefined") {
+  Chart.defaults.color = "#9aa0b0";
+  Chart.defaults.borderColor = "rgba(255, 255, 255, 0.06)";
+  Chart.defaults.font.family = "'Inter', system-ui, sans-serif";
+  Chart.defaults.font.size = 12;
+}
+
+// --- Dashboard Data (injected at build time) ---
+const DASHBOARD_DATA = {"score":71,"history":[{"date":"2026-04-04","score":71},{"date":"2026-04-05","score":71}]};
+
+// --- Chart Initialization ---
+
+// Score trend chart
+(function() {
+  const ctx = document.getElementById("chart-score-trend");
+  if (!ctx || typeof Chart === "undefined") return;
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: ["04-04","04-05"],
+      datasets: [{
+        label: "Site Health Score",
+        data: [71,71],
+        borderColor: "#06b6d4",
+        backgroundColor: "rgba(6, 182, 212, 0.1)",
+        borderWidth: 2, pointRadius: 0, pointHoverRadius: 5,
+        tension: 0.35, fill: true,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { min: 0, max: 100, grid: { color: "rgba(255,255,255,0.06)" } },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+
+// Run history chart
+(function() {
+  const ctx = document.getElementById("chart-run-history");
+  if (!ctx || typeof Chart === "undefined") return;
+  const runData = [10,22];
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["04-04","04-05"],
+      datasets: [{
+        label: "Pass Rate %",
+        data: runData,
+        backgroundColor: runData.map(v => v === 100 ? "#10b981" : v >= 50 ? "#f59e0b" : "#ef4444"),
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { min: 0, max: 100, grid: { color: "rgba(255,255,255,0.06)" } },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+
+</script>
+</body>
+</html>

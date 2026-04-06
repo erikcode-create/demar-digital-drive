@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -14,10 +15,29 @@ export default {
 			center: true,
 			padding: '2rem',
 			screens: {
-				'2xl': '1400px'
+				'2xl': '1200px'
 			}
 		},
 		extend: {
+			fontFamily: {
+				serif: ['"DM Serif Text"', 'Georgia', 'serif'],
+				sans: ['"Inter Variable"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+			},
+			fontSize: {
+				display: ['var(--text-display)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+				heading: ['var(--text-heading)', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+				subheading: ['var(--text-subheading)', { lineHeight: '1.3' }],
+				body: ['var(--text-body)', { lineHeight: '1.6' }],
+				caption: ['var(--text-caption)', { lineHeight: '1.5' }],
+			},
+			spacing: {
+				'space-xs': 'var(--space-xs)',
+				'space-sm': 'var(--space-sm)',
+				'space-md': 'var(--space-md)',
+				'space-lg': 'var(--space-lg)',
+				'space-xl': 'var(--space-xl)',
+				'space-2xl': 'var(--space-2xl)',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -116,5 +136,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;
