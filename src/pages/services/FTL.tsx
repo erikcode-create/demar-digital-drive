@@ -37,7 +37,8 @@ const FTL = () => {
       "@type": "Country",
       "name": "United States"
     },
-    "description": "Full Truckload (FTL) freight shipping services with dedicated trailers. Up to 45,000 lbs capacity, dry van, reefer, flatbed, and step-deck trailers available nationwide."
+    "description": "Full Truckload (FTL) freight shipping services with dedicated trailers. Up to 45,000 lbs capacity, dry van, reefer, flatbed, and step-deck trailers available nationwide.",
+    "dateModified": "2026-04-05"
   };
 
   return (
@@ -105,6 +106,9 @@ const FTL = () => {
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
                 Your freight, your trailer, your schedule. DeMar Transportation provides dedicated full truckload shipping with direct origin-to-destination service, faster transit times, and reduced handling for maximum cargo protection.
+              </p>
+              <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
+                DeMar Transportation provides full truckload shipping with dedicated trailer capacity for shipments over 15,000 pounds or 10 or more pallets. FTL moves point-to-point with no intermediate stops, minimizing transit time and handling risk across all 48 contiguous states.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>

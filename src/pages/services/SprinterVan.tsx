@@ -50,6 +50,37 @@ const SprinterVan = () => {
               }),
             }}
           />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Sprinter Van & Hot Shot Delivery",
+                "provider": {
+                  "@type": "LocalBusiness",
+                  "name": "DeMar Transportation",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "10471 Double R Blvd",
+                    "addressLocality": "Reno",
+                    "addressRegion": "NV",
+                    "postalCode": "89521",
+                    "addressCountry": "US"
+                  },
+                  "telephone": "(775) 230-4767",
+                  "email": "info@DeMarTransportation.com"
+                },
+                "serviceType": "Expedited Sprinter Van Delivery",
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "United States"
+                },
+                "description": "Expedited sprinter van and hot shot delivery for time-critical small freight up to 3,500 pounds. Same-day and next-day service available.",
+                "dateModified": "2026-04-05"
+              }),
+            }}
+          />
 
           {/* Hero */}
           <section className="pt-32 pb-20 px-4 bg-[hsl(225_97%_4%)] relative overflow-hidden">
@@ -71,6 +102,9 @@ const SprinterVan = () => {
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
                 Time-critical freight demands speed, reliability, and dedicated capacity. Our sprinter van and expedited shipping services deliver your cargo on the fastest possible timeline, with same-day and next-day options available nationwide.
+              </p>
+              <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
+                DeMar Transportation provides sprinter van and hot shot delivery for time-critical freight up to 3,500 pounds. Same-day and next-day expedited service with dedicated capacity and direct routing — no terminal handling or consolidation delays.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>

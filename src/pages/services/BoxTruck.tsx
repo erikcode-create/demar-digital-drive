@@ -37,7 +37,8 @@ const BoxTruck = () => {
       "@type": "Country",
       "name": "United States"
     },
-    "description": "Cost-effective box truck shipping services for local and regional freight. 26-foot trucks with liftgate service for small to mid-size loads."
+    "description": "Cost-effective box truck shipping services for local and regional freight. 26-foot trucks with liftgate service for small to mid-size loads.",
+    "dateModified": "2026-04-05"
   };
 
   return (
@@ -105,6 +106,9 @@ const BoxTruck = () => {
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
                 Cost-effective freight transportation for small to mid-size loads. Our 26-foot box trucks deliver flexibility, reliability, and access to locations that full-size trailers cannot reach.
+              </p>
+              <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
+                DeMar Transportation provides 26-foot box truck delivery for medium-duty freight and regional shipments. Box trucks are ideal for last-mile delivery, residential drops, trade show freight, and urban areas where full-size trailers cannot access, with liftgate service available.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>

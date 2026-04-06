@@ -50,6 +50,37 @@ const Hazmat = () => {
               }),
             }}
           />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Hazmat & Fuel Transportation",
+                "provider": {
+                  "@type": "LocalBusiness",
+                  "name": "DeMar Transportation",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "10471 Double R Blvd",
+                    "addressLocality": "Reno",
+                    "addressRegion": "NV",
+                    "postalCode": "89521",
+                    "addressCountry": "US"
+                  },
+                  "telephone": "(775) 230-4767",
+                  "email": "info@DeMarTransportation.com"
+                },
+                "serviceType": "Hazardous Materials Transportation",
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "United States"
+                },
+                "description": "Licensed and certified hazardous materials transportation including fuel hauling. Class 1-9 hazmat transport in compliance with 49 CFR regulations.",
+                "dateModified": "2026-04-05"
+              }),
+            }}
+          />
 
           {/* Hero */}
           <section className="pt-32 pb-20 px-4 bg-[hsl(225_97%_4%)] relative overflow-hidden">
@@ -71,6 +102,9 @@ const Hazmat = () => {
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
                 Certified hazardous materials transportation with fully compliant drivers, equipment, and documentation. From fuel hauling to chemical transport, DeMar Transportation handles your most sensitive freight with the expertise and safety protocols the job demands.
+              </p>
+              <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
+                DeMar Transportation is licensed and certified for hazardous materials transportation including fuel tanker hauling. All hazmat drivers carry current HazMat endorsements and complete DOT-required training for Class 1 through Class 9 materials in compliance with 49 CFR regulations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>

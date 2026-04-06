@@ -37,7 +37,8 @@ const ThirdPartyLogistics = () => {
       "@type": "Country",
       "name": "United States"
     },
-    "description": "Full-service third-party logistics (3PL) including freight management, carrier sourcing, warehousing coordination, real-time tracking, and supply chain optimization for businesses across the United States."
+    "description": "Full-service third-party logistics (3PL) including freight management, carrier sourcing, warehousing coordination, real-time tracking, and supply chain optimization for businesses across the United States.",
+    "dateModified": "2026-04-05"
   };
 
   return (
@@ -105,6 +106,9 @@ const ThirdPartyLogistics = () => {
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
                 Simplify your supply chain with a single logistics partner. DeMar Transportation manages your freight, coordinates warehousing, and provides end-to-end visibility so you can focus on growing your business.
+              </p>
+              <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
+                DeMar Transportation provides third-party logistics coordination for businesses that need freight management without maintaining their own fleet. Our 3PL service handles carrier selection, rate negotiation, shipment tracking, and delivery coordination nationwide.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>

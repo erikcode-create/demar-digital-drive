@@ -1,0 +1,33 @@
+# DeMar Transportation
+
+> Professional freight transportation services across the United States. US-based carrier based in Reno, Nevada with competitive rates and 24/7 dispatch.
+
+## About
+
+DeMar Transportation is a professional freight carrier based in Reno, Nevada, providing comprehensive transportation services including dry van, refrigerated (reefer), flatbed, box truck, sprinter van, and hazmat/fuel hauling. We serve shippers, brokers, and businesses nationwide with competitive per-mile rates and 24/7 dispatch availability.
+
+## Services
+
+- [Dry Van Shipping](https://demartransportation.com/services/dry-van): Enclosed 53-foot trailer shipping for general freight, up to 45,000 lbs
+- [Reefer Transport](https://demartransportation.com/services/reefer): Temperature-controlled shipping for perishable and frozen goods
+- [Flatbed Hauling](https://demartransportation.com/services/flatbed): Open deck transport for oversized, heavy, and construction loads
+- [Full Truckload (FTL)](https://demartransportation.com/services/ftl): Dedicated full trailer capacity for large shipments
+- [Less Than Truckload (LTL)](https://demartransportation.com/services/ltl): Consolidated shipping for smaller freight, 1-10 pallets
+- [Box Truck Delivery](https://demartransportation.com/services/box-truck): Medium-duty 26-foot box truck for regional and last-mile delivery
+- [Sprinter Van Express](https://demartransportation.com/services/sprinter-van): Expedited small-load and hot shot delivery
+- [Hazmat & Fuel Transport](https://demartransportation.com/services/hazmat): Licensed hazardous materials and fuel hauling with certified drivers
+
+## Key Pages
+
+- [Homepage](https://demartransportation.com/): Company overview and service summary
+- [About Us](https://demartransportation.com/about): Company story, mission, and values
+- [Get a Quote](https://demartransportation.com/quote): Request freight shipping rates — free, no obligation
+- [Insights Blog](https://demartransportation.com/blog): Industry news, shipping guides, and freight market analysis
+- [Contact](https://demartransportation.com/contact): Phone, email, and office address
+
+## Contact
+
+- Phone: (775) 230-4767
+- Email: info@DeMarTransportation.com
+- Address: 10471 Double R Blvd, Reno, NV 89521
+- Hours: 24/7 dispatch available

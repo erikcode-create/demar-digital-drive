@@ -1,0 +1,115 @@
+# DeMar Transportation — Full Reference
+
+> Professional freight transportation services across the United States. US-based carrier based in Reno, Nevada with competitive rates and 24/7 dispatch.
+
+## Company Overview
+
+DeMar Transportation is a professional freight carrier headquartered at 10471 Double R Blvd, Reno, NV 89521. We provide comprehensive freight transportation services across all 48 contiguous states. Our services include dry van, refrigerated, flatbed, box truck, sprinter van, full truckload, less-than-truckload, hazmat, third-party logistics, and warehousing.
+
+### Why Choose DeMar Transportation
+
+- 24/7 dispatch and customer service availability
+- Competitive per-mile rates across all service types
+- Real-time freight tracking on every shipment
+- Nationwide coverage across all 48 contiguous states
+- Licensed and insured for hazardous materials transport
+- Flexible capacity: from sprinter vans to full 53-foot trailers
+
+## Services
+
+### Dry Van Shipping
+DeMar Transportation provides dry van shipping services for enclosed freight across the continental United States. Our 53-foot dry van trailers handle general merchandise, consumer goods, and non-perishable freight with a maximum payload capacity of approximately 45,000 pounds. Standard trailers accommodate 22 to 26 pallets single-stacked.
+
+Dry van is the most common and cost-effective freight shipping method for non-temperature-sensitive goods. We offer both full truckload (FTL) and less-than-truckload (LTL) dry van options with competitive per-mile rates and 24/7 dispatch availability.
+
+Equipment: 53-foot enclosed trailers, air-ride suspension, swing or roll-up doors.
+URL: https://demartransportation.com/services/dry-van
+
+### Reefer (Refrigerated) Transport
+DeMar Transportation provides temperature-controlled shipping for perishable goods, frozen products, pharmaceuticals, and other temperature-sensitive freight. Our refrigerated trailers maintain precise temperatures from -20°F to 65°F throughout transit.
+
+Reefer shipping is essential for food and beverage producers, pharmaceutical companies, and any shipper whose cargo requires climate control. We provide continuous temperature monitoring and real-time tracking.
+
+Equipment: 53-foot refrigerated trailers with multi-zone temperature control.
+URL: https://demartransportation.com/services/reefer
+
+### Flatbed Hauling
+DeMar Transportation provides flatbed shipping for oversized, heavy, and irregularly shaped freight that cannot fit in enclosed trailers. Our flatbed service handles construction materials, heavy machinery, steel, lumber, and other open-deck cargo.
+
+Flatbed shipping requires specialized load securement and often involves permits for oversize or overweight loads. Our drivers are trained in proper tarping, chaining, and strapping procedures.
+
+Equipment: 48-foot and 53-foot flatbed trailers, step deck, and specialized rigging.
+URL: https://demartransportation.com/services/flatbed
+
+### Full Truckload (FTL)
+Full truckload shipping dedicates an entire trailer to your freight. FTL is the fastest and most direct shipping method, with no intermediate stops or handling. Recommended for shipments over 15,000 pounds or 10+ pallets.
+
+FTL shipments move point-to-point with a single driver or team, minimizing transit time and damage risk. DeMar provides FTL service in dry van, reefer, and flatbed configurations.
+
+URL: https://demartransportation.com/services/ftl
+
+### Less Than Truckload (LTL)
+Less-than-truckload shipping consolidates multiple shippers' freight into a single trailer. LTL is cost-effective for shipments between 1 and 10 pallets or under 15,000 pounds.
+
+LTL rates are based on freight class, weight, dimensions, and distance. DeMar coordinates LTL consolidation to minimize per-unit shipping costs while maintaining reliable transit times.
+
+URL: https://demartransportation.com/services/ltl
+
+### Box Truck Delivery
+DeMar Transportation provides 26-foot box truck service for medium-duty deliveries and regional freight. Box trucks handle shipments too large for sprinter vans but too small for full 53-foot trailers.
+
+Box trucks are ideal for last-mile delivery, residential deliveries, trade show freight, and urban environments where full-size trailers face access restrictions. Liftgate equipped for ground-level loading.
+
+URL: https://demartransportation.com/services/box-truck
+
+### Sprinter Van & Hot Shot
+Sprinter van service provides expedited delivery for time-critical, small-volume freight. Hot shot loads ship same-day or next-day with dedicated capacity and direct routing.
+
+Sprinter vans handle up to 3,500 pounds and are ideal for urgent parts, medical supplies, documents, and other small shipments that need to arrive fast. No terminal handling or consolidation delays.
+
+URL: https://demartransportation.com/services/sprinter-van
+
+### Hazmat & Fuel Transport
+DeMar Transportation is licensed and certified for hazardous materials transportation including fuel hauling. All hazmat drivers carry current HazMat endorsements and complete DOT-required training.
+
+We transport Class 1 through Class 9 hazardous materials in compliance with 49 CFR regulations. Services include fuel tanker delivery, chemical transport, and hazardous waste hauling.
+
+URL: https://demartransportation.com/services/hazmat
+
+### Third-Party Logistics (3PL)
+DeMar provides third-party logistics coordination for businesses that need freight management without maintaining their own fleet. Our 3PL service handles carrier selection, rate negotiation, shipment tracking, and delivery coordination.
+
+URL: https://demartransportation.com/services/third-party-logistics
+
+### Warehousing & Distribution
+DeMar offers warehousing and distribution services for businesses needing temporary or ongoing storage with freight coordination. Services include inventory management, cross-docking, and distribution support.
+
+URL: https://demartransportation.com/services/warehousing
+
+## Frequently Asked Questions
+
+Q: What areas does DeMar Transportation serve?
+A: DeMar Transportation serves all 48 contiguous United States. We are headquartered in Reno, Nevada and provide nationwide freight coverage.
+
+Q: How do I get a freight quote?
+A: Request a free quote at https://demartransportation.com/quote or call (775) 230-4767. We respond within 1 business hour.
+
+Q: What is the maximum weight for a dry van shipment?
+A: A standard 53-foot dry van trailer has a maximum payload capacity of approximately 45,000 pounds, subject to federal gross vehicle weight limits of 80,000 pounds.
+
+Q: Does DeMar offer temperature-controlled shipping?
+A: Yes. Our refrigerated trailers maintain temperatures from -20°F to 65°F with continuous monitoring throughout transit.
+
+Q: Is DeMar licensed for hazardous materials?
+A: Yes. DeMar Transportation is fully licensed and insured for Class 1 through Class 9 hazardous materials transport, including fuel hauling.
+
+Q: What are your hours of operation?
+A: DeMar Transportation provides 24/7 dispatch and customer service. Call (775) 230-4767 any time.
+
+## Contact
+
+- Phone: (775) 230-4767
+- Email: info@DeMarTransportation.com
+- Address: 10471 Double R Blvd, Reno, NV 89521
+- Website: https://demartransportation.com
+- Quote: https://demartransportation.com/quote

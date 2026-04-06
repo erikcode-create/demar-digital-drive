@@ -1,0 +1,5 @@
+# AI Usage Preferences for demartransportation.com
+# See: https://site.spawning.ai/spawning-ai-txt
+
+User-Agent: *
+Allowed: yes

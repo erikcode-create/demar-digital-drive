@@ -37,7 +37,8 @@ const Reefer = () => {
       "@type": "Country",
       "name": "United States"
     },
-    "description": "Temperature-controlled refrigerated trucking services for perishable goods, pharmaceuticals, and temperature-sensitive freight."
+    "description": "Temperature-controlled refrigerated trucking services for perishable goods, pharmaceuticals, and temperature-sensitive freight.",
+    "dateModified": "2026-04-05"
   };
 
   return (
@@ -105,6 +106,9 @@ const Reefer = () => {
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
                 FSMA-compliant, temperature-controlled freight transportation for perishable goods, pharmaceuticals, and temperature-sensitive products. DeMar Transportation keeps your cold chain intact from origin to destination.
+              </p>
+              <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
+                DeMar Transportation provides refrigerated shipping for perishable goods, frozen products, and temperature-sensitive freight across the continental United States. Our reefer trailers maintain precise temperatures from -20°F to 65°F with continuous monitoring throughout transit.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>

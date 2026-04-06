@@ -37,7 +37,8 @@ const LTL = () => {
       "@type": "Country",
       "name": "United States"
     },
-    "description": "Less Than Truckload (LTL) freight shipping services for shipments under 10,000 lbs. Competitive rates, nationwide coverage, and freight class optimization."
+    "description": "Less Than Truckload (LTL) freight shipping services for shipments under 10,000 lbs. Competitive rates, nationwide coverage, and freight class optimization.",
+    "dateModified": "2026-04-05"
   };
 
   return (
@@ -105,6 +106,9 @@ const LTL = () => {
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
                 Ship smarter with Less Than Truckload freight. Pay only for the trailer space your shipment occupies and let DeMar Transportation handle the rest -- from carrier selection to delivery coordination.
+              </p>
+              <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
+                DeMar Transportation provides less-than-truckload shipping for freight between 1 and 10 pallets or under 15,000 pounds. LTL consolidates multiple shippers into one trailer, reducing per-unit costs while maintaining reliable transit times across the continental United States.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>

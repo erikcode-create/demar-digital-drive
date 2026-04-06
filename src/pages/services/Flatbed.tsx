@@ -37,7 +37,8 @@ const Flatbed = () => {
       "@type": "Country",
       "name": "United States"
     },
-    "description": "Professional flatbed, step-deck, and lowboy trucking services for oversized, heavy, and open-deck freight across the United States."
+    "description": "Professional flatbed, step-deck, and lowboy trucking services for oversized, heavy, and open-deck freight across the United States.",
+    "dateModified": "2026-04-05"
   };
 
   return (
@@ -105,6 +106,9 @@ const Flatbed = () => {
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
                 Professional open-deck freight transportation for steel, lumber, machinery, construction materials, and oversized loads. DeMar Transportation provides flatbed, step-deck, and lowboy capacity nationwide with FMCSA-compliant load securement.
+              </p>
+              <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
+                DeMar Transportation provides flatbed shipping for oversized, heavy, and irregularly shaped freight that cannot fit in enclosed trailers. Our flatbed service handles construction materials, heavy machinery, steel, and lumber with proper load securement and permitting for oversize loads.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>

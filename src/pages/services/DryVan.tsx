@@ -37,7 +37,8 @@ const DryVan = () => {
       "@type": "Country",
       "name": "United States"
     },
-    "description": "Professional dry van shipping services for full truckload and LTL freight. 53-foot enclosed trailers with 45,000 lb capacity."
+    "description": "Professional dry van shipping services for full truckload and LTL freight. 53-foot enclosed trailers with 45,000 lb capacity.",
+    "dateModified": "2026-04-05"
   };
 
   const faqJsonLd = {
@@ -148,6 +149,9 @@ const DryVan = () => {
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
                 Reliable, enclosed freight transportation for general commodities across the continental United States. Safe, on time, and at competitive rates.
+              </p>
+              <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
+                DeMar Transportation provides dry van shipping services for enclosed freight across the continental United States. Our 53-foot dry van trailers handle general merchandise, consumer goods, and non-perishable freight with a maximum payload of 45,000 pounds, competitive per-mile rates, and 24/7 dispatch availability.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>

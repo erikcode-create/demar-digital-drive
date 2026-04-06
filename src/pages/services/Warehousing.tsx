@@ -37,7 +37,8 @@ const WarehousingPage = () => {
       "@type": "Country",
       "name": "United States"
     },
-    "description": "Nationwide warehousing and distribution services including short-term and long-term storage, cross-docking, transloading, pick-and-pack, order fulfillment, and inventory management through strategically located warehouse facilities."
+    "description": "Nationwide warehousing and distribution services including short-term and long-term storage, cross-docking, transloading, pick-and-pack, order fulfillment, and inventory management through strategically located warehouse facilities.",
+    "dateModified": "2026-04-05"
   };
 
   return (
@@ -105,6 +106,9 @@ const WarehousingPage = () => {
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
                 Strategically located warehouse facilities across the United States. DeMar Transportation coordinates storage, fulfillment, and distribution through our network of warehouse partners to keep your products moving and your customers satisfied.
+              </p>
+              <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
+                DeMar Transportation provides warehousing and distribution services for businesses needing temporary or ongoing storage with integrated freight coordination. Services include inventory management, cross-docking, and distribution support from our Reno, Nevada facility.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>

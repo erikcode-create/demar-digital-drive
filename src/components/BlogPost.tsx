@@ -24,6 +24,7 @@ export interface BlogPostProps {
   metaDescription: string;
   slug: string;
   publishDate: string;
+  lastUpdated?: string;
   readTime: string;
   heroImage?: string;
   heroImageAlt?: string;
@@ -40,6 +41,7 @@ const BlogPost = ({
   metaDescription,
   slug,
   publishDate,
+  lastUpdated,
   readTime,
   heroImage,
   heroImageAlt,
@@ -74,7 +76,7 @@ const BlogPost = ({
       },
     },
     datePublished: publishDate,
-    dateModified: publishDate,
+    dateModified: lastUpdated || publishDate,
     mainEntityOfPage: `https://demartransportation.com/blog/${slug}`,
     ...(heroImage && {
       image: {
@@ -179,7 +181,9 @@ const BlogPost = ({
                 <p className="text-base md:text-lg text-white/75 max-w-2xl leading-relaxed mb-5 drop-shadow-sm">
                   {description}
                 </p>
-                <div className="flex items-center gap-4 text-sm text-white/60">
+                <div className="flex flex-wrap items-center gap-4 text-sm text-white/60">
+                  <span>By DeMar Transportation</span>
+                  <span className="w-1 h-1 rounded-full bg-white/40" />
                   <span className="flex items-center gap-1.5">
                     <Calendar className="h-3.5 w-3.5" />
                     {new Date(publishDate).toLocaleDateString("en-US", {
@@ -188,6 +192,19 @@ const BlogPost = ({
                       day: "numeric",
                     })}
                   </span>
+                  {lastUpdated && lastUpdated !== publishDate && (
+                    <>
+                      <span className="w-1 h-1 rounded-full bg-white/40" />
+                      <span>
+                        Updated{" "}
+                        {new Date(lastUpdated).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </span>
+                    </>
+                  )}
                   <span className="w-1 h-1 rounded-full bg-white/40" />
                   <span>{readTime} read</span>
                 </div>
