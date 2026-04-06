@@ -14,6 +14,9 @@ import {
   Headphones,
   Navigation,
   ArrowRight,
+  Shield,
+  Truck,
+  CheckCircle,
 } from "lucide-react";
 
 const departments = [
@@ -51,12 +54,49 @@ const departments = [
   },
 ];
 
+const trustSignals = [
+  {
+    icon: Shield,
+    title: "Licensed & Insured",
+    description: "FMCSA-registered carrier with comprehensive cargo and liability insurance for every shipment.",
+  },
+  {
+    icon: Truck,
+    title: "Diverse Fleet",
+    description: "Dry van, reefer, flatbed, box truck, and sprinter van options to match your freight requirements.",
+  },
+  {
+    icon: CheckCircle,
+    title: "Real-Time Tracking",
+    description: "GPS-enabled shipment visibility so you always know where your freight is during transit.",
+  },
+];
+
+const contactFaqs = [
+  {
+    question: "What areas does DeMar Transportation serve from Reno, NV?",
+    answer: "DeMar Transportation provides freight shipping services throughout the western United States and beyond. Our Reno, Nevada headquarters is strategically located along the I-80 corridor, giving us direct access to major distribution hubs in California, Oregon, Utah, and across the country.",
+  },
+  {
+    question: "How do I get a freight shipping quote from DeMar Transportation?",
+    answer: "You can request a quote by calling (775) 230-4767, emailing info@DeMarTransportation.com, or using our online quote request form. Provide your pickup and delivery locations, freight dimensions and weight, and any special handling requirements for the most accurate rate.",
+  },
+  {
+    question: "What are DeMar Transportation's hours of operation?",
+    answer: "Our Reno office is open Monday through Friday, 7:00 AM to 6:00 PM PST. Our dispatch team is available 24 hours a day, 7 days a week to coordinate pickups, deliveries, and shipment tracking.",
+  },
+  {
+    question: "What types of freight does DeMar Transportation handle?",
+    answer: "We handle a wide range of freight including dry goods, temperature-controlled shipments, flatbed loads, hazardous materials, and time-sensitive deliveries. Our fleet includes dry vans, reefers, flatbeds, box trucks, and sprinter vans.",
+  },
+];
+
 const Contact = () => {
   useEffect(() => {
     document.title = "Contact DeMar Transportation | Reno, NV Freight & Logistics";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Contact DeMar Transportation for freight shipping quotes and logistics support. Call (775) 230-4767, email info@DeMarTransportation.com, or visit our Reno, NV office.');
+      metaDescription.setAttribute('content', 'Contact DeMar Transportation for freight shipping quotes and logistics support in Reno, NV. Call (775) 230-4767, email info@DeMarTransportation.com, or visit our office at 10471 Double R Blvd.');
     }
   }, []);
 
@@ -188,8 +228,35 @@ const Contact = () => {
             </div>
           </section>
 
-          {/* Location & Map */}
+          {/* Why Choose DeMar - Trust Signals */}
           <section className="py-20 bg-[hsl(var(--surface))]">
+            <div className="container mx-auto px-4">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] text-center mb-4">
+                Why Choose Us
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight text-center mb-4">
+                Trusted Freight Partner in Reno, NV
+              </h2>
+              <p className="text-base text-[hsl(var(--muted-foreground))] text-center mb-12 max-w-2xl mx-auto leading-relaxed">
+                DeMar Transportation provides reliable freight shipping and logistics services throughout the western United States.
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                {trustSignals.map((signal) => (
+                  <div key={signal.title} className="p-6 rounded-xl bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-float)] transition-all duration-300 text-center">
+                    <div className="p-3 rounded-lg bg-[hsl(var(--surface-low))] inline-block mb-4">
+                      <signal.icon className="h-6 w-6 text-[hsl(var(--accent))]" />
+                    </div>
+                    <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-2">{signal.title}</h3>
+                    <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">{signal.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Location & Map */}
+          <section className="py-20 bg-[hsl(var(--surface-low))]">
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -235,6 +302,16 @@ const Contact = () => {
                           </p>
                         </div>
                       </div>
+
+                      <div className="flex items-start gap-4">
+                        <Truck className="h-5 w-5 text-[hsl(var(--accent))] mt-0.5 flex-shrink-0" />
+                        <div>
+                          <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-1">Service Area</h3>
+                          <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
+                            Serving Nevada, California, Oregon, Utah, Arizona, and freight routes nationwide from our Reno base.
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -250,6 +327,29 @@ const Contact = () => {
                       referrerPolicy="no-referrer-when-downgrade"
                     />
                   </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ Section for Local SEO */}
+          <section className="py-20 bg-[hsl(var(--surface))]">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto">
+                <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] text-center mb-4">
+                  Common Questions
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight text-center mb-12">
+                  Frequently Asked Questions
+                </h2>
+
+                <div className="space-y-4">
+                  {contactFaqs.map((faq) => (
+                    <div key={faq.question} className="p-6 rounded-xl bg-white shadow-[var(--shadow-card)]">
+                      <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-3">{faq.question}</h3>
+                      <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">{faq.answer}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -293,15 +393,16 @@ const Contact = () => {
         <Footer />
       </div>
 
-      {/* JSON-LD */}
+      {/* JSON-LD: LocalBusiness */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
+            "@id": "https://demartransportation.com/#business",
             name: "DeMar Transportation",
-            description: "Freight transportation and logistics services in Reno, Nevada.",
+            description: "Freight transportation and logistics services based in Reno, Nevada. Offering dry van, reefer, flatbed, box truck, and sprinter van shipping with 24/7 dispatch.",
             url: "https://demartransportation.com",
             telephone: "+1-775-230-4767",
             email: "info@DeMarTransportation.com",
@@ -335,6 +436,47 @@ const Contact = () => {
             ],
             image: "https://demartransportation.com/og-image.png",
             priceRange: "$$",
+            areaServed: [
+              { "@type": "State", name: "Nevada" },
+              { "@type": "State", name: "California" },
+              { "@type": "State", name: "Oregon" },
+              { "@type": "State", name: "Utah" },
+              { "@type": "State", name: "Arizona" },
+            ],
+            serviceType: [
+              "Freight Shipping",
+              "LTL Shipping",
+              "FTL Shipping",
+              "Refrigerated Transport",
+              "Flatbed Hauling",
+              "Logistics Services",
+            ],
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+1-775-230-4767",
+              contactType: "customer service",
+              availableLanguage: "English",
+              areaServed: "US",
+            },
+          }),
+        }}
+      />
+
+      {/* JSON-LD: FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: contactFaqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
           }),
         }}
       />
