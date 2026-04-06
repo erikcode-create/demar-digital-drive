@@ -55,7 +55,7 @@ const FoodBeverageFreightShipping = () => {
       </p>
 
       <p className="mb-8">
-        Frozen goods must hold at <strong>-18C (0F) or colder</strong>. Fresh produce and refrigerated items stay in the <strong>0-4C (32-39F)</strong> band. Dry ambient products need consistent <strong>15-25C (59-77F)</strong> conditions. Missing any of these windows, even briefly, creates liability exposure that no shipper wants to explain to an FDA inspector. This guide covers what food and beverage shippers need to know about temperature requirements, FSMA compliance, cold chain documentation, and how to evaluate a carrier before your next reefer load moves.
+        Frozen goods must hold at <strong>-18C (0F) or colder</strong>. Fresh produce and refrigerated items stay in the <strong>0-4C (32-39F)</strong> band. Dry ambient products need consistent <strong>15-25C (59-77F)</strong> conditions. Missing any of these windows, even briefly, creates liability exposure that no shipper wants to explain to an FDA inspector. This guide covers what food and beverage shippers need to know about temperature requirements, FSMA compliance, cold chain documentation, and how to evaluate a carrier's <Link to="/services/reefer">refrigerated freight shipping services</Link> before your next reefer load moves.
       </p>
 
       <h2>What FSMA Actually Requires from Food Shippers and Carriers</h2>
