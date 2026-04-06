@@ -150,6 +150,15 @@ const blogPosts = [
     date: "2026-04-06",
     readTime: "8 min",
   },
+  {
+    slug: "hazmat-freight-shipping-requirements-3ekq",
+    title: "Hazmat Freight Shipping Requirements: A Complete Guide to DOT Compliance",
+    description:
+      "Everything shippers need to know about hazmat freight requirements, from DOT hazard classifications and required documentation to driver certification and packaging standards.",
+    category: "Compliance & Safety",
+    date: "2026-04-06",
+    readTime: "8 min",
+  },
 ];
 
 const Blog = () => {
