@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Truck, Phone, Package, ArrowRight, CheckCircle } from "lucide-react";
+import { Truck, Phone, Package, ArrowRight, CheckCircle, AlertTriangle } from "lucide-react";
 
 const DryVan = () => {
   useEffect(() => {
@@ -38,7 +38,7 @@ const DryVan = () => {
       "name": "United States"
     },
     "description": "Professional dry van shipping services for full truckload and LTL freight. 53-foot enclosed trailers with 45,000 lb capacity.",
-    "dateModified": "2026-04-05"
+    "dateModified": "2026-04-06"
   };
 
   const faqJsonLd = {
@@ -74,7 +74,15 @@ const DryVan = () => {
         "name": "How long does dry van shipping take from Reno, NV?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Transit times from Reno, NV depend on destination. Regional deliveries within Nevada, California, Oregon, and Utah typically arrive within 1 to 2 days. Cross-country shipments to the East Coast take 4 to 6 days for standard dry van service. DeMar Transportation provides estimated delivery dates at booking and offers real-time tracking throughout transit."
+          "text": "Transit times from Reno, NV depend on destination. Reno to Los Angeles is approximately 450 miles with 1-day transit. Reno to Seattle is roughly 700 miles with 1 to 2-day transit. Reno to Dallas is about 1,700 miles with 3 to 4-day transit. Cross-country shipments to the East Coast take 4 to 6 days. DeMar Transportation provides estimated delivery dates at booking and offers real-time tracking throughout transit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the limitations of dry van shipping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dry vans are not temperature-controlled, so they are not suitable for perishable goods, frozen products, or freight that requires climate regulation. Extreme heat or cold during transit can affect temperature-sensitive cargo. Dry vans also have fixed interior dimensions, so oversized or irregularly shaped freight that exceeds 53 feet in length, 98.5 inches in width, or 108 inches in height requires a flatbed or specialized trailer. If your freight needs refrigeration, DeMar Transportation offers reefer trailer services as an alternative."
         }
       }
     ]
@@ -185,7 +193,7 @@ const DryVan = () => {
               </h2>
               <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
                 <p>
-                  Dry van shipping is the most widely used method of over-the-road freight transportation in the United States, accounting for roughly 70 percent of all truckload shipments. A dry van is a fully enclosed, non-temperature-controlled trailer designed to protect cargo from weather, road debris, and theft during transit.
+                  Dry van shipping is the most widely used method of over-the-road freight transportation in the United States. A dry van is a fully enclosed, non-temperature-controlled trailer designed to protect cargo from weather, road debris, and theft during transit. Standard dry van trailers come in 28-foot, 48-foot, and 53-foot lengths, with the 53-foot variant being the most common for long-haul freight.
                 </p>
                 <p>
                   At DeMar Transportation, dry van freight is the backbone of our operations. Whether you need a full truckload (FTL) moved coast to coast or a less-than-truckload (LTL) shipment consolidated with other freight, our dry van fleet is equipped to handle it.
@@ -197,8 +205,31 @@ const DryVan = () => {
             </div>
           </section>
 
-          {/* DeMar Capabilities */}
+          {/* Our Experience - E-E-A-T Section */}
           <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
+            <div className="max-w-5xl mx-auto">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                Our Experience
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-8">
+                What We Have Learned Moving Dry Van Freight
+              </h2>
+              <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
+                <p>
+                  Operating out of Reno, Nevada, we coordinate dry van shipments daily across I-80, US-395, and the Western US freight corridors. Our dispatch team has developed lane-specific knowledge that directly impacts service quality: which carriers consistently deliver on time to specific distribution centers, where seasonal weather delays are most likely, and how to route around congestion on high-traffic corridors.
+                </p>
+                <p>
+                  We have found that the biggest factor in dry van shipping reliability is carrier vetting. Every carrier in our network passes DOT compliance screening before their first load. We track on-time delivery performance and cargo claim history on an ongoing basis, and carriers that fall below our standards are removed from active dispatch.
+                </p>
+                <p>
+                  Our location at the intersection of I-80 and US-395 gives us a strategic advantage for freight moving between California, the Pacific Northwest, and the Intermountain West. Key routes we run regularly include Reno to Los Angeles (approximately 450 miles, 1-day transit), Reno to Seattle (roughly 700 miles, 1 to 2-day transit), and Reno to Dallas (about 1,700 miles, 3 to 4-day transit).
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* DeMar Capabilities */}
+          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
             <div className="max-w-5xl mx-auto">
               <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
                 Our Capabilities
@@ -211,7 +242,7 @@ const DryVan = () => {
                   DeMar Transportation coordinates dry van shipments across all 48 contiguous states through a vetted network of owner-operators and carrier partners. Our home base in Reno, Nevada places us at the intersection of I-80 and US-395, giving us direct access to major freight corridors connecting the West Coast, Pacific Northwest, and Intermountain West.
                 </p>
                 <p>
-                  We handle shipments ranging from single-pallet LTL loads under 5,000 pounds to full truckload moves up to 45,000 pounds. Our dispatch team books hundreds of dry van loads monthly, with consistent lane coverage on high-demand routes throughout the Western US and beyond. All carriers in our network pass DOT compliance screening before their first load.
+                  We handle shipments ranging from single-pallet LTL loads under 5,000 pounds to full truckload moves up to 45,000 pounds. Our dispatch team books dry van loads daily, with consistent lane coverage on high-demand routes throughout the Western US and beyond. All carriers in our network pass DOT compliance screening before their first load.
                 </p>
               </div>
 
@@ -220,8 +251,8 @@ const DryVan = () => {
               </h3>
               <div className="grid md:grid-cols-3 gap-4">
                 {[
-                  { region: "Western US", detail: "California, Oregon, Washington, Nevada, Arizona, Utah, Colorado. Typically 1 to 2-day transit from Reno for most destinations." },
-                  { region: "Central US", detail: "Texas, Illinois, Missouri, Minnesota, Kansas, Nebraska, Oklahoma. Typically 2 to 3-day transit with reliable capacity on I-80 and I-70 corridors." },
+                  { region: "Western US", detail: "California, Oregon, Washington, Nevada, Arizona, Utah, Colorado. Reno to Los Angeles: approximately 450 miles, 1-day transit. Reno to Seattle: roughly 700 miles, 1 to 2-day transit." },
+                  { region: "Central US", detail: "Texas, Illinois, Missouri, Minnesota, Kansas, Nebraska, Oklahoma. Reno to Dallas: about 1,700 miles, 3 to 4-day transit. Reliable capacity on I-80 and I-70 corridors." },
                   { region: "Eastern US", detail: "New York, Pennsylvania, Georgia, Florida, Ohio, North Carolina. Typically 4 to 6-day transit with coast-to-coast full truckload service." },
                 ].map((area) => (
                   <div key={area.region} className="p-5 rounded-xl bg-white shadow-[var(--shadow-card)]">
@@ -233,8 +264,8 @@ const DryVan = () => {
             </div>
           </section>
 
-          {/* Trailer Specs - tonal cards, no borders */}
-          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
+          {/* Trailer Specs */}
+          <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
             <div className="max-w-5xl mx-auto">
               <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
                 Specifications
@@ -244,9 +275,9 @@ const DryVan = () => {
               </h2>
               <div className="grid md:grid-cols-3 gap-4 mb-8">
                 {[
-                  { value: "53 ft", label: "Standard Trailer Length", desc: "Interior length of approximately 52 feet 6 inches. 48-foot trailers also available." },
-                  { value: "45,000 lbs", label: "Maximum Payload Capacity", desc: "Up to 45,000 pounds of freight per load, depending on tractor configuration." },
-                  { value: "2,390 ft³", label: "Interior Cubic Capacity", desc: "Interior width of 98.5 inches and height of 108 inches at door opening." },
+                  { value: "53 ft", label: "Standard Trailer Length", desc: "Interior length of approximately 52 feet 6 inches. 48-foot and 28-foot trailers also available for shorter hauls or tighter dock access." },
+                  { value: "45,000 lbs", label: "Maximum Payload Capacity", desc: "Up to 45,000 pounds of freight per load, depending on tractor configuration and federal gross vehicle weight limits of 80,000 pounds." },
+                  { value: "2,390 ft\u00B3", label: "Interior Cubic Capacity", desc: "Interior width of 98.5 inches and height of 108 inches at door opening. Sufficient for most palletized and floor-loaded freight." },
                 ].map((spec) => (
                   <div key={spec.label} className="p-6 rounded-xl bg-white shadow-[var(--shadow-card)]">
                     <div className="text-3xl font-bold text-[hsl(var(--accent))] tracking-tight mb-2">
@@ -267,6 +298,44 @@ const DryVan = () => {
             </div>
           </section>
 
+          {/* When NOT to Use Dry Van */}
+          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
+            <div className="max-w-5xl mx-auto">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                Is Dry Van Right for You?
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-8">
+                When to Choose a Different Trailer Type
+              </h2>
+              <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl mb-10">
+                <p>
+                  Dry vans are the right choice for the majority of freight shipments, but they are not ideal for every load. Understanding the limitations helps you choose the right equipment and avoid delays or damage.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  { title: "Temperature-Sensitive Freight", desc: "Dry vans have no climate control. Perishable foods, pharmaceuticals, chemicals, and any cargo that requires heating or cooling during transit should ship in a reefer (refrigerated) trailer instead.", link: "/services/reefer", linkText: "Learn about reefer shipping" },
+                  { title: "Oversized or Irregularly Shaped Cargo", desc: "Freight that exceeds 53 feet in length, 98.5 inches in width, or 108 inches in height will not fit inside a dry van. Heavy machinery, construction equipment, and oversized loads require a flatbed trailer.", link: "/services/flatbed", linkText: "Learn about flatbed shipping" },
+                  { title: "High-Value Cargo Requiring Extra Security", desc: "While dry vans offer basic theft deterrence through enclosed walls and locking doors, extremely high-value loads may benefit from additional security measures such as sealed trailers with GPS tracking and team drivers for non-stop transit.", link: "", linkText: "" },
+                  { title: "Cargo Sensitive to Heat Buildup", desc: "During summer months, interior temperatures in a dry van can climb significantly above ambient temperature. Items like candles, adhesives, chocolate, and certain plastics may warp or melt. Consider a reefer set to a moderate temperature for protection.", link: "", linkText: "" },
+                ].map((item) => (
+                  <div key={item.title} className="flex items-start gap-4">
+                    <AlertTriangle className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-1">{item.title}</h3>
+                      <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">{item.desc}</p>
+                      {item.link && (
+                        <Link to={item.link} className="text-sm text-[hsl(var(--accent))] hover:underline mt-1 inline-block">
+                          {item.linkText} &rarr;
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Common Cargo Types */}
           <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
             <div className="max-w-5xl mx-auto">
@@ -281,15 +350,15 @@ const DryVan = () => {
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {[
-                  { title: "Consumer Goods", desc: "Household products, cleaning supplies, personal care items, and general merchandise." },
-                  { title: "Electronics", desc: "Packaged electronics, computer components, appliances, and consumer technology products." },
-                  { title: "Packaged Foods", desc: "Non-perishable food items including canned goods, snack foods, beverages, and dry goods." },
-                  { title: "Retail Inventory", desc: "Clothing, footwear, furniture, home goods, and seasonal merchandise." },
-                  { title: "Paper Products", desc: "Printing paper, packaging materials, tissue products, cardboard, and corrugated containers." },
-                  { title: "Textiles & Fabrics", desc: "Rolls of fabric, yarn, finished garments, carpeting, and industrial textiles." },
-                  { title: "Building Materials", desc: "Drywall, insulation, flooring, doors, windows, and other construction supplies that fit standard pallets." },
-                  { title: "Auto Parts", desc: "Aftermarket parts, OEM components, tires, and accessories shipped to dealerships and distribution centers." },
-                  { title: "Industrial Equipment", desc: "Machinery parts, tools, fasteners, and packaged industrial supplies under 45,000 pounds." },
+                  { title: "Consumer Goods", desc: "Household products, cleaning supplies, personal care items, and general merchandise moving to retail distribution centers." },
+                  { title: "Electronics", desc: "Packaged electronics, computer components, appliances, and consumer technology products requiring enclosed, weather-protected transit." },
+                  { title: "Packaged Foods", desc: "Non-perishable food items including canned goods, snack foods, beverages, and dry goods that do not require temperature control." },
+                  { title: "Retail Inventory", desc: "Clothing, footwear, furniture, home goods, and seasonal merchandise shipped to stores and fulfillment centers." },
+                  { title: "Paper Products", desc: "Printing paper, packaging materials, tissue products, cardboard, and corrugated containers that must stay dry during transit." },
+                  { title: "Textiles & Fabrics", desc: "Rolls of fabric, yarn, finished garments, carpeting, and industrial textiles shipped palletized or floor-loaded." },
+                  { title: "Building Materials", desc: "Drywall, insulation, flooring, doors, windows, and other construction supplies that fit standard pallets and need weather protection." },
+                  { title: "Auto Parts", desc: "Aftermarket parts, OEM components, tires, and accessories shipped to dealerships, repair shops, and distribution centers." },
+                  { title: "Industrial Equipment", desc: "Machinery parts, tools, fasteners, and packaged industrial supplies under 45,000 pounds that fit within standard trailer dimensions." },
                 ].map((cargo) => (
                   <div key={cargo.title} className="p-5 rounded-xl bg-[hsl(var(--surface))] hover:bg-white hover:shadow-[var(--shadow-card)] transition-all duration-300">
                     <div className="flex items-center gap-2 mb-2">
@@ -314,12 +383,12 @@ const DryVan = () => {
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {[
-                  { title: "Weather Protection", desc: "Fully enclosed trailers shield your freight from rain, snow, wind, and UV exposure throughout the entire journey." },
-                  { title: "Cargo Security", desc: "Sealed trailers with locking mechanisms reduce the risk of theft, tampering, and pilferage during transit." },
-                  { title: "Versatility", desc: "Dry vans accommodate the widest range of commodity types of any trailer class, from lightweight, high-volume to dense, heavy pallets." },
-                  { title: "Cost-Effective", desc: "The most abundant equipment type on the road means more competitive rates, shorter lead times, and flexible scheduling." },
-                  { title: "Loading Flexibility", desc: "Rear swing doors and roll-up doors allow standard dock loading. Floor-loaded, palletized, and slip-sheeted freight all work in a dry van." },
-                  { title: "Carrier Availability", desc: "As the most common trailer type in North America, dry vans offer more available trucks and faster booking, even during peak shipping season." },
+                  { title: "Weather Protection", desc: "Fully enclosed trailers shield your freight from rain, snow, wind, and UV exposure throughout the entire journey. Unlike flatbed or open-deck trailers, dry vans require no tarping or strapping for weather protection." },
+                  { title: "Cargo Security", desc: "Sealed trailers with locking mechanisms reduce the risk of theft, tampering, and pilferage during transit. The enclosed design also prevents shifting from wind forces at highway speeds." },
+                  { title: "Versatility", desc: "Dry vans accommodate the widest range of commodity types of any trailer class, from lightweight high-volume goods to dense heavy pallets. This flexibility makes them suitable for nearly every industry." },
+                  { title: "Cost-Effective", desc: "As the most abundant equipment type on the road, dry vans offer competitive rates and shorter lead times compared to specialized trailers. More available trucks means more scheduling flexibility." },
+                  { title: "Loading Flexibility", desc: "Rear swing doors and roll-up doors allow standard dock loading. Floor-loaded, palletized, and slip-sheeted freight all work in a dry van, and no special loading equipment is required." },
+                  { title: "Carrier Availability", desc: "Dry vans are the most common trailer type in North America, which means more available trucks and faster booking even during peak shipping seasons when specialized equipment is scarce." },
                 ].map((benefit) => (
                   <div key={benefit.title} className="flex items-start gap-4">
                     <CheckCircle className="h-5 w-5 text-[hsl(var(--accent))] mt-0.5 flex-shrink-0" />
@@ -346,7 +415,7 @@ const DryVan = () => {
                 {[
                   { name: "Retail & Distribution", detail: "We move freight for national retailers, regional distributors, and third-party logistics providers. Our carriers understand appointment scheduling, lumper requirements, and retailer compliance programs." },
                   { name: "Manufacturing", detail: "Raw materials inbound and finished products outbound. We coordinate just-in-time deliveries where schedule reliability directly impacts production line uptime." },
-                  { name: "Food & Beverage", detail: "Non-perishable food products, beverages, and packaged goods require clean, dry trailers. Our carriers maintain washout records and comply with food-grade standards." },
+                  { name: "Food & Beverage", detail: "Non-perishable food products, beverages, and packaged goods require clean, dry trailers. Our carriers maintain washout records and comply with food-grade transportation standards." },
                   { name: "E-Commerce & Fulfillment", detail: "High-frequency shipments to fulfillment centers and last-mile hubs. We support the fast-paced replenishment cycles that e-commerce operations demand." },
                 ].map((industry) => (
                   <div key={industry.name} className="p-6 rounded-xl bg-[hsl(var(--surface))] hover:bg-white hover:shadow-[var(--shadow-card)] transition-all duration-300">
@@ -372,10 +441,10 @@ const DryVan = () => {
                   Based in Reno, Nevada, DeMar Transportation combines personalized service with the capacity of an extensive carrier network spanning North America. Our vetted owner-operators have a personal stake in delivering your freight safely and on schedule.
                 </p>
                 <p>
-                  We provide real-time shipment tracking, proactive communication on load status, and a single point of contact for every shipment from pickup through delivery.
+                  Every shipment gets a single point of contact from booking through delivery. Our dispatch team provides real-time tracking updates, proactive communication on potential delays, and immediate escalation when issues arise. We do not hand you off to a call center.
                 </p>
                 <p>
-                  Whether you are shipping a single full truckload or managing a recurring lane program with hundreds of loads per month, DeMar Transportation has the capacity, carrier relationships, and operational expertise to keep your supply chain moving. We also offer <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">refrigerated shipping</Link> and <Link to="/services/flatbed" className="text-[hsl(var(--accent))] hover:underline">flatbed transportation</Link> for specialized equipment needs.
+                  Whether you are shipping a single full truckload or managing a recurring lane program with regular loads, DeMar Transportation has the capacity, carrier relationships, and operational knowledge to keep your supply chain moving. We also offer <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">refrigerated shipping</Link> and <Link to="/services/flatbed" className="text-[hsl(var(--accent))] hover:underline">flatbed transportation</Link> for specialized equipment needs.
                 </p>
               </div>
             </div>
@@ -406,7 +475,11 @@ const DryVan = () => {
                   },
                   {
                     q: "How long does dry van shipping take from Reno, NV?",
-                    a: "Transit times from Reno depend on destination. Regional deliveries within Nevada, California, Oregon, and Utah typically arrive within 1 to 2 days. Cross-country shipments to the East Coast take 4 to 6 days for standard dry van service. We provide estimated delivery dates at booking and offer real-time tracking throughout transit."
+                    a: "Transit times from Reno depend on destination. Reno to Los Angeles is approximately 450 miles with 1-day transit. Reno to Seattle is roughly 700 miles with 1 to 2-day transit. Reno to Dallas is about 1,700 miles with 3 to 4-day transit. Cross-country shipments to the East Coast take 4 to 6 days. We provide estimated delivery dates at booking and offer real-time tracking throughout transit."
+                  },
+                  {
+                    q: "What are the limitations of dry van shipping?",
+                    a: "Dry vans are not temperature-controlled, so they are not suitable for perishable goods, frozen products, or freight that requires climate regulation. Extreme heat or cold during transit can affect temperature-sensitive cargo. Dry vans also have fixed interior dimensions, so oversized or irregularly shaped freight that exceeds standard trailer measurements requires a flatbed or specialized trailer. If your freight needs refrigeration, DeMar offers reefer trailer services as an alternative."
                   },
                 ].map((faq) => (
                   <div key={faq.q} className="p-6 rounded-xl bg-[hsl(var(--surface-low))]">
