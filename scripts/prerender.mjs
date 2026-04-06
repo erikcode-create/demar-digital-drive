@@ -70,6 +70,7 @@ const routes = [
   '/blog/white-glove-freight-handling',
   '/blog/last-mile-delivery-freight-shipping',
   '/blog/ltl-vs-ftl-freight-shipping',
+  '/blog/freight-shipping-reno-nevada',
 ];
 
 // Simple static file server
