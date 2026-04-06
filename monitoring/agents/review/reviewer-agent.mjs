@@ -269,7 +269,7 @@ export async function reviewChange({
   modelOverride,
 } = {}) {
   const tier = modelOverride ?? getReviewTier(actionType);
-  const timeout = tier === "opus" ? 300000 : 180000;
+  const timeout = 900000; // 15 min — large pages need extra time
 
   const prompt = buildReviewPrompt({
     actionType,
