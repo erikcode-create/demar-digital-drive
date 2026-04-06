@@ -151,11 +151,11 @@ const blogPosts = [
     readTime: "8 min",
   },
   {
-    slug: "hazmat-freight-shipping-requirements-3ekq",
-    title: "Hazmat Freight Shipping Requirements: A Complete Guide to DOT Compliance",
+    slug: "refrigerated-freight-shipping-guide",
+    title: "Refrigerated Freight Shipping Guide: Protecting Your Cold Chain From Pickup to Delivery",
     description:
-      "Everything shippers need to know about hazmat freight requirements, from DOT hazard classifications and required documentation to driver certification and packaging standards.",
-    category: "Compliance & Safety",
+      "Everything shippers need to know about refrigerated freight, from FDA cold chain compliance and seasonal rate trends to choosing the right reefer carrier for temperature-sensitive loads.",
+    category: "Shipping Guides",
     date: "2026-04-06",
     readTime: "8 min",
   },

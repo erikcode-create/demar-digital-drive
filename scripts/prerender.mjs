@@ -71,7 +71,7 @@ const routes = [
   '/blog/last-mile-delivery-freight-shipping',
   '/blog/ltl-vs-ftl-freight-shipping',
   '/blog/supply-chain-management-small-business',
-  '/blog/hazmat-freight-shipping-requirements-3ekq',
+  '/blog/refrigerated-freight-shipping-guide',
 ];
 
 // Simple static file server
