@@ -123,6 +123,15 @@ const blogPosts = [
     date: "2026-03-30",
     readTime: "6 min",
   },
+  {
+    slug: "ltl-freight-shipping-nevada",
+    title: "LTL Freight Shipping in Nevada: A Complete Guide for Businesses",
+    description:
+      "Everything Nevada businesses need to know about LTL freight shipping, from pricing factors and transit times to pallet preparation tips and choosing between LTL and FTL.",
+    category: "Shipping Guides",
+    date: "2026-04-05",
+    readTime: "8 min",
+  },
 ];
 
 const Blog = () => {
