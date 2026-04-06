@@ -69,7 +69,7 @@ const routes = [
   '/blog/freight-shipping-insurance-coverage',
   '/blog/white-glove-freight-handling',
   '/blog/last-mile-delivery-freight-shipping',
-  '/blog/hazmat-freight-shipping-requirements',
+  '/blog/ltl-vs-ftl-freight-shipping',
 ];
 
 // Simple static file server

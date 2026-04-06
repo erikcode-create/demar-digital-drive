@@ -67,7 +67,7 @@ const WhiteGloveFreightHandling = lazy(() => import("./pages/blog/WhiteGloveFrei
 const LastMileDeliveryFreightShipping = lazy(() => import("./pages/blog/LastMileDeliveryFreightShipping"));
 const LtlFreightShippingNevada = lazy(() => import("./pages/blog/LtlFreightShippingNevada"));
 
-const HazmatFreightShippingRequirements = lazy(() => import("./pages/blog/HazmatFreightShippingRequirements"));
+const LtlVsFtlFreightShipping = lazy(() => import("./pages/blog/LtlVsFtlFreightShipping"));
 
 const queryClient = new QueryClient();
 
@@ -136,7 +136,7 @@ const App = () => (
               <Route path="/blog/white-glove-freight-handling" element={<WhiteGloveFreightHandling />} />
               <Route path="/blog/last-mile-delivery-freight-shipping" element={<LastMileDeliveryFreightShipping />} />
               <Route path="/blog/ltl-freight-shipping-nevada" element={<LtlFreightShippingNevada />} />
-              <Route path="/blog/hazmat-freight-shipping-requirements" element={<HazmatFreightShippingRequirements />} />
+              <Route path="/blog/ltl-vs-ftl-freight-shipping" element={<LtlVsFtlFreightShipping />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

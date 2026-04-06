@@ -133,11 +133,11 @@ const blogPosts = [
     readTime: "8 min",
   },
   {
-    slug: "hazmat-freight-shipping-requirements",
-    title: "Hazmat Freight Shipping Requirements: A Complete Guide to Compliance",
+    slug: "ltl-vs-ftl-freight-shipping",
+    title: "LTL vs FTL Freight Shipping: How to Choose the Right Method for Your Load",
     description:
-      "Everything shippers need to know about USDOT hazmat freight requirements, from proper classification and placarding to driver certifications and documentation compliance.",
-    category: "Compliance & Safety",
+      "A complete comparison of LTL and FTL freight shipping covering costs, transit times, handling risks, and how to choose the right method for your shipment size and budget.",
+    category: "Shipping Guides",
     date: "2026-04-06",
     readTime: "8 min",
   },
