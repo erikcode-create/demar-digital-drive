@@ -24,7 +24,7 @@ const Hero = () => {
             </span>
 
             {/* Headline */}
-            <h1 className="font-serif text-display text-primary mb-space-lg">
+            <h1 className="font-serif text-display text-primary mb-space-lg text-balance">
               Driven by{" "}
               <span className="text-accent">Purpose.</span>
               <br />
@@ -41,14 +41,14 @@ const Hero = () => {
               <Button variant="hero" size="xl" asChild>
                 <Link to="/quote" className="group">
                   Request a Quote
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight aria-hidden="true" className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <a
                 href="tel:+17752304767"
                 className="inline-flex items-center gap-2 text-body font-medium text-primary hover:text-accent transition-colors py-3"
               >
-                <Phone className="h-4 w-4" />
+                <Phone aria-hidden="true" className="h-4 w-4" />
                 Call (775) 230-4767
               </a>
             </div>
@@ -61,7 +61,7 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-[2rem] bg-primary rotate-3 opacity-90" />
               <div className="absolute inset-4 rounded-[1.5rem] bg-[hsl(220_85%_15%)] -rotate-2" />
               <div className="absolute inset-8 rounded-[1rem] bg-accent/10 rotate-1 flex items-center justify-center">
-                <Truck className="h-24 w-24 text-accent/40" />
+                <Truck aria-hidden="true" className="h-24 w-24 text-accent/40" />
               </div>
             </div>
           </div>
@@ -74,7 +74,7 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center lg:justify-between gap-space-md lg:gap-space-sm">
             {trustItems.map((item) => (
               <div key={item.label} className="flex items-center gap-2 px-3 py-1">
-                <item.icon className="h-4 w-4 text-accent flex-shrink-0" />
+                <item.icon aria-hidden="true" className="h-4 w-4 text-accent flex-shrink-0" />
                 <span className="text-caption font-sans text-muted-foreground whitespace-nowrap">
                   {item.label}
                 </span>

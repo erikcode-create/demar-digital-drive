@@ -230,7 +230,7 @@ const Blog = () => {
           {/* Hero */}
           <section className="pt-32 pb-[var(--space-2xl)] px-4 bg-[hsl(var(--surface))]">
             <div className="container mx-auto max-w-4xl">
-              <h1 className="font-serif text-display text-[hsl(var(--primary))] leading-tight tracking-tight mb-6">
+              <h1 className="font-serif text-display text-[hsl(var(--primary))] leading-tight tracking-tight mb-6" style={{ textWrap: 'balance' }}>
                 Insights
               </h1>
               <p className="text-body text-muted-foreground max-w-2xl leading-relaxed">
@@ -245,13 +245,13 @@ const Blog = () => {
 
               {/* Featured Post */}
               <Link to={`/blog/${featuredPost.slug}`} className="block group">
-                <article className="p-[var(--space-lg)] bg-[hsl(var(--surface-low))] rounded-[var(--radius)] hover:shadow-[var(--shadow-float)] transition-all">
+                <article className="p-[var(--space-lg)] bg-[hsl(var(--surface-low))] rounded-[var(--radius)] hover:shadow-[var(--shadow-float)] transition-shadow">
                   <div className="flex items-center gap-3 mb-3">
                     <span className={`text-[10px] font-semibold tracking-[0.2em] uppercase px-2 py-0.5 rounded-full ${categoryPillStyle(featuredPost.category)}`}>
                       {featuredPost.category}
                     </span>
                     <span className="text-caption text-muted-foreground flex items-center gap-1">
-                      <Calendar className="h-3 w-3" />
+                      <Calendar aria-hidden="true" className="h-3 w-3" />
                       {new Date(featuredPost.date).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "short",
@@ -268,9 +268,9 @@ const Blog = () => {
                   <p className="text-body text-[hsl(var(--muted-foreground))] leading-relaxed mb-4">
                     {featuredPost.description}
                   </p>
-                  <span className="inline-flex items-center text-sm font-medium text-[hsl(var(--accent))] group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center text-sm font-medium text-[hsl(var(--accent))] group-hover:gap-2 transition-[gap]">
                     Read Article
-                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </article>
               </Link>
@@ -283,13 +283,13 @@ const Blog = () => {
                     to={`/blog/${post.slug}`}
                     className="block group"
                   >
-                    <article className="p-[var(--space-md)] bg-[hsl(var(--surface-low))] rounded-[var(--radius)] hover:shadow-[var(--shadow-float)] transition-all h-full">
+                    <article className="p-[var(--space-md)] bg-[hsl(var(--surface-low))] rounded-[var(--radius)] hover:shadow-[var(--shadow-float)] transition-shadow h-full">
                       <div className="flex items-center gap-3 mb-3">
                         <span className={`text-[10px] font-semibold tracking-[0.2em] uppercase px-2 py-0.5 rounded-full ${categoryPillStyle(post.category)}`}>
                           {post.category}
                         </span>
                         <span className="text-caption text-muted-foreground flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
+                          <Calendar aria-hidden="true" className="h-3 w-3" />
                           {new Date(post.date).toLocaleDateString("en-US", {
                             year: "numeric",
                             month: "short",
@@ -306,9 +306,9 @@ const Blog = () => {
                       <p className="text-caption text-muted-foreground leading-relaxed mb-4">
                         {post.description}
                       </p>
-                      <span className="inline-flex items-center text-sm font-medium text-[hsl(var(--accent))] group-hover:gap-2 transition-all">
+                      <span className="inline-flex items-center text-sm font-medium text-[hsl(var(--accent))] group-hover:gap-2 transition-[gap]">
                         Read Article
-                        <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </span>
                     </article>
                   </Link>
@@ -320,7 +320,7 @@ const Blog = () => {
           {/* CTA */}
           <section className="py-[var(--space-2xl)] bg-[hsl(var(--accent))]">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="font-serif text-heading text-[hsl(var(--primary))] tracking-tight mb-3">
+              <h2 className="font-serif text-heading text-[hsl(var(--primary))] tracking-tight mb-3" style={{ textWrap: 'balance' }}>
                 Ready to Ship?
               </h2>
               <p className="text-base text-[hsl(var(--primary))]/70 mb-8 max-w-md mx-auto">
@@ -334,7 +334,7 @@ const Blog = () => {
               >
                 <Link to="/quote" className="group">
                   Get a Free Quote
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>

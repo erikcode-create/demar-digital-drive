@@ -36,6 +36,8 @@ const Footer = () => {
             src="/demar-logo-official.png"
             alt="DeMar Transportation"
             className="h-10 w-10"
+            width={40}
+            height={40}
           />
           <div>
             <span className="text-body font-bold tracking-tight">
@@ -105,18 +107,18 @@ const Footer = () => {
                 href="mailto:info@DeMarTransportation.com"
                 className="flex items-center gap-3 text-caption text-primary-foreground/40 hover:text-primary-foreground transition-colors"
               >
-                <Mail className="h-4 w-4 flex-shrink-0" />
+                <Mail aria-hidden="true" className="h-4 w-4 flex-shrink-0" />
                 info@DeMarTransportation.com
               </a>
               <Link
                 to="/contact"
                 className="flex items-center gap-3 text-caption text-primary-foreground/40 hover:text-primary-foreground transition-colors"
               >
-                <MapPin className="h-4 w-4 flex-shrink-0" />
+                <MapPin aria-hidden="true" className="h-4 w-4 flex-shrink-0" />
                 10471 Double R Blvd, Reno, NV
               </Link>
               <div className="flex items-center gap-3 text-caption text-primary-foreground/40">
-                <Clock className="h-4 w-4 flex-shrink-0" />
+                <Clock aria-hidden="true" className="h-4 w-4 flex-shrink-0" />
                 24/7 Service Available
               </div>
             </div>

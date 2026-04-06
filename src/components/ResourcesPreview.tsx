@@ -27,7 +27,7 @@ const ResourcesPreview = () => {
     <section className="py-space-2xl bg-[hsl(var(--surface-low))]">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="flex items-end justify-between mb-space-xl">
-          <h2 className="font-serif text-heading text-primary">
+          <h2 className="font-serif text-heading text-primary text-balance">
             Freight Shipping Guides
           </h2>
           <Link
@@ -35,7 +35,7 @@ const ResourcesPreview = () => {
             className="hidden sm:inline-flex items-center gap-1 text-caption font-medium text-primary hover:text-accent transition-colors group"
           >
             All Resources
-            <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+            <ArrowRight aria-hidden="true" className="h-3 w-3 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
 
@@ -47,7 +47,7 @@ const ResourcesPreview = () => {
               className="group flex items-start gap-space-md p-space-md rounded-[var(--radius)] bg-background hover:shadow-[var(--shadow-float)] transition-all duration-300"
             >
               <div className="flex-shrink-0 p-2.5 rounded-lg bg-[hsl(var(--surface-container))]">
-                <resource.icon className="h-5 w-5 text-accent" />
+                <resource.icon aria-hidden="true" className="h-5 w-5 text-accent" />
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="font-serif text-subheading text-primary mb-1 group-hover:text-accent transition-colors">
@@ -57,7 +57,7 @@ const ResourcesPreview = () => {
                   {resource.description}
                 </p>
               </div>
-              <ArrowRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-accent flex-shrink-0 mt-1 transition-colors" />
+              <ArrowRight aria-hidden="true" className="h-4 w-4 text-muted-foreground/30 group-hover:text-accent flex-shrink-0 mt-1 transition-colors" />
             </Link>
           ))}
         </div>
@@ -68,7 +68,7 @@ const ResourcesPreview = () => {
             className="inline-flex items-center gap-1 text-caption font-medium text-primary hover:text-accent transition-colors"
           >
             View All Resources
-            <ArrowRight className="h-3 w-3" />
+            <ArrowRight aria-hidden="true" className="h-3 w-3" />
           </Link>
         </div>
       </div>

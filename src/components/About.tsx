@@ -20,7 +20,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-space-xl items-start">
             {/* Left — content (3/5) */}
             <div className="lg:col-span-3">
-              <h2 className="font-serif text-heading text-primary mb-space-lg">
+              <h2 className="font-serif text-heading text-primary mb-space-lg text-balance">
                 One Partner for All Your Freight
               </h2>
 
@@ -49,7 +49,7 @@ const About = () => {
                 <Button variant="hero" size="lg" asChild>
                   <Link to="/quote" className="group">
                     Request a Quote
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
                 <a
@@ -66,7 +66,7 @@ const About = () => {
               <div className="space-y-space-sm">
                 {features.map((feature) => (
                   <div key={feature} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                    <CheckCircle aria-hidden="true" className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                     <span className="text-body text-primary">{feature}</span>
                   </div>
                 ))}
@@ -79,7 +79,7 @@ const About = () => {
       {/* CTA Banner */}
       <section className="py-space-xl bg-accent">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-heading text-accent-foreground mb-space-md">
+          <h2 className="font-serif text-heading text-accent-foreground mb-space-md text-balance">
             Ready to Ship?
           </h2>
           <p className="text-body text-accent-foreground/70 mb-space-lg max-w-md mx-auto">
@@ -93,7 +93,7 @@ const About = () => {
           >
             <Link to="/quote" className="group">
               Request a Quote
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>

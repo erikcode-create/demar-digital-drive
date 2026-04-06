@@ -131,10 +131,10 @@ export default function ServicePageLayout(props: ServicePageProps) {
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
           <div className="container mx-auto relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-space-md rounded-full bg-white/5 backdrop-blur-sm">
-              <Icon className="h-4 w-4 text-accent" />
+              <Icon className="h-4 w-4 text-accent" aria-hidden="true" />
               <span className="text-caption font-medium tracking-[0.15em] uppercase text-white/60">{badge}</span>
             </div>
-            <h1 className="font-serif text-display text-white mb-space-md">
+            <h1 className="font-serif text-display text-white mb-space-md text-balance">
               {title}
             </h1>
             <p className="text-body text-white/60 max-w-2xl mb-space-xl leading-relaxed">{description}</p>
@@ -146,7 +146,7 @@ export default function ServicePageLayout(props: ServicePageProps) {
                 </Link>
               </Button>
               <a href="tel:+17752304767" className="inline-flex items-center gap-2 text-body font-medium text-white/70 hover:text-white transition-colors py-3">
-                <Phone className="h-4 w-4" />
+                <Phone className="h-4 w-4" aria-hidden="true" />
                 (775) 230-4767
               </a>
             </div>
@@ -213,7 +213,7 @@ export default function ServicePageLayout(props: ServicePageProps) {
               <h2 className="font-serif text-heading text-primary mb-space-xl">Common Cargo Types</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-space-sm">
                 {cargoTypes.map((cargo) => (
-                  <div key={cargo.title} className="p-space-md rounded-[var(--radius)] bg-[hsl(var(--surface))] hover:bg-background hover:shadow-[var(--shadow-card)] transition-all duration-300">
+                  <div key={cargo.title} className="p-space-md rounded-[var(--radius)] bg-[hsl(var(--surface))] hover:bg-background hover:shadow-[var(--shadow-card)] transition-shadow duration-300">
                     <h3 className="text-sm font-bold text-primary mb-1">{cargo.title}</h3>
                     <p className="text-caption text-muted-foreground leading-relaxed">{cargo.desc}</p>
                   </div>
@@ -231,7 +231,7 @@ export default function ServicePageLayout(props: ServicePageProps) {
               <div className="grid md:grid-cols-2 gap-space-md max-w-4xl">
                 {features.map((f) => (
                   <div key={f.title} className="flex items-start gap-4">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" aria-hidden="true" />
                     <div>
                       <h3 className="text-body font-bold text-primary mb-1">{f.title}</h3>
                       <p className="text-caption text-muted-foreground leading-relaxed">{f.desc}</p>
@@ -250,7 +250,7 @@ export default function ServicePageLayout(props: ServicePageProps) {
               <h2 className="font-serif text-heading text-primary mb-space-xl">Industries We Serve</h2>
               <div className="grid md:grid-cols-2 gap-space-md">
                 {industries.map((ind) => (
-                  <div key={ind.name} className="p-space-lg rounded-[var(--radius)] bg-[hsl(var(--surface))] hover:bg-background hover:shadow-[var(--shadow-card)] transition-all duration-300">
+                  <div key={ind.name} className="p-space-lg rounded-[var(--radius)] bg-[hsl(var(--surface))] hover:bg-background hover:shadow-[var(--shadow-card)] transition-shadow duration-300">
                     <h3 className="text-body font-bold text-primary mb-2">{ind.name}</h3>
                     <p className="text-caption text-muted-foreground leading-relaxed">{ind.detail}</p>
                   </div>
@@ -305,12 +305,12 @@ export default function ServicePageLayout(props: ServicePageProps) {
             <h2 className="font-serif text-heading text-primary mb-space-xl">Related Resources</h2>
             <div className="space-y-space-md">
               {relatedResources.map((r) => (
-                <Link key={r.to} to={r.to} className="group flex items-start gap-space-md p-space-md rounded-[var(--radius)] bg-background hover:shadow-[var(--shadow-float)] transition-all duration-300">
+                <Link key={r.to} to={r.to} className="group flex items-start gap-space-md p-space-md rounded-[var(--radius)] bg-background hover:shadow-[var(--shadow-float)] transition-shadow duration-300">
                   <div className="flex-1 min-w-0">
                     <h3 className="font-serif text-subheading text-primary mb-1 group-hover:text-accent transition-colors">{r.title}</h3>
                     <p className="text-caption text-muted-foreground">{r.description}</p>
                   </div>
-                  <ArrowRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-accent flex-shrink-0 mt-1 transition-colors" />
+                  <ArrowRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-accent flex-shrink-0 mt-1 transition-colors" aria-hidden="true" />
                 </Link>
               ))}
             </div>
@@ -320,14 +320,14 @@ export default function ServicePageLayout(props: ServicePageProps) {
         {/* ── CTA Banner ── */}
         <section className="py-space-xl bg-accent">
           <div className="container mx-auto text-center px-4">
-            <h2 className="font-serif text-heading text-accent-foreground mb-space-md">Ready to Ship?</h2>
+            <h2 className="font-serif text-heading text-accent-foreground mb-space-md text-balance">Ready to Ship?</h2>
             <p className="text-body text-accent-foreground/70 mb-space-lg max-w-md mx-auto">
               Get your quote today. Our freight specialists are available to help.
             </p>
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold" asChild>
               <Link to="/quote" className="group">
                 Request a Free Quote
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
             </Button>
           </div>

@@ -88,7 +88,7 @@ const Services = () => {
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="max-w-2xl mb-space-xl">
-          <h2 className="font-serif text-heading text-primary mb-space-sm">
+          <h2 className="font-serif text-heading text-primary mb-space-sm text-balance">
             Full-Spectrum Freight, One Partner
           </h2>
           <p className="font-sans text-body text-muted-foreground max-w-lg">
@@ -101,9 +101,9 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md mb-space-md">
           {large.map((service) => (
             <Link key={service.slug} to={`/services/${service.slug}`} className="group">
-              <div className="h-full p-space-lg rounded-[var(--radius)] bg-[hsl(var(--surface-low))] hover:shadow-[var(--shadow-float)] transition-all duration-300">
+              <div className="h-full p-space-lg rounded-[var(--radius)] bg-[hsl(var(--surface-low))] hover:shadow-[var(--shadow-float)] transition-shadow duration-300">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-space-md">
-                  <service.icon className="h-6 w-6 text-accent" />
+                  <service.icon aria-hidden="true" className="h-6 w-6 text-accent" />
                 </div>
                 <h3 className="font-serif text-subheading text-primary mb-space-sm">
                   {service.title}
@@ -113,7 +113,7 @@ const Services = () => {
                 </p>
                 <span className="inline-flex items-center gap-1 text-caption font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   Learn more
-                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight aria-hidden="true" className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </div>
             </Link>
@@ -124,9 +124,9 @@ const Services = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md mb-space-md">
           {medium.map((service) => (
             <Link key={service.slug} to={`/services/${service.slug}`} className="group">
-              <div className="h-full p-space-lg rounded-[var(--radius)] bg-[hsl(var(--surface-low))] hover:shadow-[var(--shadow-float)] transition-all duration-300">
+              <div className="h-full p-space-lg rounded-[var(--radius)] bg-[hsl(var(--surface-low))] hover:shadow-[var(--shadow-float)] transition-shadow duration-300">
                 <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 mb-space-sm">
-                  <service.icon className="h-5 w-5 text-accent" />
+                  <service.icon aria-hidden="true" className="h-5 w-5 text-accent" />
                 </div>
                 <h3 className="font-serif text-subheading text-primary mb-1">
                   {service.title}
@@ -136,7 +136,7 @@ const Services = () => {
                 </p>
                 <span className="inline-flex items-center gap-1 text-caption font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   Learn more
-                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight aria-hidden="true" className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </div>
             </Link>
@@ -147,9 +147,9 @@ const Services = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-sm mb-space-xl">
           {compact.map((service) => (
             <Link key={service.slug} to={`/services/${service.slug}`} className="group">
-              <div className="h-full p-space-md rounded-[var(--radius)] bg-[hsl(var(--surface-low))] hover:shadow-[var(--shadow-float)] transition-all duration-300 text-center">
+              <div className="h-full p-space-md rounded-[var(--radius)] bg-[hsl(var(--surface-low))] hover:shadow-[var(--shadow-float)] transition-shadow duration-300 text-center">
                 <div className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 mb-space-xs">
-                  <service.icon className="h-4 w-4 text-accent" />
+                  <service.icon aria-hidden="true" className="h-4 w-4 text-accent" />
                 </div>
                 <h3 className="text-sm font-bold text-primary">
                   {service.title}
@@ -164,7 +164,7 @@ const Services = () => {
           <Button asChild variant="hero" size="xl">
             <Link to="/quote" className="group">
               Get a Free Quote
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight aria-hidden="true" className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>

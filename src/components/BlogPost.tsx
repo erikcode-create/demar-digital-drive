@@ -154,12 +154,12 @@ const BlogPost = ({
               <p className="text-caption font-semibold tracking-[0.15em] uppercase text-[hsl(var(--muted-foreground))] mb-4">
                 {subtitle}
               </p>
-              <h1 className="font-serif text-display text-[hsl(var(--primary))] mb-5">
+              <h1 className="font-serif text-display text-[hsl(var(--primary))] mb-5 text-balance">
                 {title}
               </h1>
               <div className="flex items-center gap-4 text-caption text-[hsl(var(--muted-foreground))] mb-5">
                 <span className="flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5" />
+                  <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
                   {new Date(publishDate).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
@@ -178,6 +178,8 @@ const BlogPost = ({
                   alt={heroImageAlt || title}
                   className="mt-[var(--space-lg)] w-full rounded-[var(--radius)] object-cover max-h-[480px]"
                   loading="eager"
+                  width={1200}
+                  height={480}
                 />
               )}
             </div>
@@ -208,7 +210,7 @@ const BlogPost = ({
                   className="inline-flex items-center gap-2 text-body font-semibold text-[hsl(var(--accent))] hover:underline group"
                 >
                   Get a Quote
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </Link>
               </div>
             </div>
@@ -264,7 +266,7 @@ const BlogPost = ({
                       <span className="font-serif text-subheading text-[hsl(var(--primary))] group-hover:text-[hsl(var(--accent))] transition-colors">
                         {link.label}
                       </span>
-                      <ArrowRight className="h-4 w-4 text-[hsl(var(--accent))] transition-transform group-hover:translate-x-1 shrink-0 ml-4" />
+                      <ArrowRight className="h-4 w-4 text-[hsl(var(--accent))] transition-transform group-hover:translate-x-1 shrink-0 ml-4" aria-hidden="true" />
                     </Link>
                   ))}
                 </div>
@@ -275,7 +277,7 @@ const BlogPost = ({
           {/* Bottom CTA */}
           <section className="py-[var(--space-2xl)] bg-[hsl(var(--accent))]">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="font-serif text-heading text-[hsl(var(--primary))] mb-3">
+              <h2 className="font-serif text-heading text-[hsl(var(--primary))] mb-3 text-balance">
                 Ready to Ship?
               </h2>
               <p className="text-body text-[hsl(var(--primary))]/70 mb-8 max-w-md mx-auto">
@@ -288,7 +290,7 @@ const BlogPost = ({
               >
                 <Link to="/quote" className="group">
                   Get a Free Quote
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
