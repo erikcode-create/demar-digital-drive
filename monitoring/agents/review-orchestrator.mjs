@@ -346,7 +346,7 @@ async function main() {
       console.error(`[review-orchestrator] Review failed for ${actionId}: ${err.message}`);
       if (isTransientError(err.message)) {
         console.log(`[review-orchestrator] Transient error — leaving ${actionId} pending for retry`);
-        updateManifest(actionId, { reviewError: err.message });
+        updateManifest(actionId, { status: "pending", reviewError: err.message });
       } else {
         updateManifest(actionId, { status: "rejected", reviewError: err.message });
         archivePending(actionId);
@@ -415,7 +415,7 @@ async function main() {
         approved = false;
         if (isTransientError(err.message)) {
           console.log(`[review-orchestrator] Transient error — leaving ${actionId} pending for retry`);
-          updateManifest(actionId, { reviewError: err.message });
+          updateManifest(actionId, { status: "pending", reviewError: err.message });
           continue; // skip archive, will retry next run
         }
         updateManifest(actionId, { status: "rejected", reviewError: err.message });
