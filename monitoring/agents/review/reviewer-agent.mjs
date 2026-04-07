@@ -216,6 +216,13 @@ export function buildReviewPrompt({
   lines.push(
     "6. **Intent Match** — Does the change address the stated reason and target keyword?"
   );
+  lines.push(
+    "7. **AI Detection Risk** — Does the writing sound human? Check for: " +
+    "zero contractions (human writers use don't, won't, can't naturally), " +
+    "AI-tell phrases (In today's, Furthermore, Moreover, It's worth noting, When it comes to), " +
+    "overly uniform paragraph/sentence structure, and generic filler paragraphs. " +
+    "Content that would flag on AI detection tools is a REVISE."
+  );
   lines.push("");
 
   // Response format
