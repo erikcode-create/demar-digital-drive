@@ -159,6 +159,15 @@ const blogPosts = [
     date: "2026-04-06",
     readTime: "8 min",
   },
+  {
+    slug: "ltl-freight-shipping-guide",
+    title: "LTL Freight Shipping Guide: How Less-Than-Truckload Shipping Works",
+    description:
+      "Everything you need to know about LTL freight shipping — from how it works and what it costs to packaging requirements and when to choose LTL over full truckload.",
+    category: "Shipping Guides",
+    date: "2026-04-07",
+    readTime: "8 min",
+  },
 ];
 
 const Blog = () => {
