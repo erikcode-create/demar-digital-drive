@@ -71,6 +71,12 @@ const WhyFreightQuoteKeepsChanging = () => {
         what DeMar Transportation does to keep your costs predictable.
       </p>
 
+      <p className="mb-8 text-sm text-muted-foreground italic">
+        Published by the DeMar Transportation pricing team in Reno, NV. DeMar
+        holds both Motor Carrier and Freight Broker authority (USDOT 4392091)
+        and quotes freight across all major equipment types daily.
+      </p>
+
       <h2>Why Freight Rates Are Not Fixed Prices</h2>
       <p className="mb-6">
         Retail products sit on shelves with price tags. Freight does not work
@@ -108,7 +114,9 @@ const WhyFreightQuoteKeepsChanging = () => {
         gallon, the surcharge on a 1,500-mile shipment can increase by $150
         to $225. In 2025, diesel averaged $3.65 per gallon nationally but hit
         $4.30 in California, making westbound lanes into the state
-        consistently more expensive.
+        consistently more expensive. DeMar's fuel surcharge tables are
+        updated every Monday based on the latest DOE release, so you always
+        see the current week's cost reflected in your quote.
       </p>
 
       <p className="mb-6">
@@ -144,9 +152,9 @@ const WhyFreightQuoteKeepsChanging = () => {
         $0.30 to $1.00 per mile due to specialized equipment and longer
         load/unload times. Hazmat-certified loads carry additional surcharges
         of $200 to $500 per shipment for compliance and insurance. DeMar
-        operates dry van, reefer, flatbed, and hazmat equipment, so we quote
-        the right trailer for your cargo without brokering it out to an
-        unknown carrier.
+        operates dry van, reefer, flatbed, and hazmat equipment out of our
+        Reno headquarters, so we quote the right trailer for your cargo
+        without brokering it out to an unknown carrier.
       </p>
 
       <div className="mt-8 mb-8">
@@ -340,10 +348,13 @@ const WhyFreightQuoteKeepsChanging = () => {
 
       <h2>What DeMar Does Differently</h2>
       <p className="mb-6">
-        DeMar Transportation is an asset-based carrier operating out of Reno,
-        Nevada with our own fleet and MC and broker authority. We are not a
-        freight marketplace or a blog with affiliate links. We haul freight
-        every day, and that operational reality shapes how we quote and price.
+        DeMar Transportation is an asset-based carrier headquartered at 10471
+        Double R Blvd in Reno, Nevada. We hold dual authority as both a Motor
+        Carrier and Freight Broker under USDOT 4392091, which means we
+        dispatch our own fleet first and tap vetted partner carriers when
+        capacity requires it. We are not a freight marketplace or a lead
+        generation site. We haul freight every day with our own trucks and
+        drivers, and that operational reality shapes how we quote and price.
       </p>
 
       <p className="mb-6">
@@ -371,6 +382,13 @@ const WhyFreightQuoteKeepsChanging = () => {
         from three months ago. If the market drops on your lane, your next
         quote reflects that. We do not hold rates artificially high during
         soft markets.
+      </p>
+
+      <p className="mb-6">
+        Our dispatch team is available 24/7, and our office at our Reno
+        headquarters is open Monday through Friday, 7:00 AM to 6:00 PM PST.
+        Whether you need a same-day quote or want to set up a long-term
+        contract, you can reach us at (775) 230-4767.
       </p>
 
       <div className="mt-8 mb-8">
@@ -406,6 +424,7 @@ const WhyFreightQuoteKeepsChanging = () => {
       metaDescription="Freight quotes change due to fuel surcharges, seasonal demand, lane availability, and more. Learn what drives freight rate fluctuation and how to get stable pricing from an asset-based carrier."
       slug="why-freight-quote-keeps-changing"
       publishDate="2026-03-29"
+      lastUpdated="2026-04-06"
       readTime="8 min"
       heroImage="/images/blog/freight-quote-hero.jpg"
       heroImageAlt="Freight trucks on highway representing changing freight market rates"
