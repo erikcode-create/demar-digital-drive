@@ -46,48 +46,52 @@ const departments = [
   },
   {
     icon: Headphones,
-    title: "Customer Support",
-    description: "Need help with an existing shipment or billing question? Our support team is here for you.",
-    action: "Call Support",
-    href: "tel:+17752304767",
-    external: true,
+    title: "Shipment Support",
+    description: "Need help with an existing shipment, tracking update, or billing question? Our support team is here for you.",
+    action: "Get Support",
+    href: "/support",
+    external: false,
   },
 ];
 
 const trustSignals = [
   {
     icon: Shield,
-    title: "Licensed & Insured",
-    description: "FMCSA-registered carrier with comprehensive cargo and liability insurance for every shipment.",
+    title: "FMCSA Registered",
+    description: "USDOT 4392091 with both Motor Carrier (MC) and Freight Broker authority, plus comprehensive cargo and liability insurance on every shipment.",
   },
   {
     icon: Truck,
-    title: "Diverse Fleet",
-    description: "Dry van, reefer, flatbed, box truck, and sprinter van options to match your freight requirements.",
+    title: "9 Service Types",
+    description: "Dry van, reefer, flatbed, box truck, sprinter van, hazmat, FTL, LTL, and 3PL to match your freight requirements.",
   },
   {
     icon: CheckCircle,
-    title: "Real-Time Tracking",
-    description: "GPS-enabled shipment visibility so you always know where your freight is during transit.",
+    title: "24/7 Dispatch",
+    description: "Round-the-clock dispatch coordination with GPS-enabled shipment visibility so you always know where your freight is.",
   },
 ];
 
 const contactFaqs = [
   {
     question: "What areas does DeMar Transportation serve from Reno, NV?",
-    answer: "DeMar Transportation provides freight shipping services throughout the western United States and beyond. Our Reno, Nevada headquarters is strategically located along the I-80 corridor, giving us direct access to major distribution hubs in California, Oregon, Utah, and across the country.",
+    answer: "DeMar Transportation provides nationwide freight shipping services across the United States from our Reno, Nevada headquarters at 10471 Double R Blvd. Strategically located along the I-80 corridor, we have direct access to major distribution hubs in California, Oregon, Utah, and across the country. We hold both Motor Carrier and Freight Broker authority under USDOT 4392091.",
   },
   {
     question: "How do I get a freight shipping quote from DeMar Transportation?",
-    answer: "You can request a quote by calling (775) 230-4767, emailing info@DeMarTransportation.com, or using our online quote request form. Provide your pickup and delivery locations, freight dimensions and weight, and any special handling requirements for the most accurate rate.",
+    answer: "You can request a quote by calling (775) 230-4767, emailing info@DeMarTransportation.com, or using our online quote request form at demartransportation.com/quote. Provide your pickup and delivery locations, freight dimensions and weight, and any special handling requirements for the most accurate rate.",
   },
   {
     question: "What are DeMar Transportation's hours of operation?",
-    answer: "Our Reno office is open Monday through Friday, 7:00 AM to 6:00 PM PST. Our dispatch team is available 24 hours a day, 7 days a week to coordinate pickups, deliveries, and shipment tracking.",
+    answer: "Our Reno office is open Monday through Friday, 7:00 AM to 6:00 PM PST. Our dispatch team is available 24 hours a day, 7 days a week to coordinate pickups, deliveries, and shipment tracking. For existing shipment support, visit demartransportation.com/support.",
   },
   {
     question: "What types of freight does DeMar Transportation handle?",
-    answer: "We handle a wide range of freight including dry goods, temperature-controlled shipments, flatbed loads, hazardous materials, and time-sensitive deliveries. Our fleet includes dry vans, reefers, flatbeds, box trucks, and sprinter vans.",
+    answer: "We handle 9 freight service types: dry van shipping, refrigerated (reefer) freight, flatbed shipping, box truck delivery, sprinter van and expedited shipments, hazmat freight, full truckload (FTL), less than truckload (LTL), and 3PL / third-party logistics. Each service is backed by our FMCSA-registered carrier authority.",
+  },
+  {
+    question: "How do I track an existing shipment or get billing help?",
+    answer: "For shipment tracking, delivery updates, or billing questions, visit our support page at demartransportation.com/support or call (775) 230-4767. Our dispatch team is available 24/7 for time-sensitive tracking needs, and our office team handles billing inquiries Monday through Friday, 7:00 AM to 6:00 PM PST.",
   },
 ];
 
@@ -96,7 +100,7 @@ const Contact = () => {
     document.title = "Contact DeMar Transportation | Reno, NV Freight & Logistics";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Contact DeMar Transportation for freight shipping quotes and logistics support in Reno, NV. Call (775) 230-4767, email info@DeMarTransportation.com, or visit our office at 10471 Double R Blvd.');
+      metaDescription.setAttribute('content', 'Contact DeMar Transportation for freight quotes and logistics. Call (775) 230-4767, email info@DeMarTransportation.com, or visit our Reno, NV office.');
     }
   }, []);
 
@@ -130,7 +134,7 @@ const Contact = () => {
                 <span className="text-white/40">DeMar Transportation</span>
               </h1>
               <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
-                We're available 24/7 to help with your shipping needs. Reach out by phone, email, or visit our Reno office.
+                Nationwide freight shipping from Reno, NV. Call (775) 230-4767 for 24/7 dispatch, or reach our office Monday through Friday, 7:00 AM to 6:00 PM PST.
               </p>
             </div>
           </section>
@@ -173,10 +177,14 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex justify-center mt-8">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                 <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[hsl(var(--surface-low))]">
                   <Clock className="h-4 w-4 text-[hsl(var(--accent))]" />
-                  <span className="text-sm font-medium text-[hsl(var(--primary))]">24/7 Dispatch Available</span>
+                  <span className="text-sm font-medium text-[hsl(var(--primary))]">Office: Mon-Fri, 7 AM - 6 PM PST</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[hsl(var(--surface-low))]">
+                  <Truck className="h-4 w-4 text-[hsl(var(--accent))]" />
+                  <span className="text-sm font-medium text-[hsl(var(--primary))]">Dispatch: 24/7</span>
                 </div>
               </div>
             </div>
@@ -238,7 +246,7 @@ const Contact = () => {
                 Trusted Freight Partner in Reno, NV
               </h2>
               <p className="text-base text-[hsl(var(--muted-foreground))] text-center mb-12 max-w-2xl mx-auto leading-relaxed">
-                DeMar Transportation provides reliable freight shipping and logistics services throughout the western United States.
+                DeMar Transportation holds both Motor Carrier and Freight Broker authority, providing nationwide freight shipping and logistics from our Reno headquarters.
               </p>
 
               <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
@@ -308,16 +316,42 @@ const Contact = () => {
                         <div>
                           <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-1">Service Area</h3>
                           <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
-                            Serving Nevada, California, Oregon, Utah, Arizona, and freight routes nationwide from our Reno base.
+                            Nationwide freight shipping across the United States, based in Reno, NV. USDOT 4392091 with Motor Carrier and Freight Broker authority.
                           </p>
                         </div>
                       </div>
+
+                      <div className="flex items-start gap-4">
+                        <Shield className="h-5 w-5 text-[hsl(var(--accent))] mt-0.5 flex-shrink-0" />
+                        <div>
+                          <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-1">Authority & Registration</h3>
+                          <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
+                            USDOT: 4392091<br />
+                            Motor Carrier (MC) and Freight Broker authority
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-3 mt-8">
+                      <Button size="sm" className="bg-[hsl(var(--accent))] text-[hsl(var(--primary))] hover:bg-[hsl(var(--accent))]/90 font-semibold" asChild>
+                        <Link to="/quote">
+                          Request a Quote
+                          <ArrowRight className="ml-1 h-3 w-3" />
+                        </Link>
+                      </Button>
+                      <Button size="sm" variant="outline" className="border-[hsl(var(--primary))] text-[hsl(var(--primary))]" asChild>
+                        <Link to="/support">
+                          Shipment Support
+                          <ArrowRight className="ml-1 h-3 w-3" />
+                        </Link>
+                      </Button>
                     </div>
                   </div>
 
                   <div className="rounded-xl overflow-hidden shadow-[var(--shadow-float)]">
                     <iframe
-                      title="DeMar Transportation office location"
+                      title="DeMar Transportation office location at 10471 Double R Blvd, Reno, NV 89521"
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.5!2d-119.773!3d39.4631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDI3JzQ3LjIiTiAxMTnCsDQ2JzIyLjgiVw!5e0!3m2!1sen!2sus!4v1"
                       width="100%"
                       height="400"
@@ -393,16 +427,16 @@ const Contact = () => {
         <Footer />
       </div>
 
-      {/* JSON-LD: LocalBusiness */}
+      {/* JSON-LD: TransportationBusiness */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
+            "@type": "TransportationBusiness",
             "@id": "https://demartransportation.com/#business",
             name: "DeMar Transportation",
-            description: "Freight transportation and logistics services based in Reno, Nevada. Offering dry van, reefer, flatbed, box truck, and sprinter van shipping with 24/7 dispatch.",
+            description: "Nationwide freight transportation and logistics services based in Reno, Nevada. Dry van, reefer, flatbed, box truck, sprinter van, hazmat, FTL, LTL, and 3PL services. USDOT 4392091 with Motor Carrier and Freight Broker authority. 24/7 dispatch.",
             url: "https://demartransportation.com",
             telephone: "+1-775-230-4767",
             email: "info@DeMarTransportation.com",
@@ -436,27 +470,48 @@ const Contact = () => {
             ],
             image: "https://demartransportation.com/og-image.png",
             priceRange: "$$",
-            areaServed: [
-              { "@type": "State", name: "Nevada" },
-              { "@type": "State", name: "California" },
-              { "@type": "State", name: "Oregon" },
-              { "@type": "State", name: "Utah" },
-              { "@type": "State", name: "Arizona" },
-            ],
+            areaServed: {
+              "@type": "Country",
+              name: "United States",
+            },
             serviceType: [
-              "Freight Shipping",
-              "LTL Shipping",
-              "FTL Shipping",
-              "Refrigerated Transport",
-              "Flatbed Hauling",
-              "Logistics Services",
+              "Dry Van Shipping",
+              "Refrigerated Freight",
+              "Flatbed Shipping",
+              "Box Truck Delivery",
+              "Sprinter Van / Expedited",
+              "Hazmat Freight",
+              "FTL (Full Truckload)",
+              "LTL (Less Than Truckload)",
+              "3PL / Third-Party Logistics",
             ],
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+1-775-230-4767",
-              contactType: "customer service",
-              availableLanguage: "English",
-              areaServed: "US",
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                telephone: "+1-775-230-4767",
+                contactType: "customer service",
+                availableLanguage: "English",
+                areaServed: "US",
+                hoursAvailable: {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  opens: "07:00",
+                  closes: "18:00",
+                },
+              },
+              {
+                "@type": "ContactPoint",
+                telephone: "+1-775-230-4767",
+                contactType: "reservations",
+                availableLanguage: "English",
+                areaServed: "US",
+                description: "24/7 Dispatch",
+              },
+            ],
+            identifier: {
+              "@type": "PropertyValue",
+              name: "USDOT",
+              value: "4392091",
             },
           }),
         }}
