@@ -160,11 +160,11 @@ const blogPosts = [
     readTime: "8 min",
   },
   {
-    slug: "ltl-freight-shipping-guide",
-    title: "LTL Freight Shipping Guide: How Less-Than-Truckload Shipping Works",
+    slug: "hazmat-freight-shipping-requirements-cyud",
+    title: "Hazmat Freight Shipping Requirements: A Complete Guide for Shippers",
     description:
-      "Everything you need to know about LTL freight shipping — from how it works and what it costs to packaging requirements and when to choose LTL over full truckload.",
-    category: "Shipping Guides",
+      "Everything shippers need to know about hazmat freight shipping requirements, from DOT hazard classifications and packaging rules to carrier qualifications and insurance minimums.",
+    category: "Compliance & Safety",
     date: "2026-04-07",
     readTime: "8 min",
   },

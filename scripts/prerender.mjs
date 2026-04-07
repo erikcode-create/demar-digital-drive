@@ -72,7 +72,7 @@ const routes = [
   '/blog/ltl-vs-ftl-freight-shipping',
   '/blog/supply-chain-management-small-business',
   '/blog/refrigerated-freight-shipping-guide',
-  '/blog/ltl-freight-shipping-guide',
+  '/blog/hazmat-freight-shipping-requirements-cyud',
 ];
 
 // Simple static file server
