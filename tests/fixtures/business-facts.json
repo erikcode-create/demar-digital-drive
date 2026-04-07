@@ -6,5 +6,25 @@
   "companyName": "DeMar Transportation",
   "dotNumber": "4392091",
   "officeHours": "Mon-Fri, 7:00 AM - 6:00 PM PST",
-  "dispatchHours": "24/7"
+  "dispatchHours": "24/7",
+  "services": [
+    "Dry Van Shipping",
+    "Reefer / Refrigerated Freight",
+    "Flatbed Shipping",
+    "Box Truck Delivery",
+    "Sprinter Van / Expedited",
+    "Hazmat Freight",
+    "FTL (Full Truckload)",
+    "LTL (Less Than Truckload)",
+    "3PL / Third-Party Logistics",
+    "Warehousing"
+  ],
+  "serviceArea": "Nationwide (US), based in Reno, NV",
+  "authorityType": "Motor Carrier (MC) and Freight Broker authority",
+  "brandGuidelines": {
+    "noEmDashes": true,
+    "noExclamationPoints": true,
+    "noBuzzwords": ["streamline", "optimize", "innovative", "leverage", "solutions", "cutting-edge", "game-changer", "synergy"],
+    "tone": "professional, direct, customer-focused"
+  }
 }

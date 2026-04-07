@@ -24,6 +24,54 @@ export const description =
   "Writes new blog posts or updates existing pages based on strategy actions.";
 
 // ---------------------------------------------------------------------------
+// Business facts + valid routes (anti-hallucination)
+// ---------------------------------------------------------------------------
+
+let _facts = null;
+function getBusinessFacts() {
+  if (_facts) return _facts;
+  const factsPath = path.resolve(REPO_ROOT, "tests/fixtures/business-facts.json");
+  _facts = JSON.parse(readFileSync(factsPath, "utf8"));
+  return _facts;
+}
+
+function getValidRoutes() {
+  const appPath = path.join(REPO_ROOT, "src/App.tsx");
+  const appSource = readFileSync(appPath, "utf8");
+  const routes = [];
+  const re = /path="([^"]+)"/g;
+  let m;
+  while ((m = re.exec(appSource)) !== null) routes.push(m[1]);
+  return routes;
+}
+
+function buildFactsContext() {
+  const facts = getBusinessFacts();
+  const routes = getValidRoutes();
+  return `
+BUSINESS FACTS (source of truth — do not contradict or embellish):
+- Company: ${facts.companyName}
+- Phone: ${facts.phone}
+- Email: ${facts.email}
+- Address: ${facts.address}
+- USDOT: ${facts.dotNumber}
+- Authority: ${facts.authorityType}
+- Services: ${facts.services.join(", ")}
+- Service area: ${facts.serviceArea}
+- Office hours: ${facts.officeHours}
+- Dispatch: ${facts.dispatchHours}
+
+VALID INTERNAL LINKS (only link to these routes — do NOT invent pages):
+${routes.map(r => `  ${r}`).join("\n")}
+
+STRICT RULES:
+- NEVER mention services, capabilities, or processes not listed above
+- NEVER link to pages not in the valid routes list
+- NEVER invent specific statistics, certifications, or claims that aren't in the business facts
+- If you don't know something, leave it out rather than making it up`;
+}
+
+// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 
@@ -52,7 +100,9 @@ function getExistingBlogSlugs() {
 async function generateTopicFromAction(action) {
   const existingBlogs = getExistingBlogSlugs().join(", ");
 
-  const prompt = `You are a content strategist for DeMar Transportation, a US freight carrier and broker (MC and broker authority, own fleet + 3PL, partner warehouses) based in Reno NV. Services: dry van, reefer, flatbed, hazmat, FTL, LTL, 3PL, warehousing, box truck, sprinter van.
+  const factsCtx = buildFactsContext();
+  const prompt = `You are a content strategist for DeMar Transportation.
+${factsCtx}
 
 The SEO strategy agent has identified this action:
 - Target keyword: ${action.targetKeyword || "not specified"}
@@ -98,7 +148,9 @@ async function writeBlogPost(topic, researchContext = "") {
   const faqsJson = JSON.stringify(topic.faqs, null, 2);
   const relatedLinksJson = JSON.stringify(topic.relatedLinks, null, 2);
 
+  const factsCtx = buildFactsContext();
   const prompt = `Write a complete React/TypeScript blog post component file for DeMar Transportation's website.
+${factsCtx}
 
 COMPONENT NAME: ${slugToComponentName(topic.slug)}
 SLUG: ${topic.slug}
@@ -335,7 +387,9 @@ async function updateExistingContent(action, context) {
     return { success: false, summary: `Could not read page ${action.targetPage}: ${err.message}` };
   }
 
+  const factsCtx = buildFactsContext();
   const prompt = `You are editing an existing page on DeMar Transportation's website (React/Vite/TypeScript SPA).
+${factsCtx}
 
 TARGET PAGE: ${action.targetPage}
 REASON FOR UPDATE: ${action.reason}
