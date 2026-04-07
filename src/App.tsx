@@ -74,6 +74,8 @@ const SupplyChainManagementSmallBusiness = lazy(() => import("./pages/blog/Suppl
 const RefrigeratedFreightShippingGuide = lazy(() => import("./pages/blog/RefrigeratedFreightShippingGuide"));
 
 const HazmatFreightShippingRequirementsCyud = lazy(() => import("./pages/blog/HazmatFreightShippingRequirementsCyud"));
+const FreightShippingRenoNevada = lazy(() => import("./pages/blog/FreightShippingRenoNevada"));
+const LtlFreightShippingGuide = lazy(() => import("./pages/blog/LtlFreightShippingGuide"));
 
 const queryClient = new QueryClient();
 
@@ -146,6 +148,8 @@ const App = () => (
               <Route path="/blog/supply-chain-management-small-business" element={<SupplyChainManagementSmallBusiness />} />
               <Route path="/blog/refrigerated-freight-shipping-guide" element={<RefrigeratedFreightShippingGuide />} />
               <Route path="/blog/hazmat-freight-shipping-requirements-cyud" element={<HazmatFreightShippingRequirementsCyud />} />
+              <Route path="/blog/freight-shipping-reno-nevada" element={<FreightShippingRenoNevada />} />
+              <Route path="/blog/ltl-freight-shipping-guide" element={<LtlFreightShippingGuide />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

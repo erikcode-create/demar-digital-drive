@@ -160,6 +160,24 @@ const blogPosts = [
     readTime: "8 min",
   },
   {
+    slug: "freight-shipping-reno-nevada",
+    title: "Freight Shipping in Reno, Nevada: Major Lanes, Transit Times & Local Carrier Advantages",
+    description:
+      "A complete guide to freight shipping from Reno, Nevada covering major lanes, seasonal considerations for Sierra Nevada passes, and why a local carrier delivers better results.",
+    category: "Shipping Guides",
+    date: "2026-04-06",
+    readTime: "8 min",
+  },
+  {
+    slug: "ltl-freight-shipping-guide",
+    title: "LTL Freight Shipping Guide: How Less-Than-Truckload Shipping Works",
+    description:
+      "Everything you need to know about LTL freight shipping, from how it works and what it costs to packaging requirements and when to choose LTL over full truckload.",
+    category: "Shipping Guides",
+    date: "2026-04-07",
+    readTime: "8 min",
+  },
+  {
     slug: "hazmat-freight-shipping-requirements-cyud",
     title: "Hazmat Freight Shipping Requirements: A Complete Guide for Shippers",
     description:
@@ -282,7 +300,7 @@ const Blog = () => {
           <section className="py-16 bg-[hsl(var(--surface))]">
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="space-y-6">
-                {blogPosts.map((post) => (
+                {[...blogPosts].sort((a, b) => b.date.localeCompare(a.date)).map((post) => (
                   <Link
                     key={post.slug}
                     to={`/blog/${post.slug}`}
