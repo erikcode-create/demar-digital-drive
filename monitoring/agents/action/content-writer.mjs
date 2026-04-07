@@ -239,6 +239,16 @@ CRITICAL WRITING GUIDELINES:
 22. Use regular apostrophes ' in JSX text content.
 23. NEVER fabricate statistics or testimonials.
 
+=== ANTI-AI-DETECTION (critical) ===
+24. Write like a human freight professional, not a language model. Vary sentence length dramatically: mix 5-word punches with 30-word explanations.
+25. Use imperfect transitions. NEVER use: "In today's," "It's worth noting," "In conclusion," "Furthermore," "Moreover," "Additionally," "It's important to," "When it comes to," "In the world of," "At the end of the day." These are AI tells.
+26. Include specific, opinionated statements. "Most brokers overcharge on reefer lanes out of Salinas" is human. "Reefer shipping can be expensive" is AI.
+27. Break parallel structure occasionally. Not every list needs the same grammatical pattern.
+28. Use contractions naturally (don't, won't, they'll). Formal writing without contractions reads as AI.
+29. Reference real geography, real trade lanes, real seasonal patterns. "Produce season hits California's Central Valley every April" is human. "Seasonal factors can affect rates" is AI.
+30. Occasionally start sentences with "And" or "But." Real writers do this.
+31. No filler paragraphs. Every paragraph must contain at least one specific fact, number, or actionable insight. Cut any paragraph that just restates the heading in different words.
+
 IMPORTANT: You are running in non-interactive --print mode. You cannot write files or use tools. You MUST output the raw .tsx code directly to stdout. Do NOT ask for permission, do NOT describe what you would write, do NOT use any tool calls. Just output the code.
 
 Return ONLY the complete .tsx file content. No markdown fences. No explanation. No preamble. Raw TypeScript/React code starting with "import" on the very first line and ending with the export default statement.`;
@@ -413,6 +423,14 @@ STYLE RULES:
 - Active voice, customer language
 - No marketing buzzwords (streamline, optimize, innovative, leverage, solutions)
 - Specific numbers and examples over vague claims
+
+ANTI-AI-DETECTION (critical):
+- Vary sentence length dramatically. Mix short punches with longer explanations.
+- NEVER use these AI-tell phrases: "In today's," "It's worth noting," "Furthermore," "Moreover," "Additionally," "It's important to," "When it comes to," "In the world of," "At the end of the day," "In conclusion"
+- Use contractions naturally (don't, won't, they'll)
+- Include opinionated, specific statements instead of generic hedged ones
+- Occasionally start sentences with "And" or "But"
+- Every paragraph must contain at least one specific fact, number, or actionable insight
 
 IMPORTANT: You are running in non-interactive --print mode. You cannot write files or use tools. Output the raw .tsx code directly to stdout. No markdown fences. No explanation. No preamble. Start with "import" on the very first line.`;
 

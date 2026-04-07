@@ -107,6 +107,17 @@ export function buildRevisionPrompt({
   lines.push(originalPrompt ?? "");
   lines.push("");
 
+  // Anti-AI-detection reminder
+  lines.push("## Writing Style Reminder");
+  lines.push(
+    "Write like a human freight professional. Vary sentence length. " +
+    "Use contractions (don't, won't). Never use AI-tell phrases like " +
+    '"In today\'s," "It\'s worth noting," "Furthermore," "Moreover," "Additionally." ' +
+    "Include specific, opinionated statements with real numbers. " +
+    "Occasionally start sentences with And or But."
+  );
+  lines.push("");
+
   // Final instruction
   lines.push(
     "Return the complete file contents only. Do not include markdown fences, " +
