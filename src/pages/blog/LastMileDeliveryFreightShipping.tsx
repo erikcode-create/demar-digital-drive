@@ -109,7 +109,7 @@ const LastMileDeliveryFreightShipping = () => {
 
       <h2>Last-Mile Freight Delivery Options Compared</h2>
       <p>
-        There is no universally right answer for last-mile delivery. The best
+        There's no universally right answer for last-mile delivery. The best
         option depends on your shipment volume, delivery geography, required
         service level, and how much visibility your customers expect. The four
         primary options each serve a different freight profile.
@@ -155,7 +155,7 @@ const LastMileDeliveryFreightShipping = () => {
         to $350 per delivery for inside service with basic assembly, and $300 to
         $600 or more for white-glove handling with installation and haul-away.
         For high-value freight where a damaged or failed delivery creates
-        significant customer service costs, that premium often pays for itself.
+        real customer service costs, that premium often pays for itself.
       </p>
 
       <h3>Third-Party Logistics Providers</h3>
@@ -189,19 +189,13 @@ const LastMileDeliveryFreightShipping = () => {
 
       <h3>Captive Fleet Delivery</h3>
       <p>
-        High-volume shippers with dense local delivery patterns sometimes build
-        or acquire their own last-mile fleet. Retailers with multiple locations,
-        wholesale distributors, and manufacturers serving a concentrated regional
-        market can achieve per-delivery costs of $40 to $70 when routes are
-        optimized and utilization stays above 80 percent. Below that threshold,
-        the fixed costs of trucks, drivers, insurance, and maintenance erode the
-        savings quickly.
-      </p>
-      <p>
-        Most shippers don't have the volume to justify captive fleet operations.
-        If you're running fewer than 30 to 40 daily deliveries in a given market,
-        outsourced last-mile delivery almost always pencils out better when you
-        account for the full cost of fleet ownership and driver management.
+        Running your own fleet only makes sense at scale. Retailers, wholesale
+        distributors, and manufacturers serving a concentrated regional market
+        can hit per-delivery costs of $40 to $70 when routes are optimized and
+        utilization stays above 80 percent. Below that threshold, the fixed
+        costs of trucks, drivers, insurance, and maintenance eat the savings
+        fast. If you're running fewer than 30 to 40 daily deliveries in a given
+        market, outsourced last-mile almost always pencils out better.
       </p>
 
       <h2>Last-Mile Delivery Costs: What to Expect</h2>
@@ -355,16 +349,14 @@ const LastMileDeliveryFreightShipping = () => {
         visibility that pays back quickly in better routing decisions.
       </p>
       <p>
-        Whatever approach you choose, the fundamentals of effective last-mile
-        freight delivery remain constant: accurate freight data at booking,
-        clear service level specification, real-time visibility, and a clear
-        escalation path when deliveries don't go as planned. These aren't
-        advanced logistics practices; they're the baseline that separates
-        operations that control their last-mile costs from those that absorb
-        them. If you're evaluating your current last-mile setup and want to
-        understand where the cost opportunities are, reviewing your accessorial
-        charges and failed delivery rates will tell you more in an hour than most
-        carrier RFP processes reveal in weeks.
+        Whichever model you use, start with your data. Pull your accessorial
+        charges and failed delivery rates from the last 90 days. Those two
+        reports will tell you more in an hour than most carrier RFP processes
+        reveal in weeks. High accessorial costs point to booking errors --
+        missing liftgate requests, wrong service levels, inaccurate dimensions.
+        High failed delivery rates point to consignee communication gaps. Fix
+        those two problems first, and the rest of your last-mile operation gets
+        cheaper almost immediately.
       </p>
     </>
   );

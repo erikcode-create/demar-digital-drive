@@ -73,7 +73,7 @@ const FreightDamagePrevention = () => {
       <p className="mb-6">
         Freight damage extends well beyond the replacement value of the product. When a
         shipment arrives damaged, your business absorbs costs across multiple categories that
-        most shippers never fully calculate.
+        most shippers don't fully calculate.
       </p>
 
       <p className="mb-6">
@@ -244,7 +244,7 @@ const FreightDamagePrevention = () => {
         <p className="mb-6">
           Under the Carmack Amendment, carriers can avoid liability by proving the damage was
           caused by an act of God, an act of the shipper (such as improper packaging), an act of
-          a public authority, or the inherent nature of the goods. This is why documenting your
+          a public authority, or the inherent nature of the goods. That's why documenting your
           packaging process with photographs is critical. If a carrier claims your packaging was
           inadequate, your photos become your defense.
         </p>
@@ -279,7 +279,7 @@ const FreightDamagePrevention = () => {
         unpackaged, must be reported to the carrier within <strong>5 days</strong> of delivery.
         Preserve all original packaging materials, as the carrier or an inspector will need to
         examine them. Concealed damage claims recover at lower rates (40-50% vs. 60-70%)
-        because it is harder to prove the damage occurred during transit.
+        because it's harder to prove the damage occurred during transit.
       </p>
 
       <h2>Choosing a Carrier with Low Damage Rates</h2>
@@ -292,7 +292,7 @@ const FreightDamagePrevention = () => {
       <p className="mb-6">
         Ask for their damage claim ratio. The industry average is roughly <strong>1 claim per
         100 shipments</strong>. Top carriers maintain ratios below 0.5%. Request data for the
-        last 12 months, not just the most recent quarter. Inspect their equipment too. Trailers
+        last 12 months, not just the most recent quarter. Inspect their equipment, too. Trailers
         with holes, broken floor boards, or non-functioning door seals are red flags. Air-ride
         suspension reduces transit vibration by <strong>40-60%</strong> compared to spring
         suspension, which matters significantly for fragile freight.
@@ -304,7 +304,7 @@ const FreightDamagePrevention = () => {
         FMCSA load securement standards and whether the carrier conducts regular training
         refreshers. And review their claims process. A carrier with a transparent, fast claims
         process signals confidence in their service quality. Carriers that make claims difficult
-        to file often do so because they expect a high volume of them. For guidance on evaluating
+        to file often do so because they're expecting a high volume of them. For guidance on evaluating
         carriers beyond damage rates, see our{" "}
         <Link to="/resources/how-to-ship-freight">complete freight shipping guide</Link>.
       </p>
@@ -322,7 +322,7 @@ const FreightDamagePrevention = () => {
         <strong>FMCSA 49 CFR Part 393</strong> standards. Our drivers inspect load security at
         every stop and are trained to identify and correct shifting loads before they cause
         damage. We invest in ongoing training refreshers, not just one-time certifications,
-        because load securement skills deteriorate without practice.
+        because load securement skills don't stick without practice.
       </p>
 
       <p className="mb-6">
@@ -355,7 +355,7 @@ const FreightDamagePrevention = () => {
         Freight damage is expensive, disruptive, and largely preventable. By investing in
         proper packaging, choosing carriers with proven track records, and understanding your
         rights under carrier liability law, you can reduce damage losses by 50% or more. If
-        you are looking for a carrier that takes freight protection seriously,{" "}
+        you're looking for a carrier that takes freight protection seriously,{" "}
         <Link to="/quote">request a free quote from DeMar Transportation</Link> and
         experience the difference that prevention-first shipping makes.
       </p>

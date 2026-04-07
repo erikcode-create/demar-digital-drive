@@ -88,15 +88,15 @@ const FreightShippingRenoNevada = () => {
         The Tahoe Reno Industrial Center east of Sparks houses Tesla's Gigafactory, a Walmart distribution center, and dozens of other logistics operations. North Valleys and Stead see continued warehouse construction. The result is a freight market with strong outbound volume, particularly into California, which helps keep rates competitive for shippers who need westbound capacity.
       </p>
       <p>
-        This growth also means more inbound freight. Raw materials for manufacturing, retail inventory for fulfillment, and construction materials for ongoing development all flow into the Reno market. Carriers with a local presence can match inbound and outbound loads more efficiently, reducing deadhead miles and passing those savings on to shippers. A national broker matching loads from a desk in Chicago does not have that same visibility into Reno's local freight ecosystem.
+        This growth also means more inbound freight. Raw materials for manufacturing, retail inventory for fulfillment, and construction materials for ongoing development all flow into the Reno market. Carriers with a local presence can match inbound and outbound loads more efficiently, reducing deadhead miles and passing those savings on to shippers. A national broker matching loads from a desk in Chicago doesn't have that same visibility into Reno's local freight ecosystem.
       </p>
 
       <h2>Why a Local Reno Carrier Outperforms National Brokers</h2>
       <p>
-        The freight brokerage model works well for commodity lanes with predictable conditions. Reno is not that market. The combination of mountain pass variability, seasonal demand swings tied to e-commerce fulfillment cycles, and the specific operational quirks of Northern Nevada warehouses makes local knowledge a genuine competitive advantage, not a marketing line.
+        The freight brokerage model works well for commodity lanes with predictable conditions. Reno isn't that market. The combination of mountain pass variability, seasonal demand swings tied to e-commerce fulfillment cycles, and the specific operational quirks of Northern Nevada warehouses makes local knowledge a genuine competitive advantage, not a marketing line.
       </p>
       <p>
-        A Reno-based carrier knows which TRIC facilities have 2-hour detention-free windows and which ones regularly hold drivers for 4 hours. They know that the US-395 corridor south of Carson City has limited fuel and service stops and plan accordingly. They know that loads headed to the Port of Oakland need to account for container availability and chassis shortages that fluctuate weekly. This is the kind of operational intelligence that does not show up on a load board.
+        A Reno-based carrier knows which TRIC facilities have 2-hour detention-free windows and which ones regularly hold drivers for 4 hours. They know that the US-395 corridor south of Carson City has limited fuel and service stops and plan accordingly. They know that loads headed to the Port of Oakland need to account for container availability and chassis shortages that fluctuate weekly. This is the kind of operational intelligence that doesn't show up on a load board.
       </p>
       <p>
         Pickup speed is another factor. When a shipper in the Reno-Sparks area needs same-day or next-morning pickup, a local carrier with trucks already positioned in the market can respond in hours. A brokered load might not have a confirmed truck for 24 to 48 hours, especially during peak produce season when California-bound capacity tightens across the western market.
@@ -124,7 +124,7 @@ const FreightShippingRenoNevada = () => {
         Reno's freight market runs on a seasonal cycle that experienced shippers learn to plan around. Q4, from October through December, brings peak e-commerce volume as fulfillment centers in TRIC and North Valleys ramp up outbound shipments for holiday retail. Capacity tightens, rates increase, and <Link to="/resources/seasonal-freight-shipping">seasonal freight planning</Link> becomes critical for shippers who need guaranteed pickup windows.
       </p>
       <p>
-        Winter months, December through March, layer weather disruption on top of demand patterns. The I-80 corridor sees the most impact, but US-395 south toward Bridgeport and Mammoth Lakes can also close during heavy storms. Shippers who lock in carrier relationships before winter starts get priority scheduling and better communication when conditions change. Those who rely on spot market loads during storms often find themselves paying premium rates for trucks that may not arrive on time anyway.
+        Winter months, December through March, layer weather disruption on top of demand patterns. The I-80 corridor sees the most impact, but US-395 south toward Bridgeport and Mammoth Lakes can also close during heavy storms. Shippers who lock in carrier relationships before winter starts get priority scheduling and better communication when conditions change. Those who rely on spot market loads during storms often find themselves paying premium rates for trucks that don't arrive on time anyway.
       </p>
       <p>
         Spring and summer bring construction season freight, agricultural shipping from the surrounding valleys, and more predictable transit conditions. Rates typically soften from February through May before climbing again in late summer as back-to-school and pre-holiday inventory shipments begin. Understanding these cycles helps Reno shippers budget more accurately and avoid the capacity crunches that catch occasional shippers off guard.
@@ -132,7 +132,7 @@ const FreightShippingRenoNevada = () => {
 
       <h2>Getting Started with Freight Shipping from Reno</h2>
       <p>
-        Whether you are shipping a single FTL load to Sacramento or running a weekly program of outbound freight from a TRIC warehouse, the starting point is the same: work with a carrier who knows the Reno market from the inside. National brokers will quote you a rate; a local carrier will quote you a rate and tell you which routes are running clean, where delays are building, and whether your delivery window is realistic given current conditions.
+        Whether you're shipping a single FTL load to Sacramento or running a weekly program of outbound freight from a TRIC warehouse, the starting point is the same: work with a carrier who knows the Reno market from the inside. National brokers will quote you a rate; a local carrier will quote you a rate and tell you which routes are running clean, where delays are building, and whether your delivery window's realistic given current conditions.
       </p>
       <p>
         DeMar Transportation provides freight shipping services throughout Northern Nevada, with particular strength on the high-volume lanes to California, Utah, and the Pacific Northwest. Our equipment is positioned locally for fast pickup response, and our drivers run these Sierra passes and desert corridors every week. <Link to="/quote">Request a freight quote</Link> or call us at (775) 230-4767 to get a price that reflects what Reno freight actually costs to move, with a transit time you can count on.

@@ -63,7 +63,7 @@ const WhyFreightQuoteKeepsChanging = () => {
 
       <p className="mb-6">
         Understanding these drivers gives you the leverage to plan smarter,
-        budget tighter, and avoid overpaying. Whether you are shipping{" "}
+        budget tighter, and avoid overpaying. Whether you're shipping{" "}
         <Link to="/services/ftl">full truckload</Link> or{" "}
         <Link to="/services/ltl">less than truckload</Link>, the same
         market forces apply. This guide breaks down the primary factors behind
@@ -85,7 +85,7 @@ const WhyFreightQuoteKeepsChanging = () => {
         costs that change daily. The carrier also needs a profitable load on
         the return trip, which means your rate partially depends on what
         freight is available in the destination market. This is something most
-        shippers never think about, but it has a huge impact on what you pay.
+        shippers don't think about, but it has a huge impact on what you pay.
       </p>
 
       <p className="mb-8">
@@ -309,7 +309,7 @@ const WhyFreightQuoteKeepsChanging = () => {
 
       <h2>How to Lock In Better Freight Rates</h2>
       <p className="mb-6">
-        You cannot control diesel prices or weather, but you can take steps to
+        You can't control diesel prices or weather, but you can take steps to
         reduce rate volatility and get better pricing consistently.
       </p>
 
@@ -352,14 +352,14 @@ const WhyFreightQuoteKeepsChanging = () => {
         Double R Blvd in Reno, Nevada. We hold dual authority as both a Motor
         Carrier and Freight Broker under USDOT 4392091, which means we
         dispatch our own fleet first and tap vetted partner carriers when
-        capacity requires it. We are not a freight marketplace or a lead
+        capacity requires it. We're not a freight marketplace or a lead
         generation site. We haul freight every day with our own trucks and
         drivers, and that operational reality shapes how we quote and price.
       </p>
 
       <p className="mb-6">
         Every DeMar quote includes a line-item breakdown: linehaul, fuel
-        surcharge, and any applicable accessorials. We do not bury charges in
+        surcharge, and any applicable accessorials. We don't bury charges in
         fine print or add fees after delivery. If your shipment needs a
         liftgate or appointment scheduling, we include it in the original
         quote because we ask the right questions before we price the load.
@@ -380,7 +380,7 @@ const WhyFreightQuoteKeepsChanging = () => {
         DAT, SONAR, and internal load data daily. When we quote your lane,
         the rate reflects actual current conditions, not a stale rate sheet
         from three months ago. If the market drops on your lane, your next
-        quote reflects that. We do not hold rates artificially high during
+        quote reflects that. We don't hold rates artificially high during
         soft markets.
       </p>
 

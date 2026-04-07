@@ -51,7 +51,7 @@ const FoodBeverageFreightShipping = () => {
       </p>
 
       <p className="mb-6">
-        Food freight shipping is not just logistics. It is a regulated chain of custody from dock to dock, where every degree matters and every log entry is a legal document. The carrier you choose either protects that chain or breaks it.
+        Food freight shipping isn't just logistics. It's a regulated chain of custody from dock to dock, where every degree matters and every log entry is a legal document. The carrier you choose either protects that chain or breaks it.
       </p>
 
       <p className="mb-8">
@@ -67,7 +67,7 @@ const FoodBeverageFreightShipping = () => {
         The rule is not theoretical. FDA enforcement actions under FSMA have resulted in facility shutdowns, product seizures, and import alerts for foreign shippers moving product into U.S. distribution.
       </p>
       <p className="mb-6">
-        The rule requires shippers to specify temperature requirements in writing before the load moves. Carriers must use equipment that can maintain those temperatures and must keep records proving they did. Receivers have an obligation to reject loads that arrive outside spec. Every party in the chain (shipper, carrier, and receiver) is accountable. If you are handing a reefer load to a carrier and you have not given them a written temperature specification, you are out of FSMA compliance before the trailer leaves the dock.
+        The rule requires shippers to specify temperature requirements in writing before the load moves. Carriers must use equipment that can maintain those temperatures and must keep records proving they did. Receivers have an obligation to reject loads that arrive outside spec. Every party in the chain (shipper, carrier, and receiver) is accountable. If you're handing a reefer load to a carrier and you haven't given them a written temperature specification, you're out of FSMA compliance before the trailer leaves the dock.
       </p>
       <p className="mb-8">
         In our experience hauling food and beverage freight across the Midwest and Southeast, the shippers who face the fewest compliance headaches are the ones who treat temperature specs as a required document, not a verbal conversation. They send a written Food Transportation Safety Plan with every load, they confirm the carrier's pre-trip temperature logs before departure, and they require proof-of-temperature records at delivery. That paper trail is what protects them when an FDA auditor shows up.
@@ -75,7 +75,7 @@ const FoodBeverageFreightShipping = () => {
 
       <h2>Food Freight Shipping Temperature Requirements by Product Type</h2>
       <p className="mb-6">
-        Temperature requirements in food freight are not one-size-fits-all. They vary by product category, and some products have USDA or FDA regulations that supersede general industry practice. Getting this wrong does not just spoil the product. It creates FSMA violations that can follow your company through future audits.
+        Temperature requirements in food freight are not one-size-fits-all. They vary by product category, and some products have USDA or FDA regulations that supersede general industry practice. Getting this wrong doesn't just spoil the product. It creates FSMA violations that can follow your company through future audits.
       </p>
 
       <h3>Frozen Foods</h3>
@@ -121,7 +121,7 @@ const FoodBeverageFreightShipping = () => {
         What questions should you ask a carrier before handing them a temperature-sensitive food load? The answer depends on your product, but there are baseline criteria that apply to every food freight shipment.
       </p>
       <p className="mb-6">
-        First, ask for their FSMA compliance documentation. A carrier who cannot produce written evidence of their Food Transportation Safety procedures should not be hauling your food freight. Second, ask about their temperature logging system. Continuous electronic logging is the standard, while manual spot-check logs leave gaps that create problems during audits.
+        First, ask for their FSMA compliance documentation. A carrier who can't produce written evidence of their Food Transportation Safety procedures shouldn't be hauling your food freight. Second, ask about their temperature logging system. Continuous electronic logging is the standard, while manual spot-check logs leave gaps that create problems during audits.
       </p>
 
       <p className="mb-6">
@@ -170,7 +170,7 @@ const FoodBeverageFreightShipping = () => {
         For shippers new to temperature-controlled freight, the <Link to="/resources/how-to-ship-refrigerated-goods">cold chain shipping guide</Link> covers equipment selection, documentation requirements, and how to set temperature specs that your carrier can actually execute.
       </p>
       <p className="mb-6">
-        If you are evaluating whether your current food freight program would hold up to an FDA audit, the documentation checklist is a good starting point: written temperature specifications on file for each product type, carrier FSMA compliance records, temperature logs for the past 12 months, and a written Food Transportation Safety Plan signed by a responsible party at your company. If any of those are missing, the audit conversation is harder than it needs to be.
+        If you're evaluating whether your current food freight program would hold up to an FDA audit, the documentation checklist is a good starting point: written temperature specifications on file for each product type, carrier FSMA compliance records, temperature logs for the past 12 months, and a written Food Transportation Safety Plan signed by a responsible party at your company. If any of those are missing, the audit conversation is harder than it needs to be.
       </p>
       <p>
         Food and beverage logistics is a sector where the carrier relationship directly affects your regulatory standing. The right partner does not just move freight. They document the chain of custody that protects your business when the FDA asks questions. For shippers who want a broader view of freight options before committing to a temperature-controlled program, the <Link to="/resources/how-to-ship-freight">freight shipping guide</Link> covers equipment types, rate structures, and how to match your cargo to the right service.

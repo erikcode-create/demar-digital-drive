@@ -51,7 +51,7 @@ const DedicatedFleetVsSpotMarket = () => {
       </p>
 
       <p className="mb-6">
-        Dedicated contracts typically run 15-25% higher than the baseline spot rate. But that premium buys you something the spot market cannot: the truck shows up when you need it, at the price you agreed to, even when every other shipper in your region is scrambling for capacity.
+        Dedicated contracts typically run 15-25% higher than the baseline spot rate. But that premium buys you something the spot market can't: the truck shows up when you need it, at the price you agreed to, even when every other shipper in your region is scrambling for capacity.
       </p>
 
       <p className="mb-8">
@@ -66,7 +66,7 @@ const DedicatedFleetVsSpotMarket = () => {
         The rate structure differs significantly from spot market pricing. Instead of paying a per-mile rate that fluctuates with diesel prices and driver availability, dedicated contracts typically include an all-in linehaul rate per load, fixed fuel surcharge tables tied to the Department of Energy weekly diesel index, and agreed-upon accessorial charges for detention, layovers, and drop trailer arrangements. You know your freight budget before the fiscal year starts, which matters for companies that have to set shipping cost projections in Q4 for the following year.
       </p>
       <p className="mb-8">
-        The carrier, in turn, guarantees trucks will be available on your dock when you call for them. That guarantee has real dollar value. On the Dallas-to-Houston corridor during produce season, spot dry van rates can jump from $1.80 per mile to $2.60 per mile over a single weekend. A shipper with a dedicated contract at $2.10 per mile does not feel that spike at all.
+        The carrier, in turn, guarantees trucks will be available on your dock when you call for them. That guarantee has real dollar value. On the Dallas-to-Houston corridor during produce season, spot dry van rates can jump from $1.80 per mile to $2.60 per mile over a single weekend. A shipper with a dedicated contract at $2.10 per mile doesn't feel that spike at all.
       </p>
 
       <h2>How Spot Market Freight Pricing Works</h2>
@@ -139,7 +139,7 @@ const DedicatedFleetVsSpotMarket = () => {
 
       <h2>When Dedicated Fleet Is the Right Choice</h2>
       <p className="mb-6">
-        The case for dedicated fleet becomes compelling when your shipping patterns meet three criteria: high volume, route consistency, and low tolerance for capacity risk. If you are moving 15 or more loads per week on predictable lanes, a dedicated contract is almost always the better financial decision when you account for the full cost of spot sourcing (staff time, load fallouts, and peak-season rate spikes).
+        The case for dedicated fleet becomes compelling when your shipping patterns meet three criteria: high volume, route consistency, and low tolerance for capacity risk. If you're moving 15 or more loads per week on predictable lanes, a dedicated contract is almost always the better financial decision when you account for the full cost of spot sourcing (staff time, load fallouts, and peak-season rate spikes).
       </p>
       <p className="mb-6">
         Retailers and manufacturers with steady production schedules are the clearest candidates. A consumer goods company shipping 20 loads per week from a Midwest distribution center to regional fulfillment hubs has a highly predictable freight profile. Locking in those lanes with a dedicated carrier means the transportation budget is settled, the drivers know the facility, and the carrier's dispatchers understand your receiving window requirements.
@@ -149,7 +149,7 @@ const DedicatedFleetVsSpotMarket = () => {
         That familiarity reduces detention charges because drivers arrive on time and dock staff know the routine.
       </p>
       <p className="mb-6">
-        Dedicated fleet also makes sense when service consistency matters beyond just price. If you are shipping to a customer who charges back penalties for late arrivals or missed delivery windows, the cost of a single late load under spot market conditions can exceed months of dedicated rate premium. A carrier with drivers assigned specifically to your account will prioritize your freight in a way that a spot market carrier booking their first load to your facility simply cannot.
+        Dedicated fleet also makes sense when service consistency matters beyond just price. If you're shipping to a customer who charges back penalties for late arrivals or missed delivery windows, the cost of a single late load under spot market conditions can exceed months of dedicated rate premium. A carrier with drivers assigned specifically to your account will prioritize your freight in a way that a spot market carrier booking their first load to your facility simply cannot.
       </p>
       <p className="mb-8">
         For <Link to="/services/ftl">full truckload shipping</Link> on high-frequency lanes, the dedicated model also eliminates the deadhead miles problem that inflates spot rates. Spot carriers price in the cost of repositioning empty after your delivery. A dedicated carrier with a driver assigned to your round-trip lane has no repositioning cost to recover, which is part of why well-structured dedicated contracts beat spot market rates over time even when the per-load sticker price looks higher.
@@ -157,10 +157,10 @@ const DedicatedFleetVsSpotMarket = () => {
 
       <h2>When Spot Market Freight Makes More Sense</h2>
       <p className="mb-6">
-        Spot market freight is not a fallback strategy. For the right shipper profile, it is the correct approach. If you are moving fewer than 30 loads per month, or if your lanes shift frequently based on customer orders or project work, committing to a dedicated contract creates more risk than it eliminates.
+        Spot market freight isn't a fallback strategy. For the right shipper profile, it's the correct approach. If you're moving fewer than 30 loads per month, or if your lanes shift frequently based on customer orders or project work, committing to a dedicated contract creates more risk than it eliminates.
       </p>
       <p className="mb-6">
-        Companies with highly variable demand should not lock themselves into minimum volume commitments they might not hit. A dedicated contract that requires 10 loads per month on a lane where you are actually shipping 6 to 14 loads depending on the quarter means you are either paying for idle trucks or scrambling to fill volume commitments during slow periods.
+        Companies with highly variable demand shouldn't lock themselves into minimum volume commitments they might not hit. A dedicated contract that requires 10 loads per month on a lane where you are actually shipping 6 to 14 loads depending on the quarter means you are either paying for idle trucks or scrambling to fill volume commitments during slow periods.
       </p>
       <p className="mb-6">
         Spot market also wins when you need equipment variety. If your loads shift between dry van, flatbed, and refrigerated freight based on what customers order, the flexibility to book the right equipment type for each load matters more than rate stability on any single equipment type. Dedicated contracts work best when your freight profile is consistent enough to specify equipment and routes in advance.
@@ -199,7 +199,7 @@ const DedicatedFleetVsSpotMarket = () => {
         The evaluation starts with pulling your freight data from the last 12 to 24 months. You need three numbers: total load count by month, lane distribution showing which origin-destination pairs repeat most frequently, and your total freight spend including all accessorials and surcharges.
       </p>
       <p className="mb-6">
-        If your top three lanes account for 60% or more of your total load count, those lanes are strong candidates for dedicated coverage. Concentrated volume on consistent routes is exactly what dedicated fleet is designed to serve. If your freight is spread across 20 different lane pairs with no single lane exceeding 10% of volume, dedicated fleet probably cannot be structured efficiently for your network.
+        If your top three lanes account for 60% or more of your total load count, those lanes are strong candidates for dedicated coverage. Concentrated volume on consistent routes is exactly what dedicated fleet is designed to serve. If your freight is spread across 20 different lane pairs with no single lane exceeding 10% of volume, dedicated fleet probably can't be structured efficiently for your network.
       </p>
       <p className="mb-6">
         Month-to-month volume variance matters too. If your busiest month runs twice the volume of your slowest month, calculate whether a dedicated contract's minimum commitment covers your slow months without creating idle truck costs. A carrier like DeMar can structure flexible dedicated agreements with monthly volume adjustment provisions, which reduces the risk of over-committing on capacity during predictably slow periods.
@@ -224,7 +224,7 @@ const DedicatedFleetVsSpotMarket = () => {
 
       <h2>Making the Decision for Your Freight Program</h2>
       <p className="mb-6">
-        The dedicated fleet versus spot market decision is not made once. It is revisited every time your volume changes, every time you open or close a distribution point, and every time the freight market cycle shifts from tight to loose or back again.
+        The dedicated fleet versus spot market decision isn't made once. It's revisited every time your volume changes, every time you open or close a distribution point, and every time the freight market cycle shifts from tight to loose or back again.
       </p>
       <p className="mb-6">
         The framework is straightforward. Under 30 loads per month, spot market with strong carrier relationships is typically the right answer. Between 30 and 100 loads per month, a hybrid model with a dedicated core on your highest-frequency lanes and spot coverage for the rest gives you rate protection where it matters and flexibility where you need it. Above 100 loads per month, dedicated fleet with a small spot buffer for overflow and surge capacity is almost always the most cost-effective structure.

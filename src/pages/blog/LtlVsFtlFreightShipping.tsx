@@ -47,7 +47,7 @@ const LtlVsFtlFreightShipping = () => {
   const content = (
     <>
       <p>
-        LTL vs FTL freight shipping comes down to how much space your cargo needs and what you are willing to pay for speed and security. LTL, or less-than-truckload, groups your freight with shipments from other companies on the same trailer. You pay only for the portion of the trailer your pallets occupy, which makes it the go-to choice for loads between 150 and 10,000 pounds. FTL, or full truckload, reserves the entire 53-foot trailer for your freight alone, regardless of whether you fill it completely. FTL is the better fit when your shipment exceeds 10,000 pounds, takes up more than 10 pallets, or needs to arrive without terminal transfers along the way. The cost difference between these two methods can be substantial depending on freight class, distance, and accessorial charges. Choosing the wrong mode means either overpaying for unused trailer space or exposing smaller shipments to unnecessary handling. This guide breaks down the real cost factors, transit time differences, damage risks, and decision criteria so you can match your freight to the right shipping method every time.
+        LTL vs FTL freight shipping comes down to how much space your cargo needs and what you're willing to pay for speed and security. LTL, or less-than-truckload, groups your freight with shipments from other companies on the same trailer. You pay only for the portion of the trailer your pallets occupy, which makes it the go-to choice for loads between 150 and 10,000 pounds. FTL, or full truckload, reserves the entire 53-foot trailer for your freight alone, regardless of whether you fill it completely. FTL is the better fit when your shipment exceeds 10,000 pounds, takes up more than 10 pallets, or needs to arrive without terminal transfers along the way. The cost difference between these two methods can be substantial depending on freight class, distance, and accessorial charges. Choosing the wrong mode means either overpaying for unused trailer space or exposing smaller shipments to unnecessary handling. This guide breaks down the real cost factors, transit time differences, damage risks, and decision criteria so you can match your freight to the right shipping method every time.
       </p>
 
       <h2>How LTL Freight Shipping Works</h2>
@@ -63,7 +63,7 @@ const LtlVsFtlFreightShipping = () => {
 
       <h2>How FTL Freight Shipping Works</h2>
       <p>
-        FTL is simpler. One trailer, one shipper, one destination. A driver picks up your loaded trailer and drives it directly to the consignee. There are no terminal stops, no sorting, and no co-loading with other companies' freight. The trailer stays sealed from origin to destination unless a weigh station or border inspection requires it to open.
+        FTL is simpler. One trailer, one shipper, one destination. A driver picks up your loaded trailer and drives it directly to the consignee. There aren't any terminal stops, no sorting, and no co-loading with other companies' freight. The trailer stays sealed from origin to destination unless a weigh station or border inspection requires it to open.
       </p>
       <p>
         FTL pricing is based on mileage, fuel surcharges, and market conditions rather than freight class. As a rough benchmark, industry rates for a standard dry van running 1,000 miles generally fall in the range of $2,000 to $3,500 depending on the lane, season, and capacity in that corridor, though actual quotes can vary significantly. High-demand lanes like Los Angeles to Dallas tend to carry premium rates, while backhaul lanes where carriers need to reposition empty trailers can offer significant discounts. Deadhead miles, the distance a driver travels empty to reach your pickup, factor into the quote as well.
@@ -107,7 +107,7 @@ const LtlVsFtlFreightShipping = () => {
 
       <h2>How to Decide Between LTL and FTL</h2>
       <p>
-        Start with weight and volume. If your shipment is under 6,000 pounds and fits on 6 or fewer standard pallets (48 by 40 inches), LTL is almost always the right call. If you are shipping over 12,000 pounds or filling more than half the trailer, FTL wins on both cost and service. The 6,000 to 12,000 pound range requires a quote comparison because the answer depends on freight class, lane, and timing.
+        Start with weight and volume. If your shipment is under 6,000 pounds and fits on 6 or fewer standard pallets (48 by 40 inches), LTL is almost always the right call. If you're shipping over 12,000 pounds or filling more than half the trailer, FTL wins on both cost and service. The 6,000 to 12,000 pound range requires a quote comparison because the answer depends on freight class, lane, and timing.
       </p>
       <p>
         Next, consider your timeline. If the delivery window is tight, 1 to 3 days, FTL is the safer bet. If you have a week or more of lead time, LTL gives you the cost savings without the schedule risk. For recurring shipments on a predictable schedule, you may be able to negotiate contracted LTL rates that bring costs down further.
@@ -137,10 +137,10 @@ const LtlVsFtlFreightShipping = () => {
 
       <h2>Making the Right Choice for Your Business</h2>
       <p>
-        The LTL vs FTL decision is not static. Your shipping needs change with order volume, seasonal demand, and supply chain shifts. A business that ships LTL all year might switch to FTL during peak season when LTL terminals get backed up and rates spike. A manufacturer running FTL loads to a distribution center might use LTL for smaller replenishment orders to retail locations.
+        The LTL vs FTL decision isn't static. Your shipping needs change with order volume, seasonal demand, and supply chain shifts. A business that ships LTL all year might switch to FTL during peak season when LTL terminals get backed up and rates spike. A manufacturer running FTL loads to a distribution center might use LTL for smaller replenishment orders to retail locations.
       </p>
       <p>
-        The right freight partner helps you flex between modes without renegotiating contracts every time your volume changes. DeMar Transportation manages both <Link to="/services/ltl">LTL</Link> and <Link to="/services/ftl">FTL</Link> freight across the continental United States. Whether you are shipping 2 pallets to a single location or 20 truckloads per week across multiple states, our logistics team builds a shipping plan that matches the actual requirements of each load, not a one-size-fits-all rate sheet.
+        The right freight partner helps you flex between modes without renegotiating contracts every time your volume changes. DeMar Transportation manages both <Link to="/services/ltl">LTL</Link> and <Link to="/services/ftl">FTL</Link> freight across the continental United States. Whether you're shipping 2 pallets to a single location or 20 truckloads per week across multiple states, our logistics team builds a shipping plan that matches the actual requirements of each load, not a one-size-fits-all rate sheet.
       </p>
     </>
   );

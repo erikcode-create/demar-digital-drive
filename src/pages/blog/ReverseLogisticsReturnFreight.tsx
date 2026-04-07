@@ -57,7 +57,7 @@ const ReverseLogisticsReturnFreight = () => {
       <p>
         For e-commerce retailers, the return rate runs between 20 and 30 percent
         of all orders shipped. For apparel, that figure climbs above 40 percent.
-        At those volumes, a disorganized reverse logistics operation does not
+        At those volumes, a disorganized reverse logistics operation doesn't
         just create headaches. It actively erodes margin on every sale.
       </p>
       <p>
@@ -111,7 +111,7 @@ const ReverseLogisticsReturnFreight = () => {
         The companies with the lowest reverse logistics costs share one
         structural feature: they treat returns as a separate freight program
         with its own lanes, carriers, rates, and documentation standards. It
-        is not an exception to their normal shipping process.
+        isn't an exception to their normal shipping process.
       </p>
       <p>
         Start by mapping where your returns originate. If 60 percent of your
@@ -278,8 +278,8 @@ const ReverseLogisticsReturnFreight = () => {
       <p>
         Carriers tighten capacity in January for the same reason shippers
         increase return volume: the post-holiday surge affects everyone
-        simultaneously. If you have not pre-committed return capacity before
-        peak season, you will find yourself competing on the spot market against
+        simultaneously. If you haven't pre-committed return capacity before
+        peak season, you'll find yourself competing on the spot market against
         every other retailer facing the same problem. Rates during January
         return surges can run 20 to 30 percent above negotiated contract rates
         for shippers without volume commitments.
@@ -295,7 +295,7 @@ const ReverseLogisticsReturnFreight = () => {
         all peak periods.
       </p>
       <p>
-        If you are newer to freight management and still building your carrier
+        If you're newer to freight management and still building your carrier
         relationships, the{" "}
         <Link to="/resources/how-to-ship-freight">beginner's guide to freight
         shipping</Link> covers the foundational concepts you need before
@@ -307,7 +307,7 @@ const ReverseLogisticsReturnFreight = () => {
       <p>
         The companies that handle reverse logistics well have one thing in
         common: they built their return program before they needed it at scale.
-        Designing a return freight program when you are already drowning in
+        Designing a return freight program when you're already drowning in
         unprocessed returns costs significantly more than designing it when you
         have the time to evaluate carriers, negotiate rates, and train staff on
         documentation standards.

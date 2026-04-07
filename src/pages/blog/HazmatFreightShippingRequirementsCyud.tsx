@@ -53,10 +53,10 @@ const HazmatFreightShippingRequirements = () => {
         Materials Safety Administration (PHMSA), enforces these rules under Title 49 of the Code of
         Federal Regulations (49 CFR Parts 100 through 185). Every shipper who tenders hazardous
         materials to a carrier is legally responsible for correct classification, proper packaging,
-        accurate shipping papers, and selecting a qualified carrier. Getting any of these wrong does
-        not just risk fines that start at $500 per violation and can exceed $500,000 for repeated
+        accurate shipping papers, and selecting a qualified carrier. Getting any of these wrong doesn't
+        just risk fines that start at $500 per violation and can exceed $500,000 for repeated
         offenses. It puts drivers, dock workers, first responders, and the public in danger. Whether
-        you are shipping a single drum of flammable solvent or a full truckload of corrosive
+        you're shipping a single drum of flammable solvent or a full truckload of corrosive
         chemicals, understanding these requirements keeps your freight moving legally and safely.
         This guide walks through the core hazmat freight shipping requirements that every shipper
         needs to know: DOT classification, packaging and labeling, shipping documentation, carrier
@@ -82,7 +82,7 @@ const HazmatFreightShippingRequirements = () => {
         group (I, II, or III) indicates the severity of danger, with Packing Group I being the most
         hazardous. Misclassifying a product can result in rejected loads at the dock, fines from
         DOT inspectors during roadside checks, and serious liability if an incident occurs in
-        transit. If you are unsure about classification, the Safety Data Sheet (SDS) from the
+        transit. If you're unsure about classification, the Safety Data Sheet (SDS) from the
         manufacturer is the first resource to consult, followed by PHMSA's interpretation letters
         for edge cases.
       </p>
@@ -159,7 +159,7 @@ const HazmatFreightShippingRequirements = () => {
       <p>
         When selecting a hazmat carrier, shippers should verify the carrier's USDOT number,
         insurance coverage, and safety rating through the FMCSA's SAFER system. A carrier with a
-        conditional or unsatisfactory safety rating should not be hauling hazardous materials.{" "}
+        conditional or unsatisfactory safety rating shouldn't be hauling hazardous materials.{" "}
         <Link to="/services/hazmat">DeMar Transportation</Link> holds both Motor Carrier (MC)
         and Freight Broker authority (USDOT 4392091). Through our brokerage network, we connect
         shippers with pre-vetted, hazmat-qualified carriers who hold the right endorsements,
@@ -191,7 +191,7 @@ const HazmatFreightShippingRequirements = () => {
 
       <h2>Common Hazmat Commodities and Shipper Responsibilities</h2>
       <p>
-        Many shippers do not realize that products in their supply chain qualify as hazardous
+        Many shippers don't realize that products in their supply chain qualify as hazardous
         materials under DOT regulations. The list goes well beyond industrial chemicals and
         radioactive waste. Lithium batteries, found in consumer electronics, power tools, and
         electric vehicle components, fall under Class 9. Aerosol cans with flammable propellants
@@ -212,13 +212,13 @@ const HazmatFreightShippingRequirements = () => {
         <Link to="/resources/how-to-ship-hazardous-materials">
           hazmat shipping guide
         </Link>{" "}
-        to make sure your processes are current. When in doubt, consult the SDS for each product
+        to make sure your processes are current. When you're unsure, consult the SDS for each product
         and cross-reference it with the Hazardous Materials Table before booking freight.
       </p>
 
       <h2>Staying Compliant: Training, Audits, and Ongoing Obligations</h2>
       <p>
-        Hazmat compliance is not a one-time checklist. Regulations change, products change, and
+        Hazmat compliance isn't a one-time checklist. Regulations change, products change, and
         supply chains evolve. PHMSA issues final rules and updates to 49 CFR on a regular cycle,
         and shippers are expected to incorporate those changes into their operations. The biennial
         Hazardous Materials Registration, required under 49 CFR Part 107 Subpart G for shippers

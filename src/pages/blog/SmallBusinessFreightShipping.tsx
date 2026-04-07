@@ -18,8 +18,8 @@ const SmallBusinessFreightShipping = () => {
         <>
           <p className="mb-6">
             Small businesses can ship freight affordably by choosing the right service level,
-            consolidating shipments, and partnering with carriers who do not require volume
-            minimums. Whether you are shipping 500 pounds of product to a retail partner or
+            consolidating shipments, and partnering with carriers who don't require volume
+            minimums. Whether you're shipping 500 pounds of product to a retail partner or
             moving a full truckload of raw materials across the country, freight shipping
             offers a cost-effective alternative to parcel carriers once your shipments exceed
             150 pounds or occupy more than a few cubic feet.
@@ -166,8 +166,8 @@ const SmallBusinessFreightShipping = () => {
             <h2>How to Get Competitive Rates Without Volume</h2>
 
             <p className="mb-6">
-              Small businesses often assume they cannot access the same freight rates as large
-              shippers. That is not entirely true. While volume discounts exist, several
+              Small businesses often assume they can't access the same freight rates as large
+              shippers. That's not entirely true. While volume discounts exist, several
               strategies can close the gap significantly.
             </p>
 
@@ -292,7 +292,7 @@ const SmallBusinessFreightShipping = () => {
             actually deserve. There are no minimum shipment requirements. Ship once a year or
             once a day, and you get the same pricing structure, the same service level, and the
             same dedicated account support. Every small business client gets a named point of
-            contact who knows your freight, your lanes, and your schedule. You will not call a
+            contact who knows your freight, your lanes, and your schedule. You won't call a
             1-800 number and wait on hold.
           </p>
 
@@ -314,7 +314,7 @@ const SmallBusinessFreightShipping = () => {
           <h2>Getting Started: Your First Freight Shipment</h2>
 
           <p className="mb-6">
-            If you have never shipped freight before, the process is simpler than it looks.
+            If you've never shipped freight before, the process is simpler than it looks.
             Start by measuring and weighing your shipment. Get exact dimensions (length x width
             x height) and weight, including the pallet. Round up to the nearest inch and pound.
             Then determine your freight class using the{" "}
@@ -343,7 +343,7 @@ const SmallBusinessFreightShipping = () => {
           <p className="mb-6">
             That is all there is to it. The first shipment takes the most effort because
             everything is new. By your third or fourth shipment, the process becomes routine,
-            and you will wonder why you waited so long to switch from parcel shipping.
+            and you'll wonder why you waited so long to switch from parcel shipping.
           </p>
 
           <p>

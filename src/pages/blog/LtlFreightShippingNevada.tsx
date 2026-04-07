@@ -85,7 +85,7 @@ const LtlFreightShippingNevada = () => {
       <p>
         The challenge shows up in Nevada's rural interior. Towns like Elko, Ely, Winnemucca, and
         Tonopah sit far from major terminals. Carriers serving those areas often run limited delivery
-        schedules, sometimes only two or three days per week. If you are shipping to or from rural
+        schedules, sometimes only two or three days per week. If you're shipping to or from rural
         Nevada, build extra transit time into your planning and confirm delivery schedules directly
         with your carrier.
       </p>
@@ -155,7 +155,7 @@ const LtlFreightShippingNevada = () => {
         locations without a loading dock), inside delivery (for freight moved beyond the dock),
         residential delivery surcharges, and limited access delivery for construction sites, military
         bases, or rural locations. These charges add up fast and vary by carrier. If your receiving
-        location does not have a dock, factor liftgate fees into every shipment quote. Ask your
+        location doesn't have a dock, factor liftgate fees into every shipment quote. Ask your
         carrier or broker for a full accessorial schedule so there are no surprises on your invoice.
       </p>
 
@@ -194,7 +194,7 @@ const LtlFreightShippingNevada = () => {
       <h2>How to Prepare Your LTL Shipment</h2>
       <p>
         Poor freight preparation is the number one cause of LTL claims and reclassification charges.
-        Taking 15 minutes to palletize and document your shipment correctly saves days of headaches
+        Taking 15 minutes to palletize and document your shipment correctly saves you days of headaches
         on the back end.
       </p>
 
@@ -264,13 +264,13 @@ const LtlFreightShippingNevada = () => {
         The fastest way to get an accurate LTL quote is to have your shipment details ready before
         you call or submit a quote request. Gather the origin and destination zip codes, total
         shipment weight, number of pallets, freight class (or commodity description if you are
-        unsure of the class), and any accessorial services you will need like liftgate or inside
+        unsure of the class), and any accessorial services you'll need like liftgate or inside
         delivery.
       </p>
       <p>
         With those details in hand, <Link to="/quote">request a free freight quote</Link> from DeMar
-        Transportation. We break down the rate by line item so you see exactly what you are
-        paying for, with no hidden surcharges. Whether you are shipping one pallet from Reno to
+        Transportation. We break down the rate by line item so you see exactly what you're
+        paying for, with no hidden surcharges. Whether you're shipping one pallet from Reno to
         Carson City or running weekly LTL lanes between Las Vegas and the West Coast, our team builds
         pricing around your actual freight patterns, not a one-size-fits-all rate card.
       </p>

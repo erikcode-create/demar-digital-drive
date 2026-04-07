@@ -68,7 +68,7 @@ const WhiteGloveFreightHandling = () => {
         in-transit protection, careful unloading, inside delivery, and in many
         cases setup or installation at the final destination. When you ship a
         $40,000 MRI machine, a gallery-quality painting, or a pallet of
-        temperature-sensitive biologics, standard LTL or FTL service does not
+        temperature-sensitive biologics, standard LTL or FTL service doesn't
         cut it.
       </p>
       <p>
@@ -79,18 +79,18 @@ const WhiteGloveFreightHandling = () => {
         exposure.
       </p>
       <p>
-        The most common reason shippers end up paying for damage claims is not
-        carrier negligence during transit. It is inadequate loading at origin or
+        The most common reason shippers end up paying for damage claims isn't
+        carrier negligence during transit. It's inadequate loading at origin or
         rushed unloading at destination, exactly the two touchpoints that
         white-glove service controls most tightly. According to the American
         Trucking Associations, cargo damage and theft claims across the U.S.
         freight industry exceed $50 billion annually, with loading and unloading
-        errors accounting for a significant share of preventable losses.
+        errors accounting for a disproportionate share of preventable losses.
       </p>
       <p>
         If your cargo has a replacement cost above $10,000, requires
         installation, or sits outside standard NMFC freight classes because of
-        its fragility, white-glove handling is not a luxury. It is a
+        its fragility, white-glove handling isn't a luxury. It's a
         cost-effective way to manage risk. On most white-glove shipments, the
         handling surcharge runs less than 5% of the cargo's insured value, a
         fraction of what a single damage claim would cost.
@@ -111,7 +111,7 @@ const WhiteGloveFreightHandling = () => {
         destination should document loading dock dimensions, doorway clearances,
         elevator capacity and weight limits, floor type and protection
         requirements, and the exact placement location. A shipper who discovers
-        on delivery day that a 42-inch-wide piece of equipment will not fit
+        on delivery day that a 42-inch-wide piece of equipment won't fit
         through a 34-inch doorway faces a failed delivery and a redelivery fee
         that typically runs $1,500-$3,000 depending on the lane. Identifying
         those clearance issues during the survey phase is one of the highest-ROI
@@ -163,7 +163,7 @@ const WhiteGloveFreightHandling = () => {
         <Link to="/services/3pl">third-party logistics provider</Link> for a
         written service description that covers each of these steps. "White
         glove" as a marketing term means nothing without a checklist that
-        defines exactly what the crew will and will not do on delivery day.
+        defines exactly what the crew will and won't do on delivery day.
       </p>
 
       <h2>White-Glove Freight Pricing: What Drives the Cost Premium</h2>
@@ -181,7 +181,7 @@ const WhiteGloveFreightHandling = () => {
         and climate-controlled units, represents capital investment that
         carriers pass through in their rates. Air-ride suspension alone reduces
         in-transit vibration by up to 80% compared to standard leaf-spring
-        trailers, which is why it is required for precision electronics and
+        trailers, which is why it's required for precision electronics and
         calibrated medical instruments.
       </p>
       <p>
@@ -215,7 +215,6 @@ const WhiteGloveFreightHandling = () => {
 
       <h2>Industry-Specific White-Glove Freight Requirements</h2>
       <p>
-        White-glove freight handling services vary significantly by industry.
         Each vertical has its own equipment, compliance, and handling
         requirements that a carrier must understand before accepting the load.
       </p>
@@ -239,24 +238,34 @@ const WhiteGloveFreightHandling = () => {
         risks a failed delivery and a return trip that can cost $3,000-$6,000
         depending on the equipment and lane.
       </p>
+      <p>
+        There's also the regulatory side. Medical devices classified as Class II
+        or Class III under FDA rules often ship with calibration certificates
+        and chain-of-custody documentation that must travel with the unit. The
+        receiving facility's biomedical engineering team needs those documents
+        before they'll sign off on the delivery. And if the unit requires a
+        helium fill (as MRI systems do), the carrier needs to coordinate with a
+        cryogenics vendor at the destination -- another scheduling dependency
+        that standard freight carriers simply aren't equipped to manage.
+      </p>
 
       <h3>Trade Show and Exhibition Freight</h3>
       <p>
-        Trade show freight is a deadline-driven category of white-glove service
-        where late delivery does not just cost money. It costs a company its
-        presence at a show that may have cost $50,000 or more in booth space,
-        travel, and marketing materials. Show freight must arrive during a
-        specific marshaling window, often 48-72 hours before the event opens,
-        and must be delivered to the exact booth location on the show floor.
+        Miss your marshaling window at a trade show and you don't just lose
+        money -- you lose your presence at an event that may have cost $50,000+
+        in booth space, travel, and marketing materials. Show freight must
+        arrive during a specific 48-72 hour window before the event opens and
+        get delivered to the exact booth location on the show floor. There's
+        no flexibility here.
       </p>
       <p>
-        Common white-glove trade show shipments include custom display kiosks,
-        product demonstration units, and large-format signage requiring
-        assembly on-site. Trade show venues typically charge $150-$300 per hour
-        for forklift service on the show floor, so arriving with the right
-        equipment and crew size to self-unload saves the exhibitor hundreds of
-        dollars per delivery and avoids waiting in a queue of dozens of other
-        exhibitors all trying to set up at the same time.
+        Custom display kiosks, product demonstration units, and large-format
+        signage requiring on-site assembly are the typical white-glove trade
+        show loads. Trade show venues charge $150-$300 per hour for forklift
+        service on the show floor, so arriving with the right equipment and
+        crew size to self-unload saves hundreds per delivery. And it avoids the
+        queue of dozens of other exhibitors all trying to set up at the same
+        time.
       </p>
 
       <h3>High-Value Electronics and Data Center Equipment</h3>
@@ -264,7 +273,7 @@ const WhiteGloveFreightHandling = () => {
         Server racks, networking equipment, and UPS systems destined for data
         centers require white-glove handling that accounts for electrostatic
         discharge (ESD) risks, precise placement on raised flooring, and clean
-        delivery procedures that do not introduce particulates into a
+        delivery procedures that don't introduce particulates into a
         controlled environment. A single server rack can hold $200,000 or more
         in compute hardware, and ESD damage from improper handling may not
         surface for weeks after installation.
@@ -280,13 +289,10 @@ const WhiteGloveFreightHandling = () => {
 
       <h3>Pharmaceutical and Cold Chain Shipments</h3>
       <p>
-        Pharmaceuticals and biologics introduce regulatory requirements on top
-        of handling requirements. FDA-regulated temperature-sensitive products
-        must maintain documented chain of custody with temperature logs at every
-        handoff. Under 21 CFR Part 211, pharmaceutical distributors must
-        demonstrate that storage and transportation conditions do not compromise
-        product quality. That documentation is not optional for a licensed
-        pharmaceutical distributor; it is a compliance requirement.{" "}
+        Pharma adds regulatory weight on top of handling requirements. FDA-regulated
+        temperature-sensitive products need documented chain of custody with
+        temperature logs at every handoff -- that's not optional under 21 CFR
+        Part 211, it's a compliance requirement.{" "}
         <Link to="/resources/how-to-ship-refrigerated-goods">Cold chain
         shipping</Link> for these products requires carriers with FSMA and GDP
         compliance experience, not just a reefer trailer and good intentions.
@@ -296,7 +302,7 @@ const WhiteGloveFreightHandling = () => {
       <p>
         Most freight moves fine on standard dry van or flatbed service.
         Palletized goods with industrial packaging, construction materials, and
-        bulk commodities do not need white-glove handling. The question is where
+        bulk commodities don't need white-glove handling. The question is where
         your shipment sits on the fragility and value spectrum.
       </p>
       <p>
@@ -324,7 +330,7 @@ const WhiteGloveFreightHandling = () => {
 
       <h2>Packaging Requirements for White-Glove Freight</h2>
       <p>
-        White-glove handling does not eliminate the need for proper packaging.
+        White-glove handling doesn't eliminate the need for proper packaging.
         It reduces handling risk at the loading and delivery touchpoints, but
         the cargo still travels hundreds of miles on public roads. Packaging
         standards vary by cargo type, and getting them wrong is one of the
@@ -369,7 +375,7 @@ const WhiteGloveFreightHandling = () => {
       <p>
         For pharmaceutical distribution, that means continuous temperature
         monitoring with alarm notifications, trained handlers who understand
-        cold chain interruption risks, and delivery personnel who do not prop
+        cold chain interruption risks, and delivery personnel who don't prop
         open the trailer doors for 20 minutes while they sort paperwork. Every
         minute the trailer doors stay open during a summer delivery can raise
         the internal temperature by 3-5 degrees Fahrenheit, putting
@@ -392,7 +398,7 @@ const WhiteGloveFreightHandling = () => {
         procedure for what happens when the trailer temperature drifts outside
         specification, including immediate notification within 15 minutes of
         the deviation, remediation steps, and documentation for the shipper's
-        quality assurance records. If they do not have that protocol in writing,
+        quality assurance records. If they don't have that protocol in writing,
         find a different carrier.
       </p>
 
@@ -402,13 +408,13 @@ const WhiteGloveFreightHandling = () => {
         either under-specifying or over-specifying the service.
         Under-specification means the carrier arrives without the right
         equipment or crew size. Over-specification means you pay for services
-        you do not need, like debris removal for a shipment that arrives fully
+        you don't need, like debris removal for a shipment that arrives fully
         assembled in protective crating.
       </p>
       <p>
         Build a clear service spec sheet for every white-glove shipment. Include
         the item description and dimensions, the total weight and center of
-        gravity if it is machinery, the destination type (residential,
+        gravity for machinery, the destination type (residential,
         commercial, medical, data center), the required delivery appointment
         window, what the delivery crew will need to do on-site, and any
         regulatory documentation requirements. Send that spec to at least three
@@ -459,14 +465,14 @@ const WhiteGloveFreightHandling = () => {
         compared to carrier-provided declared value coverage at the same level.
       </p>
       <p>
-        Photo documentation at loading and delivery is not optional for
+        Photo documentation at loading and delivery isn't optional for
         white-glove freight. A complete set of timestamped photos showing the
         item's condition at origin, after loading, after unloading, and at
         final placement creates the evidence chain you need if a damage claim
         arises. Take photos of all six sides of the packaging, any shock or
         tilt indicators, and the serial number plate on equipment. Reputable
         white-glove carriers include this as a standard service component. If
-        your carrier does not offer it, take the photos yourself and send them
+        your carrier doesn't offer it, take the photos yourself and send them
         to the carrier before the truck leaves the dock.
       </p>
       <p>
@@ -541,7 +547,7 @@ const WhiteGloveFreightHandling = () => {
         These project freight scenarios share a common challenge: the receiving
         location is often a construction site with limited dock access,
         restricted elevator availability, and a general contractor schedule
-        that does not tolerate carrier delays. White-glove freight for project
+        that won't tolerate carrier delays. White-glove freight for project
         delivery requires carriers who communicate proactively, arrive during
         the scheduled window, and have crews that can work alongside
         construction teams without creating site liability issues.
@@ -571,7 +577,7 @@ const WhiteGloveFreightHandling = () => {
         part of our broader{" "}
         <Link to="/services/3pl">third-party logistics</Link> offering. As a
         3PL, we match each shipment to a carrier with the right equipment and
-        handling experience for that specific cargo type, whether it is medical
+        handling experience for that specific cargo type, whether that's medical
         devices, trade show displays, data center hardware, or
         temperature-sensitive pharmaceuticals.
       </p>
@@ -580,7 +586,7 @@ const WhiteGloveFreightHandling = () => {
         insurance that meets shipper requirements for high-value freight. Our
         approach to white-glove coordination starts with understanding the
         shipment requirements, identifying the right specialized carrier from
-        our network, and managing the logistics so the shipper does not have to
+        our network, and managing the logistics so the shipper doesn't have to
         vet carriers independently.
       </p>
       <p>

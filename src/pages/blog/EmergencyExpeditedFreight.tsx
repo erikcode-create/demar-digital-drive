@@ -93,7 +93,7 @@ const EmergencyExpeditedFreight = () => {
 
       <p className="mb-6">
         Hot shot trucks are smaller vehicles, typically Class 3 through Class 5 trucks pulling
-        flatbed or enclosed trailers, that handle loads under 10,000 lbs. They are faster to
+        flatbed or enclosed trailers, that handle loads under 10,000 lbs. They're faster to
         dispatch, easier to route through congested areas, and cost less than a full-size tractor
         trailer. Hot shot is ideal for partial loads, construction materials, oilfield equipment,
         and auto parts. Learn more about{" "}
@@ -204,8 +204,8 @@ const EmergencyExpeditedFreight = () => {
         out on a production line, every hour of downtime multiplies costs. Automotive plants,
         aerospace manufacturers, and electronics assemblers regularly use expedited freight to ship
         replacement parts, raw materials, and tooling. A single missing bracket can halt a
-        $200,000-per-hour assembly line. Expedited freight is not a luxury for these operations.
-        It is insurance against catastrophic downtime.
+        $200,000-per-hour assembly line. Expedited freight isn't a luxury for these operations.
+        It's insurance against catastrophic downtime.
       </p>
 
       <p className="mb-6">
@@ -229,7 +229,7 @@ const EmergencyExpeditedFreight = () => {
       <p className="mb-8">
         Automotive aftermarket and retail round out the list. Dealerships, body shops, and parts
         distributors frequently need next-day or same-day delivery of specific components because a
-        customer waiting on a warranty repair will not wait an extra week. Retailers use expedited
+        customer waiting on a warranty repair won't wait an extra week. Retailers use expedited
         shipping to restock fast-selling items, deliver promotional displays before launch dates,
         and recover from supply chain disruptions without losing sales.
       </p>
@@ -240,6 +240,7 @@ const EmergencyExpeditedFreight = () => {
         ready. The faster you can provide complete shipment details, the faster a carrier can
         dispatch.
       </p>
+
 
       <p className="mb-6">
         Before you call, gather your pickup and delivery addresses with zip codes, dock hours, and
@@ -263,7 +264,7 @@ const EmergencyExpeditedFreight = () => {
       <h2>Reducing the Need for Emergency Shipments</h2>
       <p className="mb-6">
         While emergency freight is sometimes unavoidable, smart logistics planning can
-        significantly reduce how often you need it. The goal is not to eliminate expedited
+        significantly reduce how often you need it. The goal isn't to eliminate expedited
         shipping entirely but to make it a deliberate choice rather than a last-minute scramble.
       </p>
 
@@ -303,14 +304,14 @@ const EmergencyExpeditedFreight = () => {
       </p>
 
       <p className="mb-6">
-        Based in Reno, Nevada, we pick up and deliver in all 48 contiguous states. We are
+        Based in Reno, Nevada, we pick up and deliver in all 48 contiguous states. We're
         hazmat certified, which means we can handle hazardous materials shipments that many
-        expedited carriers cannot touch. And we quote all-inclusive pricing with fuel, tolls, and
+        expedited carriers can't touch. And we quote all-inclusive pricing with fuel, tolls, and
         accessorials spelled out upfront.
       </p>
 
       <p>
-        When your freight cannot wait, neither should you. Call DeMar Transportation at{" "}
+        When your freight can't wait, neither should you. Call DeMar Transportation at{" "}
         <a href="tel:+17752304767">(775) 230-4767</a> or{" "}
         <Link to="/contact">contact us online</Link> for immediate expedited freight
         assistance.
