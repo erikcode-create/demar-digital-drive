@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Phone,
   Mail,
@@ -17,6 +18,8 @@ import {
   Shield,
   Truck,
   CheckCircle,
+  Send,
+  Loader2,
 } from "lucide-react";
 
 const departments = [
@@ -96,6 +99,10 @@ const contactFaqs = [
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [formError, setFormError] = useState("");
+
   useEffect(() => {
     document.title = "Contact DeMar Transportation | Reno, NV Freight & Logistics";
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -103,6 +110,27 @@ const Contact = () => {
       metaDescription.setAttribute('content', 'Contact DeMar Transportation for freight quotes and logistics. Call (775) 230-4767, email info@DeMarTransportation.com, or visit our Reno, NV office.');
     }
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus("sending");
+    setFormError("");
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-form", {
+        body: formData,
+      });
+
+      if (error) throw error;
+      if (data?.error) throw new Error(data.error);
+
+      setFormStatus("sent");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (err: unknown) {
+      setFormStatus("error");
+      setFormError(err instanceof Error ? err.message : "Something went wrong. Please try again or call us directly.");
+    }
+  };
 
   return (
     <div className="min-h-screen">
@@ -236,8 +264,136 @@ const Contact = () => {
             </div>
           </section>
 
-          {/* Why Choose DeMar - Trust Signals */}
+          {/* Contact Form */}
           <section className="py-20 bg-[hsl(var(--surface))]">
+            <div className="container mx-auto px-4">
+              <div className="max-w-2xl mx-auto">
+                <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] text-center mb-4">
+                  Send a Message
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight text-center mb-4">
+                  Contact Us
+                </h2>
+                <p className="text-base text-[hsl(var(--muted-foreground))] text-center mb-12 max-w-lg mx-auto leading-relaxed">
+                  Have a question about our freight services? Send us a message and we'll get back to you within 1 business day.
+                </p>
+
+                {formStatus === "sent" ? (
+                  <div className="p-8 rounded-xl bg-white shadow-[var(--shadow-card)] text-center">
+                    <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold text-[hsl(var(--primary))] mb-2">Message Sent</h3>
+                    <p className="text-sm text-[hsl(var(--muted-foreground))] mb-4">
+                      We've received your message and sent a confirmation to your email. Our team will respond within 1 business day.
+                    </p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setFormStatus("idle")}
+                      className="border-[hsl(var(--primary))] text-[hsl(var(--primary))]"
+                    >
+                      Send Another Message
+                    </Button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="p-8 rounded-xl bg-white shadow-[var(--shadow-card)] space-y-5">
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="contact-name" className="block text-sm font-medium text-[hsl(var(--primary))] mb-1.5">
+                          Name <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          id="contact-name"
+                          type="text"
+                          required
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          className="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm text-[hsl(var(--primary))] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))]/50 focus:border-[hsl(var(--accent))]"
+                          placeholder="Your name"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="contact-email" className="block text-sm font-medium text-[hsl(var(--primary))] mb-1.5">
+                          Email <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          id="contact-email"
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          className="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm text-[hsl(var(--primary))] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))]/50 focus:border-[hsl(var(--accent))]"
+                          placeholder="you@company.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="contact-phone" className="block text-sm font-medium text-[hsl(var(--primary))] mb-1.5">
+                        Phone <span className="text-gray-400 font-normal">(optional)</span>
+                      </label>
+                      <input
+                        id="contact-phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm text-[hsl(var(--primary))] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))]/50 focus:border-[hsl(var(--accent))]"
+                        placeholder="(555) 555-5555"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="contact-message" className="block text-sm font-medium text-[hsl(var(--primary))] mb-1.5">
+                        Message <span className="text-red-500">*</span>
+                      </label>
+                      <textarea
+                        id="contact-message"
+                        required
+                        rows={5}
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm text-[hsl(var(--primary))] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))]/50 focus:border-[hsl(var(--accent))] resize-vertical"
+                        placeholder="Tell us about your freight needs, questions, or how we can help..."
+                      />
+                    </div>
+
+                    {formStatus === "error" && (
+                      <div className="p-3 rounded-lg bg-red-50 text-sm text-red-700">
+                        {formError || "Something went wrong. Please try again or call us at (775) 230-4767."}
+                      </div>
+                    )}
+
+                    <Button
+                      type="submit"
+                      disabled={formStatus === "sending"}
+                      className="w-full bg-[hsl(var(--accent))] text-[hsl(var(--primary))] hover:bg-[hsl(var(--accent))]/90 font-semibold"
+                    >
+                      {formStatus === "sending" ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="mr-2 h-4 w-4" />
+                          Send Message
+                        </>
+                      )}
+                    </Button>
+
+                    <p className="text-xs text-center text-[hsl(var(--muted-foreground))]">
+                      Or email us directly at{" "}
+                      <a href="mailto:info@DeMarTransportation.com" className="text-[hsl(var(--accent))] hover:underline">
+                        info@DeMarTransportation.com
+                      </a>
+                    </p>
+                  </form>
+                )}
+              </div>
+            </div>
+          </section>
+
+          {/* Why Choose DeMar - Trust Signals */}
+          <section className="py-20 bg-[hsl(var(--surface-low))]">
             <div className="container mx-auto px-4">
               <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] text-center mb-4">
                 Why Choose Us
