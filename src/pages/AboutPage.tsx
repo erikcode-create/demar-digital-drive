@@ -15,6 +15,7 @@ import {
   Award,
   Globe,
   ArrowRight,
+  FileCheck,
 } from "lucide-react";
 
 const values = [
@@ -59,17 +60,17 @@ const differentiators = [
   {
     icon: Award,
     title: "DOT Compliant",
-    desc: "Full compliance with all Department of Transportation regulations, inspections, and safety requirements.",
+    desc: "Full compliance with all Department of Transportation regulations, inspections, and safety requirements. USDOT 4392091.",
   },
 ];
 
 const fleet = [
-  { name: "Dry Vans", desc: "Standard enclosed trailers for palletized freight, boxed goods, and general merchandise." },
-  { name: "Reefers", desc: "Temperature-controlled refrigerated trailers for perishable goods and pharmaceuticals." },
-  { name: "Flatbeds", desc: "Open-deck trailers for construction materials, machinery, steel, and oversized loads." },
-  { name: "Box Trucks", desc: "Medium-duty trucks for local and regional deliveries and smaller shipments." },
-  { name: "Sprinter Vans", desc: "Expedited delivery vehicles for time-critical, smaller shipments." },
-  { name: "Hazmat Equipment", desc: "Specially equipped vehicles with hazmat-endorsed drivers for regulated materials." },
+  { name: "Dry Vans", desc: "Standard enclosed trailers for palletized freight, boxed goods, and general merchandise.", link: "/services/dry-van" },
+  { name: "Reefers", desc: "Temperature-controlled refrigerated trailers for perishable goods and pharmaceuticals.", link: "/services/reefer" },
+  { name: "Flatbeds", desc: "Open-deck trailers for construction materials, machinery, steel, and oversized loads.", link: "/services/flatbed" },
+  { name: "Box Trucks", desc: "Medium-duty trucks for local and regional deliveries and smaller shipments.", link: "/services/box-truck" },
+  { name: "Sprinter Vans", desc: "Expedited delivery vehicles for time-critical, smaller shipments.", link: "/services/sprinter-van" },
+  { name: "Hazmat Equipment", desc: "Specially equipped vehicles with hazmat-endorsed drivers for regulated materials.", link: "/services/hazmat" },
 ];
 
 const safetyItems = [
@@ -83,14 +84,92 @@ const safetyItems = [
   "Accident prevention and defensive driving programs",
 ];
 
+const services = [
+  { name: "Dry Van Shipping", link: "/services/dry-van" },
+  { name: "Reefer / Refrigerated Freight", link: "/services/reefer" },
+  { name: "Flatbed Shipping", link: "/services/flatbed" },
+  { name: "Box Truck Delivery", link: "/services/box-truck" },
+  { name: "Sprinter Van / Expedited", link: "/services/sprinter-van" },
+  { name: "Hazmat Freight", link: "/services/hazmat" },
+  { name: "Full Truckload (FTL)", link: "/services/ftl" },
+  { name: "Less Than Truckload (LTL)", link: "/services/ltl" },
+  { name: "3PL / Third-Party Logistics", link: "/services/3pl" },
+  { name: "Warehousing", link: "/services/warehousing" },
+];
+
 const AboutPage = () => {
   useEffect(() => {
-    document.title = "About DeMar Transportation | US Freight Carrier Based in Reno, NV";
+    document.title = "About DeMar Transportation | Freight Carrier in Reno, NV | USDOT 4392091";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Learn about DeMar Transportation, a US-based freight carrier headquartered in Reno, NV. MC & broker authority, own fleet, 24/7 dispatch, and nationwide coverage.');
+      metaDescription.setAttribute('content', 'About DeMar Transportation, a freight carrier headquartered in Reno, NV. USDOT 4392091. Motor Carrier and Freight Broker authority, own fleet, 10 service types, 24/7 dispatch, and nationwide US coverage.');
     }
   }, []);
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DeMar Transportation",
+    "url": "https://demartransportation.com",
+    "logo": "https://demartransportation.com/logo.png",
+    "description": "US-based freight carrier and broker headquartered in Reno, Nevada. USDOT 4392091. Motor Carrier and Freight Broker authority with nationwide coverage across all 48 contiguous states.",
+    "telephone": "+1-775-230-4767",
+    "email": "info@DeMarTransportation.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10471 Double R Blvd",
+      "addressLocality": "Reno",
+      "addressRegion": "NV",
+      "postalCode": "89521",
+      "addressCountry": "US",
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States",
+    },
+    "sameAs": [],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+1-775-230-4767",
+        "contactType": "sales",
+        "availableLanguage": "English",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "18:00",
+        },
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+1-775-230-4767",
+        "contactType": "customer service",
+        "availableLanguage": "English",
+        "description": "24/7 Dispatch",
+      },
+    ],
+    "hasCredential": [
+      {
+        "@type": "DefinedTerm",
+        "name": "USDOT Number",
+        "termCode": "4392091",
+      },
+    ],
+    "knowsAbout": [
+      "Freight Shipping",
+      "Trucking",
+      "Logistics",
+      "Dry Van Shipping",
+      "Refrigerated Freight",
+      "Flatbed Shipping",
+      "Hazmat Freight",
+      "LTL Shipping",
+      "FTL Shipping",
+      "3PL Services",
+      "Warehousing",
+    ],
+  };
 
   return (
     <div className="min-h-screen">
@@ -100,6 +179,10 @@ const AboutPage = () => {
       >
         Skip to main content
       </a>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <div>
         <Header />
         <main id="main-content">
@@ -113,17 +196,31 @@ const AboutPage = () => {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 backdrop-blur-sm">
                 <Truck className="h-4 w-4 text-[hsl(var(--accent))]" />
                 <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/60">
-                  US-Based Freight Carrier
+                  USDOT 4392091 | Reno, NV
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
-                DeMar
+                About DeMar
                 <br />
                 <span className="text-white/40">Transportation</span>
               </h1>
-              <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
-                Your freight partner for reliable, safe, and competitively priced shipping across the United States.
+              <p className="text-lg text-white/60 max-w-2xl leading-relaxed mb-4">
+                A federally authorized Motor Carrier and Freight Broker headquartered in Reno, Nevada. We operate our own fleet, manage 10 distinct service types, and dispatch 24/7 to move freight across all 48 contiguous states.
               </p>
+              <div className="flex flex-wrap gap-4 mt-6">
+                <div className="flex items-center gap-2 text-sm text-white/50">
+                  <FileCheck className="h-4 w-4 text-[hsl(var(--accent))]" />
+                  <span>USDOT 4392091</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-white/50">
+                  <Shield className="h-4 w-4 text-[hsl(var(--accent))]" />
+                  <span>MC and Broker Authority</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-white/50">
+                  <Clock className="h-4 w-4 text-[hsl(var(--accent))]" />
+                  <span>24/7 Dispatch</span>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -138,20 +235,67 @@ const AboutPage = () => {
               </h2>
               <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
                 <p>
-                  DeMar Transportation is a United States-based freight carrier headquartered in Reno, Nevada. We provide comprehensive trucking and logistics services to shippers, manufacturers, distributors, and businesses of all sizes nationwide.
+                  DeMar Transportation is a United States-based freight carrier headquartered in Reno, Nevada. We hold both Motor Carrier (MC) and Freight Broker authority under USDOT number 4392091, which means we are federally authorized to both haul freight on our own trucks and arrange shipments through our vetted carrier network.
                 </p>
                 <p>
-                  As an asset-based carrier with full-service logistics capabilities, DeMar Transportation handles your freight with a single point of contact from pickup to delivery. Whether we move your load on our own equipment or through our vetted carrier network, you get the same level of accountability, transparent pricing, and clear communication.
+                  We provide 10 distinct freight services: dry van, refrigerated (reefer), flatbed, box truck, sprinter van/expedited, hazmat, full truckload (FTL), less than truckload (LTL), third-party logistics (3PL), and warehousing. This range of services allows us to handle nearly any shipping requirement a business encounters, from a single pallet to a full 53-foot trailer.
                 </p>
                 <p>
-                  Our team understands that freight is the backbone of American commerce. Whether you need a single shipment moved across town or recurring lanes serviced coast to coast, DeMar Transportation delivers the capacity, reliability, and professionalism your supply chain demands.
+                  Our office at 10471 Double R Blvd in Reno is open Monday through Friday, 7:00 AM to 6:00 PM PST, with dispatch available 24 hours a day, 7 days a week. Freight moves on its own schedule, and our dispatch team matches that pace.
+                </p>
+                <p>
+                  As an asset-based carrier with full-service logistics capabilities, DeMar Transportation handles your freight with a single point of contact from pickup to delivery. Whether we move your load on our own equipment or through our carrier network, you get the same level of accountability, transparent pricing, and clear communication.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Mission and Values */}
+          {/* Authority and Credentials */}
           <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
+            <div className="container mx-auto max-w-5xl">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                Credentials
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-4">
+                Federal Authority and Compliance
+              </h2>
+              <p className="text-base text-[hsl(var(--muted-foreground))] mb-10 max-w-2xl leading-relaxed">
+                DeMar Transportation operates under federal authority issued by the FMCSA. Our credentials are publicly verifiable through the FMCSA SAFER system.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="p-6 rounded-xl bg-white shadow-[var(--shadow-card)]">
+                  <div className="p-2.5 rounded-lg bg-[hsl(var(--surface-low))] inline-block mb-3">
+                    <FileCheck className="h-5 w-5 text-[hsl(var(--accent))]" />
+                  </div>
+                  <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-2">USDOT 4392091</h3>
+                  <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
+                    Registered with the Federal Motor Carrier Safety Administration. Our USDOT number is publicly searchable and verifiable.
+                  </p>
+                </div>
+                <div className="p-6 rounded-xl bg-white shadow-[var(--shadow-card)]">
+                  <div className="p-2.5 rounded-lg bg-[hsl(var(--surface-low))] inline-block mb-3">
+                    <Truck className="h-5 w-5 text-[hsl(var(--accent))]" />
+                  </div>
+                  <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-2">Motor Carrier Authority</h3>
+                  <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
+                    Authorized to transport freight using our own fleet of trucks across all 48 contiguous states.
+                  </p>
+                </div>
+                <div className="p-6 rounded-xl bg-white shadow-[var(--shadow-card)]">
+                  <div className="p-2.5 rounded-lg bg-[hsl(var(--surface-low))] inline-block mb-3">
+                    <Globe className="h-5 w-5 text-[hsl(var(--accent))]" />
+                  </div>
+                  <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-2">Freight Broker Authority</h3>
+                  <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
+                    Licensed to arrange freight shipments through our vetted network of partner carriers nationwide.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Mission and Values */}
+          <section className="py-20 px-4 bg-[hsl(var(--surface))]">
             <div className="container mx-auto max-w-5xl">
               <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
                 Our Foundation
@@ -180,7 +324,7 @@ const AboutPage = () => {
             </div>
           </section>
 
-          {/* What Makes DeMar Different — dark section */}
+          {/* What Makes DeMar Different */}
           <section className="py-20 px-4 bg-[hsl(225_97%_4%)] relative overflow-hidden">
             <div className="absolute inset-0 opacity-[0.02]" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
@@ -205,6 +349,30 @@ const AboutPage = () => {
             </div>
           </section>
 
+          {/* Services Overview */}
+          <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
+            <div className="container mx-auto max-w-5xl">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                What We Haul
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-4">
+                10 Freight Services Under One Roof
+              </h2>
+              <p className="text-base text-[hsl(var(--muted-foreground))] mb-10 max-w-2xl leading-relaxed">
+                Rather than specializing in a single mode, DeMar Transportation covers the full spectrum of freight shipping. One carrier, one point of contact, every service type your supply chain requires.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {services.map((s) => (
+                  <Link key={s.name} to={s.link} className="p-4 rounded-xl bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-float)] transition-all duration-300 flex items-center gap-3 group">
+                    <CheckCircle className="h-4 w-4 text-[hsl(var(--accent))] flex-shrink-0" />
+                    <span className="text-sm font-medium text-[hsl(var(--primary))] group-hover:text-[hsl(var(--accent))] transition-colors">{s.name}</span>
+                    <ArrowRight className="h-3 w-3 text-[hsl(var(--muted-foreground))] ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Nationwide Coverage */}
           <section className="py-20 px-4 bg-[hsl(var(--surface))]">
             <div className="container mx-auto max-w-5xl">
@@ -217,14 +385,14 @@ const AboutPage = () => {
                     </p>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-6">
-                    Nationwide Coverage
+                    Nationwide Coverage from Reno, Nevada
                   </h2>
                   <div className="space-y-4 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-xl">
                     <p>
                       DeMar Transportation serves all 48 contiguous states with reliable freight shipping services. Whether your shipment originates on the West Coast, moves through the Midwest, or delivers to the Eastern Seaboard, our network ensures coverage wherever your freight needs to go.
                     </p>
                     <p>
-                      From our Reno, Nevada headquarters, we coordinate pickups and deliveries across major freight corridors, metropolitan distribution hubs, and rural delivery points.
+                      Our Reno, Nevada headquarters sits at the intersection of I-80 and US-395, providing direct access to California markets, Pacific Northwest corridors, and eastbound routes through the Mountain West. This location puts us within a single-day drive of major distribution hubs in Sacramento, the San Francisco Bay Area, Salt Lake City, and Portland.
                     </p>
                   </div>
                   <div className="mt-6">
@@ -250,19 +418,19 @@ const AboutPage = () => {
                 Our Fleet
               </h2>
               <p className="text-base text-[hsl(var(--muted-foreground))] mb-10 max-w-2xl leading-relaxed">
-                A diverse, well-equipped fleet to handle any freight requirement.
+                6 equipment types to match the specific requirements of your freight. Each vehicle class is maintained to DOT standards and operated by trained, qualified drivers.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {fleet.map((v) => (
-                  <div key={v.name} className="p-5 rounded-xl bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-float)] transition-all duration-300">
+                  <Link key={v.name} to={v.link} className="p-5 rounded-xl bg-white shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-float)] transition-all duration-300 group">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-4 w-4 text-[hsl(var(--accent))] mt-0.5 flex-shrink-0" />
                       <div>
-                        <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-1">{v.name}</h3>
+                        <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-1 group-hover:text-[hsl(var(--accent))] transition-colors">{v.name}</h3>
                         <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed">{v.desc}</p>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -279,7 +447,7 @@ const AboutPage = () => {
               </h2>
               <div className="max-w-3xl">
                 <p className="text-base text-[hsl(var(--muted-foreground))] mb-8 leading-relaxed">
-                  Safety is embedded in every aspect of our operations. Your freight represents your livelihood, and our drivers share the road with families every day. That dual responsibility drives our commitment.
+                  Safety is embedded in every aspect of our operations. Your freight represents your livelihood, and our drivers share the road with families every day. That dual responsibility drives our commitment. As a USDOT-registered carrier (4392091), our safety record and compliance status are publicly accessible through the FMCSA SAFER system.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
                   {safetyItems.map((item) => (
@@ -311,9 +479,23 @@ const AboutPage = () => {
                     <p className="text-base text-[hsl(var(--muted-foreground))] mb-4 leading-relaxed max-w-xl">
                       Strategically located at the crossroads of major West Coast freight corridors. Reno provides efficient access to California, the Pacific Northwest, the Mountain West, and all points east.
                     </p>
-                    <p className="text-sm font-medium text-[hsl(var(--primary))]">
-                      10471 Double R Blvd, Reno, NV 89521
-                    </p>
+                    <div className="space-y-2">
+                      <p className="text-sm font-medium text-[hsl(var(--primary))]">
+                        10471 Double R Blvd, Reno, NV 89521
+                      </p>
+                      <p className="text-sm text-[hsl(var(--muted-foreground))]">
+                        Office: Mon-Fri, 7:00 AM - 6:00 PM PST
+                      </p>
+                      <p className="text-sm text-[hsl(var(--muted-foreground))]">
+                        Dispatch: Available 24/7
+                      </p>
+                      <p className="text-sm text-[hsl(var(--muted-foreground))]">
+                        Phone: <a href="tel:+17752304767" className="text-[hsl(var(--accent))] hover:underline">(775) 230-4767</a>
+                      </p>
+                      <p className="text-sm text-[hsl(var(--muted-foreground))]">
+                        Email: <a href="mailto:info@DeMarTransportation.com" className="text-[hsl(var(--accent))] hover:underline">info@DeMarTransportation.com</a>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
