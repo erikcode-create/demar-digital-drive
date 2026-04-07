@@ -7,17 +7,17 @@ import { Truck, Phone, Package, ArrowRight, CheckCircle, AlertTriangle } from "l
 
 const DryVan = () => {
   useEffect(() => {
-    document.title = "Dry Van Shipping Services | Full Truckload FTL & LTL | DeMar Transportation";
+    document.title = "Dry Van Freight Shipping Services | FTL & LTL | DeMar Transportation";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "DeMar Transportation offers reliable dry van shipping across the US. 53-foot trailers, 45,000 lb capacity, full truckload and LTL services from Reno, NV. Get a free quote today.");
+      meta.setAttribute("content", "Dry van freight shipping across all 48 contiguous states. 53-foot trailers, 45,000 lb capacity, FTL and LTL service. USDOT 4392091. Based in Reno, NV with 24/7 dispatch. Get a free quote.");
     }
   }, []);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Dry Van Shipping",
+    "name": "Dry Van Freight Shipping",
     "provider": {
       "@type": "LocalBusiness",
       "name": "DeMar Transportation",
@@ -30,14 +30,39 @@ const DryVan = () => {
         "addressCountry": "US"
       },
       "telephone": "(775) 230-4767",
-      "email": "info@DeMarTransportation.com"
+      "email": "info@DeMarTransportation.com",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "USDOT",
+        "value": "4392091"
+      }
     },
     "serviceType": "Dry Van Freight Shipping",
     "areaServed": {
       "@type": "Country",
       "name": "United States"
     },
-    "description": "Professional dry van shipping services for full truckload and LTL freight. 53-foot enclosed trailers with 45,000 lb capacity.",
+    "description": "Professional dry van freight shipping services for full truckload and LTL freight. 53-foot enclosed trailers with 45,000 lb capacity. USDOT 4392091.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Dry Van Shipping Options",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Full Truckload (FTL) Dry Van Shipping"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Less-Than-Truckload (LTL) Dry Van Shipping"
+          }
+        }
+      ]
+    },
     "dateModified": "2026-04-06"
   };
 
@@ -84,6 +109,14 @@ const DryVan = () => {
           "@type": "Answer",
           "text": "Dry vans are not temperature-controlled, so they are not suitable for perishable goods, frozen products, or freight that requires climate regulation. Extreme heat or cold during transit can affect temperature-sensitive cargo. Dry vans also have fixed interior dimensions, so oversized or irregularly shaped freight that exceeds 53 feet in length, 98.5 inches in width, or 108 inches in height requires a flatbed or specialized trailer. If your freight needs refrigeration, DeMar Transportation offers reefer trailer services as an alternative."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Does DeMar Transportation have operating authority for dry van freight?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. DeMar Transportation holds both Motor Carrier (MC) and Freight Broker authority under USDOT number 4392091. This dual authority means we can dispatch freight through our own carrier network and broker loads to vetted partner carriers, giving shippers access to more capacity and faster booking."
+        }
       }
     ]
   };
@@ -125,7 +158,7 @@ const DryVan = () => {
                   {
                     "@type": "ListItem",
                     "position": 3,
-                    "name": "Dry Van Shipping",
+                    "name": "Dry Van Freight Shipping",
                     "item": "https://demartransportation.com/services/dry-van"
                   }
                 ]
@@ -147,19 +180,19 @@ const DryVan = () => {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 backdrop-blur-sm">
                 <Truck className="h-4 w-4 text-[hsl(var(--accent))]" />
                 <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/60">
-                  Most Popular Service
+                  Most Common Freight Service
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
-                Dry Van
+                Dry Van Freight
                 <br />
                 <span className="text-white/40">Shipping Services</span>
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
-                Reliable, enclosed freight transportation for general commodities across the continental United States. Safe, on time, and at competitive rates.
+                Enclosed freight transportation for general commodities across all 48 contiguous states. 53-foot trailers, 45,000 lb capacity, and 24/7 dispatch from Reno, NV.
               </p>
               <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
-                DeMar Transportation provides dry van shipping services for enclosed freight across the continental United States. Our 53-foot dry van trailers handle general merchandise, consumer goods, and non-perishable freight with a maximum payload of 45,000 pounds, competitive per-mile rates, and 24/7 dispatch availability.
+                DeMar Transportation provides dry van freight shipping with both Motor Carrier and Freight Broker authority (USDOT 4392091). We coordinate <Link to="/services/ftl" className="text-[hsl(var(--accent))] hover:underline">full truckload</Link> and <Link to="/services/ltl" className="text-[hsl(var(--accent))] hover:underline">LTL shipments</Link> through a vetted carrier network, with dispatch available 24 hours a day, 7 days a week.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>
@@ -193,10 +226,10 @@ const DryVan = () => {
               </h2>
               <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
                 <p>
-                  Dry van shipping is the most widely used method of over-the-road freight transportation in the United States. A dry van is a fully enclosed, non-temperature-controlled trailer designed to protect cargo from weather, road debris, and theft during transit. Standard dry van trailers come in 28-foot, 48-foot, and 53-foot lengths, with the 53-foot variant being the most common for long-haul freight.
+                  Dry van shipping is the most widely used method of over-the-road freight transportation in the United States. Dry vans are the most common trailer type in over-the-road freight, making them the backbone of domestic supply chains. A dry van is a fully enclosed, non-temperature-controlled trailer designed to protect cargo from weather, road debris, and theft during transit. Standard dry van trailers come in 28-foot, 48-foot, and 53-foot lengths, with the 53-foot variant being the most common for long-haul freight.
                 </p>
                 <p>
-                  At DeMar Transportation, dry van freight is the backbone of our operations. Whether you need a full truckload (FTL) moved coast to coast or a less-than-truckload (LTL) shipment consolidated with other freight, our dry van fleet is equipped to handle it.
+                  At DeMar Transportation, dry van freight shipping is the backbone of our operations. Whether you need a <Link to="/services/ftl" className="text-[hsl(var(--accent))] hover:underline">full truckload (FTL)</Link> moved coast to coast or an <Link to="/services/ltl" className="text-[hsl(var(--accent))] hover:underline">LTL shipment</Link> consolidated with other freight, our network is equipped to handle it.
                 </p>
                 <p>
                   Dry van trailers are ideal for non-perishable goods that do not require temperature regulation, specialized loading equipment, or oversized handling. From palletized consumer products to boxed electronics, the dry van's versatility makes it the default choice for the majority of commercial shippers.
@@ -216,13 +249,16 @@ const DryVan = () => {
               </h2>
               <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
                 <p>
-                  Operating out of Reno, Nevada, we coordinate dry van shipments daily across I-80, US-395, and the Western US freight corridors. Our dispatch team has developed lane-specific knowledge that directly impacts service quality: which carriers consistently deliver on time to specific distribution centers, where seasonal weather delays are most likely, and how to route around congestion on high-traffic corridors.
+                  Operating out of Reno, Nevada under USDOT 4392091, we coordinate dry van shipments daily across I-80, US-395, and the Western US freight corridors. DeMar Transportation holds both Motor Carrier (MC) and Freight Broker authority, which means we can move freight through our own carrier network and broker loads to vetted partners when capacity is tight.
                 </p>
                 <p>
                   We have found that the biggest factor in dry van shipping reliability is carrier vetting. Every carrier in our network passes DOT compliance screening before their first load. We track on-time delivery performance and cargo claim history on an ongoing basis, and carriers that fall below our standards are removed from active dispatch.
                 </p>
                 <p>
-                  Our location at the intersection of I-80 and US-395 gives us a strategic advantage for freight moving between California, the Pacific Northwest, and the Intermountain West. Key routes we run regularly include Reno to Los Angeles (approximately 450 miles, 1-day transit), Reno to Seattle (roughly 700 miles, 1 to 2-day transit), and Reno to Dallas (about 1,700 miles, 3 to 4-day transit).
+                  Our location at the intersection of I-80 and US-395 gives us a strategic advantage for freight moving between California, the Pacific Northwest, and the Intermountain West. Key routes we run regularly include Reno to Los Angeles (approximately 450 miles, 1-day transit), Reno to Seattle (roughly 700 miles, 1 to 2-day transit), and Reno to Dallas (about 1,700 miles, 3 to 4-day transit). Our dispatch team has developed lane-specific knowledge on these corridors: which carriers consistently deliver on time to specific distribution centers, where seasonal weather delays are most likely, and how to route around congestion.
+                </p>
+                <p>
+                  One pattern we see regularly: shippers underestimate the impact of seasonal demand on dry van rates. Produce season (May through August), back-to-school (July through September), and the holiday peak (October through December) all tighten capacity and push rates higher. Planning shipments ahead of these cycles helps secure better rates and equipment availability.
                 </p>
               </div>
             </div>
@@ -235,7 +271,7 @@ const DryVan = () => {
                 Our Capabilities
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-8">
-                DeMar's Dry Van Shipping Services
+                Dry Van Freight Shipping Services
               </h2>
               <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl mb-10">
                 <p>
@@ -243,6 +279,9 @@ const DryVan = () => {
                 </p>
                 <p>
                   We handle shipments ranging from single-pallet LTL loads under 5,000 pounds to full truckload moves up to 45,000 pounds. Our dispatch team books dry van loads daily, with consistent lane coverage on high-demand routes throughout the Western US and beyond. All carriers in our network pass DOT compliance screening before their first load.
+                </p>
+                <p>
+                  Beyond dry van, DeMar Transportation offers a full range of freight services including <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">refrigerated shipping</Link>, <Link to="/services/flatbed" className="text-[hsl(var(--accent))] hover:underline">flatbed transportation</Link>, <Link to="/services/box-truck" className="text-[hsl(var(--accent))] hover:underline">box truck delivery</Link>, <Link to="/services/sprinter-van" className="text-[hsl(var(--accent))] hover:underline">sprinter van expedited service</Link>, <Link to="/services/hazmat" className="text-[hsl(var(--accent))] hover:underline">hazmat freight</Link>, and <Link to="/services/3pl" className="text-[hsl(var(--accent))] hover:underline">third-party logistics</Link>.
                 </p>
               </div>
 
@@ -268,7 +307,7 @@ const DryVan = () => {
           <section className="py-20 px-4 bg-[hsl(var(--surface-low))]">
             <div className="max-w-5xl mx-auto">
               <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
-                Specifications
+                Equipment Specifications
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-10">
                 Standard Dry Van Trailer Specs
@@ -292,9 +331,14 @@ const DryVan = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
-                Standard dry van trailers feature rear swing doors or roll-up doors. Most accommodate 22 to 26 standard pallets (48" x 40") loaded single-stacked. Double-stacking lighter freight can bring total capacity up to 52 pallets per trailer.
-              </p>
+              <div className="space-y-3">
+                <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
+                  Standard dry van trailers feature rear swing doors or roll-up doors. Most accommodate 22 to 26 standard pallets (48" x 40") loaded single-stacked. Double-stacking lighter freight can bring total capacity up to 52 pallets per trailer.
+                </p>
+                <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
+                  For a comparison of dry van dimensions against other equipment types, see our <Link to="/resources/types-of-freight-trailers" className="text-[hsl(var(--accent))] hover:underline">freight trailer types guide</Link>. If you are unsure whether your cargo fits a dry van or needs a reefer, our <Link to="/resources/dry-van-vs-reefer" className="text-[hsl(var(--accent))] hover:underline">dry van vs reefer comparison</Link> breaks down the differences.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -316,7 +360,8 @@ const DryVan = () => {
                 {[
                   { title: "Temperature-Sensitive Freight", desc: "Dry vans have no climate control. Perishable foods, pharmaceuticals, chemicals, and any cargo that requires heating or cooling during transit should ship in a reefer (refrigerated) trailer instead.", link: "/services/reefer", linkText: "Learn about reefer shipping" },
                   { title: "Oversized or Irregularly Shaped Cargo", desc: "Freight that exceeds 53 feet in length, 98.5 inches in width, or 108 inches in height will not fit inside a dry van. Heavy machinery, construction equipment, and oversized loads require a flatbed trailer.", link: "/services/flatbed", linkText: "Learn about flatbed shipping" },
-                  { title: "High-Value Cargo Requiring Extra Security", desc: "While dry vans offer basic theft deterrence through enclosed walls and locking doors, extremely high-value loads may benefit from additional security measures such as sealed trailers with GPS tracking and team drivers for non-stop transit.", link: "", linkText: "" },
+                  { title: "High-Value Cargo Requiring Extra Security", desc: "While dry vans offer basic theft deterrence through enclosed walls and locking doors, extremely high-value loads may benefit from additional security measures such as sealed trailers with GPS tracking and team drivers for non-stop transit to minimize time in transit.", link: "", linkText: "" },
+                  { title: "Hazardous Materials", desc: "While dry vans can carry certain hazmat classes with proper placarding and certified drivers, many hazardous materials require specialized equipment and handling. DeMar Transportation offers dedicated hazmat freight services with compliant carriers.", link: "/services/hazmat", linkText: "Learn about hazmat shipping" },
                   { title: "Cargo Sensitive to Heat Buildup", desc: "During summer months, interior temperatures in a dry van can climb significantly above ambient temperature. Items like candles, adhesives, chocolate, and certain plastics may warp or melt. Consider a reefer set to a moderate temperature for protection.", link: "", linkText: "" },
                 ].map((item) => (
                   <div key={item.title} className="flex items-start gap-4">
@@ -379,7 +424,7 @@ const DryVan = () => {
                 Advantages
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-10">
-                Benefits of Dry Van Shipping
+                Benefits of Dry Van Freight Shipping
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {[
@@ -409,14 +454,15 @@ const DryVan = () => {
                 Industries
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-10">
-                Industries We Serve
+                Industries We Serve with Dry Van Freight
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
                   { name: "Retail & Distribution", detail: "We move freight for national retailers, regional distributors, and third-party logistics providers. Our carriers understand appointment scheduling, lumper requirements, and retailer compliance programs." },
                   { name: "Manufacturing", detail: "Raw materials inbound and finished products outbound. We coordinate just-in-time deliveries where schedule reliability directly impacts production line uptime." },
-                  { name: "Food & Beverage", detail: "Non-perishable food products, beverages, and packaged goods require clean, dry trailers. Our carriers maintain washout records and comply with food-grade transportation standards." },
+                  { name: "Food & Beverage", detail: "Non-perishable food products, beverages, and packaged goods require clean, dry trailers. Our carriers maintain washout records and comply with food-grade transportation standards. For temperature-sensitive food freight, see our refrigerated shipping services." },
                   { name: "E-Commerce & Fulfillment", detail: "High-frequency shipments to fulfillment centers and last-mile hubs. We support the fast-paced replenishment cycles that e-commerce operations demand." },
+                  { name: "Construction & Building", detail: "Building materials, fixtures, and supplies that need weather protection during transit. We coordinate multi-stop deliveries to job sites and distribution yards across the Western US." },
                 ].map((industry) => (
                   <div key={industry.name} className="p-6 rounded-xl bg-[hsl(var(--surface))] hover:bg-white hover:shadow-[var(--shadow-card)] transition-all duration-300">
                     <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-2">{industry.name}</h3>
@@ -434,17 +480,17 @@ const DryVan = () => {
                 Why DeMar
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-8">
-                Why Choose DeMar Transportation
+                Why Choose DeMar Transportation for Dry Van Freight
               </h2>
               <div className="space-y-5 text-base text-white/60 leading-relaxed max-w-3xl">
                 <p>
                   Based in Reno, Nevada, DeMar Transportation combines personalized service with the capacity of an extensive carrier network spanning North America. Our vetted owner-operators have a personal stake in delivering your freight safely and on schedule.
                 </p>
                 <p>
-                  Every shipment gets a single point of contact from booking through delivery. Our dispatch team provides real-time tracking updates, proactive communication on potential delays, and immediate escalation when issues arise. We do not hand you off to a call center.
+                  Every shipment gets a single point of contact from booking through delivery. Our dispatch team is available 24/7 and provides real-time tracking updates, proactive communication on potential delays, and immediate escalation when issues arise. We do not hand you off to a call center. Office hours for quoting and account management are Monday through Friday, 7:00 AM to 6:00 PM PST.
                 </p>
                 <p>
-                  Whether you are shipping a single full truckload or managing a recurring lane program with regular loads, DeMar Transportation has the capacity, carrier relationships, and operational knowledge to keep your supply chain moving. We also offer <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">refrigerated shipping</Link> and <Link to="/services/flatbed" className="text-[hsl(var(--accent))] hover:underline">flatbed transportation</Link> for specialized equipment needs.
+                  Whether you are shipping a single full truckload or managing a recurring lane program with regular loads, DeMar Transportation has the carrier relationships and operational knowledge to keep your supply chain moving. We also offer <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">refrigerated shipping</Link>, <Link to="/services/flatbed" className="text-[hsl(var(--accent))] hover:underline">flatbed transportation</Link>, and <Link to="/services/3pl" className="text-[hsl(var(--accent))] hover:underline">3PL services</Link> for shippers who need more than dry van.
                 </p>
               </div>
             </div>
@@ -457,7 +503,7 @@ const DryVan = () => {
                 Common Questions
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-10">
-                Dry Van Shipping FAQ
+                Dry Van Freight Shipping FAQ
               </h2>
               <div className="space-y-6 max-w-3xl">
                 {[
@@ -481,6 +527,10 @@ const DryVan = () => {
                     q: "What are the limitations of dry van shipping?",
                     a: "Dry vans are not temperature-controlled, so they are not suitable for perishable goods, frozen products, or freight that requires climate regulation. Extreme heat or cold during transit can affect temperature-sensitive cargo. Dry vans also have fixed interior dimensions, so oversized or irregularly shaped freight that exceeds standard trailer measurements requires a flatbed or specialized trailer. If your freight needs refrigeration, DeMar offers reefer trailer services as an alternative."
                   },
+                  {
+                    q: "Does DeMar Transportation have operating authority for dry van freight?",
+                    a: "Yes. DeMar Transportation holds both Motor Carrier (MC) and Freight Broker authority under USDOT number 4392091. This dual authority means we can dispatch freight through our own carrier network and broker loads to vetted partner carriers, giving shippers access to more capacity and faster booking."
+                  },
                 ].map((faq) => (
                   <div key={faq.q} className="p-6 rounded-xl bg-[hsl(var(--surface-low))]">
                     <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-3">{faq.q}</h3>
@@ -502,9 +552,9 @@ const DryVan = () => {
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  { title: "How Much Does Freight Shipping Cost?", description: "2026 pricing guide with per-mile rates", to: "/resources/freight-shipping-cost" },
-                  { title: "Dry Van vs Reefer: Which Do You Need?", description: "Compare trailer types for your cargo", to: "/resources/dry-van-vs-reefer" },
-                  { title: "Types of Freight Trailers", description: "Complete guide to every trailer type", to: "/resources/types-of-freight-trailers" },
+                  { title: "How Much Does Freight Shipping Cost?", description: "2026 pricing guide with per-mile rates and cost factors", to: "/resources/freight-shipping-cost" },
+                  { title: "Dry Van vs Reefer: Which Do You Need?", description: "Compare trailer types for your cargo requirements", to: "/resources/dry-van-vs-reefer" },
+                  { title: "Types of Freight Trailers", description: "Complete guide to every trailer type and when to use each", to: "/resources/types-of-freight-trailers" },
                 ].map((link) => (
                   <Link
                     key={link.to}
@@ -525,10 +575,10 @@ const DryVan = () => {
           <section className="py-16 bg-[hsl(var(--accent))]">
             <div className="max-w-4xl mx-auto text-center px-4">
               <h2 className="text-2xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-3">
-                Ready to Ship?
+                Ready to Ship Dry Van Freight?
               </h2>
               <p className="text-base text-[hsl(var(--primary))]/70 mb-8 max-w-md mx-auto">
-                Get your dry van quote today. Our freight specialists are available to help.
+                Get your dry van quote today. Our freight specialists are available Monday through Friday, 7:00 AM to 6:00 PM PST, with 24/7 dispatch for active shipments.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button
@@ -554,7 +604,7 @@ const DryVan = () => {
                 </Button>
               </div>
               <p className="mt-6 text-[hsl(var(--primary))]/50 text-xs">
-                DeMar Transportation | 10471 Double R Blvd, Reno, NV 89521 | info@DeMarTransportation.com
+                DeMar Transportation | USDOT 4392091 | 10471 Double R Blvd, Reno, NV 89521 | info@DeMarTransportation.com
               </p>
             </div>
           </section>
