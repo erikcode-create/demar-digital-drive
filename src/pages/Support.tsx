@@ -12,14 +12,14 @@ const Support = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[hsl(var(--surface))]">
       <Header />
       <div className="max-w-3xl mx-auto px-6 py-16 pt-32">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Freight Shipment Tracking Support</h1>
+        <h1 className="text-3xl font-bold text-[hsl(var(--primary))] mb-8">Freight Shipment Tracking Support</h1>
 
-        <div className="space-y-6 text-gray-700 leading-relaxed">
+        <article className="prose prose-lg max-w-none prose-headings:text-[hsl(var(--primary))] prose-p:text-[hsl(var(--muted-foreground))] prose-li:text-[hsl(var(--muted-foreground))] prose-a:text-[hsl(var(--accent))] prose-a:no-underline hover:prose-a:underline">
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Contact Our Support Team</h2>
+            <h2 className="text-xl font-semibold">Contact Our Support Team</h2>
             <p>
               DeMar Transportation provides direct support for shipment tracking, freight claims,
               billing questions, and service issues. Reach us through any of these channels:
@@ -27,13 +27,13 @@ const Support = () => {
             <ul className="list-disc ml-6 mt-2 space-y-1">
               <li>
                 Email:{" "}
-                <a href="mailto:info@DeMarTransportation.com" className="text-blue-600 hover:underline">
+                <a href="mailto:info@DeMarTransportation.com" className="text-[hsl(var(--accent))]">
                   info@DeMarTransportation.com
                 </a>
               </li>
               <li>
                 Phone:{" "}
-                <a href="tel:+17752304767" className="text-blue-600 hover:underline">
+                <a href="tel:+17752304767" className="text-[hsl(var(--accent))]">
                   (775) 230-4767
                 </a>
               </li>
@@ -49,7 +49,7 @@ const Support = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Shipment Tracking</h2>
+            <h2 className="text-xl font-semibold">Shipment Tracking</h2>
             <p>
               Contact our dispatch team for real-time shipment updates. You can
               request a status update at any point by calling or emailing with your
@@ -57,7 +57,7 @@ const Support = () => {
             </p>
             <div className="space-y-4 mt-4">
               <div>
-                <h3 className="font-medium text-gray-900">What You Can Track</h3>
+                <h3 className="font-medium">What You Can Track</h3>
                 <ul className="list-disc ml-6 mt-1 text-sm space-y-1">
                   <li>Current shipment status and estimated time of arrival (ETA)</li>
                   <li>Pickup confirmation with timestamp and driver information</li>
@@ -66,7 +66,7 @@ const Support = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="font-medium text-gray-900">How to Get an Update</h3>
+                <h3 className="font-medium">How to Get an Update</h3>
                 <p className="text-sm">
                   Call or email our dispatch team with your BOL number or
                   PO number. We provide updates on shipment status, ETA, and any known delays.
@@ -78,20 +78,20 @@ const Support = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Freight Claims</h2>
+            <h2 className="text-xl font-semibold">Freight Claims</h2>
             <p>
               If cargo is damaged, lost, or short-delivered, DeMar Transportation handles claims
               directly. Contact us to discuss coverage and claims.
             </p>
             <div className="space-y-4 mt-4">
               <div>
-                <h3 className="font-medium text-gray-900">How to File a Freight Claim</h3>
+                <h3 className="font-medium">How to File a Freight Claim</h3>
                 <ol className="list-decimal ml-6 mt-1 text-sm space-y-1">
                   <li>Note the damage or shortage on the delivery receipt at the time of delivery</li>
                   <li>Take photos of the damaged freight and packaging before moving the cargo</li>
                   <li>
                     Email{" "}
-                    <a href="mailto:info@DeMarTransportation.com" className="text-blue-600 hover:underline">
+                    <a href="mailto:info@DeMarTransportation.com" className="text-[hsl(var(--accent))]">
                       info@DeMarTransportation.com
                     </a>
                     {" "}with your BOL number, photos, and a description of the damage
@@ -101,7 +101,7 @@ const Support = () => {
                 </ol>
               </div>
               <div>
-                <h3 className="font-medium text-gray-900">What to Expect</h3>
+                <h3 className="font-medium">What to Expect</h3>
                 <p className="text-sm">
                   Once we receive your claim, our team acknowledges receipt and begins
                   investigating the issue. We keep you updated on the status of your claim
@@ -112,14 +112,14 @@ const Support = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Billing Support</h2>
+            <h2 className="text-xl font-semibold">Billing Support</h2>
             <p>
               Our billing team handles invoice questions, rate confirmations, and payment issues.
               Contact us with your company name, invoice number or BOL number, and a description
               of the issue so we can resolve your request quickly.
             </p>
             <div className="mt-4">
-              <h3 className="font-medium text-gray-900">Common Billing Requests</h3>
+              <h3 className="font-medium">Common Billing Requests</h3>
               <ul className="list-disc ml-6 mt-1 text-sm space-y-1">
                 <li>Invoice copies or corrections</li>
                 <li>Rate confirmation questions</li>
@@ -130,14 +130,14 @@ const Support = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Report a Service Issue</h2>
+            <h2 className="text-xl font-semibold">Report a Service Issue</h2>
             <p>
               If a shipment did not meet expectations, we want to know. DeMar Transportation
               tracks every reported issue to identify patterns and prevent repeat problems.
             </p>
             <div className="space-y-4 mt-4">
               <div>
-                <h3 className="font-medium text-gray-900">What to Report</h3>
+                <h3 className="font-medium">What to Report</h3>
                 <ul className="list-disc ml-6 mt-1 text-sm space-y-1">
                   <li>Late pickups or deliveries</li>
                   <li>Driver conduct or communication concerns</li>
@@ -147,7 +147,7 @@ const Support = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="font-medium text-gray-900">What Happens Next</h3>
+                <h3 className="font-medium">What Happens Next</h3>
                 <p className="text-sm">
                   Our dispatch team reviews every service report and follows up with you
                   directly. You receive an explanation of what happened and what steps we are
@@ -159,28 +159,28 @@ const Support = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">DeMar Logistics App Support</h2>
+            <h2 className="text-xl font-semibold">DeMar Logistics App Support</h2>
             <p>
               Need help with the DeMar Logistics driver app? We assist with issues related to
               load management, tracking, notifications, and account access.
             </p>
             <div className="space-y-4 mt-4">
               <div>
-                <h3 className="font-medium text-gray-900">Login Problems</h3>
+                <h3 className="font-medium">Login Problems</h3>
                 <p className="text-sm">
                   If you cannot log in, verify your credentials with your dispatcher. Password
                   resets can be requested through the app's login screen.
                 </p>
               </div>
               <div>
-                <h3 className="font-medium text-gray-900">Location Tracking</h3>
+                <h3 className="font-medium">Location Tracking</h3>
                 <p className="text-sm">
                   Ensure location permissions are enabled for the app in your device settings.
                   The app requires "Always" or "While Using" location access for accurate tracking.
                 </p>
               </div>
               <div>
-                <h3 className="font-medium text-gray-900">Push Notifications</h3>
+                <h3 className="font-medium">Push Notifications</h3>
                 <p className="text-sm">
                   Make sure notifications are enabled in your device settings. If you are not
                   receiving load alerts, try logging out and back in to refresh your push token.
@@ -188,7 +188,7 @@ const Support = () => {
               </div>
             </div>
           </section>
-        </div>
+        </article>
       </div>
       <Footer />
     </div>

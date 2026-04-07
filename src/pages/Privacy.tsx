@@ -12,15 +12,15 @@ const Privacy = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[hsl(var(--surface))]">
       <Header />
       <div className="max-w-3xl mx-auto px-6 py-16 pt-32">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-        <p className="text-sm text-gray-500 mb-8">Last updated: March 28, 2026</p>
+        <h1 className="text-3xl font-bold text-[hsl(var(--primary))] mb-2">Privacy Policy</h1>
+        <p className="text-sm text-[hsl(var(--muted-foreground))] mb-8">Last updated: March 28, 2026</p>
 
-        <div className="space-y-6 text-gray-700 leading-relaxed">
+        <article className="prose prose-lg max-w-none prose-headings:text-[hsl(var(--primary))] prose-p:text-[hsl(var(--muted-foreground))] prose-li:text-[hsl(var(--muted-foreground))] prose-a:text-[hsl(var(--accent))] prose-a:no-underline hover:prose-a:underline">
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Introduction</h2>
+            <h2 className="text-xl font-semibold">Introduction</h2>
             <p>
               DeMar Transportation ("we," "our," or "us") operates the DeMar Logistics mobile
               application. This Privacy Policy explains how we collect, use, and protect information
@@ -29,7 +29,7 @@ const Privacy = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Information We Collect</h2>
+            <h2 className="text-xl font-semibold">Information We Collect</h2>
             <p>
               Our app is designed for authorized drivers working with DeMar Transportation. We may
               collect the following information:
@@ -42,7 +42,7 @@ const Privacy = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">How We Use Your Information</h2>
+            <h2 className="text-xl font-semibold">How We Use Your Information</h2>
             <ul className="list-disc ml-6 space-y-1">
               <li>To authenticate drivers and provide access to assigned loads</li>
               <li>To track shipment progress and provide real-time location updates</li>
@@ -52,7 +52,7 @@ const Privacy = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Data Sharing</h2>
+            <h2 className="text-xl font-semibold">Data Sharing</h2>
             <p>
               We do not sell or share your personal information with third parties for marketing
               purposes. Location data is shared only with authorized dispatchers and shippers as
@@ -61,7 +61,7 @@ const Privacy = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Data Storage and Security</h2>
+            <h2 className="text-xl font-semibold">Data Storage and Security</h2>
             <p>
               Your data is stored securely using industry-standard encryption. We use Supabase for
               data storage with row-level security policies. Location data is retained only for the
@@ -70,7 +70,7 @@ const Privacy = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Your Rights</h2>
+            <h2 className="text-xl font-semibold">Your Rights</h2>
             <p>
               You may request access to, correction of, or deletion of your personal data at any
               time by contacting us. Drivers may also request that location tracking data be removed
@@ -79,17 +79,17 @@ const Privacy = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Contact Us</h2>
+            <h2 className="text-xl font-semibold">Contact Us</h2>
             <p>
               If you have questions about this Privacy Policy, please contact us at:
             </p>
             <p className="mt-2">
               DeMar Transportation<br />
-              Email: <a href="mailto:info@DeMarTransportation.com" className="text-blue-600 hover:underline">info@DeMarTransportation.com</a><br />
-              Website: <a href="https://demartransportation.com" className="text-blue-600 hover:underline">demartransportation.com</a>
+              Email: <a href="mailto:info@DeMarTransportation.com" className="text-[hsl(var(--accent))]">info@DeMarTransportation.com</a><br />
+              Website: <a href="https://demartransportation.com" className="text-[hsl(var(--accent))]">demartransportation.com</a>
             </p>
           </section>
-        </div>
+        </article>
       </div>
       <Footer />
     </div>
