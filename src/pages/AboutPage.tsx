@@ -241,7 +241,7 @@ const AboutPage = () => {
                   We provide 10 distinct freight services: dry van, refrigerated (reefer), flatbed, box truck, sprinter van/expedited, hazmat, full truckload (FTL), less than truckload (LTL), third-party logistics (3PL), and warehousing. This range of services allows us to handle nearly any shipping requirement a business encounters, from a single pallet to a full 53-foot trailer.
                 </p>
                 <p>
-                  Our office at 10471 Double R Blvd in Reno is open Monday through Friday, 7:00 AM to 6:00 PM PST, with dispatch available 24 hours a day, 7 days a week. Freight moves on its own schedule, and our dispatch team matches that pace.
+                  Our office is open Monday through Friday, 7:00 AM to 6:00 PM PST, with dispatch available 24 hours a day, 7 days a week. Freight moves on its own schedule, and our dispatch team matches that pace.
                 </p>
                 <p>
                   As an asset-based carrier with full-service logistics capabilities, DeMar Transportation handles your freight with a single point of contact from pickup to delivery. Whether we move your load on our own equipment or through our carrier network, you get the same level of accountability, transparent pricing, and clear communication.
@@ -385,14 +385,14 @@ const AboutPage = () => {
                     </p>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight mb-6">
-                    Nationwide Coverage from Reno, Nevada
+                    Nationwide Coverage
                   </h2>
                   <div className="space-y-4 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-xl">
                     <p>
-                      DeMar Transportation serves all 48 contiguous states with reliable freight shipping services. Whether your shipment originates on the West Coast, moves through the Midwest, or delivers to the Eastern Seaboard, our network ensures coverage wherever your freight needs to go.
+                      DeMar Transportation serves all 48 contiguous states. Whether your shipment originates on the West Coast, moves through the Midwest, or delivers to the Eastern Seaboard, our network ensures coverage wherever your freight needs to go.
                     </p>
                     <p>
-                      Our Reno, Nevada headquarters sits at the intersection of I-80 and US-395, providing direct access to California markets, Pacific Northwest corridors, and eastbound routes through the Mountain West. This location puts us within a single-day drive of major distribution hubs in Sacramento, the San Francisco Bay Area, Salt Lake City, and Portland.
+                      Our headquarters sits at the intersection of I-80 and US-395, providing direct access to California markets, Pacific Northwest corridors, and eastbound routes through the Mountain West. We're within a single-day drive of major distribution hubs in Sacramento, the Bay Area, Salt Lake City, and Portland.
                     </p>
                   </div>
                   <div className="mt-6">
