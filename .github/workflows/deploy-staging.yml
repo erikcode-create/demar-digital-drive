@@ -44,7 +44,7 @@ jobs:
           ssh -i ~/.ssh/deploy_key "$SSH_USERNAME@$SSH_HOST" "
             mkdir -p $STAGING_SSH_TARGET_DIR
             if command -v uapi >/dev/null 2>&1; then
-              if ! uapi SubDomain listsubdomains | grep -q 'staging.demartransportation.com'; then
+              if ! uapi DomainInfo list_domains | grep -q 'staging.demartransportation.com'; then
                 uapi SubDomain addsubdomain domain=staging rootdomain=demartransportation.com dir=staging_public_html
               fi
             else
