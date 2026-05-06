@@ -41,7 +41,17 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          ssh -i ~/.ssh/deploy_key "$SSH_USERNAME@$SSH_HOST" "mkdir -p $STAGING_SSH_TARGET_DIR"
+          ssh -i ~/.ssh/deploy_key "$SSH_USERNAME@$SSH_HOST" "
+            mkdir -p $STAGING_SSH_TARGET_DIR
+            if command -v uapi >/dev/null 2>&1; then
+              if ! uapi SubDomain listsubdomains | grep -q 'staging.demartransportation.com'; then
+                uapi SubDomain addsubdomain domain=staging rootdomain=demartransportation.com dir=staging_public_html
+              fi
+            else
+              echo 'cPanel uapi command not available over SSH; create staging.demartransportation.com in cPanel manually.'
+              exit 1
+            fi
+          "
           rsync -avz --delete \
             --exclude='cgi-bin' \
             -e "ssh -i ~/.ssh/deploy_key" \
