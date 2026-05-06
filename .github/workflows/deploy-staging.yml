@@ -1,0 +1,49 @@
+name: Deploy Staging to GreenGeeks
+
+on:
+  push:
+    branches: [staging]
+  workflow_dispatch:
+
+concurrency:
+  group: "deploy-staging"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy-staging:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm i playwright@latest
+      - run: npx playwright install chromium --with-deps
+      - run: node scripts/prerender.mjs
+      - run: node scripts/prepare-staging-build.mjs
+
+      - name: Deploy staging via SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+          STAGING_SSH_TARGET_DIR: ${{ secrets.STAGING_SSH_TARGET_DIR }}
+        run: |
+          if [ -z "$STAGING_SSH_TARGET_DIR" ]; then
+            echo "STAGING_SSH_TARGET_DIR secret is required, for example: ~/staging_public_html"
+            exit 1
+          fi
+
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          ssh -i ~/.ssh/deploy_key "$SSH_USERNAME@$SSH_HOST" "mkdir -p $STAGING_SSH_TARGET_DIR"
+          rsync -avz --delete \
+            --exclude='cgi-bin' \
+            -e "ssh -i ~/.ssh/deploy_key" \
+            dist/ "$SSH_USERNAME@$SSH_HOST:$STAGING_SSH_TARGET_DIR/"
+          rm -f ~/.ssh/deploy_key
