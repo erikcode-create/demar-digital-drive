@@ -312,9 +312,10 @@ const FreightDamagePrevention = () => {
       <h2>DeMar Transportation's Damage Prevention Approach</h2>
       <p className="mb-6">
         At DeMar Transportation, freight damage prevention is built into every stage of the
-        shipping process, from quote to delivery. Based in Reno, Nevada, we serve shippers
-        nationwide with dry van, reefer, flatbed, hazmat, FTL, LTL, 3PL, and warehousing
-        services, and we hold ourselves to damage standards that exceed industry benchmarks.
+        shipping process, from quote to delivery. Headquartered in Reno, Nevada, we serve
+        shippers across the 48 contiguous states with dry van, reefer, flatbed, hazmat,
+        FTL, LTL, 3PL, and warehousing services, and we hold ourselves to damage standards
+        that exceed industry benchmarks.
       </p>
 
       <p className="mb-6">

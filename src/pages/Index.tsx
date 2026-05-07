@@ -9,10 +9,10 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Freight Shipping Reno Nevada | DeMar Transportation | Nationwide Carrier";
+    document.title = "Nationwide Freight Shipping | DeMar Transportation | 48-State Carrier";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'DeMar Transportation is a Reno, NV freight shipping carrier with USDOT 4392091. Dry van, reefer, flatbed, hazmat, LTL, and FTL shipping nationwide. 24/7 dispatch. Call (775) 230-4767.');
+      metaDescription.setAttribute('content', 'DeMar Transportation provides nationwide freight shipping across the 48 contiguous states. Dry van, reefer, flatbed, hazmat, LTL, FTL, 3PL, and warehousing with 24/7 dispatch. Call (775) 230-4767.');
     }
 
     const existingLd = document.querySelectorAll('script[data-homepage-schema]');
@@ -45,7 +45,7 @@ const Index = () => {
           "closes": "18:00"
         }
       ],
-      "description": "Freight shipping carrier based in Reno, Nevada providing dry van, refrigerated, flatbed, hazmat, LTL, and FTL transportation services nationwide.",
+      "description": "Nationwide freight shipping carrier and broker serving the 48 contiguous states with dry van, refrigerated, flatbed, hazmat, LTL, FTL, 3PL, and warehousing services.",
       "identifier": {
         "@type": "PropertyValue",
         "name": "USDOT",
@@ -122,7 +122,7 @@ const Index = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
-                  <span>Reno, NV - Nationwide Service</span>
+                  <span>48-State Freight Coverage</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -140,10 +140,10 @@ const Index = () => {
           <section className="py-16 bg-background" aria-labelledby="service-directory-heading">
             <div className="container mx-auto px-4">
               <h2 id="service-directory-heading" className="text-3xl font-bold text-center mb-4">
-                Freight Shipping Services from Reno, Nevada to All 50 States
+                Nationwide Freight Shipping Across the 48 Contiguous States
               </h2>
               <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
-                DeMar Transportation operates as both a motor carrier and freight broker with 10 distinct shipping services. Every shipment is dispatched from our Reno, NV headquarters at 10471 Double R Blvd.
+                DeMar Transportation operates as both a motor carrier and freight broker with 10 distinct shipping services. One team coordinates your freight through our own fleet and vetted carrier network.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 <Link to="/services/dry-van" className="group block p-5 rounded-lg border hover:border-primary transition-colors">
@@ -184,7 +184,7 @@ const Index = () => {
                 </Link>
                 <Link to="/services/warehousing" className="group block p-5 rounded-lg border hover:border-primary transition-colors">
                   <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Warehousing</h3>
-                  <p className="text-sm text-muted-foreground mt-1">Short-term and long-term storage with inventory management, cross-docking, and distribution services from our Nevada facilities.</p>
+                  <p className="text-sm text-muted-foreground mt-1">Short-term and long-term storage with inventory management, cross-docking, and distribution support through a nationwide warehouse network.</p>
                 </Link>
               </div>
               <div className="text-center mt-8">
@@ -211,9 +211,9 @@ const Index = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Headquartered in Reno, Nevada</h3>
+                  <h3 className="font-semibold text-lg mb-2">Headquartered in Reno, National by Design</h3>
                   <p className="text-muted-foreground text-sm">
-                    Our office at 10471 Double R Blvd, Reno, NV 89521 serves as the dispatch hub for freight moving across all 50 states. Reno sits at the intersection of I-80 and US-395, giving us direct highway access to major West Coast markets and cross-country lanes.
+                    Our office at 10471 Double R Blvd, Reno, NV 89521 anchors a freight operation serving shippers across the 48 contiguous states. Reno gives us direct highway access to major West Coast markets and cross-country lanes without limiting where your freight can move.
                   </p>
                 </div>
                 <div>

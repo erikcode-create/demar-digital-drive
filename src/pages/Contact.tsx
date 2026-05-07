@@ -77,8 +77,8 @@ const trustSignals = [
 
 const contactFaqs = [
   {
-    question: "What areas does DeMar Transportation serve from Reno, NV?",
-    answer: "DeMar Transportation provides nationwide freight shipping services across the United States from our Reno, Nevada headquarters at 10471 Double R Blvd. Strategically located along the I-80 corridor, we have direct access to major distribution hubs in California, Oregon, Utah, and across the country. We hold both Motor Carrier and Freight Broker authority under USDOT 4392091.",
+    question: "What areas does DeMar Transportation serve?",
+    answer: "DeMar Transportation provides nationwide freight shipping services across the 48 contiguous states. Headquartered in Reno, Nevada at 10471 Double R Blvd, we combine our own fleet with a vetted carrier network and hold both Motor Carrier and Freight Broker authority under USDOT 4392091.",
   },
   {
     question: "How do I get a freight shipping quote from DeMar Transportation?",
@@ -104,10 +104,10 @@ const Contact = () => {
   const [formError, setFormError] = useState("");
 
   useEffect(() => {
-    document.title = "Contact DeMar Transportation | Reno, NV Freight & Logistics";
+    document.title = "Contact DeMar Transportation | Nationwide Freight Quotes";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Contact DeMar Transportation for freight quotes and logistics. Call (775) 230-4767, email info@DeMarTransportation.com, or visit our Reno, NV office.');
+      metaDescription.setAttribute('content', 'Contact DeMar Transportation for nationwide freight quotes and logistics across the 48 contiguous states. Call (775) 230-4767 or email info@DeMarTransportation.com.');
     }
   }, []);
 
@@ -162,7 +162,7 @@ const Contact = () => {
                 <span className="text-white/40">DeMar Transportation</span>
               </h1>
               <p className="text-lg text-white/60 max-w-2xl leading-relaxed">
-                Nationwide freight shipping from Reno, NV. Call (775) 230-4767 for 24/7 dispatch, or reach our office Monday through Friday, 7:00 AM to 6:00 PM PST.
+                Nationwide freight shipping across the 48 contiguous states. Call (775) 230-4767 for 24/7 dispatch, or reach our office Monday through Friday, 7:00 AM to 6:00 PM PST.
               </p>
             </div>
           </section>
@@ -399,10 +399,10 @@ const Contact = () => {
                 Why Choose Us
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))] tracking-tight text-center mb-4">
-                Trusted Freight Partner in Reno, NV
+                Trusted Nationwide Freight Partner
               </h2>
               <p className="text-base text-[hsl(var(--muted-foreground))] text-center mb-12 max-w-2xl mx-auto leading-relaxed">
-                DeMar Transportation holds both Motor Carrier and Freight Broker authority, providing nationwide freight shipping and logistics from our Reno headquarters.
+                DeMar Transportation holds both Motor Carrier and Freight Broker authority, providing nationwide freight shipping and logistics through our own fleet and vetted carrier network.
               </p>
 
               <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
@@ -451,7 +451,7 @@ const Contact = () => {
                         <div>
                           <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-1">Strategic Location</h3>
                           <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
-                            Our headquarters sits near the I-80 corridor, one of the most important east-west freight routes in the western US, providing direct access to major distribution hubs.
+                            Our headquarters sits near the I-80 corridor, one of the most important east-west freight routes in the United States, providing direct access to major distribution hubs and cross-country lanes.
                           </p>
                         </div>
                       </div>
@@ -472,7 +472,7 @@ const Contact = () => {
                         <div>
                           <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-1">Service Area</h3>
                           <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
-                            Nationwide freight shipping across the United States, based in Reno, NV. USDOT 4392091 with Motor Carrier and Freight Broker authority.
+                            Nationwide freight shipping across the 48 contiguous states. Headquartered in Reno, NV with USDOT 4392091, Motor Carrier authority, and Freight Broker authority.
                           </p>
                         </div>
                       </div>
@@ -592,7 +592,7 @@ const Contact = () => {
             "@type": "TransportationBusiness",
             "@id": "https://demartransportation.com/#business",
             name: "DeMar Transportation",
-            description: "Nationwide freight transportation and logistics services based in Reno, Nevada. Dry van, reefer, flatbed, box truck, sprinter van, hazmat, FTL, LTL, and 3PL services. USDOT 4392091 with Motor Carrier and Freight Broker authority. 24/7 dispatch.",
+            description: "Nationwide freight transportation and logistics services across the 48 contiguous states. Headquartered in Reno, Nevada with dry van, reefer, flatbed, box truck, sprinter van, hazmat, FTL, LTL, 3PL, and warehousing services. USDOT 4392091 with Motor Carrier and Freight Broker authority. 24/7 dispatch.",
             url: "https://demartransportation.com",
             telephone: "+1-775-230-4767",
             email: "info@DeMarTransportation.com",

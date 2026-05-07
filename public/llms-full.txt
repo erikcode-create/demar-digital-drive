@@ -1,10 +1,10 @@
 # DeMar Transportation — Full Reference
 
-> Professional freight transportation services across the United States. US-based carrier based in Reno, Nevada with competitive rates and 24/7 dispatch.
+> Nationwide freight transportation and logistics support across the 48 contiguous states. DeMar Transportation serves shippers, brokers, and businesses with dry van, reefer, flatbed, box truck, sprinter van, hazmat, FTL, LTL, 3PL, and warehousing services.
 
 ## Company Overview
 
-DeMar Transportation is a professional freight carrier headquartered at 10471 Double R Blvd, Reno, NV 89521. We provide comprehensive freight transportation services across all 48 contiguous states. Our services include dry van, refrigerated, flatbed, box truck, sprinter van, full truckload, less-than-truckload, hazmat, third-party logistics, and warehousing.
+DeMar Transportation serves freight moving across the 48 contiguous states. The company is headquartered at 10471 Double R Blvd, Reno, NV 89521 and operates with USDOT 4392091, providing motor carrier and freight broker support through its own fleet and vetted carrier network.
 
 ### Why Choose DeMar Transportation
 
@@ -18,7 +18,7 @@ DeMar Transportation is a professional freight carrier headquartered at 10471 Do
 ## Services
 
 ### Dry Van Shipping
-DeMar Transportation provides dry van shipping services for enclosed freight across the continental United States. Our 53-foot dry van trailers handle general merchandise, consumer goods, and non-perishable freight with a maximum payload capacity of approximately 45,000 pounds. Standard trailers accommodate 22 to 26 pallets single-stacked.
+DeMar Transportation provides dry van shipping services for enclosed freight across the 48 contiguous states. Our 53-foot dry van trailers handle general merchandise, consumer goods, and non-perishable freight with a maximum payload capacity of approximately 45,000 pounds. Standard trailers accommodate 22 to 26 pallets single-stacked.
 
 Dry van is the most common and cost-effective freight shipping method for non-temperature-sensitive goods. We offer both full truckload (FTL) and less-than-truckload (LTL) dry van options with competitive per-mile rates and 24/7 dispatch availability.
 
@@ -89,7 +89,7 @@ URL: https://demartransportation.com/services/warehousing
 ## Frequently Asked Questions
 
 Q: What areas does DeMar Transportation serve?
-A: DeMar Transportation serves all 48 contiguous United States. We are headquartered in Reno, Nevada and provide nationwide freight coverage.
+A: DeMar Transportation serves the 48 contiguous states. We are headquartered in Reno, Nevada and provide nationwide freight coverage through our own fleet and vetted carrier network.
 
 Q: How do I get a freight quote?
 A: Request a free quote at https://demartransportation.com/quote or call (775) 230-4767. We respond within 1 business hour.

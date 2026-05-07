@@ -99,10 +99,10 @@ const services = [
 
 const AboutPage = () => {
   useEffect(() => {
-    document.title = "About DeMar Transportation | Freight Carrier in Reno, NV | USDOT 4392091";
+    document.title = "About DeMar Transportation | Nationwide Freight Carrier | USDOT 4392091";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'About DeMar Transportation, a freight carrier headquartered in Reno, NV. USDOT 4392091. Motor Carrier and Freight Broker authority, own fleet, 10 service types, 24/7 dispatch, and nationwide US coverage.');
+      metaDescription.setAttribute('content', 'About DeMar Transportation, a nationwide freight carrier and broker serving the 48 contiguous states. USDOT 4392091, own fleet, vetted carrier network, 10 service types, and 24/7 dispatch.');
     }
   }, []);
 
@@ -112,7 +112,7 @@ const AboutPage = () => {
     "name": "DeMar Transportation",
     "url": "https://demartransportation.com",
     "logo": "https://demartransportation.com/logo.png",
-    "description": "US-based freight carrier and broker headquartered in Reno, Nevada. USDOT 4392091. Motor Carrier and Freight Broker authority with nationwide coverage across all 48 contiguous states.",
+    "description": "US-based freight carrier and broker serving the 48 contiguous states. Headquartered in Reno, Nevada with USDOT 4392091, Motor Carrier authority, and Freight Broker authority.",
     "telephone": "+1-775-230-4767",
     "email": "info@DeMarTransportation.com",
     "address": {
@@ -196,7 +196,7 @@ const AboutPage = () => {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 backdrop-blur-sm">
                 <Truck className="h-4 w-4 text-[hsl(var(--accent))]" />
                 <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/60">
-                  USDOT 4392091 | Reno, NV
+                  USDOT 4392091 | 48-State Freight Coverage
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
@@ -205,7 +205,7 @@ const AboutPage = () => {
                 <span className="text-white/40">Transportation</span>
               </h1>
               <p className="text-lg text-white/60 max-w-2xl leading-relaxed mb-4">
-                A federally authorized Motor Carrier and Freight Broker headquartered in Reno, Nevada. We operate our own fleet, manage 10 distinct service types, and dispatch 24/7 to move freight across all 48 contiguous states.
+                A federally authorized Motor Carrier and Freight Broker serving shippers across the 48 contiguous states. Headquartered in Reno, Nevada, we operate our own fleet, manage 10 distinct service types, and dispatch 24/7 for active freight.
               </p>
               <div className="flex flex-wrap gap-4 mt-6">
                 <div className="flex items-center gap-2 text-sm text-white/50">
@@ -235,7 +235,7 @@ const AboutPage = () => {
               </h2>
               <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
                 <p>
-                  DeMar Transportation is a United States-based freight carrier headquartered in Reno, Nevada. We hold both Motor Carrier (MC) and Freight Broker authority under USDOT number 4392091, which means we are federally authorized to both haul freight on our own trucks and arrange shipments through our vetted carrier network.
+                  DeMar Transportation is a United States-based freight carrier and broker serving the 48 contiguous states. Headquartered in Reno, Nevada, we hold both Motor Carrier (MC) and Freight Broker authority under USDOT number 4392091, which means we are federally authorized to both haul freight on our own trucks and arrange shipments through our vetted carrier network.
                 </p>
                 <p>
                   We provide 10 distinct freight services: dry van, refrigerated (reefer), flatbed, box truck, sprinter van/expedited, hazmat, full truckload (FTL), less than truckload (LTL), third-party logistics (3PL), and warehousing. This range of services allows us to handle nearly any shipping requirement a business encounters, from a single pallet to a full 53-foot trailer.

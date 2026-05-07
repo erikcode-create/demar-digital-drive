@@ -47,7 +47,7 @@ const faqCategories: FAQCategory[] = [
               hot shot delivery
             </Link>{" "}
             services. We handle everything from full truckload shipments to
-            time-critical expedited freight across the western United States.
+            time-critical expedited freight across the 48 contiguous states.
           </p>
         ),
       },
@@ -55,9 +55,9 @@ const faqCategories: FAQCategory[] = [
         question: "Where does DeMar Transportation operate?",
         answer: (
           <p>
-            We are headquartered in Reno, Nevada and primarily serve the western
-            United States, with strong coverage along the I-80 corridor and
-            throughout Nevada, California, Oregon, Washington, Utah, and Arizona.
+            DeMar Transportation serves shippers across the 48 contiguous states.
+            We are headquartered in Reno, Nevada, with strong access to I-80,
+            West Coast markets, Mountain West lanes, and cross-country routes.
             For specific route availability,{" "}
             <Link to="/contact" className="text-[hsl(var(--accent))] hover:underline">
               contact our dispatch team
@@ -574,9 +574,9 @@ const faqCategories: FAQCategory[] = [
 // Plain text answers for JSON-LD schema
 const plainTextAnswers: Record<string, string> = {
   "What services does DeMar Transportation offer?":
-    "DeMar Transportation provides a full range of freight services including dry van, refrigerated (reefer), flatbed, and hot shot delivery services. We handle everything from full truckload shipments to time-critical expedited freight across the western United States.",
+    "DeMar Transportation provides a full range of freight services including dry van, refrigerated (reefer), flatbed, and hot shot delivery services. We handle everything from full truckload shipments to time-critical expedited freight across the 48 contiguous states.",
   "Where does DeMar Transportation operate?":
-    "We are headquartered in Reno, Nevada and primarily serve the western United States, with strong coverage along the I-80 corridor and throughout Nevada, California, Oregon, Washington, Utah, and Arizona.",
+    "DeMar Transportation serves shippers across the 48 contiguous states. We are headquartered in Reno, Nevada, with strong access to I-80, West Coast markets, Mountain West lanes, and cross-country routes.",
   "How do I get a freight quote?":
     "You can request a free, no-obligation freight quote by visiting our quote request page and filling out the shipment details form. Alternatively, call us directly at (775) 230-4767 for an immediate rate. We typically respond to online quote requests within one business hour.",
   "What are your hours of operation?":

@@ -10,7 +10,7 @@ const Flatbed = () => {
     document.title = "Flatbed Trucking & Heavy Haul Shipping | Step Deck & Lowboy | DeMar Transportation";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "DeMar Transportation offers flatbed, step-deck, and lowboy shipping for steel, lumber, machinery, and oversized loads. FMCSA-compliant securement. Get a flatbed freight quote from Reno, NV.");
+      meta.setAttribute("content", "DeMar Transportation offers nationwide flatbed, step-deck, and lowboy shipping for steel, lumber, machinery, and oversized loads. FMCSA-compliant securement. Get a flatbed freight quote.");
     }
   }, []);
 
@@ -37,7 +37,7 @@ const Flatbed = () => {
       "@type": "Country",
       "name": "United States"
     },
-    "description": "Professional flatbed, step-deck, and lowboy trucking services for oversized, heavy, and open-deck freight across the United States.",
+    "description": "Professional flatbed, step-deck, and lowboy trucking services for oversized, heavy, and open-deck freight across the 48 contiguous states.",
     "dateModified": "2026-04-05"
   };
 
@@ -292,7 +292,7 @@ const Flatbed = () => {
                   DeMar Transportation handles the entire permit process for you. We work with professional permit services to secure single-trip or annual oversize/overweight permits, coordinate pilot car escorts when required, survey routes for bridge weight limits and vertical clearance restrictions, and schedule movements within permitted travel windows. Many states restrict oversize loads to daylight hours only and prohibit travel on holidays and weekends, so advance planning is essential.
                 </p>
                 <p>
-                  For super loads -- shipments that exceed permit limits for standard oversize movement -- we coordinate with state DOT offices, utility companies, and law enforcement to plan the safest possible route with the fewest obstructions. Our experience with heavy haul and oversized freight across the western United States is a core strength of our flatbed operations.
+                  For super loads -- shipments that exceed permit limits for standard oversize movement -- we coordinate with state DOT offices, utility companies, and law enforcement to plan the safest possible route with the fewest obstructions. Our experience with heavy haul and oversized freight across the 48 contiguous states is a core strength of our flatbed operations.
                 </p>
               </div>
             </div>

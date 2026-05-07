@@ -54,7 +54,7 @@ const openings = [
         <Link to="/services/dry-van" className="text-[hsl(var(--accent))] hover:underline">dry van</Link>{" "}
         and{" "}
         <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">reefer</Link>{" "}
-        freight across the continental United States. Consistent miles, competitive per-mile pay, and scheduled home time. Ideal for experienced drivers who enjoy long-haul routes and maximizing earnings.
+        freight across the 48 contiguous states. Consistent miles, competitive per-mile pay, and scheduled home time. Ideal for experienced drivers who enjoy long-haul routes and maximizing earnings.
       </>
     ),
   },

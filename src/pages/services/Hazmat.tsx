@@ -201,7 +201,7 @@ const Hazmat = () => {
                     Fuel transportation is one of the most critical segments of the hazmat industry. Gas stations, airports, construction sites, mining operations, and agricultural facilities all depend on regular, reliable fuel deliveries to maintain operations. A disruption in fuel supply can halt entire industries, making the reliability of fuel hauling services a matter of economic importance.
                   </p>
                   <p>
-                    DeMar Transportation provides dedicated fuel hauling services across the western United States. Our tanker fleet and qualified carrier partners transport gasoline, diesel fuel, jet fuel (Jet-A), heating oil, biodiesel, and other petroleum products. Every fuel haul is managed with strict adherence to DOT and EPA regulations, including proper loading procedures, vapor recovery protocols, and spill prevention measures.
+                    DeMar Transportation provides dedicated fuel hauling services across the 48 contiguous states. Our tanker fleet and qualified carrier partners transport gasoline, diesel fuel, jet fuel (Jet-A), heating oil, biodiesel, and other petroleum products. Every fuel haul is managed with strict adherence to DOT and EPA regulations, including proper loading procedures, vapor recovery protocols, and spill prevention measures.
                   </p>
                 </div>
                 <div className="space-y-4">
@@ -332,7 +332,7 @@ const Hazmat = () => {
                       "Access to a nationwide network of hazmat-qualified carriers",
                       "Dedicated logistics coordinators experienced in hazmat shipping requirements",
                       "24/7 dispatch availability for urgent and emergency hazmat shipments",
-                      "Fuel hauling expertise across the western United States",
+                      "Fuel hauling expertise across the 48 contiguous states",
                       "Transparent pricing with no hidden regulatory surcharges"
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-3">

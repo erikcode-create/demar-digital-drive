@@ -307,7 +307,7 @@ const Header = () => {
               </a>
               <div className="hidden lg:flex items-center gap-2">
                 <MapPin className="h-3.5 w-3.5" />
-                <span>Reno, NV</span>
+                <span>48-State Freight Coverage</span>
               </div>
             </div>
             <div className="flex items-center gap-4">

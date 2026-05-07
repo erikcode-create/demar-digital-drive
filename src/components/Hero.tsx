@@ -6,24 +6,24 @@ import { Link } from "react-router-dom";
 const stats = [
   { value: "10+", label: "Equipment Types" },
   { value: "24/7", label: "Availability" },
-  { value: "48", label: "States Covered" },
+  { value: "48", label: "Contiguous States" },
 ];
 
 const features = [
   {
     icon: Shield,
-    title: "Safety First",
-    desc: "DOT compliant with excellent safety ratings",
+    title: "Authorized Capacity",
+    desc: "Motor carrier and broker authority under one team",
   },
   {
     icon: Clock,
     title: "24/7 Service",
-    desc: "Round-the-clock transportation services",
+    desc: "Dispatch support for active freight around the clock",
   },
   {
     icon: Users,
-    title: "US-Based Team",
-    desc: "English-speaking, US-based drivers and dispatch",
+    title: "One Point of Contact",
+    desc: "Your fleet and carrier network coordinated together",
   },
 ];
 
@@ -57,16 +57,17 @@ const Hero = () => {
 
           {/* Headline — editorial, asymmetric, large */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tight mb-8">
-            Driven by
+            Nationwide
             <br />
-            <span className="text-[hsl(var(--accent))]">Purpose.</span>
+            <span className="text-[hsl(var(--accent))]">Freight.</span>
             <br />
-            <span className="text-white/40">Delivering Results.</span>
+            <span className="text-white/40">One Accountable Team.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/60 max-w-xl mb-10 leading-relaxed">
-            Nationwide freight transportation with our own fleet and extended carrier
-            network. One call connects you to every solution.
+            Dry van, reefer, flatbed, hazmat, LTL, FTL, expedited, 3PL, and
+            warehousing support across the 48 contiguous states through our own
+            fleet and vetted carrier network.
           </p>
 
           {/* CTAs */}

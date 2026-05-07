@@ -304,7 +304,7 @@ const EmergencyExpeditedFreight = () => {
       </p>
 
       <p className="mb-6">
-        Based in Reno, Nevada, we pick up and deliver in all 48 contiguous states. We're
+        Headquartered in Reno, Nevada, we pick up and deliver in all 48 contiguous states. We're
         hazmat certified, which means we can handle hazardous materials shipments that many
         expedited carriers can't touch. And we quote all-inclusive pricing with fuel, tolls, and
         accessorials spelled out upfront.

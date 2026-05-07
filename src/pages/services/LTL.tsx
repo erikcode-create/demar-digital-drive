@@ -108,7 +108,7 @@ const LTL = () => {
                 Ship smarter with Less Than Truckload freight. Pay only for the trailer space your shipment occupies and let DeMar Transportation handle the rest -- from carrier selection to delivery coordination.
               </p>
               <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
-                DeMar Transportation provides less-than-truckload shipping for freight between 1 and 10 pallets or under 15,000 pounds. LTL consolidates multiple shippers into one trailer, reducing per-unit costs while maintaining reliable transit times across the continental United States.
+                DeMar Transportation provides less-than-truckload shipping for freight between 1 and 10 pallets or under 15,000 pounds. LTL consolidates multiple shippers into one trailer, reducing per-unit costs while maintaining reliable transit times across the 48 contiguous states.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>

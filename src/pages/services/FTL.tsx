@@ -148,7 +148,7 @@ const FTL = () => {
                   This dedicated approach offers significant advantages: faster transit because the driver goes straight from pickup to delivery, reduced risk of damage because your freight is loaded once and unloaded once with no terminal handling in between, and greater scheduling flexibility because the truck operates on your timeline rather than a carrier's terminal schedule.
                 </p>
                 <p>
-                  DeMar Transportation operates our own fleet of trucks and also maintains a nationwide carrier network through our 3PL brokerage operations. This means we can provide FTL capacity for any lane in the continental United States -- whether you need a single spot-market load moved tomorrow or a dedicated fleet running the same lane every week. We match the right equipment, the right carrier, and the right rate to every shipment.
+                  DeMar Transportation operates our own fleet of trucks and also maintains a nationwide carrier network through our 3PL brokerage operations. This means we can provide FTL capacity for lanes across the 48 contiguous states -- whether you need a single spot-market load moved tomorrow or a dedicated fleet running the same lane every week. We match the right equipment, the right carrier, and the right rate to every shipment.
                 </p>
               </div>
             </div>
@@ -360,7 +360,7 @@ const FTL = () => {
               </h2>
               <div className="space-y-5 text-base text-white/60 leading-relaxed max-w-3xl">
                 <p>
-                  DeMar Transportation brings a unique combination of asset-based capacity and brokerage flexibility to every full truckload shipment. Our own fleet provides reliable, direct capacity on our core lanes, while our carrier network extends our reach to every corner of the continental United States. This hybrid model means you get the consistency of a dedicated fleet with the scalability of a nationwide brokerage.
+                  DeMar Transportation brings a unique combination of asset-based capacity and brokerage flexibility to every full truckload shipment. Our own fleet provides reliable, direct capacity on our core lanes, while our carrier network extends our reach across the 48 contiguous states. This hybrid model means you get the consistency of a dedicated fleet with the scalability of a nationwide brokerage.
                 </p>
                 <p>
                   We offer both spot-market and contracted pricing options. For shippers with consistent lane volume, our contracted rates provide budget predictability and guaranteed capacity even during tight market conditions. For one-time or irregular shipments, our spot-market team sources competitive rates from vetted carriers with a focus on service quality and on-time performance.

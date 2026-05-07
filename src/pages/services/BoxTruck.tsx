@@ -259,7 +259,7 @@ const BoxTruck = () => {
                 Industries We Serve
               </h2>
               <p className="text-base text-[hsl(var(--muted-foreground))] mb-10 max-w-2xl leading-relaxed">
-                Box truck freight is one of the most adaptable transportation modes available. DeMar Transportation provides box truck shipping services across a wide range of industries throughout the western United States and beyond.
+                Box truck freight is one of the most adaptable transportation modes available. DeMar Transportation provides box truck shipping services across a wide range of industries throughout the 48 contiguous states.
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
@@ -291,13 +291,13 @@ const BoxTruck = () => {
               </h2>
               <div className="space-y-5 text-base text-white/60 leading-relaxed max-w-3xl">
                 <p>
-                  Based in Reno, Nevada, DeMar Transportation has built a reputation for reliable, customer-focused freight services across the western United States. DeMar Transportation has access to a nationwide carrier network, ensuring capacity availability even during peak shipping seasons. Our box truck fleet and owner-operator network provide the flexibility to handle everything from single-pallet deliveries to multi-stop distribution runs.
+                  Headquartered in Reno, Nevada, DeMar Transportation has built a reputation for reliable, customer-focused freight services across the 48 contiguous states. DeMar Transportation has access to a nationwide carrier network, ensuring capacity availability even during peak shipping seasons. Our box truck fleet and owner-operator network provide the flexibility to handle everything from single-pallet deliveries to multi-stop distribution runs.
                 </p>
                 <p>
                   Every shipment is assigned a dedicated logistics coordinator who manages your load from pickup to delivery. We provide real-time tracking updates, proactive communication about any delays or schedule changes, and proof of delivery documentation. Our team understands that your freight is your business, and we treat every load with the urgency and care it deserves.
                 </p>
                 <p>
-                  Whether you need a one-time box truck delivery or an ongoing distribution partnership, DeMar Transportation offers competitive rates, consistent service, and the local expertise that national brokers cannot match. We know the roads, the docks, and the challenges of freight delivery in the Reno-Tahoe corridor and beyond.
+                  Whether you need a one-time box truck delivery or an ongoing distribution partnership, DeMar Transportation offers competitive rates, consistent service, and national capacity with a single accountable team. We match the right equipment, route, and carrier to the delivery conditions on every load.
                 </p>
               </div>
             </div>

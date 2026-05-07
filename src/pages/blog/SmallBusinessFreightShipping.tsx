@@ -31,7 +31,7 @@ const SmallBusinessFreightShipping = () => {
             a dedicated truck at a flat rate. Many small businesses overpay because they
             default to parcel shipping for loads that would cost 40-60% less as freight.
             Others choose the wrong service level or fail to negotiate rates. At DeMar
-            Transportation, we work with small businesses across the Western United States
+            Transportation, we work with small businesses across the 48 contiguous states
             every day, and we have built our services specifically to eliminate the barriers
             that keep smaller shippers from accessing competitive freight rates.
           </p>
@@ -306,9 +306,9 @@ const SmallBusinessFreightShipping = () => {
           </p>
 
           <p className="mb-8">
-            Based in Reno, Nevada, we know the lanes, the weather patterns, and the delivery
-            challenges across the Western states better than national carriers who treat every
-            region the same.
+            Headquartered in Reno, Nevada, we combine personal dispatch support with
+            nationwide capacity across the 48 contiguous states, so small businesses get
+            practical lane guidance without being handed off to a call center.
           </p>
 
           <h2>Getting Started: Your First Freight Shipment</h2>

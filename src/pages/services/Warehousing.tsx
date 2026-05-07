@@ -105,10 +105,10 @@ const WarehousingPage = () => {
                 <span className="text-white/40">& Distribution</span>
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
-                Strategically located warehouse facilities across the United States. DeMar Transportation coordinates storage, fulfillment, and distribution through our network of warehouse partners to keep your products moving and your customers satisfied.
+                Strategically located warehouse facilities across the 48 contiguous states. DeMar Transportation coordinates storage, fulfillment, and distribution through our network of warehouse partners to keep your products moving and your customers satisfied.
               </p>
               <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
-                DeMar Transportation provides warehousing and distribution services for businesses needing temporary or ongoing storage with integrated freight coordination. Services include inventory management, cross-docking, and distribution support from our Reno, Nevada facility.
+                DeMar Transportation provides warehousing and distribution services for businesses needing temporary or ongoing storage with integrated freight coordination. Services include inventory management, cross-docking, and distribution support through a nationwide warehouse network.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>
@@ -231,7 +231,7 @@ const WarehousingPage = () => {
               </h2>
               <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl mb-10">
                 <p>
-                  Location is everything in warehousing and distribution. A warehouse that is too far from your customers adds transit time and cost to every order. Our warehouse network includes facilities positioned near major interstate highways, intermodal rail yards, ports of entry, and high-density population centers throughout the United States.
+                  Location is everything in warehousing and distribution. A warehouse that is too far from your customers adds transit time and cost to every order. Our warehouse network includes facilities positioned near major interstate highways, intermodal rail yards, ports of entry, and high-density population centers throughout the 48 contiguous states.
                 </p>
                 <p>
                   Whether you need a West Coast facility to receive imports from the Pacific Rim, a Midwest hub to serve the heartland, or East Coast distribution points for rapid delivery to the Northeast corridor, we can place your inventory where it needs to be. Multiple warehouse locations also provide supply chain redundancy, so a disruption at one facility does not shut down your entire distribution operation.

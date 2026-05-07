@@ -61,8 +61,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm text-white/40 leading-relaxed mb-6 max-w-xs">
-              Asset-based freight carrier and licensed broker providing
-              nationwide transportation solutions.
+              Asset-based freight carrier and licensed broker serving shippers
+              across the 48 contiguous states.
             </p>
             <p className="text-[10px] tracking-[0.15em] uppercase text-white/25">
               Driven by Purpose. Delivering Results.

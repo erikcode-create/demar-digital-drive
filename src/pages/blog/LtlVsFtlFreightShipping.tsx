@@ -21,7 +21,7 @@ const LtlVsFtlFreightShipping = () => {
     },
     {
       question: "Can DeMar Transportation handle both LTL and FTL shipments?",
-      answer: "Yes, DeMar Transportation coordinates both LTL and FTL freight shipments across the United States. Our logistics team evaluates your shipment weight, dimensions, timeline, and budget to recommend the most cost-effective option. We can also arrange partial truckload (PTL) shipping as a middle-ground solution for shipments that fall between LTL and FTL thresholds."
+      answer: "Yes, DeMar Transportation coordinates both LTL and FTL freight shipments across the 48 contiguous states. Our logistics team evaluates your shipment weight, dimensions, timeline, and budget to recommend the most cost-effective option. We can also arrange partial truckload (PTL) shipping as a middle-ground solution for shipments that fall between LTL and FTL thresholds."
     }
   ];
 
@@ -140,7 +140,7 @@ const LtlVsFtlFreightShipping = () => {
         The LTL vs FTL decision isn't static. Your shipping needs change with order volume, seasonal demand, and supply chain shifts. A business that ships LTL all year might switch to FTL during peak season when LTL terminals get backed up and rates spike. A manufacturer running FTL loads to a distribution center might use LTL for smaller replenishment orders to retail locations.
       </p>
       <p>
-        The right freight partner helps you flex between modes without renegotiating contracts every time your volume changes. DeMar Transportation manages both <Link to="/services/ltl">LTL</Link> and <Link to="/services/ftl">FTL</Link> freight across the continental United States. Whether you're shipping 2 pallets to a single location or 20 truckloads per week across multiple states, our logistics team builds a shipping plan that matches the actual requirements of each load, not a one-size-fits-all rate sheet.
+        The right freight partner helps you flex between modes without renegotiating contracts every time your volume changes. DeMar Transportation manages both <Link to="/services/ltl">LTL</Link> and <Link to="/services/ftl">FTL</Link> freight across the 48 contiguous states. Whether you're shipping 2 pallets to a single location or 20 truckloads per week across multiple states, our logistics team builds a shipping plan that matches the actual requirements of each load, not a one-size-fits-all rate sheet.
       </p>
     </>
   );

@@ -7,8 +7,8 @@ import ApplyToDriveForm from "./ApplyToDriveForm";
 const differentiators = [
   {
     icon: Truck,
-    title: "Asset-Based Fleet",
-    desc: "Our own trucks on the road means committed capacity and service control.",
+    title: "Fleet + Network",
+    desc: "Our own trucks plus vetted partner capacity for nationwide freight.",
   },
   {
     icon: Shield,
@@ -18,7 +18,7 @@ const differentiators = [
   {
     icon: HeadphonesIcon,
     title: "24/7 US-Based Team",
-    desc: "English-speaking dispatch that answers your call, day or night.",
+    desc: "Dispatch that answers your call and keeps active freight moving.",
   },
   {
     icon: DollarSign,
@@ -98,8 +98,9 @@ const About = () => {
 
               <p className="text-base text-[hsl(var(--muted-foreground))] mb-8 leading-relaxed">
                 DeMar Transportation combines the reliability of an asset-based carrier
-                with the capacity flexibility of a licensed broker. Professional
-                communication, competitive rates, and a team that answers the phone.
+                with the capacity flexibility of a licensed broker serving the 48
+                contiguous states. Professional communication, competitive rates,
+                and a team that answers the phone.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">

@@ -286,9 +286,10 @@ const EcommerceFreightShipping = () => {
 
       <h2>How DeMar Transportation Supports E-Commerce Shippers</h2>
       <p className="mb-6">
-        DeMar Transportation is based in Reno, NV, with access to major West Coast
-        distribution corridors. We work with e-commerce sellers at every stage of growth,
-        from first-time freight shippers to brands moving hundreds of pallets per month.
+        DeMar Transportation serves e-commerce shippers across the 48 contiguous states
+        through our own fleet and vetted carrier network. We work with sellers at every
+        stage of growth, from first-time freight shippers to brands moving hundreds of
+        pallets per month.
       </p>
 
       <p className="mb-6">

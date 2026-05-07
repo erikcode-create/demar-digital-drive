@@ -165,7 +165,7 @@ const HotShotVsFullTruckload = () => {
       <h2>DeMar Transportation: Hot Shot and FTL Services</h2>
 
       <p>
-        DeMar Transportation provides both <Link to="/services/sprinter-van">expedited sprinter van</Link> and <Link to="/services/ftl">full truckload</Link> services across the continental United States. As both a licensed carrier and freight broker, we match your shipment to the right equipment -- whether that's a hot shot truck for a same-day emergency or a 53-foot trailer for a planned cross-country move. Every shipment includes real-time tracking, dedicated support, and competitive rates.
+        DeMar Transportation provides both <Link to="/services/sprinter-van">expedited sprinter van</Link> and <Link to="/services/ftl">full truckload</Link> services across the 48 contiguous states. As both a licensed carrier and freight broker, we match your shipment to the right equipment -- whether that's a hot shot truck for a same-day emergency or a 53-foot trailer for a planned cross-country move. Every shipment includes real-time tracking, dedicated support, and competitive rates.
       </p>
     </>
   );

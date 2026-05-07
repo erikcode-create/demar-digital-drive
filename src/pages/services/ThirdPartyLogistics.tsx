@@ -37,7 +37,7 @@ const ThirdPartyLogistics = () => {
       "@type": "Country",
       "name": "United States"
     },
-    "description": "Full-service third-party logistics (3PL) including freight management, carrier sourcing, warehousing coordination, real-time tracking, and supply chain optimization for businesses across the United States.",
+    "description": "Full-service third-party logistics (3PL) including freight management, carrier sourcing, warehousing coordination, real-time tracking, and supply chain optimization for businesses across the 48 contiguous states.",
     "dateModified": "2026-04-05"
   };
 
@@ -166,7 +166,7 @@ const ThirdPartyLogistics = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 {[
                   { Icon: Boxes, title: "Freight Management", desc: "Complete transportation management from pickup to delivery. We plan routes, select the right equipment type, coordinate loading and unloading schedules, and manage all documentation including bills of lading, proof of delivery, and insurance certificates." },
-                  { Icon: Users, title: "Carrier Sourcing", desc: "Access to a vast network of qualified, insured carriers covering every lane in the continental United States. We vet every carrier for safety records, insurance coverage, and on-time performance before tendering a single load. When your primary carrier is unavailable, we have backup options ready." },
+                  { Icon: Users, title: "Carrier Sourcing", desc: "Access to a vast network of qualified, insured carriers covering lanes across the 48 contiguous states. We vet every carrier for safety records, insurance coverage, and on-time performance before tendering a single load. When your primary carrier is unavailable, we have backup options ready." },
                   { Icon: Globe, title: "Warehousing Coordination", desc: "Through our nationwide warehouse network, we coordinate storage, cross-docking, transloading, and distribution services. Whether you need short-term overflow space during peak season or a long-term distribution hub closer to your customers, we connect you with the right facility." },
                   { Icon: BarChart3, title: "Supply Chain Visibility", desc: "Real-time tracking and proactive status updates on every shipment. You always know where your freight is, when it will arrive, and if any issues arise along the way. We provide delivery confirmations, exception alerts, and detailed reporting to keep your team informed." },
                 ].map((cap) => (

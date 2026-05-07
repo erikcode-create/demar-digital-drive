@@ -10,7 +10,7 @@ const DryVan = () => {
     document.title = "Dry Van Freight Shipping Services | FTL & LTL | DeMar Transportation";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "Dry van freight shipping across all 48 contiguous states. 53-foot trailers, 45,000 lb capacity, FTL and LTL service. USDOT 4392091. Based in Reno, NV with 24/7 dispatch. Get a free quote.");
+      meta.setAttribute("content", "Dry van freight shipping across all 48 contiguous states. 53-foot trailers, 45,000 lb capacity, FTL and LTL service. USDOT 4392091 with 24/7 dispatch. Get a free quote.");
     }
   }, []);
 
@@ -96,10 +96,10 @@ const DryVan = () => {
       },
       {
         "@type": "Question",
-        "name": "How long does dry van shipping take from Reno, NV?",
+        "name": "How long does dry van shipping take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Transit times from Reno, NV depend on destination. Reno to Los Angeles is approximately 450 miles with 1-day transit. Reno to Seattle is roughly 700 miles with 1 to 2-day transit. Reno to Dallas is about 1,700 miles with 3 to 4-day transit. Cross-country shipments to the East Coast take 4 to 6 days. DeMar Transportation provides estimated delivery dates at booking and offers real-time tracking throughout transit."
+          "text": "Dry van transit times depend on distance, route, appointment windows, and service type. Regional full truckload shipments often deliver in 1 to 2 days, while longer cross-country moves may take 4 to 6 days. DeMar Transportation provides estimated delivery dates at booking and offers real-time tracking throughout transit."
         }
       },
       {
@@ -189,7 +189,7 @@ const DryVan = () => {
                 <span className="text-white/40">Shipping Services</span>
               </h1>
               <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
-                Enclosed freight transportation for general commodities across all 48 contiguous states. 53-foot trailers, 45,000 lb capacity, and 24/7 dispatch from Reno, NV.
+                Enclosed freight transportation for general commodities across all 48 contiguous states. 53-foot trailers, 45,000 lb capacity, and 24/7 dispatch for active shipments.
               </p>
               <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
                 DeMar Transportation provides dry van freight shipping with both Motor Carrier and Freight Broker authority (USDOT 4392091). We coordinate <Link to="/services/ftl" className="text-[hsl(var(--accent))] hover:underline">full truckload</Link> and <Link to="/services/ltl" className="text-[hsl(var(--accent))] hover:underline">LTL shipments</Link> through a vetted carrier network, with dispatch available 24 hours a day, 7 days a week.
@@ -249,7 +249,7 @@ const DryVan = () => {
               </h2>
               <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl">
                 <p>
-                  Operating out of Reno, Nevada under USDOT 4392091, we coordinate dry van shipments daily across I-80, US-395, and the Western US freight corridors. DeMar Transportation holds both Motor Carrier (MC) and Freight Broker authority, which means we can move freight through our own carrier network and broker loads to vetted partners when capacity is tight.
+                  Operating under USDOT 4392091, we coordinate dry van shipments daily across the 48 contiguous states. DeMar Transportation holds both Motor Carrier (MC) and Freight Broker authority, which means we can move freight through our own carrier network and broker loads to vetted partners when capacity is tight.
                 </p>
                 <p>
                   We have found that the biggest factor in dry van shipping reliability is carrier vetting. Every carrier in our network passes DOT compliance screening before their first load. We track on-time delivery performance and cargo claim history on an ongoing basis, and carriers that fall below our standards are removed from active dispatch.
@@ -275,10 +275,10 @@ const DryVan = () => {
               </h2>
               <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl mb-10">
                 <p>
-                  DeMar Transportation coordinates dry van shipments across all 48 contiguous states through a vetted network of owner-operators and carrier partners. Our home base in Reno, Nevada places us at the intersection of I-80 and US-395, giving us direct access to major freight corridors connecting the West Coast, Pacific Northwest, and Intermountain West.
+                  DeMar Transportation coordinates dry van shipments across all 48 contiguous states through a vetted network of owner-operators and carrier partners. Our Reno, Nevada headquarters gives us direct access to major freight corridors while our carrier network extends capacity nationwide.
                 </p>
                 <p>
-                  We handle shipments ranging from single-pallet LTL loads under 5,000 pounds to full truckload moves up to 45,000 pounds. Our dispatch team books dry van loads daily, with consistent lane coverage on high-demand routes throughout the Western US and beyond. All carriers in our network pass DOT compliance screening before their first load.
+                  We handle shipments ranging from single-pallet LTL loads under 5,000 pounds to full truckload moves up to 45,000 pounds. Our dispatch team books dry van loads daily, with consistent lane coverage on high-demand routes across the 48 contiguous states. All carriers in our network pass DOT compliance screening before their first load.
                 </p>
                 <p>
                   Beyond dry van, DeMar Transportation offers a full range of freight services including <Link to="/services/reefer" className="text-[hsl(var(--accent))] hover:underline">refrigerated shipping</Link>, <Link to="/services/flatbed" className="text-[hsl(var(--accent))] hover:underline">flatbed transportation</Link>, <Link to="/services/box-truck" className="text-[hsl(var(--accent))] hover:underline">box truck delivery</Link>, <Link to="/services/sprinter-van" className="text-[hsl(var(--accent))] hover:underline">sprinter van expedited service</Link>, <Link to="/services/hazmat" className="text-[hsl(var(--accent))] hover:underline">hazmat freight</Link>, and <Link to="/services/3pl" className="text-[hsl(var(--accent))] hover:underline">third-party logistics</Link>.
@@ -290,9 +290,9 @@ const DryVan = () => {
               </h3>
               <div className="grid md:grid-cols-3 gap-4">
                 {[
-                  { region: "Western US", detail: "California, Oregon, Washington, Nevada, Arizona, Utah, Colorado. Reno to Los Angeles: approximately 450 miles, 1-day transit. Reno to Seattle: roughly 700 miles, 1 to 2-day transit." },
-                  { region: "Central US", detail: "Texas, Illinois, Missouri, Minnesota, Kansas, Nebraska, Oklahoma. Reno to Dallas: about 1,700 miles, 3 to 4-day transit. Reliable capacity on I-80 and I-70 corridors." },
-                  { region: "Eastern US", detail: "New York, Pennsylvania, Georgia, Florida, Ohio, North Carolina. Typically 4 to 6-day transit with coast-to-coast full truckload service." },
+                  { region: "West Coast & Mountain West", detail: "California, Oregon, Washington, Nevada, Arizona, Utah, Colorado. Reliable dry van capacity for regional distribution and long-haul lanes." },
+                  { region: "Central US", detail: "Texas, Illinois, Missouri, Minnesota, Kansas, Nebraska, Oklahoma. Reliable dry van capacity on major interstate and distribution corridors." },
+                  { region: "Eastern US", detail: "New York, Pennsylvania, Georgia, Florida, Ohio, North Carolina. Coast-to-coast full truckload and LTL coordination through vetted carrier partners." },
                 ].map((area) => (
                   <div key={area.region} className="p-5 rounded-xl bg-white shadow-[var(--shadow-card)]">
                     <h4 className="text-sm font-semibold text-[hsl(var(--primary))] mb-2">{area.region}</h4>
@@ -462,7 +462,7 @@ const DryVan = () => {
                   { name: "Manufacturing", detail: "Raw materials inbound and finished products outbound. We coordinate just-in-time deliveries where schedule reliability directly impacts production line uptime." },
                   { name: "Food & Beverage", detail: "Non-perishable food products, beverages, and packaged goods require clean, dry trailers. Our carriers maintain washout records and comply with food-grade transportation standards. For temperature-sensitive food freight, see our refrigerated shipping services." },
                   { name: "E-Commerce & Fulfillment", detail: "High-frequency shipments to fulfillment centers and last-mile hubs. We support the fast-paced replenishment cycles that e-commerce operations demand." },
-                  { name: "Construction & Building", detail: "Building materials, fixtures, and supplies that need weather protection during transit. We coordinate multi-stop deliveries to job sites and distribution yards across the Western US." },
+                  { name: "Construction & Building", detail: "Building materials, fixtures, and supplies that need weather protection during transit. We coordinate multi-stop deliveries to job sites and distribution yards across the 48 contiguous states." },
                 ].map((industry) => (
                   <div key={industry.name} className="p-6 rounded-xl bg-[hsl(var(--surface))] hover:bg-white hover:shadow-[var(--shadow-card)] transition-all duration-300">
                     <h3 className="text-base font-semibold text-[hsl(var(--primary))] mb-2">{industry.name}</h3>
@@ -484,7 +484,7 @@ const DryVan = () => {
               </h2>
               <div className="space-y-5 text-base text-white/60 leading-relaxed max-w-3xl">
                 <p>
-                  Based in Reno, Nevada, DeMar Transportation combines personalized service with the capacity of an extensive carrier network spanning North America. Our vetted owner-operators have a personal stake in delivering your freight safely and on schedule.
+                  Headquartered in Reno, Nevada, DeMar Transportation combines personalized service with the capacity of an extensive carrier network spanning the 48 contiguous states. Our vetted owner-operators have a personal stake in delivering your freight safely and on schedule.
                 </p>
                 <p>
                   Every shipment gets a single point of contact from booking through delivery. Our dispatch team is available 24/7 and provides real-time tracking updates, proactive communication on potential delays, and immediate escalation when issues arise. We do not hand you off to a call center. Office hours for quoting and account management are Monday through Friday, 7:00 AM to 6:00 PM PST.
@@ -520,8 +520,8 @@ const DryVan = () => {
                     a: "Full truckload (FTL) means your freight occupies the entire trailer, typically 15,000 pounds or more. Less-than-truckload (LTL) consolidates shipments from multiple shippers into one trailer. FTL offers faster transit times with no intermediate handling, while LTL costs less for smaller shipments. DeMar Transportation handles both FTL and LTL dry van freight across all 48 contiguous states."
                   },
                   {
-                    q: "How long does dry van shipping take from Reno, NV?",
-                    a: "Transit times from Reno depend on destination. Reno to Los Angeles is approximately 450 miles with 1-day transit. Reno to Seattle is roughly 700 miles with 1 to 2-day transit. Reno to Dallas is about 1,700 miles with 3 to 4-day transit. Cross-country shipments to the East Coast take 4 to 6 days. We provide estimated delivery dates at booking and offer real-time tracking throughout transit."
+                    q: "How long does dry van shipping take?",
+                    a: "Dry van transit times depend on distance, route, appointment windows, and service type. Regional full truckload shipments often deliver in 1 to 2 days, while longer cross-country moves may take 4 to 6 days. We provide estimated delivery dates at booking and offer real-time tracking throughout transit."
                   },
                   {
                     q: "What are the limitations of dry van shipping?",
