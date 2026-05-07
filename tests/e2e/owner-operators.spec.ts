@@ -1,6 +1,21 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 
 test.describe("Owner operators page", () => {
+  const fillSignupForm = async (page: Page) => {
+    await page.getByLabel("First Name *").fill("Alex");
+    await page.getByLabel("Last Name *").fill("Rivera");
+    await page.getByLabel("Email *").fill("alex@example.com");
+    await page.getByLabel("Phone *").fill("7755551212");
+    await page.getByLabel("City or ZIP *").fill("Reno");
+    await page.getByLabel("State *").selectOption("NV");
+    await page.getByLabel("Years CDL-A Experience *").selectOption("6-10 years");
+    await page.getByLabel("Truck Type *").selectOption("Sleeper Tractor");
+    await page.getByLabel("Trailer Access *").selectOption("I need trailer options");
+    await page.getByLabel("Current Operating Status *").selectOption("Ready to lease on");
+    await page.getByLabel("Preferred Start Timeframe *").selectOption("Within 30 days");
+    await page.getByLabel("Notes").fill("Interested in Western regional freight.");
+  };
+
   test("loads from top navigation with required recruiting copy", async ({ page }) => {
     await page.goto("/");
     await page.waitForLoadState("networkidle");
@@ -38,18 +53,7 @@ test.describe("Owner operators page", () => {
     await page.goto("/owner-operators");
     await page.waitForLoadState("networkidle");
 
-    await page.getByLabel("First Name *").fill("Alex");
-    await page.getByLabel("Last Name *").fill("Rivera");
-    await page.getByLabel("Email *").fill("alex@example.com");
-    await page.getByLabel("Phone *").fill("7755551212");
-    await page.getByLabel("City *").fill("Reno");
-    await page.getByLabel("State *").selectOption("NV");
-    await page.getByLabel("Years CDL-A Experience *").selectOption("6-10 years");
-    await page.getByLabel("Truck Type *").selectOption("Sleeper Tractor");
-    await page.getByLabel("Trailer Access *").selectOption("I need trailer options");
-    await page.getByLabel("Current Operating Status *").selectOption("Ready to lease on");
-    await page.getByLabel("Preferred Start Timeframe *").selectOption("Within 30 days");
-    await page.getByLabel("Notes").fill("Interested in Western regional freight.");
+    await fillSignupForm(page);
 
     await page.getByRole("button", { name: /submit signup/i }).click();
 
@@ -68,5 +72,26 @@ test.describe("Owner operators page", () => {
       startTimeframe: "Within 30 days",
       notes: "Interested in Western regional freight.",
     });
+  });
+
+  test("shows an error when owner-operator signup submission fails", async ({ page }) => {
+    await page.route("**/functions/v1/send-owner-operator-signup", async (route) => {
+      await route.fulfill({
+        status: 500,
+        contentType: "application/json",
+        body: JSON.stringify({ error: "Test failure" }),
+      });
+    });
+
+    await page.goto("/owner-operators");
+    await page.waitForLoadState("networkidle");
+
+    await fillSignupForm(page);
+    await page.getByRole("button", { name: /submit signup/i }).click();
+
+    await expect(page.getByText("Submission Error", { exact: true }).first()).toBeVisible();
+    await expect(
+      page.getByText("We could not send your signup. Please call us directly or try again.", { exact: true }).first(),
+    ).toBeVisible();
   });
 });

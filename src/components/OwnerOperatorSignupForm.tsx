@@ -187,7 +187,7 @@ const OwnerOperatorSignupForm = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <Label htmlFor="owner-city">City *</Label>
+          <Label htmlFor="owner-city">City or ZIP *</Label>
           <Input
             id="owner-city"
             value={formData.city}
