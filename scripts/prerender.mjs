@@ -25,6 +25,7 @@ const routes = [
   '/about',
   '/contact',
   '/careers',
+  '/owner-operators',
   '/faq',
   '/quote',
   '/privacy',

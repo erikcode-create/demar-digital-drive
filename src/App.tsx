@@ -15,6 +15,7 @@ import Support from "./pages/Support";
 // Lazy-loaded pages for code splitting
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const Careers = lazy(() => import("./pages/Careers"));
+const OwnerOperators = lazy(() => import("./pages/OwnerOperators"));
 const Contact = lazy(() => import("./pages/Contact"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const DryVan = lazy(() => import("./pages/services/DryVan"));
@@ -98,6 +99,7 @@ const App = () => (
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/careers" element={<Careers />} />
+              <Route path="/owner-operators" element={<OwnerOperators />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/services/dry-van" element={<DryVan />} />
               <Route path="/services/reefer" element={<Reefer />} />

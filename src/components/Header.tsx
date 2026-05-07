@@ -369,6 +369,14 @@ const Header = () => {
               Insights
             </Link>
 
+            <Link
+              to="/owner-operators"
+              onMouseEnter={() => handleEnter(null)}
+              className="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Owner Operators
+            </Link>
+
             <NavTrigger label="Company" panel="company" />
 
             <div className="ml-4">
@@ -451,6 +459,14 @@ const Header = () => {
               onClick={closeMobile}
             >
               Insights
+            </Link>
+
+            <Link
+              to="/owner-operators"
+              className="block px-4 py-3 text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+              onClick={closeMobile}
+            >
+              Owner Operators
             </Link>
 
             {/* Company accordion */}
