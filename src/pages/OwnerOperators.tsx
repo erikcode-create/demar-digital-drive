@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { CSSProperties, useEffect, useMemo, useRef, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OwnerOperatorSignupForm from "@/components/OwnerOperatorSignupForm";
 import { Button } from "@/components/ui/button";
+import heroTruck from "@/assets/hero-truck-plain.jpg";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -17,6 +18,7 @@ import {
   Truck,
   WalletCards,
 } from "lucide-react";
+import "./OwnerOperators.css";
 
 const supportBenefits = [
   {
@@ -64,7 +66,80 @@ const operatingFit = [
   },
 ];
 
+const scrollScenes = [
+  {
+    step: "01",
+    title: "Bring your truck",
+    body: "You own, pay for, and maintain your truck. DeMar gives the business behind it more structure.",
+    command: "OWNER EQUIPMENT READY",
+  },
+  {
+    step: "02",
+    title: "Plug into support",
+    body: "Use fuel discounts, insurance savings, full dispatch, and back office support to reduce friction.",
+    command: "DISPATCH + BACK OFFICE ONLINE",
+  },
+  {
+    step: "03",
+    title: "Settle weekly",
+    body: "Keep 90% of profits with weekly settlement statements that make performance easier to see.",
+    command: "WEEKLY SETTLEMENT VISIBILITY",
+  },
+];
+
+const clamp = (value: number) => Math.min(1, Math.max(0, value));
+
+const useScrollProgress = () => {
+  const ref = useRef<HTMLElement | null>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const update = () => {
+      if (!ref.current) return;
+      const rect = ref.current.getBoundingClientRect();
+      const scrollable = Math.max(1, rect.height - window.innerHeight);
+      setProgress(clamp(-rect.top / scrollable));
+    };
+
+    const schedule = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
+  }, []);
+
+  return { ref, progress };
+};
+
+const progressStyle = (name: string, value: number) =>
+  ({ [name]: value.toFixed(4) } as CSSProperties);
+
+const scenesStyle = (progress: number) =>
+  ({
+    "--owner-scenes-progress": progress.toFixed(4),
+    "--owner-scenes-exit": clamp((progress - 0.9) / 0.1).toFixed(4),
+  } as CSSProperties);
+
 const OwnerOperators = () => {
+  const hero = useScrollProgress();
+  const scenes = useScrollProgress();
+
+  const activeScene = useMemo(
+    () => Math.min(scrollScenes.length - 1, Math.floor(scenes.progress * scrollScenes.length)),
+    [scenes.progress],
+  );
+
   useEffect(() => {
     document.title =
       "Owner Operator Trucking Opportunities | DeMar Transportation";
@@ -78,7 +153,7 @@ const OwnerOperators = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="owner-operators-page min-h-screen">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded"
@@ -87,55 +162,76 @@ const OwnerOperators = () => {
       </a>
       <Header />
       <main id="main-content">
-        <section className="pt-32 pb-20 px-4 bg-[hsl(225_97%_4%)] relative overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)",
-              backgroundSize: "40px 40px",
-            }}
-          />
-          <div className="container mx-auto max-w-5xl relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/5 backdrop-blur-sm">
-              <Truck className="h-4 w-4 text-[hsl(var(--accent))]" />
-              <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/60">
-                Owner Operator Opportunities
-              </span>
+        <section
+          ref={hero.ref}
+          className="owner-scroll-section owner-hero"
+          style={progressStyle("--owner-hero-progress", hero.progress)}
+          aria-labelledby="owner-hero-heading"
+        >
+          <div className="owner-sticky">
+            <div className="owner-hero-media" aria-hidden="true">
+              <img src={heroTruck} alt="" />
+              <div className="owner-grid-overlay" />
+              <div className="owner-wire-truck" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
-              Keep 90% of profits
-              <br />
-              <span className="text-white/40">with DeMar behind you</span>
-            </h1>
-            <p className="text-lg text-white/60 max-w-2xl leading-relaxed mb-8">
-              Own your truck and run your business with stronger support.
-              DeMar owner-operators pay for and maintain their own truck, then
-              leverage our fuel discounts, insurance savings, full dispatch,
-              and back office function.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Button
-                size="lg"
-                className="bg-[hsl(var(--accent))] text-[hsl(var(--primary))] hover:bg-[hsl(var(--accent))]/90 font-semibold"
-                asChild
-              >
-                <a href="#signup">
-                  Sign Up Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10"
-                asChild
-              >
-                <a href="tel:+17752304767">
-                  <Phone className="mr-2 h-4 w-4" />
-                  Call Recruiting
-                </a>
-              </Button>
+            <div className="owner-hero-copy">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/8 backdrop-blur-sm">
+                <Truck className="h-4 w-4 text-[hsl(var(--accent))]" />
+                <span className="text-xs font-medium tracking-[0.15em] uppercase text-white/70">
+                  Owner Operator Opportunities
+                </span>
+              </div>
+              <h1 id="owner-hero-heading" className="owner-hero-title">
+                <span>Keep 90%</span>
+                <span>of profits</span>
+                <span>with DeMar behind you</span>
+              </h1>
+              <div className="owner-hero-bottom">
+                <div>
+                  <p>
+                    Own your truck and run your business with stronger support.
+                    DeMar owner-operators pay for and maintain their own truck,
+                    then leverage our fuel discounts, insurance savings, full
+                    dispatch, and back office function.
+                  </p>
+                  <div className="owner-hero-actions">
+                    <Button
+                      size="lg"
+                      className="bg-[hsl(var(--accent))] text-[hsl(var(--primary))] hover:bg-[hsl(var(--accent))]/90 font-semibold"
+                      asChild
+                    >
+                      <a href="#signup">
+                        Sign Up Now
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                    <Button
+                      size="lg"
+                      className="bg-white text-[hsl(var(--primary))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--primary))] font-semibold border border-white/70 shadow-lg"
+                      asChild
+                    >
+                      <a href="tel:+17752304767">
+                        <Phone className="mr-2 h-4 w-4" />
+                        Call Recruiting
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+                <div className="owner-hero-index" aria-hidden="true">
+                  <div>
+                    <strong>90%</strong>
+                    of profits
+                  </div>
+                  <div>
+                    <strong>7 days</strong>
+                    weekly statements
+                  </div>
+                  <div>
+                    <strong>24/7</strong>
+                    dispatch support
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -170,6 +266,54 @@ const OwnerOperators = () => {
                   help in one program.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          ref={scenes.ref}
+          className="owner-scroll-section owner-scenes"
+          style={scenesStyle(scenes.progress)}
+          aria-labelledby="owner-scenes-heading"
+        >
+          <div className="owner-sticky">
+            <div className="owner-scene-copy">
+              <div>
+                <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4">
+                  Program Flow
+                </p>
+                <p className="owner-scene-eyebrow">
+                  {scrollScenes[activeScene].step} / 03
+                </p>
+                <h2 id="owner-scenes-heading" className="owner-scene-title">
+                  {scrollScenes[activeScene].title}
+                </h2>
+                <p className="owner-scene-body">
+                  {scrollScenes[activeScene].body}
+                </p>
+              </div>
+              <div className="owner-scene-list" aria-label="Owner operator program sequence">
+                {scrollScenes.map((scene, index) => (
+                  <div
+                    key={scene.title}
+                    className={`owner-scene-row ${index === activeScene ? "is-active" : ""}`}
+                  >
+                    <strong>{scene.step}</strong>
+                    <span>{scene.title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="owner-scene-stage" aria-hidden="true">
+              <div className="owner-yard-lanes">
+                {["FUEL", "INS", "DSP", "BACK"].map((lane) => (
+                  <div className="owner-lane" data-lane={lane} key={lane}>
+                    <div className="owner-trailer" />
+                  </div>
+                ))}
+              </div>
+              <div className="owner-dispatch-band">{scrollScenes[activeScene].command}</div>
+              <div className="owner-scan-pin" />
             </div>
           </div>
         </section>
@@ -250,8 +394,7 @@ const OwnerOperators = () => {
                   freight, support, and weekly settlement expectations.
                 </p>
                 <Button
-                  variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10"
+                  className="bg-white text-[hsl(var(--primary))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--primary))] font-semibold border border-white/70 shadow-lg"
                   asChild
                 >
                   <a href="#signup">Start Signup</a>
@@ -315,7 +458,7 @@ const OwnerOperators = () => {
             </p>
             <Button
               size="lg"
-              className="bg-[hsl(var(--primary))] text-white hover:bg-[hsl(var(--primary))]/90 font-semibold"
+              className="bg-[hsl(var(--primary))] text-white hover:bg-[hsl(225_97%_4%)] font-semibold shadow-lg border border-[hsl(var(--primary))]/20"
               asChild
             >
               <a href="tel:+17752304767">
