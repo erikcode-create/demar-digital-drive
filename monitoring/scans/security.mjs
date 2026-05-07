@@ -1,4 +1,4 @@
-import { fetchHeaders, TARGET_URL, computeStatus, computeScore } from "../lib/scanner.mjs";
+import { fetchHeaders, scannerFetch, TARGET_URL, computeStatus, computeScore } from "../lib/scanner.mjs";
 import https from "node:https";
 
 const REQUIRED_HEADERS = [
@@ -21,6 +21,45 @@ const SENSITIVE_PATHS = [
   "/source.map",
   "/main.js.map",
 ];
+
+function looksLikeSpaFallback(html) {
+  return html.includes('<div id="root"></div>') && html.includes('type="module"');
+}
+
+export function isBotChallengeBody(body) {
+  return /<title>\s*One moment, please\.\.\.\s*<\/title>/i.test(body) || body.includes("wsidchk");
+}
+
+export async function evaluateSensitivePathResponse(path, res) {
+  if (res.status !== 200) {
+    return { name: `Exposed: ${path}`, status: "pass", detail: `${path} returns ${res.status}`, confidence: "VERIFIED", reason: null };
+  }
+
+  const contentType = res.headers.get("content-type") || "";
+  const body = await res.text();
+
+  if (contentType.includes("text/html") && isBotChallengeBody(body)) {
+    return {
+      name: `Exposed: ${path}`,
+      status: "warn",
+      detail: `${path} returned host anti-bot challenge; file exposure could not be verified`,
+      confidence: "UNABLE_TO_VERIFY",
+      reason: "GreenGeeks/openresty returned a JavaScript challenge page instead of the requested path",
+    };
+  }
+
+  if (contentType.includes("text/html") && looksLikeSpaFallback(body)) {
+    return {
+      name: `Exposed: ${path}`,
+      status: "pass",
+      detail: `${path} returns SPA fallback HTML, not file contents`,
+      confidence: "VERIFIED",
+      reason: null,
+    };
+  }
+
+  return { name: `Exposed: ${path}`, status: "fail", detail: `${path} is publicly accessible (HTTP 200)`, confidence: "VERIFIED", reason: null };
+}
 
 function checkSSL(hostname) {
   return new Promise((resolve) => {
@@ -63,11 +102,30 @@ export async function run() {
   const checks = [];
 
   // Security headers
-  const { headers } = await fetchHeaders();
+  const { status, headers, bodySnippet } = await fetchHeaders();
+  const gotBotChallenge = isBotChallengeBody(bodySnippet);
+
+  if (gotBotChallenge) {
+    checks.push({
+      name: "Live Site Fetch",
+      status: "warn",
+      detail: `Host returned an anti-bot challenge page (HTTP ${status}); header checks are not representative`,
+      confidence: "VERIFIED",
+      reason: null,
+    });
+  }
 
   for (const { name, label } of REQUIRED_HEADERS) {
     const value = headers[name];
-    if (value) {
+    if (gotBotChallenge) {
+      checks.push({
+        name: label,
+        status: "warn",
+        detail: `Could not verify ${label} header because the host returned an anti-bot challenge`,
+        confidence: "UNABLE_TO_VERIFY",
+        reason: "The response was a challenge page, not the live website response",
+      });
+    } else if (value) {
       checks.push({ name: label, status: "pass", detail: value, confidence: "VERIFIED", reason: null });
     } else {
       checks.push({ name: label, status: "fail", detail: `Missing ${label} header`, confidence: "VERIFIED", reason: null });
@@ -84,16 +142,26 @@ export async function run() {
   }
 
   // HTTPS redirect
-  try {
-    const httpRes = await fetch(`http://demartransportation.com`, { redirect: "manual", signal: AbortSignal.timeout(10000) });
-    const location = httpRes.headers.get("location") || "";
-    if (location.startsWith("https://")) {
-      checks.push({ name: "HTTP→HTTPS Redirect", status: "pass", detail: `Redirects to ${location}`, confidence: "VERIFIED", reason: null });
-    } else {
-      checks.push({ name: "HTTP→HTTPS Redirect", status: "fail", detail: "No HTTPS redirect found", confidence: "VERIFIED", reason: null });
+  if (gotBotChallenge) {
+    checks.push({
+      name: "HTTP→HTTPS Redirect",
+      status: "warn",
+      detail: "Could not verify HTTP redirect because the host returned an anti-bot challenge",
+      confidence: "UNABLE_TO_VERIFY",
+      reason: "The response was a challenge page, not the live website response",
+    });
+  } else {
+    try {
+      const httpRes = await scannerFetch(`http://demartransportation.com`, { redirect: "manual", signal: AbortSignal.timeout(10000) });
+      const location = httpRes.headers.get("location") || "";
+      if (location.startsWith("https://")) {
+        checks.push({ name: "HTTP→HTTPS Redirect", status: "pass", detail: `Redirects to ${location}`, confidence: "VERIFIED", reason: null });
+      } else {
+        checks.push({ name: "HTTP→HTTPS Redirect", status: "fail", detail: "No HTTPS redirect found", confidence: "VERIFIED", reason: null });
+      }
+    } catch {
+      checks.push({ name: "HTTP→HTTPS Redirect", status: "warn", detail: "Could not test HTTP redirect", confidence: "VERIFIED", reason: null });
     }
-  } catch {
-    checks.push({ name: "HTTP→HTTPS Redirect", status: "warn", detail: "Could not test HTTP redirect", confidence: "VERIFIED", reason: null });
   }
 
   // SSL certificate
@@ -104,12 +172,8 @@ export async function run() {
   // Exposed sensitive files
   for (const path of SENSITIVE_PATHS) {
     try {
-      const res = await fetch(`${TARGET_URL}${path}`, { redirect: "follow", signal: AbortSignal.timeout(10000) });
-      if (res.status === 200) {
-        checks.push({ name: `Exposed: ${path}`, status: "fail", detail: `${path} is publicly accessible (HTTP 200)`, confidence: "VERIFIED", reason: null });
-      } else {
-        checks.push({ name: `Exposed: ${path}`, status: "pass", detail: `${path} returns ${res.status}`, confidence: "VERIFIED", reason: null });
-      }
+      const res = await scannerFetch(`${TARGET_URL}${path}`, { redirect: "follow", signal: AbortSignal.timeout(10000) });
+      checks.push(await evaluateSensitivePathResponse(path, res));
     } catch {
       checks.push({ name: `Exposed: ${path}`, status: "pass", detail: `${path} not reachable`, confidence: "VERIFIED", reason: null });
     }
