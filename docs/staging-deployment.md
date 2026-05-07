@@ -15,7 +15,7 @@ https://staging.demartransportation.com
 Create a GreenGeeks/cPanel subdomain for `staging.demartransportation.com` and point its document root at a folder that is not production, for example:
 
 ```text
-~/staging_public_html
+~/public_html/staging_public_html
 ```
 
 ## Required GitHub Secret
@@ -23,7 +23,7 @@ Create a GreenGeeks/cPanel subdomain for `staging.demartransportation.com` and p
 Add this repository secret:
 
 ```text
-STAGING_SSH_TARGET_DIR=~/staging_public_html
+STAGING_SSH_TARGET_DIR=~/public_html/staging_public_html
 ```
 
 The staging workflow reuses the existing production SSH secrets:
