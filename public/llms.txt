@@ -1,33 +1,45 @@
 # DeMar Transportation
 
-> Nationwide freight transportation services across the 48 contiguous states. Headquartered in Reno, Nevada, DeMar Transportation combines its own fleet with a vetted carrier network and 24/7 dispatch.
+> Nationwide freight transportation company serving the 48 contiguous states with dry van, reefer, flatbed, box truck, sprinter van, hazmat, FTL, LTL, 3PL, and warehousing support with 24/7 dispatch.
 
 ## About
 
-DeMar Transportation is a professional freight carrier and licensed broker headquartered in Reno, Nevada. We provide nationwide freight services across the 48 contiguous states, including dry van, refrigerated (reefer), flatbed, box truck, sprinter van, hazmat/fuel hauling, FTL, LTL, 3PL, and warehousing support.
+DeMar Transportation serves shippers, brokers, and businesses moving freight across the 48 contiguous states. Headquartered at 10471 Double R Blvd, Reno, NV 89521, DeMar operates with USDOT 4392091 and provides both motor carrier and freight broker support through its own fleet and a vetted capacity network.
+
+## Primary Pages
+
+- [Homepage](https://demartransportation.com/): Company overview and freight service summary
+- [Freight Shipping Services](https://demartransportation.com/services/): Service hub for equipment and logistics solutions
+- [Nevada Freight Locations](https://demartransportation.com/locations/): Reno and Nevada local freight pages
+- [Resources](https://demartransportation.com/resources/): Evergreen freight shipping guides and reference content
+- [Insights](https://demartransportation.com/blog/): Freight shipping articles, market topics, and problem-solution posts
+- [Get a Quote](https://demartransportation.com/quote/): Request freight rates
+- [Contact](https://demartransportation.com/contact/): Phone, email, and office address
+- [Owner Operators](https://demartransportation.com/owner-operators/): Owner-operator trucking program information
 
 ## Services
 
-- [Dry Van Shipping](https://demartransportation.com/services/dry-van): Enclosed 53-foot trailer shipping for general freight, up to 45,000 lbs
-- [Reefer Transport](https://demartransportation.com/services/reefer): Temperature-controlled shipping for perishable and frozen goods
-- [Flatbed Hauling](https://demartransportation.com/services/flatbed): Open deck transport for oversized, heavy, and construction loads
-- [Full Truckload (FTL)](https://demartransportation.com/services/ftl): Dedicated full trailer capacity for large shipments
-- [Less Than Truckload (LTL)](https://demartransportation.com/services/ltl): Consolidated shipping for smaller freight, 1-10 pallets
-- [Box Truck Delivery](https://demartransportation.com/services/box-truck): Medium-duty 26-foot box truck for regional and last-mile delivery
-- [Sprinter Van Express](https://demartransportation.com/services/sprinter-van): Expedited small-load and hot shot delivery
-- [Hazmat & Fuel Transport](https://demartransportation.com/services/hazmat): Licensed hazardous materials and fuel hauling with certified drivers
+- [Dry Van Shipping](https://demartransportation.com/services/dry-van/): Enclosed trailer shipping for general dry freight
+- [Reefer Freight](https://demartransportation.com/services/reefer/): Temperature-controlled freight for cold chain shipments
+- [Flatbed Shipping](https://demartransportation.com/services/flatbed/): Open-deck freight for machinery, lumber, steel, and oversized cargo
+- [Box Truck Delivery](https://demartransportation.com/services/box-truck/): Local and regional delivery for smaller enclosed freight
+- [Sprinter Van Shipping](https://demartransportation.com/services/sprinter-van/): Expedited small-shipment and dedicated cargo van delivery
+- [Hazmat Freight](https://demartransportation.com/services/hazmat/): DOT-compliant hazardous materials freight support
+- [Full Truckload](https://demartransportation.com/services/ftl/): Dedicated trailer capacity for larger shipments
+- [Less Than Truckload](https://demartransportation.com/services/ltl/): Shared trailer space for palletized freight
+- [3PL Services](https://demartransportation.com/services/3pl/): Freight management, carrier sourcing, and logistics coordination
+- [Warehousing](https://demartransportation.com/services/warehousing/): Storage, cross-docking, distribution, and fulfillment coordination
 
-## Key Pages
+## Local Freight Pages
 
-- [Homepage](https://demartransportation.com/): Company overview and service summary
-- [About Us](https://demartransportation.com/about): Company story, mission, and values
-- [Get a Quote](https://demartransportation.com/quote): Request freight shipping rates — free, no obligation
-- [Insights Blog](https://demartransportation.com/blog): Industry news, shipping guides, and freight market analysis
-- [Contact](https://demartransportation.com/contact): Phone, email, and office address
+- [Reno Freight Shipping](https://demartransportation.com/locations/reno-freight-shipping/)
+- [Nevada LTL Freight](https://demartransportation.com/locations/nevada-ltl-freight/)
+- [Nevada Reefer Freight](https://demartransportation.com/locations/nevada-reefer-freight/)
+- [Reno Warehouse Distribution](https://demartransportation.com/locations/reno-warehouse-distribution/)
 
 ## Contact
 
 - Phone: (775) 230-4767
 - Email: info@DeMarTransportation.com
 - Address: 10471 Double R Blvd, Reno, NV 89521
-- Hours: 24/7 dispatch available
+- Dispatch: 24/7 availability

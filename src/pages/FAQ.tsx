@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { HelpCircle, Phone, ArrowRight } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 
 interface FAQItem {
   question: string;
@@ -627,12 +628,11 @@ const plainTextAnswers: Record<string, string> = {
 
 const FAQ = () => {
   useEffect(() => {
-    document.title =
-      "Freight Shipping FAQ | DeMar Transportation - Common Questions Answered";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Find answers to common freight shipping questions including transit times, pricing factors, trailer sizes, packaging guidelines, claims and insurance, equipment types, and career opportunities at DeMar Transportation.');
-    }
+    setPageSeo({
+      path: "/faq",
+      title: "Freight Shipping FAQ | DeMar Transportation - Common Questions Answered",
+      description: "Find answers to common freight shipping questions including transit times, pricing factors, trailer sizes, packaging guidelines, claims and insurance, equipment types, and career opportunities at DeMar Transportation.",
+    });
   }, []);
 
   const faqSchema = {

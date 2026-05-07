@@ -44,6 +44,7 @@ const learnResources = [
 
 const companyLinks = [
   { name: "About Us", desc: "Our story, mission & values", path: "/about" },
+  { name: "Locations", desc: "Local Reno and Nevada freight pages", path: "/locations" },
   { name: "Careers", desc: "Join the DeMar team", path: "/careers" },
   { name: "Contact", desc: "Get in touch with our team", path: "/contact" },
   { name: "FAQ", desc: "Frequently asked questions", path: "/faq" },
@@ -149,6 +150,7 @@ const Header = () => {
           <div>
             <ColumnLabel>Equipment</ColumnLabel>
             <div className="grid grid-cols-1 gap-0.5">
+              <MegaItem name="All Freight Services" desc="Compare every DeMar service" path="/services" />
               {equipmentServices.map((s) => (
                 <MegaItem key={s.path} {...s} />
               ))}
@@ -424,6 +426,7 @@ const Header = () => {
             {/* Services accordion */}
             <MobileSection label="Services" sectionKey="services">
               <MobileSectionLabel>Equipment</MobileSectionLabel>
+              <MobileLinkItem name="All Freight Services" desc="Compare every DeMar service" path="/services" />
               {equipmentServices.map((s) => (
                 <MobileLinkItem key={s.path} {...s} />
               ))}

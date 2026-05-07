@@ -1,17 +1,19 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CommercialProof from "@/components/CommercialProof";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Phone, ArrowRight, CheckCircle, AlertTriangle, Ruler, Weight } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 
 const Flatbed = () => {
   useEffect(() => {
-    document.title = "Flatbed Trucking & Heavy Haul Shipping | Step Deck & Lowboy | DeMar Transportation";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "DeMar Transportation offers nationwide flatbed, step-deck, and lowboy shipping for steel, lumber, machinery, and oversized loads. FMCSA-compliant securement. Get a flatbed freight quote.");
-    }
+    setPageSeo({
+      path: "/services/flatbed",
+      title: "Flatbed Trucking & Heavy Haul Shipping | Step Deck & Lowboy | DeMar Transportation",
+      description: "DeMar Transportation offers nationwide flatbed, step-deck, and lowboy shipping for steel, lumber, machinery, and oversized loads. FMCSA-compliant securement. Get a flatbed freight quote.",
+    });
   }, []);
 
   const jsonLd = {
@@ -73,7 +75,7 @@ const Flatbed = () => {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Services",
-                    "item": "https://demartransportation.com/"
+                    "item": "https://demartransportation.com/services/"
                   },
                   {
                     "@type": "ListItem",
@@ -389,6 +391,8 @@ const Flatbed = () => {
             </div>
           </section>
         </main>
+        <CommercialProof />
+
         <Footer />
       </div>
     </div>

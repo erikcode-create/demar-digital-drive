@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { setPageSeo } from "@/lib/seo";
 
 const Support = () => {
   useEffect(() => {
-    document.title = "Freight Shipment Tracking Support | DeMar Transportation";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Track freight shipments, file claims, report issues, and get billing support from DeMar Transportation. Contact our team by phone or email for prompt assistance.');
-    }
+    setPageSeo({
+      path: "/support",
+      title: "Freight Shipment Tracking Support | DeMar Transportation",
+      description: "Track freight shipments, file claims, report issues, and get billing support from DeMar Transportation. Contact our team by phone or email for prompt assistance.",
+    });
   }, []);
 
   return (

@@ -1,17 +1,19 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CommercialProof from "@/components/CommercialProof";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Phone, ArrowRight, CheckCircle, Network, TrendingUp, BarChart3, Users, Globe, Boxes } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 
 const ThirdPartyLogistics = () => {
   useEffect(() => {
-    document.title = "Third-Party Logistics (3PL) Services | Freight Management | DeMar Transportation";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "DeMar Transportation provides full-service 3PL services including freight management, carrier sourcing, warehousing coordination, and supply chain visibility. One call handles everything. Get a free quote today.");
-    }
+    setPageSeo({
+      path: "/services/3pl",
+      title: "Third-Party Logistics (3PL) Services | Freight Management | DeMar Transportation",
+      description: "DeMar Transportation provides full-service 3PL services including freight management, carrier sourcing, warehousing coordination, and supply chain visibility. One call handles everything. Get a free quote today.",
+    });
   }, []);
 
   const jsonLd = {
@@ -73,7 +75,7 @@ const ThirdPartyLogistics = () => {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Services",
-                    "item": "https://demartransportation.com/"
+                    "item": "https://demartransportation.com/services/"
                   },
                   {
                     "@type": "ListItem",
@@ -325,7 +327,7 @@ const ThirdPartyLogistics = () => {
               </h2>
               <div className="space-y-5 text-base text-white/60 leading-relaxed max-w-3xl">
                 <p>
-                  DeMar Transportation is not a faceless logistics corporation. We are a Reno, Nevada-based company that builds real relationships with every client. When you call us, you reach a person who knows your account, your freight, and your priorities. That level of personal attention is rare in an industry that has trended toward automation and call centers.
+                  DeMar Transportation is not a faceless logistics corporation. We are a nationwide freight partner that builds real relationships with every client. When you call us, you reach a person who knows your account, your freight, and your priorities. That level of personal attention is rare in an industry that has trended toward automation and call centers.
                 </p>
                 <p>
                   What sets us apart is the combination of our own fleet assets and our broker authority. As an asset-based carrier, we have skin in the game and understand what it takes to move freight safely and on time. As a licensed broker, we can tap into a nationwide carrier network to find the right equipment, capacity, and pricing for any shipment. This dual capability gives you the reliability of an asset carrier with the flexibility of a full-service brokerage.
@@ -405,6 +407,8 @@ const ThirdPartyLogistics = () => {
             </div>
           </section>
         </main>
+        <CommercialProof />
+
         <Footer />
       </div>
     </div>

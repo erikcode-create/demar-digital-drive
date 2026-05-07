@@ -1,17 +1,19 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CommercialProof from "@/components/CommercialProof";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Phone, ArrowRight, CheckCircle, Warehouse, MapPin, PackageCheck, BarChart3, Clock, Layers } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 
 const WarehousingPage = () => {
   useEffect(() => {
-    document.title = "Warehousing & Distribution Services | Storage & Fulfillment | DeMar Transportation";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "DeMar Transportation offers warehousing and distribution services through a nationwide warehouse network. Short-term storage, cross-docking, order fulfillment, and inventory management. Get a free quote today.");
-    }
+    setPageSeo({
+      path: "/services/warehousing",
+      title: "Warehousing & Distribution Services | Storage & Fulfillment | DeMar Transportation",
+      description: "DeMar Transportation offers warehousing and distribution services through a nationwide warehouse network. Short-term storage, cross-docking, order fulfillment, and inventory management. Get a free quote today.",
+    });
   }, []);
 
   const jsonLd = {
@@ -73,7 +75,7 @@ const WarehousingPage = () => {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Services",
-                    "item": "https://demartransportation.com/"
+                    "item": "https://demartransportation.com/services/"
                   },
                   {
                     "@type": "ListItem",
@@ -108,7 +110,7 @@ const WarehousingPage = () => {
                 Strategically located warehouse facilities across the 48 contiguous states. DeMar Transportation coordinates storage, fulfillment, and distribution through our network of warehouse partners to keep your products moving and your customers satisfied.
               </p>
               <p className="text-sm text-white/50 max-w-2xl leading-relaxed mt-4">
-                DeMar Transportation provides warehousing and distribution services for businesses needing temporary or ongoing storage with integrated freight coordination. Services include inventory management, cross-docking, and distribution support through a nationwide warehouse network.
+                DeMar Transportation provides warehousing and distribution services for businesses needing temporary or ongoing storage with integrated freight coordination. Services include inventory management, cross-docking, and distribution support from our Reno, Nevada facility.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero" size="xl" asChild>
@@ -231,7 +233,7 @@ const WarehousingPage = () => {
               </h2>
               <div className="space-y-5 text-base text-[hsl(var(--muted-foreground))] leading-relaxed max-w-3xl mb-10">
                 <p>
-                  Location is everything in warehousing and distribution. A warehouse that is too far from your customers adds transit time and cost to every order. Our warehouse network includes facilities positioned near major interstate highways, intermodal rail yards, ports of entry, and high-density population centers throughout the 48 contiguous states.
+                  Location is everything in warehousing and distribution. A warehouse that is too far from your customers adds transit time and cost to every order. Our warehouse network includes facilities positioned near major interstate highways, intermodal rail yards, ports of entry, and high-density population centers throughout the United States.
                 </p>
                 <p>
                   Whether you need a West Coast facility to receive imports from the Pacific Rim, a Midwest hub to serve the heartland, or East Coast distribution points for rapid delivery to the Northeast corridor, we can place your inventory where it needs to be. Multiple warehouse locations also provide supply chain redundancy, so a disruption at one facility does not shut down your entire distribution operation.
@@ -421,6 +423,8 @@ const WarehousingPage = () => {
             </div>
           </section>
         </main>
+        <CommercialProof />
+
         <Footer />
       </div>
     </div>

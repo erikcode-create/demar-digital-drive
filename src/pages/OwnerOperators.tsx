@@ -18,6 +18,7 @@ import {
   Truck,
   WalletCards,
 } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 import "./OwnerOperators.css";
 
 const supportBenefits = [
@@ -141,15 +142,11 @@ const OwnerOperators = () => {
   );
 
   useEffect(() => {
-    document.title =
-      "Owner Operator Trucking Opportunities | DeMar Transportation";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Owner-operator trucking opportunities with DeMar Transportation. Keep 90% of profits, access fuel discounts, insurance savings, dispatch, back office support, and weekly settlement statements.",
-      );
-    }
+    setPageSeo({
+      path: "/owner-operators",
+      title: "Owner Operator Trucking Opportunities | DeMar Transportation",
+      description: "Owner-operator trucking opportunities with DeMar Transportation. Keep 90% of profits, access fuel discounts, insurance savings, dispatch, back office support, and weekly settlement statements.",
+    });
   }, []);
 
   return (

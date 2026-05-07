@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { BookOpen, ArrowRight, Phone, DollarSign, Truck, Scale, Snowflake, AlertTriangle, Package, FileText, BarChart3, HelpCircle, Calendar, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { canonicalUrl, setPageSeo } from "@/lib/seo";
 
 interface ResourceItem {
   title: string;
@@ -130,11 +131,11 @@ const categories = [
 
 const Resources = () => {
   useEffect(() => {
-    document.title = "Freight Shipping Resources & Guides | DeMar Transportation";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "Free freight shipping guides, cost calculators, and industry resources from DeMar Transportation. Learn about pricing, equipment types, shipping methods, and more.");
-    }
+    setPageSeo({
+      path: "/resources",
+      title: "Freight Shipping Resources & Guides | DeMar Transportation",
+      description: "Free freight shipping guides, cost calculators, and industry resources from DeMar Transportation. Learn about pricing, equipment types, shipping methods, and more.",
+    });
   }, []);
 
   return (
@@ -156,7 +157,7 @@ const Resources = () => {
                 "@type": "CollectionPage",
                 name: "Freight Shipping Resources",
                 description: "Free freight shipping guides, cost calculators, and industry resources from DeMar Transportation.",
-                url: "https://demartransportation.com/resources",
+                url: canonicalUrl("/resources"),
                 publisher: {
                   "@type": "Organization",
                   name: "DeMar Transportation",

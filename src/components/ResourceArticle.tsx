@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { BookOpen, Phone, ArrowRight } from "lucide-react";
+import { canonicalUrl, setPageSeo } from "@/lib/seo";
 
 export interface FAQItem {
   question: string;
@@ -42,12 +43,13 @@ const ResourceArticle = ({
   relatedLinks,
 }: ResourceArticleProps) => {
   useEffect(() => {
-    document.title = metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", metaDescription);
-    }
-  }, [metaTitle, metaDescription]);
+    setPageSeo({
+      path: `/resources/${slug}`,
+      title: metaTitle,
+      description: metaDescription,
+      ogType: "article",
+    });
+  }, [metaDescription, metaTitle, slug]);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -69,7 +71,7 @@ const ResourceArticle = ({
     },
     datePublished: publishDate,
     dateModified: publishDate,
-    mainEntityOfPage: `https://demartransportation.com/resources/${slug}`,
+    mainEntityOfPage: canonicalUrl(`/resources/${slug}`),
   };
 
   const faqSchema = {
@@ -93,19 +95,19 @@ const ResourceArticle = ({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://demartransportation.com/",
+        item: canonicalUrl("/"),
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Resources",
-        item: "https://demartransportation.com/resources",
+        item: canonicalUrl("/resources"),
       },
       {
         "@type": "ListItem",
         position: 3,
         name: title,
-        item: `https://demartransportation.com/resources/${slug}`,
+        item: canonicalUrl(`/resources/${slug}`),
       },
     ],
   };

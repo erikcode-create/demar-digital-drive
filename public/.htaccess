@@ -3,6 +3,11 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# === Sensitive File Blocks ===
+RewriteRule (^|/)\.env(\..*)?$ - [F,L]
+RewriteRule (^|/)\.git(/|$) - [F,L]
+RewriteRule (^|/)(source|main\.js)\.map$ - [F,L]
+
 # === WWW to non-WWW (canonical) ===
 RewriteCond %{HTTP_HOST} ^www\.demartransportation\.com$ [NC]
 RewriteRule ^ https://demartransportation.com%{REQUEST_URI} [L,R=301]

@@ -28,7 +28,10 @@ const ThirdPartyLogistics = lazy(() => import("./pages/services/ThirdPartyLogist
 const Warehousing = lazy(() => import("./pages/services/Warehousing"));
 const LTL = lazy(() => import("./pages/services/LTL"));
 const FTL = lazy(() => import("./pages/services/FTL"));
+const ServicesHub = lazy(() => import("./pages/ServicesHub"));
 const Resources = lazy(() => import("./pages/Resources"));
+const Locations = lazy(() => import("./pages/Locations"));
+const LocationPage = lazy(() => import("./pages/LocationPage"));
 const FreightShippingCost = lazy(() => import("./pages/resources/FreightShippingCost"));
 const HowToGetFreightQuote = lazy(() => import("./pages/resources/HowToGetFreightQuote"));
 const HowToChooseFreightCarrier = lazy(() => import("./pages/resources/HowToChooseFreightCarrier"));
@@ -101,6 +104,7 @@ const App = () => (
               <Route path="/careers" element={<Careers />} />
               <Route path="/owner-operators" element={<OwnerOperators />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/services" element={<ServicesHub />} />
               <Route path="/services/dry-van" element={<DryVan />} />
               <Route path="/services/reefer" element={<Reefer />} />
               <Route path="/services/flatbed" element={<Flatbed />} />
@@ -115,6 +119,11 @@ const App = () => (
               <Route path="/portal" element={<CustomerPortal />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/support" element={<Support />} />
+              <Route path="/locations" element={<Locations />} />
+              <Route path="/locations/reno-freight-shipping" element={<LocationPage slug="reno-freight-shipping" />} />
+              <Route path="/locations/nevada-ltl-freight" element={<LocationPage slug="nevada-ltl-freight" />} />
+              <Route path="/locations/nevada-reefer-freight" element={<LocationPage slug="nevada-reefer-freight" />} />
+              <Route path="/locations/reno-warehouse-distribution" element={<LocationPage slug="reno-warehouse-distribution" />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/resources/freight-shipping-cost" element={<FreightShippingCost />} />
               <Route path="/resources/how-to-get-freight-quote" element={<HowToGetFreightQuote />} />

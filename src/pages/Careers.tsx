@@ -20,6 +20,7 @@ import {
   Snowflake,
   ArrowRight,
 } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 
 const whyDrive = [
   {
@@ -127,12 +128,11 @@ const benefits = [
 
 const Careers = () => {
   useEffect(() => {
-    document.title =
-      "CDL-A Truck Driving Jobs | Careers at DeMar Transportation | Reno, NV";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'CDL-A truck driving jobs at DeMar Transportation in Reno, NV. Competitive pay, consistent freight, modern equipment. Apply today or call (775) 230-4767.');
-    }
+    setPageSeo({
+      path: "/careers",
+      title: "CDL-A Truck Driving Jobs | Careers at DeMar Transportation | Reno, NV",
+      description: "CDL-A truck driving jobs at DeMar Transportation in Reno, NV. Competitive pay, consistent freight, modern equipment. Apply today or call (775) 230-4767.",
+    });
   }, []);
 
   return (

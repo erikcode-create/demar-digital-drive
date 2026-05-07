@@ -1,17 +1,19 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CommercialProof from "@/components/CommercialProof";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Truck, Phone, Package, ArrowRight, CheckCircle, AlertTriangle } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 
 const DryVan = () => {
   useEffect(() => {
-    document.title = "Dry Van Freight Shipping Services | FTL & LTL | DeMar Transportation";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "Dry van freight shipping across all 48 contiguous states. 53-foot trailers, 45,000 lb capacity, FTL and LTL service. USDOT 4392091 with 24/7 dispatch. Get a free quote.");
-    }
+    setPageSeo({
+      path: "/services/dry-van",
+      title: "Dry Van Freight Shipping Services | FTL & LTL | DeMar Transportation",
+      description: "Dry van freight shipping across all 48 contiguous states. 53-foot trailers, 45,000 lb capacity, FTL and LTL service. USDOT 4392091 with 24/7 dispatch. Get a free quote.",
+    });
   }, []);
 
   const jsonLd = {
@@ -153,7 +155,7 @@ const DryVan = () => {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Services",
-                    "item": "https://demartransportation.com/#services"
+                    "item": "https://demartransportation.com/services/"
                   },
                   {
                     "@type": "ListItem",
@@ -609,6 +611,8 @@ const DryVan = () => {
             </div>
           </section>
         </main>
+        <CommercialProof />
+
         <Footer />
       </div>
     </div>

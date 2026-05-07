@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, Newspaper, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { canonicalUrl, setPageSeo } from "@/lib/seo";
 
 const blogPosts = [
   {
@@ -190,15 +191,11 @@ const blogPosts = [
 
 const Blog = () => {
   useEffect(() => {
-    document.title =
-      "Freight Shipping Insights | DeMar Transportation";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute(
-        "content",
-        "Expert freight shipping insights from DeMar Transportation. Practical guides on rates, damage prevention, expedited shipping, e-commerce logistics, and small business freight."
-      );
-    }
+    setPageSeo({
+      path: "/blog",
+      title: "Freight Shipping Insights | DeMar Transportation",
+      description: "Expert freight shipping insights from DeMar Transportation. Practical guides on rates, damage prevention, expedited shipping, e-commerce logistics, and small business freight.",
+    });
   }, []);
 
   const blogSchema = {
@@ -207,7 +204,7 @@ const Blog = () => {
     name: "DeMar Transportation Blog",
     description:
       "Expert freight shipping insights and guides from DeMar Transportation.",
-    url: "https://demartransportation.com/blog",
+    url: canonicalUrl("/blog"),
     publisher: {
       "@type": "Organization",
       name: "DeMar Transportation",
@@ -221,7 +218,7 @@ const Blog = () => {
       headline: post.title,
       description: post.description,
       datePublished: post.date,
-      url: `https://demartransportation.com/blog/${post.slug}`,
+      url: canonicalUrl(`/blog/${post.slug}`),
       author: {
         "@type": "Organization",
         name: "DeMar Transportation",
@@ -237,13 +234,13 @@ const Blog = () => {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://demartransportation.com/",
+        item: canonicalUrl("/"),
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blog",
-        item: "https://demartransportation.com/blog",
+        item: canonicalUrl("/blog"),
       },
     ],
   };

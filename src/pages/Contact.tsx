@@ -21,6 +21,7 @@ import {
   Send,
   Loader2,
 } from "lucide-react";
+import { canonicalUrl, setPageSeo } from "@/lib/seo";
 
 const departments = [
   {
@@ -104,11 +105,11 @@ const Contact = () => {
   const [formError, setFormError] = useState("");
 
   useEffect(() => {
-    document.title = "Contact DeMar Transportation | Nationwide Freight Quotes";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Contact DeMar Transportation for nationwide freight quotes and logistics across the 48 contiguous states. Call (775) 230-4767 or email info@DeMarTransportation.com.');
-    }
+    setPageSeo({
+      path: "/contact",
+      title: "Contact DeMar Transportation | Nationwide Freight Quotes",
+      description: "Contact DeMar Transportation for nationwide freight quotes and logistics across the 48 contiguous states. Call (775) 230-4767 or email info@DeMarTransportation.com.",
+    });
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -593,7 +594,7 @@ const Contact = () => {
             "@id": "https://demartransportation.com/#business",
             name: "DeMar Transportation",
             description: "Nationwide freight transportation and logistics services across the 48 contiguous states. Headquartered in Reno, Nevada with dry van, reefer, flatbed, box truck, sprinter van, hazmat, FTL, LTL, 3PL, and warehousing services. USDOT 4392091 with Motor Carrier and Freight Broker authority. 24/7 dispatch.",
-            url: "https://demartransportation.com",
+            url: canonicalUrl("/"),
             telephone: "+1-775-230-4767",
             email: "info@DeMarTransportation.com",
             address: {

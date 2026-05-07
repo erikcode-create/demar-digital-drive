@@ -1,17 +1,19 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CommercialProof from "@/components/CommercialProof";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Truck, Phone, ShieldCheck, ArrowRight, CheckCircle, Package, Clock, DollarSign, Factory } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 
 const FTL = () => {
   useEffect(() => {
-    document.title = "Full Truckload (FTL) Shipping Services | DeMar Transportation";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "DeMar Transportation provides full truckload (FTL) freight shipping nationwide. Dedicated trailers, faster transit, less handling. Dry van, reefer, flatbed, and step-deck available. Get a free quote.");
-    }
+    setPageSeo({
+      path: "/services/ftl",
+      title: "Full Truckload (FTL) Shipping Services | DeMar Transportation",
+      description: "DeMar Transportation provides full truckload (FTL) freight shipping nationwide. Dedicated trailers, faster transit, less handling. Dry van, reefer, flatbed, and step-deck available. Get a free quote.",
+    });
   }, []);
 
   const jsonLd = {
@@ -73,7 +75,7 @@ const FTL = () => {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Services",
-                    "item": "https://demartransportation.com/"
+                    "item": "https://demartransportation.com/services/"
                   },
                   {
                     "@type": "ListItem",
@@ -440,6 +442,8 @@ const FTL = () => {
             </div>
           </section>
         </main>
+        <CommercialProof />
+
         <Footer />
       </div>
     </div>

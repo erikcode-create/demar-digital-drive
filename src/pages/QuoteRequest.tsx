@@ -10,6 +10,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Truck, Phone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { setPageSeo } from "@/lib/seo";
 
 const QuoteRequest = () => {
   const [formData, setFormData] = useState({
@@ -30,11 +31,11 @@ const QuoteRequest = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    document.title = "Get a Freight Quote | Free Shipping Estimate | DeMar Transportation";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Request a free, no-obligation freight shipping quote from DeMar Transportation. Dry van, reefer, flatbed, and expedited services. Fast response within 1 business hour.');
-    }
+    setPageSeo({
+      path: "/quote",
+      title: "Get a Freight Quote | Free Shipping Estimate | DeMar Transportation",
+      description: "Request a free, no-obligation freight shipping quote from DeMar Transportation. Dry van, reefer, flatbed, and expedited services. Fast response within 1 business hour.",
+    });
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {

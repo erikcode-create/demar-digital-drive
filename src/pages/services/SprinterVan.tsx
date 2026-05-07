@@ -1,13 +1,19 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CommercialProof from "@/components/CommercialProof";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Car, Phone, Zap, Clock, Package, CheckCircle, ArrowRight, Users } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 
 const SprinterVan = () => {
   useEffect(() => {
-    document.title = "Sprinter Van & Expedited Shipping Services | DeMar Transportation";
+    setPageSeo({
+      path: "/services/sprinter-van",
+      title: "Sprinter Van & Expedited Shipping Services | DeMar Transportation",
+      description: "DeMar Transportation provides nationwide sprinter van and expedited freight shipping for urgent small shipments, same-day delivery, and dedicated cargo van moves.",
+    });
   }, []);
 
   return (
@@ -38,7 +44,7 @@ const SprinterVan = () => {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Services",
-                    "item": "https://demartransportation.com/"
+                    "item": "https://demartransportation.com/services/"
                   },
                   {
                     "@type": "ListItem",
@@ -360,6 +366,8 @@ const SprinterVan = () => {
             </div>
           </section>
         </main>
+        <CommercialProof />
+
         <Footer />
       </div>
     </div>

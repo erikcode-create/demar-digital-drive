@@ -1,17 +1,19 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CommercialProof from "@/components/CommercialProof";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Thermometer, Phone, ArrowRight, CheckCircle, AlertTriangle, Snowflake } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 
 const Reefer = () => {
   useEffect(() => {
-    document.title = "Refrigerated Shipping & Reefer Trucking | Temperature-Controlled Freight | DeMar Transportation";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "DeMar Transportation provides refrigerated (reefer) shipping with real-time temperature monitoring. FSMA-compliant carriers for produce, dairy, meat, pharmaceuticals. Get a reefer quote today.");
-    }
+    setPageSeo({
+      path: "/services/reefer",
+      title: "Refrigerated Shipping & Reefer Trucking | Temperature-Controlled Freight | DeMar Transportation",
+      description: "DeMar Transportation provides refrigerated (reefer) shipping with real-time temperature monitoring. FSMA-compliant carriers for produce, dairy, meat, pharmaceuticals. Get a reefer quote today.",
+    });
   }, []);
 
   const jsonLd = {
@@ -73,7 +75,7 @@ const Reefer = () => {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Services",
-                    "item": "https://demartransportation.com/"
+                    "item": "https://demartransportation.com/services/"
                   },
                   {
                     "@type": "ListItem",
@@ -379,6 +381,8 @@ const Reefer = () => {
             </div>
           </section>
         </main>
+        <CommercialProof />
+
         <Footer />
       </div>
     </div>

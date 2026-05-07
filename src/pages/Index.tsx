@@ -6,14 +6,15 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import ResourcesPreview from "@/components/ResourcesPreview";
 import Footer from "@/components/Footer";
+import { setPageSeo } from "@/lib/seo";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Nationwide Freight Shipping | DeMar Transportation | 48-State Carrier";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'DeMar Transportation provides nationwide freight shipping across the 48 contiguous states. Dry van, reefer, flatbed, hazmat, LTL, FTL, 3PL, and warehousing with 24/7 dispatch. Call (775) 230-4767.');
-    }
+    setPageSeo({
+      path: "/",
+      title: "Nationwide Freight Shipping | DeMar Transportation | 48-State Carrier",
+      description: "DeMar Transportation provides nationwide freight shipping across the 48 contiguous states. Dry van, reefer, flatbed, hazmat, LTL, FTL, 3PL, and warehousing with 24/7 dispatch. Call (775) 230-4767.",
+    });
 
     const existingLd = document.querySelectorAll('script[data-homepage-schema]');
     existingLd.forEach((el) => el.remove());

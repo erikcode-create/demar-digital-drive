@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { setPageSeo } from "@/lib/seo";
 
 const Privacy = () => {
   useEffect(() => {
-    document.title = "Privacy Policy | DeMar Transportation";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'DeMar Transportation privacy policy. Learn how we collect, use, and protect your information when using our services and driver app.');
-    }
+    setPageSeo({
+      path: "/privacy",
+      title: "Privacy Policy | DeMar Transportation",
+      description: "DeMar Transportation privacy policy. Learn how we collect, use, and protect your information when using our services and driver app.",
+    });
   }, []);
 
   return (

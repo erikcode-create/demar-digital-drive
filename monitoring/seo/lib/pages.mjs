@@ -83,11 +83,13 @@ const PAGES = [
   { path: "/contact", name: "Contact", type: "core" },
   { path: "/quote", name: "Get a Quote", type: "core" },
   { path: "/careers", name: "Careers", type: "core" },
+  { path: "/owner-operators", name: "Owner Operators", type: "core" },
   { path: "/faq", name: "FAQ", type: "core" },
   { path: "/privacy", name: "Privacy Policy", type: "core" },
   { path: "/support", name: "Support", type: "core" },
 
   // Services (keep hardcoded - stable, special slug mappings like 3pl->ThirdPartyLogistics)
+  { path: "/services", name: "Freight Shipping Services", type: "service" },
   { path: "/services/dry-van", name: "Dry Van", type: "service" },
   { path: "/services/reefer", name: "Reefer", type: "service" },
   { path: "/services/flatbed", name: "Flatbed", type: "service" },
@@ -98,6 +100,13 @@ const PAGES = [
   { path: "/services/ltl", name: "Less Than Truckload", type: "service" },
   { path: "/services/3pl", name: "3PL", type: "service" },
   { path: "/services/warehousing", name: "Warehousing", type: "service" },
+
+  // Location cluster
+  { path: "/locations", name: "Nevada Freight Shipping Locations", type: "location" },
+  { path: "/locations/reno-freight-shipping", name: "Reno Freight Shipping", type: "location" },
+  { path: "/locations/nevada-ltl-freight", name: "Nevada LTL Freight", type: "location" },
+  { path: "/locations/nevada-reefer-freight", name: "Nevada Reefer Freight", type: "location" },
+  { path: "/locations/reno-warehouse-distribution", name: "Reno Warehouse Distribution", type: "location" },
 
   // Resources index + auto-discovered resource pages
   { path: "/resources", name: "Resources", type: "resource" },

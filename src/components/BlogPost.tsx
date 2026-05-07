@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Newspaper, Phone, ArrowRight, Calendar } from "lucide-react";
+import { canonicalUrl, setPageSeo } from "@/lib/seo";
 
 export interface FAQItem {
   question: string;
@@ -50,12 +51,14 @@ const BlogPost = ({
   relatedLinks,
 }: BlogPostProps) => {
   useEffect(() => {
-    document.title = metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", metaDescription);
-    }
-  }, [metaTitle, metaDescription]);
+    setPageSeo({
+      path: `/blog/${slug}`,
+      title: metaTitle,
+      description: metaDescription,
+      ogType: "article",
+      image: heroImage,
+    });
+  }, [heroImage, metaDescription, metaTitle, slug]);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -77,7 +80,7 @@ const BlogPost = ({
     },
     datePublished: publishDate,
     dateModified: lastUpdated || publishDate,
-    mainEntityOfPage: `https://demartransportation.com/blog/${slug}`,
+    mainEntityOfPage: canonicalUrl(`/blog/${slug}`),
     ...(heroImage && {
       image: {
         "@type": "ImageObject",
@@ -107,19 +110,19 @@ const BlogPost = ({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://demartransportation.com/",
+        item: canonicalUrl("/"),
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Insights",
-        item: "https://demartransportation.com/blog",
+        item: canonicalUrl("/blog"),
       },
       {
         "@type": "ListItem",
         position: 3,
         name: title,
-        item: `https://demartransportation.com/blog/${slug}`,
+        item: canonicalUrl(`/blog/${slug}`),
       },
     ],
   };

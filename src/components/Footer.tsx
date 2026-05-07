@@ -2,6 +2,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const serviceLinks = [
+  { name: "All Services", path: "/services" },
   { name: "Dry Van", path: "/services/dry-van" },
   { name: "Reefer", path: "/services/reefer" },
   { name: "Flatbed", path: "/services/flatbed" },
@@ -16,6 +17,7 @@ const serviceLinks = [
 
 const quickLinks = [
   { name: "About Us", path: "/about" },
+  { name: "Locations", path: "/locations" },
   { name: "Careers", path: "/careers" },
   { name: "Contact", path: "/contact" },
   { name: "FAQ", path: "/faq" },

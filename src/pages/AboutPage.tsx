@@ -17,6 +17,7 @@ import {
   ArrowRight,
   FileCheck,
 } from "lucide-react";
+import { canonicalUrl, setPageSeo } from "@/lib/seo";
 
 const values = [
   {
@@ -99,18 +100,18 @@ const services = [
 
 const AboutPage = () => {
   useEffect(() => {
-    document.title = "About DeMar Transportation | Nationwide Freight Carrier | USDOT 4392091";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'About DeMar Transportation, a nationwide freight carrier and broker serving the 48 contiguous states. USDOT 4392091, own fleet, vetted carrier network, 10 service types, and 24/7 dispatch.');
-    }
+    setPageSeo({
+      path: "/about",
+      title: "About DeMar Transportation | Nationwide Freight Carrier | USDOT 4392091",
+      description: "About DeMar Transportation, a nationwide freight carrier and broker serving the 48 contiguous states. USDOT 4392091, own fleet, vetted carrier network, 10 service types, and 24/7 dispatch.",
+    });
   }, []);
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "DeMar Transportation",
-    "url": "https://demartransportation.com",
+    "url": canonicalUrl("/"),
     "logo": "https://demartransportation.com/logo.png",
     "description": "US-based freight carrier and broker serving the 48 contiguous states. Headquartered in Reno, Nevada with USDOT 4392091, Motor Carrier authority, and Freight Broker authority.",
     "telephone": "+1-775-230-4767",

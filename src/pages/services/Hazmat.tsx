@@ -1,13 +1,19 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CommercialProof from "@/components/CommercialProof";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Wrench, Phone, ShieldCheck, AlertTriangle, FileText, CheckCircle, Flame, ArrowRight } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 
 const Hazmat = () => {
   useEffect(() => {
-    document.title = "Hazmat & Fuel Transportation Services | Certified Hazardous Materials Shipping | DeMar Transportation";
+    setPageSeo({
+      path: "/services/hazmat",
+      title: "Hazmat & Fuel Transportation Services | Certified Hazardous Materials Shipping | DeMar Transportation",
+      description: "DeMar Transportation provides nationwide DOT-compliant hazmat and fuel transportation services with qualified carriers, proper documentation, placarding, and 24/7 dispatch.",
+    });
   }, []);
 
   return (
@@ -38,7 +44,7 @@ const Hazmat = () => {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Services",
-                    "item": "https://demartransportation.com/"
+                    "item": "https://demartransportation.com/services/"
                   },
                   {
                     "@type": "ListItem",
@@ -423,6 +429,8 @@ const Hazmat = () => {
             </div>
           </section>
         </main>
+        <CommercialProof />
+
         <Footer />
       </div>
     </div>

@@ -1,17 +1,19 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CommercialProof from "@/components/CommercialProof";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Phone, Package, Truck, CheckCircle, ArrowRight } from "lucide-react";
+import { setPageSeo } from "@/lib/seo";
 
 const BoxTruck = () => {
   useEffect(() => {
-    document.title = "Box Truck Shipping Services | Local & Regional Freight | DeMar Transportation";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "DeMar Transportation offers box truck shipping for local and regional freight. 26-foot trucks, liftgate service, residential delivery. Cost-effective for small to mid-size loads. Get a quote today.");
-    }
+    setPageSeo({
+      path: "/services/box-truck",
+      title: "Box Truck Shipping Services | Local & Regional Freight | DeMar Transportation",
+      description: "DeMar Transportation offers box truck shipping for local and regional freight. 26-foot trucks, liftgate service, residential delivery. Cost-effective for small to mid-size loads. Get a quote today.",
+    });
   }, []);
 
   const jsonLd = {
@@ -73,7 +75,7 @@ const BoxTruck = () => {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Services",
-                    "item": "https://demartransportation.com/"
+                    "item": "https://demartransportation.com/services/"
                   },
                   {
                     "@type": "ListItem",
@@ -380,6 +382,8 @@ const BoxTruck = () => {
             </div>
           </section>
         </main>
+        <CommercialProof />
+
         <Footer />
       </div>
     </div>

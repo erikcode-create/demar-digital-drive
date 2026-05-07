@@ -6,110 +6,247 @@
 
 DeMar Transportation serves freight moving across the 48 contiguous states. The company is headquartered at 10471 Double R Blvd, Reno, NV 89521 and operates with USDOT 4392091, providing motor carrier and freight broker support through its own fleet and vetted carrier network.
 
-### Why Choose DeMar Transportation
+Important company facts:
 
-- 24/7 dispatch and customer service availability
-- Competitive per-mile rates across all service types
-- Real-time freight tracking on every shipment
-- Nationwide coverage across all 48 contiguous states
-- Licensed and insured for hazardous materials transport
-- Flexible capacity: from sprinter vans to full 53-foot trailers
+- Headquarters: Reno, Nevada
+- Office address: 10471 Double R Blvd, Reno, NV 89521
+- Phone: (775) 230-4767
+- Email: info@DeMarTransportation.com
+- USDOT: 4392091
+- Dispatch: 24/7 availability
+- Core service area: 48 contiguous states, with Reno/Nevada headquarters support
+- Primary website: https://demartransportation.com/
+- Sitemap: https://demartransportation.com/sitemap.xml
+
+## Primary Site Structure
+
+- [Homepage](https://demartransportation.com/): Company overview, nationwide freight services, 48-state coverage, and quote CTA
+- [About DeMar Transportation](https://demartransportation.com/about/): Company facts, operating authority, service types, and values
+- [Freight Shipping Services](https://demartransportation.com/services/): Crawlable service hub linking all freight services
+- [Nevada Freight Locations](https://demartransportation.com/locations/): Local SEO hub for Reno and Nevada freight pages
+- [Freight Shipping Resources](https://demartransportation.com/resources/): Evergreen freight shipping guides, comparisons, glossary, and shipping education
+- [Freight Shipping Insights](https://demartransportation.com/blog/): Blog articles for freight problems, trends, and industry topics
+- [Get a Freight Quote](https://demartransportation.com/quote/): Quote request form
+- [Contact](https://demartransportation.com/contact/): Office, phone, email, and contact form
+- [Careers](https://demartransportation.com/careers/): Driver recruiting and application information
+- [Owner Operators](https://demartransportation.com/owner-operators/): Owner-operator program information
+- [FAQ](https://demartransportation.com/faq/): Freight shipping questions and answers
+- [Support](https://demartransportation.com/support/): Shipment tracking, claims, billing, and service issue support
+- [Privacy Policy](https://demartransportation.com/privacy/): Privacy information
 
 ## Services
 
+### Freight Shipping Services Hub
+
+URL: https://demartransportation.com/services/
+
+The services hub organizes DeMar Transportation's freight capabilities into equipment services and logistics solutions. It is the preferred entry point for comparing service types.
+
 ### Dry Van Shipping
-DeMar Transportation provides dry van shipping services for enclosed freight across the 48 contiguous states. Our 53-foot dry van trailers handle general merchandise, consumer goods, and non-perishable freight with a maximum payload capacity of approximately 45,000 pounds. Standard trailers accommodate 22 to 26 pallets single-stacked.
 
-Dry van is the most common and cost-effective freight shipping method for non-temperature-sensitive goods. We offer both full truckload (FTL) and less-than-truckload (LTL) dry van options with competitive per-mile rates and 24/7 dispatch availability.
+URL: https://demartransportation.com/services/dry-van/
 
-Equipment: 53-foot enclosed trailers, air-ride suspension, swing or roll-up doors.
-URL: https://demartransportation.com/services/dry-van
+Dry van shipping is used for enclosed, non-temperature-controlled freight such as general merchandise, retail goods, palletized products, boxed freight, and non-perishable cargo. Standard 53-foot dry van trailers commonly handle up to approximately 45,000 pounds and 22 to 26 standard pallets single-stacked.
 
-### Reefer (Refrigerated) Transport
-DeMar Transportation provides temperature-controlled shipping for perishable goods, frozen products, pharmaceuticals, and other temperature-sensitive freight. Our refrigerated trailers maintain precise temperatures from -20°F to 65°F throughout transit.
+Related pages:
 
-Reefer shipping is essential for food and beverage producers, pharmaceutical companies, and any shipper whose cargo requires climate control. We provide continuous temperature monitoring and real-time tracking.
+- [Full Truckload](https://demartransportation.com/services/ftl/)
+- [Less Than Truckload](https://demartransportation.com/services/ltl/)
+- [Dry Van vs Reefer](https://demartransportation.com/resources/dry-van-vs-reefer/)
 
-Equipment: 53-foot refrigerated trailers with multi-zone temperature control.
-URL: https://demartransportation.com/services/reefer
+### Reefer / Refrigerated Freight
 
-### Flatbed Hauling
-DeMar Transportation provides flatbed shipping for oversized, heavy, and irregularly shaped freight that cannot fit in enclosed trailers. Our flatbed service handles construction materials, heavy machinery, steel, lumber, and other open-deck cargo.
+URL: https://demartransportation.com/services/reefer/
 
-Flatbed shipping requires specialized load securement and often involves permits for oversize or overweight loads. Our drivers are trained in proper tarping, chaining, and strapping procedures.
+Reefer freight is temperature-controlled shipping for food, beverage, produce, frozen goods, pharmaceuticals, and other cold chain cargo. Reefer shipments require temperature planning, pre-cooling, appointment timing, and carrier communication.
 
-Equipment: 48-foot and 53-foot flatbed trailers, step deck, and specialized rigging.
-URL: https://demartransportation.com/services/flatbed
+Related pages:
 
-### Full Truckload (FTL)
-Full truckload shipping dedicates an entire trailer to your freight. FTL is the fastest and most direct shipping method, with no intermediate stops or handling. Recommended for shipments over 15,000 pounds or 10+ pallets.
+- [Nevada Reefer Freight](https://demartransportation.com/locations/nevada-reefer-freight/)
+- [How to Ship Refrigerated Goods](https://demartransportation.com/resources/how-to-ship-refrigerated-goods/)
+- [Refrigerated Freight Shipping Guide](https://demartransportation.com/blog/refrigerated-freight-shipping-guide/)
 
-FTL shipments move point-to-point with a single driver or team, minimizing transit time and damage risk. DeMar provides FTL service in dry van, reefer, and flatbed configurations.
+### Flatbed Shipping
 
-URL: https://demartransportation.com/services/ftl
+URL: https://demartransportation.com/services/flatbed/
 
-### Less Than Truckload (LTL)
-Less-than-truckload shipping consolidates multiple shippers' freight into a single trailer. LTL is cost-effective for shipments between 1 and 10 pallets or under 15,000 pounds.
+Flatbed shipping is open-deck freight for machinery, steel, lumber, construction materials, oversized cargo, and freight that cannot be loaded into an enclosed trailer. Flatbed freight may require tarps, straps, chains, route planning, and oversize permits.
 
-LTL rates are based on freight class, weight, dimensions, and distance. DeMar coordinates LTL consolidation to minimize per-unit shipping costs while maintaining reliable transit times.
+Related pages:
 
-URL: https://demartransportation.com/services/ltl
+- [Oversized Load Shipping](https://demartransportation.com/resources/oversized-load-shipping/)
+- [Types of Freight Trailers](https://demartransportation.com/resources/types-of-freight-trailers/)
 
 ### Box Truck Delivery
-DeMar Transportation provides 26-foot box truck service for medium-duty deliveries and regional freight. Box trucks handle shipments too large for sprinter vans but too small for full 53-foot trailers.
 
-Box trucks are ideal for last-mile delivery, residential deliveries, trade show freight, and urban environments where full-size trailers face access restrictions. Liftgate equipped for ground-level loading.
+URL: https://demartransportation.com/services/box-truck/
 
-URL: https://demartransportation.com/services/box-truck
+Box truck delivery supports local and regional freight that needs enclosed transport but does not require a full tractor-trailer. It is useful for liftgate needs, limited-access deliveries, local business deliveries, and smaller regional shipments.
 
-### Sprinter Van & Hot Shot
-Sprinter van service provides expedited delivery for time-critical, small-volume freight. Hot shot loads ship same-day or next-day with dedicated capacity and direct routing.
+### Sprinter Van Shipping
 
-Sprinter vans handle up to 3,500 pounds and are ideal for urgent parts, medical supplies, documents, and other small shipments that need to arrive fast. No terminal handling or consolidation delays.
+URL: https://demartransportation.com/services/sprinter-van/
 
-URL: https://demartransportation.com/services/sprinter-van
+Sprinter van shipping supports urgent small freight, expedited cargo, dedicated small-vehicle moves, and time-critical shipments that need direct routing.
 
-### Hazmat & Fuel Transport
-DeMar Transportation is licensed and certified for hazardous materials transportation including fuel hauling. All hazmat drivers carry current HazMat endorsements and complete DOT-required training.
+Related page:
 
-We transport Class 1 through Class 9 hazardous materials in compliance with 49 CFR regulations. Services include fuel tanker delivery, chemical transport, and hazardous waste hauling.
+- [Hot Shot vs Full Truckload](https://demartransportation.com/resources/hot-shot-vs-full-truckload/)
 
-URL: https://demartransportation.com/services/hazmat
+### Hazmat Freight
 
-### Third-Party Logistics (3PL)
-DeMar provides third-party logistics coordination for businesses that need freight management without maintaining their own fleet. Our 3PL service handles carrier selection, rate negotiation, shipment tracking, and delivery coordination.
+URL: https://demartransportation.com/services/hazmat/
 
-URL: https://demartransportation.com/services/third-party-logistics
+Hazmat freight requires DOT-compliant handling, documentation, placarding, carrier qualification, and shipment-specific planning. DeMar Transportation supports shippers moving regulated hazardous materials through qualified capacity.
 
-### Warehousing & Distribution
-DeMar offers warehousing and distribution services for businesses needing temporary or ongoing storage with freight coordination. Services include inventory management, cross-docking, and distribution support.
+Related pages:
 
-URL: https://demartransportation.com/services/warehousing
+- [How to Ship Hazardous Materials](https://demartransportation.com/resources/how-to-ship-hazardous-materials/)
+- [Hazmat Freight Shipping Requirements](https://demartransportation.com/blog/hazmat-freight-shipping-requirements-cyud/)
+
+### Full Truckload (FTL)
+
+URL: https://demartransportation.com/services/ftl/
+
+Full truckload shipping dedicates an entire trailer to one shipper's freight. FTL is typically used for larger shipments, direct point-to-point transit, freight that should avoid terminal handling, or loads that need dedicated equipment.
+
+Related pages:
+
+- [FTL vs LTL](https://demartransportation.com/resources/ftl-vs-ltl/)
+- [LTL vs FTL Freight Shipping](https://demartransportation.com/blog/ltl-vs-ftl-freight-shipping/)
+
+### Less Than Truckload (LTL)
+
+URL: https://demartransportation.com/services/ltl/
+
+Less-than-truckload freight shares trailer space with other shipments. LTL is useful for palletized freight that is too large for parcel but does not require a dedicated trailer. Pricing depends on freight class, weight, dimensions, distance, and accessorial requirements.
+
+Related pages:
+
+- [Nevada LTL Freight](https://demartransportation.com/locations/nevada-ltl-freight/)
+- [LTL Freight Shipping Guide](https://demartransportation.com/blog/ltl-freight-shipping-guide/)
+- [Freight Classes Explained](https://demartransportation.com/resources/freight-classes-explained/)
+
+### 3PL Services
+
+URL: https://demartransportation.com/services/3pl/
+
+Third-party logistics support includes carrier sourcing, freight management, load coordination, shipment visibility, and logistics planning for businesses that need transportation support without managing every carrier relationship directly.
+
+Related page:
+
+- [Broker vs Carrier vs 3PL](https://demartransportation.com/resources/broker-vs-carrier-vs-3pl/)
+
+### Warehousing and Distribution
+
+URL: https://demartransportation.com/services/warehousing/
+
+Warehousing support includes storage, cross-docking, staging, inventory movement, fulfillment coordination, and outbound distribution planning.
+
+Related pages:
+
+- [Reno Warehouse Distribution](https://demartransportation.com/locations/reno-warehouse-distribution/)
+- [Supply Chain Management for Small Business](https://demartransportation.com/blog/supply-chain-management-small-business/)
+
+## Local Freight Pages
+
+### Nevada Freight Locations Hub
+
+URL: https://demartransportation.com/locations/
+
+The locations hub organizes DeMar Transportation's Reno and Nevada local freight pages.
+
+### Reno Freight Shipping
+
+URL: https://demartransportation.com/locations/reno-freight-shipping/
+
+Reno freight shipping support is useful for shippers moving freight through I-80, US-395, California lanes, Pacific Northwest lanes, and Intermountain West routes. The page covers dry van, reefer, flatbed, LTL, FTL, box truck, sprinter van, 3PL, and warehouse-connected freight options from Reno.
+
+### Nevada LTL Freight
+
+URL: https://demartransportation.com/locations/nevada-ltl-freight/
+
+Nevada LTL freight support is for palletized shipments, freight class planning, shared trailer capacity, recurring small business freight, and statewide or nationwide LTL lanes.
+
+### Nevada Reefer Freight
+
+URL: https://demartransportation.com/locations/nevada-reefer-freight/
+
+Nevada reefer freight support is for temperature-controlled freight including food, beverage, produce, frozen goods, pharmaceuticals, and other cold chain shipments.
+
+### Reno Warehouse Distribution
+
+URL: https://demartransportation.com/locations/reno-warehouse-distribution/
+
+Reno warehouse distribution support covers storage, cross-docking, transloading, staging, regional distribution, and freight coordination for shippers using Reno as a Western US distribution point.
+
+## Evergreen Resources
+
+The resources section is for evergreen, reference-oriented freight education:
+
+- [Freight Shipping Cost Guide](https://demartransportation.com/resources/freight-shipping-cost/)
+- [How to Get a Freight Quote](https://demartransportation.com/resources/how-to-get-freight-quote/)
+- [How to Choose a Freight Carrier](https://demartransportation.com/resources/how-to-choose-freight-carrier/)
+- [Dry Van vs Reefer](https://demartransportation.com/resources/dry-van-vs-reefer/)
+- [FTL vs LTL](https://demartransportation.com/resources/ftl-vs-ltl/)
+- [Hot Shot vs Full Truckload](https://demartransportation.com/resources/hot-shot-vs-full-truckload/)
+- [Types of Freight Trailers](https://demartransportation.com/resources/types-of-freight-trailers/)
+- [How to Ship Freight](https://demartransportation.com/resources/how-to-ship-freight/)
+- [How to Ship Refrigerated Goods](https://demartransportation.com/resources/how-to-ship-refrigerated-goods/)
+- [How to Ship Hazardous Materials](https://demartransportation.com/resources/how-to-ship-hazardous-materials/)
+- [Oversized Load Shipping](https://demartransportation.com/resources/oversized-load-shipping/)
+- [Freight Classes Explained](https://demartransportation.com/resources/freight-classes-explained/)
+- [Broker vs Carrier vs 3PL](https://demartransportation.com/resources/broker-vs-carrier-vs-3pl/)
+- [Freight Shipping Glossary](https://demartransportation.com/resources/freight-shipping-glossary/)
+- [Seasonal Freight Shipping](https://demartransportation.com/resources/seasonal-freight-shipping/)
+
+## Insights and Blog Topics
+
+The blog section is for problem-solution, local, and topic-driven freight content. Important posts include:
+
+- [Freight Shipping in Reno, Nevada](https://demartransportation.com/blog/freight-shipping-reno-nevada/)
+- [LTL Freight Shipping in Nevada](https://demartransportation.com/blog/ltl-freight-shipping-nevada/)
+- [LTL Freight Shipping Guide](https://demartransportation.com/blog/ltl-freight-shipping-guide/)
+- [Refrigerated Freight Shipping Guide](https://demartransportation.com/blog/refrigerated-freight-shipping-guide/)
+- [Emergency Expedited Freight](https://demartransportation.com/blog/emergency-expedited-freight/)
+- [Small Business Freight Shipping](https://demartransportation.com/blog/small-business-freight-shipping/)
+- [E-commerce Freight Shipping](https://demartransportation.com/blog/ecommerce-freight-shipping/)
+- [Food and Beverage Freight Shipping](https://demartransportation.com/blog/food-beverage-freight-shipping/)
+- [Real-Time Freight Tracking](https://demartransportation.com/blog/real-time-freight-tracking/)
+- [Freight Damage Prevention](https://demartransportation.com/blog/freight-damage-prevention/)
+- [Freight Shipping Insurance Coverage](https://demartransportation.com/blog/freight-shipping-insurance-coverage/)
+- [White-Glove Freight Handling](https://demartransportation.com/blog/white-glove-freight-handling/)
+- [Last-Mile Freight Delivery](https://demartransportation.com/blog/last-mile-delivery-freight-shipping/)
+- [Reverse Logistics and Return Freight](https://demartransportation.com/blog/reverse-logistics-return-freight/)
+- [Dedicated Fleet vs Spot Market](https://demartransportation.com/blog/dedicated-fleet-vs-spot-market/)
+- [Partial Truckload Shipping](https://demartransportation.com/blog/partial-truckload-ptl-shipping/)
+- [Why Freight Quotes Change](https://demartransportation.com/blog/why-freight-quote-keeps-changing/)
+- [Hazmat Freight Shipping Requirements](https://demartransportation.com/blog/hazmat-freight-shipping-requirements-cyud/)
 
 ## Frequently Asked Questions
 
-Q: What areas does DeMar Transportation serve?
-A: DeMar Transportation serves the 48 contiguous states. We are headquartered in Reno, Nevada and provide nationwide freight coverage through our own fleet and vetted carrier network.
+Q: What services does DeMar Transportation provide?
+A: DeMar Transportation provides dry van, reefer, flatbed, box truck, sprinter van, hazmat, full truckload, less-than-truckload, 3PL, and warehousing support.
 
-Q: How do I get a freight quote?
-A: Request a free quote at https://demartransportation.com/quote or call (775) 230-4767. We respond within 1 business hour.
+Q: Where is DeMar Transportation located?
+A: DeMar Transportation is located at 10471 Double R Blvd, Reno, NV 89521.
 
-Q: What is the maximum weight for a dry van shipment?
-A: A standard 53-foot dry van trailer has a maximum payload capacity of approximately 45,000 pounds, subject to federal gross vehicle weight limits of 80,000 pounds.
+Q: What is DeMar Transportation's USDOT number?
+A: USDOT 4392091.
 
-Q: Does DeMar offer temperature-controlled shipping?
-A: Yes. Our refrigerated trailers maintain temperatures from -20°F to 65°F with continuous monitoring throughout transit.
+Q: Does DeMar Transportation serve Nevada shippers?
+A: Yes. DeMar Transportation is headquartered in Reno and supports Nevada freight including Reno freight shipping, Nevada LTL, Nevada reefer freight, and Reno warehouse distribution.
 
-Q: Is DeMar licensed for hazardous materials?
-A: Yes. DeMar Transportation is fully licensed and insured for Class 1 through Class 9 hazardous materials transport, including fuel hauling.
+Q: How can shippers request a quote?
+A: Shippers can request a quote at https://demartransportation.com/quote/ or call (775) 230-4767.
 
-Q: What are your hours of operation?
-A: DeMar Transportation provides 24/7 dispatch and customer service. Call (775) 230-4767 any time.
+Q: Is dispatch available after hours?
+A: Yes. DeMar Transportation provides 24/7 dispatch availability.
 
 ## Contact
 
 - Phone: (775) 230-4767
 - Email: info@DeMarTransportation.com
 - Address: 10471 Double R Blvd, Reno, NV 89521
-- Website: https://demartransportation.com
-- Quote: https://demartransportation.com/quote
+- Website: https://demartransportation.com/
+- Quote: https://demartransportation.com/quote/
