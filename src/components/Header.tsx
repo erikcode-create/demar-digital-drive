@@ -46,6 +46,7 @@ const companyLinks = [
   { name: "About Us", desc: "Our story, mission & values", path: "/about" },
   { name: "Locations", desc: "Local Reno and Nevada freight pages", path: "/locations" },
   { name: "Careers", desc: "Join the DeMar team", path: "/careers" },
+  { name: "Apply to Drive", desc: "Driver application form", path: "/careers#apply" },
   { name: "Contact", desc: "Get in touch with our team", path: "/contact" },
   { name: "FAQ", desc: "Frequently asked questions", path: "/faq" },
 ];
@@ -381,6 +382,15 @@ const Header = () => {
 
             <NavTrigger label="Company" panel="company" />
 
+            <Link
+              to="/careers#apply"
+              onMouseEnter={() => handleEnter(null)}
+              className="whitespace-nowrap px-4 py-2 text-sm font-semibold text-[hsl(var(--accent))] hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              <span className="xl:hidden">Drivers Apply</span>
+              <span className="hidden xl:inline">Drivers Apply Here</span>
+            </Link>
+
             <div className="ml-4">
               <Button variant="cta" size="sm" asChild>
                 <Link to="/quote" className="font-semibold tracking-wide">
@@ -470,6 +480,14 @@ const Header = () => {
               onClick={closeMobile}
             >
               Owner Operators
+            </Link>
+
+            <Link
+              to="/careers#apply"
+              className="block px-4 py-3 text-sm font-semibold text-[hsl(var(--accent))] hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+              onClick={closeMobile}
+            >
+              Drivers Apply Here
             </Link>
 
             {/* Company accordion */}

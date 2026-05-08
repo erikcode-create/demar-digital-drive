@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ApplyToDriveForm from "@/components/ApplyToDriveForm";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   Truck,
   Phone,
@@ -127,6 +127,8 @@ const benefits = [
 ];
 
 const Careers = () => {
+  const location = useLocation();
+
   useEffect(() => {
     setPageSeo({
       path: "/careers",
@@ -134,6 +136,18 @@ const Careers = () => {
       description: "CDL-A truck driving jobs at DeMar Transportation in Reno, NV. Competitive pay, consistent freight, modern equipment. Apply today or call (775) 230-4767.",
     });
   }, []);
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const timeout = window.setTimeout(() => {
+      document
+        .getElementById(location.hash.slice(1))
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+
+    return () => window.clearTimeout(timeout);
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen">
@@ -361,7 +375,7 @@ const Careers = () => {
           </section>
 
           {/* Application Form */}
-          <section id="apply" className="py-20 px-4 bg-[hsl(var(--surface-low))]">
+          <section id="apply" className="scroll-mt-32 py-20 px-4 bg-[hsl(var(--surface-low))]">
             <div className="container mx-auto max-w-3xl">
               <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[hsl(var(--accent))] mb-4 text-center">
                 Get Started
