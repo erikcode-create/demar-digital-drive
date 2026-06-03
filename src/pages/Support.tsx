@@ -39,7 +39,7 @@ const Support = () => {
                 </a>
               </li>
               <li>
-                Office: 10471 Double R Blvd, Reno, NV 89521
+                Office: Reno, NV
               </li>
             </ul>
             <p className="mt-3 text-sm">

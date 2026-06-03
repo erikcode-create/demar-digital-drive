@@ -4,12 +4,12 @@
 
 ## Company Overview
 
-DeMar Transportation serves freight moving across the 48 contiguous states. The company is headquartered at 10471 Double R Blvd, Reno, NV 89521 and operates with USDOT 4392091, providing motor carrier and freight broker support through its own fleet and vetted carrier network.
+DeMar Transportation serves freight moving across the 48 contiguous states. The company is headquartered in Reno, NV and operates with USDOT 4392091, providing motor carrier and freight broker support through its own fleet and vetted carrier network.
 
 Important company facts:
 
 - Headquarters: Reno, Nevada
-- Office address: 10471 Double R Blvd, Reno, NV 89521
+- Office address: Reno, NV
 - Phone: (775) 230-4767
 - Email: info@DeMarTransportation.com
 - USDOT: 4392091
@@ -229,7 +229,7 @@ Q: What services does DeMar Transportation provide?
 A: DeMar Transportation provides dry van, reefer, flatbed, box truck, sprinter van, hazmat, full truckload, less-than-truckload, 3PL, and warehousing support.
 
 Q: Where is DeMar Transportation located?
-A: DeMar Transportation is located at 10471 Double R Blvd, Reno, NV 89521.
+A: DeMar Transportation is located in Reno, NV.
 
 Q: What is DeMar Transportation's USDOT number?
 A: USDOT 4392091.
@@ -247,6 +247,6 @@ A: Yes. DeMar Transportation provides 24/7 dispatch availability.
 
 - Phone: (775) 230-4767
 - Email: info@DeMarTransportation.com
-- Address: 10471 Double R Blvd, Reno, NV 89521
+- Address: Reno, NV
 - Website: https://demartransportation.com/
 - Quote: https://demartransportation.com/quote/

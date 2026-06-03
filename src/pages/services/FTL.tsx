@@ -25,10 +25,8 @@ const FTL = () => {
       "name": "DeMar Transportation",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "10471 Double R Blvd",
         "addressLocality": "Reno",
         "addressRegion": "NV",
-        "postalCode": "89521",
         "addressCountry": "US"
       },
       "telephone": "(775) 230-4767",
@@ -437,7 +435,7 @@ const FTL = () => {
                 </Button>
               </div>
               <p className="mt-6 text-[hsl(var(--primary))]/50 text-xs">
-                DeMar Transportation | 10471 Double R Blvd, Reno, NV 89521 | info@DeMarTransportation.com
+                DeMar Transportation | Reno, NV | info@DeMarTransportation.com
               </p>
             </div>
           </section>

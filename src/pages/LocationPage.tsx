@@ -140,10 +140,8 @@ const LocationPage = ({ slug }: LocationPageProps) => {
       telephone: "+1-775-230-4767",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "10471 Double R Blvd",
         addressLocality: "Reno",
         addressRegion: "NV",
-        postalCode: "89521",
         addressCountry: "US",
       },
     },

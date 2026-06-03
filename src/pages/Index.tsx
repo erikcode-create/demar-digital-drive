@@ -28,10 +28,8 @@ const Index = () => {
       "url": "https://demartransportation.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "10471 Double R Blvd",
         "addressLocality": "Reno",
         "addressRegion": "NV",
-        "postalCode": "89521",
         "addressCountry": "US"
       },
       "areaServed": {
@@ -214,7 +212,7 @@ const Index = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Headquartered in Reno, National by Design</h3>
                   <p className="text-muted-foreground text-sm">
-                    Our office at 10471 Double R Blvd, Reno, NV 89521 anchors a freight operation serving shippers across the 48 contiguous states. Reno gives us direct highway access to major West Coast markets and cross-country lanes without limiting where your freight can move.
+                    Our Reno, NV office anchors a freight operation serving shippers across the 48 contiguous states. Reno gives us direct highway access to major West Coast markets and cross-country lanes without limiting where your freight can move.
                   </p>
                 </div>
                 <div>

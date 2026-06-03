@@ -79,7 +79,7 @@ const trustSignals = [
 const contactFaqs = [
   {
     question: "What areas does DeMar Transportation serve?",
-    answer: "DeMar Transportation provides nationwide freight shipping services across the 48 contiguous states. Headquartered in Reno, Nevada at 10471 Double R Blvd, we combine our own fleet with a vetted carrier network and hold both Motor Carrier and Freight Broker authority under USDOT 4392091.",
+    answer: "DeMar Transportation provides nationwide freight shipping services across the 48 contiguous states. Headquartered in Reno, Nevada, we combine our own fleet with a vetted carrier network and hold both Motor Carrier and Freight Broker authority under USDOT 4392091.",
   },
   {
     question: "How do I get a freight shipping quote from DeMar Transportation?",
@@ -200,7 +200,7 @@ const Contact = () => {
                   <MapPin className="h-7 w-7 text-[hsl(var(--accent))] mx-auto mb-4" />
                   <h2 className="text-base font-semibold text-[hsl(var(--primary))] mb-2">Visit Us</h2>
                   <p className="text-sm font-bold text-[hsl(var(--primary))]">
-                    10471 Double R Blvd<br />Reno, NV 89521
+                    Reno, NV
                   </p>
                   <p className="text-xs text-[hsl(var(--muted-foreground))] mt-2">South Reno office location</p>
                 </div>
@@ -442,7 +442,7 @@ const Contact = () => {
                         <div>
                           <h3 className="text-sm font-semibold text-[hsl(var(--primary))] mb-1">Office Address</h3>
                           <p className="text-sm text-[hsl(var(--muted-foreground))]">
-                            10471 Double R Blvd<br />Reno, NV 89521
+                            Reno, NV
                           </p>
                         </div>
                       </div>
@@ -508,8 +508,8 @@ const Contact = () => {
 
                   <div className="rounded-xl overflow-hidden shadow-[var(--shadow-float)]">
                     <iframe
-                      title="DeMar Transportation office location at 10471 Double R Blvd, Reno, NV 89521"
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.5!2d-119.773!3d39.4631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDI3JzQ3LjIiTiAxMTnCsDQ2JzIyLjgiVw!5e0!3m2!1sen!2sus!4v1"
+                      title="DeMar Transportation office location at Reno, NV"
+                      src="https://www.google.com/maps?q=Reno%2C%20NV&output=embed"
                       width="100%"
                       height="400"
                       style={{ border: 0 }}
@@ -599,16 +599,12 @@ const Contact = () => {
             email: "info@DeMarTransportation.com",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "10471 Double R Blvd",
               addressLocality: "Reno",
               addressRegion: "NV",
-              postalCode: "89521",
               addressCountry: "US",
             },
             geo: {
               "@type": "GeoCoordinates",
-              latitude: 39.4631,
-              longitude: -119.773,
             },
             openingHoursSpecification: [
               {

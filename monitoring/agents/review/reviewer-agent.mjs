@@ -30,7 +30,7 @@ function loadBusinessFacts() {
       phone: "(775) 230-4767",
       phoneTel: "+17752304767",
       email: "info@DeMarTransportation.com",
-      address: "10471 Double R Blvd, Reno, NV 89521",
+      address: "Reno, NV",
       companyName: "DeMar Transportation",
       dotNumber: "4392091",
     };

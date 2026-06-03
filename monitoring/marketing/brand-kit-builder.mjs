@@ -68,7 +68,7 @@ Company facts (DO NOT change these):
 - Type: Motor carrier (MC authority) + freight broker
 - Fleet: Own trucks (dry van, reefer, flatbed, box truck, sprinter van, hazmat-certified)
 - Also offers: 3PL logistics and warehousing through partner network
-- Address: 10471 Double R Blvd, Reno, NV 89521
+- Address: Reno, NV
 - Phone: (775) 230-4767
 - Email: info@DeMarTransportation.com
 - Website: https://demartransportation.com
@@ -84,7 +84,7 @@ Return ONLY valid JSON (no markdown fences) with this exact structure:
     "name": "DeMar Transportation",
     "legalName": "DeMar Consulting Group LLC dba DeMar Transportation",
     "tagline": "<extract or create a concise tagline>",
-    "address": "10471 Double R Blvd, Reno, NV 89521",
+    "address": "Reno, NV",
     "phone": "(775) 230-4767",
     "email": "info@DeMarTransportation.com",
     "website": "https://demartransportation.com",

@@ -348,8 +348,8 @@ const WhyFreightQuoteKeepsChanging = () => {
 
       <h2>What DeMar Does Differently</h2>
       <p className="mb-6">
-        DeMar Transportation is an asset-based carrier headquartered at 10471
-        Double R Blvd in Reno, Nevada. We hold dual authority as both a Motor
+        DeMar Transportation is an asset-based carrier headquartered in Reno,
+        Nevada. We hold dual authority as both a Motor
         Carrier and Freight Broker under USDOT 4392091, which means we
         dispatch our own fleet first and tap vetted partner carriers when
         capacity requires it. We're not a freight marketplace or a lead

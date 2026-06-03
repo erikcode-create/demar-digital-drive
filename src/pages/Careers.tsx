@@ -353,7 +353,7 @@ const Careers = () => {
                       Base of Operations: Reno, Nevada
                     </h2>
                     <p className="text-base text-[hsl(var(--muted-foreground))] mb-4 leading-relaxed max-w-xl">
-                      Our headquarters at 10471 Double R Blvd, Reno, NV 89521
+                      Our headquarters
                       sits at the intersection of major West Coast freight
                       lanes. Reno's strategic location offers quick access to
                       California distribution centers, Pacific Northwest

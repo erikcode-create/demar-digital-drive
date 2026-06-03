@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeAll } from "vitest";
 import { getAllPages, SITE_URL, toKebabCase } from "../../monitoring/seo/lib/pages.mjs";
 
 describe("SITE_URL", () => {

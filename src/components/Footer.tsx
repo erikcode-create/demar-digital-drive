@@ -172,7 +172,7 @@ const Footer = () => {
                 className="flex items-center gap-3 text-sm text-white/40 hover:text-white transition-colors"
               >
                 <MapPin className="h-4 w-4 flex-shrink-0" />
-                10471 Double R Blvd, Reno, NV
+                Reno, NV
               </Link>
               <div className="flex items-center gap-3 text-sm text-white/40">
                 <Clock className="h-4 w-4 flex-shrink-0" />

@@ -118,10 +118,8 @@ const AboutPage = () => {
     "email": "info@DeMarTransportation.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "10471 Double R Blvd",
       "addressLocality": "Reno",
       "addressRegion": "NV",
-      "postalCode": "89521",
       "addressCountry": "US",
     },
     "areaServed": {
@@ -482,7 +480,7 @@ const AboutPage = () => {
                     </p>
                     <div className="space-y-2">
                       <p className="text-sm font-medium text-[hsl(var(--primary))]">
-                        10471 Double R Blvd, Reno, NV 89521
+                        Reno, NV
                       </p>
                       <p className="text-sm text-[hsl(var(--muted-foreground))]">
                         Office: Mon-Fri, 7:00 AM - 6:00 PM PST

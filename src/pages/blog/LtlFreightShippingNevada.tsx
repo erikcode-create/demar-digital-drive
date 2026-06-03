@@ -282,7 +282,7 @@ const LtlFreightShippingNevada = () => {
       <ul>
         <li><strong>Phone:</strong> (775) 230-4767</li>
         <li><strong>Email:</strong> info@DeMarTransportation.com</li>
-        <li><strong>Address:</strong> 10471 Double R Blvd, Reno, NV 89521</li>
+        <li><strong>Address:</strong> Reno, NV</li>
         <li><strong>Office Hours:</strong> Mon-Fri, 7:00 AM - 6:00 PM PST</li>
         <li><strong>Dispatch:</strong> 24/7</li>
       </ul>
