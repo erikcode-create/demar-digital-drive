@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const serviceLinks = [
@@ -167,13 +167,6 @@ const Footer = () => {
                 <Mail className="h-4 w-4 flex-shrink-0" />
                 info@DeMarTransportation.com
               </a>
-              <Link
-                to="/contact"
-                className="flex items-center gap-3 text-sm text-white/40 hover:text-white transition-colors"
-              >
-                <MapPin className="h-4 w-4 flex-shrink-0" />
-                Reno, NV
-              </Link>
               <div className="flex items-center gap-3 text-sm text-white/40">
                 <Clock className="h-4 w-4 flex-shrink-0" />
                 24/7 Service Available
